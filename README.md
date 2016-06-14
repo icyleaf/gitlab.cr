@@ -1,4 +1,4 @@
-# Gitlab.cr
+# 💎 Gitlab.cr
 
 Gitlab.cr is a [GitLab API][gitlab-api-link] wrapper writes with [Crystal][crystal-link] Language.
 Inspired from [gitlab][gitlab-gem-link] gem for ruby version.
@@ -37,7 +37,26 @@ end
 
 ## Progress
 
-> TODO: Fix it
+- [ ] Authentication
+- [ ] Users
+- [ ] Session
+- [ ] Projects (including setting Webhooks)
+- [ ] Project Snippets
+- [ ] Services
+- [ ] Repositories
+- [ ] Repository Files
+- [ ] Commits
+- [ ] Branches
+- [ ] Merge Requests
+- [ ] Issues
+- [ ] Labels
+- [ ] Milestones
+- [ ] Notes (comments)
+- [ ] Deploy Keys
+- [ ] System Hooks
+- [ ] Groups
+- [ ] Namespaces
+- [ ] Settings
 
 ## Contributing
 

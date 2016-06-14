@@ -1,9 +1,9 @@
 require "./spec_helper"
 
 describe Gitlab do
-  # TODO: Write tests
-
-  it "works" do
-    false.should eq(true)
+  describe "#client" do
+    it "should initilize" do
+      Gitlab.client("", "").should be_a Gitlab::Client
+    end
   end
 end
