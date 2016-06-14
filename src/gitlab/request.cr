@@ -21,10 +21,13 @@ module Gitlab
       @headers = default_headers
     end
 
-    def exec(method : Method, uri : String, params : Params? = nil)
+    def exec(method : Method, uri : String, params : HTTP::Params? = nil)
       request_method = method.to_s
       request_url = build_url(uri)
-      Response.new(HTTP::Client.exec(request_method, request_url, @headers), request_method, request_url)
+      # TODO: pass the params for get/post/put/delete
+      response = HTTP::Client.exec(request_method, request_url, @headers)
+
+      Response.new(response, request_method, request_url)
     end
 
     private def build_url(uri : String)

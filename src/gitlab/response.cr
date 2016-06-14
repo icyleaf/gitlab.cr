@@ -7,6 +7,8 @@ module Gitlab
     @method : String
     @url : String
 
+    getter :code, :body
+
     def initialize(response : HTTP::Client::Response, @method = nil, @url = nil)
       validate(response)
 
