@@ -15,7 +15,7 @@ module Gitlab
       # client.users
       # client.users({ "per_page" => "10", "page" => "2" })
       # ```
-      def users(params : Hash? = nil) : Array
+      def users(params : Hash? = nil) : JSON::Any
         get("users", params).body
       end
 
@@ -28,7 +28,7 @@ module Gitlab
       # ```
       # client.user(2) # Get user information by ID = 2
       # ```
-      def user(id : Int32 = nil) : Hash
+      def user(id : Int32 = nil) : JSON::Any
         get("/users/#{id.to_s}").body
       end
 

@@ -21,7 +21,7 @@ module Gitlab
       # ```
       # client.{{method.id}}("/path", { "key" => "value"})
       # ```
-      def {{method.id}}(uri : String, params : Hash? = nil) : Response
+      def {{method.id}}(uri : String, params : Hash? = nil) : HTTP::Response
         request({{method}}, uri, params)
       end
     {% end %}
@@ -31,7 +31,7 @@ module Gitlab
     # ```
     # client.request({{method}}, "/path", { "key" => "value"})
     # ```
-    def request(method, uri, params : Hash? = nil) : Response
+    def request(method, uri, params : Hash? = nil) : HTTP::Response
       HTTP.request(method, build_url(uri), default_options(uri, params))
     end
 
@@ -42,7 +42,7 @@ module Gitlab
 
     # Sets a Auth(PRIVATE-TOKEN or Authorization) header and query params for requests
     # Raise an [MissingCredentials] exception if token is not set.
-    private def default_options(url, params : Hash? = nil) : Hash
+    private def default_options(url, params : Hash? = nil)
       return if url.includes?("/session")
 
       error_message = "Please provide a private_token or auth_token for user"
