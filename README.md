@@ -33,8 +33,9 @@ endpoint = "http://domain.com/api/v3"
 token = "<private_token>"
 
 begin
-  request = Gitlab::Request.new(endpoint, token)
-  pp request.body
+  g = Gitlab.client(endpoint, token)
+  pp g.users({ "per_page" => "2" })
+  pp g.user(2)
 rescue ex
   pp ex.message
 end
@@ -52,6 +53,28 @@ end
 ### Gitlab
 
 - [ ] Users
+  - [x] List Users - `users`
+  - [x] Single user - `user(user_id)`
+  - [x] User creation - `create_user`
+  - [x] User modification - `edit_user`
+  - [x] User deletion - `delete_user`
+  - [x] Current user - `user`
+  - [x] Block user - `block_user(user_id)`
+  - [x] Unblock user - `unblock_user(user_id)`
+  - [ ] List SSH keys - `ssh_keys`
+  - [ ] List SSH keys for user - `ssh_keys(user_id)`
+  - [ ] Single SSH key `ssh_key(ssh_key_id)`
+  - [ ] Add SSH key - `create_ssh_key`
+  - [ ] Add SSH key for user - `create_ssh_key(user_id)`
+  - [ ] Delete SSH key for current user - `delete_ssh_key`
+  - [ ] Delete SSH key for given user - `delete_ssh_key(user_id)`
+  - [ ] List emails - `emails`
+  - [ ] List emails for user - `emails(user_id)`
+  - [ ] Single email - `email`
+  - [ ] Add email - `create_email`
+  - [ ] Add email for user - `create_email(user_id)`
+  - [ ] Delete email for current user - `delete_email`
+  - [ ] Delete email for given user - `delete_email(user_id)`
 - [ ] Session
 - [ ] Projects (including setting Webhooks)
 - [ ] Project Snippets

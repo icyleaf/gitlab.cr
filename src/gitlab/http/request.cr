@@ -19,6 +19,16 @@ module Gitlab
       # Return a Gitlab::Response by sending the target http request
       #
       # ```
+      # request.post("/path")
+      # ```
+      def post(uri) : HTTP::Response
+        response = ::HTTP::Client.post_form uri.to_s, @default_options.params.to_s, @default_options.headers
+        Response.parse(response, "POST", uri)
+      end
+
+      # Return a Gitlab::Response by sending the target http request
+      #
+      # ```
       # request.get("/path")
       # ```
       def get(uri) : HTTP::Response
@@ -30,23 +40,12 @@ module Gitlab
       # Return a Gitlab::Response by sending the target http request
       #
       # ```
-      # request.post("/path")
-      # ```
-      def post(uri) : HTTP::Response
-        response = ::HTTP::Client.post_form uri.to_s, @default_options.params.to_s, @default_options.headers
-        Response.parse(response, "POST", uri)
-      end
-
-
-      # Return a Gitlab::Response by sending the target http request
-      #
-      # ```
       # request.put("/path")
       # ```
       def put(uri) : HTTP::Response
         uri.query = [uri.query, @default_options.params].join("&") if @default_options.params
-        response = ::HTTP::Client.put uri.to_s, @default_options.headers
-        Response.parse(response, "GET", uri)
+        response = ::HTTP::Client.put uri, @default_options.headers
+        Response.parse(response, "PUT", uri)
       end
 
       # Return a Gitlab::Response by sending the target http request
@@ -56,8 +55,8 @@ module Gitlab
       # ```
       def delete(uri) : HTTP::Response
         uri.query = [uri.query, @default_options.params].join("&") if @default_options.params
-        response = ::HTTP::Client.get uri.to_s, @default_options.headers
-        Response.parse(response, "GET", uri)
+        response = ::HTTP::Client.delete uri.to_s, @default_options.headers
+        Response.parse(response, "DELETE", uri)
       end
 
       # Return a Gitlab::Response by sending the target http request
