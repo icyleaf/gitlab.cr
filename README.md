@@ -6,6 +6,8 @@
 
 Gitlab.cr is a [GitLab API][gitlab-api-link] wrapper writes with [Crystal][crystal-link] Language. Inspired from [gitlab][gitlab-gem-link] gem for ruby version.
 
+API Document: http://icyleaf.github.io/gitlab.cr/
+
 ## Status
 
 Learning Crystal language, and **WORKIONG IN PROCESS**, please DO NOT use it in production environment.
