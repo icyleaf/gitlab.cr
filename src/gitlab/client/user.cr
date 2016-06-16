@@ -88,7 +88,7 @@ module Gitlab
       # client.edit_user(4, { "email" => "icy.leaf@kaifeng.cn", "projects_limit" => "100" })
       # ```
       def edit_user(user_id : Int32, params : Hash = {} of String => String)
-        put("/users/#{user_id.to_s}", params)
+        put("/users/#{user_id.to_s}", params).body
       end
 
       # Deletes a user.
@@ -100,7 +100,7 @@ module Gitlab
       # client.delete_user(1)
       # ```
       def delete_user(user_id : Int32)
-        delete("/users/#{user_id.to_s}")
+        delete("/users/#{user_id.to_s}").body
       end
 
       # Blocks the specified user.
@@ -114,7 +114,7 @@ module Gitlab
       # client.block_user(4)
       # ```
       def block_user(user_id : Int32)
-        put("/users/#{user_id.to_s}/block")
+        put("/users/#{user_id.to_s}/block").body
       end
 
       # Unblocks the specified user.
@@ -128,7 +128,41 @@ module Gitlab
       # client.unblock_user(4)
       # ```
       def unblock_user(user_id : Int32)
-        put("/users/#{user_id.to_s}/unblock")
+        put("/users/#{user_id.to_s}/unblock").body
+      end
+
+      # Gets a list of current user's SSH keys.
+      #
+      # - return [Array<Hash>]
+      #
+      # ```
+      # client.ssh_keys
+      # ```
+      def ssh_keys
+        get("/user/keys").body
+      end
+
+      # Gets a list of a user's SSH keys.
+      #
+      # - return [Array<Hash>]
+      #
+      # ```
+      # client.ssh_keys(4)
+      # ```
+      def ssh_keys(user_id : Int32)
+        get("/users/#{user_id.to_s}/keys").body
+      end
+
+      # Gets information about SSH key.
+      #
+      # - param  [Integer] id The ID of a user's SSH key.
+      # - return [Gitlab::ObjectifiedHash]
+      #
+      # ```
+      # client.ssh_key(1)
+      # ```
+      def ssh_key(ssh_key_id : Int32)
+        get("/user/keys/#{ssh_key_id.to_s}").body
       end
     end
   end

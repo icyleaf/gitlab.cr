@@ -61,9 +61,9 @@ end
   - [x] Current user - `user`
   - [x] Block user - `block_user(user_id)`
   - [x] Unblock user - `unblock_user(user_id)`
-  - [ ] List SSH keys - `ssh_keys`
-  - [ ] List SSH keys for user - `ssh_keys(user_id)`
-  - [ ] Single SSH key `ssh_key(ssh_key_id)`
+  - [x] List SSH keys - `ssh_keys`
+  - [x] List SSH keys for user - `ssh_keys(user_id)`
+  - [x] Single SSH key `ssh_key(ssh_key_id)`
   - [ ] Add SSH key - `create_ssh_key`
   - [ ] Add SSH key for user - `create_ssh_key(user_id)`
   - [ ] Delete SSH key for current user - `delete_ssh_key`
