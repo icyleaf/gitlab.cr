@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+crystal docs
+mv doc ../tmp_gitlab_cr_doc
+git checkout gh-pages
+rm -rf Gitlab
+rm -rf js
+rm -rf css
+mv ../tmp_gitlab_cr_doc/* .
+git add -A
+git commit -am 'Updated docs'
+git push origin gh-pages
+git checkout master
