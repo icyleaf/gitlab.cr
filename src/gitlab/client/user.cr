@@ -16,19 +16,7 @@ module Gitlab
       # client.users({ "per_page" => "10", "page" => "2" })
       # ```
       def users(params : Hash? = nil)
-        get("users", params).body
-      end
-
-      # Gets information about a user.
-      #
-      # - param  [Int32] id The ID of a user.
-      # - return [Hash]
-      #
-      # ```
-      # client.user(2) # Get user information by ID = 2
-      # ```
-      def user(id : Int32 = nil)
-        get("/users/#{id.to_s}").body
+        get("/users", params).body
       end
 
       # Gets information about current user.
@@ -40,6 +28,18 @@ module Gitlab
       # ```
       def user
         get("/user").body
+      end
+
+      # Gets information about a user.
+      #
+      # - param  [Int32] id The ID of a user.
+      # - return [Hash]
+      #
+      # ```
+      # client.user(2) # Get user information by ID = 2
+      # ```
+      def user(id : Int32)
+        get("/users/#{id.to_s}").body
       end
 
       # Creates a new user.
