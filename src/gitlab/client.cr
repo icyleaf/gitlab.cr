@@ -6,42 +6,35 @@ module Gitlab
     def initialize(@endpoint : String, @token : String)
     end
 
-    # TODO: HTTP request methods
+    {% for method in [:get, :post, :put, :delete] %}
+      def {{method.id}}(uri : String, params : Hash? = nil)
+        request({{method}}, uri, params)
+      end
+    {% end %}
 
-    # def get(url, options : HTTP::Options = nil)
-    #   HTTP.request(:get, url, default_options(url, options))
-    # end
+    def request(method, uri, params : Hash? = nil)
+      HTTP.request(method, build_url(uri), default_options(uri, params))
+    end
 
-    #
-    # private def post(url, params : String|Hash = nil)
-    #   @request.exec(:post, uri)
-    # end
-    #
-    # private def put(url, params : Params? = nil)
-    #   @request.exec(:put, uri)
-    # end
-    #
-    # private def delete(url, params : Params? = nil)
-    #   @request.exec(:delete, uri)
-    # end
+    private def build_url(uri)
+      File.join(@endpoint, uri)
+    end
 
-    private def default_options(url, options : HTTP::Options? = nil)
+    private def default_options(url, params : Hash? = nil)
+      return if url.includes?("/session")
+
       error_message = "Please provide a private_token or auth_token for user"
       raise MissingCredentials.new(error_message) unless @token
 
-      options = HTTP::Options.new({} of String => String) unless options
-
-      if url && url.includes?("/session")
-        options
+      headers = if @token.size <= 20
+        { "PRIVATE-TOKEN" => @token }
       else
-        headers = if @token.size <= 20
-          { "PRIVATE-TOKEN" => @token }
-        else
-          { "Authorization" => "Bearer #{@token}" }
-        end
+        { "Authorization" => "Bearer #{@token}" }
+      end
 
-        new_options = { "headers" => headers }
-        options.headers.merge(new_options)
+      Hash(String, Hash(String, String)).new.tap do |hash|
+        hash["headers"] = headers
+        hash["params"] = params if params
       end
     end
 

@@ -9,6 +9,7 @@ module Gitlab
   class Error < Exception; end
   ## Client Errors
   class NotMatchTypeError < Error; end
+  class NotAllowRequestMethodError < Error; end
   ## Gitlab API Errors
   class MissingCredentials < Error; end
   class BadRequest < Error; end

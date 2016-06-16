@@ -6,17 +6,12 @@ module Gitlab
     module Chainable
 
       {% for method in [:get, :post, :put, :delete] %}
-        def {{method.id}}(url : String, options = {} of String => String|Hash)
+        def {{method.id}}(url : String, options : Hash? = nil)
           request({{method}}, url, options)
         end
       {% end %}
 
-
-      def request(method : Symbol, url : String, options : Options? = nil)
-        Gitlab::HTTP::Request.new(options).request(method, url)
-      end
-
-      def request(method : Symbol, url : String, options : Hash = {} of String => String|Hash)
+      def request(method : Symbol, url : String, options : Hash? = nil)
         Gitlab::HTTP::Request.new(options).request(method, url)
       end
     end
@@ -26,11 +21,7 @@ module Gitlab
     class Request
       @default_options : Options
 
-      def initialize(options : Options = nil)
-        @default_options = options ? options : Options.new({} of String => String)
-      end
-
-      def initialize(options : Hash = {} of String => String|Hash)
+      def initialize(options : Hash? = nil)
         @default_options = Options.new(options)
       end
 
@@ -45,18 +36,31 @@ module Gitlab
         Response.parse(response, "POST", uri)
       end
 
+      def put(uri)
+        uri.query = [uri.query, @default_options.params].join("&") if @default_options.params
+        response = ::HTTP::Client.put uri.to_s, @default_options.headers
+        Response.parse(response, "GET", uri)
+      end
+
+      def delete(uri)
+        uri.query = [uri.query, @default_options.params].join("&") if @default_options.params
+        response = ::HTTP::Client.get uri.to_s, @default_options.headers
+        Response.parse(response, "GET", uri)
+      end
+
       def request(method, url)
         uri = URI.parse(url)
-
-        pp method
-        pp uri.to_s
-        pp @default_options
-
         case method
         when :get
           get(uri)
         when :post
           post(uri)
+        when :put
+          put(uri)
+        when :delete
+          delete(uri)
+        else
+          raise NotAllowRequestMethodError.new("GET/PUT/POST/DELETE is allowed")
         end
       end
     end
@@ -125,16 +129,18 @@ module Gitlab
     class Options
       USER_AGENT = "Gitlab.cr v#{VERSION}"
 
-      @headers : HTTP::Headers
+      @headers : HTTP::Headers?
       @params : HTTP::Params?
       @body : String?
 
       property :headers, :params, :body
 
-      def initialize(options : Hash = {} of String => String|Hash)
-        @headers = parse_headers(options)
-        @params = parse_params(options)
-        @body = parse_body(options)
+      def initialize(options : Hash? = nil)
+        if options
+          @headers = parse_headers(options)
+          @params = parse_params(options)
+          @body = parse_body(options)
+        end
       end
 
       private def parse_params(options)

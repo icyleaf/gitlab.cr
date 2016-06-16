@@ -9,11 +9,11 @@ module Gitlab
       #   client.users
       #
       # @param  [Hash] options A customizable set of options.
-      # @option options [Integer] :page The page number.
-      # @option options [Integer] :per_page The number of results per page.
+      # @option options [String] :page The page number.
+      # @option options [String] :per_page The number of results per page.
       # @return [Array<Hash>]
-      def users
-        get("users").body
+      def users(params : Hash? = nil)
+        get("users", params).body
       end
 
       # Gets information about a user.
