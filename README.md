@@ -1,5 +1,9 @@
 # 💎 Gitlab.cr
 
+[![Develop Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
+[![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
+[![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg?branch=master)](https://travis-ci.org/icyleaf/gitlab.cr)
+
 Gitlab.cr is a [GitLab API][gitlab-api-link] wrapper writes with [Crystal][crystal-link] Language. Inspired from [gitlab][gitlab-gem-link] gem for ruby version.
 
 ## Status
@@ -40,8 +44,8 @@ end
 
 - [x] Http Client
 - [x] Exceptions
-- [ ] Gitlab wrapper
-- [ ] Authentication
+- [x] Gitlab wrapper
+- [x] Authentication
 
 ### Gitlab
 
