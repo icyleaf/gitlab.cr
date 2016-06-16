@@ -4,7 +4,6 @@ require "json"
 module Gitlab
   module HTTP
     module Chainable
-
       {% for method in [:get, :post, :put, :delete] %}
         def {{method.id}}(url : String, options : Hash? = nil)
           request({{method}}, url, options)
@@ -80,7 +79,7 @@ module Gitlab
         @body = parse_body(response)
       end
 
-      def self.parse(response, method = nil, url  = nil)
+      def self.parse(response, method = nil, url = nil)
         Response.new(response, method, url)
       end
 

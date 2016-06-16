@@ -3,6 +3,7 @@ require "./client/user"
 module Gitlab
   class Client
     getter :endpoint, :token
+
     def initialize(@endpoint : String, @token : String)
     end
 
@@ -27,10 +28,10 @@ module Gitlab
       raise MissingCredentials.new(error_message) unless @token
 
       headers = if @token.size <= 20
-        { "PRIVATE-TOKEN" => @token }
-      else
-        { "Authorization" => "Bearer #{@token}" }
-      end
+                  {"PRIVATE-TOKEN" => @token}
+                else
+                  {"Authorization" => "Bearer #{@token}"}
+                end
 
       Hash(String, Hash(String, String)).new.tap do |hash|
         hash["headers"] = headers

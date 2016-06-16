@@ -39,19 +39,19 @@ module Gitlab
       # @param  [String] email The email of a user.
       # @param  [String] password The password of a user.
       # @param  [String] username The username of a user.
-      # @param  [Hash] options A customizable set of options.
-      # @option options [String] :name The name of a user. Defaults to email.
-      # @option options [String] :skype The skype of a user.
-      # @option options [String] :linkedin The linkedin of a user.
-      # @option options [String] :twitter The twitter of a user.
-      # @option options [Integer] :projects_limit The limit of projects for a user.
+      # @param  [Hash] params A customizable set of options.
+      # @option params [String] :name The name of a user. Defaults to email.
+      # @option params [String] :skype The skype of a user.
+      # @option params [String] :linkedin The linkedin of a user.
+      # @option params [String] :twitter The twitter of a user.
+      # @option params [Integer] :projects_limit The limit of projects for a user.
       # @return [Hash] Information about created user.
-      def create_user(email : String, password : String, username : String, options : Hash = {} of String => String)
+      def create_user(email : String, password : String, username : String, params : Hash = {} of String => String)
         params = {
-          "email" => email,
+          "email"    => email,
           "password" => password,
           "username" => username,
-        }.merge(options)
+        }.merge(params)
 
         post("/users", params: params)
       end
