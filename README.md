@@ -1,13 +1,15 @@
 # 💎 Gitlab.cr
 
-[![Develop Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE)
+[![Develop Status](https://img.shields.io/badge/status-development-green.svg)](https://github.com/icyleaf/gitlab.cr)
+[![Dependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg)](https://travis-ci.org/icyleaf/gitlab.cr)
 
 Gitlab.cr is a [GitLab API](http://docs.gitlab.com/ce/api/README.html) wrapper writes with [Crystal](http://crystal-lang.org/) Language.
 Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version.
 
-> Docs Generated in **latest commit**.
+Docs Generated in **latest commit**.
 
 ## Status
 
@@ -31,7 +33,7 @@ dependencies:
 require "gitlab"
 
 endpoint = "http://domain.com/api/v3"
-token = "<private_token>"
+token = "<token>"
 
 begin
   g = Gitlab.client(endpoint, token)
@@ -99,7 +101,7 @@ More API check here: http://icyleaf.github.io/gitlab.cr/
 
 ## Contributing
 
-1. Fork it ( https://github.com/icyleaf/gitlab.cr/fork )
+1. [Fork it](https://github.com/icyleaf/gitlab.cr/fork)
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
