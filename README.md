@@ -82,6 +82,45 @@ More API check here: http://icyleaf.github.io/gitlab.cr/
   - [x] Delete email for given user - `delete_email(user_id)`
 - [ ] Session
 - [ ] Projects (including setting Webhooks)
+  - [ ] List projects - `projects`
+    - [x] List owned projects - `owned_projects`
+    - [x] List starred projects - `starred_projects`
+    - [x] List ALL projects - `all_projects`
+    - [ ] Get single project - `project`
+    - [ ] Get project events - `project_events`
+    - [ ] Create project - `create_project`
+    - [ ] Create project for user - `create_project(user_id)`
+    - [ ] Edit project - `edit_project`
+    - [ ] Fork project - `fork_project`
+    - [ ] Star a project - `star_project`
+    - [ ] Unstar a project - `unstar_project`
+    - [ ] Archive a project - `archive_project`
+    - [ ] Unarchive a project - `unarchive_project`
+    - [ ] Remove project - `delete_project`
+  - [ ] Uploads
+    - [ ] Upload a file
+  - [ ] Team members
+    - [ ] List project team members
+    - [ ] Get project team member
+    - [ ] Add project team member
+    - [ ] Edit project team member
+    - [ ] Remove project team member
+    - [ ] Share project with group
+  - [ ] Hooks
+    - [ ] List project hooks
+    - [ ] Get project hook
+    - [ ] Add project hook
+    - [ ] Edit project hook
+    - [ ] Delete project hook
+  - [ ] Branches
+    - [ ] List branches
+    - [ ] List single branch
+    - [ ] Protect single branch
+    - [ ] Unprotect single branch
+  - [ ] Admin fork relation
+    - [ ] Create a forked from/to relation between existing projects.
+    - [ ] Delete an existing forked from relationship
+  - [ ] Search for projects by name
 - [ ] Project Snippets
 - [ ] Services
 - [ ] Repositories

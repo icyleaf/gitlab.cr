@@ -62,5 +62,6 @@ module Gitlab
 
     include User
     include Group
+    include Project
   end
 end
