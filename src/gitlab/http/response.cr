@@ -23,6 +23,10 @@ module Gitlab
       # Gitlab::HTTP::Response.new(<HTTP::Client::Response>, "post", "http://domain.com/api/hello/world")
       # ```
       def initialize(response : ::HTTP::Client::Response, @method, @url)
+
+        # TODO: remove debug code
+        pp response
+
         validate(response)
 
         @code = response.status_code
@@ -53,6 +57,8 @@ module Gitlab
       #
       # - **text/html**: `Error::JSONParseError`
       def validate(response)
+        raise Error::JSONParseError.new(error_message(response, ERROR_TYPE::NonJsonError), response) if response.headers["Content-Type"].includes?("text/html")
+
         case response.status_code
         when 400 then raise Error::BadRequest.new(error_message(response), response)
         when 401 then raise Error::Unauthorized.new(error_message(response), response)
@@ -65,8 +71,6 @@ module Gitlab
         when 502 then raise Error::BadGateway.new(error_message(response), response)
         when 503 then raise Error::ServiceUnavailable.new(error_message(response), response)
         end
-
-        raise Error::JSONParseError.new(error_message(response, ERROR_TYPE::NonJsonError), response) if response.headers["Content-Type"] == "text/html; charset=utf-8"
       end
 
       private def parse_body(response)
