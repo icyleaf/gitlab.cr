@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../js/doc.js"></script>
-  <title>Gitlab::Error::InternalServerError - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::Error::APIError - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -55,7 +55,7 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/APIError" data-name="gitlab::error::apierror">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/APIError" data-name="gitlab::error::apierror">
       <a href="../../Gitlab/Error/APIError.html">APIError</a>
       
     </li>
@@ -85,7 +85,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
       <a href="../../Gitlab/Error/InternalServerError.html">InternalServerError</a>
       
     </li>
@@ -192,12 +192,12 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Gitlab::Error::InternalServerError
+  <span class="kind">class</span> Gitlab::Error::APIError
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Gitlab/Error/InternalServerError.html">Gitlab::Error::InternalServerError</a></li><li class="superclass"><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></li><li class="superclass"><a href="../../Gitlab/Error/Error.html">Gitlab::Error::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></li><li class="superclass"><a href="../../Gitlab/Error/Error.html">Gitlab::Error::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -209,6 +209,35 @@
 
 
 
+
+  <h2>Direct Known Subclasses</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Gitlab/Error/BadGateway.html">Gitlab::Error::BadGateway</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/BadRequest.html">Gitlab::Error::BadRequest</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/Conflict.html">Gitlab::Error::Conflict</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/Forbidden.html">Gitlab::Error::Forbidden</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/InternalServerError.html">Gitlab::Error::InternalServerError</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/JSONParseError.html">Gitlab::Error::JSONParseError</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/MethodNotAllowed.html">Gitlab::Error::MethodNotAllowed</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/MissingCredentials.html">Gitlab::Error::MissingCredentials</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/NotFound.html">Gitlab::Error::NotFound</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/ServiceUnavailable.html">Gitlab::Error::ServiceUnavailable</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/Unauthorized.html">Gitlab::Error::Unauthorized</a></li>
+  
+    <li class="other-type"><a href="../../Gitlab/Error/Unprocessable.html">Gitlab::Error::Unprocessable</a></li>
+  
+  </ul>
 
 
 
@@ -218,7 +247,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/a156e25d6729ca4a24d4bff0b35e3ede6cef82ba/src/gitlab/error.cr#L29" target="_blank">gitlab/error.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/a156e25d6729ca4a24d4bff0b35e3ede6cef82ba/src/gitlab/error.cr#L14" target="_blank">gitlab/error.cr</a>
     
     <br/>
   
@@ -227,6 +256,16 @@
 
 
 
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28message%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cresponse%3AHTTP%3A%3AClient%3A%3AResponse%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-class-method" class="signature"><strong>.new</strong>(message : String | Nil = <span class="n">nil</span>, response : HTTP::Client::Response | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+  </ul>
+
 
 
 
@@ -234,22 +273,6 @@
 
 
 <div class="methods-inherited">
-  
-    
-
-
-    
-
-  <h3>Class methods inherited from class <code><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></code></h3>
-  
-  
-    <a href="../../Gitlab/Error/APIError.html#new%28message%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cresponse%3AHTTP%3A%3AClient%3A%3AResponse%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-class-method" class="tooltip">
-      <span>new(message : String | Nil = <span class="n">nil</span>, response : HTTP::Client::Response | Nil = <span class="n">nil</span>)</span>
-    new</a>
-    
-  
-
-
   
     
 
@@ -281,6 +304,25 @@
   
 </div>
 
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="new&#40;message:String|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;,response:HTTP::Client::Response|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(message : String | Nil = <span class="n">nil</span>, response : HTTP::Client::Response | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28message%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cresponse%3AHTTP%3A%3AClient%3A%3AResponse%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a156e25d6729ca4a24d4bff0b35e3ede6cef82ba/src/gitlab/error.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
