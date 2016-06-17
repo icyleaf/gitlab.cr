@@ -34,9 +34,9 @@ module Gitlab
         Response.new(response, method, url)
       end
 
-      # Validate http response status code
+      # Validate http response status code and content type
       #
-      # Raise an Exception if status code >= 400
+      # Raise an exception if status code >= 400
       #
       # - `400`: [Error::BadRequest]
       # - `401`: [Error::Unauthorized]
@@ -48,6 +48,10 @@ module Gitlab
       # - `500`: [Error::InternalServerError]
       # - `502`: [Error::BadGateway]
       # - `503`: [Error::ServiceUnavailable]
+      #
+      # Raise an exception if content type is not json format
+      #
+      # - `text/html`: [Error::JSONParseError]
       def validate(response)
         case response.status_code
         when 400 then raise Error::BadRequest.new error_message(response)
