@@ -2,7 +2,7 @@ module Gitlab
   class Client
     # Defines methods related to users.
     #
-    # See http://docs.gitlab.com/ce/api/users.html
+    # See [http://docs.gitlab.com/ce/api/users.html]9http://docs.gitlab.com/ce/api/users.html
     module User
       # Gets a list of users.
       #
@@ -75,13 +75,13 @@ module Gitlab
       #
       # - param  [Int32] id The ID of a user.
       # - param  [Hash] options A customizable set of options.
-      # - option options [String] :email The email of a user.
-      # - option options [String] :password The password of a user.
-      # - option options [String] :name The name of a user. Defaults to email.
-      # - option options [String] :skype The skype of a user.
-      # - option options [String] :linkedin The linkedin of a user.
-      # - option options [String] :twitter The twitter of a user.
-      # - option options [String] :projects_limit The limit of projects for a user.
+      # - option params [String] :email The email of a user.
+      # - option params [String] :password The password of a user.
+      # - option params [String] :name The name of a user. Defaults to email.
+      # - option params [String] :skype The skype of a user.
+      # - option params [String] :linkedin The linkedin of a user.
+      # - option params [String] :twitter The twitter of a user.
+      # - option params [String] :projects_limit The limit of projects for a user.
       # - return [Hash] Information about edit user.
       #
       # ```
@@ -254,8 +254,8 @@ module Gitlab
 
       # Creates a new email for current user.
       #
-      # @param  [String] email Email address
-      # @return [Hash]
+      # - params  [String] email Email address
+      # - return [Hash]
       #
       # ```
       # client.add_email('email@example.com')
@@ -266,9 +266,9 @@ module Gitlab
 
       # Creates a new email for a user.
       #
-      # @param  [Int32] user_id The ID of a user.
-      # @param  [String] email Email address
-      # @return [Hash]
+      # - params  [Int32] user_id The ID of a user.
+      # - params  [String] email Email address
+      # - return [Hash]
       #
       # ```
       # client.add_email('email@example.com', 2)
@@ -279,8 +279,8 @@ module Gitlab
 
       # Delete email for current user
       #
-      # @param  [Int32] email_id Email address ID
-      # @return [Hash]
+      # - params  [Int32] email_id Email address ID
+      # - return [Hash]
       #
       # ```
       # client.delete_email(2)
@@ -291,9 +291,9 @@ module Gitlab
 
       # Delete email for current user
       #
-      # @param  [Int32] user_id The ID of a user.
-      # @param  [Int32] email_id Email address ID
-      # @return [Hash]
+      # - params  [Int32] user_id The ID of a user.
+      # - params  [Int32] email_id Email address ID
+      # - return [Hash]
       #
       # ```
       # client.delete_email(1, 2)

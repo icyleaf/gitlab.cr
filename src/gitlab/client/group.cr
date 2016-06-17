@@ -2,7 +2,7 @@ module Gitlab
   class Client
     # Defines methods related to group.
     #
-    # See http://docs.gitlab.com/ce/api/groups.html
+    # See [http://docs.gitlab.com/ce/api/groups.html](http://docs.gitlab.com/ce/api/groups.html)
     module Group
       # Gets a list of groups.
       #
@@ -39,7 +39,7 @@ module Gitlab
       # client.group_projects(1, { "order_by" => "last_activity_at", "sort" => "desc"})
       # ```
       def group_projects(group_id : Int32, params : Hash? = nil)
-        get("/groups/#{group_id.to_s}/projects", params)
+        get("/groups/#{group_id.to_s}/projects", params).body
       end
 
       # Gets details of a group.
@@ -109,8 +109,8 @@ module Gitlab
       #
       # - param  [String] query A string to search for in group names and paths.
       # - param  [Hash] options A customizable set of options.
-      # - option options [String] :per_page Number of projects to return per page
-      # - option options [String] :page The page to retrieve
+      # - option params [String] :per_page Number of projects to return per page
+      # - option params [String] :page The page to retrieve
       # - return [Array<Hash>]
       #
       # ```
@@ -119,7 +119,7 @@ module Gitlab
       # ```
       def group_search(query, params : Hash = {} of String => String)
         params["search"] = search
-        get("/groups", query: options)
+        get("/groups", query: options).body
       end
 
 
@@ -132,7 +132,7 @@ module Gitlab
       #   Gitlab.transfer_project_to_group(3, 50)
       # ```
       def transfer_project_to_group(group_id, project_id)
-        post("/groups/#{group_id.to_s}/projects/#{project_id.to_s}")
+        post("/groups/#{group_id.to_s}/projects/#{project_id.to_s}").body
       end
 
       # Get a list of group members.
@@ -162,7 +162,10 @@ module Gitlab
       # client.add_group_member(1, 2, 40)
       # ```
       def add_group_member(group_id : Int32, user_id : Int32, access_level)
-        post("/groups/#{group_id.to_s}/members", { "user_id" => user_id.to_s, "access_level" => access_level })
+        post("/groups/#{group_id.to_s}/members", {
+          "user_id" => user_id.to_s,
+          "access_level" => access_level
+        }).body
       end
 
       # Edit a user of a group.
@@ -176,7 +179,10 @@ module Gitlab
       # client.edit_group_member(1, 2, 40)
       # ```
       def edit_group_member(group_id : Int32, user_id : Int32, access_level)
-        put("/groups/#{group_id}/members/#{user_id}", { "user_id" => user_id.to_s, "access_level" => access_level })
+        put("/groups/#{group_id}/members/#{user_id}", {
+          "user_id" => user_id.to_s,
+          "access_level" => access_level
+        }).body
       end
 
       # Removes user from user group.
@@ -189,7 +195,7 @@ module Gitlab
       # client.remove_group_member(1, 2)
       # ```
       def remove_group_member(group_id : Int32, user_id : Int32)
-        delete("/groups/#{group_id.to_s}/members/#{user_id.to_s}")
+        delete("/groups/#{group_id.to_s}/members/#{user_id.to_s}").body
       end
 
       private def build_group_params(name, path, description = nil, visibility_level : Int32? = nil)

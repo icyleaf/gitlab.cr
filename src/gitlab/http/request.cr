@@ -63,7 +63,7 @@ module Gitlab
       #
       # Allows Methods: `GET`/`PUT`/`POST`/`DELETE`
       #
-      # Raise an [Error::NotAllowRequestMethodError] exception with other method
+      # Raise an `Error::NotAllowRequestMethodError` exception with other method
       #
       # ```
       # request.request(:get, "/path")

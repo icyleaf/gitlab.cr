@@ -26,7 +26,7 @@ module Gitlab
       end
     {% end %}
 
-    # Return a Gitlab::Response by sending the target http request
+    # Return a `Gitlab::Response` by sending the target http request
     #
     # ```
     # client.request({{method}}, "/path", { "key" => "value"})
@@ -41,7 +41,7 @@ module Gitlab
     end
 
     # Sets a Auth(PRIVATE-TOKEN or Authorization) header and query params for requests
-    # Raise an [MissingCredentials] exception if token is not set.
+    # Raise an `Error::MissingCredentials` exception if token is not set.
     private def default_options(url, params : Hash? = nil)
       return if url.includes?("/session")
 

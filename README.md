@@ -41,6 +41,10 @@ begin
   pp g.user(2)
 rescue ex
   pp ex.message
+  # Here has one variable "response" instance of HTTP::Response
+  # Friendly for developer to debug and control expressions.
+  pp ex.response.status_code
+  pp ex.response.body
 end
 ```
 
@@ -82,21 +86,21 @@ More API check here: http://icyleaf.github.io/gitlab.cr/
   - [x] Delete email for given user - `delete_email(user_id)`
 - [ ] Session
 - [ ] Projects (including setting Webhooks)
-  - [ ] List projects - `projects`
+  - [x] List projects - `projects`
     - [x] List owned projects - `owned_projects`
     - [x] List starred projects - `starred_projects`
     - [x] List ALL projects - `all_projects`
-    - [ ] Get single project - `project`
-    - [ ] Get project events - `project_events`
-    - [ ] Create project - `create_project`
-    - [ ] Create project for user - `create_project(user_id)`
-    - [ ] Edit project - `edit_project`
-    - [ ] Fork project - `fork_project`
-    - [ ] Star a project - `star_project`
-    - [ ] Unstar a project - `unstar_project`
-    - [ ] Archive a project - `archive_project`
-    - [ ] Unarchive a project - `unarchive_project`
-    - [ ] Remove project - `delete_project`
+    - [x] Get single project - `project`
+    - [x] Get project events - `project_events`
+    - [x] Create project - `create_project`
+    - [x] Create project for user - `create_project(user_id)`
+    - [x] Edit project - `edit_project`
+    - [x] Fork project - `fork_project`
+    - [x] Star a project - `star_project`
+    - [x] Unstar a project - `unstar_project`
+    - [x] Archive a project - `archive_project`
+    - [x] Unarchive a project - `unarchive_project`
+    - [x] Remove project - `delete_project`
   - [ ] Uploads
     - [ ] Upload a file
   - [ ] Team members

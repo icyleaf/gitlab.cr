@@ -15,7 +15,7 @@ module Gitlab
         end
       {% end %}
 
-      # Return a Gitlab::Response by sending the target http request
+      # Return a `Gitlab::Response` by sending the target http request
       #
       # ```
       # Gitlab::HTTP..request({{method}}, "/path", { "key" => "value"})
