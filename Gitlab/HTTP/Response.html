@@ -35,6 +35,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Project" data-name="gitlab::client::project">
+      <a href="../../Gitlab/Client/Project.html">Project</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="../../Gitlab/Client/User.html">User</a>
       
@@ -212,7 +217,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/http/response.cr#L7" target="_blank">gitlab/http/response.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/http/response.cr#L7" target="_blank">gitlab/http/response.cr</a>
     
     <br/>
   
@@ -258,7 +263,7 @@
       <li class="entry-summary">
         <a href="#validate%28response%29-instance-method" class="signature"><strong>#validate</strong>(response)</a>
         
-          <div class="summary"><p>Validate http response status code</p></div>
+          <div class="summary"><p>Validate http response status code and content type</p></div>
         
       </li>
     
@@ -302,7 +307,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/http/response.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/http/response.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -322,7 +327,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/http/response.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/http/response.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -343,7 +348,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/http/response.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/http/response.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -359,7 +364,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/http/response.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/http/response.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -372,16 +377,20 @@
         <a class="method-permalink" href="#validate%28response%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Validate http response status code</p>
+        <div class="doc"><p>Validate http response status code and content type</p>
 
-<p>Raise an Exception if status code >= 400</p>
+<p>Raise an exception if status code >= 400</p>
 
-<ul><li><code>400</code>: [Error::BadRequest]</li><li><code>401</code>: [Error::Unauthorized]</li><li><code>403</code>: [Error::Forbidden]</li><li><code>404</code>: [Error::NotFound]</li><li><code>405</code>: [Error::MethodNotAllowed]</li><li><code>409</code>: [Error::Conflict]</li><li><code>422</code>: [Error::Unprocessable]</li><li><code>500</code>: [Error::InternalServerError]</li><li><code>502</code>: [Error::BadGateway]</li><li><code>503</code>: [Error::ServiceUnavailable]</li></ul></div>
+<ul><li><code>400</code>: [Error::BadRequest]</li><li><code>401</code>: [Error::Unauthorized]</li><li><code>403</code>: [Error::Forbidden]</li><li><code>404</code>: [Error::NotFound]</li><li><code>405</code>: [Error::MethodNotAllowed]</li><li><code>409</code>: [Error::Conflict]</li><li><code>422</code>: [Error::Unprocessable]</li><li><code>500</code>: [Error::InternalServerError]</li><li><code>502</code>: [Error::BadGateway]</li><li><code>503</code>: [Error::ServiceUnavailable]</li></ul>
+
+<p>Raise an exception if content type is not json format</p>
+
+<ul><li><code>text/html</code>: [Error::JSONParseError]</li></ul></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/http/response.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/http/response.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>

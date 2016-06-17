@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Gitlab::Client::Project - github.com/icyleaf/gitlab.cr</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
+      <a href="../../Gitlab.html">Gitlab</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+      <a href="../../Gitlab/Client.html">Client</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
+      <a href="../../Gitlab/Client/Group.html">Group</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Project" data-name="gitlab::client::project">
+      <a href="../../Gitlab/Client/Project.html">Project</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
+      <a href="../../Gitlab/Client/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
+      <a href="../../Gitlab/Error.html">Error</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/BadGateway" data-name="gitlab::error::badgateway">
+      <a href="../../Gitlab/Error/BadGateway.html">BadGateway</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/BadRequest" data-name="gitlab::error::badrequest">
+      <a href="../../Gitlab/Error/BadRequest.html">BadRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Conflict" data-name="gitlab::error::conflict">
+      <a href="../../Gitlab/Error/Conflict.html">Conflict</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Error" data-name="gitlab::error::error">
+      <a href="../../Gitlab/Error/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Forbidden" data-name="gitlab::error::forbidden">
+      <a href="../../Gitlab/Error/Forbidden.html">Forbidden</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
+      <a href="../../Gitlab/Error/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
+      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
+      <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MissingCredentials" data-name="gitlab::error::missingcredentials">
+      <a href="../../Gitlab/Error/MissingCredentials.html">MissingCredentials</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
+      <a href="../../Gitlab/Error/NotAllowRequestMethodError.html">NotAllowRequestMethodError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotFound" data-name="gitlab::error::notfound">
+      <a href="../../Gitlab/Error/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotMatchTypeError" data-name="gitlab::error::notmatchtypeerror">
+      <a href="../../Gitlab/Error/NotMatchTypeError.html">NotMatchTypeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/ServiceUnavailable" data-name="gitlab::error::serviceunavailable">
+      <a href="../../Gitlab/Error/ServiceUnavailable.html">ServiceUnavailable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Unauthorized" data-name="gitlab::error::unauthorized">
+      <a href="../../Gitlab/Error/Unauthorized.html">Unauthorized</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Unprocessable" data-name="gitlab::error::unprocessable">
+      <a href="../../Gitlab/Error/Unprocessable.html">Unprocessable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
+      <a href="../../Gitlab/HTTP.html">HTTP</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Chainable" data-name="gitlab::http::chainable">
+      <a href="../../Gitlab/HTTP/Chainable.html">Chainable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
+      <a href="../../Gitlab/HTTP/Options.html">Options</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Request" data-name="gitlab::http::request">
+      <a href="../../Gitlab/HTTP/Request.html">Request</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
+      <a href="../../Gitlab/HTTP/Response.html">Response</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
+      <a href="../../Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Gitlab::Client::Project
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Defines methods related to project.</p>
+
+<h2>Project visibility level</h2>
+
+<p>Project in GitLab has be either private, internal or public. You can determine it by visibility_level field in project.</p>
+
+<p>Constants for project visibility levels are next:</p>
+
+<ul><li>Private. visibility_level is 0. Project access must be granted explicitly for each user.</li><li>Internal. visibility_level is 10. The project can be cloned by any logged in user.</li><li>Public. visibility_level is 20. The project can be cloned without any authentication.</li></ul>
+
+<p>See http://docs.gitlab.com/ce/api/projects.html</p>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Gitlab/Client.html">Gitlab::Client</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#all_projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+          <div class="summary"><p>Gets a list of projects by the authenticated user (admin only).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#owned_projects%28params%3AHash%7CNil%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#owned_projects</strong>(params : Hash | Nil = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+          <div class="summary"><p>Gets a list of projects owned by the authenticated user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+          <div class="summary"><p>Gets a list of projects by the authenticated user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#starred_projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#starred_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+          <div class="summary"><p>Gets a list of projects starred by the authenticated user.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="all_projects&#40;params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#all_projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a list of projects by the authenticated user (admin only).</p>
+
+<p>Alias to projects({ "scope" => "all" })</p>
+
+<pre><code>client.all_projects
+client.all_projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/client/project.cr#L56" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="owned_projects&#40;params:Hash|Nil&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>owned_projects</strong>(params : Hash | Nil = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#owned_projects%28params%3AHash%7CNil%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a list of projects owned by the authenticated user.</p>
+
+<p>Alias to projects({ "scope" => "owned" })</p>
+
+<pre><code>client.owned_projects
+client.owned_projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/client/project.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="projects&#40;params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a list of projects by the authenticated user.</p>
+
+<p>@param  [Hash] options A customizable set of options.
+@option options [String] :scope Scope of projects. 'owned' for list of projects owned by the authenticated user, 'starred' for list of projects starred by the authenticated user, 'all' to get all projects (admin only)
+@option options [String] :archived if passed, limit by archived status.
+@option options [String] :visibility if passed, limit by visibility public, internal, private.
+@option options [String] :order_by Return requests ordered by id, name, path, created_at, updated_at or last_activity_at fields. Default is created_at.
+@option options [String] :sort Return requests sorted in asc or desc order. Default is desc.
+@option options [String] :search Return list of authorized projects according to a search criteria.
+@option options [Integer] :page The page number.
+@option options [Integer] :per_page The number of results per page.
+@return [Array&lt;Hash>]</p>
+
+<pre><code>client.projects
+client.projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.projects({ <span class="s">&quot;scope&quot;</span> => <span class="s">&quot;starred&quot;</span>, <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/client/project.cr#L78" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="starred_projects&#40;params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>starred_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#starred_projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a list of projects starred by the authenticated user.</p>
+
+<p>Alias to projects({ "scope" => "starred" })</p>
+
+<pre><code>client.starred_projects
+client.starred_projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/25defccc21f81045c9698bd9d435ddbf800290c1/src/gitlab/client/project.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
