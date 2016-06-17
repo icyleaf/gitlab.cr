@@ -57,7 +57,7 @@ More API check here: http://icyleaf.github.io/gitlab.cr/
 
 ### Gitlab
 
-- [ ] Users
+- [x] Users
   - [x] List Users - `users`
   - [x] Single user - `user(user_id)`
   - [x] User creation - `create_user`
@@ -73,13 +73,13 @@ More API check here: http://icyleaf.github.io/gitlab.cr/
   - [x] Add SSH key for user - `create_ssh_key(user_id)`
   - [x] Delete SSH key for current user - `delete_ssh_key`
   - [x] Delete SSH key for given user - `delete_ssh_key(user_id)`
-  - [ ] List emails - `emails`
-  - [ ] List emails for user - `emails(user_id)`
-  - [ ] Single email - `email`
-  - [ ] Add email - `create_email`
-  - [ ] Add email for user - `create_email(user_id)`
-  - [ ] Delete email for current user - `delete_email`
-  - [ ] Delete email for given user - `delete_email(user_id)`
+  - [x] List emails - `emails`
+  - [x] List emails for user - `emails(user_id)`
+  - [x] Single email - `email`
+  - [x] Add email - `add_email`
+  - [x] Add email for user - `add_email(user_id)`
+  - [x] Delete email for current user - `delete_email`
+  - [x] Delete email for given user - `delete_email(user_id)`
 - [ ] Session
 - [ ] Projects (including setting Webhooks)
 - [ ] Project Snippets

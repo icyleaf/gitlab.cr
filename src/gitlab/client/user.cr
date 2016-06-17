@@ -6,9 +6,9 @@ module Gitlab
     module User
       # Gets a list of users.
       #
-      # - param  [Hash] options A customizable set of options.
-      # - option options [String] :page The page number.
-      # - option options [String] :per_page The number of results per page.
+      # - param  [Hash] params A customizable set of params.
+      # - option params [String] :page The page number.
+      # - option params [String] :per_page The number of results per page.
       # - return [Array<Hash>]
       #
       # ```
@@ -32,14 +32,14 @@ module Gitlab
 
       # Gets information about a user.
       #
-      # - param  [Int32] id The ID of a user.
+      # - param  [Int32] user_id The ID of a user.
       # - return [Hash]
       #
       # ```
       # client.user(2) # Get user information by ID = 2
       # ```
-      def user(id : Int32)
-        get("/users/#{id.to_s}").body
+      def user(user_id : Int32)
+        get("/users/#{user_id.to_s}").body
       end
 
       # Creates a new user.
@@ -48,7 +48,7 @@ module Gitlab
       # - param  [String] email The email of a user.
       # - param  [String] password The password of a user.
       # - param  [String] username The username of a user.
-      # - param  [Hash] params A customizable set of options.
+      # - param  [Hash] params A customizable set of params.
       # - option params [String] :name The name of a user. Defaults to email.
       # - option params [String] :skype The skype of a user.
       # - option params [String] :linkedin The linkedin of a user.
@@ -93,7 +93,7 @@ module Gitlab
 
       # Deletes a user.
       #
-      # - param [Int32] id The ID of a user.
+      # - param [Int32] user_id The ID of a user.
       # - return [Hash] Information about deleted user.
       #
       # ```
@@ -144,6 +144,7 @@ module Gitlab
 
       # Gets a list of a user"s SSH keys.
       #
+      # - param  [Int32] user_id The Id of user.
       # - return [Array<Hash>]
       #
       # ```
@@ -155,8 +156,8 @@ module Gitlab
 
       # Gets information about SSH key.
       #
-      # - param  [Integer] id The ID of a user"s SSH key.
-      # - return [Gitlab::ObjectifiedHash]
+      # - param  [Integer] ssh_key_id The ID of a user"s SSH key.
+      # - return [Hash]
       #
       # ```
       # client.ssh_key(1)
@@ -166,6 +167,19 @@ module Gitlab
       end
 
       # Creates a new SSH key for current user.
+      #
+      # - param  [String] title The title of an SSH key.
+      # - param  [String] key The SSH key body.
+      # - return [Hash] Information about created SSH key.
+      #
+      # ```
+      # client.create_ssh_key("key title", "key body")
+      # ```
+      def create_ssh_key(title, key)
+        post("/user/keys", { "title" => title, "key" => key }).body
+      end
+
+      # Creates a new SSH key for a user.
       #
       # - param  [Int32] user_id The Id of user.
       # - param  [String] key The SSH key body.
@@ -178,44 +192,116 @@ module Gitlab
         post("/users/#{user_id.to_s}/keys", { "title" => title, "key" => key }).body
       end
 
-      # Creates a new SSH key for a user.
-      #
-      # - param  [Int32] title The title of an SSH key.
-      # - param  [String] title The title of an SSH key.
-      # - param  [String] key The SSH key body.
-      # - return [Hash] Information about created SSH key.
-      #
-      # ```
-      # client.create_ssh_key("key title", "key body")
-      # ```
-      def create_ssh_key(title, key)
-        post("/user/keys", { "title" => title, "key" => key }).body
-      end
-
       # Deletes an SSH key for current user.
       #
-      # - param  [Int32] id The ID of a user"s SSH key.
-      # - return [Gitlab::ObjectifiedHash] Information about deleted SSH key.
+      # - param  [Int32] ssh_key_id The ID of a user"s SSH key.
+      # - return [Hash] Information about deleted SSH key.
       #
       # ```
       # client.delete_ssh_key(1)
       # ```
       def delete_ssh_key(ssh_key_id : Int32)
-        delete("/user/keys/#{ssh_key_id.to_s}")
+        delete("/user/keys/#{ssh_key_id.to_s}").body
       end
 
       # Deletes an SSH key for a user.
       #
       # - param  [Int32] user_id The Id of user.
-      # - param  [Int32] id The ID of a user"s SSH key.
-      # - return [Gitlab::ObjectifiedHash] Information about deleted SSH key.
+      # - param  [Int32] ssh_key_id The ID of a user"s SSH key.
+      # - return [Hash] Information about deleted SSH key.
       #
       # ```
       # client.delete_ssh_key(1, 1)
       # ```
       def delete_ssh_key(user_id : Int32, ssh_key_id : Int32)
-        delete("/users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}")
+        delete("/users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}").body
       end
+
+      # Gets current user emails.
+      #
+      # - return [Hash]
+      #
+      # ```
+      # client.emails
+      # ```
+      def emails
+        get("/user/emails").body
+      end
+
+      # Gets a user emails.
+      #
+      # - param  [Int32] user_id The ID of a user.
+      # - return [Hash]
+      #
+      # ```
+      # client.emails(2)
+      # ```
+      def emails(user_id : Int32)
+        get("/users/#{user_id.to_s}/emails").body
+      end
+
+      # Get a single email.
+      #
+      # - param  [Int32] email_id The ID of a email.
+      # - return [Hash]
+      #
+      # ```
+      # client.email(3)
+      # ```
+      def email(email_id : Int32)
+        get("/user/emails/#{email_id.to_s}").body
+      end
+
+      # Creates a new email for current user.
+      #
+      # @param  [String] email Email address
+      # @return [Hash]
+      #
+      # ```
+      # client.add_email('email@example.com')
+      # ```
+      def add_email(email)
+        post("/user/emails", { "email" => email }).body
+      end
+
+      # Creates a new email for a user.
+      #
+      # @param  [Int32] user_id The ID of a user.
+      # @param  [String] email Email address
+      # @return [Hash]
+      #
+      # ```
+      # client.add_email('email@example.com', 2)
+      # ```
+      def add_email(user_id : Int32, email)
+        post("/users/#{user_id.to_s}/emails", { "email" => email }).body
+      end
+
+      # Delete email for current user
+      #
+      # @param  [Int32] email_id Email address ID
+      # @return [Hash]
+      #
+      # ```
+      # client.delete_email(2)
+      # ```
+      def delete_email(email_id : Int32)
+        delete("/user/emails/#{email_id.to_s}").body
+      end
+
+      # Delete email for current user
+      #
+      # @param  [Int32] user_id The ID of a user.
+      # @param  [Int32] email_id Email address ID
+      # @return [Hash]
+      #
+      # ```
+      # client.delete_email(1, 2)
+      # ```
+      def delete_email(email_id : Int32, user_id : Int32)
+        delete("/users/#{user_id.to_s}/emails/#{email_id.to_s}")
+      end
+
     end
   end
 end
