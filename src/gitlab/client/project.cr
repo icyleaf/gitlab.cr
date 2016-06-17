@@ -194,7 +194,7 @@ module Gitlab
       #
       # ```
       # client.edit_project(42)
-      # client.edit_project(42, { name: 'project_name' })
+      # client.edit_project(42, { "name" => "project_name" })
       # ```
       def edit_project(project_id, prams : Hash = {} of String  => String)
         put("/projects/#{project_id.to_s}", prams).body
@@ -209,7 +209,7 @@ module Gitlab
       #
       # ```
       # client.create_fork(42)
-      # client.create_fork(42, { sudo: 'another_username' })
+      # client.create_fork(42, { "sudo" => "another_username" })
       # ```
       def fork_project(project_id : Int32, params : Hash = {} of String  => String)
         post("/projects/fork/#{project_id.to_s}", params).body
