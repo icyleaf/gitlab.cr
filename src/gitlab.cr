@@ -13,7 +13,7 @@ module Gitlab
 
     class NotMatchTypeError < Error; end
     class NotAllowRequestMethodError < Error; end
-
+    class JSONParseError < Error; end
     ## Gitlab API Errors
 
     class MissingCredentials < Error; end

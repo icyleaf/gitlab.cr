@@ -10,6 +10,11 @@ module Gitlab
       @method : String
       @url : URI
 
+      enum ERROR_TYPE
+        JsonError
+        NonJsonError
+      end
+
       getter :code, :body
 
       # Create a new Http Response
@@ -56,18 +61,24 @@ module Gitlab
         when 502 then raise Error::BadGateway.new error_message(response)
         when 503 then raise Error::ServiceUnavailable.new error_message(response)
         end
+
+        raise Error::JSONParseError.new(error_message(response, ERROR_TYPE::NonJsonError)) if response.headers["Content-Type"] == "text/html; charset=utf-8"
       end
 
       private def parse_body(response)
         JSON.parse(response.body)
       end
 
-      private def error_message(response)
-        response_body = parse_body(response)
-        message = response_body["message"] || response_body["error"]
+      private def error_message(response, type : ERROR_TYPE = ERROR_TYPE::JsonError)
+        message = if ERROR_TYPE == ERROR_TYPE::JsonError
+          response_body = parse_body(response)
+          handle_error(response_body["message"] || response_body["error"])
+        else
+          "body is not json format. Body: #{response.body}"
+        end
 
         "Server responded with code #{response.status_code}, " \
-        "message: handle_error(#{message}). " \
+        "Message: #{message}. " \
         "Request URL: [#{@method}] #{@url.to_s}"
       end
 
