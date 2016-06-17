@@ -16,7 +16,7 @@ after_script:
   - git remote add upstream "https://${GH_TOKEN}@${GH_REF}.git"
   - git fetch upstream
   - git reset upstream/gh-pages
-  - sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g")  (${COMMIT_DATE})/" index.html
+  - sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" index.html
   - git add -A .
   - git commit -m "Updating to ${COMMIT_HASH}"
-  - git push -q upsteam HEAD:gh-pages
+  - git push upsteam HEAD:gh-pages
