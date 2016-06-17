@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
+      <a href="../../Gitlab/Client/Group.html">Group</a>
+      
+    </li>
+  
   <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="../../Gitlab/Client/User.html">User</a>
       
@@ -72,6 +77,11 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
       <a href="../../Gitlab/Error/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
+      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
       
     </li>
   
@@ -140,8 +150,18 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
       <a href="../../Gitlab/HTTP/Response.html">Response</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
+      <a href="../../Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -199,7 +219,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L6" target="_blank">gitlab/client/user.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L6" target="_blank">gitlab/client/user.cr</a>
     
     <br/>
   
@@ -401,7 +421,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L276" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L276" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -424,7 +444,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L263" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L263" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -441,14 +461,14 @@
 
 <p><strong>Available only for admin</strong>.</p>
 
-<ul><li>param [Integer] user_id The Id of user</li><li>return [Hash] success or not</li></ul>
+<ul><li>param [Int32] user_id The Id of user</li><li>return [Hash] success or not</li></ul>
 
 <pre><code>client.block_user(<span class="n">4</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L116" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -470,7 +490,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L191" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L191" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -492,7 +512,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L178" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -508,7 +528,7 @@
         <div class="doc"><p>Creates a new user.
 Requires authentication from an admin account.</p>
 
-<ul><li>param  [String] email The email of a user.</li><li>param  [String] password The password of a user.</li><li>param  [String] username The username of a user.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :name The name of a user. Defaults to email.</li><li>option params [String] :skype The skype of a user.</li><li>option params [String] :linkedin The linkedin of a user.</li><li>option params [String] :twitter The twitter of a user.</li><li>option params [Integer] :projects_limit The limit of projects for a user.</li><li>return [Hash] Information about created user.</li></ul>
+<ul><li>param  [String] email The email of a user.</li><li>param  [String] password The password of a user.</li><li>param  [String] username The username of a user.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :name The name of a user. Defaults to email.</li><li>option params [String] :skype The skype of a user.</li><li>option params [String] :linkedin The linkedin of a user.</li><li>option params [String] :twitter The twitter of a user.</li><li>option params [Int32] :projects_limit The limit of projects for a user.</li><li>return [Hash] Information about created user.</li></ul>
 
 <pre><code><span class="t">Gitlab</span>.create_user(<span class="s">&quot;icy.leaf&#64;kaifeng.cn&quot;</span>, <span class="s">&quot;secret&quot;</span>, <span class="s">&quot;icyleaf&quot;</span>, { <span class="s">&quot;name&quot;</span> => <span class="s">&quot;三火&quot;</span> })
 <span class="t">Gitlab</span>.create_user(<span class="s">&quot;icy.leaf&#64;kaifeng.cn&quot;</span>, <span class="s">&quot;secret&quot;</span>, <span class="s">&quot;icyleaf&quot;</span>)</code></pre></div>
@@ -516,7 +536,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -540,7 +560,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L301" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L301" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -563,7 +583,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L288" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L288" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -585,7 +605,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L216" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L216" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -607,7 +627,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L203" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L203" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -629,7 +649,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L102" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L102" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -651,7 +671,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -673,7 +693,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L251" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L251" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -695,7 +715,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L239" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L239" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -717,7 +737,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L227" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L227" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -732,14 +752,14 @@ Requires authentication from an admin account.</p>
       
         <div class="doc"><p>Gets information about SSH key.</p>
 
-<ul><li>param  [Integer] ssh_key_id The ID of a user"s SSH key.</li><li>return [Hash]</li></ul>
+<ul><li>param  [Int32] ssh_key_id The ID of a user"s SSH key.</li><li>return [Hash]</li></ul>
 
 <pre><code>client.ssh_key(<span class="n">1</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L165" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L165" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -761,7 +781,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L141" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L141" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -783,7 +803,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L153" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L153" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -800,14 +820,14 @@ Requires authentication from an admin account.</p>
 
 <p><strong>Available only for admin</strong>.</p>
 
-<ul><li>param [Integer] user_id The Id of user</li><li>return [Hash] success or not</li></ul>
+<ul><li>param [Int32] user_id The Id of user</li><li>return [Hash] success or not</li></ul>
 
 <pre><code>client.unblock_user(<span class="n">4</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -829,7 +849,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -851,7 +871,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -874,7 +894,7 @@ client.users({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>

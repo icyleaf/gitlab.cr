@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../../js/doc.js"></script>
+  <title>Gitlab::Client::Group - github.com/icyleaf/gitlab.cr</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
+      <a href="../../Gitlab.html">Gitlab</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+      <a href="../../Gitlab/Client.html">Client</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
+      <a href="../../Gitlab/Client/Group.html">Group</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
+      <a href="../../Gitlab/Client/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
+      <a href="../../Gitlab/Error.html">Error</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/BadGateway" data-name="gitlab::error::badgateway">
+      <a href="../../Gitlab/Error/BadGateway.html">BadGateway</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/BadRequest" data-name="gitlab::error::badrequest">
+      <a href="../../Gitlab/Error/BadRequest.html">BadRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Conflict" data-name="gitlab::error::conflict">
+      <a href="../../Gitlab/Error/Conflict.html">Conflict</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Error" data-name="gitlab::error::error">
+      <a href="../../Gitlab/Error/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Forbidden" data-name="gitlab::error::forbidden">
+      <a href="../../Gitlab/Error/Forbidden.html">Forbidden</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
+      <a href="../../Gitlab/Error/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
+      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
+      <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MissingCredentials" data-name="gitlab::error::missingcredentials">
+      <a href="../../Gitlab/Error/MissingCredentials.html">MissingCredentials</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
+      <a href="../../Gitlab/Error/NotAllowRequestMethodError.html">NotAllowRequestMethodError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotFound" data-name="gitlab::error::notfound">
+      <a href="../../Gitlab/Error/NotFound.html">NotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotMatchTypeError" data-name="gitlab::error::notmatchtypeerror">
+      <a href="../../Gitlab/Error/NotMatchTypeError.html">NotMatchTypeError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/ServiceUnavailable" data-name="gitlab::error::serviceunavailable">
+      <a href="../../Gitlab/Error/ServiceUnavailable.html">ServiceUnavailable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Unauthorized" data-name="gitlab::error::unauthorized">
+      <a href="../../Gitlab/Error/Unauthorized.html">Unauthorized</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Unprocessable" data-name="gitlab::error::unprocessable">
+      <a href="../../Gitlab/Error/Unprocessable.html">Unprocessable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
+      <a href="../../Gitlab/HTTP.html">HTTP</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Chainable" data-name="gitlab::http::chainable">
+      <a href="../../Gitlab/HTTP/Chainable.html">Chainable</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
+      <a href="../../Gitlab/HTTP/Options.html">Options</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Request" data-name="gitlab::http::request">
+      <a href="../../Gitlab/HTTP/Request.html">Request</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
+      <a href="../../Gitlab/HTTP/Response.html">Response</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
+      <a href="../../Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Gitlab::Client::Group
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Defines methods related to group.</p>
+
+<p>See http://docs.gitlab.com/ce/api/groups.html</p>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Gitlab/Client.html">Gitlab::Client</a></li>
+  
+  </ul>
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L6" target="_blank">gitlab/client/group.cr</a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%2Caccess_level%29-instance-method" class="signature"><strong>#add_group_member</strong>(group_id : Int32, user_id : Int32, access_level)</a>
+        
+          <div class="summary"><p>Adds a user to group.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_group%28name%2Cpath%2Cdescription%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cvisibility_level%3AInt32%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#create_group</strong>(name, path, description = <span class="n">nil</span>, visibility_level : Int32 | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a new group.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete_group%28group_id%3AInt32%29-instance-method" class="signature"><strong>#delete_group</strong>(group_id : Int32)</a>
+        
+          <div class="summary"><p>Delete"s a group.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#edit_group%28group_id%3AInt32%2Cname%2Cpath%2Cdescription%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cvisibility_level%3AInt32%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#edit_group</strong>(group_id : Int32, name, path, description = <span class="n">nil</span>, visibility_level : Int32 | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a new group.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#edit_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%2Caccess_level%29-instance-method" class="signature"><strong>#edit_group_member</strong>(group_id : Int32, user_id : Int32, access_level)</a>
+        
+          <div class="summary"><p>Edit a user of a group.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group%28group_id%3AInt32%29-instance-method" class="signature"><strong>#group</strong>(group_id : Int32)</a>
+        
+          <div class="summary"><p>Gets details of a group.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group_members%28group_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#group_members</strong>(group_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Get a list of group members.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group_projects%28group_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#group_projects</strong>(group_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Get a list of projects under a group</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group_search%28query%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#group_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+          <div class="summary"><p>Search for groups by name</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#groups%28params%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#groups</strong>(params : Hash | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Gets a list of groups.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%29-instance-method" class="signature"><strong>#remove_group_member</strong>(group_id : Int32, user_id : Int32)</a>
+        
+          <div class="summary"><p>Removes user from user group.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transfer_project_to_group%28group_id%2Cproject_id%29-instance-method" class="signature"><strong>#transfer_project_to_group</strong>(group_id, project_id)</a>
+        
+          <div class="summary"><p>Transfers a project to a group</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="add_group_member&#40;group_id:Int32,user_id:Int32,access_level&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>add_group_member</strong>(group_id : Int32, user_id : Int32, access_level)
+
+        <a class="method-permalink" href="#add_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%2Caccess_level%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a user to group.</p>
+
+<ul><li>param  [Int32] group_id The group id to add a member to.</li><li>param  [Int32] user_id The user id of the user to add to the team.</li><li>param  [Int32] access_level Project access level.</li><li>return [Hash] Information about added team member.</li></ul>
+
+<pre><code>client.add_group_member(<span class="n">1</span>, <span class="n">2</span>, <span class="n">40</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L164" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_group&#40;name,path,description&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;,visibility_level:Int32|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>create_group</strong>(name, path, description = <span class="n">nil</span>, visibility_level : Int32 | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#create_group%28name%2Cpath%2Cdescription%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cvisibility_level%3AInt32%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new group.</p>
+
+<ul><li>param [String] name The name of a group.</li><li>param [String] path The path of a group.</li><li>param [String] description The group"s description.</li><li>param [String] visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.</li><li>return [Hash] Information about created group.</li></ul>
+
+<pre><code>client.create_group(<span class="s">&quot;new-group&quot;</span>, <span class="s">&quot;group-path&quot;</span>)
+client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;gitlab-path&quot;</span>, <span class="s">&quot;New Gitlab project&quot;</span>)
+client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;gitlab-path&quot;</span>, visibility_level: <span class="n">0</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete_group&#40;group_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>delete_group</strong>(group_id : Int32)
+
+        <a class="method-permalink" href="#delete_group%28group_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Delete"s a group.</p>
+
+<ul><li>param  [Int32] group_id The ID of a group</li><li>return [Hash] Information about the deleted group.</li></ul>
+
+<pre><code>client.delete_group(<span class="n">42</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L104" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edit_group&#40;group_id:Int32,name,path,description&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;,visibility_level:Int32|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>edit_group</strong>(group_id : Int32, name, path, description = <span class="n">nil</span>, visibility_level : Int32 | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#edit_group%28group_id%3AInt32%2Cname%2Cpath%2Cdescription%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cvisibility_level%3AInt32%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new group.</p>
+
+<p>Notes: Not all gitlab version has this api.</p>
+
+<ul><li>param [Int32] group_id The ID of a group.</li><li>param [String] name The name of a group.</li><li>param [String] path The path of a group.</li><li>param [String] description The group"s description.</li><li>param [String] visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.</li><li>return [Hash] Information about created group.</li></ul>
+
+<pre><code>client.create_group(<span class="s">&quot;new-group&quot;</span>, <span class="s">&quot;group-path&quot;</span>)
+client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;gitlab-path&quot;</span>, <span class="s">&quot;New Gitlab project&quot;</span>)
+client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;gitlab-path&quot;</span>, visibility_level: <span class="n">0</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edit_group_member&#40;group_id:Int32,user_id:Int32,access_level&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>edit_group_member</strong>(group_id : Int32, user_id : Int32, access_level)
+
+        <a class="method-permalink" href="#edit_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%2Caccess_level%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Edit a user of a group.</p>
+
+<ul><li>param  [Int32] group_id The group id to add a member to.</li><li>param  [Int32] user_id The user id of the user to add to the team.</li><li>param  [Int32] access_level Project access level.</li><li>return [Hash] Information about added team member.</li></ul>
+
+<pre><code>client.edit_group_member(<span class="n">1</span>, <span class="n">2</span>, <span class="n">40</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L178" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group&#40;group_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group</strong>(group_id : Int32)
+
+        <a class="method-permalink" href="#group%28group_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets details of a group.</p>
+
+<ul><li>param  [Int32] id The ID of a group.</li><li>return [Hash]</li></ul>
+
+<pre><code>client.group(<span class="n">42</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group_members&#40;group_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group_members</strong>(group_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#group_members%28group_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get a list of group members.</p>
+
+<ul><li>param  [Int32] id The ID of a group.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>]</li></ul>
+
+<pre><code>client.group_members(<span class="n">1</span>)
+client.group_members(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;50&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L150" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group_projects&#40;group_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group_projects</strong>(group_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#group_projects%28group_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get a list of projects under a group</p>
+
+<p>Notes: Not all gitlab version has this api.</p>
+
+<ul><li>param [Int32] id The ID of a group</li><li>params [Hash] params A customizable set of params.</li><li>option params [String] :archived if passed, limit by archived status.</li><li>option params [String] :visibility if passed, limit by visibility public, internal, private.</li><li>option params [String] :order_by Return requests ordered by id, name, path, created_at, updated_at or last_activity_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :search Return list of authorized projects according to a search criteria.</li><li>option params [String] :ci_enabled_first Return projects ordered by ci_enabled flag. Projects with enabled GitLab CI go first.</li><li>return [Array&lt;Hash>] List of projects under a group</li></ul>
+
+<pre><code>client.group_projects(<span class="n">1</span>)
+client.group_projects(<span class="n">1</span>, { <span class="s">&quot;archived&quot;</span> => <span class="s">&quot;true&quot;</span>)
+client.group_projects(<span class="n">1</span>, { <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group_search&#40;query,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>group_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#group_search%28query%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Search for groups by name</p>
+
+<ul><li>param  [String] query A string to search for in group names and paths.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :per_page Number of projects to return per page</li><li>option options [String] :page The page to retrieve</li><li>return [Array&lt;Hash>]</li></ul>
+
+<pre><code>client.group_search(<span class="s">&quot;gitlab&quot;</span>)
+client.group_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="n">50</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L120" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="groups&#40;params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>groups</strong>(params : Hash | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#groups%28params%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a list of groups.</p>
+
+<ul><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>]</li></ul>
+
+<pre><code>client.groups
+client.groups({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;100&quot;</span>, <span class="s">&quot;page&quot;</span> => <span class="s">&quot;5&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_group_member&#40;group_id:Int32,user_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_group_member</strong>(group_id : Int32, user_id : Int32)
+
+        <a class="method-permalink" href="#remove_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Removes user from user group.</p>
+
+<ul><li>param  [Int32] group_id The group id to add a member to.</li><li>param  [Int32] user_id The user id of the user to add to the team.</li><li>return [Hash] Information about added team member.</li></ul>
+
+<pre><code>client.remove_group_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L191" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transfer_project_to_group&#40;group_id,project_id&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>transfer_project_to_group</strong>(group_id, project_id)
+
+        <a class="method-permalink" href="#transfer_project_to_group%28group_id%2Cproject_id%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Transfers a project to a group</p>
+
+<ul><li>params [Int32] group_id The ID of a group.</li><li>params [Int32] project_id The ID of a project.</li></ul>
+
+<pre><code>  <span class="t">Gitlab</span>.transfer_project_to_group(<span class="n">3</span>, <span class="n">50</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L134" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

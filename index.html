@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
+      <a href="Gitlab/Client/Group.html">Group</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="Gitlab/Client/User.html">User</a>
       
@@ -72,6 +77,11 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
       <a href="Gitlab/Error/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
+      <a href="Gitlab/Error/JSONParseError.html">JSONParseError</a>
       
     </li>
   
@@ -140,8 +150,18 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
       <a href="Gitlab/HTTP/Response.html">Response</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
+      <a href="Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -163,7 +183,7 @@
 <h1>💎 Gitlab.cr</h1>
 
 <p><a href="https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat" alt="License"/></a>
-<a href="https://github.com/icyleaf/gitlab.cr" target="_blank"><img src="https://img.shields.io/badge/status-development-green.svg" alt="Develop Status"/></a>
+<a href="https://github.com/icyleaf/gitlab.cr" target="_blank"><img src="https://img.shields.io/badge/version-development-green.svg" alt="Version"/></a>
 <a href="https://shards.rocks/github/icyleaf/gitlab.cr" target="_blank"><img src="https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg" alt="Dependency Status"/></a>
 <a href="https://shards.rocks/github/icyleaf/gitlab.cr" target="_blank"><img src="https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg" alt="devDependency Status"/></a>
 <a href="https://travis-ci.org/icyleaf/gitlab.cr" target="_blank"><img src="https://travis-ci.org/icyleaf/gitlab.cr.svg" alt="Build Status"/></a></p>
@@ -171,7 +191,7 @@
 <p>Gitlab.cr is a <a href="http://docs.gitlab.com/ce/api/README.html" target="_blank">GitLab API</a> wrapper writes with <a href="http://crystal-lang.org/" target="_blank">Crystal</a> Language.
 Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab</a> gem for ruby version.</p>
 
-<p>Docs Generated in <a href="https://github.com/icyleaf/gitlab.cr/commit/7514f2d" target="_blank">7514f2d</a> (2016-06-17 13:20:25 +0800).</p>
+<p>Docs Generated in <a href="https://github.com/icyleaf/gitlab.cr/commit/a1f57d0" target="_blank">a1f57d0</a> (2016-06-17 15:41:50 +0800).</p>
 
 <h2>Status</h2>
 
@@ -212,7 +232,7 @@ token <span class="o">=</span> <span class="s">&quot;&lt;token&gt;&quot;</span>
 
 <h3>Gitlab</h3>
 
-<ul><li>[x] Users</li><ul><li>[x] List Users - <code>users</code></li><li>[x] Single user - <code>user(user_id)</code></li><li>[x] User creation - <code>create_user</code></li><li>[x] User modification - <code>edit_user</code></li><li>[x] User deletion - <code>delete_user</code></li><li>[x] Current user - <code>user</code></li><li>[x] Block user - <code>block_user(user_id)</code></li><li>[x] Unblock user - <code>unblock_user(user_id)</code></li><li>[x] List SSH keys - <code>ssh_keys</code></li><li>[x] List SSH keys for user - <code>ssh_keys(user_id)</code></li><li>[x] Single SSH key <code>ssh_key(ssh_key_id)</code></li><li>[x] Add SSH key - <code>create_ssh_key</code></li><li>[x] Add SSH key for user - <code>create_ssh_key(user_id)</code></li><li>[x] Delete SSH key for current user - <code>delete_ssh_key</code></li><li>[x] Delete SSH key for given user - <code>delete_ssh_key(user_id)</code></li><li>[x] List emails - <code>emails</code></li><li>[x] List emails for user - <code>emails(user_id)</code></li><li>[x] Single email - <code>email</code></li><li>[x] Add email - <code>add_email</code></li><li>[x] Add email for user - <code>add_email(user_id)</code></li><li>[x] Delete email for current user - <code>delete_email</code></li><li>[x] Delete email for given user - <code>delete_email(user_id)</code></li></ul><li>[ ] Session</li><li>[ ] Projects (including setting Webhooks)</li><li>[ ] Project Snippets</li><li>[ ] Services</li><li>[ ] Repositories</li><li>[ ] Repository Files</li><li>[ ] Commits</li><li>[ ] Branches</li><li>[ ] Merge Requests</li><li>[ ] Issues</li><li>[ ] Labels</li><li>[ ] Milestones</li><li>[ ] Notes (comments)</li><li>[ ] Deploy Keys</li><li>[ ] System Hooks</li><li>[ ] Groups</li><li>[ ] Namespaces</li><li>[ ] Settings</li></ul>
+<ul><li>[x] Users</li><ul><li>[x] List Users - <code>users</code></li><li>[x] Single user - <code>user(user_id)</code></li><li>[x] User creation - <code>create_user</code></li><li>[x] User modification - <code>edit_user</code></li><li>[x] User deletion - <code>delete_user</code></li><li>[x] Current user - <code>user</code></li><li>[x] Block user - <code>block_user(user_id)</code></li><li>[x] Unblock user - <code>unblock_user(user_id)</code></li><li>[x] List SSH keys - <code>ssh_keys</code></li><li>[x] List SSH keys for user - <code>ssh_keys(user_id)</code></li><li>[x] Single SSH key <code>ssh_key(ssh_key_id)</code></li><li>[x] Add SSH key - <code>create_ssh_key</code></li><li>[x] Add SSH key for user - <code>create_ssh_key(user_id)</code></li><li>[x] Delete SSH key for current user - <code>delete_ssh_key</code></li><li>[x] Delete SSH key for given user - <code>delete_ssh_key(user_id)</code></li><li>[x] List emails - <code>emails</code></li><li>[x] List emails for user - <code>emails(user_id)</code></li><li>[x] Single email - <code>email</code></li><li>[x] Add email - <code>add_email</code></li><li>[x] Add email for user - <code>add_email(user_id)</code></li><li>[x] Delete email for current user - <code>delete_email</code></li><li>[x] Delete email for given user - <code>delete_email(user_id)</code></li></ul><li>[ ] Session</li><li>[ ] Projects (including setting Webhooks)</li><li>[ ] Project Snippets</li><li>[ ] Services</li><li>[ ] Repositories</li><li>[ ] Repository Files</li><li>[ ] Commits</li><li>[ ] Branches</li><li>[ ] Merge Requests</li><li>[ ] Issues</li><li>[ ] Labels</li><li>[ ] Milestones</li><li>[ ] Notes (comments)</li><li>[ ] Deploy Keys</li><li>[ ] System Hooks</li><li>[x] Groups</li><ul><li>[x] List groups - <code>groups</code></li><li>[x] List a group's projects - <code>group_projects</code></li><li>[x] Details of a group - <code>group</code></li><li>[x] New group - <code>create_group</code></li><li>[x] Transfer project to group - <code>transfer_project_to_group</code></li><li>[x] Update group - <code>edit_group</code></li><li>[x] Remove group - <code>delete_group</code></li><li>[x] Search for group - <code>search_groups</code></li><li>[x] Group members</li><li>[x] List group members - <code>group_members</code></li><li>[x] Add group member - <code>add_member_to_group</code></li><li>[x] Edit group team member - <code>edit_member_to_group</code></li><li>[x] Remove user team member - <code>remove_member_to_group</code></li><li>[x] Namespaces in groups - same as <strong>List group</strong></li></ul><li>[ ] Namespaces</li><li>[ ] Settings</li></ul>
 
 <h2>Contributing</h2>
 

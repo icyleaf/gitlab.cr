@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
+      <a href="../Gitlab/Client/Group.html">Group</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="../Gitlab/Client/User.html">User</a>
       
@@ -72,6 +77,11 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
       <a href="../Gitlab/Error/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
+      <a href="../Gitlab/Error/JSONParseError.html">JSONParseError</a>
       
     </li>
   
@@ -140,8 +150,18 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
       <a href="../Gitlab/HTTP/Response.html">Response</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
+      <a href="../Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -185,6 +205,8 @@
   <h2>Included Modules</h2>
   <ul class="other-types-list">
   
+    <li class="other-type"><a href="../Gitlab/Client/Group.html">Gitlab::Client::Group</a></li>
+  
     <li class="other-type"><a href="../Gitlab/Client/User.html">Gitlab::Client::User</a></li>
   
   </ul>
@@ -201,12 +223,17 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client/user.cr#L2" target="_blank">gitlab/client/user.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/group.cr#L2" target="_blank">gitlab/client/group.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L7" target="_blank">gitlab/client.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client/user.cr#L2" target="_blank">gitlab/client/user.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L7" target="_blank">gitlab/client.cr</a>
     
     <br/>
   
@@ -284,6 +311,77 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="../Gitlab/Client/Group.html">Gitlab::Client::Group</a></code></h3>
+  
+  
+    <a href="../Gitlab/Client/Group.html#add_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%2Caccess_level%29-instance-method" class="tooltip">
+      <span>add_group_member(group_id : Int32, user_id : Int32, access_level)</span>
+    add_group_member</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#create_group%28name%2Cpath%2Cdescription%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cvisibility_level%3AInt32%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>create_group(name, path, description = <span class="n">nil</span>, visibility_level : Int32 | Nil = <span class="n">nil</span>)</span>
+    create_group</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#delete_group%28group_id%3AInt32%29-instance-method" class="tooltip">
+      <span>delete_group(group_id : Int32)</span>
+    delete_group</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#edit_group%28group_id%3AInt32%2Cname%2Cpath%2Cdescription%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cvisibility_level%3AInt32%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>edit_group(group_id : Int32, name, path, description = <span class="n">nil</span>, visibility_level : Int32 | Nil = <span class="n">nil</span>)</span>
+    edit_group</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#edit_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%2Caccess_level%29-instance-method" class="tooltip">
+      <span>edit_group_member(group_id : Int32, user_id : Int32, access_level)</span>
+    edit_group_member</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group%28group_id%3AInt32%29-instance-method" class="tooltip">
+      <span>group(group_id : Int32)</span>
+    group</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group_members%28group_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>group_members(group_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</span>
+    group_members</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group_projects%28group_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>group_projects(group_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</span>
+    group_projects</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group_search%28query%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>group_search(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    group_search</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#groups%28params%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>groups(params : Hash | Nil = <span class="n">nil</span>)</span>
+    groups</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#remove_group_member%28group_id%3AInt32%2Cuser_id%3AInt32%29-instance-method" class="tooltip">
+      <span>remove_group_member(group_id : Int32, user_id : Int32)</span>
+    remove_group_member</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#transfer_project_to_group%28group_id%2Cproject_id%29-instance-method" class="tooltip">
+      <span>transfer_project_to_group(group_id, project_id)</span>
+    transfer_project_to_group</a>
+    
+  
+
+
+    
+
+
   
     
 
@@ -405,7 +503,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -430,7 +528,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -446,7 +544,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -466,7 +564,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -486,7 +584,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -506,7 +604,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -526,7 +624,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -542,7 +640,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7514f2d518592dcbf0e928d831fe0354fa90bc67/src/gitlab/client.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/a1f57d05c83461d87286aa22c23e597c7cd7e386/src/gitlab/client.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
