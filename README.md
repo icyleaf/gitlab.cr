@@ -4,15 +4,14 @@
 [![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg)](https://travis-ci.org/icyleaf/gitlab.cr)
 
-Gitlab.cr is a [GitLab API][gitlab-api-link] wrapper writes with [Crystal][crystal-link] Language. Inspired from [gitlab][gitlab-gem-link] gem for ruby version.
-
-API Document: http://icyleaf.github.io/gitlab.cr/
+Gitlab.cr is a [GitLab API](http://docs.gitlab.com/ce/api/README.html) wrapper writes with [Crystal](http://crystal-lang.org/) Language.
+Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version.
 
 ## Status
 
 Learning Crystal language, and **WORKIONG IN PROCESS**, please DO NOT use it in production environment.
 
-This shards code with crystal v0.17.4 (2016-05-26)
+Build in crystal version >= `v0.17.4`
 
 ## Installation
 
@@ -40,6 +39,8 @@ rescue ex
   pp ex.message
 end
 ```
+
+More API check here: http://icyleaf.github.io/gitlab.cr/
 
 ## Progress
 
@@ -105,7 +106,3 @@ end
 ## Contributors
 
 - [icyleaf](https://github.com/icyleaf) aka 三火 - creator, maintainer
-
-[crystal-link]: http://crystal-lang.org/
-[gitlab-api-link]: http://docs.gitlab.com/ce/api/README.html
-[gitlab-gem-link]: https://github.com/NARKOZ/gitlab
