@@ -48,7 +48,7 @@ rescue ex
 end
 ```
 
-More API check here: http://icyleaf.github.io/gitlab.cr/
+More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.github.io/gitlab.cr/)
 
 ## Progress
 
