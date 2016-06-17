@@ -23,7 +23,6 @@ module Gitlab
       # Gitlab::HTTP::Response.new(<HTTP::Client::Response>, "post", "http://domain.com/api/hello/world")
       # ```
       def initialize(response : ::HTTP::Client::Response, @method, @url)
-        pp response
         validate(response)
 
         @code = response.status_code
@@ -39,35 +38,35 @@ module Gitlab
       #
       # Raise an exception if status code >= 400
       #
-      # - `400`: [Error::BadRequest]
-      # - `401`: [Error::Unauthorized]
-      # - `403`: [Error::Forbidden]
-      # - `404`: [Error::NotFound]
-      # - `405`: [Error::MethodNotAllowed]
-      # - `409`: [Error::Conflict]
-      # - `422`: [Error::Unprocessable]
-      # - `500`: [Error::InternalServerError]
-      # - `502`: [Error::BadGateway]
-      # - `503`: [Error::ServiceUnavailable]
+      # - **400**: `Error::BadRequest`
+      # - **401**: `Error::Unauthorized`
+      # - **403**: `Error::Forbidden`
+      # - **404**: `Error::NotFound`
+      # - **405**: `Error::MethodNotAllowed`
+      # - **409**: `Error::Conflict`
+      # - **422**: `Error::Unprocessable`
+      # - **500**: `Error::InternalServerError`
+      # - **502**: `Error::BadGateway`
+      # - **503**: `Error::ServiceUnavailable`
       #
       # Raise an exception if content type is not json format
       #
-      # - `text/html`: [Error::JSONParseError]
+      # - **text/html**: `Error::JSONParseError`
       def validate(response)
         case response.status_code
-        when 400 then raise Error::BadRequest.new error_message(response)
-        when 401 then raise Error::Unauthorized.new error_message(response)
-        when 403 then raise Error::Forbidden.new error_message(response)
-        when 404 then raise Error::NotFound.new error_message(response)
-        when 405 then raise Error::MethodNotAllowed.new error_message(response)
-        when 409 then raise Error::Conflict.new error_message(response)
-        when 422 then raise Error::Unprocessable.new error_message(response)
-        when 500 then raise Error::InternalServerError.new error_message(response)
-        when 502 then raise Error::BadGateway.new error_message(response)
-        when 503 then raise Error::ServiceUnavailable.new error_message(response)
+        when 400 then raise Error::BadRequest.new(error_message(response), response)
+        when 401 then raise Error::Unauthorized.new(error_message(response), response)
+        when 403 then raise Error::Forbidden.new(error_message(response), response)
+        when 404 then raise Error::NotFound.new(error_message(response), response)
+        when 405 then raise Error::MethodNotAllowed.new(error_message(response), response)
+        when 409 then raise Error::Conflict.new(error_message(response), response)
+        when 422 then raise Error::Unprocessable.new(error_message(response), response)
+        when 500 then raise Error::InternalServerError.new(error_message(response), response)
+        when 502 then raise Error::BadGateway.new(error_message(response), response)
+        when 503 then raise Error::ServiceUnavailable.new(error_message(response), response)
         end
 
-        raise Error::JSONParseError.new(error_message(response, ERROR_TYPE::NonJsonError)) if response.headers["Content-Type"] == "text/html; charset=utf-8"
+        raise Error::JSONParseError.new(error_message(response, ERROR_TYPE::NonJsonError), response) if response.headers["Content-Type"] == "text/html; charset=utf-8"
       end
 
       private def parse_body(response)
