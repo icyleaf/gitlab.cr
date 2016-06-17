@@ -1,4 +1,4 @@
-require "./client/user"
+require "./client/**"
 
 module Gitlab
   # Gitlab API Client wrapper
@@ -61,5 +61,6 @@ module Gitlab
     end
 
     include User
+    include Group
   end
 end

@@ -53,7 +53,7 @@ module Gitlab
       # - option params [String] :skype The skype of a user.
       # - option params [String] :linkedin The linkedin of a user.
       # - option params [String] :twitter The twitter of a user.
-      # - option params [Integer] :projects_limit The limit of projects for a user.
+      # - option params [Int32] :projects_limit The limit of projects for a user.
       # - return [Hash] Information about created user.
       #
       # ```
@@ -107,7 +107,7 @@ module Gitlab
       #
       # **Available only for admin**.
       #
-      # - param [Integer] user_id The Id of user
+      # - param [Int32] user_id The Id of user
       # - return [Hash] success or not
       #
       # ```
@@ -121,7 +121,7 @@ module Gitlab
       #
       # **Available only for admin**.
       #
-      # - param [Integer] user_id The Id of user
+      # - param [Int32] user_id The Id of user
       # - return [Hash] success or not
       #
       # ```
@@ -156,7 +156,7 @@ module Gitlab
 
       # Gets information about SSH key.
       #
-      # - param  [Integer] ssh_key_id The ID of a user"s SSH key.
+      # - param  [Int32] ssh_key_id The ID of a user"s SSH key.
       # - return [Hash]
       #
       # ```

@@ -1,7 +1,7 @@
 # 💎 Gitlab.cr
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE)
-[![Develop Status](https://img.shields.io/badge/status-development-green.svg)](https://github.com/icyleaf/gitlab.cr)
+[![Version](https://img.shields.io/badge/version-development-green.svg)](https://github.com/icyleaf/gitlab.cr)
 [![Dependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg)](https://travis-ci.org/icyleaf/gitlab.cr)
@@ -95,7 +95,21 @@ More API check here: http://icyleaf.github.io/gitlab.cr/
 - [ ] Notes (comments)
 - [ ] Deploy Keys
 - [ ] System Hooks
-- [ ] Groups
+- [x] Groups
+  - [x] List groups - `groups`
+  - [x] List a group's projects - `group_projects`
+  - [x] Details of a group - `group`
+  - [x] New group - `create_group`
+  - [x] Transfer project to group - `transfer_project_to_group`
+  - [x] Update group - `edit_group`
+  - [x] Remove group - `delete_group`
+  - [x] Search for group - `search_groups`
+  - [x] Group members
+    - [x] List group members - `group_members`
+    - [x] Add group member - `add_member_to_group`
+    - [x] Edit group team member - `edit_member_to_group`
+    - [x] Remove user team member - `remove_member_to_group`
+  - [x] Namespaces in groups - same as **List group**
 - [ ] Namespaces
 - [ ] Settings
 
