@@ -23,6 +23,7 @@ module Gitlab
       # Gitlab::HTTP::Response.new(<HTTP::Client::Response>, "post", "http://domain.com/api/hello/world")
       # ```
       def initialize(response : ::HTTP::Client::Response, @method, @url)
+        pp response
         validate(response)
 
         @code = response.status_code
@@ -74,7 +75,7 @@ module Gitlab
       end
 
       private def error_message(response, type : ERROR_TYPE = ERROR_TYPE::JsonError)
-        message = if ERROR_TYPE == ERROR_TYPE::JsonError
+        message = if type == ERROR_TYPE::JsonError
           response_body = parse_body(response)
           handle_error(response_body["message"] || response_body["error"])
         else
