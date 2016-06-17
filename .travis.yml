@@ -2,7 +2,7 @@ language: crystal
 env:
   global:
   - GH_REF: github.com/icyleaf/gitlab.cr
-  - secure: XMYLwszWMR7xhlH1AGuHk6TrGcY9pHlqJ9BVLVeRW0OGnh9jr0GbMm2BErDcdLgs5Um/3r4Y5Ve+1GMNTBqOfxztWmph0q6eUAGveSt0bRd7CReCnCmL6kHUlZMrtO3lt9fgIUsXv+1dzNtJLrV4qO2fBWjCKbEMjOfxTXFeLhRaimyxBe2qLwd9On+C/kxOVk3IAHAT/cUFUP6ZoKHLi14XGJf/AjYyU+0JWbfIxA8t6RXlSp24+NwnU1BZ2W4NArrpVRtb3tzizoDveATzw8OS23g4LE0sKd2+MD/vrlTNMWJHjCMa2v5CzfPJ3sm41AOmO2CgSAzDYH4yWSNDrMawtJ0QQEZtzrDVIwrUHlUUxLN6LIa7DIHevVG0jzaG9SWMp/1+zUEarRaGPL1tvvvgpR8TInfU5Y4GBOjA6bKoql+rsBng1hnIlhNfY285UUB5x0UnbCrA/CG6d+pi0h1wvuEe27nQyGi80rTn4q23o6YK5AWJBqCjYbt6rbmv9Ih3WWsaIQcXLGh7qP3Yc6nxFYEZbmmgOfTcQKEEEP/En8qNVVO6QFK7ddNns5aIrY9b33AxFJLaA2F3FYdqpYRDhCRGU7x/YhvNZYu8u2YtrO+fQI/AFAJ9MRW9JiiIfrOjWk+HNwoDLLj/EjlI+ppn57/ST7epa8wSYKWe4jk=
+  - secure: Dslw/+KyFVkq+R13J+/Oy/xjHAABsdFW425MILqa+OLmcXo848iT1AEQnRB6cvfwY9e7/xYAvxVewOOecuo+d1C/aMPPWO9yMT0YUQU0sGeXT1h7dgbPwOZs17b1WjHUCxKQFguEBfLM3dhB/rDKbHUcLviGhdA60VrLjBJD7HDHG9Yd16TWjAyqEVQlpwnIG8mk64pctkMiDfchVl0tRJXGYZF2NwTc+d238Jd40x3OjyMHokoZUkmMGsZ9vZ0lElJcSjxD95Aru62CI29DEpSgCJwSP5TmKx2PtPXxY2wIAfZrMdSbKkUJKxTuurPcZD3/+2sRrrAOkvSWE8C8x19JE3DAGvnMiSiUUKiDOwA+Q1cMgdfLHKApVplQPJyxwo4BaHAQk9TDINtAHpsDMsNEHuyUXxnWb0GiDK0ODDmuB2nDMnpmt0EHtqxvksHri0UJBB0rJTW6CBTqLE3SXx0jwdEHWOPizPO/Dz3LJFt6Arb0JnIgrNuPHyUwp6xzRvh+du1sofm7LpTftxxYnCyENy0uDBWjKBtRvnIfj2lPIYC8j6us123oDCYO3he2ugyxhiU5h3tJU9sCgoUlziqKxNAFnofUbQZSN6HSVoiFonCtwNC3OMyirOa+yu0Y3ukgGPrK8yAE31RmspwSoUDsFKgZA5TubBUzTTRLq6g=
 script:
   - crystal spec
   - crystal docs
@@ -13,10 +13,10 @@ after_script:
   - git config --global user.name "Travis CI"
   - git config --global user.email "robot@travis.org"
   - git init
-  - git remote add upstream "https://${GH_TOKEN}@${GH_REF}.git"
-  - git fetch upstream
-  - git reset upstream/gh-pages
+  - git remote add origin "https://${GH_TOKEN}@${GH_REF}.git"
+  - git fetch origin
+  - git reset origin/gh-pages
   - sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" index.html
   - git add -A .
   - git commit -m "Updating to ${COMMIT_HASH}"
-  - git push upsteam HEAD:gh-pages
+  - git push origin HEAD:gh-pages
