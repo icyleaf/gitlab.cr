@@ -8,6 +8,7 @@ script:
 after_script:
   - COMMIT_HASH=$(git rev-parse --short HEAD)
   - COMMIT_DATE=$(git log -1 --format=%ci)
+  - COMMIT_STATUS="[${COMMIT_HASH}](https://${GH_REF}/commit/${COMMIT_HASH})"
   - sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" README.md
   - crystal docs
   - cd doc
