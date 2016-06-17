@@ -5,18 +5,18 @@ env:
   - secure: Dslw/+KyFVkq+R13J+/Oy/xjHAABsdFW425MILqa+OLmcXo848iT1AEQnRB6cvfwY9e7/xYAvxVewOOecuo+d1C/aMPPWO9yMT0YUQU0sGeXT1h7dgbPwOZs17b1WjHUCxKQFguEBfLM3dhB/rDKbHUcLviGhdA60VrLjBJD7HDHG9Yd16TWjAyqEVQlpwnIG8mk64pctkMiDfchVl0tRJXGYZF2NwTc+d238Jd40x3OjyMHokoZUkmMGsZ9vZ0lElJcSjxD95Aru62CI29DEpSgCJwSP5TmKx2PtPXxY2wIAfZrMdSbKkUJKxTuurPcZD3/+2sRrrAOkvSWE8C8x19JE3DAGvnMiSiUUKiDOwA+Q1cMgdfLHKApVplQPJyxwo4BaHAQk9TDINtAHpsDMsNEHuyUXxnWb0GiDK0ODDmuB2nDMnpmt0EHtqxvksHri0UJBB0rJTW6CBTqLE3SXx0jwdEHWOPizPO/Dz3LJFt6Arb0JnIgrNuPHyUwp6xzRvh+du1sofm7LpTftxxYnCyENy0uDBWjKBtRvnIfj2lPIYC8j6us123oDCYO3he2ugyxhiU5h3tJU9sCgoUlziqKxNAFnofUbQZSN6HSVoiFonCtwNC3OMyirOa+yu0Y3ukgGPrK8yAE31RmspwSoUDsFKgZA5TubBUzTTRLq6g=
 script:
   - crystal spec
-  - crystal docs
 after_script:
   - COMMIT_HASH=$(git rev-parse --short HEAD)
   - COMMIT_DATE=$(git log -1 --format=%ci)
+  - sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" README.md
+  - crystal docs
   - cd doc
-  - git config --global user.name "Travis CI"
-  - git config --global user.email "robot@travis.org"
+  - git config --global user.name "icyleaf"
+  - git config --global user.email "icyleaf.cn@gmail.com"
   - git init
   - git remote add origin "https://${GH_TOKEN}@${GH_REF}.git"
   - git fetch origin
   - git reset origin/gh-pages
-  - sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" index.html
   - git add -A .
   - git commit -m "Updating to ${COMMIT_HASH}"
   - git push origin HEAD:gh-pages
