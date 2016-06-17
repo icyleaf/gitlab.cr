@@ -131,7 +131,7 @@ module Gitlab
         put("/users/#{user_id.to_s}/unblock").body
       end
 
-      # Gets a list of current user's SSH keys.
+      # Gets a list of current user"s SSH keys.
       #
       # - return [Array<Hash>]
       #
@@ -142,7 +142,7 @@ module Gitlab
         get("/user/keys").body
       end
 
-      # Gets a list of a user's SSH keys.
+      # Gets a list of a user"s SSH keys.
       #
       # - return [Array<Hash>]
       #
@@ -155,7 +155,7 @@ module Gitlab
 
       # Gets information about SSH key.
       #
-      # - param  [Integer] id The ID of a user's SSH key.
+      # - param  [Integer] id The ID of a user"s SSH key.
       # - return [Gitlab::ObjectifiedHash]
       #
       # ```
@@ -163,6 +163,58 @@ module Gitlab
       # ```
       def ssh_key(ssh_key_id : Int32)
         get("/user/keys/#{ssh_key_id.to_s}").body
+      end
+
+      # Creates a new SSH key for current user.
+      #
+      # - param  [Int32] user_id The Id of user.
+      # - param  [String] key The SSH key body.
+      # - return [Hash] Information about created SSH key.
+      #
+      # ```
+      # client.create_ssh_key(2, "key title", "key body")
+      # ```
+      def create_ssh_key(user_id, title, key)
+        post("/users/#{user_id.to_s}/keys", { "title" => title, "key" => key }).body
+      end
+
+      # Creates a new SSH key for a user.
+      #
+      # - param  [Int32] title The title of an SSH key.
+      # - param  [String] title The title of an SSH key.
+      # - param  [String] key The SSH key body.
+      # - return [Hash] Information about created SSH key.
+      #
+      # ```
+      # client.create_ssh_key("key title", "key body")
+      # ```
+      def create_ssh_key(title, key)
+        post("/user/keys", { "title" => title, "key" => key }).body
+      end
+
+      # Deletes an SSH key for current user.
+      #
+      # - param  [Int32] id The ID of a user"s SSH key.
+      # - return [Gitlab::ObjectifiedHash] Information about deleted SSH key.
+      #
+      # ```
+      # client.delete_ssh_key(1)
+      # ```
+      def delete_ssh_key(ssh_key_id : Int32)
+        delete("/user/keys/#{ssh_key_id.to_s}")
+      end
+
+      # Deletes an SSH key for a user.
+      #
+      # - param  [Int32] user_id The Id of user.
+      # - param  [Int32] id The ID of a user"s SSH key.
+      # - return [Gitlab::ObjectifiedHash] Information about deleted SSH key.
+      #
+      # ```
+      # client.delete_ssh_key(1, 1)
+      # ```
+      def delete_ssh_key(user_id : Int32, ssh_key_id : Int32)
+        delete("/users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}")
       end
     end
   end

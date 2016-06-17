@@ -69,10 +69,10 @@ More API check here: http://icyleaf.github.io/gitlab.cr/
   - [x] List SSH keys - `ssh_keys`
   - [x] List SSH keys for user - `ssh_keys(user_id)`
   - [x] Single SSH key `ssh_key(ssh_key_id)`
-  - [ ] Add SSH key - `create_ssh_key`
-  - [ ] Add SSH key for user - `create_ssh_key(user_id)`
-  - [ ] Delete SSH key for current user - `delete_ssh_key`
-  - [ ] Delete SSH key for given user - `delete_ssh_key(user_id)`
+  - [x] Add SSH key - `create_ssh_key`
+  - [x] Add SSH key for user - `create_ssh_key(user_id)`
+  - [x] Delete SSH key for current user - `delete_ssh_key`
+  - [x] Delete SSH key for given user - `delete_ssh_key(user_id)`
   - [ ] List emails - `emails`
   - [ ] List emails for user - `emails(user_id)`
   - [ ] Single email - `email`
