@@ -204,7 +204,7 @@
 
   <p>Defines methods related to project.</p>
 
-<h2>Project visibility level</h2>
+<h3>Project visibility level</h3>
 
 <p>Project in GitLab has be either private, internal or public. You can determine it by visibility_level field in project.</p>
 
@@ -237,7 +237,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
     
     <br/>
   
@@ -250,6 +250,13 @@
 
   <h2>Instance Method Summary</h2>
   <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method" class="signature"><strong>#add_project_member</strong>(project : Int32 | String, user_id, access_level)</a>
+        
+          <div class="summary"><p>Adds a user to project team.</p></div>
+        
+      </li>
     
       <li class="entry-summary">
         <a href="#all_projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
@@ -294,6 +301,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method" class="signature"><strong>#edit_project_member</strong>(project : Int32 | String, user_id, access_level)</a>
+        
+          <div class="summary"><p>Updates a team member's project access level.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#fork_project%28project_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#fork_project</strong>(project_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Forks a project into the user namespace.</p></div>
@@ -308,14 +322,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#project%28project_name%3AString%29-instance-method" class="signature"><strong>#project</strong>(project_name : String)</a>
-        
-          <div class="summary"><p>Gets information about a project.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#project%28project_id%3AInt32%29-instance-method" class="signature"><strong>#project</strong>(project_id : Int32)</a>
+        <a href="#project%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#project</strong>(project : Int32 | String)</a>
         
           <div class="summary"><p>Gets information about a project.</p></div>
         
@@ -336,9 +343,37 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method" class="signature"><strong>#project_member</strong>(project : Int32 | String, user_id : Int32)</a>
+        
+          <div class="summary"><p>Gets a project team member.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#project_members%28project_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#project_members</strong>(project_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        
+          <div class="summary"><p>Get a list of a project's team members.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Gets a list of projects by the authenticated user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method" class="signature"><strong>#remove_project_member</strong>(project : Int32 | String, user_id : Int32)</a>
+        
+          <div class="summary"><p>Removes a user from project team.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#share_project%28project_id%3AInt32%2Cgroup_id%3AInt32%2Cgroup_access%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#share_project</strong>(project_id : Int32, group_id : Int32, group_access = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Share a project with a group.</p></div>
         
       </li>
     
@@ -385,6 +420,28 @@
 
   <h2>Instance Method Detail</h2>
   
+    <div class="entry-detail" id="add_project_member&#40;project:Int32|String,user_id,access_level&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>add_project_member</strong>(project : Int32 | String, user_id, access_level)
+
+        <a class="method-permalink" href="#add_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Adds a user to project team.</p>
+
+<ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>param  [Hash] options A customizable set of options.</li><li>return [Hash] Information about added team member.</li></ul>
+
+<pre><code>client.add_project_member(</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L325" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="all_projects&#40;params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
@@ -404,7 +461,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -426,7 +483,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L250" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L238" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -449,7 +506,7 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L151" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L139" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -464,7 +521,7 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
       
         <div class="doc"><p>Creates a new project.</p>
 
-<ul><li>params  [String] name The name of a project.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [String] :description The description of a project.</li><li>option params [String] :default_branch The default branch of a project.</li><li>option params [String] :namespace_id The namespace in which to create a project.</li><li>option params [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).</li><li>option params [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).</li><li>option params [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).</li><li>option params [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).</li><li>option params [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).</li><li>option params [String] :public The setting for making a project public (0 = false, 1 = true).</li><li>option params [String] :user_id The user/owner id of a project.</li><li>return [Hash] Information about created project.</li></ul>
+<ul><li>params [String] name The name of a project.</li><li>params [Hash] options A customizable set of options.</li><li>option params [String] :description The description of a project.</li><li>option params [String] :default_branch The default branch of a project.</li><li>option params [String] :namespace_id The namespace in which to create a project.</li><li>option params [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).</li><li>option params [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).</li><li>option params [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).</li><li>option params [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).</li><li>option params [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).</li><li>option params [String] :public The setting for making a project public (0 = false, 1 = true).</li><li>option params [String] :user_id The user/owner id of a project.</li><li>return [Hash] Information about created project.</li></ul>
 
 <pre><code>client.create_project(<span class="s">&quot;gitlab&quot;</span>)
 client.create_project(<span class="s">&quot;viking&quot;</span>, { <span class="s">&quot;description: &#61;&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; &#125;&#41;
@@ -473,7 +530,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L176" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L164" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -495,7 +552,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L274" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L280" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -510,7 +567,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       
         <div class="doc"><p>Updates an existing project.</p>
 
-<ul><li>params  [Int32] project The ID of a project.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [String] :name The name of a project</li><li>option params [String] :path The name of a project</li><li>option params [String] :description The name of a project</li><li>return [Hash] Information about the edited project.</li></ul>
+<ul><li>params [Int32] project The ID of a project.</li><li>params [Hash] options A customizable set of options.</li><li>option params [String] :name The name of a project</li><li>option params [String] :path The name of a project</li><li>option params [String] :description The name of a project</li><li>return [Hash] Information about the edited project.</li></ul>
 
 <pre><code>client.edit_project(<span class="n">42</span>)
 client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot;</span> => <span class="s">&quot;project_name&quot;</span> })</code></pre></div>
@@ -518,7 +575,29 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L199" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L187" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edit_project_member&#40;project:Int32|String,user_id,access_level&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>edit_project_member</strong>(project : Int32 | String, user_id, access_level)
+
+        <a class="method-permalink" href="#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Updates a team member's project access level.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [Array&lt;Hash>] Information about updated team member.</li></ul>
+
+<pre><code>client.edit_project_member(</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L342" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -533,11 +612,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       
         <div class="doc"><p>Forks a project into the user namespace.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] options A customizable set of options.</li></ul>
-
-<p>@option options [String] :sudo The username the project will be forked for</p>
-
-<ul><li>return [Hash] Information about the forked project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :sudo The username the project will be forked for</li><li>return [Hash] Information about the forked project.</li></ul>
 
 <pre><code>client.create_fork(<span class="n">42</span>)
 client.create_fork(<span class="n">42</span>, { <span class="s">&quot;sudo&quot;</span> => <span class="s">&quot;another_username&quot;</span> })</code></pre></div>
@@ -545,7 +620,7 @@ client.create_fork(<span class="n">42</span>, { <span class="s">&quot;sudo&quot;
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L214" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L202" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -569,51 +644,29 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project&#40;project_name:String&#41;-instance-method">
+    <div class="entry-detail" id="project&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project</strong>(project_name : String)
+        def <strong>project</strong>(project : Int32 | String)
 
-        <a class="method-permalink" href="#project%28project_name%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#project%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets information about a project.</p>
 
-<ul><li>params  [String] project_id The ID of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash]</li></ul>
+<ul><li>params  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash]</li></ul>
 
 <pre><code>client.project(<span class="s">&quot;gitlab&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L109" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="project&#40;project_id:Int32&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>project</strong>(project_id : Int32)
-
-        <a class="method-permalink" href="#project%28project_id%3AInt32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Gets information about a project.</p>
-
-<ul><li>params  [Int32] project_id The ID of a project.</li><li>return [Hash]</li></ul>
-
-<pre><code>client.project(<span class="s">&quot;gitlab&quot;</span>)</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L97" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -635,7 +688,7 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -657,7 +710,52 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L124" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L112" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="project_member&#40;project:Int32|String,user_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>project_member</strong>(project : Int32 | String, user_id : Int32)
+
+        <a class="method-permalink" href="#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a project team member.</p>
+
+<ul><li>param  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a project team member.</li><li>return [Hash]</li></ul>
+
+<pre><code>client.project_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="project_members&#40;project_id:Int32,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>project_members</strong>(project_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+
+        <a class="method-permalink" href="#project_members%28project_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get a list of a project's team members.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :query The search query.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>]</li></ul>
+
+<pre><code>client.project_members(<span class="n">42</span>)
+client.project_members(</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L297" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -681,7 +779,52 @@ client.projects({ <span class="s">&quot;scope&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L78" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_project_member&#40;project:Int32|String,user_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_project_member</strong>(project : Int32 | String, user_id : Int32)
+
+        <a class="method-permalink" href="#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Removes a user from project team.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>return [Hash] Information about removed team member.</li></ul>
+
+<pre><code>client.remove_project_member(</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L357" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="share_project&#40;project_id:Int32,group_id:Int32,group_access&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>share_project</strong>(project_id : Int32, group_id : Int32, group_access = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#share_project%28project_id%3AInt32%2Cgroup_id%3AInt32%2Cgroup_access%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Share a project with a group.</p>
+
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :sudo The username the project will be forked for</li><li>return [Hash] Information about the forked project.</li></ul>
+
+<pre><code>client.share_project(<span class="n">2</span>, <span class="n">1</span>)
+client.share_project(<span class="n">2</span>, <span class="n">1</span>, { <span class="s">&quot;group_access&quot;</span> => <span class="s">&quot;50&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -703,7 +846,7 @@ client.projects({ <span class="s">&quot;scope&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L226" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L214" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -727,7 +870,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L43" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L43" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -749,7 +892,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L262" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L250" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -771,7 +914,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/e4f0938421c1aad7ea428457e526624f8f116406/src/gitlab/client/project.cr#L238" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L226" target="_blank">View source</a>]
         
       </div>
     </div>
