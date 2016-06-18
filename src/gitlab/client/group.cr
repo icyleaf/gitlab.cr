@@ -9,7 +9,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>]
+      # - return [Array<Hash>] List of groups
       #
       # ```
       # client.groups
@@ -45,7 +45,7 @@ module Gitlab
       # Gets details of a group.
       #
       # - param  [Int32] id The ID of a group.
-      # - return [Hash]
+      # - return [Hash] Information about group.
       #
       # ```
       # client.group(42)
@@ -111,7 +111,7 @@ module Gitlab
       # - param  [Hash] options A customizable set of options.
       # - option params [String] :per_page Number of projects to return per page
       # - option params [String] :page The page to retrieve
-      # - return [Array<Hash>]
+      # - return [Array<Hash>] List of projects under search qyery
       #
       # ```
       # client.group_search("gitlab")
@@ -141,7 +141,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>]
+      # - return [Array<Hash>] List of group members under a group
       #
       # ```
       # client.group_members(1)
@@ -156,7 +156,7 @@ module Gitlab
       # - param  [Int32] group_id The group id to add a member to.
       # - param  [Int32] user_id The user id of the user to add to the team.
       # - param  [Int32] access_level Project access level.
-      # - return [Hash] Information about added team member.
+      # - return [Hash] Information about added group member.
       #
       # ```
       # client.add_group_member(1, 2, 40)
@@ -173,7 +173,7 @@ module Gitlab
       # - param  [Int32] group_id The group id to add a member to.
       # - param  [Int32] user_id The user id of the user to add to the team.
       # - param  [Int32] access_level Project access level.
-      # - return [Hash] Information about added team member.
+      # - return [Hash] Information about added group member.
       #
       # ```
       # client.edit_group_member(1, 2, 40)
@@ -189,7 +189,7 @@ module Gitlab
       #
       # - param  [Int32] group_id The group id to add a member to.
       # - param  [Int32] user_id The user id of the user to add to the team.
-      # - return [Hash] Information about added team member.
+      # - return [Hash] Information about added group member.
       #
       # ```
       # client.remove_group_member(1, 2)

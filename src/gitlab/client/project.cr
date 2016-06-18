@@ -68,7 +68,7 @@ module Gitlab
       # - option params [String] :search Return list of authorized projects according to a search criteria.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>]
+      # - return [Array<Hash>] List of projects of the authorized user.
       #
       # ```
       # client.projects
@@ -89,7 +89,7 @@ module Gitlab
       # Gets information about a project.
       #
       # - params  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash]
+      # - return [Hash] Information about project.
       #
       # ```
       # client.project("gitlab")
@@ -100,32 +100,17 @@ module Gitlab
 
       # Gets a list of project events.
       #
-      # - params  [Int32] project The ID of a project.
+      # - params  [Int32, String] project The ID of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - params  [Hash] options A customizable set of options.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>]
+      # - return [Array<Hash>] List of events under a project.
       #
       # ```
       # client.project_events(42)
       # ```
-      def project_events(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id.to_s}/events", params).body
-      end
-
-      # Gets a list of project events.
-      #
-      # - params  [String] project The NAMESPACE/PROJECT_NAME of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - params  [Hash] options A customizable set of options.
-      # - option params [Int32] :page The page number.
-      # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>]
-      #
-      # ```
-      # client.project_events(42)
-      # ```
-      def project_events(project_name : String, params : Hash? = nil)
-        get("/projects/#{project_name}/events", params).body
+      def project_events(project : Int32|String, params : Hash? = nil)
+        get("/projects/#{project_id}/events", params).body
       end
 
       # Creates a new project for a user.
@@ -230,7 +215,7 @@ module Gitlab
       # Archive a project.
       #
       # - param  [Int32] project_id The ID of a project.
-      # - return [Hash] Information about the unstar project.
+      # - return [Hash] Information about the archive project.
       #
       # ```
       # client.archive_project(42)
@@ -242,7 +227,7 @@ module Gitlab
       # Unarchive a project.
       #
       # - param  [Int32] project_id The ID of a project.
-      # - return [Hash] Information about the unstar project.
+      # - return [Hash] Information about the unarchive project.
       #
       # ```
       # client.unarchive_project(42)
@@ -256,7 +241,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Hash] options A customizable set of options.
       # - option options [String] :sudo The username the project will be forked for
-      # - return [Hash] Information about the forked project.
+      # - return [Hash] Information about the share project.
       #
       # ```
       # client.share_project(2, 1)
@@ -272,7 +257,7 @@ module Gitlab
       # Deletes a project.
       #
       # - param  [Int32] project_id The ID of a project.
-      # - return [Hash] Information about the unstar project.
+      # - return [Hash] Information about the deleted project.
       #
       # ```
       # client.delete_project(42)
@@ -288,7 +273,7 @@ module Gitlab
       # - option options [String] :query The search query.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>]
+      # - return [Array<Hash>] List of team members under a project.
       #
       # ```
       # client.project_members(42)
@@ -302,7 +287,7 @@ module Gitlab
       #
       # - param  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a project team member.
-      # - return [Hash]
+      # - return [Hash] Information about member under a project.
       #
       # ```
       # client.project_member(1, 2)
@@ -358,26 +343,148 @@ module Gitlab
         delete("/projects/#{project}/members/#{user_id}").body
       end
 
+      # Get a list of a project's web hooks.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Hash] options A customizable set of options.
+      # - option options [Int32] :page The page number.
+      # - option options [Int32] :per_page The number of results per page.
+      # - return [Array<Hash>] List of web hooks under a project.
+      #
+      # ```
+      # client.project_hooks(42)
+      # client.project_hooks('gitlab', { "per_page" => "4" })
+      # ```
       def project_hooks(project : Int32|String, params : Hash? = nil)
         get("/projects/#{project}/hooks", params).body
       end
 
+      # Get a web hook of a project.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32] hook_id The ID of a web hook.
+      # - return [Hash] Information about the web hook.
+      #
+      # ```
+      # client.project_hook(42)
+      # client.project_hook('gitlab', 1)
+      # ```
       def project_hook(project : Int32|String, hook_id : Int32)
         get("/projects/#{project}/hooks/#{hook_id}").body
       end
 
+      # Create a web hook of a project.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [String] url The url of a web hook.
+      # - param  [Hash] params A customizable set of options.
+      # - option params [String] :push_events Trigger hook on push events.
+      # - option params [String] :issues_events Trigger hook on issues events.
+      # - option params [String] :merge_requests_events Trigger hook on merge_requests events.
+      # - option params [String] :tag_push_events Trigger hook on push_tag events.
+      # - option params [String] :note_events Trigger hook on note events.
+      # - option params [String] :enable_ssl_verification Do SSL verification when triggering the hook.
+      # - return [Hash] Information about the created web hook.
+      #
+      # ```
+      # client.add_project_hook(42, "https://hooks.slack.com/services/xxx")
+      # client.add_project_hook('gitlab', "https://hooks.slack.com/services/xxx", { "issues_events" => "true" })
+      # ```
       def add_project_hook(project : Int32|String, url : String, params : Hash = {} of String => String)
         post("/projects/#{project}/hooks", { "url" => url }.merge(params)).body
       end
 
+      # Updates a web hook of a project.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32] hook_id The ID of a web hook.
+      # - param  [Int32] url The url of a web hook.
+      # - param  [Hash] params A customizable set of options.
+      # - option params [String] :push_events Trigger hook on push events.
+      # - option params [String] :issues_events Trigger hook on issues events.
+      # - option params [String] :merge_requests_events Trigger hook on merge_requests events.
+      # - option params [String] :tag_push_events Trigger hook on push_tag events.
+      # - option params [String] :note_events Trigger hook on note events.
+      # - option params [String] :enable_ssl_verification Do SSL verification when triggering the hook.
+      # - return [Hash] Information about updated web hook.
+      #
+      # ```
+      # client.edit_project_hook('gitlab', 3, "https://hooks.slack.com/services/xxx")
+      # ```
       def edit_project_hook(project : Int32|String, hook_id : Int32, url : String, params : Hash = {} of String => String)
         put("/projects/#{project}/hooks/#{hook_id}", { "url" => url }.merge(params)).body
       end
 
+      # Removes a user from project team.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32] hook_id The ID of a web hook.
+      # - return [Hash] Information about removed web hook.
+      #
+      # ```
+      # client.remove_project_member('gitlab', 2)
+      # ```
       def remove_project_hook(project : Int32|String, hook_id : Int32)
         delete("/projects/#{project}/hooks/#{hook_id}").body
       end
 
+      # Get a list of a project's branches.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Hash] options A customizable set of options.
+      # - option options [Int32] :page The page number.
+      # - option options [Int32] :per_page The number of results per page.
+      # - return [Array<Hash>] List of branches under a project.
+      #
+      # ```
+      # client.project_branchs(42)
+      # client.project_branchs('gitlab', { "per_page" => "4" })
+      # ```
+      def project_branchs(project : Int32|String, params : Hash = {} of String => String)
+        get("/projects/#{project}/repository/branches", params).body
+      end
+
+      # Get a branch of a project.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32] branch The name of a branch.
+      # - return [Hash] Information about the branch under a project.
+      #
+      # ```
+      # client.project_branch(42)
+      # client.project_branch('gitlab', "develop")
+      # ```
+      def project_branch(project : Int32|String, branch : String)
+        get("/projects/#{project}/repository/branches/#{branch}").body
+      end
+
+      # Protect a branch of a project.
+      #
+      # - param  [Int32] project_id The ID of a project.
+      # - param  [Hash] branch The name of a branch.
+      # - return [Hash] Information about the protected branch.
+      #
+      # ```
+      # client.protect_project_branch(2, "master")
+      # client.protect_project_branch("gitlab", "master")
+      # ```
+      def protect_project_branch(project : Int32|String, branch : String)
+        put("/projects/#{project}/repository/branches/#{branch}/protect").body
+      end
+
+      # Unprotect a branch of a project.
+      #
+      # - param  [Int32] project_id The ID of a project.
+      # - param  [Hash] branch The name of a branch.
+      # - return [Hash] Information about the unprotect branch
+      #
+      # ```
+      # client.unprotect_project_branch(2, "master")
+      # client.unprotect_project_branch("gitlab", "master")
+      # ```
+      def unprotect_project_branch(project : Int32|String, branch : String)
+        put("/projects/#{project}/repository/branches/#{branch}/unprotect").body
+      end
     end
   end
 end
