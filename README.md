@@ -86,6 +86,45 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [x] Delete email for given user - `delete_email(user_id)`
 - [ ] Session
 - [ ] Projects (including setting Webhooks)
+  - [x] List projects - `projects`
+    - [x] List owned projects - `owned_projects`
+    - [x] List starred projects - `starred_projects`
+    - [x] List ALL projects - `all_projects`
+    - [x] Get single project - `project`
+    - [x] Get project events - `project_events`
+    - [x] Create project - `create_project`
+    - [x] Create project for user - `create_project(user_id)`
+    - [x] Edit project - `edit_project`
+    - [x] Fork project - `fork_project`
+    - [x] Star a project - `star_project`
+    - [x] Unstar a project - `unstar_project`
+    - [x] Archive a project - `archive_project`
+    - [x] Unarchive a project - `unarchive_project`
+    - [x] Remove project - `delete_project`
+  - [x] Team members
+    - [x] List project team members - `project_members`
+    - [x] Get project team member - `project_member`
+    - [x] Add project team member - `add_project_member`
+    - [x] Edit project team member - `edit_project_member`
+    - [x] Remove project team member - `remove_project_member`
+    - [x] Share project with group - `share_project`
+  - [x] Hooks
+    - [x] List project hooks - `project_hooks`
+    - [x] Get project hook - `project_hook`
+    - [x] Add project hook - `add_project_hook`
+    - [x] Edit project hook - `edit_project_hook`
+    - [x] Delete project hook - `remove_project_hook`
+  - [x] Branches
+    - [x] List branches - `project_branchs`
+    - [x] List single branch - `project_branch`
+    - [x] Protect single branch - `protect_project_branch`
+    - [x] Unprotect single branch - `unprotect_project_branch`
+  - [x] Admin fork relation
+    - [x] Create a forked from/to relation between existing projects. - `create_fork_from`
+    - [x] Delete an existing forked from relationship - `remove_fork_from`
+  - [x] Search for projects by name - `project_search`
+  - [ ] Uploads - **TODO**: Waiting for Crystal API
+    - [ ] Upload a file
 - [ ] Project Snippets
 - [ ] Services
 - [ ] Repositories
