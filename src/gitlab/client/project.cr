@@ -17,14 +17,13 @@ module Gitlab
     # See [http://docs.gitlab.com/ce/api/projects.html](http://docs.gitlab.com/ce/api/projects.html)
     #
     module Project
-
       # Gets a list of projects owned by the authenticated user.
       #
       # Alias to `projects`({ "scope" => "owned" })
       #
       # ```
       # client.owned_projects
-      # client.owned_projects({ "order_by" => "last_activity_at", "sort" => "desc"})
+      # client.owned_projects({ "order_by" => "last_activity_at", "sort" => "desc" })
       # client.owned_projects({ "search" => "keyword" })
       # ```
       def owned_projects(params : Hash? = {} of String => String)
@@ -37,7 +36,7 @@ module Gitlab
       #
       # ```
       # client.starred_projects
-      # client.starred_projects({ "order_by" => "last_activity_at", "sort" => "desc"})
+      # client.starred_projects({ "order_by" => "last_activity_at", "sort" => "desc" })
       # client.starred_projects({ "search" => "keyword" })
       # ```
       def starred_projects(params : Hash = {} of String => String)
@@ -50,7 +49,7 @@ module Gitlab
       #
       # ```
       # client.all_projects
-      # client.all_projects({ "order_by" => "last_activity_at", "sort" => "desc"})
+      # client.all_projects({ "order_by" => "last_activity_at", "sort" => "desc" })
       # client.all_projects({ "search" => "keyword" })
       # ```
       def all_projects(params : Hash = {} of String => String)
@@ -72,7 +71,7 @@ module Gitlab
       #
       # ```
       # client.projects
-      # client.projects({ "order_by" => "last_activity_at", "sort" => "desc"})
+      # client.projects({ "order_by" => "last_activity_at", "sort" => "desc" })
       # client.projects({ "scope" => "starred", "search" => "keyword" })
       # ```
       def projects(params : Hash = {} of String => String)
@@ -160,9 +159,9 @@ module Gitlab
       #
       # - params [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - params [Hash] options A customizable set of options.
-      # - option params [String] :name The name of a project
-      # - option params [String] :path The name of a project
-      # - option params [String] :description The name of a project
+      # - option params [String] :name The name of a project.
+      # - option params [String] :path The name of a project.
+      # - option params [String] :description The name of a project.
       # - return [Hash] Information about the edited project.
       #
       # ```
@@ -177,7 +176,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
-      # - option options [String] :sudo The username the project will be forked for
+      # - option options [String] :sudo The username the project will be forked for.
       # - return [Hash] Information about the forked project.
       #
       # ```
@@ -240,7 +239,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
-      # - option options [String] :sudo The username the project will be forked for
+      # - option options [String] :sudo The username the project will be forked for.
       # - return [Hash] Information about the share project.
       #
       # ```
@@ -252,6 +251,24 @@ module Gitlab
         params["group_access"] = group_access if group_access
 
         post("/projects/#{project}/share", params).body
+      end
+
+      # Search for project by name
+      #
+      # - param  [String] query A string to search for in group names and paths.
+      # - param  [Hash] params A customizable set of params.
+      # - option params [String] :per_page Number of projects to return per page.
+      # - option params [String] :page The page to retrieve.
+      # - option params [String] :order_by Return requests ordered by id, name, created_at or last_activity_at fields.
+      # - option params [String] :sort Return requests sorted in asc or desc order.
+      # - return [Array<Hash>] List of projects under search qyery.
+      #
+      # ```
+      # client.project_search("gitlab")
+      # client.project_search("gitlab", { "per_page" => 50 })
+      # ```
+      def project_search(query, params : Hash = {} of String => String)
+        get("/projects/search/#{query}", params).body
       end
 
       # Deletes a project.

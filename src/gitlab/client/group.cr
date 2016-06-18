@@ -86,7 +86,7 @@ module Gitlab
       # ```
       # client.create_group("new-group", "group-path")
       # client.create_group("gitlab", "gitlab-path", "New Gitlab project")
-      # client.create_group("gitlab", "gitlab-path", visibility_level: 0)
+      # client.create_group("gitlab", "gitlab-path", { "visibility_level" => "0" })
       # ```
       def edit_group(group_id : Int32, name, path, description = nil, visibility_level : Int32? = nil)
         params = build_group_params(name, path, description, visibility_level)
@@ -108,7 +108,7 @@ module Gitlab
       # Search for groups by name
       #
       # - param  [String] query A string to search for in group names and paths.
-      # - param  [Hash] options A customizable set of options.
+      # - param  [Hash] params A customizable set of params.
       # - option params [String] :per_page Number of projects to return per page
       # - option params [String] :page The page to retrieve
       # - return [Array<Hash>] List of projects under search qyery
@@ -118,10 +118,8 @@ module Gitlab
       # client.group_search("gitlab", { "per_page" => 50 })
       # ```
       def group_search(query, params : Hash = {} of String => String)
-        params["search"] = search
-        get("/groups", query: options).body
+        get("/groups", { "search" => search}.merge(params)).body
       end
-
 
       # Transfers a project to a group
       #

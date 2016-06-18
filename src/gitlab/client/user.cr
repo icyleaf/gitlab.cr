@@ -24,7 +24,7 @@ module Gitlab
       # - return [Hash]
       #
       # ```
-      # client.user # Get current user information
+      # client.user
       # ```
       def user
         get("/user").body
@@ -36,7 +36,7 @@ module Gitlab
       # - return [Hash]
       #
       # ```
-      # client.user(2) # Get user information by ID = 2
+      # client.user(2)
       # ```
       def user(user_id : Int32)
         get("/users/#{user_id.to_s}").body
@@ -61,20 +61,18 @@ module Gitlab
       # Gitlab.create_user("icy.leaf@kaifeng.cn", "secret", "icyleaf")
       # ```
       def create_user(email : String, password : String, username : String, params : Hash = {} of String => String)
-        params = {
+        post("/users", {
           "email"    => email,
           "password" => password,
           "username" => username,
           "name"     => username,
-        }.merge(params)
-
-        post("/users", params: params).body
+        }.merge(params)).body
       end
 
       # Updates a user.
       #
       # - param  [Int32] id The ID of a user.
-      # - param  [Hash] options A customizable set of options.
+      # - param  [Hash] params A customizable set of params.
       # - option params [String] :email The email of a user.
       # - option params [String] :password The password of a user.
       # - option params [String] :name The name of a user. Defaults to email.
@@ -101,6 +99,22 @@ module Gitlab
       # ```
       def delete_user(user_id : Int32)
         delete("/users/#{user_id.to_s}").body
+      end
+
+      # Search for project by name
+      #
+      # - param  [String] query A string to search for in group names and paths.
+      # - param  [Hash] params A customizable set of params.
+      # - option params [String] :per_page Number of projects to return per page
+      # - option params [String] :page The page to retrieve
+      # - return [Array<Hash>] List of projects under search qyery
+      #
+      # ```
+      # client.group_search("gitlab")
+      # client.group_search("gitlab", { "per_page" => 50 })
+      # ```
+      def group_search(query, params : Hash = {} of String => String)
+        get("/groups", { "search" => search }.merge(params)).body
       end
 
       # Blocks the specified user.
@@ -301,7 +315,6 @@ module Gitlab
       def delete_email(email_id : Int32, user_id : Int32)
         delete("/users/#{user_id.to_s}/emails/#{email_id.to_s}")
       end
-
     end
   end
 end
