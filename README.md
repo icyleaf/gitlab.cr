@@ -41,10 +41,10 @@ begin
   pp g.user(2)
 rescue ex
   pp ex.message
-  # Here has one variable "response" instance of HTTP::Response
+  # Here has one variable "response" instance of Gitlab::HTTP::Response
   # Friendly for developer to debug and control expressions.
-  pp ex.response.status_code
-  pp ex.response.body
+  pp ex.response.code
+  pp ex.response.parse_json
 end
 ```
 

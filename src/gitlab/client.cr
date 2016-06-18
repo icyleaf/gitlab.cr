@@ -7,6 +7,11 @@ module Gitlab
   class Client
     getter :endpoint, :token
 
+    enum ErrorType
+      JsonError
+      NonJsonError
+    end
+
     # Create a new client
     #
     # ```
@@ -32,12 +37,77 @@ module Gitlab
     # client.request({{method}}, "/path", { "key" => "value"})
     # ```
     def request(method, uri, params : Hash? = nil) : HTTP::Response
-      HTTP.request(method, build_url(uri), default_options(uri, params))
+      response = HTTP.request(method, build_url(uri), default_options(uri, params))
+      validate(response)
+
+      response
     end
 
     # Return a full url string from built with base domain and url path
     private def build_url(uri)
       File.join(@endpoint, uri)
+    end
+
+    # Validate http response status code and content type
+    #
+    # Raise an exception if status code >= 400
+    #
+    # - **400**: `Error::BadRequest`
+    # - **401**: `Error::Unauthorized`
+    # - **403**: `Error::Forbidden`
+    # - **404**: `Error::NotFound`
+    # - **405**: `Error::MethodNotAllowed`
+    # - **409**: `Error::Conflict`
+    # - **422**: `Error::Unprocessable`
+    # - **500**: `Error::InternalServerError`
+    # - **502**: `Error::BadGateway`
+    # - **503**: `Error::ServiceUnavailable`
+    #
+    # Raise an exception if content type is not json format
+    #
+    # - **text/html**: `Error::JSONParseError`
+    private def validate(response : HTTP::Response)
+      raise Error::JSONParseError.new(error_message(response, ErrorType::NonJsonError), response) if response.content_type == HTTP::Response::ContentType::HTML
+
+      case response.code
+      when 400 then raise Error::BadRequest.new(error_message(response), response)
+      when 401 then raise Error::Unauthorized.new(error_message(response), response)
+      when 403 then raise Error::Forbidden.new(error_message(response), response)
+      when 404 then raise Error::NotFound.new(error_message(response), response)
+      when 405 then raise Error::MethodNotAllowed.new(error_message(response), response)
+      when 409 then raise Error::Conflict.new(error_message(response), response)
+      when 422 then raise Error::Unprocessable.new(error_message(response), response)
+      when 500 then raise Error::InternalServerError.new(error_message(response), response)
+      when 502 then raise Error::BadGateway.new(error_message(response), response)
+      when 503 then raise Error::ServiceUnavailable.new(error_message(response), response)
+      end
+    end
+
+    # Output error message
+    private def error_message(response, type : ErrorType = ErrorType::JsonError)
+      message = if type == ErrorType::JsonError
+        response_body = response.parse_json
+        handle_error(response_body["message"] || response_body["error"])
+      else
+        "body is not json format. Body: #{response.body}"
+      end
+
+      "Server responded with code #{response.code}, " \
+      "Message: #{message}. " \
+      "Request URL: [#{response.method}] #{response.url.to_s}"
+    end
+
+    private def handle_error(message)
+      case message
+      when Hash
+        message.to_h.sort.map do |key, val|
+          "'#{key}' #{(val.is_a?(Hash) ? val.sort.map { |k, v| "(#{k}: #{v.join(' ')})" } : val).join(' ')}"
+        end.join(", ")
+      when Array
+        message.join(" ")
+      else
+        message
+      end
     end
 
     # Sets a Auth(PRIVATE-TOKEN or Authorization) header and query params for requests
@@ -64,5 +134,6 @@ module Gitlab
     include Session
     include Group
     include Project
+    include Repository
   end
 end
