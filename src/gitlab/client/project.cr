@@ -357,6 +357,27 @@ module Gitlab
       def remove_project_member(project : Int32|String, user_id : Int32)
         delete("/projects/#{project}/members/#{user_id}").body
       end
+
+      def project_hooks(project : Int32|String, params : Hash? = nil)
+        get("/projects/#{project}/hooks", params).body
+      end
+
+      def project_hook(project : Int32|String, hook_id : Int32)
+        get("/projects/#{project}/hooks/#{hook_id}").body
+      end
+
+      def add_project_hook(project : Int32|String, url : String, params : Hash = {} of String => String)
+        post("/projects/#{project}/hooks", { "url" => url }.merge(params)).body
+      end
+
+      def edit_project_hook(project : Int32|String, hook_id : Int32, url : String, params : Hash = {} of String => String)
+        put("/projects/#{project}/hooks/#{hook_id}", { "url" => url }.merge(params)).body
+      end
+
+      def remove_project_hook(project : Int32|String, hook_id : Int32)
+        delete("/projects/#{project}/hooks/#{hook_id}").body
+      end
+
     end
   end
 end
