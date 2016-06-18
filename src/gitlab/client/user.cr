@@ -2,7 +2,7 @@ module Gitlab
   class Client
     # Defines methods related to users.
     #
-    # See [http://docs.gitlab.com/ce/api/users.html]9http://docs.gitlab.com/ce/api/users.html
+    # See [http://docs.gitlab.com/ce/api/users.html](http://docs.gitlab.com/ce/api/users.html)
     module User
       # Gets a list of users.
       #
