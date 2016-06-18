@@ -2,7 +2,7 @@ module Gitlab
   class Client
     # Defines methods related to project.
     #
-    # ## Project visibility level
+    # ### Project visibility level
     #
     # Project in GitLab has be either private, internal or public. You can determine it by visibility_level field in project.
     #
@@ -88,26 +88,14 @@ module Gitlab
 
       # Gets information about a project.
       #
-      # - params  [Int32] project_id The ID of a project.
+      # - params  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - return [Hash]
       #
       # ```
       # client.project("gitlab")
       # ```
-      def project(project_id : Int32)
-        get("/projects/#{project_id.to_s}").body
-      end
-
-      # Gets information about a project.
-      #
-      # - params  [String] project_id The ID of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash]
-      #
-      # ```
-      # client.project("gitlab")
-      # ```
-      def project(project_name : String)
-        get("/projects/#{project_name}").body
+      def project(project : Int32|String)
+        get("/projects/#{project}").body
       end
 
       # Gets a list of project events.
@@ -154,8 +142,8 @@ module Gitlab
 
       # Creates a new project.
       #
-      # - params  [String] name The name of a project.
-      # - params  [Hash] options A customizable set of options.
+      # - params [String] name The name of a project.
+      # - params [Hash] options A customizable set of options.
       # - option params [String] :description The description of a project.
       # - option params [String] :default_branch The default branch of a project.
       # - option params [String] :namespace_id The namespace in which to create a project.
@@ -185,8 +173,8 @@ module Gitlab
 
       # Updates an existing project.
       #
-      # - params  [Int32] project The ID of a project.
-      # - params  [Hash] options A customizable set of options.
+      # - params [Int32] project The ID of a project.
+      # - params [Hash] options A customizable set of options.
       # - option params [String] :name The name of a project
       # - option params [String] :path The name of a project
       # - option params [String] :description The name of a project
@@ -204,7 +192,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Hash] options A customizable set of options.
-      # @option options [String] :sudo The username the project will be forked for
+      # - option options [String] :sudo The username the project will be forked for
       # - return [Hash] Information about the forked project.
       #
       # ```
@@ -263,6 +251,24 @@ module Gitlab
         delete("/projects/#{project_id.to_s}/unarchive").body
       end
 
+      # Share a project with a group.
+      #
+      # - param  [Int32] project_id The ID of a project.
+      # - param  [Hash] options A customizable set of options.
+      # - option options [String] :sudo The username the project will be forked for
+      # - return [Hash] Information about the forked project.
+      #
+      # ```
+      # client.share_project(2, 1)
+      # client.share_project(2, 1, { "group_access" => "50" })
+      # ```
+      def share_project(project_id : Int32, group_id : Int32, group_access = nil)
+        params = { "group_id" => group_id }
+        params["group_access"] = group_access if group_access
+
+        post("/projects/#{project_id}/share", params).body
+      end
+
       # Deletes a project.
       #
       # - param  [Int32] project_id The ID of a project.
@@ -275,6 +281,82 @@ module Gitlab
         delete("/projects/#{project_id.to_s}").body
       end
 
+      # Get a list of a project's team members.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Hash] options A customizable set of options.
+      # - option options [String] :query The search query.
+      # - option options [Int32] :page The page number.
+      # - option options [Int32] :per_page The number of results per page.
+      # - return [Array<Hash>]
+      #
+      # ```
+      # client.project_members(42)
+      # client.project_members('gitlab')
+      # ```
+      def project_members(project_id : Int32, params : Hash = {} of String => String)
+        get("/projects/#{project_id}/members", params).body
+      end
+
+      # Gets a project team member.
+      #
+      # - param  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [Int32] user_id The ID of a project team member.
+      # - return [Hash]
+      #
+      # ```
+      # client.project_member(1, 2)
+      # ```
+      def project_member(project : Int32|String, user_id : Int32)
+        get("/projects/#{project}/members#{user_id}").body
+      end
+
+      # Adds a user to project team.
+      #
+      # - param  [Int32, String] project_id The ID or name of a project.
+      # - param  [Int32] user_id The ID of a user.
+      # - param  [Int32] access_level The access level to project.
+      # - param  [Hash] options A customizable set of options.
+      # - return [Hash] Information about added team member.
+      #
+      # ```
+      # client.add_project_member('gitlab', 2, 40)
+      # ```
+      def add_project_member(project : Int32|String, user_id, access_level)
+        post("/projects/#{project}/members", {
+          "user_id" => user_id,
+          "access_level" => access_level
+        }).body
+      end
+
+      # Updates a team member's project access level.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32] user_id The ID of a user.
+      # - param  [Int32] access_level The access level to project.
+      # - return [Array<Hash>] Information about updated team member.
+      #
+      # ```
+      # client.edit_project_member('gitlab', 3, 20)
+      # ```
+      def edit_project_member(project : Int32|String, user_id, access_level)
+        put("/projects/#{project}/members/#{user_id}", {
+          "access_level" => access_level
+        }).body
+      end
+
+      # Removes a user from project team.
+      #
+      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32] user_id The ID of a user.
+      # - return [Hash] Information about removed team member.
+      #
+      # ```
+      # client.remove_project_member('gitlab', 2)
+      # ```
+      def remove_project_member(project : Int32|String, user_id : Int32)
+        delete("/projects/#{project}/members/#{user_id}").body
+      end
     end
   end
 end
