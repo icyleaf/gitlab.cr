@@ -134,6 +134,5 @@ module Gitlab
     include Session
     include Group
     include Project
-    include Repository
   end
 end
