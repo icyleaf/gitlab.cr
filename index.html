@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/ErrorType" data-name="gitlab::client::errortype">
+      <a href="Gitlab/Client/ErrorType.html">ErrorType</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
       <a href="Gitlab/Client/Group.html">Group</a>
       
@@ -37,6 +42,11 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Project" data-name="gitlab::client::project">
       <a href="Gitlab/Client/Project.html">Project</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Repository" data-name="gitlab::client::repository">
+      <a href="Gitlab/Client/Repository.html">Repository</a>
       
     </li>
   
@@ -170,8 +180,8 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
-      <a href="Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ContentType" data-name="gitlab::http::response::contenttype">
+      <a href="Gitlab/HTTP/Response/ContentType.html">ContentType</a>
       
     </li>
   
@@ -185,8 +195,18 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/StringParseJson" data-name="gitlab::stringparsejson">
+      <a href="Gitlab/StringParseJson.html">StringParseJson</a>
+      
+    </li>
+  
 </ul>
 
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
+      <a href="String.html">String</a>
       
     </li>
   
@@ -206,7 +226,7 @@
 <p>Gitlab.cr is a <a href="http://docs.gitlab.com/ce/api/README.html" target="_blank">GitLab API</a> wrapper writes with <a href="http://crystal-lang.org/" target="_blank">Crystal</a> Language.
 Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab</a> gem for ruby version.</p>
 
-<p>Docs Generated in <a href="https://github.com/icyleaf/gitlab.cr/commit/540b995" target="_blank">540b995</a> (2016-06-18 18:30:23 +0800).</p>
+<p>Docs Generated in <a href="https://github.com/icyleaf/gitlab.cr/commit/feded6b" target="_blank">feded6b</a> (2016-06-19 00:22:07 +0800).</p>
 
 <h2>Status</h2>
 
@@ -235,10 +255,10 @@ token <span class="o">=</span> <span class="s">&quot;&lt;token&gt;&quot;</span>
   pp g.user(<span class="n">2</span>)
 <span class="k">rescue</span> ex
   pp ex.message
-  <span class="c"># Here has one variable &quot;response&quot; instance of HTTP::Response</span>
+  <span class="c"># Here has one variable &quot;response&quot; instance of Gitlab::HTTP::Response</span>
   <span class="c"># Friendly for developer to debug and control expressions.</span>
-  pp ex.response.status_code
-  pp ex.response.body
+  pp ex.response.code
+  pp ex.response.body.parse_json
 <span class="k">end</span></code></pre>
 
 <p>More API check it out: <a href="http://icyleaf.github.io/gitlab.cr/" target="_blank">http://icyleaf.github.io/gitlab.cr/</a></p>

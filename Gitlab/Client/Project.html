@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/ErrorType" data-name="gitlab::client::errortype">
+      <a href="../../Gitlab/Client/ErrorType.html">ErrorType</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
       <a href="../../Gitlab/Client/Group.html">Group</a>
       
@@ -37,6 +42,11 @@
   
   <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Project" data-name="gitlab::client::project">
       <a href="../../Gitlab/Client/Project.html">Project</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Repository" data-name="gitlab::client::repository">
+      <a href="../../Gitlab/Client/Repository.html">Repository</a>
       
     </li>
   
@@ -170,8 +180,8 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
-      <a href="../../Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ContentType" data-name="gitlab::http::response::contenttype">
+      <a href="../../Gitlab/HTTP/Response/ContentType.html">ContentType</a>
       
     </li>
   
@@ -185,8 +195,18 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/StringParseJson" data-name="gitlab::stringparsejson">
+      <a href="../../Gitlab/StringParseJson.html">StringParseJson</a>
+      
+    </li>
+  
 </ul>
 
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
+      <a href="../../String.html">String</a>
       
     </li>
   
@@ -242,7 +262,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
     
     <br/>
   
@@ -505,7 +525,7 @@
     <div class="entry-detail" id="add_project_hook&#40;project:Int32|String,url:String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>add_project_hook</strong>(project : Int32 | String, url : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>add_project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, url : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
         <a class="method-permalink" href="#add_project_hook%28project%3AInt32%7CString%2Curl%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -520,7 +540,7 @@ client.add_project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L410" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L410" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -528,7 +548,7 @@ client.add_project_hook(</code></pre></div>
     <div class="entry-detail" id="add_project_member&#40;project:Int32|String,user_id,access_level&#41;-instance-method">
       <div class="signature">
         
-        def <strong>add_project_member</strong>(project : Int32 | String, user_id, access_level)
+        def <strong>add_project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id, access_level)
 
         <a class="method-permalink" href="#add_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method">#</a>
       </div>
@@ -542,7 +562,7 @@ client.add_project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L327" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L327" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -566,7 +586,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -574,7 +594,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
     <div class="entry-detail" id="archive_project&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>archive_project</strong>(project : Int32 | String)
+        def <strong>archive_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#archive_project%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
@@ -588,7 +608,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -596,7 +616,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
     <div class="entry-detail" id="create_fork_from&#40;project:Int32|String,forked_from_id:Int32&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_fork_from</strong>(project : Int32 | String, forked_from_id : Int32)
+        def <strong>create_fork_from</strong>(project : Int32 | <a href="../../String.html">String</a>, forked_from_id : Int32)
 
         <a class="method-permalink" href="#create_fork_from%28project%3AInt32%7CString%2Cforked_from_id%3AInt32%29-instance-method">#</a>
       </div>
@@ -610,7 +630,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L515" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L515" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -618,7 +638,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
     <div class="entry-detail" id="create_project&#40;user_id:Int32,name:String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_project</strong>(user_id : Int32, name : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>create_project</strong>(user_id : Int32, name : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
         <a class="method-permalink" href="#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -633,7 +653,7 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -657,7 +677,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -665,7 +685,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
     <div class="entry-detail" id="delete_project&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>delete_project</strong>(project : Int32 | String)
+        def <strong>delete_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#delete_project%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
@@ -679,7 +699,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -687,7 +707,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
     <div class="entry-detail" id="edit_project&#40;project:Int32|String,prams:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>edit_project</strong>(project : Int32 | String, prams : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>edit_project</strong>(project : Int32 | <a href="../../String.html">String</a>, prams : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
         <a class="method-permalink" href="#edit_project%28project%3AInt32%7CString%2Cprams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -702,7 +722,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -710,7 +730,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
     <div class="entry-detail" id="edit_project_hook&#40;project:Int32|String,hook_id:Int32,url:String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>edit_project_hook</strong>(project : Int32 | String, hook_id : Int32, url : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>edit_project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, hook_id : Int32, url : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
         <a class="method-permalink" href="#edit_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%2Curl%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -724,7 +744,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L431" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L431" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -732,7 +752,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
     <div class="entry-detail" id="edit_project_member&#40;project:Int32|String,user_id,access_level&#41;-instance-method">
       <div class="signature">
         
-        def <strong>edit_project_member</strong>(project : Int32 | String, user_id, access_level)
+        def <strong>edit_project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id, access_level)
 
         <a class="method-permalink" href="#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method">#</a>
       </div>
@@ -746,7 +766,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L344" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L344" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -754,7 +774,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
     <div class="entry-detail" id="fork_project&#40;project:Int32|String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>fork_project</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>fork_project</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
         <a class="method-permalink" href="#fork_project%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -769,7 +789,7 @@ client.create_fork(<span class="n">42</span>, { <span class="s">&quot;sudo&quot;
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -793,7 +813,7 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -801,7 +821,7 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
     <div class="entry-detail" id="project&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project</strong>(project : Int32 | String)
+        def <strong>project</strong>(project : Int32 | <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#project%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
@@ -815,7 +835,7 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -823,7 +843,7 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
     <div class="entry-detail" id="project_branch&#40;project:Int32|String,branch:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project_branch</strong>(project : Int32 | String, branch : String)
+        def <strong>project_branch</strong>(project : Int32 | <a href="../../String.html">String</a>, branch : <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method">#</a>
       </div>
@@ -838,7 +858,7 @@ client.project_branch(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L474" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L474" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -846,7 +866,7 @@ client.project_branch(</code></pre></div>
     <div class="entry-detail" id="project_branchs&#40;project:Int32|String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project_branchs</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>project_branchs</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
         <a class="method-permalink" href="#project_branchs%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -861,7 +881,7 @@ client.project_branchs(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L460" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L460" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -869,7 +889,7 @@ client.project_branchs(</code></pre></div>
     <div class="entry-detail" id="project_events&#40;project:Int32|String,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project_events</strong>(project : Int32 | String, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>project_events</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash | Nil = <span class="n">nil</span>)
 
         <a class="method-permalink" href="#project_events%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -883,7 +903,7 @@ client.project_branchs(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -891,7 +911,7 @@ client.project_branchs(</code></pre></div>
     <div class="entry-detail" id="project_hook&#40;project:Int32|String,hook_id:Int32&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project_hook</strong>(project : Int32 | String, hook_id : Int32)
+        def <strong>project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, hook_id : Int32)
 
         <a class="method-permalink" href="#project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method">#</a>
       </div>
@@ -906,7 +926,7 @@ client.project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L389" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L389" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -914,7 +934,7 @@ client.project_hook(</code></pre></div>
     <div class="entry-detail" id="project_hooks&#40;project:Int32|String,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project_hooks</strong>(project : Int32 | String, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>project_hooks</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash | Nil = <span class="n">nil</span>)
 
         <a class="method-permalink" href="#project_hooks%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -929,7 +949,7 @@ client.project_hooks(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L375" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L375" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -937,7 +957,7 @@ client.project_hooks(</code></pre></div>
     <div class="entry-detail" id="project_member&#40;project:Int32|String,user_id:Int32&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project_member</strong>(project : Int32 | String, user_id : Int32)
+        def <strong>project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id : Int32)
 
         <a class="method-permalink" href="#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method">#</a>
       </div>
@@ -951,7 +971,7 @@ client.project_hooks(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -959,7 +979,7 @@ client.project_hooks(</code></pre></div>
     <div class="entry-detail" id="project_members&#40;project:Int32|String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>project_members</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>project_members</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
         <a class="method-permalink" href="#project_members%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -974,7 +994,7 @@ client.project_members(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -997,7 +1017,7 @@ client.project_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1021,7 +1041,7 @@ client.projects({ <span class="s">&quot;scope&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1029,7 +1049,7 @@ client.projects({ <span class="s">&quot;scope&quot;</span> => <span class="s">&q
     <div class="entry-detail" id="protect_project_branch&#40;project:Int32|String,branch:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>protect_project_branch</strong>(project : Int32 | String, branch : String)
+        def <strong>protect_project_branch</strong>(project : Int32 | <a href="../../String.html">String</a>, branch : <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#protect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method">#</a>
       </div>
@@ -1044,7 +1064,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L488" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L488" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1052,7 +1072,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
     <div class="entry-detail" id="remove_fork_from&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>remove_fork_from</strong>(project : Int32 | String)
+        def <strong>remove_fork_from</strong>(project : Int32 | <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#remove_fork_from%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
@@ -1066,7 +1086,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L527" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L527" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1074,7 +1094,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
     <div class="entry-detail" id="remove_project_hook&#40;project:Int32|String,hook_id:Int32&#41;-instance-method">
       <div class="signature">
         
-        def <strong>remove_project_hook</strong>(project : Int32 | String, hook_id : Int32)
+        def <strong>remove_project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, hook_id : Int32)
 
         <a class="method-permalink" href="#remove_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method">#</a>
       </div>
@@ -1088,7 +1108,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1096,7 +1116,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
     <div class="entry-detail" id="remove_project_member&#40;project:Int32|String,user_id:Int32&#41;-instance-method">
       <div class="signature">
         
-        def <strong>remove_project_member</strong>(project : Int32 | String, user_id : Int32)
+        def <strong>remove_project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id : Int32)
 
         <a class="method-permalink" href="#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method">#</a>
       </div>
@@ -1110,7 +1130,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L359" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L359" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1118,7 +1138,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
     <div class="entry-detail" id="share_project&#40;project:Int32|String,group_id:Int32,group_access&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>share_project</strong>(project : Int32 | String, group_id : Int32, group_access = <span class="n">nil</span>)
+        def <strong>share_project</strong>(project : Int32 | <a href="../../String.html">String</a>, group_id : Int32, group_access = <span class="n">nil</span>)
 
         <a class="method-permalink" href="#share_project%28project%3AInt32%7CString%2Cgroup_id%3AInt32%2Cgroup_access%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
@@ -1133,7 +1153,7 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, { <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1141,7 +1161,7 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, { <span
     <div class="entry-detail" id="star_project&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>star_project</strong>(project : Int32 | String)
+        def <strong>star_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#star_project%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
@@ -1155,7 +1175,7 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, { <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1179,7 +1199,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1187,7 +1207,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
     <div class="entry-detail" id="unarchive_project&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>unarchive_project</strong>(project : Int32 | String)
+        def <strong>unarchive_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#unarchive_project%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
@@ -1201,7 +1221,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1209,7 +1229,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
     <div class="entry-detail" id="unprotect_project_branch&#40;project:Int32|String,branch:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>unprotect_project_branch</strong>(project : Int32 | String, branch : String)
+        def <strong>unprotect_project_branch</strong>(project : Int32 | <a href="../../String.html">String</a>, branch : <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#unprotect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method">#</a>
       </div>
@@ -1224,7 +1244,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L502" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L502" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1232,7 +1252,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
     <div class="entry-detail" id="unstar_project&#40;project:Int32|String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>unstar_project</strong>(project : Int32 | String)
+        def <strong>unstar_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
 
         <a class="method-permalink" href="#unstar_project%28project%3AInt32%7CString%29-instance-method">#</a>
       </div>
@@ -1246,7 +1266,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/ErrorType" data-name="gitlab::client::errortype">
+      <a href="../../Gitlab/Client/ErrorType.html">ErrorType</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
       <a href="../../Gitlab/Client/Group.html">Group</a>
       
@@ -37,6 +42,11 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Project" data-name="gitlab::client::project">
       <a href="../../Gitlab/Client/Project.html">Project</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Repository" data-name="gitlab::client::repository">
+      <a href="../../Gitlab/Client/Repository.html">Repository</a>
       
     </li>
   
@@ -170,8 +180,8 @@
       
         <ul>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ERROR_TYPE" data-name="gitlab::http::response::error_type">
-      <a href="../../Gitlab/HTTP/Response/ERROR_TYPE.html">ERROR_TYPE</a>
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ContentType" data-name="gitlab::http::response::contenttype">
+      <a href="../../Gitlab/HTTP/Response/ContentType.html">ContentType</a>
       
     </li>
   
@@ -185,8 +195,18 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/StringParseJson" data-name="gitlab::stringparsejson">
+      <a href="../../Gitlab/StringParseJson.html">StringParseJson</a>
+      
+    </li>
+  
 </ul>
 
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
+      <a href="../../String.html">String</a>
       
     </li>
   
@@ -227,7 +247,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/http/response.cr#L7" target="_blank">gitlab/http/response.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L7" target="_blank">gitlab/http/response.cr</a>
     
     <br/>
   
@@ -261,7 +281,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#body%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#body</strong> : JSON::Any</a>
+        <a href="#body%3AString-instance-method" class="signature"><strong>#body</strong> : String</a>
         
       </li>
     
@@ -271,9 +291,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#validate%28response%29-instance-method" class="signature"><strong>#validate</strong>(response)</a>
+        <a href="#content_type%3AGitlab%3A%3AHTTP%3A%3AResponse%3A%3AContentType-instance-method" class="signature"><strong>#content_type</strong> : Gitlab::HTTP::Response::ContentType</a>
         
-          <div class="summary"><p>Validate http response status code and content type</p></div>
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#method%3AString-instance-method" class="signature"><strong>#method</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%3AString-instance-method" class="signature"><strong>#to_s</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url%3AURI-instance-method" class="signature"><strong>#url</strong> : URI</a>
         
       </li>
     
@@ -317,7 +350,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/http/response.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -337,7 +370,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/http/response.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -347,18 +380,18 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="body:JSON::Any-instance-method">
+    <div class="entry-detail" id="body:String-instance-method">
       <div class="signature">
         
-        def <strong>body</strong> : JSON::Any
+        def <strong>body</strong> : <a href="../../String.html">String</a>
 
-        <a class="method-permalink" href="#body%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#body%3AString-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/http/response.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -374,33 +407,71 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/http/response.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="validate&#40;response&#41;-instance-method">
+    <div class="entry-detail" id="content_type:Gitlab::HTTP::Response::ContentType-instance-method">
       <div class="signature">
         
-        def <strong>validate</strong>(response)
+        def <strong>content_type</strong> : <a href="../../Gitlab/HTTP/Response/ContentType.html">Gitlab::HTTP::Response::ContentType</a>
 
-        <a class="method-permalink" href="#validate%28response%29-instance-method">#</a>
+        <a class="method-permalink" href="#content_type%3AGitlab%3A%3AHTTP%3A%3AResponse%3A%3AContentType-instance-method">#</a>
       </div>
-      
-        <div class="doc"><p>Validate http response status code and content type</p>
-
-<p>Raise an exception if status code >= 400</p>
-
-<ul><li><strong>400</strong>: <code><a href="../../Gitlab/Error/BadRequest.html">Error::BadRequest</a></code></li><li><strong>401</strong>: <code><a href="../../Gitlab/Error/Unauthorized.html">Error::Unauthorized</a></code></li><li><strong>403</strong>: <code><a href="../../Gitlab/Error/Forbidden.html">Error::Forbidden</a></code></li><li><strong>404</strong>: <code><a href="../../Gitlab/Error/NotFound.html">Error::NotFound</a></code></li><li><strong>405</strong>: <code><a href="../../Gitlab/Error/MethodNotAllowed.html">Error::MethodNotAllowed</a></code></li><li><strong>409</strong>: <code><a href="../../Gitlab/Error/Conflict.html">Error::Conflict</a></code></li><li><strong>422</strong>: <code><a href="../../Gitlab/Error/Unprocessable.html">Error::Unprocessable</a></code></li><li><strong>500</strong>: <code><a href="../../Gitlab/Error/InternalServerError.html">Error::InternalServerError</a></code></li><li><strong>502</strong>: <code><a href="../../Gitlab/Error/BadGateway.html">Error::BadGateway</a></code></li><li><strong>503</strong>: <code><a href="../../Gitlab/Error/ServiceUnavailable.html">Error::ServiceUnavailable</a></code></li></ul>
-
-<p>Raise an exception if content type is not json format</p>
-
-<ul><li><strong>text/html</strong>: <code><a href="../../Gitlab/Error/JSONParseError.html">Error::JSONParseError</a></code></li></ul></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/540b995f186d21140abffa3018f4f94361049d75/src/gitlab/http/response.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="method:String-instance-method">
+      <div class="signature">
+        
+        def <strong>method</strong> : <a href="../../String.html">String</a>
+
+        <a class="method-permalink" href="#method%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s:String-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong> : <a href="../../String.html">String</a>
+
+        <a class="method-permalink" href="#to_s%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url:URI-instance-method">
+      <div class="signature">
+        
+        def <strong>url</strong> : URI
+
+        <a class="method-permalink" href="#url%3AURI-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>

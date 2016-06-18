@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../js/doc.js"></script>
-  <title>Gitlab::Error::NotAllowRequestMethodError - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::Client::Repository - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
       
         <ul>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
       <a href="../../Gitlab/Client.html">Client</a>
       
         <ul>
@@ -45,7 +45,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Repository" data-name="gitlab::client::repository">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Repository" data-name="gitlab::client::repository">
       <a href="../../Gitlab/Client/Repository.html">Repository</a>
       
     </li>
@@ -65,7 +65,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
       <a href="../../Gitlab/Error.html">Error</a>
       
         <ul>
@@ -120,7 +120,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
       <a href="../../Gitlab/Error/NotAllowRequestMethodError.html">NotAllowRequestMethodError</a>
       
     </li>
@@ -217,12 +217,19 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Gitlab::Error::NotAllowRequestMethodError
+  <span class="kind">module</span> Gitlab::Client::Repository
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Gitlab/Error/NotAllowRequestMethodError.html">Gitlab::Error::NotAllowRequestMethodError</a></li><li class="superclass"><a href="../../Gitlab/Error/Error.html">Gitlab::Error::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+  <h2>Overview</h2>
+
+  <p>Defines methods related to repository.</p>
+
+<p>See <a href="http://docs.gitlab.com/ce/api/repositories.html" target="_blank">http://docs.gitlab.com/ce/api/repositories.html</a></p>
 
 
 
@@ -234,8 +241,12 @@
 
 
 
-
-
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Gitlab/Client.html">Gitlab::Client</a></li>
+  
+  </ul>
 
 
 
@@ -243,7 +254,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/error.cr#L10" target="_blank">gitlab/error.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/repository.cr#L6" target="_blank">gitlab/client/repository.cr</a>
     
     <br/>
   
@@ -254,44 +265,58 @@
 
 
 
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#tree%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#tree</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Get a list of repository files and directories in a project.</p></div>
+        
+      </li>
+    
+  </ul>
+
 
 
 
 
 <div class="methods-inherited">
   
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
 </div>
 
 
 
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="tree&#40;project_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>tree</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#tree%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get a list of repository files and directories in a project.</p>
+
+<p>@param  [Int32] project The ID of a project.
+@param  [Hash] params A customizable set of params.
+@option params [String] :path The path inside repository. Used to get contend of subdirectories.
+@option params [String] :ref_name The name of a repository branch or tag or if not given the default branch
+@return [Hash]</p>
+
+<pre><code>client.tree(<span class="n">42</span>)
+client.tree(<span class="n">42</span>, { path: </code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/repository.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 

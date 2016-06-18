@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="js/doc.js"></script>
-  <title>Gitlab - github.com/icyleaf/gitlab.cr</title>
+  <title>String - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
   <ul>
   
-  <li class="parent current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="Gitlab.html">Gitlab</a>
       
         <ul>
@@ -205,7 +205,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
       <a href="String.html">String</a>
       
     </li>
@@ -217,17 +217,109 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> Gitlab
+  <span class="kind">class</span> String
 
 </h1>
 
 
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="String.html">String</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>A String represents an immutable sequence of UTF-8 characters.</p>
+
+<p>A String is typically created with a string literal, enclosing UTF-8 characters
+in double quotes:</p>
+
+<pre><code><span class="s">&quot;hello world&quot;</span></code></pre>
+
+<p>A backslash can be used to denote some characters inside the string:</p>
+
+<pre><code><span class="s">&quot;\&quot;&quot;</span> <span class="c"># double quote</span>
+<span class="s">&quot;\\&quot;</span> <span class="c"># backslash</span>
+<span class="s">&quot;\e&quot;</span> <span class="c"># escape</span>
+<span class="s">&quot;\f&quot;</span> <span class="c"># form feed</span>
+<span class="s">&quot;\n&quot;</span> <span class="c"># newline</span>
+<span class="s">&quot;\r&quot;</span> <span class="c"># carriage return</span>
+<span class="s">&quot;\t&quot;</span> <span class="c"># tab</span>
+<span class="s">&quot;\v&quot;</span> <span class="c"># vertical tab</span></code></pre>
+
+<p>You can use a backslash followed by at most three digits to denote a code point written in octal:</p>
+
+<pre><code><span class="s">&quot;\101&quot;</span> <span class="c"># &#61;&#61; &quot;A&quot;</span>
+<span class="s">&quot;\123&quot;</span> <span class="c"># &#61;&#61; &quot;S&quot;</span>
+<span class="s">&quot;\12&quot;</span>  <span class="c"># &#61;&#61; &quot;\n&quot;</span>
+<span class="s">&quot;\1&quot;</span>   <span class="c"># string with one character with code point 1</span></code></pre>
+
+<p>You can use a backslash followed by an <em>u</em> and four hexadecimal characters to denote a unicode codepoint written:</p>
+
+<pre><code><span class="s">&quot;\u0041&quot;</span> <span class="c"># &#61;&#61; &quot;A&quot;</span></code></pre>
+
+<p>Or you can use curly braces and specify up to six hexadecimal numbers (0 to 10FFFF):</p>
+
+<pre><code><span class="s">&quot;\u&#123;41&#125;&quot;</span> <span class="c"># &#61;&#61; &quot;A&quot;</span></code></pre>
+
+<p>A string can span multiple lines:</p>
+
+<pre><code><span class="s">&quot;hello
+      world&quot;</span> <span class="c"># same as &quot;hello      \nworld&quot;</span></code></pre>
+
+<p>Note that in the above example trailing and leading spaces, as well as newlines,
+end up in the resulting string. To avoid this, you can split a string into multiple lines
+by joining multiple literals with a backslash:</p>
+
+<pre><code><span class="s">&quot;hello &quot;</span> \
+<span class="s">&quot;world, &quot;</span> \
+<span class="s">&quot;no newlines&quot;</span> <span class="c"># same as &quot;hello world, no newlines&quot;</span></code></pre>
+
+<p>Alternatively, a backslash followed by a newline can be inserted inside the string literal:</p>
+
+<pre><code><span class="s">&quot;hello \
+     world, \
+     no newlines&quot;</span> <span class="c"># same as &quot;hello world, no newlines&quot;</span></code></pre>
+
+<p>In this case, leading whitespace is not included in the resulting string.</p>
+
+<p>If you need to write a string that has many double quotes, parentheses, or similar
+characters, you can use alternative literals:</p>
+
+<pre><code><span class="c"># Supports double quotes and nested parentheses</span>
+<span class="s">&#37;&#40;hello &#40;&quot;world&quot;&#41;&#41;</span> <span class="c"># same as &quot;hello &#40;\&quot;world\&quot;&#41;&quot;</span>
+
+<span class="c"># Supports double quotes and nested brackets</span>
+<span class="s">&#37;&#91;hello &#91;&quot;world&quot;&#93;&#93;</span> <span class="c"># same as &quot;hello &#91;\&quot;world\&quot;&#93;&quot;</span>
+
+<span class="c"># Supports double quotes and nested curlies</span>
+<span class="s">&#37;&#123;hello &#123;&quot;world&quot;&#125;&#125;</span> <span class="c"># same as &quot;hello &#123;\&quot;world\&quot;&#125;&quot;</span>
+
+<span class="c"># Supports double quotes and nested angles</span>
+<span class="s">&#37;&lt;hello &lt;&quot;world&quot;&gt;&gt;</span> <span class="c"># same as &quot;hello &lt;\&quot;world\&quot;&gt;&quot;</span></code></pre>
+
+<p>To create a String with embedded expressions, you can use string interpolation:</p>
+
+<pre><code>a <span class="o">=</span> <span class="n">1</span>
+b <span class="o">=</span> <span class="n">2</span>
+<span class="s">&quot;sum &#61; </span><span class="i">#{</span></span>a <span class="o">+</span> b<span class="s"><span class="i">}</span>&quot;</span> <span class="c"># &quot;sum &#61; 3&quot;</span></code></pre>
+
+<p>This ends up invoking <code>Object#to_s(IO)</code> on each expression enclosed by <code>#{...}</code>.</p>
+
+<p>If you need to dynamically build a string, use <code>String#build</code> or <code>MemoryIO</code>.</p>
 
 
 
 
 
-
+  <h2>Included Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type">Comparable(self)</li>
+  
+    <li class="other-type"><a href="Gitlab/StringParseJson.html">Gitlab::StringParseJson</a></li>
+  
+  </ul>
 
 
 
@@ -241,103 +333,14 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/group.cr#L1" target="_blank">gitlab/client/group.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/project.cr#L1" target="_blank">gitlab/client/project.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/repository.cr#L1" target="_blank">gitlab/client/repository.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/session.cr#L1" target="_blank">gitlab/client/session.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client/user.cr#L1" target="_blank">gitlab/client/user.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/client.cr#L3" target="_blank">gitlab/client.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/error.cr#L3" target="_blank">gitlab/error.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http.cr#L4" target="_blank">gitlab/http.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/version.cr#L1" target="_blank">gitlab/version.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/core_ext/string/parse_json.cr#L3" target="_blank">gitlab/core_ext/string/parse_json.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/options.cr#L4" target="_blank">gitlab/http/options.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/request.cr#L3" target="_blank">gitlab/http/request.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/http/response.cr#L4" target="_blank">gitlab/http/response.cr</a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab.cr#L3" target="_blank">gitlab.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab/core_ext/string/parse_json.cr#L11" target="_blank">gitlab/core_ext/string/parse_json.cr</a>
     
     <br/>
   
 
 
 
-  
-    <h2>Constant Summary</h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="VERSION">
-        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
-      </dt>
-      
-    
-  </dl>
 
-
-
-  <h2>Class Method Summary</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#client%28endpoint%3AString%2Ctoken%3AString%29%3AClient-class-method" class="signature"><strong>.client</strong>(endpoint : String, token : String) : Client</a>
-        
-          <div class="summary"><p>Alias for Gitlab::Client.new</p></div>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -347,29 +350,45 @@
 
 <div class="methods-inherited">
   
+    
+
+  <h3>Instance methods inherited from module <code><a href="Gitlab/StringParseJson.html">Gitlab::StringParseJson</a></code></h3>
+  
+  
+    <a href="Gitlab/StringParseJson.html#parse_json-instance-method" class="tooltip">
+      <span>parse_json</span>
+    parse_json</a>
+    
+  
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+  
 </div>
 
-
-  <h2>Class Method Detail</h2>
-  
-    <div class="entry-detail" id="client&#40;endpoint:String,token:String&#41;:Client-class-method">
-      <div class="signature">
-        
-        def self.<strong>client</strong>(endpoint : <a href="String.html">String</a>, token : <a href="String.html">String</a>) : <a href="Gitlab/Client.html">Client</a>
-
-        <a class="method-permalink" href="#client%28endpoint%3AString%2Ctoken%3AString%29%3AClient-class-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Alias for Gitlab::Client.new</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feded6b888102da4c06692e0ccfb3b2d7193e992/src/gitlab.cr#L5" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
