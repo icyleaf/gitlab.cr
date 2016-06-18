@@ -88,7 +88,7 @@ module Gitlab
 
       # Gets information about a project.
       #
-      # - params  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - params  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - return [Hash] Information about project.
       #
       # ```
@@ -110,7 +110,7 @@ module Gitlab
       # client.project_events(42)
       # ```
       def project_events(project : Int32|String, params : Hash? = nil)
-        get("/projects/#{project_id}/events", params).body
+        get("/projects/#{project}/events", params).body
       end
 
       # Creates a new project for a user.
@@ -158,7 +158,7 @@ module Gitlab
 
       # Updates an existing project.
       #
-      # - params [Int32] project The ID of a project.
+      # - params [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - params [Hash] options A customizable set of options.
       # - option params [String] :name The name of a project
       # - option params [String] :path The name of a project
@@ -169,13 +169,13 @@ module Gitlab
       # client.edit_project(42)
       # client.edit_project(42, { "name" => "project_name" })
       # ```
-      def edit_project(project_id, prams : Hash = {} of String  => String)
-        put("/projects/#{project_id.to_s}", prams).body
+      def edit_project(project : Int32|String, prams : Hash = {} of String  => String)
+        put("/projects/#{project}", prams).body
       end
 
       # Forks a project into the user namespace.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
       # - option options [String] :sudo The username the project will be forked for
       # - return [Hash] Information about the forked project.
@@ -184,61 +184,61 @@ module Gitlab
       # client.create_fork(42)
       # client.create_fork(42, { "sudo" => "another_username" })
       # ```
-      def fork_project(project_id : Int32, params : Hash = {} of String  => String)
-        post("/projects/fork/#{project_id.to_s}", params).body
+      def fork_project(project : Int32|String, params : Hash = {} of String  => String)
+        post("/projects/fork/#{project}", params).body
       end
 
       # Star a project for the authentication user.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - return [Hash] Information about the starred project.
       #
       # ```
       # client.star_project(42)
       # ```
-      def star_project(project_id : Int32)
-        post("/projects/#{project_id.to_s}/star").body
+      def star_project(project : Int32|String)
+        post("/projects/#{project_id}/star").body
       end
 
       # Unstar a project.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - return [Hash] Information about the unstar project.
       #
       # ```
       # client.unstar_project(42)
       # ```
-      def unstar_project(project_id : Int32)
-        delete("/projects/#{project_id.to_s}/star").body
+      def unstar_project(project : Int32|String)
+        delete("/projects/#{project}/star").body
       end
 
       # Archive a project.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - return [Hash] Information about the archive project.
       #
       # ```
       # client.archive_project(42)
       # ```
-      def archive_project(project_id : Int32)
-        delete("/projects/#{project_id.to_s}/archive").body
+      def archive_project(project : Int32|String)
+        delete("/projects/#{project}/archive").body
       end
 
       # Unarchive a project.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - return [Hash] Information about the unarchive project.
       #
       # ```
       # client.unarchive_project(42)
       # ```
-      def unarchive_project(project_id : Int32)
-        delete("/projects/#{project_id.to_s}/unarchive").body
+      def unarchive_project(project : Int32|String)
+        delete("/projects/#{project}/unarchive").body
       end
 
       # Share a project with a group.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
       # - option options [String] :sudo The username the project will be forked for
       # - return [Hash] Information about the share project.
@@ -247,28 +247,28 @@ module Gitlab
       # client.share_project(2, 1)
       # client.share_project(2, 1, { "group_access" => "50" })
       # ```
-      def share_project(project_id : Int32, group_id : Int32, group_access = nil)
+      def share_project(project : Int32|String, group_id : Int32, group_access = nil)
         params = { "group_id" => group_id }
         params["group_access"] = group_access if group_access
 
-        post("/projects/#{project_id}/share", params).body
+        post("/projects/#{project}/share", params).body
       end
 
       # Deletes a project.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - return [Hash] Information about the deleted project.
       #
       # ```
       # client.delete_project(42)
       # ```
-      def delete_project(project_id : Int32)
-        delete("/projects/#{project_id.to_s}").body
+      def delete_project(project : Int32|String)
+        delete("/projects/#{project}").body
       end
 
       # Get a list of a project's team members.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
       # - option options [String] :query The search query.
       # - option options [Int32] :page The page number.
@@ -279,13 +279,13 @@ module Gitlab
       # client.project_members(42)
       # client.project_members('gitlab')
       # ```
-      def project_members(project_id : Int32, params : Hash = {} of String => String)
-        get("/projects/#{project_id}/members", params).body
+      def project_members(project : Int32|String, params : Hash = {} of String => String)
+        get("/projects/#{project}/members", params).body
       end
 
       # Gets a project team member.
       #
-      # - param  [Int32] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a project team member.
       # - return [Hash] Information about member under a project.
       #
@@ -316,7 +316,7 @@ module Gitlab
 
       # Updates a team member's project access level.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a user.
       # - param  [Int32] access_level The access level to project.
       # - return [Array<Hash>] Information about updated team member.
@@ -332,7 +332,7 @@ module Gitlab
 
       # Removes a user from project team.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a user.
       # - return [Hash] Information about removed team member.
       #
@@ -345,7 +345,7 @@ module Gitlab
 
       # Get a list of a project's web hooks.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
@@ -361,7 +361,7 @@ module Gitlab
 
       # Get a web hook of a project.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] hook_id The ID of a web hook.
       # - return [Hash] Information about the web hook.
       #
@@ -375,7 +375,7 @@ module Gitlab
 
       # Create a web hook of a project.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [String] url The url of a web hook.
       # - param  [Hash] params A customizable set of options.
       # - option params [String] :push_events Trigger hook on push events.
@@ -396,7 +396,7 @@ module Gitlab
 
       # Updates a web hook of a project.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] hook_id The ID of a web hook.
       # - param  [Int32] url The url of a web hook.
       # - param  [Hash] params A customizable set of options.
@@ -417,7 +417,7 @@ module Gitlab
 
       # Removes a user from project team.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] hook_id The ID of a web hook.
       # - return [Hash] Information about removed web hook.
       #
@@ -430,7 +430,7 @@ module Gitlab
 
       # Get a list of a project's branches.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
@@ -446,7 +446,7 @@ module Gitlab
 
       # Get a branch of a project.
       #
-      # - param  [Int32, String] project The ID or name of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] branch The name of a branch.
       # - return [Hash] Information about the branch under a project.
       #
@@ -460,7 +460,7 @@ module Gitlab
 
       # Protect a branch of a project.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] branch The name of a branch.
       # - return [Hash] Information about the protected branch.
       #
@@ -474,9 +474,9 @@ module Gitlab
 
       # Unprotect a branch of a project.
       #
-      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] branch The name of a branch.
-      # - return [Hash] Information about the unprotect branch
+      # - return [Hash] Information about the unprotect branch.
       #
       # ```
       # client.unprotect_project_branch(2, "master")
@@ -484,6 +484,31 @@ module Gitlab
       # ```
       def unprotect_project_branch(project : Int32|String, branch : String)
         put("/projects/#{project}/repository/branches/#{branch}/unprotect").body
+      end
+
+      # Create a forked from/to relation between existing projects. Available only for admins.
+      #
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [Hash] branch The name of a branch.
+      # - return [Hash] Information about the forked project.
+      #
+      # ```
+      # client.create_fork_from(1, 21)
+      # ```
+      def create_fork_from(project : Int32|String, forked_from_id : Int32)
+        put("/projects/#{project_id}/fork/#{forked_from_id}").body
+      end
+
+      # Delete an existing forked from relationship. Available only for admins.
+      #
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - return [Hash] Information about the unforked project.
+      #
+      # ```
+      # client.create_fork_from(1, 21)
+      # ```
+      def remove_fork_from(project : Int32|String)
+        delete("/projects/#{project_id}/fork")
       end
     end
   end
