@@ -235,22 +235,22 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/group.cr#L2" target="_blank">gitlab/client/group.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client/group.cr#L2" target="_blank">gitlab/client/group.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/project.cr#L2" target="_blank">gitlab/client/project.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client/project.cr#L2" target="_blank">gitlab/client/project.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client/user.cr#L2" target="_blank">gitlab/client/user.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client/user.cr#L2" target="_blank">gitlab/client/user.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L7" target="_blank">gitlab/client.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L7" target="_blank">gitlab/client.cr</a>
     
     <br/>
   
@@ -334,6 +334,11 @@
   <h3>Instance methods inherited from module <code><a href="../Gitlab/Client/Project.html">Gitlab::Client::Project</a></code></h3>
   
   
+    <a href="../Gitlab/Client/Project.html#add_project_hook%28project%3AInt32%7CString%2Curl%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>add_project_hook(project : Int32 | String, url : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    add_project_hook</a>, 
+    
+  
     <a href="../Gitlab/Client/Project.html#add_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method" class="tooltip">
       <span>add_project_member(project : Int32 | String, user_id, access_level)</span>
     add_project_member</a>, 
@@ -344,9 +349,14 @@
     all_projects</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#archive_project%28project_id%3AInt32%29-instance-method" class="tooltip">
-      <span>archive_project(project_id : Int32)</span>
+    <a href="../Gitlab/Client/Project.html#archive_project%28project%3AInt32%7CString%29-instance-method" class="tooltip">
+      <span>archive_project(project : Int32 | String)</span>
     archive_project</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#create_fork_from%28project%3AInt32%7CString%2Cforked_from_id%3AInt32%29-instance-method" class="tooltip">
+      <span>create_fork_from(project : Int32 | String, forked_from_id : Int32)</span>
+    create_fork_from</a>, 
     
   
     <a href="../Gitlab/Client/Project.html#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
@@ -354,14 +364,19 @@
     create_project</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#delete_project%28project_id%3AInt32%29-instance-method" class="tooltip">
-      <span>delete_project(project_id : Int32)</span>
+    <a href="../Gitlab/Client/Project.html#delete_project%28project%3AInt32%7CString%29-instance-method" class="tooltip">
+      <span>delete_project(project : Int32 | String)</span>
     delete_project</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#edit_project%28project_id%2Cprams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
-      <span>edit_project(project_id, prams : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    <a href="../Gitlab/Client/Project.html#edit_project%28project%3AInt32%7CString%2Cprams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>edit_project(project : Int32 | String, prams : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
     edit_project</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#edit_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%2Curl%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>edit_project_hook(project : Int32 | String, hook_id : Int32, url : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    edit_project_hook</a>, 
     
   
     <a href="../Gitlab/Client/Project.html#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method" class="tooltip">
@@ -369,8 +384,8 @@
     edit_project_member</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#fork_project%28project_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
-      <span>fork_project(project_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    <a href="../Gitlab/Client/Project.html#fork_project%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>fork_project(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
     fork_project</a>, 
     
   
@@ -384,9 +399,29 @@
     project</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#project_events%28project_name%3AString%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
-      <span>project_events(project_name : String, params : Hash | Nil = <span class="n">nil</span>)<br/>project_events(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</span>
+    <a href="../Gitlab/Client/Project.html#project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method" class="tooltip">
+      <span>project_branch(project : Int32 | String, branch : String)</span>
+    project_branch</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_branchs%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>project_branchs(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    project_branchs</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_events%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>project_events(project : Int32 | String, params : Hash | Nil = <span class="n">nil</span>)</span>
     project_events</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method" class="tooltip">
+      <span>project_hook(project : Int32 | String, hook_id : Int32)</span>
+    project_hook</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_hooks%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>project_hooks(project : Int32 | String, params : Hash | Nil = <span class="n">nil</span>)</span>
+    project_hooks</a>, 
     
   
     <a href="../Gitlab/Client/Project.html#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method" class="tooltip">
@@ -394,9 +429,14 @@
     project_member</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#project_members%28project_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
-      <span>project_members(project_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    <a href="../Gitlab/Client/Project.html#project_members%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>project_members(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
     project_members</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_search%28query%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>project_search(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    project_search</a>, 
     
   
     <a href="../Gitlab/Client/Project.html#projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
@@ -404,18 +444,33 @@
     projects</a>, 
     
   
+    <a href="../Gitlab/Client/Project.html#protect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method" class="tooltip">
+      <span>protect_project_branch(project : Int32 | String, branch : String)</span>
+    protect_project_branch</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#remove_fork_from%28project%3AInt32%7CString%29-instance-method" class="tooltip">
+      <span>remove_fork_from(project : Int32 | String)</span>
+    remove_fork_from</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#remove_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method" class="tooltip">
+      <span>remove_project_hook(project : Int32 | String, hook_id : Int32)</span>
+    remove_project_hook</a>, 
+    
+  
     <a href="../Gitlab/Client/Project.html#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method" class="tooltip">
       <span>remove_project_member(project : Int32 | String, user_id : Int32)</span>
     remove_project_member</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#share_project%28project_id%3AInt32%2Cgroup_id%3AInt32%2Cgroup_access%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
-      <span>share_project(project_id : Int32, group_id : Int32, group_access = <span class="n">nil</span>)</span>
+    <a href="../Gitlab/Client/Project.html#share_project%28project%3AInt32%7CString%2Cgroup_id%3AInt32%2Cgroup_access%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>share_project(project : Int32 | String, group_id : Int32, group_access = <span class="n">nil</span>)</span>
     share_project</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#star_project%28project_id%3AInt32%29-instance-method" class="tooltip">
-      <span>star_project(project_id : Int32)</span>
+    <a href="../Gitlab/Client/Project.html#star_project%28project%3AInt32%7CString%29-instance-method" class="tooltip">
+      <span>star_project(project : Int32 | String)</span>
     star_project</a>, 
     
   
@@ -424,13 +479,18 @@
     starred_projects</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#unarchive_project%28project_id%3AInt32%29-instance-method" class="tooltip">
-      <span>unarchive_project(project_id : Int32)</span>
+    <a href="../Gitlab/Client/Project.html#unarchive_project%28project%3AInt32%7CString%29-instance-method" class="tooltip">
+      <span>unarchive_project(project : Int32 | String)</span>
     unarchive_project</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#unstar_project%28project_id%3AInt32%29-instance-method" class="tooltip">
-      <span>unstar_project(project_id : Int32)</span>
+    <a href="../Gitlab/Client/Project.html#unprotect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method" class="tooltip">
+      <span>unprotect_project_branch(project : Int32 | String, branch : String)</span>
+    unprotect_project_branch</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#unstar_project%28project%3AInt32%7CString%29-instance-method" class="tooltip">
+      <span>unstar_project(project : Int32 | String)</span>
     unstar_project</a>
     
   
@@ -516,8 +576,8 @@
   <h3>Instance methods inherited from module <code><a href="../Gitlab/Client/User.html">Gitlab::Client::User</a></code></h3>
   
   
-    <a href="../Gitlab/Client/User.html#add_email%28user_id%3AInt32%2Cemail%29-instance-method" class="tooltip">
-      <span>add_email(user_id : Int32, email)<br/>add_email(email)</span>
+    <a href="../Gitlab/Client/User.html#add_email%28email%29-instance-method" class="tooltip">
+      <span>add_email(email)<br/>add_email(user_id : Int32, email)</span>
     add_email</a>, 
     
   
@@ -526,8 +586,8 @@
     block_user</a>, 
     
   
-    <a href="../Gitlab/Client/User.html#create_ssh_key%28user_id%2Ctitle%2Ckey%29-instance-method" class="tooltip">
-      <span>create_ssh_key(user_id, title, key)<br/>create_ssh_key(title, key)</span>
+    <a href="../Gitlab/Client/User.html#create_ssh_key%28title%2Ckey%29-instance-method" class="tooltip">
+      <span>create_ssh_key(title, key)<br/>create_ssh_key(user_id, title, key)</span>
     create_ssh_key</a>, 
     
   
@@ -536,8 +596,8 @@
     create_user</a>, 
     
   
-    <a href="../Gitlab/Client/User.html#delete_email%28email_id%3AInt32%2Cuser_id%3AInt32%29-instance-method" class="tooltip">
-      <span>delete_email(email_id : Int32, user_id : Int32)<br/>delete_email(email_id : Int32)</span>
+    <a href="../Gitlab/Client/User.html#delete_email%28email_id%3AInt32%29-instance-method" class="tooltip">
+      <span>delete_email(email_id : Int32)<br/>delete_email(email_id : Int32, user_id : Int32)</span>
     delete_email</a>, 
     
   
@@ -566,13 +626,18 @@
     emails</a>, 
     
   
+    <a href="../Gitlab/Client/User.html#group_search%28query%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="tooltip">
+      <span>group_search(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</span>
+    group_search</a>, 
+    
+  
     <a href="../Gitlab/Client/User.html#ssh_key%28ssh_key_id%3AInt32%29-instance-method" class="tooltip">
       <span>ssh_key(ssh_key_id : Int32)</span>
     ssh_key</a>, 
     
   
-    <a href="../Gitlab/Client/User.html#ssh_keys-instance-method" class="tooltip">
-      <span>ssh_keys<br/>ssh_keys(user_id : Int32)</span>
+    <a href="../Gitlab/Client/User.html#ssh_keys%28user_id%3AInt32%29-instance-method" class="tooltip">
+      <span>ssh_keys(user_id : Int32)<br/>ssh_keys</span>
     ssh_keys</a>, 
     
   
@@ -581,8 +646,8 @@
     unblock_user</a>, 
     
   
-    <a href="../Gitlab/Client/User.html#user-instance-method" class="tooltip">
-      <span>user<br/>user(user_id : Int32)</span>
+    <a href="../Gitlab/Client/User.html#user%28user_id%3AInt32%29-instance-method" class="tooltip">
+      <span>user(user_id : Int32)<br/>user</span>
     user</a>, 
     
   
@@ -631,7 +696,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -656,7 +721,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -672,7 +737,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -692,7 +757,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -712,7 +777,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -732,7 +797,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -752,7 +817,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -768,7 +833,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5133e6ab9e5b5de4472d2a2c0c2659a8a25c4033/src/gitlab/client.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/3754e989c36954fcbc7e2c3b54f41624241b1510/src/gitlab/client.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
