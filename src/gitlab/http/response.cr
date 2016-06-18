@@ -36,10 +36,6 @@ module Gitlab
         Response.new(response, method, url)
       end
 
-      def parse_json
-        JSON.parse(@body)
-      end
-
       def to_s
         @body
       end

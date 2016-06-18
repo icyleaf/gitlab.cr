@@ -86,7 +86,7 @@ module Gitlab
     # Output error message
     private def error_message(response, type : ErrorType = ErrorType::JsonError)
       message = if type == ErrorType::JsonError
-        response_body = response.parse_json
+        response_body = response.body.body.parse_json
         handle_error(response_body["message"] || response_body["error"])
       else
         "body is not json format. Body: #{response.body}"
