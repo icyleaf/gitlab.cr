@@ -84,8 +84,11 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [x] Add email for user - `add_email(user_id)`
   - [x] Delete email for current user - `delete_email`
   - [x] Delete email for given user - `delete_email(user_id)`
-- [ ] Session
+- [x] Session
+  - [x] Login session - `session`
 - [ ] Projects (including setting Webhooks)
+  - [ ] Uploads - **TODO**: Waiting for Crystal API
+    - [ ] Upload a file
   - [x] List projects - `projects`
     - [x] List owned projects - `owned_projects`
     - [x] List starred projects - `starred_projects`
@@ -123,14 +126,24 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
     - [x] Create a forked from/to relation between existing projects. - `create_fork_from`
     - [x] Delete an existing forked from relationship - `remove_fork_from`
   - [x] Search for projects by name - `project_search`
-  - [ ] Uploads - **TODO**: Waiting for Crystal API
-    - [ ] Upload a file
 - [ ] Project Snippets
 - [ ] Services
 - [ ] Repositories
+  - [ ] Get file archive
+  - [x] List repository tree
+  - [x] Raw file content
+  - [x] Raw blob content
+  - [x] Compare branches, tags or commits
+  - [x] Contributors
 - [ ] Repository Files
 - [ ] Commits
-- [ ] Branches
+- [x] Branches
+  - [x] List repository branches - `branches`
+  - [x] Get single repository branch - `branch`
+  - [x] Protect repository branch - `protect_branch`
+  - [x] Unprotect repository branch - `unprotect_branch`
+  - [x] Create repository branch - `create_branch`
+  - [x] Delete repository branch - `delete_branch`
 - [ ] Merge Requests
 - [ ] Issues
 - [ ] Labels
