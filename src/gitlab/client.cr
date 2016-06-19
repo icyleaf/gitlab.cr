@@ -137,5 +137,6 @@ module Gitlab
     include Group
     include Project
     include Repository
+    include Branch
   end
 end

@@ -93,7 +93,7 @@ module Gitlab
         put("/groups/#{group_id.to_s}", params).body.parse_json
       end
 
-      # Delete"s a group.
+      # Delete a group.
       #
       # - param  [Int32] group_id The ID of a group
       # - return [Hash] Information about the deleted group.
