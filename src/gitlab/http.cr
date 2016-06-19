@@ -1,6 +1,3 @@
-require "http/client"
-require "json"
-
 module Gitlab
   module HTTP
     module Chainable

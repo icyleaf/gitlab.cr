@@ -15,7 +15,7 @@ Docs Generated in latest commit.
 
 Learning Crystal language, and **WORKIONG IN PROCESS**, please DO NOT use it in production environment.
 
-Build in crystal version >= `v0.17.4`
+Build in crystal version >= `v0.18.2`
 
 ## Installation
 
@@ -168,6 +168,13 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [x] Namespaces in groups - same as **List group**
 - [ ] Namespaces
 - [ ] Settings
+- [x] Tags
+  - [x] List project repository tags
+  - [x] Get a single repository tag
+  - [x] Create a new tag
+  - [x] Delete a tag
+  - [x] Create a new release
+  - [x] Update a release
 
 ## Contributing
 
