@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Branch" data-name="gitlab::client::branch">
+      <a href="../../Gitlab/Client/Branch.html">Branch</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/ErrorType" data-name="gitlab::client::errortype">
       <a href="../../Gitlab/Client/ErrorType.html">ErrorType</a>
       
@@ -254,7 +259,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/965e0b161cf0bb16086671e6a51f3bf1e68fc221/src/gitlab/client/repository.cr#L6" target="_blank">gitlab/client/repository.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/repository.cr#L6" target="_blank">gitlab/client/repository.cr</a>
     
     <br/>
   
@@ -267,6 +272,41 @@
 
   <h2>Instance Method Summary</h2>
   <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#blob_contents%28project_id%3AInt32%2Csha%3AString%29-instance-method" class="signature"><strong>#blob_contents</strong>(project_id : Int32, sha : String)</a>
+        
+          <div class="summary"><p>Get the raw file contents for a blob by blob SHA.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#compare%28project_id%3AInt32%2Cfrom%3AString%2Cto%3AString%29-instance-method" class="signature"><strong>#compare</strong>(project_id : Int32, from : String, to : String)</a>
+        
+          <div class="summary"><p>Compare branches, tags or commits.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#contributors%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#contributors</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Get repository contributors list</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_archive%28project_id%3AInt32%2Csha%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#file_archive</strong>(project_id : Int32, sha : String | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Get an archive of the repository.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#file_contents%28project_id%3AInt32%2Csha%3AString%2Cfilepath%3AString%29-instance-method" class="signature"><strong>#file_contents</strong>(project_id : Int32, sha : String, filepath : String)</a>
+        
+          <div class="summary"><p>Get the raw file contents for a file by commit SHA and path.</p></div>
+        
+      </li>
     
       <li class="entry-summary">
         <a href="#tree%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#tree</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
@@ -290,6 +330,123 @@
 
   <h2>Instance Method Detail</h2>
   
+    <div class="entry-detail" id="blob_contents&#40;project_id:Int32,sha:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>blob_contents</strong>(project_id : Int32, sha : <a href="../../String.html">String</a>)
+
+        <a class="method-permalink" href="#blob_contents%28project_id%3AInt32%2Csha%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get the raw file contents for a blob by blob SHA.</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] sha The id of a commit sha.</li><li>return [String] The raw file contents</li></ul>
+
+<pre><code>client.blow_contents(<span class="n">1</span>, <span class="s">&quot;74bbc1b7&quot;</span>)
+client.blow_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/repository.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="compare&#40;project_id:Int32,from:String,to:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>compare</strong>(project_id : Int32, from : <a href="../../String.html">String</a>, to : <a href="../../String.html">String</a>)
+
+        <a class="method-permalink" href="#compare%28project_id%3AInt32%2Cfrom%3AString%2Cto%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Compare branches, tags or commits.</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] from the commit SHA or branch name.</li><li>param  [String] to the commit SHA or branch name.</li><li>return [String] List a compare between from and to.</li></ul>
+
+<pre><code>client.compare(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>, <span class="s">&quot;develop&quot;</span>)
+client.compare(<span class="n">1</span>, <span class="s">&quot;a5c805f4&quot;</span>, <span class="s">&quot;v1.0.0&quot;</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/repository.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="contributors&#40;project_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>contributors</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#contributors%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get repository contributors list</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>] List of projects of the authorized user.</li></ul>
+
+<pre><code>client.contributors(<span class="n">1</span>)
+client.contributors(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/repository.cr#L98" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_archive&#40;project_id:Int32,sha:String|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>file_archive</strong>(project_id : Int32, sha : <a href="../../String.html">String</a> | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#file_archive%28project_id%3AInt32%2Csha%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get an archive of the repository.</p>
+
+<p>FIXME: response content type is "application/octet-stream"</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] sha The commit SHA to download defaults to the tip of the default branch.</li><li>return [String] The archive file.</li></ul>
+
+<pre><code>client.file_archive(<span class="n">1</span>)
+client.file_archive(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/repository.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="file_contents&#40;project_id:Int32,sha:String,filepath:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>file_contents</strong>(project_id : Int32, sha : <a href="../../String.html">String</a>, filepath : <a href="../../String.html">String</a>)
+
+        <a class="method-permalink" href="#file_contents%28project_id%3AInt32%2Csha%3AString%2Cfilepath%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get the raw file contents for a file by commit SHA and path.</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] sha The id of a commit sha.</li><li>param  [String] filepath The path and name of a file.</li><li>return [String] The raw file contents</li></ul>
+
+<pre><code>client.file_contents(<span class="n">1</span>, <span class="s">&quot;74bbc1b7&quot;</span>, <span class="s">&quot;README.md&quot;</span>)
+client.file_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>, <span class="s">&quot;src/gitlab.cr&quot;</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/repository.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="tree&#40;project_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
@@ -300,11 +457,7 @@
       
         <div class="doc"><p>Get a list of repository files and directories in a project.</p>
 
-<p>@param  [Int32] project The ID of a project.
-@param  [Hash] params A customizable set of params.
-@option params [String] :path The path inside repository. Used to get contend of subdirectories.
-@option params [String] :ref_name The name of a repository branch or tag or if not given the default branch
-@return [Hash]</p>
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :path The path inside repository. Used to get contend of subdirectories.</li><li>option params [String] :ref_name The name of a repository branch or tag or if not given the default branch</li><li>return [Hash]</li></ul>
 
 <pre><code>client.tree(<span class="n">42</span>)
 client.tree(<span class="n">42</span>, { path: </code></pre></div>
@@ -312,7 +465,7 @@ client.tree(<span class="n">42</span>, { path: </code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/965e0b161cf0bb16086671e6a51f3bf1e68fc221/src/gitlab/client/repository.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/repository.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>

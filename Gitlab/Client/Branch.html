@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../js/doc.js"></script>
-  <title>Gitlab::HTTP::Options - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::Client::Branch - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -25,12 +25,12 @@
       
         <ul>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
       <a href="../../Gitlab/Client.html">Client</a>
       
         <ul>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Branch" data-name="gitlab::client::branch">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Branch" data-name="gitlab::client::branch">
       <a href="../../Gitlab/Client/Branch.html">Branch</a>
       
     </li>
@@ -160,7 +160,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
       <a href="../../Gitlab/HTTP.html">HTTP</a>
       
         <ul>
@@ -170,7 +170,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
       <a href="../../Gitlab/HTTP/Options.html">Options</a>
       
     </li>
@@ -222,23 +222,19 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Gitlab::HTTP::Options
+  <span class="kind">module</span> Gitlab::Client::Branch
 
 </h1>
 
-
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Gitlab/HTTP/Options.html">Gitlab::HTTP::Options</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
 
   <h2>Overview</h2>
 
-  <p>HTTP Options class</p>
+  <p>Defines methods related to branch.</p>
 
-<p>built and parse for http headers/params/body</p>
-
-
+<p>See <a href="http://docs.gitlab.com/ce/api/branches.html" target="_blank">http://docs.gitlab.com/ce/api/branches.html</a></p>
 
 
 
@@ -247,6 +243,15 @@
 
 
 
+
+
+
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Gitlab/Client.html">Gitlab::Client</a></li>
+  
+  </ul>
 
 
 
@@ -254,38 +259,14 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L9" target="_blank">gitlab/http/options.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/branch.cr#L6" target="_blank">gitlab/client/branch.cr</a>
     
     <br/>
   
 
 
 
-  
-    <h2>Constant Summary</h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="USER_AGENT">
-        <strong>USER_AGENT</strong> = <code><span class="s">&quot;Gitlab.cr v</span><span class="i">#{</span></span><span class="t">VERSION</span><span class="s"><span class="i">}</span>&quot;</span></code>
-      </dt>
-      
-    
-  </dl>
 
-
-
-  <h2>Class Method Summary</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new%28options%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-class-method" class="signature"><strong>.new</strong>(options : Hash | Nil = <span class="n">nil</span>)</a>
-        
-          <div class="summary"><p>Create a Http options</p></div>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -293,32 +274,37 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#body%3ANil%7CString-instance-method" class="signature"><strong>#body</strong> : Nil | String</a>
+        <a href="#branch%28project_id%3AInt32%2Cbranch%3AString%29-instance-method" class="signature"><strong>#branch</strong>(project_id : Int32, branch : String)</a>
+        
+          <div class="summary"><p>Get single branch in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#body%3D%28body%29-instance-method" class="signature"><strong>#body=</strong>(body)</a>
+        <a href="#branches%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#branches</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Gets a list of branches in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#headers%3AHTTP%3A%3AHeaders%7CNil-instance-method" class="signature"><strong>#headers</strong> : HTTP::Headers | Nil</a>
+        <a href="#create_branch%28project_id%3AInt32%2Cbranch%3AString%2Cref%3AString%29-instance-method" class="signature"><strong>#create_branch</strong>(project_id : Int32, branch : String, ref : String)</a>
+        
+          <div class="summary"><p>Create branch in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#headers%3D%28headers%29-instance-method" class="signature"><strong>#headers=</strong>(headers)</a>
+        <a href="#delete_branch%28project_id%3AInt32%2Cbranch%3AString%29-instance-method" class="signature"><strong>#delete_branch</strong>(project_id : Int32, branch : String)</a>
+        
+          <div class="summary"><p>Delete a branch.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#params%3AHTTP%3A%3AParams%7CNil-instance-method" class="signature"><strong>#params</strong> : HTTP::Params | Nil</a>
+        <a href="#protect_branch%28project_id%3AInt32%2Cbranch%3AString%29-instance-method" class="signature"><strong>#protect_branch</strong>(project_id : Int32, branch : String)</a>
         
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#params%3D%28params%29-instance-method" class="signature"><strong>#params=</strong>(params)</a>
+          <div class="summary"><p>Unprotect branch in a project.</p></div>
         
       </li>
     
@@ -330,140 +316,121 @@
 
 <div class="methods-inherited">
   
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
 </div>
 
-
-  <h2>Class Method Detail</h2>
-  
-    <div class="entry-detail" id="new&#40;options:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(options : Hash | Nil = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#new%28options%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-class-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Create a Http options</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L19" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="body:Nil|String-instance-method">
+    <div class="entry-detail" id="branch&#40;project_id:Int32,branch:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>body</strong> : Nil | <a href="../../String.html">String</a>
+        def <strong>branch</strong>(project_id : Int32, branch : <a href="../../String.html">String</a>)
 
-        <a class="method-permalink" href="#body%3ANil%7CString-instance-method">#</a>
+        <a class="method-permalink" href="#branch%28project_id%3AInt32%2Cbranch%3AString%29-instance-method">#</a>
       </div>
+      
+        <div class="doc"><p>Get single branch in a project.</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] branch The name of a branch.</li><li>return [Hash] Information about the branch in a project.</li></ul>
+
+<pre><code>client.branch(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/branch.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="body&#61;&#40;body&#41;-instance-method">
+    <div class="entry-detail" id="branches&#40;project_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>body=</strong>(body)
+        def <strong>branches</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#body%3D%28body%29-instance-method">#</a>
+        <a class="method-permalink" href="#branches%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
+      
+        <div class="doc"><p>Gets a list of branches in a project.</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of branches under a project.</li></ul>
+
+<pre><code>client.branches(<span class="n">1</span>)
+client.branches(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/branch.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="headers:HTTP::Headers|Nil-instance-method">
+    <div class="entry-detail" id="create_branch&#40;project_id:Int32,branch:String,ref:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>headers</strong> : HTTP::Headers | Nil
+        def <strong>create_branch</strong>(project_id : Int32, branch : <a href="../../String.html">String</a>, ref : <a href="../../String.html">String</a>)
 
-        <a class="method-permalink" href="#headers%3AHTTP%3A%3AHeaders%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#create_branch%28project_id%3AInt32%2Cbranch%3AString%2Cref%3AString%29-instance-method">#</a>
       </div>
+      
+        <div class="doc"><p>Create branch in a project.</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] branch The name of a branch.</li><li>param  [String] ref The branch name or commit SHA to create branch from.</li><li>return [Hash] Information about the created branch in a project.</li></ul>
+
+<pre><code>client.create_branch(<span class="n">1</span>, <span class="s">&quot;develop&quot;</span>, <span class="s">&quot;master&quot;</span>)
+client.create_branch(<span class="n">1</span>, <span class="s">&quot;hotfix/xxx&quot;</span>, <span class="s">&quot;9dff773&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/branch.cr#L47" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="headers&#61;&#40;headers&#41;-instance-method">
+    <div class="entry-detail" id="delete_branch&#40;project_id:Int32,branch:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>headers=</strong>(headers)
+        def <strong>delete_branch</strong>(project_id : Int32, branch : <a href="../../String.html">String</a>)
 
-        <a class="method-permalink" href="#headers%3D%28headers%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete_branch%28project_id%3AInt32%2Cbranch%3AString%29-instance-method">#</a>
       </div>
+      
+        <div class="doc"><p>Delete a branch.</p>
+
+<ul><li>param  [Int32] group_id The ID of a group</li><li>param  [String] branch The name of a branch.</li><li>return [Hash] Information about the deleted group.</li></ul>
+
+<pre><code>client.delete_branch(<span class="n">42</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/branch.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="params:HTTP::Params|Nil-instance-method">
+    <div class="entry-detail" id="protect_branch&#40;project_id:Int32,branch:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>params</strong> : HTTP::Params | Nil
+        def <strong>protect_branch</strong>(project_id : Int32, branch : <a href="../../String.html">String</a>)
 
-        <a class="method-permalink" href="#params%3AHTTP%3A%3AParams%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#protect_branch%28project_id%3AInt32%2Cbranch%3AString%29-instance-method">#</a>
       </div>
+      
+        <div class="doc"><p>Unprotect branch in a project.</p>
+
+<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] branch The name of a branch.</li><li>return [Hash] Information about unprotected branch in a project</li></ul>
+
+<pre><code>client.branch(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L16" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="params&#61;&#40;params&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>params=</strong>(params)
-
-        <a class="method-permalink" href="#params%3D%28params%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/http/options.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/branch.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>

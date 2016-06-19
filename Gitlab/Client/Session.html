@@ -30,6 +30,11 @@
       
         <ul>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Branch" data-name="gitlab::client::branch">
+      <a href="../../Gitlab/Client/Branch.html">Branch</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/ErrorType" data-name="gitlab::client::errortype">
       <a href="../../Gitlab/Client/ErrorType.html">ErrorType</a>
       
@@ -254,7 +259,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/965e0b161cf0bb16086671e6a51f3bf1e68fc221/src/gitlab/client/session.cr#L6" target="_blank">gitlab/client/session.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/session.cr#L6" target="_blank">gitlab/client/session.cr</a>
     
     <br/>
   
@@ -269,7 +274,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#session%28email%2Cpassword%29-instance-method" class="signature"><strong>#session</strong>(email, password)</a>
+        <a href="#session%28login%3AString%2Cpassword%3AString%29-instance-method" class="signature"><strong>#session</strong>(login : String, password : String)</a>
         
           <div class="summary"><p>Creates a new user session.</p></div>
         
@@ -290,26 +295,25 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="session&#40;email,password&#41;-instance-method">
+    <div class="entry-detail" id="session&#40;login:String,password:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>session</strong>(email, password)
+        def <strong>session</strong>(login : <a href="../../String.html">String</a>, password : <a href="../../String.html">String</a>)
 
-        <a class="method-permalink" href="#session%28email%2Cpassword%29-instance-method">#</a>
+        <a class="method-permalink" href="#session%28login%3AString%2Cpassword%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Creates a new user session.</p>
 
-<p><strong>Note</strong> This method doesn't require private_token to be set.</p>
+<ul><li>param  [String] login The email or username of a user.</li><li>param  [String] password The password of a user.</li><li>return [Hash] Information about logged in user.</li></ul>
 
-<ul><li>param  [String] email The email of a user.</li><li>param  [String] password The password of a user.</li><li>return [Hash] Information about logged in user.</li></ul>
-
-<pre><code>client.session(</code></pre></div>
+<pre><code>client.session(<span class="s">&quot;jack&#64;example.com&quot;</span>, <span class="s">&quot;secret12345&quot;</span>)
+client.session(<span class="s">&quot;jack&quot;</span>, <span class="s">&quot;secret12345&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/965e0b161cf0bb16086671e6a51f3bf1e68fc221/src/gitlab/client/session.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/709c0791d29608b4b626c868dd217813041e28f7/src/gitlab/client/session.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
