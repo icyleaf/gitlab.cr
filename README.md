@@ -130,11 +130,11 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
 - [ ] Services
 - [ ] Repositories
   - [ ] Get file archive
-  - [x] List repository tree
-  - [x] Raw file content
-  - [x] Raw blob content
-  - [x] Compare branches, tags or commits
-  - [x] Contributors
+  - [x] List repository tree - `tree`
+  - [x] Raw file content - `file_contents`
+  - [x] Raw blob content - `blow_content`
+  - [x] Compare branches, tags or commits - `compare`
+  - [x] Contributors - `contributors`
 - [ ] Repository Files
 - [ ] Commits
 - [x] Branches
@@ -169,12 +169,12 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
 - [ ] Namespaces
 - [ ] Settings
 - [x] Tags
-  - [x] List project repository tags
-  - [x] Get a single repository tag
-  - [x] Create a new tag
-  - [x] Delete a tag
-  - [x] Create a new release
-  - [x] Update a release
+  - [x] List project repository tags - `tags`
+  - [x] Get a single repository tag - `tag`
+  - [x] Create a new tag - `create_tag`
+  - [x] Delete a tag - `delete_tag`
+  - [x] Create a new release - `create_release_notes`
+  - [x] Update a release - `update_release_notes`
 
 ## Contributing
 
