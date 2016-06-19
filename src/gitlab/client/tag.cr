@@ -14,7 +14,7 @@ module Gitlab
       #
       # ```
       # client.tags(1)
-      # client.v(1, { "per_page" => "10" })
+      # client.tags(1, { "per_page" => "10" })
       # ```
       def tags(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/repository/tags", params).body.parse_json
@@ -91,7 +91,7 @@ module Gitlab
       # - return [Hash] Information about the updated release notes in a project.
       #
       # ```
-      # client.create_release_notes(1, "1.0.0", "# Release v1.0.0\n## xxx\n## xxx")
+      # client.update_release_notes(1, "1.0.0", "# Release v1.0.0\n## xxx\n## xxx")
       # ```
       def update_release_notes(project_id : Int32, tag : String, description : String)
         put("/projects/#{project_id}/repository/tags/#{tag}/release", {
