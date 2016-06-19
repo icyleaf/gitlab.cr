@@ -15,6 +15,7 @@ module Gitlab
         JSON
         HTML
         PlaintText
+        BinaryStream
         Unknown
       end
 
@@ -48,6 +49,8 @@ module Gitlab
           ContentType::PlaintText
         when /json/
           ContentType::JSON
+        when /application\/octet-stream/
+          ContentType::BinaryStream
         else
           ContentType::Unknown
         end

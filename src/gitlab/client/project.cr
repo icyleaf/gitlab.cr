@@ -58,7 +58,7 @@ module Gitlab
 
       # Gets a list of projects by the authenticated user.
       #
-      # - params  [Hash] options A customizable set of options.
+      # - params  [Hash] params A customizable set of params.
       # - option params [String] :scope Scope of projects. "owned" for list of projects owned by the authenticated user, "starred" for list of projects starred by the authenticated user, "all" to get all projects (admin only)
       # - option params [String] :archived if passed, limit by archived status.
       # - option params [String] :visibility if passed, limit by visibility public, internal, private.

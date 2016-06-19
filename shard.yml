@@ -1,6 +1,11 @@
 name: gitlab
 version: 0.1.0
 
+development_dependencies:
+  webmock:
+    github: manastech/webmock.cr
+    branch: master
+    
 authors:
   - icyleaf <icyleaf.cn@gmail.com>
 
