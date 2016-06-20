@@ -169,24 +169,24 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
 - [ ] Labels
 - [ ] Milestones
 - [ ] Notes (comments)
-  - [ ] Issues
-    - [ ] List project issue notes - `issue_notes`
-    - [ ] Get single issue note - `issue_note`
-    - [ ] Create new issue note - `create_issue_note`
-    - [ ] Modify existing issue note - `edit_issue_note`
-    - [ ] Delete an issue note - `delete_issue_note`
-  - [ ] Snippets
-    - [ ] List all snippet notes - `snippet_notes`
-    - [ ] Get single snippet note - `snippet_note`
-    - [ ] Create new snippet note - `create_snippet_note`
-    - [ ] Modify existing snippet note - `edit_snippet_note`
-    - [ ] Delete a snippet note - `delete_snippet_note`
-  - [ ] Merge Requests
-    - [ ] List all merge request notes - `merge_request_notes`
-    - [ ] Get single merge request note - `merge_request_note`
-    - [ ] Create new merge request note - `create_merge_request_note`
-    - [ ] Modify existing merge request note - `edit_merge_request_note`
-    - [ ] Delete a merge request note - `delete_merge_request_note`
+  - [x] Issues
+    - [x] List project issue notes - `issue_notes`
+    - [x] Get single issue note - `issue_note`
+    - [x] Create new issue note - `create_issue_note`
+    - [x] Modify existing issue note - `edit_issue_note`
+    - [x] Delete an issue note - `delete_issue_note`
+  - [x] Snippets
+    - [x] List all snippet notes - `snippet_notes`
+    - [x] Get single snippet note - `snippet_note`
+    - [x] Create new snippet note - `create_snippet_note`
+    - [x] Modify existing snippet note - `edit_snippet_note`
+    - [x] Delete a snippet note - `delete_snippet_note`
+  - [x] Merge Requests
+    - [x] List all merge request notes - `merge_request_notes`
+    - [x] Get single merge request note - `merge_request_note`
+    - [x] Create new merge request note - `create_merge_request_note`
+    - [x] Modify existing merge request note - `edit_merge_request_note`
+    - [x] Delete a merge request note - `delete_merge_request_note`
 - [ ] Deploy Keys
 - [ ] System Hooks
 - [x] Groups
