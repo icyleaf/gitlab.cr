@@ -139,11 +139,12 @@ module Gitlab
     include Repository
     include Branch
     include Tag
-    include Issue
     include Commit
     include Note
-    include Key
-    include Milestone
+    include Issue
     include Label
+    include Milestone
+    include Key
+    include DeployKey
   end
 end

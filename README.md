@@ -199,7 +199,11 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
     - [x] Create new merge request note - `create_merge_request_note`
     - [x] Modify existing merge request note - `edit_merge_request_note`
     - [x] Delete a merge request note - `delete_merge_request_note`
-- [ ] Deploy Keys
+- [x] Deploy Keys
+  - [x] List deploy keys - `deploy_keys`
+  - [x] Single deploy key - `deploy_key`
+  - [x] Add deploy key - `create_deploy_key`
+  - [x] Delete deploy key - `remove_deploy_key`
 - [ ] System Hooks
 - [x] Groups
   - [x] List groups - `groups`

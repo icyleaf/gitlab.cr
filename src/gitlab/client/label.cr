@@ -34,7 +34,7 @@ module Gitlab
       # ```
       def create_label(project_id : Int32, name : String, color : String, description : String? = nil)
         params = {
-          "title" => title,
+          "name" => name,
           "color" => color,
         }
         params["description"] = description if description
@@ -58,7 +58,7 @@ module Gitlab
       # ```
       def edit_label(project_id : Int32, name : String, params : Hash = {} of String => String)
         put("/projects/#{project_id}/labels", {
-          "title" => title
+          "name" => name
         }.merge(params)).body.parse_json
       end
 
