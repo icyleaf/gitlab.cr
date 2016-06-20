@@ -143,5 +143,6 @@ module Gitlab
     include Commit
     include Note
     include Key
+    include Milestone
   end
 end
