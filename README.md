@@ -25,6 +25,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   gitlab.cr:
     github: icyleaf/gitlab.cr
+    branch: develop
 ```
 
 ## Usage
