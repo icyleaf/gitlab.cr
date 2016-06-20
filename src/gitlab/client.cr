@@ -141,5 +141,6 @@ module Gitlab
     include Tag
     include Issue
     include Commit
+    include Key
   end
 end

@@ -164,6 +164,8 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [x] Subscribe to an issue - `subscribe_issue`
   - [x] Unsubscribe from an issue - `unsubscribe_issue`
   - [ ] Comments on issues - Comments are done via the **notes** resource
+- [x] Keys
+  - [x] Get SSH key with user by ID of an SSH key - `key`
 - [ ] Labels
 - [ ] Milestones
 - [ ] Notes (comments)
