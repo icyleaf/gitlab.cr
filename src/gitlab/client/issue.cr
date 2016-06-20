@@ -52,7 +52,7 @@ module Gitlab
       # client.issue(1, { "per_page" => "10" })
       # ```
       def issues(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/repository/issues", params).body.parse_json
+        get("/projects/#{project_id}/issues", params).body.parse_json
       end
 
       # Get single issue in a project.
@@ -65,7 +65,7 @@ module Gitlab
       # client.issue(1, 10)
       # ```
       def issue(project_id : Int32, issue_id : Int32)
-        get("/projects/#{project_id}/repository/issues/#{issue_id}").body.parse_json
+        get("/projects/#{project_id}/issues/#{issue_id}").body.parse_json
       end
 
       # Create issue in a project.
@@ -85,7 +85,7 @@ module Gitlab
       # client.create_issue(1, "error in debug mode", { "description" => "xxx" })
       # ```
       def create_issue(project_id : Int32, title : String, params : Hash = {} of String => String)
-        post("/projects/#{project_id}/repository/issues", {
+        post("/projects/#{project_id}/issues", {
           "title" => title
         }).body.parse_json
       end
@@ -113,7 +113,7 @@ module Gitlab
       # })
       # ```
       def edit_issue(project_id : Int32, issue_id : Int32, params : Hash = {} of String => String)
-        put("/projects/#{project_id}/repository/issues/#{issue_id}", params).body.parse_json
+        put("/projects/#{project_id}/issues/#{issue_id}", params).body.parse_json
       end
 
       # Closes an issue.
@@ -156,7 +156,7 @@ module Gitlab
       # client.delete_issue(4, 3)
       # ```
       def delete_issue(project_id : Int32, issue_id : Int32)
-        delete("/projects/#{project_id}/repository/issues/#{issue_id}").body.parse_json
+        delete("/projects/#{project_id}/issues/#{issue_id}").body.parse_json
       end
 
       # Move an issue to another project.
@@ -170,7 +170,7 @@ module Gitlab
       # client.move_issue(4, 3)
       # ```
       def move_issue(project_id : Int32, issue_id : Int32, to_project_id : Int32)
-        post("/projects/#{project_id}/repository/issues/#{issue_id}/move", {
+        post("/projects/#{project_id}/issues/#{issue_id}/move", {
           "to_project_id" => to_project_id
         }).body.parse_json
       end
