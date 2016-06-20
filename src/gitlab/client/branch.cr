@@ -6,7 +6,7 @@ module Gitlab
     module Branch
       # Gets a list of branches in a project.
       #
-      # - param  [Int32] project The ID of a project.
+      # - param  [Int32] project_id The ID of a project.
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
@@ -22,7 +22,7 @@ module Gitlab
 
       # Get single branch in a project.
       #
-      # - param  [Int32] project The ID of a project.
+      # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - return [Hash] Information about the branch in a project.
       #
@@ -35,7 +35,7 @@ module Gitlab
 
       # Create branch in a project.
       #
-      # - param  [Int32] project The ID of a project.
+      # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - param  [String] ref The branch name or commit SHA to create branch from.
       # - return [Hash] Information about the created branch in a project.
@@ -53,12 +53,12 @@ module Gitlab
 
       # Delete a branch.
       #
-      # - param  [Int32] group_id The ID of a group
+      # - param  [Int32] project_id The ID of a project
       # - param  [String] branch The name of a branch.
-      # - return [Hash] Information about the deleted group.
+      # - return [Hash] Information about the deleted branch.
       #
       # ```
-      # client.delete_branch(42)
+      # client.delete_branch(4, 2)
       # ```
       def delete_branch(project_id : Int32, branch : String)
         delete("/projects/#{project_id}/repository/branches/#{branche}").body.parse_json
@@ -66,7 +66,7 @@ module Gitlab
 
       # Protect branch in a project.
       #
-      # - param  [Int32] project The ID of a project.
+      # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - param  [String] ref The branch name or commit SHA to create branch from.
       # - return [Hash] Information about protected branch in a project
@@ -80,7 +80,7 @@ module Gitlab
 
       # Unprotect branch in a project.
       #
-      # - param  [Int32] project The ID of a project.
+      # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - return [Hash] Information about unprotected branch in a project
       #

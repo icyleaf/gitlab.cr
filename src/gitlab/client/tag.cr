@@ -56,7 +56,7 @@ module Gitlab
 
       # Delete a tag.
       #
-      # - param  [Int32] group_id The ID of a group
+      # - param  [Int32] project_id The ID of a project.
       # - param  [String] tag The name of a tag.
       # - return [Hash] Information about the deleted tag.
       #

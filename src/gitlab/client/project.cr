@@ -56,7 +56,7 @@ module Gitlab
         projects({ "scope" => "all" }.merge(params))
       end
 
-      # Gets a list of projects by the authenticated user.
+      # Gets single issue in the project.
       #
       # - params  [Hash] params A customizable set of params.
       # - option params [String] :scope Scope of projects. "owned" for list of projects owned by the authenticated user, "starred" for list of projects starred by the authenticated user, "all" to get all projects (admin only)
