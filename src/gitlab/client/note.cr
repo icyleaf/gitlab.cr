@@ -53,7 +53,7 @@ module Gitlab
         params = { "body" => body }
         params["created_at"] = created_at if created_at
 
-        post("/projects/#{project_id}/issues#{issue_id}/notes", params).body.parse_json
+        post("/projects/#{project_id}/issues/#{issue_id}/notes", params).body.parse_json
       end
 
       # Edit a note of issue in a project.
@@ -129,7 +129,7 @@ module Gitlab
       # client.create_snippet_note(1, 10, "great work!")
       # ```
       def create_snippet_note(project_id : Int32, snippet_id : Int32, body : String)
-        post("/projects/#{project_id}/snippets#{snippet_id}/notes", { "body" => body }).body.parse_json
+        post("/projects/#{project_id}/snippets/#{snippet_id}/notes", { "body" => body }).body.parse_json
       end
 
       # Edit a note of snippet in a project.
@@ -205,7 +205,7 @@ module Gitlab
       # client.create_merge_request_note(1, 10, "great work!")
       # ```
       def create_merge_request_note(project_id : Int32, merge_request_id : Int32, body : String, created_at : String? = nil)
-        post("/projects/#{project_id}/merge_requests#{merge_request_id}/notes", { "body" => body }).body.parse_json
+        post("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes", { "body" => body }).body.parse_json
       end
 
       # Edit a note of merge request in a project.
