@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../js/doc.js"></script>
-  <title>Gitlab::Client::Tag - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::Client::Label - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -60,7 +60,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Label" data-name="gitlab::client::label">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Label" data-name="gitlab::client::label">
       <a href="../../Gitlab/Client/Label.html">Label</a>
       
     </li>
@@ -90,7 +90,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Tag" data-name="gitlab::client::tag">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Tag" data-name="gitlab::client::tag">
       <a href="../../Gitlab/Client/Tag.html">Tag</a>
       
     </li>
@@ -257,7 +257,7 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> Gitlab::Client::Tag
+  <span class="kind">module</span> Gitlab::Client::Label
 
 </h1>
 
@@ -267,9 +267,9 @@
 
   <h2>Overview</h2>
 
-  <p>Defines methods related to tag.</p>
+  <p>Defines methods related to label.</p>
 
-<p>See <a href="http://docs.gitlab.com/ce/api/tags.html" target="_blank">http://docs.gitlab.com/ce/api/tags.html</a></p>
+<p>See <a href="http://docs.gitlab.com/ce/api/labels.html" target="_blank">http://docs.gitlab.com/ce/api/labels.html</a></p>
 
 
 
@@ -294,7 +294,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/tag.cr#L6" target="_blank">gitlab/client/tag.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/label.cr#L6" target="_blank">gitlab/client/label.cr</a>
     
     <br/>
   
@@ -309,44 +309,44 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#create_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29-instance-method" class="signature"><strong>#create_release_notes</strong>(project_id : Int32, tag : String, description : String)</a>
+        <a href="#create_label%28project_id%3AInt32%2Cname%3AString%2Ccolor%3AString%2Cdescription%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#create_label</strong>(project_id : Int32, name : String, color : String, description : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create release notes in a project.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#create_tag%28project_id%3AInt32%2Ctag%3AString%2Cref%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#create_tag</strong>(project_id : Int32, tag : String, ref : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
-        
-          <div class="summary"><p>Create a tag in a project.</p></div>
+          <div class="summary"><p>Create label in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_tag%28project_id%3AInt32%2Ctag%3AString%29-instance-method" class="signature"><strong>#delete_tag</strong>(project_id : Int32, tag : String)</a>
+        <a href="#delete_label%28project_id%3AInt32%2Cname%3AString%29-instance-method" class="signature"><strong>#delete_label</strong>(project_id : Int32, name : String)</a>
         
-          <div class="summary"><p>Delete a tag.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#tag%28project_id%3AInt32%2Ctag%3AString%29-instance-method" class="signature"><strong>#tag</strong>(project_id : Int32, tag : String)</a>
-        
-          <div class="summary"><p>Get single tag in a project.</p></div>
+          <div class="summary"><p>Delete a label in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tags%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#tags</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#edit_label%28project_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#edit_label</strong>(project_id : Int32, name : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
-          <div class="summary"><p>Gets a list of tags in a project.</p></div>
+          <div class="summary"><p>Edit a label in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29-instance-method" class="signature"><strong>#update_release_notes</strong>(project_id : Int32, tag : String, description : String)</a>
+        <a href="#issues%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#issues</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Update release notes in a project.</p></div>
+          <div class="summary"><p>Gets a list labels in a project.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#subscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%29-instance-method" class="signature"><strong>#subscribe_label</strong>(project_id : Int32, label_id : Int32)</a>
+        
+          <div class="summary"><p>Subscribe a label in a project.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unsubscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%29-instance-method" class="signature"><strong>#unsubscribe_label</strong>(project_id : Int32, label_id : Int32)</a>
+        
+          <div class="summary"><p>Unsubscribe a label in a project.</p></div>
         
       </li>
     
@@ -365,136 +365,137 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="create_release_notes&#40;project_id:Int32,tag:String,description:String&#41;-instance-method">
+    <div class="entry-detail" id="create_label&#40;project_id:Int32,name:String,color:String,description:String|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_release_notes</strong>(project_id : Int32, tag : <a href="../../String.html">String</a>, description : <a href="../../String.html">String</a>)
+        def <strong>create_label</strong>(project_id : Int32, name : <a href="../../String.html">String</a>, color : <a href="../../String.html">String</a>, description : <a href="../../String.html">String</a> | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#create_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_label%28project_id%3AInt32%2Cname%3AString%2Ccolor%3AString%2Cdescription%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Create release notes in a project.</p>
+        <div class="doc"><p>Create label in a project.</p>
 
-<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] tag The name of a tag.</li><li>param  [String] description Release notes with markdown support.</li><li>return [Hash] Information about the created release notes in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] name The name of a label.</li><li>param  [String] color The color of the label in 6-digit hex notation with leading # sign.</li><li>param [String] description The description of the label.</li><li>return [Hash] Information about the created label in a project.</li></ul>
 
-<pre><code>client.create_release_notes(<span class="n">1</span>, <span class="s">&quot;1.0.0&quot;</span>, <span class="s">&quot;Release v1.0.0&quot;</span>)</code></pre></div>
+<pre><code>client.create_label(<span class="n">1</span>, <span class="s">&quot;hotfix&quot;</span>, <span class="s">&quot;#E2C08D&quot;</span>)
+client.create_label(<span class="n">1</span>, <span class="s">&quot;feature&quot;</span>, <span class="s">&quot;#C678DD&quot;</span>, <span class="s">&quot;next release features&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/tag.cr#L80" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/label.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_tag&#40;project_id:Int32,tag:String,ref:String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="delete_label&#40;project_id:Int32,name:String&#41;-instance-method">
       <div class="signature">
         
-        def <strong>create_tag</strong>(project_id : Int32, tag : <a href="../../String.html">String</a>, ref : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>delete_label</strong>(project_id : Int32, name : <a href="../../String.html">String</a>)
 
-        <a class="method-permalink" href="#create_tag%28project_id%3AInt32%2Ctag%3AString%2Cref%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete_label%28project_id%3AInt32%2Cname%3AString%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Create a tag in a project.</p>
+        <div class="doc"><p>Delete a label in a project.</p>
 
-<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] tag The name of a tag.</li><li>param  [String] ref Create tag using commit SHA, another tag name, or branch name.</li><li>param  [String] params A customizable set of the params.</li><li>option params  [String] :message Creates annotated tag.</li><li>param  params [String] :release_description Add release notes to the git tag and store it in the GitLab database.</li><li>return [Hash] Information about the created tag in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] name The name of a label.</li><li>return [Hash] Information about the deleted label.</li></ul>
 
-<pre><code>client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.0&quot;</span>, <span class="s">&quot;master&quot;</span>)
-client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.1&quot;</span>, <span class="s">&quot;1.0.0&quot;</span>, { <span class="s">&quot;message&quot;</span> => <span class="s">&quot;message in tag&quot;</span>, <span class="s">&quot;release_description&quot;</span> => <span class="s">&quot;message in gitlab&quot;</span> })</code></pre></div>
+<pre><code>client.delete_issue(<span class="n">4</span>, <span class="n">3</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/tag.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/label.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_tag&#40;project_id:Int32,tag:String&#41;-instance-method">
+    <div class="entry-detail" id="edit_label&#40;project_id:Int32,name:String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>delete_tag</strong>(project_id : Int32, tag : <a href="../../String.html">String</a>)
+        def <strong>edit_label</strong>(project_id : Int32, name : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#delete_tag%28project_id%3AInt32%2Ctag%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_label%28project_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Delete a tag.</p>
+        <div class="doc"><p>Edit a label in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] tag The name of a tag.</li><li>return [Hash] Information about the deleted tag.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] name The name of a label.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :new_name The new name of the label.</li><li>option params [String] :color The color of the label in 6-digit hex notation with leading # sign.</li><li>option params [String] :description The description of the label.</li><li>return [Hash] Information about the updated label in a project.</li></ul>
 
-<pre><code>client.delete_tag(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.edit_label(<span class="n">1</span>, <span class="s">&quot;hotfix&quot;</span>, { <span class="s">&quot;new_name&quot;</span> => <span class="s">&quot;bugs&quot;</span> })
+client.edit_label(<span class="n">1</span>, <span class="s">&quot;hotfix&quot;</span>, { <span class="s">&quot;color&quot;</span> => <span class="s">&quot;#BE5046&quot;</span> })</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/tag.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/label.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="tag&#40;project_id:Int32,tag:String&#41;-instance-method">
+    <div class="entry-detail" id="issues&#40;project_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
       <div class="signature">
         
-        def <strong>tag</strong>(project_id : Int32, tag : <a href="../../String.html">String</a>)
+        def <strong>issues</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#tag%28project_id%3AInt32%2Ctag%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#issues%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get single tag in a project.</p>
+        <div class="doc"><p>Gets a list labels in a project.</p>
 
-<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] tag The name of a tag.</li><li>return [Hash] Information about the tag in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of issues under a project.</li></ul>
 
-<pre><code>client.tag(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
+<pre><code>client.labels(<span class="n">1</span>)
+client.labels(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/tag.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/label.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="tags&#40;project_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="subscribe_label&#40;project_id:Int32,label_id:Int32&#41;-instance-method">
       <div class="signature">
         
-        def <strong>tags</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>subscribe_label</strong>(project_id : Int32, label_id : Int32)
 
-        <a class="method-permalink" href="#tags%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#subscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of tags in a project.</p>
+        <div class="doc"><p>Subscribe a label in a project.</p>
 
-<ul><li>param  [Int32] project The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of tags under a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] label_id The ID of a label.</li><li>return [Hash] Information about the subscribed label in a project.</li></ul>
 
-<pre><code>client.tags(<span class="n">1</span>)
-client.tags(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
+<pre><code>client.subscribe_label(<span class="n">1</span>, <span class="n">38</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/tag.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/label.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="update_release_notes&#40;project_id:Int32,tag:String,description:String&#41;-instance-method">
+    <div class="entry-detail" id="unsubscribe_label&#40;project_id:Int32,label_id:Int32&#41;-instance-method">
       <div class="signature">
         
-        def <strong>update_release_notes</strong>(project_id : Int32, tag : <a href="../../String.html">String</a>, description : <a href="../../String.html">String</a>)
+        def <strong>unsubscribe_label</strong>(project_id : Int32, label_id : Int32)
 
-        <a class="method-permalink" href="#update_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#unsubscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Update release notes in a project.</p>
+        <div class="doc"><p>Unsubscribe a label in a project.</p>
 
-<ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] tag The name of a tag.</li><li>param  [String] description Release notes with markdown support.</li><li>return [Hash] Information about the updated release notes in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] label_id The ID of a label.</li><li>return [Hash] Information about the subscribed label in a project.</li></ul>
 
-<pre><code>client.update_release_notes(<span class="n">1</span>, <span class="s">&quot;1.0.0&quot;</span>, <span class="s">&quot;# Release v1.0.0\n## xxx\n## xxx&quot;</span>)</code></pre></div>
+<pre><code>client.unsubscribe_label(<span class="n">1</span>, <span class="n">38</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/tag.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/08739dc44c950eea59e236548e5d7979579b36ab/src/gitlab/client/label.cr#L100" target="_blank">View source</a>]
         
       </div>
     </div>
