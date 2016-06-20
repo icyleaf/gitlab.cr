@@ -35,6 +35,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Commit" data-name="gitlab::client::commit">
+      <a href="../../Gitlab/Client/Commit.html">Commit</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/ErrorType" data-name="gitlab::client::errortype">
       <a href="../../Gitlab/Client/ErrorType.html">ErrorType</a>
       
@@ -42,6 +47,11 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Group" data-name="gitlab::client::group">
       <a href="../../Gitlab/Client/Group.html">Group</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Issue" data-name="gitlab::client::issue">
+      <a href="../../Gitlab/Client/Issue.html">Issue</a>
       
     </li>
   
@@ -272,7 +282,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
     
     <br/>
   
@@ -443,7 +453,7 @@
       <li class="entry-summary">
         <a href="#projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
-          <div class="summary"><p>Gets a list of projects by the authenticated user.</p></div>
+          <div class="summary"><p>Gets single issue in the project.</p></div>
         
       </li>
     
@@ -550,7 +560,7 @@ client.add_project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L410" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L410" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -572,7 +582,7 @@ client.add_project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L327" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L327" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -596,7 +606,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -618,7 +628,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -640,7 +650,7 @@ client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L515" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L515" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -663,7 +673,7 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -687,7 +697,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -709,7 +719,7 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -732,7 +742,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -754,7 +764,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L431" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L431" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -776,7 +786,7 @@ client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L344" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L344" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -799,7 +809,7 @@ client.create_fork(<span class="n">42</span>, { <span class="s">&quot;sudo&quot;
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -823,7 +833,7 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -845,7 +855,7 @@ client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -868,7 +878,7 @@ client.project_branch(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L474" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L474" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -891,7 +901,7 @@ client.project_branchs(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L460" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L460" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -913,7 +923,7 @@ client.project_branchs(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -936,7 +946,7 @@ client.project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L389" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L389" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -959,7 +969,7 @@ client.project_hooks(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L375" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L375" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -981,7 +991,7 @@ client.project_hooks(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1004,7 +1014,7 @@ client.project_members(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1027,7 +1037,7 @@ client.project_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1040,7 +1050,7 @@ client.project_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="
         <a class="method-permalink" href="#projects%28params%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of projects by the authenticated user.</p>
+        <div class="doc"><p>Gets single issue in the project.</p>
 
 <ul><li>params  [Hash] params A customizable set of params.</li><li>option params [String] :scope Scope of projects. "owned" for list of projects owned by the authenticated user, "starred" for list of projects starred by the authenticated user, "all" to get all projects (admin only)</li><li>option params [String] :archived if passed, limit by archived status.</li><li>option params [String] :visibility if passed, limit by visibility public, internal, private.</li><li>option params [String] :order_by Return requests ordered by id, name, path, created_at, updated_at or last_activity_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :search Return list of authorized projects according to a search criteria.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>] List of projects of the authorized user.</li></ul>
 
@@ -1051,7 +1061,7 @@ client.projects({ <span class="s">&quot;scope&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1074,7 +1084,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L488" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L488" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1096,7 +1106,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L527" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L527" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1118,7 +1128,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1140,7 +1150,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L359" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L359" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1163,7 +1173,7 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, { <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1185,7 +1195,7 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, { <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1209,7 +1219,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1231,7 +1241,7 @@ client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span cla
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1254,7 +1264,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L502" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L502" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1276,7 +1286,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/fd54d4c917a87d5e690929f6e19e73f19b787dec/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b0fa16f81800e19b76a4b56a31fb90ac0c5675d8/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
         
       </div>
     </div>
