@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../js/doc.js"></script>
-  <title>Gitlab::Error::InternalServerError - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::Client::Key - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
       
         <ul>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
       <a href="../../Gitlab/Client.html">Client</a>
       
         <ul>
@@ -55,7 +55,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Key" data-name="gitlab::client::key">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Key" data-name="gitlab::client::key">
       <a href="../../Gitlab/Client/Key.html">Key</a>
       
     </li>
@@ -90,7 +90,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
       <a href="../../Gitlab/Error.html">Error</a>
       
         <ul>
@@ -125,7 +125,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/InternalServerError" data-name="gitlab::error::internalservererror">
       <a href="../../Gitlab/Error/InternalServerError.html">InternalServerError</a>
       
     </li>
@@ -242,12 +242,19 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Gitlab::Error::InternalServerError
+  <span class="kind">module</span> Gitlab::Client::Key
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Gitlab/Error/InternalServerError.html">Gitlab::Error::InternalServerError</a></li><li class="superclass"><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></li><li class="superclass"><a href="../../Gitlab/Error/Error.html">Gitlab::Error::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+  <h2>Overview</h2>
+
+  <p>Defines methods related to key.</p>
+
+<p>See <a href="http://docs.gitlab.com/ce/api/keys.html" target="_blank">http://docs.gitlab.com/ce/api/keys.html</a></p>
 
 
 
@@ -259,8 +266,12 @@
 
 
 
-
-
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Gitlab/Client.html">Gitlab::Client</a></li>
+  
+  </ul>
 
 
 
@@ -268,7 +279,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/dbabdc98a1592b8d12362afc09771227e27dfb87/src/gitlab/error.cr#L29" target="_blank">gitlab/error.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/dbabdc98a1592b8d12362afc09771227e27dfb87/src/gitlab/client/key.cr#L6" target="_blank">gitlab/client/key.cr</a>
     
     <br/>
   
@@ -279,60 +290,53 @@
 
 
 
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#key%28key_id%3AInt32%29-instance-method" class="signature"><strong>#key</strong>(key_id : Int32)</a>
+        
+          <div class="summary"><p>Get SSH key in an authenticated user.</p></div>
+        
+      </li>
+    
+  </ul>
+
 
 
 
 
 <div class="methods-inherited">
   
-    
-
-
-    
-
-  <h3>Class methods inherited from class <code><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></code></h3>
-  
-  
-    <a href="../../Gitlab/Error/APIError.html#new%28message%3AString%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Cresponse%3AHTTP%3A%3AResponse%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-class-method" class="tooltip">
-      <span>new(message : String | Nil = <span class="n">nil</span>, response : HTTP::Response | Nil = <span class="n">nil</span>)</span>
-    new</a>
-    
-  
-
-
-  
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
 </div>
 
 
 
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="key&#40;key_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>key</strong>(key_id : Int32)
+
+        <a class="method-permalink" href="#key%28key_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Get SSH key in an authenticated user.</p>
+
+<ul><li>param  [String] key_id The ID or ssh key.</li><li>param  [String] password The password of a user.</li><li>return [Hash] Information about logged in user.</li></ul>
+
+<pre><code>client.key(<span class="n">2</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/dbabdc98a1592b8d12362afc09771227e27dfb87/src/gitlab/client/key.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
