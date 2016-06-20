@@ -139,5 +139,7 @@ module Gitlab
     include Repository
     include Branch
     include Tag
+    include Issue
+    include Commit
   end
 end

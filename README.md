@@ -136,7 +136,15 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [x] Compare branches, tags or commits - `compare`
   - [x] Contributors - `contributors`
 - [ ] Repository Files
-- [ ] Commits
+- [x] Commits
+  - [x] List repository commits - `commits`
+  - [x] Get a single commit - `commit`
+  - [x] Get the diff of a commit - `commit_diff`
+  - [x] Get the comments of a commit - `commit_coments`
+  - [x] Post comment to commit - `create_commit_comment`
+  - [x] Commit status
+    - [x] Get the status of a commit - `commit_status`
+    - [x] Post the build status to a commit - `update_commit_status`
 - [x] Branches
   - [x] List repository branches - `branches`
   - [x] Get single repository branch - `branch`
