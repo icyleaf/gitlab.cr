@@ -167,7 +167,12 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
 - [x] Keys
   - [x] Get SSH key with user by ID of an SSH key - `key`
 - [ ] Labels
-- [ ] Milestones
+- [x] Milestones
+  - [x] List project milestones - `milestones`
+  - [x] Get single milestone - `milestone`
+  - [x] Create new milestone - `create_milestone`
+  - [x] Edit milestone - `edit_milestone`
+  - [x] Get all issues assigned to a single milestone - `milestone_issues`
 - [ ] Notes (comments)
   - [x] Issues
     - [x] List project issue notes - `issue_notes`
