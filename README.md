@@ -166,7 +166,13 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [ ] Comments on issues - Comments are done via the **notes** resource
 - [x] Keys
   - [x] Get SSH key with user by ID of an SSH key - `key`
-- [ ] Labels
+- [x] Labels
+  - [x] List labels - `labels`
+  - [x] Create a new label - `create_label`
+  - [x] Delete a label - `delete_label`
+  - [x] Edit an existing label - `edit_labe`
+  - [x] Subscribe to a label - `subscribe_label`
+  - [x] Unsubscribe from a label - `unsubscribe_label`
 - [x] Milestones
   - [x] List project milestones - `milestones`
   - [x] Get single milestone - `milestone`

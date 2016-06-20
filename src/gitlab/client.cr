@@ -144,5 +144,6 @@ module Gitlab
     include Note
     include Key
     include Milestone
+    include Label
   end
 end

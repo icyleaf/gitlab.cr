@@ -185,7 +185,7 @@ module Gitlab
       # client.subscribe_issue(1, 38)
       # ```
       def subscribe_issue(project_id : Int32, issue_id : Int32)
-        post("/projects/#{project_id}/repository/issues/#{issue_id}/subscription").body.parse_json
+        post("/projects/#{project_id}/issues/#{issue_id}/subscription").body.parse_json
       end
 
       # Unsubscribe an issue in a project.
@@ -198,7 +198,7 @@ module Gitlab
       # client.unsubscribe_issue(1, 38)
       # ```
       def unsubscribe_issue(project_id : Int32, issue_id : Int32)
-        post("/projects/#{project_id}/repository/issues/#{issue_id}/subscription").body.parse_json
+        delete("/projects/#{project_id}/issues/#{issue_id}/subscription").body.parse_json
       end
     end
   end
