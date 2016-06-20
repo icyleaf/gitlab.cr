@@ -146,6 +146,16 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [x] Delete repository branch - `delete_branch`
 - [ ] Merge Requests
 - [ ] Issues
+  - [x] List issues - `issues`
+  - [x] List project issues - `issues(project_id)`
+  - [x] Single issue - `issue`
+  - [x] New issue - `create_issue`
+  - [x] Edit issue - `edit_issue` / `close_issue` / `reopen_issue`
+  - [x] Delete an issue - `delete_issue`
+  - [x] Move an issue - `move_issue`
+  - [x] Subscribe to an issue - `subscribe_issue`
+  - [x] Unsubscribe from an issue - `unsubscribe_issue`
+  - [ ] Comments on issues - Comments are done via the **notes** resource
 - [ ] Labels
 - [ ] Milestones
 - [ ] Notes (comments)
