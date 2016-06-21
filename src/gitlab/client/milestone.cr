@@ -25,7 +25,7 @@ module Gitlab
       # Get a single milestone in a project.
       #
       # - param  [Int32] project_id The ID of a project.
-      # - param  [Int32] milestone_id The ID of an milestone.
+      # - param  [Int32] milestone_id The ID of a milestone.
       # - return [Hash] Information about the milestone.
       #
       # ```
@@ -57,7 +57,7 @@ module Gitlab
       # Edit a milestone in a project.
       #
       # - param  [Int32] project_id The ID of a project.
-      # - param  [Int32] milestone_id The ID of an milestone.
+      # - param  [Int32] milestone_id The ID of a milestone.
       # - param  [String] title The title of a milestone.
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :description The description of the milestone.
@@ -77,7 +77,7 @@ module Gitlab
       # List issues of a milestone in a project.
       #
       # - param  [Int32] project_id The ID of a project.
-      # - param  [Int32] milestone_id The ID of an milestone.
+      # - param  [Int32] milestone_id The ID of a milestone.
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20

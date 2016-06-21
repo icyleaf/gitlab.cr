@@ -143,8 +143,9 @@ module Gitlab
     include Note
     include Issue
     include Label
+    include MergeRequest
     include Milestone
-    include Key
     include DeployKey
+    include Key
   end
 end

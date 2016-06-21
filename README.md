@@ -153,7 +153,20 @@ More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.gith
   - [x] Unprotect repository branch - `unprotect_branch`
   - [x] Create repository branch - `create_branch`
   - [x] Delete repository branch - `delete_branch`
-- [ ] Merge Requests
+- [x] Merge Requests
+  - [x] List merge requests - `merge_requests`
+  - [x] Get single MR - `merge_request`
+  - [x] Get single MR commits - `merge_request_commit`
+  - [x] Get single MR changes - `merge_request_changes`
+  - [x] Create MR - `create_merge_request`
+  - [x] Update MR - `edit_merge_request`
+  - [x] Delete a merge request - `delete_merge_request`
+  - [x] Accept MR - `accept_merge_request`
+  - [x] Cancel Merge When Build Succeeds - `cancel_merge_request_when_build_succeed`
+  - [x] Comments on merge requests - `merge_request_comments`
+  - [x] List issues that will close on merge -  `merge_request_closed_issues`
+  - [x] Subscribe to a merge request - `subscribe_merge_request`
+  - [x] Unsubscribe from a merge request - `unsubscribe_merge_request`
 - [ ] Issues
   - [x] List issues - `issues`
   - [x] List project issues - `issues(project_id)`
