@@ -70,6 +70,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/MergeRequest" data-name="gitlab::client::mergerequest">
+      <a href="../../Gitlab/Client/MergeRequest.html">MergeRequest</a>
+      
+    </li>
+  
   <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Milestone" data-name="gitlab::client::milestone">
       <a href="../../Gitlab/Client/Milestone.html">Milestone</a>
       
@@ -299,7 +304,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/f3dc08e9fa69f747339d0594af5fd607dab5924d/src/gitlab/client/milestone.cr#L6" target="_blank">gitlab/client/milestone.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/9edabc882a5d1126e14aba773b6585b8b5c8fa8b/src/gitlab/client/milestone.cr#L6" target="_blank">gitlab/client/milestone.cr</a>
     
     <br/>
   
@@ -381,7 +386,7 @@ client.create_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/f3dc08e9fa69f747339d0594af5fd607dab5924d/src/gitlab/client/milestone.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9edabc882a5d1126e14aba773b6585b8b5c8fa8b/src/gitlab/client/milestone.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -396,7 +401,7 @@ client.create_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&q
       
         <div class="doc"><p>Edit a milestone in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] milestone_id The ID of an milestone.</li><li>param  [String] title The title of a milestone.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :description The description of the milestone.</li><li>option params [String] :due_date The due date of the milestone.</li><li>return [Hash] Information about the created milestone in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] milestone_id The ID of a milestone.</li><li>param  [String] title The title of a milestone.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :description The description of the milestone.</li><li>option params [String] :due_date The due date of the milestone.</li><li>return [Hash] Information about the created milestone in a project.</li></ul>
 
 <pre><code>client.edit_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0&quot;</span>)
 client.edit_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&quot;</span>, <span class="s">&quot;fix some bugs&quot;</span>)</code></pre></div>
@@ -404,7 +409,7 @@ client.edit_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/f3dc08e9fa69f747339d0594af5fd607dab5924d/src/gitlab/client/milestone.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9edabc882a5d1126e14aba773b6585b8b5c8fa8b/src/gitlab/client/milestone.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -419,14 +424,14 @@ client.edit_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&quo
       
         <div class="doc"><p>Get a single milestone in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] milestone_id The ID of an milestone.</li><li>return [Hash] Information about the milestone.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] milestone_id The ID of a milestone.</li><li>return [Hash] Information about the milestone.</li></ul>
 
 <pre><code>client.milestone(<span class="n">1</span>, <span class="n">10</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/f3dc08e9fa69f747339d0594af5fd607dab5924d/src/gitlab/client/milestone.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9edabc882a5d1126e14aba773b6585b8b5c8fa8b/src/gitlab/client/milestone.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -441,7 +446,7 @@ client.edit_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&quo
       
         <div class="doc"><p>List issues of a milestone in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] milestone_id The ID of an milestone.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of issues of milestone under a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] milestone_id The ID of a milestone.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of issues of milestone under a project.</li></ul>
 
 <pre><code>client.milestone_issues(<span class="n">1</span>, <span class="n">3</span>)
 client.milestone_issues(<span class="n">1</span>, <span class="n">4</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;5&quot;</span> })</code></pre></div>
@@ -449,7 +454,7 @@ client.milestone_issues(<span class="n">1</span>, <span class="n">4</span>, { <s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/f3dc08e9fa69f747339d0594af5fd607dab5924d/src/gitlab/client/milestone.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9edabc882a5d1126e14aba773b6585b8b5c8fa8b/src/gitlab/client/milestone.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -472,7 +477,7 @@ client.milestones(<span class="n">1</span>, { <span class="s">&quot;state&quot;<
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/f3dc08e9fa69f747339d0594af5fd607dab5924d/src/gitlab/client/milestone.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9edabc882a5d1126e14aba773b6585b8b5c8fa8b/src/gitlab/client/milestone.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
