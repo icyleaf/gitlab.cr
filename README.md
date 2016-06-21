@@ -19,13 +19,12 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  gitlab.cr:
+  gitlab:
     github: icyleaf/gitlab.cr
     branch: master
 ```
 
 `master` branch is always the latest stable release version.
-
 
 ### Develop(Unstable) version
 
@@ -33,7 +32,7 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  gitlab.cr:
+  gitlab:
     github: icyleaf/gitlab.cr
     branch: develop
 ```
@@ -44,7 +43,7 @@ Add this to your application's `shard.yml`, and change the [version(release)](ht
 
 ```yaml
 dependencies:
-  gitlab.cr:
+  gitlab:
     github: icyleaf/gitlab.cr
     version: 0.2.0
 ```
@@ -68,7 +67,7 @@ user = g.user
 
 # get the user's email
 email = user["email"]
-# => "shen.wang@qyer.com"
+# => "icyleaf.cn@gmail.com"
 
 # get list of projects
 projects = g.projects({ "per_page" => 5 })
