@@ -49,7 +49,6 @@ dependencies:
     version: 0.2.0
 ```
 
-
 ## Usage
 
 ```crystal
@@ -173,16 +172,13 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
     - [x] Create a forked from/to relation between existing projects. - `create_fork_from`
     - [x] Delete an existing forked from relationship - `remove_fork_from`
   - [x] Search for projects by name - `project_search`
-- [ ] Project Snippets
-- [ ] Services
-- [ ] Repositories
-  - [ ] Get file archive
+- [x] Repositories
+  - [x] Get file archive
   - [x] List repository tree - `tree`
   - [x] Raw file content - `file_contents`
   - [x] Raw blob content - `blow_content`
   - [x] Compare branches, tags or commits - `compare`
   - [x] Contributors - `contributors`
-- [ ] Repository Files
 - [x] Commits
   - [x] List repository commits - `commits`
   - [x] Get a single commit - `commit`
@@ -213,7 +209,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] List issues that will close on merge -  `merge_request_closed_issues`
   - [x] Subscribe to a merge request - `subscribe_merge_request`
   - [x] Unsubscribe from a merge request - `unsubscribe_merge_request`
-- [ ] Issues
+- [x] Issues
   - [x] List issues - `issues`
   - [x] List project issues - `issues(project_id)`
   - [x] Single issue - `issue`
@@ -223,7 +219,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] Move an issue - `move_issue`
   - [x] Subscribe to an issue - `subscribe_issue`
   - [x] Unsubscribe from an issue - `unsubscribe_issue`
-  - [ ] Comments on issues - Comments are done via the **notes** resource
+  - [x] Comments on issues - Comments are done via the **notes** resource
 - [x] Keys
   - [x] Get SSH key with user by ID of an SSH key - `key`
 - [x] Labels
@@ -239,7 +235,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] Create new milestone - `create_milestone`
   - [x] Edit milestone - `edit_milestone`
   - [x] Get all issues assigned to a single milestone - `milestone_issues`
-- [ ] Notes (comments)
+- [x] Notes (comments)
   - [x] Issues
     - [x] List project issue notes - `issue_notes`
     - [x] Get single issue note - `issue_note`
@@ -263,7 +259,6 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] Single deploy key - `deploy_key`
   - [x] Add deploy key - `create_deploy_key`
   - [x] Delete deploy key - `remove_deploy_key`
-- [ ] System Hooks
 - [x] Groups
   - [x] List groups - `groups`
   - [x] List a group's projects - `group_projects`
@@ -279,8 +274,6 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
     - [x] Edit group team member - `edit_member_to_group`
     - [x] Remove user team member - `remove_member_to_group`
   - [x] Namespaces in groups - same as **List group**
-- [ ] Namespaces
-- [ ] Settings
 - [x] Tags
   - [x] List project repository tags - `tags`
   - [x] Get a single repository tag - `tag`
@@ -288,6 +281,12 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] Delete a tag - `delete_tag`
   - [x] Create a new release - `create_release_notes`
   - [x] Update a release - `update_release_notes`
+- [ ] Project Snippets
+- [ ] Services
+- [ ] Repository Files
+- [ ] System Hooks
+- [ ] Namespaces
+- [ ] Settings
 
 ## Contributing
 
