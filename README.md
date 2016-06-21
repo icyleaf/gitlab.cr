@@ -1,7 +1,7 @@
 # 💎 Gitlab.cr
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE)
-[![Version](https://img.shields.io/badge/version-development-green.svg)](https://github.com/icyleaf/gitlab.cr)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE)
+[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://github.com/icyleaf/gitlab.cr)
 [![Dependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg)](https://travis-ci.org/icyleaf/gitlab.cr)
@@ -9,15 +9,25 @@
 Gitlab.cr is a [GitLab API](http://docs.gitlab.com/ce/api/README.html) wrapper writes with [Crystal](http://crystal-lang.org/) Language.
 Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version.
 
-Docs Generated in latest commit.
-
-## Status
-
-Learning Crystal language, and **WORKIONG IN PROCESS**, please DO NOT use it in production environment.
-
-Build in crystal version >= `v0.18.2`
+Build in crystal version >= `v0.18.2`, Docs Generated in latest commit.
 
 ## Installation
+
+### Stable version
+
+Add this to your application's `shard.yml`:
+
+```yaml
+dependencies:
+  gitlab.cr:
+    github: icyleaf/gitlab.cr
+    branch: master
+```
+
+`master` branch is always the latest stable release version.
+
+
+### Develop(Unstable) version
 
 Add this to your application's `shard.yml`:
 
@@ -28,18 +38,45 @@ dependencies:
     branch: develop
 ```
 
+### Explicit version
+
+Add this to your application's `shard.yml`, and change the [version(release)](https://github.com/icyleaf/gitlab.cr/releases) what you want:
+
+```yaml
+dependencies:
+  gitlab.cr:
+    github: icyleaf/gitlab.cr
+    version: 0.2.0
+```
+
+
 ## Usage
 
 ```crystal
 require "gitlab"
 
+# configuration
 endpoint = "http://domain.com/api/v3"
 token = "<token>"
 
+# initialize a new client
+g = Gitlab.client(endpoint, token)
+# => #<Gitlab::Client:0x101653f20 @endpoint="http://localhost:10080/api/v3", @token="xxx">
+
+# get the authenticated user
+user = g.user
+# => {"name" => "icyleaf", "username" => "icyleaf", "id" => 34, "state" => "active", "avatar_url" => "http://www.gravatar.com/avatar/38e1b2eb5d0a3fff4fb0ab8363c8f874?s=80&d=identicon", "web_url" => "http://gitlab.docker:10080/u/icyleaf", "created_at" => "2016-05-14T09:23:42.594+05:30", "is_admin" => true, "bio" => nil, "location" => nil, "skype" => "", "linkedin" => "", "twitter" => "", "website_url" => "", "last_sign_in_at" => "2016-05-14T09:24:00.575+05:30", "confirmed_at" => "2016-05-14T09:23:42.457+05:30", "email" => "icyleaf.cn@gmail.com", "theme_id" => 2, "color_scheme_id" => 1, "projects_limit" => 8, "current_sign_in_at" => "2016-06-18T20:11:15.609+05:30", "identities" => [], "can_create_group" => true, "can_create_project" => true, "two_factor_enabled" => false, "external" => false, "private_token" => "xxx"}
+
+# get the user's email
+email = user["email"]
+# => "shen.wang@qyer.com"
+
+# get list of projects
+projects = g.projects({ "per_page" => 5 })
+
+# handle the exception
 begin
-  g = Gitlab.client(endpoint, token)
-  pp g.users({ "per_page" => "2" })
-  pp g.user(2)
+  pp g.delete_group(999)
 rescue ex
   pp ex.message
   # Here has one variable "response" instance of Gitlab::HTTP::Response
@@ -47,9 +84,18 @@ rescue ex
   pp ex.response.code
   pp ex.response.body.parse_json
 end
+
+# request not handled APIs
+# example: request a GET method to call "/application/settings"
+
+# get gitlab settings
+g.get("/application/settings")
+
+# update gitlab settings
+g.put("/application/settings", { "signup_enabled" => "false" })
 ```
 
-More API check it out: [http://icyleaf.github.io/gitlab.cr/](http://icyleaf.github.io/gitlab.cr/)
+For more information, refer to [API Documentation](http://icyleaf.github.io/gitlab.cr/).
 
 ## Progress
 
