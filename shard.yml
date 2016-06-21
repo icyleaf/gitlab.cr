@@ -5,7 +5,7 @@ development_dependencies:
   webmock:
     github: manastech/webmock.cr
     branch: master
-    
+
 authors:
   - icyleaf <icyleaf.cn@gmail.com>
 
