@@ -2,7 +2,7 @@ module Gitlab
   class Client
     # Defines methods related to users.
     #
-    # See [http://docs.gitlab.com/ce/api/users.html]9http://docs.gitlab.com/ce/api/users.html
+    # See [http://docs.gitlab.com/ce/api/users.html](http://docs.gitlab.com/ce/api/users.html)
     module User
       # Gets a list of users.
       #
@@ -16,7 +16,7 @@ module Gitlab
       # client.users({ "per_page" => "10", "page" => "2" })
       # ```
       def users(params : Hash? = nil)
-        get("/users", params).body
+        get("/users", params).body.parse_json
       end
 
       # Gets information about current user.
@@ -24,10 +24,10 @@ module Gitlab
       # - return [Hash]
       #
       # ```
-      # client.user # Get current user information
+      # client.user
       # ```
       def user
-        get("/user").body
+        get("/user").body.parse_json
       end
 
       # Gets information about a user.
@@ -36,10 +36,10 @@ module Gitlab
       # - return [Hash]
       #
       # ```
-      # client.user(2) # Get user information by ID = 2
+      # client.user(2)
       # ```
       def user(user_id : Int32)
-        get("/users/#{user_id.to_s}").body
+        get("/users/#{user_id.to_s}").body.parse_json
       end
 
       # Creates a new user.
@@ -61,20 +61,18 @@ module Gitlab
       # Gitlab.create_user("icy.leaf@kaifeng.cn", "secret", "icyleaf")
       # ```
       def create_user(email : String, password : String, username : String, params : Hash = {} of String => String)
-        params = {
+        post("/users", {
           "email"    => email,
           "password" => password,
           "username" => username,
           "name"     => username,
-        }.merge(params)
-
-        post("/users", params: params).body
+        }.merge(params)).body.parse_json
       end
 
       # Updates a user.
       #
       # - param  [Int32] id The ID of a user.
-      # - param  [Hash] options A customizable set of options.
+      # - param  [Hash] params A customizable set of params.
       # - option params [String] :email The email of a user.
       # - option params [String] :password The password of a user.
       # - option params [String] :name The name of a user. Defaults to email.
@@ -88,7 +86,7 @@ module Gitlab
       # client.edit_user(4, { "email" => "icy.leaf@kaifeng.cn", "projects_limit" => "100" })
       # ```
       def edit_user(user_id : Int32, params : Hash = {} of String => String)
-        put("/users/#{user_id.to_s}", params).body
+        put("/users/#{user_id.to_s}", params).body.parse_json
       end
 
       # Deletes a user.
@@ -100,7 +98,23 @@ module Gitlab
       # client.delete_user(1)
       # ```
       def delete_user(user_id : Int32)
-        delete("/users/#{user_id.to_s}").body
+        delete("/users/#{user_id.to_s}").body.parse_json
+      end
+
+      # Search for project by name
+      #
+      # - param  [String] query A string to search for in group names and paths.
+      # - param  [Hash] params A customizable set of params.
+      # - option params [String] :per_page Number of projects to return per page
+      # - option params [String] :page The page to retrieve
+      # - return [Array<Hash>] List of projects under search qyery
+      #
+      # ```
+      # client.group_search("gitlab")
+      # client.group_search("gitlab", { "per_page" => 50 })
+      # ```
+      def group_search(query, params : Hash = {} of String => String)
+        get("/groups", { "search" => search }.merge(params)).body.parse_json
       end
 
       # Blocks the specified user.
@@ -114,7 +128,7 @@ module Gitlab
       # client.block_user(4)
       # ```
       def block_user(user_id : Int32)
-        put("/users/#{user_id.to_s}/block").body
+        put("/users/#{user_id.to_s}/block").body.parse_json
       end
 
       # Unblocks the specified user.
@@ -128,7 +142,7 @@ module Gitlab
       # client.unblock_user(4)
       # ```
       def unblock_user(user_id : Int32)
-        put("/users/#{user_id.to_s}/unblock").body
+        put("/users/#{user_id.to_s}/unblock").body.parse_json
       end
 
       # Gets a list of current user"s SSH keys.
@@ -139,7 +153,7 @@ module Gitlab
       # client.ssh_keys
       # ```
       def ssh_keys
-        get("/user/keys").body
+        get("/user/keys").body.parse_json
       end
 
       # Gets a list of a user"s SSH keys.
@@ -151,7 +165,7 @@ module Gitlab
       # client.ssh_keys(4)
       # ```
       def ssh_keys(user_id : Int32)
-        get("/users/#{user_id.to_s}/keys").body
+        get("/users/#{user_id.to_s}/keys").body.parse_json
       end
 
       # Gets information about SSH key.
@@ -163,7 +177,7 @@ module Gitlab
       # client.ssh_key(1)
       # ```
       def ssh_key(ssh_key_id : Int32)
-        get("/user/keys/#{ssh_key_id.to_s}").body
+        get("/user/keys/#{ssh_key_id.to_s}").body.parse_json
       end
 
       # Creates a new SSH key for current user.
@@ -176,7 +190,7 @@ module Gitlab
       # client.create_ssh_key("key title", "key body")
       # ```
       def create_ssh_key(title, key)
-        post("/user/keys", { "title" => title, "key" => key }).body
+        post("/user/keys", { "title" => title, "key" => key }).body.parse_json
       end
 
       # Creates a new SSH key for a user.
@@ -189,7 +203,7 @@ module Gitlab
       # client.create_ssh_key(2, "key title", "key body")
       # ```
       def create_ssh_key(user_id, title, key)
-        post("/users/#{user_id.to_s}/keys", { "title" => title, "key" => key }).body
+        post("/users/#{user_id.to_s}/keys", { "title" => title, "key" => key }).body.parse_json
       end
 
       # Deletes an SSH key for current user.
@@ -201,7 +215,7 @@ module Gitlab
       # client.delete_ssh_key(1)
       # ```
       def delete_ssh_key(ssh_key_id : Int32)
-        delete("/user/keys/#{ssh_key_id.to_s}").body
+        delete("/user/keys/#{ssh_key_id.to_s}").body.parse_json
       end
 
       # Deletes an SSH key for a user.
@@ -214,7 +228,7 @@ module Gitlab
       # client.delete_ssh_key(1, 1)
       # ```
       def delete_ssh_key(user_id : Int32, ssh_key_id : Int32)
-        delete("/users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}").body
+        delete("/users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}").body.parse_json
       end
 
       # Gets current user emails.
@@ -225,7 +239,7 @@ module Gitlab
       # client.emails
       # ```
       def emails
-        get("/user/emails").body
+        get("/user/emails").body.parse_json
       end
 
       # Gets a user emails.
@@ -237,7 +251,7 @@ module Gitlab
       # client.emails(2)
       # ```
       def emails(user_id : Int32)
-        get("/users/#{user_id.to_s}/emails").body
+        get("/users/#{user_id.to_s}/emails").body.parse_json
       end
 
       # Get a single email.
@@ -249,7 +263,7 @@ module Gitlab
       # client.email(3)
       # ```
       def email(email_id : Int32)
-        get("/user/emails/#{email_id.to_s}").body
+        get("/user/emails/#{email_id.to_s}").body.parse_json
       end
 
       # Creates a new email for current user.
@@ -261,7 +275,7 @@ module Gitlab
       # client.add_email('email@example.com')
       # ```
       def add_email(email)
-        post("/user/emails", { "email" => email }).body
+        post("/user/emails", { "email" => email }).body.parse_json
       end
 
       # Creates a new email for a user.
@@ -274,7 +288,7 @@ module Gitlab
       # client.add_email('email@example.com', 2)
       # ```
       def add_email(user_id : Int32, email)
-        post("/users/#{user_id.to_s}/emails", { "email" => email }).body
+        post("/users/#{user_id.to_s}/emails", { "email" => email }).body.parse_json
       end
 
       # Delete email for current user
@@ -286,7 +300,7 @@ module Gitlab
       # client.delete_email(2)
       # ```
       def delete_email(email_id : Int32)
-        delete("/user/emails/#{email_id.to_s}").body
+        delete("/user/emails/#{email_id.to_s}").body.parse_json
       end
 
       # Delete email for current user
@@ -301,7 +315,6 @@ module Gitlab
       def delete_email(email_id : Int32, user_id : Int32)
         delete("/users/#{user_id.to_s}/emails/#{email_id.to_s}")
       end
-
     end
   end
 end
