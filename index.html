@@ -276,7 +276,7 @@
 <p>Gitlab.cr is a <a href="http://docs.gitlab.com/ce/api/README.html" target="_blank">GitLab API</a> wrapper writes with <a href="http://crystal-lang.org/" target="_blank">Crystal</a> Language.
 Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab</a> gem for ruby version.</p>
 
-<p>Build in crystal version >= <code>v0.18.2</code>, Docs Generated in <a href="https://github.com/icyleaf/gitlab.cr/commit/eccbf0e" target="_blank">eccbf0e</a> (2016-06-21 18:59:04 +0800).</p>
+<p>Build in crystal version >= <code>v0.18.2</code>, Docs Generated in <a href="https://github.com/icyleaf/gitlab.cr/commit/24f70b1" target="_blank">24f70b1</a> (2016-06-21 19:06:13 +0800).</p>
 
 <h2>Installation</h2>
 
@@ -285,7 +285,7 @@ Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab<
 <p>Add this to your application's <code>shard.yml</code>:</p>
 
 <pre><code class='language-yaml'>dependencies:
-  gitlab.cr:
+  gitlab:
     github: icyleaf/gitlab.cr
     branch: master</code></pre>
 
@@ -296,7 +296,7 @@ Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab<
 <p>Add this to your application's <code>shard.yml</code>:</p>
 
 <pre><code class='language-yaml'>dependencies:
-  gitlab.cr:
+  gitlab:
     github: icyleaf/gitlab.cr
     branch: develop</code></pre>
 
@@ -305,7 +305,7 @@ Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab<
 <p>Add this to your application's <code>shard.yml</code>, and change the <a href="https://github.com/icyleaf/gitlab.cr/releases" target="_blank">version(release)</a> what you want:</p>
 
 <pre><code class='language-yaml'>dependencies:
-  gitlab.cr:
+  gitlab:
     github: icyleaf/gitlab.cr
     version: 0.2.0</code></pre>
 
@@ -327,7 +327,7 @@ user <span class="o">=</span> g.user
 
 <span class="c"># get the user&#39;s email</span>
 email <span class="o">=</span> user[<span class="s">&quot;email&quot;</span>]
-<span class="c"># &#61;&gt; &quot;shen.wang&#64;qyer.com&quot;</span>
+<span class="c"># &#61;&gt; &quot;icyleaf.cn&#64;gmail.com&quot;</span>
 
 <span class="c"># get list of projects</span>
 projects <span class="o">=</span> g.projects({ <span class="s">&quot;per_page&quot;</span> => <span class="n">5</span> })
