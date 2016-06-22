@@ -7,6 +7,7 @@ module Gitlab
   class Client
     getter :endpoint, :token
 
+    # :nodoc:
     enum ErrorType
       JsonError
       NonJsonError

@@ -10,6 +10,7 @@ module Gitlab
       @code : Int32
       @body : String
 
+      # :nodoc:
       enum ContentType
         JSON
         HTML
