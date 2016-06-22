@@ -525,7 +525,26 @@ module Gitlab
       # client.create_fork_from(1, 21)
       # ```
       def remove_fork_from(project : Int32|String)
-        delete("/projects/#{project}/fork")
+        delete("/projects/#{project}/fork").body.parse_json
+      end
+
+      # Upload a file in a project
+      #
+      # Uploads a file to the specified project to be used in an issue or merge request description, or a comment.
+      #
+      # **Note**: The returned url is relative to the project path. In Markdown contexts, the link is automatically expanded when the format in markdown is used.
+      #
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [String] file The path of a file.
+      # - return [Hash] Information about the uploaded file.
+      #
+      # ```
+      # client.upload_file(1, "/Users/icyleaf/Desktop/snippets_ruby.rb")
+      # client.upload_file(1, "/Users/icyleaf/Desktop/screenshot.png")
+      # client.upload_file(1, "/Users/icyleaf/Desktop/archive.zip")
+      # ```
+      def upload_file(project : Int32|String, file : String)
+        post("/projects/#{project}/uploads", { "file" => file }).body.parse_json
       end
     end
   end

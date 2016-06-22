@@ -6,51 +6,58 @@ module Gitlab
     # HTTP Options class
     #
     # built and parse for http headers/params/body
+    #
+    # ```
+    # options = Gitlab::HTTP::Options.new({
+    #   "headers" => {
+    #     "User-Agent" => "Gitlab.cr v0.1.0",
+    #   },
+    #   "params" => {
+    #     "username" => "icyleaf",
+    #     "password" => "p@ssw0rd",
+    #   }
+    # })
+    #
+    # # Or only pass header or params is okay.
+    # options = Gitlab::HTTP::Options.new({
+    #   "headers" => {
+    #     "User-Agent" => "Gitlab.cr v0.1.0",
+    #   }
+    # })
+    #
+    # # append more headers
+    # options.headers["Content-Type"] = "application/json"
+    # ```
     class Options
       USER_AGENT = "Gitlab.cr v#{VERSION}"
 
-      @headers : HTTP::Headers?
-      @params : HTTP::Params?
-      @body : String?
+      property headers : ::HTTP::Headers
+      property params : ::HTTP::Params
 
-      property :headers, :params, :body
+      alias Params = String|Int32|File|Float32
 
       # Create a Http options
-      def initialize(options : Hash? = nil)
-        if options
-          @headers = parse_headers(options)
-          @params = parse_params(options)
-          @body = parse_body(options)
-        end
+      def initialize(options : Hash = nil)
+        @headers = parse_headers(options)
+        @params = parse_params(options)
       end
 
       private def parse_params(options)
-        return unless options.has_key?("params")
-        if options["params"].is_a?(String)
-          build_params(options["params"].to_s)
-        elsif options["params"].is_a?(Hash)
-          build_params(options["params"])
-        else
-          raise Error::NotMatchTypeError.new("params only support query string or form data(hash)")
-        end
+        return ::HTTP::Params.new({} of String => Array(String)) unless options.has_key?("params")
+
+        build_params(options["params"])
       end
 
       private def build_params(query : String)
         HTTP::Params.parse(query)
       end
 
-      private def build_params(params : Hash)
+      private def build_params(params : Hash(String, String))
         HTTP::Params.new({} of String => Array(String)).tap do |param|
           params.each do |key, value|
             param.add(key, value)
           end
         end
-      end
-
-      private def parse_body(options)
-        return unless options.has_key?("body")
-
-        options["body"].to_s
       end
 
       private def parse_headers(options)
