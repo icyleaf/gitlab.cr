@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../js/doc.js"></script>
-  <title>Gitlab::Client::ErrorType - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::CoreExt::StringParseJson - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
       
         <ul>
   
-  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
       <a href="../../Gitlab/Client.html">Client</a>
       
         <ul>
@@ -42,11 +42,6 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/DeployKey" data-name="gitlab::client::deploykey">
       <a href="../../Gitlab/Client/DeployKey.html">DeployKey</a>
-      
-    </li>
-  
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/ErrorType" data-name="gitlab::client::errortype">
-      <a href="../../Gitlab/Client/ErrorType.html">ErrorType</a>
       
     </li>
   
@@ -107,6 +102,21 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="../../Gitlab/Client/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt" data-name="gitlab::coreext">
+      <a href="../../Gitlab/CoreExt.html">CoreExt</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt/StringParseJson" data-name="gitlab::coreext::stringparsejson">
+      <a href="../../Gitlab/CoreExt/StringParseJson.html">StringParseJson</a>
       
     </li>
   
@@ -225,28 +235,13 @@
       
     </li>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
       <a href="../../Gitlab/HTTP/Response.html">Response</a>
       
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response/ContentType" data-name="gitlab::http::response::contenttype">
-      <a href="../../Gitlab/HTTP/Response/ContentType.html">ContentType</a>
-      
     </li>
   
 </ul>
 
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/StringParseJson" data-name="gitlab::stringparsejson">
-      <a href="../../Gitlab/StringParseJson.html">StringParseJson</a>
       
     </li>
   
@@ -267,7 +262,7 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">enum</span> Gitlab::Client::ErrorType
+  <span class="kind">module</span> Gitlab::CoreExt::StringParseJson
 
 </h1>
 
@@ -285,35 +280,25 @@
 
 
 
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../String.html">String</a></li>
+  
+  </ul>
+
 
 
 
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/49da89c77962890347e269023c0dff2e8e526fc9/src/gitlab/client.cr#L10" target="_blank">gitlab/client.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/core_ext/string/parse_json.cr#L5" target="_blank">gitlab/core_ext/string/parse_json.cr</a>
     
     <br/>
   
 
 
-
-  
-    <h2>Enum Members</h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="JsonError">
-        <strong>JsonError</strong> = <code><span class="n">0</span></code>
-      </dt>
-      
-    
-      <dt class="entry-const" id="NonJsonError">
-        <strong>NonJsonError</strong> = <code><span class="n">1</span></code>
-      </dt>
-      
-    
-  </dl>
 
 
 
@@ -323,12 +308,9 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#json_error%3F-instance-method" class="signature"><strong>#json_error?</strong></a>
+        <a href="#parse_json-instance-method" class="signature"><strong>#parse_json</strong></a>
         
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#non_json_error%3F-instance-method" class="signature"><strong>#non_json_error?</strong></a>
+          <div class="summary"><p>Parse self to JSON data</p></div>
         
       </li>
     
@@ -340,34 +322,6 @@
 
 <div class="methods-inherited">
   
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-  
 </div>
 
 
@@ -375,34 +329,23 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="json_error?-instance-method">
+    <div class="entry-detail" id="parse_json-instance-method">
       <div class="signature">
         
-        def <strong>json_error?</strong>
+        def <strong>parse_json</strong>
 
-        <a class="method-permalink" href="#json_error%3F-instance-method">#</a>
+        <a class="method-permalink" href="#parse_json-instance-method">#</a>
       </div>
+      
+        <div class="doc"><p>Parse self to JSON data</p>
+
+<pre><code><span class="s">&quot;&#123; \&quot;user\&quot;: \&quot;icyleaf\&quot; &#125;&quot;</span>.parse_json <span class="c"># &#61;&gt; &#123;&quot;user&quot; &#61;&gt; &quot;hello&quot;&#125; : JSON::Any</span>
+<span class="s">&quot;&#91;&#93;&quot;</span>.parse_json <span class="c"># &#61;&gt; &#91;&#93; : JSON::Any</span></code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/49da89c77962890347e269023c0dff2e8e526fc9/src/gitlab/client.cr#L11" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="non_json_error?-instance-method">
-      <div class="signature">
-        
-        def <strong>non_json_error?</strong>
-
-        <a class="method-permalink" href="#non_json_error%3F-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/49da89c77962890347e269023c0dff2e8e526fc9/src/gitlab/client.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/core_ext/string/parse_json.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
