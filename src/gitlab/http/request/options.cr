@@ -9,26 +9,22 @@ module Gitlab
     class Options
       USER_AGENT = "Gitlab.cr v#{VERSION}"
 
-      @headers : HTTP::Headers?
-      @params : HTTP::Params?
-      @body : String?
-
-      property :headers, :params, :body
+      property headers : ::HTTP::Headers
+      property params : ::HTTP::Params
 
       # Create a Http options
       def initialize(options : Hash? = nil)
-        if options
-          @headers = parse_headers(options)
-          @params = parse_params(options)
-          @body = parse_body(options)
-        end
+        @headers = parse_headers(options)
+        @params = parse_params(options)
       end
 
       private def parse_params(options)
-        return unless options.has_key?("params")
-        if options["params"].is_a?(String)
-          build_params(options["params"].to_s)
-        elsif options["params"].is_a?(Hash)
+        return ::HTTP::Params.new({} of String => Array(String)) unless options.has_key?("params")
+
+        case options["params"]
+        when String|Int32
+          build_params(options["params"])
+        when Hash
           build_params(options["params"])
         else
           raise Error::NotMatchTypeError.new("params only support query string or form data(hash)")
@@ -45,12 +41,6 @@ module Gitlab
             param.add(key, value)
           end
         end
-      end
-
-      private def parse_body(options)
-        return unless options.has_key?("body")
-
-        options["body"].to_s
       end
 
       private def parse_headers(options)

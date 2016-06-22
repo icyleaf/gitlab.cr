@@ -1,4 +1,5 @@
 require "http/client"
+require "./request/**"
 
 module Gitlab
   module HTTP
@@ -59,6 +60,18 @@ module Gitlab
         Response.parse(response, "DELETE", uri)
       end
 
+      def upload(url : String, name : String, file : String)
+        uri = URI.parse(url)
+        pp File.exists?(file)
+
+        multipart = Multipart.new(name, file)
+        set_header("Content-Type", multipart.content_type)
+        set_header("Content-Length", multipart.length)
+
+        response = ::HTTP::Client.post uri.to_s, @default_options.headers, multipart.playload
+        Response.parse(response, "POST", uri)
+      end
+
       # Return a Gitlab::Response by sending the target http request
       #
       # Allows Methods: `GET`/`PUT`/`POST`/`DELETE`
@@ -82,6 +95,16 @@ module Gitlab
         else
           raise Error::NotAllowRequestMethodError.new("GET/PUT/POST/DELETE is allowed")
         end
+      end
+
+      # Set a header for request
+      def set_header(key : String, value : String|Int32)
+        @default_options.headers[key] = value.to_s
+      end
+
+      # Set a params for request
+      def set_param(key : String, value : String|Int32)
+        @default_options.params[key] = value.to_s
       end
     end
   end
