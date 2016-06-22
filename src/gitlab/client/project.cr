@@ -196,7 +196,7 @@ module Gitlab
       # client.star_project(42)
       # ```
       def star_project(project : Int32|String)
-        post("/projects/#{project_id}/star").body.parse_json
+        post("/projects/#{project}/star").body.parse_json
       end
 
       # Unstar a project.
@@ -513,7 +513,7 @@ module Gitlab
       # client.create_fork_from(1, 21)
       # ```
       def create_fork_from(project : Int32|String, forked_from_id : Int32)
-        put("/projects/#{project_id}/fork/#{forked_from_id}").body.parse_json
+        put("/projects/#{project}/fork/#{forked_from_id}").body.parse_json
       end
 
       # Delete an existing forked from relationship. Available only for admins.
@@ -525,7 +525,7 @@ module Gitlab
       # client.create_fork_from(1, 21)
       # ```
       def remove_fork_from(project : Int32|String)
-        delete("/projects/#{project_id}/fork")
+        delete("/projects/#{project}/fork")
       end
     end
   end
