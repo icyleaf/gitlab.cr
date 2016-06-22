@@ -185,6 +185,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotExistsFileError" data-name="gitlab::error::notexistsfileerror">
+      <a href="../../Gitlab/Error/NotExistsFileError.html">NotExistsFileError</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotFound" data-name="gitlab::error::notfound">
       <a href="../../Gitlab/Error/NotFound.html">NotFound</a>
       
@@ -225,8 +230,23 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Multipart" data-name="gitlab::http::multipart">
+      <a href="../../Gitlab/HTTP/Multipart.html">Multipart</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
       <a href="../../Gitlab/HTTP/Options.html">Options</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options/Params" data-name="gitlab::http::options::params">
+      <a href="../../Gitlab/HTTP/Options/Params.html">Params</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -292,7 +312,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/http/request.cr#L6" target="_blank">gitlab/http/request.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L7" target="_blank">gitlab/http/request.cr</a>
     
     <br/>
   
@@ -333,6 +353,11 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#multipart%3F-instance-method" class="signature"><strong>#multipart?</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#post%28uri%29%3AHTTP%3A%3AResponse-instance-method" class="signature"><strong>#post</strong>(uri) : HTTP::Response</a>
         
           <div class="summary"><p>Return a Gitlab::Response by sending the target http request</p></div>
@@ -350,6 +375,20 @@
         <a href="#request%28method%2Curl%29%3AHTTP%3A%3AResponse-instance-method" class="signature"><strong>#request</strong>(method, url) : HTTP::Response</a>
         
           <div class="summary"><p>Return a Gitlab::Response by sending the target http request</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_header%28key%3AString%2Cvalue%3AString%7CInt32%29-instance-method" class="signature"><strong>#set_header</strong>(key : String, value : String | Int32)</a>
+        
+          <div class="summary"><p>Set a header for request</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_param%28key%3AString%2Cvalue%3AString%7CInt32%29-instance-method" class="signature"><strong>#set_param</strong>(key : String, value : String | Int32)</a>
+        
+          <div class="summary"><p>Set a params for request</p></div>
         
       </li>
     
@@ -396,7 +435,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/http/request.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -421,7 +460,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/http/request.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -441,7 +480,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/http/request.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="multipart?-instance-method">
+      <div class="signature">
+        
+        def <strong>multipart?</strong>
+
+        <a class="method-permalink" href="#multipart%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L108" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -461,7 +516,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/http/request.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -481,7 +536,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/http/request.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -505,7 +560,43 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/feb87340e853f539f35b1d83a492256d0cd3a1b2/src/gitlab/http/request.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_header&#40;key:String,value:String|Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>set_header</strong>(key : <a href="../../String.html">String</a>, value : <a href="../../String.html">String</a> | Int32)
+
+        <a class="method-permalink" href="#set_header%28key%3AString%2Cvalue%3AString%7CInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Set a header for request</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L99" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_param&#40;key:String,value:String|Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>set_param</strong>(key : <a href="../../String.html">String</a>, value : <a href="../../String.html">String</a> | Int32)
+
+        <a class="method-permalink" href="#set_param%28key%3AString%2Cvalue%3AString%7CInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Set a params for request</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/http/request.cr#L104" target="_blank">View source</a>]
         
       </div>
     </div>

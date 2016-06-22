@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
   <link href="../../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../../js/doc.js"></script>
-  <title>Gitlab::Client::Session - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::Error::NotExistsFileError - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
       
         <ul>
   
-  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
       <a href="../../Gitlab/Client.html">Client</a>
       
         <ul>
@@ -90,7 +90,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Session" data-name="gitlab::client::session">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Session" data-name="gitlab::client::session">
       <a href="../../Gitlab/Client/Session.html">Session</a>
       
     </li>
@@ -125,7 +125,7 @@
       
     </li>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
       <a href="../../Gitlab/Error.html">Error</a>
       
         <ul>
@@ -185,7 +185,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotExistsFileError" data-name="gitlab::error::notexistsfileerror">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotExistsFileError" data-name="gitlab::error::notexistsfileerror">
       <a href="../../Gitlab/Error/NotExistsFileError.html">NotExistsFileError</a>
       
     </li>
@@ -282,19 +282,12 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> Gitlab::Client::Session
+  <span class="kind">class</span> Gitlab::Error::NotExistsFileError
 
 </h1>
 
 
-
-
-
-  <h2>Overview</h2>
-
-  <p>Defines methods related to session.</p>
-
-<p>See <a href="http://docs.gitlab.com/ce/api/session.html" target="_blank">http://docs.gitlab.com/ce/api/session.html</a></p>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Gitlab/Error/NotExistsFileError.html">Gitlab::Error::NotExistsFileError</a></li><li class="superclass"><a href="../../Gitlab/Error/Error.html">Gitlab::Error::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -306,12 +299,8 @@
 
 
 
-  <h2>Direct including types</h2>
-  <ul class="other-types-list">
-  
-    <li class="other-type"><a href="../../Gitlab/Client.html">Gitlab::Client</a></li>
-  
-  </ul>
+
+
 
 
 
@@ -319,7 +308,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/client/session.cr#L6" target="_blank">gitlab/client/session.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/error.cr#L9" target="_blank">gitlab/error.cr</a>
     
     <br/>
   
@@ -330,54 +319,44 @@
 
 
 
-  <h2>Instance Method Summary</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#session%28login%3AString%2Cpassword%3AString%29-instance-method" class="signature"><strong>#session</strong>(login : String, password : String)</a>
-        
-          <div class="summary"><p>Creates a new user session.</p></div>
-        
-      </li>
-    
-  </ul>
-
 
 
 
 
 <div class="methods-inherited">
   
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+  
 </div>
 
 
 
-
-  <h2>Instance Method Detail</h2>
-  
-    <div class="entry-detail" id="session&#40;login:String,password:String&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>session</strong>(login : <a href="../../String.html">String</a>, password : <a href="../../String.html">String</a>)
-
-        <a class="method-permalink" href="#session%28login%3AString%2Cpassword%3AString%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Creates a new user session.</p>
-
-<ul><li>param  [String] login The email or username of a user.</li><li>param  [String] password The password of a user.</li><li>return [Hash] Information about logged in user.</li></ul>
-
-<pre><code>client.session(<span class="s">&quot;jack&#64;example.com&quot;</span>, <span class="s">&quot;secret12345&quot;</span>)
-client.session(<span class="s">&quot;jack&quot;</span>, <span class="s">&quot;secret12345&quot;</span>)</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/2909a7182aaa1bac827dad9a25ca7c09f037a27c/src/gitlab/client/session.cr#L17" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
