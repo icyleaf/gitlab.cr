@@ -1,3 +1,5 @@
+require "secure_random"
+
 module Gitlab
   module HTTP
     class Multipart

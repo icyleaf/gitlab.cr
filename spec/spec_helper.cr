@@ -12,7 +12,7 @@ end
 
 # GET
 def stub_get(path, fixture)
-  WebMock.stub(:get, "#{client.endpoint}#{path}").
+  WebMock.stub(:get, "#{client.endpoint}#{path}?&").
     with(headers: { "PRIVATE-TOKEN" => client.token }).
     to_return(body: load_fixture(fixture))
 end

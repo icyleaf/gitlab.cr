@@ -49,11 +49,11 @@ module Gitlab
       end
 
       private def build_params(query : String)
-        HTTP::Params.parse(query)
+        ::HTTP::Params.parse(query)
       end
 
       private def build_params(params : Hash(String, String))
-        HTTP::Params.new({} of String => Array(String)).tap do |param|
+        ::HTTP::Params.new({} of String => Array(String)).tap do |param|
           params.each do |key, value|
             param.add(key, value)
           end
@@ -72,7 +72,7 @@ module Gitlab
       end
 
       private def default_headers
-        HTTP::Headers.new.tap do |header|
+        ::HTTP::Headers.new.tap do |header|
           header["User-Agent"] = USER_AGENT
         end
       end

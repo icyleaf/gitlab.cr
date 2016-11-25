@@ -45,7 +45,7 @@ Add this to your application's `shard.yml`, and change the [version(release)](ht
 dependencies:
   gitlab:
     github: icyleaf/gitlab.cr
-    version: 0.2.0
+    version: 0.2.2
 ```
 
 ## Usage
