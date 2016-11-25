@@ -9,7 +9,7 @@
 Gitlab.cr is a [GitLab API](http://docs.gitlab.com/ce/api/README.html) wrapper writes with [Crystal](http://crystal-lang.org/) Language.
 Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version.
 
-Build in crystal version >= `v0.18.2`, Docs Generated in latest commit.
+Build in crystal version >= `v0.20.0`, Docs Generated in latest commit.
 
 ## Installation
 
@@ -103,6 +103,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
 - [x] Exceptions
 - [x] Gitlab wrapper
 - [x] Authentication
+- [ ] 100% Rspec Coveraged
 
 ### Gitlab
 
