@@ -7,6 +7,7 @@ module Gitlab
   class Client
     getter :endpoint, :token
 
+    # :nodoc:
     enum ErrorType
       JsonError
       NonJsonError
@@ -83,6 +84,28 @@ module Gitlab
       end
     end
 
+    # Sets headers and query params for requests
+    private def default_options(url, params : Hash? = nil)
+      Hash(String, Hash(String, String)).new.tap do |hash|
+        hash["headers"] = default_headers unless url.includes?("/session")
+        hash["params"] = params if params
+      end
+    end
+
+    # Set a default Auth(PRIVATE-TOKEN or Authorization) header
+    #
+    # Raise an `Error::MissingCredentials` exception if token is not set.
+    private def default_headers
+      error_message = "Please provide a private_token or auth_token for user"
+      raise Error::MissingCredentials.new(error_message) unless @token
+
+      if @token.size <= 20
+        {"PRIVATE-TOKEN" => @token}
+      else
+        {"Authorization" => "Bearer #{@token}"}
+      end
+    end
+
     # Output error message
     private def error_message(response, type : ErrorType = ErrorType::JsonError)
       message = if type == ErrorType::JsonError
@@ -107,28 +130,6 @@ module Gitlab
         message.join(" ")
       else
         message
-      end
-    end
-
-    # Sets headers and query params for requests
-    private def default_options(url, params : Hash? = nil)
-      Hash(String, Hash(String, String)).new.tap do |hash|
-        hash["headers"] = default_headers unless url.includes?("/session")
-        hash["params"] = params if params
-      end
-    end
-
-    # Set a default Auth(PRIVATE-TOKEN or Authorization) header
-    #
-    # Raise an `Error::MissingCredentials` exception if token is not set.
-    private def default_headers
-      error_message = "Please provide a private_token or auth_token for user"
-      raise Error::MissingCredentials.new(error_message) unless @token
-
-      if @token.size <= 20
-        {"PRIVATE-TOKEN" => @token}
-      else
-        {"Authorization" => "Bearer #{@token}"}
       end
     end
 

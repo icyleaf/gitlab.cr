@@ -6,6 +6,7 @@ module Gitlab
 
     ## Client Errors
 
+    class NotExistsFileError < Error; end
     class NotMatchTypeError < Error; end
     class NotAllowRequestMethodError < Error; end
 

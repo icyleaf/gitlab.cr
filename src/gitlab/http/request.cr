@@ -1,4 +1,5 @@
 require "http/client"
+require "./request/**"
 
 module Gitlab
   module HTTP
@@ -22,7 +23,17 @@ module Gitlab
       # request.post("/path")
       # ```
       def post(uri) : HTTP::Response
-        response = ::HTTP::Client.post_form uri.to_s, @default_options.params.to_s, @default_options.headers
+        response = if multipart?
+          # TODO: Make it better, now just crack file to multipart request
+          multipart_file = Multipart.new("file", @default_options.params["file"])
+          set_header("Content-Type", multipart_file.content_type)
+          set_header("Content-Length", multipart_file.content_length)
+
+          ::HTTP::Client.post uri.to_s, @default_options.headers, multipart_file.body
+        else
+          ::HTTP::Client.post_form uri.to_s, @default_options.params.to_s, @default_options.headers
+        end
+
         Response.parse(response, "POST", uri)
       end
 
@@ -82,6 +93,20 @@ module Gitlab
         else
           raise Error::NotAllowRequestMethodError.new("GET/PUT/POST/DELETE is allowed")
         end
+      end
+
+      # Set a header for request
+      def set_header(key : String, value : String|Int32)
+        @default_options.headers[key] = value.to_s
+      end
+
+      # Set a params for request
+      def set_param(key : String, value : String|Int32)
+        @default_options.params[key] = value.to_s
+      end
+
+      def multipart?
+        @default_options.params.has_key?("file") && File.file?(@default_options.params["file"])
       end
     end
   end

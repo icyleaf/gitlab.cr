@@ -4,7 +4,7 @@ version: 0.2.0
 development_dependencies:
   webmock:
     github: manastech/webmock.cr
-    branch: master
+    version: ~> 0.9.1
 
 authors:
   - icyleaf <icyleaf.cn@gmail.com>
