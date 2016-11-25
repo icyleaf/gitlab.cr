@@ -329,7 +329,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L16" target="_blank">gitlab/client/issue.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L16" target="_blank">gitlab/client/issue.cr</a>
     
     <br/>
   
@@ -351,7 +351,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create_issue%28project_id%3AInt32%2Ctitle%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#create_issue</strong>(project_id : Int32, title : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#create_issue%28project_id%3AInt32%2Ctitle%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#create_issue</strong>(project_id : Int32, title : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Create issue in a project.</p></div>
         
@@ -365,7 +365,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#edit_issue</strong>(project_id : Int32, issue_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#edit_issue</strong>(project_id : Int32, issue_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Edit an issue in a project.</p></div>
         
@@ -379,16 +379,16 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#issues%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#issues</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#issues%28params%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#issues</strong>(params : Hash | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Gets a list isssues in a project.</p></div>
+          <div class="summary"><p>Gets a list of issues.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#issues%28params%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#issues</strong>(params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#issues%28project_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#issues</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Gets a list of issues.</p></div>
+          <div class="summary"><p>Gets a list isssues in a project.</p></div>
         
       </li>
     
@@ -445,7 +445,7 @@
       
         <div class="doc"><p>Closes an issue.</p>
 
-<p>Alias to <code><a href="../../Gitlab/Client/Issue.html#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#edit_issue</a></code>(project_id, issue_id, { "state_event" => "close" })</p>
+<p>Alias to <code><a href="../../Gitlab/Client/Issue.html#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#edit_issue</a></code>(project_id, issue_id, { "state_event" => "close" })</p>
 
 <ul><li>param  [Integer] project The ID of a project.</li><li>param  [Integer] id The ID of an issue.</li><li>return [Hash] Information about closed issue.</li></ul>
 
@@ -454,17 +454,17 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_issue&#40;project_id:Int32,title:String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="create_issue&#40;project_id:Int32,title:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
       <div class="signature">
         
         def <strong>create_issue</strong>(project_id : Int32, title : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#create_issue%28project_id%3AInt32%2Ctitle%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_issue%28project_id%3AInt32%2Ctitle%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create issue in a project.</p>
@@ -477,7 +477,7 @@ client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in deb
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L87" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -499,17 +499,17 @@ client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in deb
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L158" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L158" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_issue&#40;project_id:Int32,issue_id:Int32,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="edit_issue&#40;project_id:Int32,issue_id:Int32,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
       <div class="signature">
         
         def <strong>edit_issue</strong>(project_id : Int32, issue_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Edit an issue in a project.</p>
@@ -526,7 +526,7 @@ client.create_issue(<span class="n">1</span>, <span class="n">2</span>, <span cl
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L115" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -548,40 +548,17 @@ client.create_issue(<span class="n">1</span>, <span class="n">2</span>, <span cl
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="issues&#40;project_id:Int32,params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>issues</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#issues%28project_id%3AInt32%2Cparams%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Gets a list isssues in a project.</p>
-
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :iid Return the issue having the given iid.</li><li>option params [String] :state Return all issues or just those that are opened or closed.</li><li>option params [String] :labels Return all issues or just those that are opened or closed.</li><li>option params [String] :milestone The milestone title.</li><li>option params [String] :order_by Return requests ordered by created_at or updated_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of issues under a project.</li></ul>
-
-<pre><code>client.issue(<span class="n">1</span>)
-client.issue(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L54" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="issues&#40;params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="issues&#40;params:Hash|Nil&#61;nil&#41;-instance-method">
       <div class="signature">
         
         def <strong>issues</strong>(params : Hash | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#issues%28params%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#issues%28params%3AHash%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of issues.</p>
@@ -594,7 +571,30 @@ client.issues({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L32" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="issues&#40;project_id:Int32,params:Hash|Nil&#61;nil&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>issues</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#issues%28project_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a list isssues in a project.</p>
+
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :iid Return the issue having the given iid.</li><li>option params [String] :state Return all issues or just those that are opened or closed.</li><li>option params [String] :labels Return all issues or just those that are opened or closed.</li><li>option params [String] :milestone The milestone title.</li><li>option params [String] :order_by Return requests ordered by created_at or updated_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of issues under a project.</li></ul>
+
+<pre><code>client.issue(<span class="n">1</span>)
+client.issue(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -616,7 +616,7 @@ client.issues({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L172" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L172" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -631,7 +631,7 @@ client.issues({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&
       
         <div class="doc"><p>Reopens an issue.</p>
 
-<p>Alias to <code><a href="../../Gitlab/Client/Issue.html#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#edit_issue</a></code>(project_id, issue_id, { "state_event" => "reopen" })</p>
+<p>Alias to <code><a href="../../Gitlab/Client/Issue.html#edit_issue%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#edit_issue</a></code>(project_id, issue_id, { "state_event" => "reopen" })</p>
 
 <ul><li>param  [Integer] project The ID of a project.</li><li>param  [Integer] id The ID of an issue.</li><li>return [Hash] Information about closed issue.</li></ul>
 
@@ -640,7 +640,7 @@ client.issues({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L145" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -662,7 +662,7 @@ client.issues({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L187" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L187" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -684,7 +684,7 @@ client.issues({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/issue.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/issue.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>

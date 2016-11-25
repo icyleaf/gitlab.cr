@@ -312,7 +312,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L6" target="_blank">gitlab/http/response.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L6" target="_blank">gitlab/http/response.cr</a>
     
     <br/>
   
@@ -325,16 +325,16 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#parse%28response%2Cmethod%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Curl%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29%3AHTTP%3A%3AResponse-class-method" class="signature"><strong>.parse</strong>(response, method = <span class="n">nil</span>, url = <span class="n">nil</span>) : HTTP::Response</a>
+        <a href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%2Cmethod%2Curl%29-class-method" class="signature"><strong>.new</strong>(response : HTTP::Client::Response, method, url)</a>
         
-          <div class="summary"><p>Alias for Gitlab::HTTP::Response</p></div>
+          <div class="summary"><p>Create a new Http Response</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%2Cmethod%2Curl%29-class-method" class="signature"><strong>.new</strong>(response : HTTP::Client::Response, method, url)</a>
+        <a href="#parse%28response%2Cmethod%3Dnil%2Curl%3Dnil%29%3AHTTP%3A%3AResponse-class-method" class="signature"><strong>.parse</strong>(response, method = <span class="n">nil</span>, url = <span class="n">nil</span>) : HTTP::Response</a>
         
-          <div class="summary"><p>Create a new Http Response</p></div>
+          <div class="summary"><p>Alias for Gitlab::HTTP::Response</p></div>
         
       </li>
     
@@ -402,24 +402,6 @@
 
   <h2>Class Method Detail</h2>
   
-    <div class="entry-detail" id="parse&#40;response,method&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;,url&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;:HTTP::Response-class-method">
-      <div class="signature">
-        
-        def self.<strong>parse</strong>(response, method = <span class="n">nil</span>, url = <span class="n">nil</span>) : <a href="../../Gitlab/HTTP/Response.html">HTTP::Response</a>
-
-        <a class="method-permalink" href="#parse%28response%2Cmethod%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%2Curl%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29%3AHTTP%3A%3AResponse-class-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Alias for Gitlab::HTTP::Response</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L36" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="new&#40;response:HTTP::Client::Response,method,url&#41;-class-method">
       <div class="signature">
         
@@ -435,7 +417,25 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse&#40;response,method&#61;nil,url&#61;nil&#41;:HTTP::Response-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse</strong>(response, method = <span class="n">nil</span>, url = <span class="n">nil</span>) : <a href="../../Gitlab/HTTP/Response.html">HTTP::Response</a>
+
+        <a class="method-permalink" href="#parse%28response%2Cmethod%3Dnil%2Curl%3Dnil%29%3AHTTP%3A%3AResponse-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Alias for Gitlab::HTTP::Response</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -456,7 +456,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -472,7 +472,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -488,7 +488,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -504,7 +504,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -520,7 +520,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -536,7 +536,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/http/response.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -319,7 +319,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L6" target="_blank">gitlab/client/user.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L6" target="_blank">gitlab/client/user.cr</a>
     
     <br/>
   
@@ -355,13 +355,6 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create_ssh_key%28title%2Ckey%29-instance-method" class="signature"><strong>#create_ssh_key</strong>(title, key)</a>
-        
-          <div class="summary"><p>Creates a new SSH key for current user.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#create_ssh_key%28user_id%2Ctitle%2Ckey%29-instance-method" class="signature"><strong>#create_ssh_key</strong>(user_id, title, key)</a>
         
           <div class="summary"><p>Creates a new SSH key for a user.</p></div>
@@ -369,7 +362,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create_user%28email%3AString%2Cpassword%3AString%2Cusername%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#create_user</strong>(email : String, password : String, username : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#create_ssh_key%28title%2Ckey%29-instance-method" class="signature"><strong>#create_ssh_key</strong>(title, key)</a>
+        
+          <div class="summary"><p>Creates a new SSH key for current user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_user%28email%3AString%2Cpassword%3AString%2Cusername%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#create_user</strong>(email : String, password : String, username : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Creates a new user.</p></div>
         
@@ -411,7 +411,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_user%28user_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#edit_user</strong>(user_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#edit_user%28user_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#edit_user</strong>(user_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Updates a user.</p></div>
         
@@ -425,13 +425,6 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#emails%28user_id%3AInt32%29-instance-method" class="signature"><strong>#emails</strong>(user_id : Int32)</a>
-        
-          <div class="summary"><p>Gets a user emails.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#emails-instance-method" class="signature"><strong>#emails</strong></a>
         
           <div class="summary"><p>Gets current user emails.</p></div>
@@ -439,7 +432,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#group_search%28query%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#group_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#emails%28user_id%3AInt32%29-instance-method" class="signature"><strong>#emails</strong>(user_id : Int32)</a>
+        
+          <div class="summary"><p>Gets a user emails.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#group_search%28query%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#group_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
         
           <div class="summary"><p>Search for project by name</p></div>
         
@@ -453,16 +453,16 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#ssh_keys%28user_id%3AInt32%29-instance-method" class="signature"><strong>#ssh_keys</strong>(user_id : Int32)</a>
+        <a href="#ssh_keys-instance-method" class="signature"><strong>#ssh_keys</strong></a>
         
-          <div class="summary"><p>Gets a list of a user"s SSH keys.</p></div>
+          <div class="summary"><p>Gets a list of current user"s SSH keys.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ssh_keys-instance-method" class="signature"><strong>#ssh_keys</strong></a>
+        <a href="#ssh_keys%28user_id%3AInt32%29-instance-method" class="signature"><strong>#ssh_keys</strong>(user_id : Int32)</a>
         
-          <div class="summary"><p>Gets a list of current user"s SSH keys.</p></div>
+          <div class="summary"><p>Gets a list of a user"s SSH keys.</p></div>
         
       </li>
     
@@ -474,13 +474,6 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#user%28user_id%3AInt32%29-instance-method" class="signature"><strong>#user</strong>(user_id : Int32)</a>
-        
-          <div class="summary"><p>Gets information about a user.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#user-instance-method" class="signature"><strong>#user</strong></a>
         
           <div class="summary"><p>Gets information about current user.</p></div>
@@ -488,7 +481,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#users%28params%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method" class="signature"><strong>#users</strong>(params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#user%28user_id%3AInt32%29-instance-method" class="signature"><strong>#user</strong>(user_id : Int32)</a>
+        
+          <div class="summary"><p>Gets information about a user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#users%28params%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#users</strong>(params : Hash | Nil = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Gets a list of users.</p></div>
         
@@ -526,7 +526,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L277" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L277" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -548,7 +548,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L290" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L290" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -572,29 +572,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L130" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="create_ssh_key&#40;title,key&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>create_ssh_key</strong>(title, key)
-
-        <a class="method-permalink" href="#create_ssh_key%28title%2Ckey%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Creates a new SSH key for current user.</p>
-
-<ul><li>param  [String] title The title of an SSH key.</li><li>param  [String] key The SSH key body.</li><li>return [Hash] Information about created SSH key.</li></ul>
-
-<pre><code>client.create_ssh_key(<span class="s">&quot;key title&quot;</span>, <span class="s">&quot;key body&quot;</span>)</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L192" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -616,17 +594,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L205" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L205" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_user&#40;email:String,password:String,username:String,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="create_ssh_key&#40;title,key&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>create_ssh_key</strong>(title, key)
+
+        <a class="method-permalink" href="#create_ssh_key%28title%2Ckey%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Creates a new SSH key for current user.</p>
+
+<ul><li>param  [String] title The title of an SSH key.</li><li>param  [String] key The SSH key body.</li><li>return [Hash] Information about created SSH key.</li></ul>
+
+<pre><code>client.create_ssh_key(<span class="s">&quot;key title&quot;</span>, <span class="s">&quot;key body&quot;</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L192" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_user&#40;email:String,password:String,username:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
       <div class="signature">
         
         def <strong>create_user</strong>(email : <a href="../../String.html">String</a>, password : <a href="../../String.html">String</a>, username : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#create_user%28email%3AString%2Cpassword%3AString%2Cusername%3AString%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_user%28email%3AString%2Cpassword%3AString%2Cusername%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Creates a new user.
@@ -640,7 +640,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -662,7 +662,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L302" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L302" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -684,7 +684,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L315" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L315" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -706,7 +706,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L230" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L230" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -728,7 +728,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L217" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -750,17 +750,17 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L100" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_user&#40;user_id:Int32,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="edit_user&#40;user_id:Int32,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
       <div class="signature">
         
         def <strong>edit_user</strong>(user_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#edit_user%28user_id%3AInt32%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_user%28user_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Updates a user.</p>
@@ -772,7 +772,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -794,29 +794,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L265" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="emails&#40;user_id:Int32&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>emails</strong>(user_id : Int32)
-
-        <a class="method-permalink" href="#emails%28user_id%3AInt32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Gets a user emails.</p>
-
-<ul><li>param  [Int32] user_id The ID of a user.</li><li>return [Hash]</li></ul>
-
-<pre><code>client.emails(<span class="n">2</span>)</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L253" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -838,17 +816,39 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L241" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L241" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="group_search&#40;query,params:Hash&#61;&#123;&#125;&lt;spanclass&#61;&quot;k&quot;&gt;of&lt;/span&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#61;&gt;&lt;spanclass&#61;&quot;t&quot;&gt;String&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="emails&#40;user_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>emails</strong>(user_id : Int32)
+
+        <a class="method-permalink" href="#emails%28user_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a user emails.</p>
+
+<ul><li>param  [Int32] user_id The ID of a user.</li><li>return [Hash]</li></ul>
+
+<pre><code>client.emails(<span class="n">2</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L253" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="group_search&#40;query,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
       <div class="signature">
         
         def <strong>group_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
 
-        <a class="method-permalink" href="#group_search%28query%2Cparams%3AHash%3D%7B%7D%3Cspanclass%3D%22k%22%3Eof%3C%2Fspan%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%3D%3E%3Cspanclass%3D%22t%22%3EString%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#group_search%28query%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Search for project by name</p>
@@ -861,7 +861,7 @@ client.group_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L116" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -883,29 +883,7 @@ client.group_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L179" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="ssh_keys&#40;user_id:Int32&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>ssh_keys</strong>(user_id : Int32)
-
-        <a class="method-permalink" href="#ssh_keys%28user_id%3AInt32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Gets a list of a user"s SSH keys.</p>
-
-<ul><li>param  [Int32] user_id The Id of user.</li><li>return [Array&lt;Hash>]</li></ul>
-
-<pre><code>client.ssh_keys(<span class="n">4</span>)</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L167" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L179" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -927,7 +905,29 @@ client.group_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L155" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L155" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ssh_keys&#40;user_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>ssh_keys</strong>(user_id : Int32)
+
+        <a class="method-permalink" href="#ssh_keys%28user_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets a list of a user"s SSH keys.</p>
+
+<ul><li>param  [Int32] user_id The Id of user.</li><li>return [Array&lt;Hash>]</li></ul>
+
+<pre><code>client.ssh_keys(<span class="n">4</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L167" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -951,29 +951,7 @@ client.group_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L144" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="user&#40;user_id:Int32&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>user</strong>(user_id : Int32)
-
-        <a class="method-permalink" href="#user%28user_id%3AInt32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Gets information about a user.</p>
-
-<ul><li>param  [Int32] user_id The ID of a user.</li><li>return [Hash]</li></ul>
-
-<pre><code>client.user(<span class="n">2</span>)</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L144" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -995,17 +973,39 @@ client.group_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="users&#40;params:Hash|Nil&#61;&lt;spanclass&#61;&quot;n&quot;&gt;nil&lt;/span&gt;&#41;-instance-method">
+    <div class="entry-detail" id="user&#40;user_id:Int32&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>user</strong>(user_id : Int32)
+
+        <a class="method-permalink" href="#user%28user_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Gets information about a user.</p>
+
+<ul><li>param  [Int32] user_id The ID of a user.</li><li>return [Hash]</li></ul>
+
+<pre><code>client.user(<span class="n">2</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="users&#40;params:Hash|Nil&#61;nil&#41;-instance-method">
       <div class="signature">
         
         def <strong>users</strong>(params : Hash | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#users%28params%3AHash%7CNil%3D%3Cspanclass%3D%22n%22%3Enil%3C%2Fspan%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#users%28params%3AHash%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of users.</p>
@@ -1018,7 +1018,7 @@ client.users({ <span class="s">&quot;per_page&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/client/user.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/client/user.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>

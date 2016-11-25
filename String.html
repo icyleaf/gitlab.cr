@@ -371,7 +371,7 @@ b <span class="o">=</span> <span class="n">2</span>
 
 <p>This ends up invoking <code>Object#to_s(IO)</code> on each expression enclosed by <code>#{...}</code>.</p>
 
-<p>If you need to dynamically build a string, use <code>String#build</code> or <code>MemoryIO</code>.</p>
+<p>If you need to dynamically build a string, use <code>String#build</code> or <code>IO::Memory</code>.</p>
 
 
 
@@ -380,7 +380,7 @@ b <span class="o">=</span> <span class="n">2</span>
   <h2>Included Modules</h2>
   <ul class="other-types-list">
   
-    <li class="other-type">Comparable(self)</li>
+    <li class="other-type">Comparable(<a href="String.html">String</a>)</li>
   
     <li class="other-type"><a href="Gitlab/CoreExt/StringParseJson.html">Gitlab::CoreExt::StringParseJson</a></li>
   
@@ -398,7 +398,7 @@ b <span class="o">=</span> <span class="n">2</span>
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/7647b063c6099dc7051a5c8144fa97153d6044b4/src/gitlab/core_ext/string/parse_json.cr#L20" target="_blank">gitlab/core_ext/string/parse_json.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/acc2b4170b6cb4a2ec339d466d9127b10bdd444b/src/gitlab/core_ext/string/parse_json.cr#L20" target="_blank">gitlab/core_ext/string/parse_json.cr</a>
     
     <br/>
   
