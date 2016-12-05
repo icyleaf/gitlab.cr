@@ -114,7 +114,7 @@ module Gitlab
       # client.group_search("gitlab", { "per_page" => 50 })
       # ```
       def group_search(query, params : Hash = {} of String => String)
-        get("/groups", { "search" => search }.merge(params)).body.parse_json
+        get("/groups", { "search" => query }.merge(params)).body.parse_json
       end
 
       # Blocks the specified user.

@@ -45,7 +45,7 @@ Add this to your application's `shard.yml`, and change the [version(release)](ht
 dependencies:
   gitlab:
     github: icyleaf/gitlab.cr
-    version: 0.2.2
+    version: 0.2.3
 ```
 
 ## Usage
@@ -267,7 +267,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] Transfer project to group - `transfer_project_to_group`
   - [x] Update group - `edit_group`
   - [x] Remove group - `delete_group`
-  - [x] Search for group - `search_groups`
+  - [x] Search for group - `group_search`
   - [x] Group members
     - [x] List group members - `group_members`
     - [x] Add group member - `add_member_to_group`
