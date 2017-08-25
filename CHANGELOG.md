@@ -1,7 +1,8 @@
 # Change Log
 
-### v0.2.3 (5/12/2016)
+### v0.2.4 (25/08/2017)
 
+- [Support find group by name](https://github.com/icyleaf/gitlab.cr/commit/b7fd47cc630e2213f19c2653c7cfa275638945fd)
 - Rename search_groups to group_search.
 - Fix group_search and user_search with ghost variable.
 - [Upgrade to support Crystal 0.20.0](https://github.com/icyleaf/gitlab.cr/commit/acc2b4170b6cb4a2ec339d466d9127b10bdd444b)
