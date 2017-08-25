@@ -7,7 +7,7 @@ module Gitlab
       #
       # ```
       # "{ \"user\": \"icyleaf\" }".parse_json # => {"user" => "hello"} : JSON::Any
-      # "[]".parse_json # => [] : JSON::Any
+      # "[]".parse_json                        # => [] : JSON::Any
       # ```
       def parse_json
         JSON.parse(self)

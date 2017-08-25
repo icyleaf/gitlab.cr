@@ -15,7 +15,7 @@ module Gitlab
       # Return a `Gitlab::Response` by sending the target http request
       #
       # ```
-      # Gitlab::HTTP..request({{method}}, "/path", { "key" => "value"})
+      # Gitlab::HTTP..request({{method}}, "/path", {"key" => "value"})
       # ```
       def request(method : Symbol, url : String, options : Hash? = nil) : HTTP::Response
         Gitlab::HTTP::Request.new(options).request(method, url)

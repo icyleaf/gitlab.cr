@@ -16,7 +16,7 @@ module Gitlab
       #
       # ```
       # client.milestones(1)
-      # client.milestones(1, { "state" => "active", "per_page" => "10" })
+      # client.milestones(1, {"state" => "active", "per_page" => "10"})
       # ```
       def milestones(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/milestones", params).body.parse_json
@@ -50,7 +50,7 @@ module Gitlab
       # ```
       def create_milestone(project_id : Int32, title : String, params : Hash = {} of String => String)
         post("/projects/#{project_id}/milestones", {
-          "title" => title
+          "title" => title,
         }.merge(params)).body.parse_json
       end
 
@@ -70,7 +70,7 @@ module Gitlab
       # ```
       def edit_milestone(project_id : Int32, milestone_id : Int32, title : String, params : Hash = {} of String => String)
         put("/projects/#{project_id}/milestones/#{milestone_id}", {
-          "title" => title
+          "title" => title,
         }.merge(params)).body.parse_json
       end
 
@@ -85,7 +85,7 @@ module Gitlab
       #
       # ```
       # client.milestone_issues(1, 3)
-      # client.milestone_issues(1, 4, { "per_page" => "5" })
+      # client.milestone_issues(1, 4, {"per_page" => "5"})
       # ```
       def milestone_issues(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String)
         get("/projects/#{project_id}/milestones/#{milestone_id}/issues", params).body.parse_json

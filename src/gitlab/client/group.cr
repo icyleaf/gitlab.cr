@@ -13,7 +13,7 @@ module Gitlab
       #
       # ```
       # client.groups
-      # client.groups({ "per_page" => "100", "page" => "5" })
+      # client.groups({"per_page" => "100", "page" => "5"})
       # ```
       def groups(params : Hash? = nil)
         get("/groups", params).body.parse_json
@@ -44,14 +44,15 @@ module Gitlab
 
       # Gets details of a group.
       #
-      # - param  [Int32] id The ID of a group.
+      # - param  [Int32|String] id The ID of a group.
       # - return [Hash] Information about group.
       #
       # ```
       # client.group(42)
+      # client.group("orgination")
       # ```
-      def group(group_id : Int32)
-        get("/groups/#{group_id.to_s}").body.parse_json
+      def group(group : Int32 | String)
+        get("/groups/#{group}").body.parse_json
       end
 
       # Creates a new group.
@@ -86,7 +87,7 @@ module Gitlab
       # ```
       # client.create_group("new-group", "group-path")
       # client.create_group("gitlab", "gitlab-path", "New Gitlab project")
-      # client.create_group("gitlab", "gitlab-path", { "visibility_level" => "0" })
+      # client.create_group("gitlab", "gitlab-path", {"visibility_level" => "0"})
       # ```
       def edit_group(group_id : Int32, name, path, description = nil, visibility_level : Int32? = nil)
         params = build_group_params(name, path, description, visibility_level)
@@ -115,10 +116,10 @@ module Gitlab
       #
       # ```
       # client.group_search("gitlab")
-      # client.group_search("gitlab", { "per_page" => 50 })
+      # client.group_search("gitlab", {"per_page" => 50})
       # ```
       def group_search(query, params : Hash = {} of String => String)
-        get("/groups", { "search" => query }.merge(params)).body.parse_json
+        get("/groups", {"search" => query}.merge(params)).body.parse_json
       end
 
       # Transfers a project to a group
@@ -127,7 +128,7 @@ module Gitlab
       # - params [Int32] project_id The ID of a project.
       #
       # ```
-      #   Gitlab.transfer_project_to_group(3, 50)
+      # Gitlab.transfer_project_to_group(3, 50)
       # ```
       def transfer_project_to_group(group_id, project_id)
         post("/groups/#{group_id.to_s}/projects/#{project_id.to_s}").body.parse_json
@@ -143,7 +144,7 @@ module Gitlab
       #
       # ```
       # client.group_members(1)
-      # client.group_members(1, { "per_page" => "50" })
+      # client.group_members(1, {"per_page" => "50"})
       # ```
       def group_members(group_id : Int32, params : Hash? = nil)
         get("/groups/#{group_id.to_s}/members", params).body.parse_json
@@ -161,8 +162,8 @@ module Gitlab
       # ```
       def add_group_member(group_id : Int32, user_id : Int32, access_level)
         post("/groups/#{group_id.to_s}/members", {
-          "user_id" => user_id.to_s,
-          "access_level" => access_level
+          "user_id"      => user_id.to_s,
+          "access_level" => access_level,
         }).body.parse_json
       end
 
@@ -178,8 +179,8 @@ module Gitlab
       # ```
       def edit_group_member(group_id : Int32, user_id : Int32, access_level)
         put("/groups/#{group_id}/members/#{user_id}", {
-          "user_id" => user_id.to_s,
-          "access_level" => access_level
+          "user_id"      => user_id.to_s,
+          "access_level" => access_level,
         }).body.parse_json
       end
 

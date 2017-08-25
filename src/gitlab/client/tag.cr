@@ -14,7 +14,7 @@ module Gitlab
       #
       # ```
       # client.tags(1)
-      # client.tags(1, { "per_page" => "10" })
+      # client.tags(1, {"per_page" => "10"})
       # ```
       def tags(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/repository/tags", params).body.parse_json
@@ -45,12 +45,12 @@ module Gitlab
       #
       # ```
       # client.create_tag(1, "1.0.0", "master")
-      # client.create_tag(1, "1.0.1", "1.0.0", { "message" => "message in tag", "release_description" => "message in gitlab" })
+      # client.create_tag(1, "1.0.1", "1.0.0", {"message" => "message in tag", "release_description" => "message in gitlab"})
       # ```
       def create_tag(project_id : Int32, tag : String, ref : String, params : Hash = {} of String => String)
         post("/projects/#{project_id}/repository/tags", {
           "tag_name" => tag,
-          "ref" => ref
+          "ref"      => ref,
         }.merge(params)).body.parse_json
       end
 

@@ -27,7 +27,7 @@ module Gitlab
       #
       # ```
       # client.issues
-      # client.issues({ "per_page" => "10" })
+      # client.issues({"per_page" => "10"})
       # ```
       def issues(params : Hash? = nil)
         get("/issues", params).body.parse_json
@@ -49,7 +49,7 @@ module Gitlab
       #
       # ```
       # client.issue(1)
-      # client.issue(1, { "per_page" => "10" })
+      # client.issue(1, {"per_page" => "10"})
       # ```
       def issues(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/issues", params).body.parse_json
@@ -82,11 +82,11 @@ module Gitlab
       #
       # ```
       # client.create_issue(1, "support cli command")
-      # client.create_issue(1, "error in debug mode", { "description" => "xxx" })
+      # client.create_issue(1, "error in debug mode", {"description" => "xxx"})
       # ```
       def create_issue(project_id : Int32, title : String, params : Hash = {} of String => String)
         post("/projects/#{project_id}/issues", {
-          "title" => title
+          "title" => title,
         }).body.parse_json
       end
 
@@ -107,9 +107,9 @@ module Gitlab
       # ```
       # client.create_issue(1, 1, "support cli command")
       # client.create_issue(1, 2, "error in debug mode", {
-      #   "assignee_id" => "3",
+      #   "assignee_id"  => "3",
       #   "milestone_id" => 4,
-      #   "labels" => "bug,v1.0.0"
+      #   "labels"       => "bug,v1.0.0",
       # })
       # ```
       def edit_issue(project_id : Int32, issue_id : Int32, params : Hash = {} of String => String)
@@ -128,7 +128,7 @@ module Gitlab
       # client.close_issue(1, 1)
       # ```
       def close_issue(project_id : Int32, issue_id : Int32)
-        edit_issue(project_id, issue_id, { "state_event" => "close" })
+        edit_issue(project_id, issue_id, {"state_event" => "close"})
       end
 
       # Reopens an issue.
@@ -143,7 +143,7 @@ module Gitlab
       # client.close_issue(1, 1)
       # ```
       def reopen_issue(project, id)
-        edit_issue(project_id, issue_id, { "state_event" => "reopen" })
+        edit_issue(project_id, issue_id, {"state_event" => "reopen"})
       end
 
       # Delete an issue in a project.
@@ -171,7 +171,7 @@ module Gitlab
       # ```
       def move_issue(project_id : Int32, issue_id : Int32, to_project_id : Int32)
         post("/projects/#{project_id}/issues/#{issue_id}/move", {
-          "to_project_id" => to_project_id
+          "to_project_id" => to_project_id,
         }).body.parse_json
       end
 

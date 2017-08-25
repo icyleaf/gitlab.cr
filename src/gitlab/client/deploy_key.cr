@@ -14,7 +14,7 @@ module Gitlab
       #
       # ```
       # client.deploy_keys(1)
-      # client.deploy_keys(1, { "per_page" => "10" })
+      # client.deploy_keys(1, {"per_page" => "10"})
       # ```
       def deploy_keys(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/keys", params).body.parse_json
@@ -49,7 +49,7 @@ module Gitlab
       def create_deploy_key(project_id : Int32, title : String, key : String)
         put("/projects/#{project_id}/keys", {
           "title" => title,
-          "key" => key
+          "key"   => key,
         }.merge(params)).body.parse_json
       end
 

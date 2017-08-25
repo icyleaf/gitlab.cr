@@ -35,7 +35,7 @@ module Gitlab
     # Return a `Gitlab::Response` by sending the target http request
     #
     # ```
-    # client.request({{method}}, "/path", { "key" => "value"})
+    # client.request({{method}}, "/path", {"key" => "value"})
     # ```
     def request(method, uri, params : Hash? = nil) : HTTP::Response
       response = HTTP.request(method, build_url(uri), default_options(uri, params))
@@ -109,11 +109,11 @@ module Gitlab
     # Output error message
     private def error_message(response, type : ErrorType = ErrorType::JsonError)
       message = if type == ErrorType::JsonError
-        response_body = response.body.parse_json
-        handle_error(response_body["message"] || response_body["error"])
-      else
-        "body is not json format. Body: #{response.body}"
-      end
+                  response_body = response.body.parse_json
+                  handle_error(response_body["message"] || response_body["error"])
+                else
+                  "body is not json format. Body: #{response.body}"
+                end
 
       "Server responded with code #{response.code}, " \
       "Message: #{message}. " \

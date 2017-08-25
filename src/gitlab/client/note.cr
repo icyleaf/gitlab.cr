@@ -17,7 +17,7 @@ module Gitlab
       #
       # ```
       # client.issue_notes(1, 1)
-      # client.issue_notes(1, 5, { "per_page" => "10" })
+      # client.issue_notes(1, 5, {"per_page" => "10"})
       # ```
       def issue_notes(project_id : Int32, issue_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/issues/#{issue_id}/notes", params).body.parse_json
@@ -50,7 +50,7 @@ module Gitlab
       # client.create_issue_note(1, 12, "great work!", "2016-03-11T03:45:40Z")
       # ```
       def create_issue_note(project_id : Int32, issue_id : Int32, body : String, created_at : String? = nil)
-        params = { "body" => body }
+        params = {"body" => body}
         params["created_at"] = created_at if created_at
 
         post("/projects/#{project_id}/issues/#{issue_id}/notes", params).body.parse_json
@@ -69,7 +69,7 @@ module Gitlab
       # ```
       def edit_issue_note(project_id : Int32, issue_id : Int32, note_id : Int32, body : String)
         put("/projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}", {
-          "body" => body
+          "body" => body,
         }).body.parse_json
       end
 
@@ -98,7 +98,7 @@ module Gitlab
       #
       # ```
       # client.snippet_notes(1, 1)
-      # client.snippet_notes(1, 5, { "per_page" => "10" })
+      # client.snippet_notes(1, 5, {"per_page" => "10"})
       # ```
       def snippet_notes(project_id : Int32, snippet_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/snippets/#{snippet_id}/notes", params).body.parse_json
@@ -129,7 +129,7 @@ module Gitlab
       # client.create_snippet_note(1, 10, "great work!")
       # ```
       def create_snippet_note(project_id : Int32, snippet_id : Int32, body : String)
-        post("/projects/#{project_id}/snippets/#{snippet_id}/notes", { "body" => body }).body.parse_json
+        post("/projects/#{project_id}/snippets/#{snippet_id}/notes", {"body" => body}).body.parse_json
       end
 
       # Edit a note of snippet in a project.
@@ -145,7 +145,7 @@ module Gitlab
       # ```
       def edit_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32, body : String)
         put("/projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}", {
-          "body" => body
+          "body" => body,
         }).body.parse_json
       end
 
@@ -174,7 +174,7 @@ module Gitlab
       #
       # ```
       # client.merge_request_notes(1, 1)
-      # client.merge_request_notes(1, 5, { "per_page" => "10" })
+      # client.merge_request_notes(1, 5, {"per_page" => "10"})
       # ```
       def merge_request_notes(project_id : Int32, merge_request_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes", params).body.parse_json
@@ -205,7 +205,7 @@ module Gitlab
       # client.create_merge_request_note(1, 10, "great work!")
       # ```
       def create_merge_request_note(project_id : Int32, merge_request_id : Int32, body : String, created_at : String? = nil)
-        post("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes", { "body" => body }).body.parse_json
+        post("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes", {"body" => body}).body.parse_json
       end
 
       # Edit a note of merge request in a project.
@@ -221,7 +221,7 @@ module Gitlab
       # ```
       def edit_merge_request_note(project_id : Int32, merge_requests_id : Int32, note_id : Int32, body : String)
         put("/projects/#{project_id}/merge_requests/#{merge_requests_id}/notes/#{note_id}", {
-          "body" => body
+          "body" => body,
         }).body.parse_json
       end
 

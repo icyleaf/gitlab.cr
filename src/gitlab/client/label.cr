@@ -14,7 +14,7 @@ module Gitlab
       #
       # ```
       # client.labels(1)
-      # client.labels(1, { "per_page" => "10" })
+      # client.labels(1, {"per_page" => "10"})
       # ```
       def issues(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/labels", params).body.parse_json
@@ -34,7 +34,7 @@ module Gitlab
       # ```
       def create_label(project_id : Int32, name : String, color : String, description : String? = nil)
         params = {
-          "name" => name,
+          "name"  => name,
           "color" => color,
         }
         params["description"] = description if description
@@ -53,12 +53,12 @@ module Gitlab
       # - return [Hash] Information about the updated label in a project.
       #
       # ```
-      # client.edit_label(1, "hotfix", { "new_name" => "bugs" })
-      # client.edit_label(1, "hotfix", { "color" => "#BE5046" })
+      # client.edit_label(1, "hotfix", {"new_name" => "bugs"})
+      # client.edit_label(1, "hotfix", {"color" => "#BE5046"})
       # ```
       def edit_label(project_id : Int32, name : String, params : Hash = {} of String => String)
         put("/projects/#{project_id}/labels", {
-          "name" => name
+          "name" => name,
         }.merge(params)).body.parse_json
       end
 
@@ -72,7 +72,7 @@ module Gitlab
       # client.delete_issue(4, 3)
       # ```
       def delete_label(project_id : Int32, name : String)
-        delete("/projects/#{project_id}/labels", { "name" => name }).body.parse_json
+        delete("/projects/#{project_id}/labels", {"name" => name}).body.parse_json
       end
 
       # Subscribe a label in a project.

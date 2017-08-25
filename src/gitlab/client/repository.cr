@@ -46,7 +46,7 @@ module Gitlab
       # client.file_contents(1, "a5c805f456f46b44e270f342330b06e06c53cbcc", "src/gitlab.cr")
       # ```
       def file_contents(project_id : Int32, sha : String, filepath : String)
-        get("/projects/#{project_id}/repository/blobs/#{sha}", { "filepath" => filepath }).body
+        get("/projects/#{project_id}/repository/blobs/#{sha}", {"filepath" => filepath}).body
       end
 
       # Get an archive of the repository.
@@ -79,8 +79,8 @@ module Gitlab
       def compare(project_id : Int32, from : String, to : String)
         get("/projects/#{project_id}/repository/compare", {
           "from" => from,
-          "to"   => to
-          }).body.parse_json
+          "to"   => to,
+        }).body.parse_json
       end
 
       # Get repository contributors list
@@ -93,7 +93,7 @@ module Gitlab
       #
       # ```
       # client.contributors(1)
-      # client.contributors(1, { "per_page" => "10" })
+      # client.contributors(1, {"per_page" => "10"})
       # ```
       def contributors(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/repository/contributors", params)

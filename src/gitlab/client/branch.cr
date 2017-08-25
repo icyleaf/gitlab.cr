@@ -14,7 +14,7 @@ module Gitlab
       #
       # ```
       # client.branches(1)
-      # client.branches(1, { "per_page" => "10" })
+      # client.branches(1, {"per_page" => "10"})
       # ```
       def branches(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/repository/branches", params).body.parse_json
@@ -47,7 +47,7 @@ module Gitlab
       def create_branch(project_id : Int32, branch : String, ref : String)
         post("/projects/#{project_id}/repository/branches", {
           "branch_name" => branch,
-          "ref" => ref
+          "ref"         => ref,
         }).body.parse_json
       end
 

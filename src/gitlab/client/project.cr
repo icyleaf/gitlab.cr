@@ -23,11 +23,11 @@ module Gitlab
       #
       # ```
       # client.owned_projects
-      # client.owned_projects({ "order_by" => "last_activity_at", "sort" => "desc" })
-      # client.owned_projects({ "search" => "keyword" })
+      # client.owned_projects({"order_by" => "last_activity_at", "sort" => "desc"})
+      # client.owned_projects({"search" => "keyword"})
       # ```
       def owned_projects(params : Hash? = {} of String => String)
-        projects({ "scope" => "owned" }.merge(params))
+        projects({"scope" => "owned"}.merge(params))
       end
 
       # Gets a list of projects starred by the authenticated user.
@@ -36,11 +36,11 @@ module Gitlab
       #
       # ```
       # client.starred_projects
-      # client.starred_projects({ "order_by" => "last_activity_at", "sort" => "desc" })
-      # client.starred_projects({ "search" => "keyword" })
+      # client.starred_projects({"order_by" => "last_activity_at", "sort" => "desc"})
+      # client.starred_projects({"search" => "keyword"})
       # ```
       def starred_projects(params : Hash = {} of String => String)
-        projects({ "scope" => "starred" }.merge(params))
+        projects({"scope" => "starred"}.merge(params))
       end
 
       # Gets a list of projects by the authenticated user (admin only).
@@ -49,11 +49,11 @@ module Gitlab
       #
       # ```
       # client.all_projects
-      # client.all_projects({ "order_by" => "last_activity_at", "sort" => "desc" })
-      # client.all_projects({ "search" => "keyword" })
+      # client.all_projects({"order_by" => "last_activity_at", "sort" => "desc"})
+      # client.all_projects({"search" => "keyword"})
       # ```
       def all_projects(params : Hash = {} of String => String)
-        projects({ "scope" => "all" }.merge(params))
+        projects({"scope" => "all"}.merge(params))
       end
 
       # Gets single issue in the project.
@@ -71,16 +71,16 @@ module Gitlab
       #
       # ```
       # client.projects
-      # client.projects({ "order_by" => "last_activity_at", "sort" => "desc" })
-      # client.projects({ "scope" => "starred", "search" => "keyword" })
+      # client.projects({"order_by" => "last_activity_at", "sort" => "desc"})
+      # client.projects({"scope" => "starred", "search" => "keyword"})
       # ```
       def projects(params : Hash = {} of String => String)
         scopes = %w(owned starred all)
         uri = if params.has_key?("scope") && scopes.includes?(params["scope"])
-          "/projects/#{params["scope"]}"
-        else
-          "/projects"
-        end
+                "/projects/#{params["scope"]}"
+              else
+                "/projects"
+              end
 
         get(uri, params).body.parse_json
       end
@@ -93,7 +93,7 @@ module Gitlab
       # ```
       # client.project("gitlab")
       # ```
-      def project(project : Int32|String)
+      def project(project : Int32 | String)
         get("/projects/#{project}").body.parse_json
       end
 
@@ -108,7 +108,7 @@ module Gitlab
       # ```
       # client.project_events(42)
       # ```
-      def project_events(project : Int32|String, params : Hash? = nil)
+      def project_events(project : Int32 | String, params : Hash? = nil)
         get("/projects/#{project}/events", params).body.parse_json
       end
 
@@ -121,7 +121,7 @@ module Gitlab
       # client.create_project(1, "gitlab", { "description: => "Awesome project" })
       # ```
       def create_project(user_id : Int32, name : String, params : Hash = {} of String => String)
-        create_project(name, {"user_id" => user_id.to_s }.merge(params)).body.parse_json
+        create_project(name, {"user_id" => user_id.to_s}.merge(params)).body.parse_json
       end
 
       # Creates a new project.
@@ -147,12 +147,12 @@ module Gitlab
       # ```
       def create_project(name, params : Hash = {} of String => String)
         uri = if params.has_key?("user_id") && params["user_id"]
-          "/projects/user/#{params[:user_id]}"
-        else
-          "/projects"
-        end
+                "/projects/user/#{params[:user_id]}"
+              else
+                "/projects"
+              end
 
-        post(uri, { "name" => name }.merge(params)).body.parse_json
+        post(uri, {"name" => name}.merge(params)).body.parse_json
       end
 
       # Updates an existing project.
@@ -166,9 +166,9 @@ module Gitlab
       #
       # ```
       # client.edit_project(42)
-      # client.edit_project(42, { "name" => "project_name" })
+      # client.edit_project(42, {"name" => "project_name"})
       # ```
-      def edit_project(project : Int32|String, prams : Hash = {} of String  => String)
+      def edit_project(project : Int32 | String, prams : Hash = {} of String => String)
         put("/projects/#{project}", prams).body.parse_json
       end
 
@@ -181,9 +181,9 @@ module Gitlab
       #
       # ```
       # client.create_fork(42)
-      # client.create_fork(42, { "sudo" => "another_username" })
+      # client.create_fork(42, {"sudo" => "another_username"})
       # ```
-      def fork_project(project : Int32|String, params : Hash = {} of String  => String)
+      def fork_project(project : Int32 | String, params : Hash = {} of String => String)
         post("/projects/fork/#{project}", params).body.parse_json
       end
 
@@ -195,7 +195,7 @@ module Gitlab
       # ```
       # client.star_project(42)
       # ```
-      def star_project(project : Int32|String)
+      def star_project(project : Int32 | String)
         post("/projects/#{project}/star").body.parse_json
       end
 
@@ -207,7 +207,7 @@ module Gitlab
       # ```
       # client.unstar_project(42)
       # ```
-      def unstar_project(project : Int32|String)
+      def unstar_project(project : Int32 | String)
         delete("/projects/#{project}/star").body.parse_json
       end
 
@@ -219,7 +219,7 @@ module Gitlab
       # ```
       # client.archive_project(42)
       # ```
-      def archive_project(project : Int32|String)
+      def archive_project(project : Int32 | String)
         delete("/projects/#{project}/archive").body.parse_json
       end
 
@@ -231,7 +231,7 @@ module Gitlab
       # ```
       # client.unarchive_project(42)
       # ```
-      def unarchive_project(project : Int32|String)
+      def unarchive_project(project : Int32 | String)
         delete("/projects/#{project}/unarchive").body.parse_json
       end
 
@@ -244,10 +244,10 @@ module Gitlab
       #
       # ```
       # client.share_project(2, 1)
-      # client.share_project(2, 1, { "group_access" => "50" })
+      # client.share_project(2, 1, {"group_access" => "50"})
       # ```
-      def share_project(project : Int32|String, group_id : Int32, group_access = nil)
-        params = { "group_id" => group_id }
+      def share_project(project : Int32 | String, group_id : Int32, group_access = nil)
+        params = {"group_id" => group_id}
         params["group_access"] = group_access if group_access
 
         post("/projects/#{project}/share", params).body.parse_json
@@ -265,7 +265,7 @@ module Gitlab
       #
       # ```
       # client.project_search("gitlab")
-      # client.project_search("gitlab", { "per_page" => 50 })
+      # client.project_search("gitlab", {"per_page" => 50})
       # ```
       def project_search(query, params : Hash = {} of String => String)
         get("/projects/search/#{query}", params).body.parse_json
@@ -279,7 +279,7 @@ module Gitlab
       # ```
       # client.delete_project(42)
       # ```
-      def delete_project(project : Int32|String)
+      def delete_project(project : Int32 | String)
         delete("/projects/#{project}").body.parse_json
       end
 
@@ -296,7 +296,7 @@ module Gitlab
       # client.project_members(42)
       # client.project_members('gitlab')
       # ```
-      def project_members(project : Int32|String, params : Hash = {} of String => String)
+      def project_members(project : Int32 | String, params : Hash = {} of String => String)
         get("/projects/#{project}/members", params).body.parse_json
       end
 
@@ -309,7 +309,7 @@ module Gitlab
       # ```
       # client.project_member(1, 2)
       # ```
-      def project_member(project : Int32|String, user_id : Int32)
+      def project_member(project : Int32 | String, user_id : Int32)
         get("/projects/#{project}/members#{user_id}").body.parse_json
       end
 
@@ -324,10 +324,10 @@ module Gitlab
       # ```
       # client.add_project_member('gitlab', 2, 40)
       # ```
-      def add_project_member(project : Int32|String, user_id, access_level)
+      def add_project_member(project : Int32 | String, user_id, access_level)
         post("/projects/#{project}/members", {
-          "user_id" => user_id,
-          "access_level" => access_level
+          "user_id"      => user_id,
+          "access_level" => access_level,
         }).body.parse_json
       end
 
@@ -341,9 +341,9 @@ module Gitlab
       # ```
       # client.edit_project_member('gitlab', 3, 20)
       # ```
-      def edit_project_member(project : Int32|String, user_id, access_level)
+      def edit_project_member(project : Int32 | String, user_id, access_level)
         put("/projects/#{project}/members/#{user_id}", {
-          "access_level" => access_level
+          "access_level" => access_level,
         }).body.parse_json
       end
 
@@ -356,7 +356,7 @@ module Gitlab
       # ```
       # client.remove_project_member('gitlab', 2)
       # ```
-      def remove_project_member(project : Int32|String, user_id : Int32)
+      def remove_project_member(project : Int32 | String, user_id : Int32)
         delete("/projects/#{project}/members/#{user_id}").body.parse_json
       end
 
@@ -372,7 +372,7 @@ module Gitlab
       # client.project_hooks(42)
       # client.project_hooks('gitlab', { "per_page" => "4" })
       # ```
-      def project_hooks(project : Int32|String, params : Hash? = nil)
+      def project_hooks(project : Int32 | String, params : Hash? = nil)
         get("/projects/#{project}/hooks", params).body.parse_json
       end
 
@@ -386,7 +386,7 @@ module Gitlab
       # client.project_hook(42)
       # client.project_hook('gitlab', 1)
       # ```
-      def project_hook(project : Int32|String, hook_id : Int32)
+      def project_hook(project : Int32 | String, hook_id : Int32)
         get("/projects/#{project}/hooks/#{hook_id}").body.parse_json
       end
 
@@ -407,8 +407,8 @@ module Gitlab
       # client.add_project_hook(42, "https://hooks.slack.com/services/xxx")
       # client.add_project_hook('gitlab', "https://hooks.slack.com/services/xxx", { "issues_events" => "true" })
       # ```
-      def add_project_hook(project : Int32|String, url : String, params : Hash = {} of String => String)
-        post("/projects/#{project}/hooks", { "url" => url }.merge(params)).body.parse_json
+      def add_project_hook(project : Int32 | String, url : String, params : Hash = {} of String => String)
+        post("/projects/#{project}/hooks", {"url" => url}.merge(params)).body.parse_json
       end
 
       # Updates a web hook of a project.
@@ -428,8 +428,8 @@ module Gitlab
       # ```
       # client.edit_project_hook('gitlab', 3, "https://hooks.slack.com/services/xxx")
       # ```
-      def edit_project_hook(project : Int32|String, hook_id : Int32, url : String, params : Hash = {} of String => String)
-        put("/projects/#{project}/hooks/#{hook_id}", { "url" => url }.merge(params)).body.parse_json
+      def edit_project_hook(project : Int32 | String, hook_id : Int32, url : String, params : Hash = {} of String => String)
+        put("/projects/#{project}/hooks/#{hook_id}", {"url" => url}.merge(params)).body.parse_json
       end
 
       # Removes a user from project team.
@@ -441,7 +441,7 @@ module Gitlab
       # ```
       # client.remove_project_member('gitlab', 2)
       # ```
-      def remove_project_hook(project : Int32|String, hook_id : Int32)
+      def remove_project_hook(project : Int32 | String, hook_id : Int32)
         delete("/projects/#{project}/hooks/#{hook_id}").body.parse_json
       end
 
@@ -457,7 +457,7 @@ module Gitlab
       # client.project_branchs(42)
       # client.project_branchs('gitlab', { "per_page" => "4" })
       # ```
-      def project_branchs(project : Int32|String, params : Hash = {} of String => String)
+      def project_branchs(project : Int32 | String, params : Hash = {} of String => String)
         get("/projects/#{project}/repository/branches", params).body.parse_json
       end
 
@@ -471,7 +471,7 @@ module Gitlab
       # client.project_branch(42)
       # client.project_branch('gitlab', "develop")
       # ```
-      def project_branch(project : Int32|String, branch : String)
+      def project_branch(project : Int32 | String, branch : String)
         get("/projects/#{project}/repository/branches/#{branch}").body.parse_json
       end
 
@@ -485,7 +485,7 @@ module Gitlab
       # client.protect_project_branch(2, "master")
       # client.protect_project_branch("gitlab", "master")
       # ```
-      def protect_project_branch(project : Int32|String, branch : String)
+      def protect_project_branch(project : Int32 | String, branch : String)
         put("/projects/#{project}/repository/branches/#{branch}/protect").body.parse_json
       end
 
@@ -499,7 +499,7 @@ module Gitlab
       # client.unprotect_project_branch(2, "master")
       # client.unprotect_project_branch("gitlab", "master")
       # ```
-      def unprotect_project_branch(project : Int32|String, branch : String)
+      def unprotect_project_branch(project : Int32 | String, branch : String)
         put("/projects/#{project}/repository/branches/#{branch}/unprotect").body.parse_json
       end
 
@@ -512,7 +512,7 @@ module Gitlab
       # ```
       # client.create_fork_from(1, 21)
       # ```
-      def create_fork_from(project : Int32|String, forked_from_id : Int32)
+      def create_fork_from(project : Int32 | String, forked_from_id : Int32)
         put("/projects/#{project}/fork/#{forked_from_id}").body.parse_json
       end
 
@@ -524,7 +524,7 @@ module Gitlab
       # ```
       # client.create_fork_from(1, 21)
       # ```
-      def remove_fork_from(project : Int32|String)
+      def remove_fork_from(project : Int32 | String)
         delete("/projects/#{project}/fork").body.parse_json
       end
 
@@ -543,8 +543,8 @@ module Gitlab
       # client.upload_file(1, "/Users/icyleaf/Desktop/screenshot.png")
       # client.upload_file(1, "/Users/icyleaf/Desktop/archive.zip")
       # ```
-      def upload_file(project : Int32|String, file : String)
-        post("/projects/#{project}/uploads", { "file" => file }).body.parse_json
+      def upload_file(project : Int32 | String, file : String)
+        post("/projects/#{project}/uploads", {"file" => file}).body.parse_json
       end
     end
   end

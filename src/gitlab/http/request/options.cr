@@ -15,14 +15,14 @@ module Gitlab
     #   "params" => {
     #     "username" => "icyleaf",
     #     "password" => "p@ssw0rd",
-    #   }
+    #   },
     # })
     #
     # # Or only pass header or params is okay.
     # options = Gitlab::HTTP::Options.new({
     #   "headers" => {
     #     "User-Agent" => "Gitlab.cr v0.1.0",
-    #   }
+    #   },
     # })
     #
     # # append more headers
@@ -34,7 +34,7 @@ module Gitlab
       property headers : ::HTTP::Headers
       property params : ::HTTP::Params
 
-      alias Params = String|Int32|File|Float32
+      alias Params = String | Int32 | File | Float32
 
       # Create a Http options
       def initialize(options : Hash = nil)

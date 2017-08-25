@@ -17,7 +17,7 @@ module Gitlab
       #
       # ```
       # client.commits(1)
-      # client.commits(1, { "per_page" => "10" })
+      # client.commits(1, {"per_page" => "10"})
       # ```
       def commits(project_id : Int32, params : Hash? = nil)
         get("/projects/#{project_id}/repository/commits", params).body.parse_json
@@ -35,7 +35,6 @@ module Gitlab
       def commit(project_id : Int32, commit_id : Int32)
         get("/projects/#{project_id}/repository/commits/#{commit_id}").body.parse_json
       end
-
 
       # Get the diff of a commit in a project.
       #
@@ -79,11 +78,11 @@ module Gitlab
       #
       # ```
       # client.create_commit_comment(1, "daff23c", "awesome!")
-      # client.create_commit_comment(1, "daff23c", "+1", { "line" => "29" })
+      # client.create_commit_comment(1, "daff23c", "+1", {"line" => "29"})
       # ```
       def create_commit_comment(project_id : Int32, sha : String, note : String, params : Hash = {} of String => String)
         post("/projects/#{project_id}/repository/commits/#{sha}/comments", {
-          "note" => note
+          "note" => note,
         }.merge(params)).body.parse_json
       end
 
@@ -101,8 +100,8 @@ module Gitlab
       #
       # ```
       # client.commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6")
-      # client.commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", { "name" => "jenkins" })
-      # client.commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", { "name" => "jenkins", "all" => "true" })
+      # client.commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", {"name" => "jenkins"})
+      # client.commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", {"name" => "jenkins", "all" => "true"})
       # ```
       def commit_status(project_id : Int32, sha : String, params : Hash = {} of String => String)
         get("/projects/#{project_id}/repository/commits/#{sha}/statuses", params).body.parse_json
@@ -128,7 +127,7 @@ module Gitlab
       # ```
       def update_commit_status(project_id : Int32, sha : String, state : String, params : Hash = {} of String => String)
         post("/projects/#{project_id}/statuses/#{sha}", {
-          "state" => state
+          "state" => state,
         }.merge(params)).body.parse_json
       end
     end

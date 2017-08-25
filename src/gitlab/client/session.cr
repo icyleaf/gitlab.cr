@@ -15,7 +15,7 @@ module Gitlab
       # client.session("jack", "secret12345")
       # ```
       def session(login : String, password : String)
-        post("/session", { "email" => login, "password" => password }).body.parse_json
+        post("/session", {"email" => login, "password" => password}).body.parse_json
       end
     end
   end
