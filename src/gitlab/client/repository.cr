@@ -17,7 +17,7 @@ module Gitlab
       # client.tree(42, { path: 'Gemfile' })
       # ```
       def tree(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/repository/tree", params).body.parse_json
+        JSON.parse get("/projects/#{project_id}/repository/tree", params: params).body
       end
 
       # Get the raw file contents for a blob by blob SHA.
@@ -31,7 +31,7 @@ module Gitlab
       # client.blow_contents(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
       # ```
       def blob_contents(project_id : Int32, sha : String)
-        get("/projects/#{project_id}/repository/raw_blobs/#{sha}").body
+        JSON.parse get("/projects/#{project_id}/repository/raw_blobs/#{sha}").body
       end
 
       # Get the raw file contents for a file by commit SHA and path.
@@ -46,7 +46,7 @@ module Gitlab
       # client.file_contents(1, "a5c805f456f46b44e270f342330b06e06c53cbcc", "src/gitlab.cr")
       # ```
       def file_contents(project_id : Int32, sha : String, filepath : String)
-        get("/projects/#{project_id}/repository/blobs/#{sha}", {"filepath" => filepath}).body
+        JSON.parse get("/projects/#{project_id}/repository/blobs/#{sha}", params: {"filepath" => filepath}).body
       end
 
       # Get an archive of the repository.
@@ -62,7 +62,7 @@ module Gitlab
       # client.file_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
       # ```
       def file_archive(project_id : Int32, sha : String? = nil)
-        get("/projects/#{project_id}/repository/archive").body
+        JSON.parse get("/projects/#{project_id}/repository/archive").body
       end
 
       # Compare branches, tags or commits.
@@ -77,10 +77,10 @@ module Gitlab
       # client.compare(1, "a5c805f4", "v1.0.0")
       # ```
       def compare(project_id : Int32, from : String, to : String)
-        get("/projects/#{project_id}/repository/compare", {
+        JSON.parse get("/projects/#{project_id}/repository/compare", params: {
           "from" => from,
           "to"   => to,
-        }).body.parse_json
+        }).body
       end
 
       # Get repository contributors list
@@ -96,7 +96,7 @@ module Gitlab
       # client.contributors(1, {"per_page" => "10"})
       # ```
       def contributors(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/repository/contributors", params)
+        JSON.parse get("/projects/#{project_id}/repository/contributors", params: params)
       end
     end
   end

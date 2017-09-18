@@ -1,18 +1,35 @@
 require "../../spec_helper"
 
-def users
-  stub_get("/users", "users")
-  client.users
-end
-
-describe Gitlab::Client do
+Spec2.describe Gitlab::Client do
   describe ".users" do
-    it "should return a paginated response of users" do
-      users.should_not be_nil # eq("john@example.com")
+    before { stub_get("/users", "users") }
+    let(users) { client.users }
+
+    it "should return a json data of users" do
+      expect(users).to be_a JSON::Any
+      expect(users[0]["email"].to_s).to eq "john@example.com"
+    end
+  end
+
+  describe ".users" do
+    context "with user ID passed" do
+      before { stub_get("/users/1", "user") }
+      let(user) { client.user(1) }
+
+      it "should return a json data of user" do
+        expect(user).to be_a JSON::Any
+        expect(user["email"].to_s).to eq "john@example.com"
+      end
     end
 
-    it "should return a paginated response of users" do
-      users[0]["email"].should eq("john@example.com")
+    context "withount user ID passed" do
+      before { stub_get("/user", "user") }
+      let(user) { client.user }
+
+      it "should return a json data of user" do
+        expect(user).to be_a JSON::Any
+        expect(user["email"].to_s).to eq "john@example.com"
+      end
     end
   end
 end

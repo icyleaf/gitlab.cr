@@ -17,7 +17,7 @@ module Gitlab
       # client.labels(1, {"per_page" => "10"})
       # ```
       def issues(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/labels", params).body.parse_json
+        JSON.parse get("/projects/#{project_id}/labels", params: params).body
       end
 
       # Create label in a project.
@@ -33,13 +33,13 @@ module Gitlab
       # client.create_label(1, "feature", "#C678DD", "next release features")
       # ```
       def create_label(project_id : Int32, name : String, color : String, description : String? = nil)
-        params = {
-          "name"  => name,
-          "color" => color,
-        }
-        params["description"] = description if description
+        form = Hash(String, String).new.tap do |obj|
+          obj["name"] = name
+          obj["color"] = color
+          obj["description"] = description if description
+        end
 
-        post("/projects/#{project_id}/labels", params).body.parse_json
+        JSON.parse post("/projects/#{project_id}/labels", form: form).body
       end
 
       # Edit a label in a project.
@@ -57,9 +57,9 @@ module Gitlab
       # client.edit_label(1, "hotfix", {"color" => "#BE5046"})
       # ```
       def edit_label(project_id : Int32, name : String, params : Hash = {} of String => String)
-        put("/projects/#{project_id}/labels", {
+        JSON.parse put("/projects/#{project_id}/labels", form: {
           "name" => name,
-        }.merge(params)).body.parse_json
+        }.merge(params)).body
       end
 
       # Delete a label in a project.
@@ -72,7 +72,7 @@ module Gitlab
       # client.delete_issue(4, 3)
       # ```
       def delete_label(project_id : Int32, name : String)
-        delete("/projects/#{project_id}/labels", {"name" => name}).body.parse_json
+        JSON.parse delete("/projects/#{project_id}/labels", form: {"name" => name}).body
       end
 
       # Subscribe a label in a project.
@@ -85,7 +85,7 @@ module Gitlab
       # client.subscribe_label(1, 38)
       # ```
       def subscribe_label(project_id : Int32, label_id : Int32)
-        post("/projects/#{project_id}/labels/#{label_id}/subscription").body.parse_json
+        JSON.parse post("/projects/#{project_id}/labels/#{label_id}/subscription").body
       end
 
       # Unsubscribe a label in a project.
@@ -98,7 +98,7 @@ module Gitlab
       # client.unsubscribe_label(1, 38)
       # ```
       def unsubscribe_label(project_id : Int32, label_id : Int32)
-        delete("/projects/#{project_id}/labels/#{label_id}/subscription").body.parse_json
+        JSON.parse delete("/projects/#{project_id}/labels/#{label_id}/subscription").body
       end
     end
   end

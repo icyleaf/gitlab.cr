@@ -19,7 +19,7 @@ module Gitlab
       # client.milestones(1, {"state" => "active", "per_page" => "10"})
       # ```
       def milestones(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/milestones", params).body.parse_json
+        JSON.parse get("/projects/#{project_id}/milestones", params: params).body
       end
 
       # Get a single milestone in a project.
@@ -32,7 +32,7 @@ module Gitlab
       # client.milestone(1, 10)
       # ```
       def milestone(project_id : Int32, milestone_id : Int32)
-        get("/projects/#{project_id}/milestones/#{milestone_id}").body.parse_json
+        JSON.parse get("/projects/#{project_id}/milestones/#{milestone_id}").body
       end
 
       # Create a milestone in a project.
@@ -49,9 +49,9 @@ module Gitlab
       # client.create_milestone(1, "v2.0.1", "fix some bugs")
       # ```
       def create_milestone(project_id : Int32, title : String, params : Hash = {} of String => String)
-        post("/projects/#{project_id}/milestones", {
+        JSON.parse post("/projects/#{project_id}/milestones", form: {
           "title" => title,
-        }.merge(params)).body.parse_json
+        }.merge(params)).body
       end
 
       # Edit a milestone in a project.
@@ -69,9 +69,9 @@ module Gitlab
       # client.edit_milestone(1, "v2.0.1", "fix some bugs")
       # ```
       def edit_milestone(project_id : Int32, milestone_id : Int32, title : String, params : Hash = {} of String => String)
-        put("/projects/#{project_id}/milestones/#{milestone_id}", {
+        JSON.parse put("/projects/#{project_id}/milestones/#{milestone_id}", form: {
           "title" => title,
-        }.merge(params)).body.parse_json
+        }.merge(params)).body
       end
 
       # List issues of a milestone in a project.
@@ -88,7 +88,7 @@ module Gitlab
       # client.milestone_issues(1, 4, {"per_page" => "5"})
       # ```
       def milestone_issues(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String)
-        get("/projects/#{project_id}/milestones/#{milestone_id}/issues", params).body.parse_json
+        JSON.parse get("/projects/#{project_id}/milestones/#{milestone_id}/issues", params: params).body
       end
     end
   end

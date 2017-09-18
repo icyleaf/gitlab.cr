@@ -17,7 +17,7 @@ module Gitlab
       # client.deploy_keys(1, {"per_page" => "10"})
       # ```
       def deploy_keys(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/keys", params).body.parse_json
+        JSON.parse get("/projects/#{project_id}/keys", params: params).body
       end
 
       # Get a deploy key in a project.
@@ -30,7 +30,7 @@ module Gitlab
       # client.deploy_key(1, 1)
       # ```
       def deploy_key(project_id : Int32, key_id : Int32)
-        get("/projects/#{project_id}/keys/#{key_id}").body.parse_json
+        JSON.parse get("/projects/#{project_id}/keys/#{key_id}").body
       end
 
       # Create a deploy key in a project.
@@ -47,10 +47,10 @@ module Gitlab
       # client.create_deploy_key(1, "deploy server", "ssh-rsa xxx")
       # ```
       def create_deploy_key(project_id : Int32, title : String, key : String)
-        put("/projects/#{project_id}/keys", {
+        JSON.parse put("/projects/#{project_id}/keys", form: {
           "title" => title,
           "key"   => key,
-        }.merge(params)).body.parse_json
+        }.merge(params)).body
       end
 
       # Delete a deploy key in a project.
@@ -63,7 +63,7 @@ module Gitlab
       # client.remove_deploy_key(4, 3)
       # ```
       def remove_deploy_key(project_id : Int32, key_id : Int32)
-        delete("/projects/#{project_id}/keys/#{key_id}").body.parse_json
+        JSON.parse delete("/projects/#{project_id}/keys/#{key_id}").body
       end
     end
   end

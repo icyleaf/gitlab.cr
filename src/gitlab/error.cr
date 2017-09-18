@@ -1,5 +1,3 @@
-require "json"
-
 module Gitlab
   module Error
     class Error < Exception; end
@@ -15,7 +13,7 @@ module Gitlab
     # # Gitlab API Errors
 
     class APIError < Error
-      def initialize(@message : String? = nil, @response : HTTP::Response? = nil)
+      def initialize(@message : String? = nil, @response : Halite::Response? = nil)
         super(@message)
       end
     end

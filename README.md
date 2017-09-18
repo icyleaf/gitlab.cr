@@ -80,7 +80,7 @@ rescue ex
   # Here has one variable "response" instance of Gitlab::HTTP::Response
   # Friendly for developer to debug and control expressions.
   pp ex.response.code
-  pp ex.response.body.parse_json
+  pp ex.response.body
 end
 
 # request not handled APIs
