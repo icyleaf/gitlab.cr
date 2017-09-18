@@ -47,7 +47,7 @@ module Gitlab
       # client.create_deploy_key(1, "deploy server", "ssh-rsa xxx")
       # ```
       def create_deploy_key(project_id : Int32, title : String, key : String)
-        JSON.parse put("/projects/#{project_id}/keys", form: {
+        JSON.parse post("/projects/#{project_id}/keys", form: {
           "title" => title,
           "key"   => key,
         }.merge(params)).body

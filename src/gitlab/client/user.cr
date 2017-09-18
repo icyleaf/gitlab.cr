@@ -86,7 +86,7 @@ module Gitlab
       # client.edit_user(4, {"email" => "icy.leaf@kaifeng.cn", "projects_limit" => "100"})
       # ```
       def edit_user(user_id : Int32, params : Hash = {} of String => String)
-        JSON.parse put("/users/#{user_id.to_s}", form: params).body
+        JSON.parse put("/users/#{user_id.to_s}", params: params).body
       end
 
       # Deletes a user.
@@ -101,7 +101,7 @@ module Gitlab
         JSON.parse delete("/users/#{user_id.to_s}").body
       end
 
-      # Search for project by name
+      # Search for user by name
       #
       # - param  [String] query A string to search for in group names and paths.
       # - param  [Hash] params A customizable set of params.
@@ -110,11 +110,11 @@ module Gitlab
       # - return [Array<Hash>] List of projects under search qyery
       #
       # ```
-      # client.group_search("gitlab")
-      # client.group_search("gitlab", {"per_page" => 50})
+      # client.group_search("icyleaf")
+      # client.group_search("icyleaf", {"per_page" => 50})
       # ```
-      def group_search(query, params : Hash = {} of String => String)
-        JSON.parse JSON.parse get("/groups", params: {"search" => query}.merge(params)).body
+      def user_search(query, params : Hash = {} of String => String)
+        JSON.parse get("/users", params: {"search" => query}.merge(params)).body
       end
 
       # Blocks the specified user.

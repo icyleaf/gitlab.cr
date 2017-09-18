@@ -57,7 +57,7 @@ module Gitlab
       # client.edit_label(1, "hotfix", {"color" => "#BE5046"})
       # ```
       def edit_label(project_id : Int32, name : String, params : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project_id}/labels", form: {
+        JSON.parse put("/projects/#{project_id}/labels", params: {
           "name" => name,
         }.merge(params)).body
       end

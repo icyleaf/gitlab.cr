@@ -40,7 +40,7 @@ module Gitlab
       end
     {% end %}
 
-    {% for verb in %w(post patch delete) %}
+    {% for verb in %w(post put patch delete) %}
       # Return a `Gitlab::Response` by sending a {{verb.id.upcase}} http request
       #
       # ```
@@ -50,7 +50,7 @@ module Gitlab
       # })
       # ```
       def {{ verb.id }}(uri : String, headers : (Hash(String, _) | NamedTuple)? = nil, params : (Hash(String, _) | NamedTuple)? = nil, form : (Hash(String, _) | NamedTuple)? = nil, json : (Hash(String, _) | NamedTuple)? = nil) : Halite::Response
-        headers = default_headers.merge(headers)
+        headers = headers ? default_headers.merge(headers) : default_headers
         response = Halite.{{verb.id}}(build_url(uri), headers: headers, params: params, form: form, json: nil)
         validate(response)
         response
@@ -99,15 +99,7 @@ module Gitlab
     # - **500**: `Error::InternalServerError`
     # - **502**: `Error::BadGateway`
     # - **503**: `Error::ServiceUnavailable`
-    #
-    # Raise an exception if content type is not json format
-    #
-    # - **text/html**: `Error::JSONParseError`
     private def validate(response : Halite::Response)
-      if (content_type = response.content_type) && content_type.includes?("text/html")
-        raise Error::JSONParseError.new(error_message(response, ErrorType::NonJsonError))
-      end
-
       case response.status_code
       when 400 then raise Error::BadRequest.new(error_message(response), response)
       when 401 then raise Error::Unauthorized.new(error_message(response), response)
@@ -166,12 +158,12 @@ module Gitlab
                   response_body = JSON.parse(response.body)
                   handle_error(response_body["message"] || response_body["error"])
                 else
-                  "Body is not json format"
+                  "unknown body format"
                 end
 
-      "Server responded with code #{response.status_code}, \n" \
-      "Message: #{message}. \n" \
-      "Request URL: #{response.uri.to_s}"
+      "Server responded with code #{response.status_code}, " \
+      "message: #{message}. " \
+      "Request URI: #{response.uri.to_s}"
     end
 
     include User

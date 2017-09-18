@@ -100,7 +100,7 @@ module Gitlab
       # client.create_merge_request(1, 6, "hotfix/xxx", "master", "fix some bugs", {"state" => "close"})
       # ```
       def edit_merge_request(project_id : Int32, merge_request_id : Int32, source_branch : String, target_branch : String, title : String, params : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}", form: {
+        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}", params: {
           "source_branch" => source_branch,
           "target_branch" => target_branch,
           "title"         => title,

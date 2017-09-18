@@ -113,7 +113,7 @@ module Gitlab
       # })
       # ```
       def edit_issue(project_id : Int32, issue_id : Int32, params : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project_id}/issues/#{issue_id}", form: params).body
+        JSON.parse put("/projects/#{project_id}/issues/#{issue_id}", params: params).body
       end
 
       # Closes an issue.

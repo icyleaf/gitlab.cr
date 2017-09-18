@@ -144,7 +144,7 @@ module Gitlab
       # client.edit_snippet_note(1, 10, 22, "great work!")
       # ```
       def edit_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32, body : String)
-        JSON.parse put("/projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}", form: {
+        JSON.parse put("/projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}", params: {
           "body" => body,
         }).body
       end
@@ -220,7 +220,7 @@ module Gitlab
       # client.edit_merge_request_note(1, 10, 22, "great work!")
       # ```
       def edit_merge_request_note(project_id : Int32, merge_requests_id : Int32, note_id : Int32, body : String)
-        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_requests_id}/notes/#{note_id}", form: {
+        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_requests_id}/notes/#{note_id}", params: {
           "body" => body,
         }).body
       end
