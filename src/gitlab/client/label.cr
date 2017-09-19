@@ -59,7 +59,7 @@ module Gitlab
       def edit_label(project_id : Int32, name : String, form : Hash = {} of String => String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/labels", form: {
           "name" => name,
-        }.merge(params)).body
+        }.merge(form)).body
       end
 
       # Delete a label in a project.
@@ -84,8 +84,8 @@ module Gitlab
       # ```
       # client.subscribe_label(1, 38)
       # ```
-      def subscribe_label(project_id : Int32, label_id : Int32) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/labels/#{label_id}/subscription").body
+      def subscribe_label(project_id : Int32, label_id : Int32 | String) : JSON::Any
+        JSON.parse post("/projects/#{project_id}/labels/#{label_id}/subscribe").body
       end
 
       # Unsubscribe a label in a project.
@@ -97,8 +97,8 @@ module Gitlab
       # ```
       # client.unsubscribe_label(1, 38)
       # ```
-      def unsubscribe_label(project_id : Int32, label_id : Int32) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/labels/#{label_id}/subscription").body
+      def unsubscribe_label(project_id : Int32, label_id : Int32 | String) : JSON::Any
+        JSON.parse post("/projects/#{project_id}/labels/#{label_id}/unsubscribe").body
       end
     end
   end
