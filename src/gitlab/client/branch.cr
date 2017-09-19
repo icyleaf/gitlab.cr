@@ -73,9 +73,10 @@ module Gitlab
       #
       # ```
       # client.branch(1, "master")
+      # client.protect_branch(5, 'api', { "developers_can_push" => "true" })
       # ```
-      def protect_branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/protect").body
+      def protect_branch(project_id : Int32, branch : String, form : Hash? = nil) : JSON::Any
+        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/protect", form: form).body
       end
 
       # Unprotect branch in a project.
@@ -87,7 +88,7 @@ module Gitlab
       # ```
       # client.branch(1, "master")
       # ```
-      def protect_branch(project_id : Int32, branch : String) : JSON::Any
+      def unprotect_branch(project_id : Int32, branch : String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/unprotect").body
       end
     end
