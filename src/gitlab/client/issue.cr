@@ -51,7 +51,7 @@ module Gitlab
       # client.issue(1)
       # client.issue(1, {"per_page" => "10"})
       # ```
-      def issues(project_id : Int32, params : Hash? = nil) : JSON::Any
+      def issues(project_id : Int32 | String, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/issues", params: params).body
       end
 
@@ -142,7 +142,7 @@ module Gitlab
       # ```
       # client.close_issue(1, 1)
       # ```
-      def reopen_issue(project, id) : JSON::Any
+      def reopen_issue(project_id : Int32, issue_id : Int32) : JSON::Any
         edit_issue(project_id, issue_id, {"state_event" => "reopen"})
       end
 
@@ -185,7 +185,7 @@ module Gitlab
       # client.subscribe_issue(1, 38)
       # ```
       def subscribe_issue(project_id : Int32, issue_id : Int32) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/subscription").body
+        JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/subscribe").body
       end
 
       # Unsubscribe an issue in a project.
@@ -198,7 +198,7 @@ module Gitlab
       # client.unsubscribe_issue(1, 38)
       # ```
       def unsubscribe_issue(project_id : Int32, issue_id : Int32) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/issues/#{issue_id}/subscription").body
+        JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/unsubscribe").body
       end
     end
   end
