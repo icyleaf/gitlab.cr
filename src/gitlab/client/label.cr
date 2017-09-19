@@ -16,7 +16,7 @@ module Gitlab
       # client.labels(1)
       # client.labels(1, {"per_page" => "10"})
       # ```
-      def issues(project_id : Int32, params : Hash? = nil) : JSON::Any
+      def labels(project_id : Int32, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/labels", params: params).body
       end
 
