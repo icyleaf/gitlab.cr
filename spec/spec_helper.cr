@@ -14,16 +14,21 @@ def load_fixture(name)
 end
 
 # GET
-def stub_get(path, fixture)
-  WebMock.stub(:get, "#{client.endpoint}#{path}")
+def stub_get(path, fixture, params = nil)
+  query = "?#{HTTP::Params.escape(params)}" if params
+
+  WebMock.stub(:get, "#{client.endpoint}#{path}#{query}")
          .with(headers: {"Private-Token" => client.token})
          .to_return(body: load_fixture(fixture))
 end
 
 # POST
-def stub_post(path, fixture, status_code = 200)
-  WebMock.stub(:post, "#{client.endpoint}#{path}")
-         .with(headers: {"Private-Token" => client.token})
+def stub_post(path, fixture, status_code = 200, params = nil, form = nil)
+  query = "?#{HTTP::Params.escape(params)}" if params
+  body = HTTP::Params.escape(form) if form
+
+  WebMock.stub(:post, "#{client.endpoint}#{path}#{query}")
+         .with(body: body, headers: {"Private-Token" => client.token})
          .to_return(body: load_fixture(fixture), status: status_code)
 end
 
@@ -37,8 +42,10 @@ def stub_put(path, fixture, form = nil)
 end
 
 # DELETE
-def stub_delete(path, fixture)
+def stub_delete(path, fixture, form = nil)
+  body = HTTP::Params.escape(form) if form
+
   WebMock.stub(:delete, "#{client.endpoint}#{path}")
-         .with(headers: {"Private-Token" => client.token})
+         .with(body: body, headers: {"Private-Token" => client.token})
          .to_return(body: load_fixture(fixture))
 end

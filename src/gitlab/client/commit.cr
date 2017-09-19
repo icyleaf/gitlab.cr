@@ -26,14 +26,14 @@ module Gitlab
       # Get single commit in a project.
       #
       # - param  [Int32] project_id The ID of a project.
-      # - param  [Int32] commit_id The ID of a commit.
+      # - param  [String] commit The ID of a commit.
       # - return [Hash] Information about the commit.
       #
       # ```
       # client.commit(1, 10)
       # ```
-      def commit(project_id : Int32, commit_id : Int32) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/repository/commits/#{commit_id}").body
+      def commit(project_id : Int32, commit : String) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/repository/commits/#{commit}").body
       end
 
       # Get the diff of a commit in a project.
@@ -121,9 +121,9 @@ module Gitlab
       # - option params [String] :description The short description of the status.
       #
       # ```
-      # client.update_commit_status(42, '6104942438c14ec7bd21c6cd5bd995272b3faff6', 'success')
-      # client.update_commit_status(42, '6104942438c14ec7bd21c6cd5bd995272b3faff6', 'failed', { name: 'jenkins' })
-      # client.update_commit_status(42, '6104942438c14ec7bd21c6cd5bd995272b3faff6', 'canceled', { name: 'jenkins', target_url: 'http://example.com/builds/1' })
+      # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "success")
+      # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "failed", { "name" => "jenkins" })
+      # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "canceled", { "name" => "jenkins", "target_url": "http://example.com/builds/1" })
       # ```
       def update_commit_status(project_id : Int32, sha : String, state : String, params : Hash = {} of String => String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/statuses/#{sha}", form: {
