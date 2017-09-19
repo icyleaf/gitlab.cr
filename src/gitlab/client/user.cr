@@ -85,8 +85,8 @@ module Gitlab
       # ```
       # client.edit_user(4, {"email" => "icy.leaf@kaifeng.cn", "projects_limit" => "100"})
       # ```
-      def edit_user(user_id : Int32, params : Hash = {} of String => String)
-        JSON.parse put("/users/#{user_id.to_s}", params: params).body
+      def edit_user(user_id : Int32, form : Hash = {} of String => String)
+        JSON.parse put("/users/#{user_id.to_s}", form: form).body
       end
 
       # Deletes a user.

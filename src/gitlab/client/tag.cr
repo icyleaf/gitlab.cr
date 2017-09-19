@@ -94,7 +94,7 @@ module Gitlab
       # client.update_release_notes(1, "1.0.0", "# Release v1.0.0\n## xxx\n## xxx")
       # ```
       def update_release_notes(project_id : Int32, tag : String, description : String)
-        JSON.parse put("/projects/#{project_id}/repository/tags/#{tag}/release", params: {
+        JSON.parse put("/projects/#{project_id}/repository/tags/#{tag}/release", form: {
           "description" => description,
         }).body
       end

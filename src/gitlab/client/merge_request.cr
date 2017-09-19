@@ -92,19 +92,19 @@ module Gitlab
       # - option params [String] :target_project_id The target project (numeric id).
       # - option params [String] :state_event New state (close|reopen|merge).
       # - option params [String] :labels Labels for MR as a comma-separated list.
-      # - option params [String] :milestone_id The ID of the milestone.
+      # - option form [String] :milestone_id The ID of the milestone.
       # - return [Hash] Information about the created merge request in a project.
       #
       # ```
       # client.create_merge_request(1, 4, "feature/xxx", "develop", "feature: support xxx")
       # client.create_merge_request(1, 6, "hotfix/xxx", "master", "fix some bugs", {"state" => "close"})
       # ```
-      def edit_merge_request(project_id : Int32, merge_request_id : Int32, source_branch : String, target_branch : String, title : String, params : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}", params: {
+      def edit_merge_request(project_id : Int32, merge_request_id : Int32, source_branch : String, target_branch : String, title : String, form : Hash = {} of String => String)
+        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}", form: {
           "source_branch" => source_branch,
           "target_branch" => target_branch,
           "title"         => title,
-        }.merge(params)).body
+        }.merge(form)).body
       end
 
       # Deiete a merge request in a project.

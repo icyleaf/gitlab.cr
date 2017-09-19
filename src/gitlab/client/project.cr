@@ -168,8 +168,8 @@ module Gitlab
       # client.edit_project(42)
       # client.edit_project(42, {"name" => "project_name"})
       # ```
-      def edit_project(project : Int32 | String, prams : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project}", params: prams).body
+      def edit_project(project : Int32 | String, form : Hash = {} of String => String)
+        JSON.parse put("/projects/#{project}", form: form).body
       end
 
       # Forks a project into the user namespace.
@@ -342,7 +342,7 @@ module Gitlab
       # client.edit_project_member('gitlab', 3, 20)
       # ```
       def edit_project_member(project : Int32 | String, user_id, access_level)
-        JSON.parse put("/projects/#{project}/members/#{user_id}", params: {
+        JSON.parse put("/projects/#{project}/members/#{user_id}", form: {
           "access_level" => access_level,
         }).body
       end
@@ -428,8 +428,8 @@ module Gitlab
       # ```
       # client.edit_project_hook('gitlab', 3, "https://hooks.slack.com/services/xxx")
       # ```
-      def edit_project_hook(project : Int32 | String, hook_id : Int32, url : String, params : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project}/hooks/#{hook_id}", params: {"url" => url}.merge(params)).body
+      def edit_project_hook(project : Int32 | String, hook_id : Int32, url : String, form : Hash = {} of String => String)
+        JSON.parse put("/projects/#{project}/hooks/#{hook_id}", form: {"url" => url}.merge(form)).body
       end
 
       # Removes a user from project team.

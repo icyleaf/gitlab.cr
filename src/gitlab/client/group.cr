@@ -90,8 +90,8 @@ module Gitlab
       # client.create_group("gitlab", "gitlab-path", {"visibility_level" => "0"})
       # ```
       def edit_group(group_id : Int32, name, path, description = nil, visibility_level : Int32? = nil)
-        params = build_group_params(name, path, description, visibility_level)
-        JSON.parse put("/groups/#{group_id.to_s}", params: params).body
+        form = build_group_params(name, path, description, visibility_level)
+        JSON.parse put("/groups/#{group_id.to_s}", form: form).body
       end
 
       # Delete a group.
@@ -178,7 +178,7 @@ module Gitlab
       # client.edit_group_member(1, 2, 40)
       # ```
       def edit_group_member(group_id : Int32, user_id : Int32, access_level)
-        JSON.parse put("/groups/#{group_id}/members/#{user_id}", params: {
+        JSON.parse put("/groups/#{group_id}/members/#{user_id}", form: {
           "user_id"      => user_id.to_s,
           "access_level" => access_level,
         }).body

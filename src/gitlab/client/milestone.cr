@@ -68,10 +68,10 @@ module Gitlab
       # client.edit_milestone(1, "v2.0")
       # client.edit_milestone(1, "v2.0.1", "fix some bugs")
       # ```
-      def edit_milestone(project_id : Int32, milestone_id : Int32, title : String, params : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project_id}/milestones/#{milestone_id}", params: {
+      def edit_milestone(project_id : Int32, milestone_id : Int32, title : String, form : Hash = {} of String => String)
+        JSON.parse put("/projects/#{project_id}/milestones/#{milestone_id}", form: {
           "title" => title,
-        }.merge(params)).body
+        }.merge(form)).body
       end
 
       # List issues of a milestone in a project.

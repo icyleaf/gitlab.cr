@@ -112,8 +112,8 @@ module Gitlab
       #   "labels"       => "bug,v1.0.0",
       # })
       # ```
-      def edit_issue(project_id : Int32, issue_id : Int32, params : Hash = {} of String => String)
-        JSON.parse put("/projects/#{project_id}/issues/#{issue_id}", params: params).body
+      def edit_issue(project_id : Int32, issue_id : Int32, form : Hash = {} of String => String)
+        JSON.parse put("/projects/#{project_id}/issues/#{issue_id}", form: form).body
       end
 
       # Closes an issue.
