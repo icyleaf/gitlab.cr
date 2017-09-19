@@ -30,7 +30,7 @@ module Gitlab
       # client.branch(1, "master")
       # ```
       def branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/repository/branches/#{branche}").body
+        JSON.parse get("/projects/#{project_id}/repository/branches/#{branch}").body
       end
 
       # Create branch in a project.
@@ -61,7 +61,7 @@ module Gitlab
       # client.delete_branch(4, 2)
       # ```
       def delete_branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/repository/branches/#{branche}").body
+        JSON.parse delete("/projects/#{project_id}/repository/branches/#{branch}").body
       end
 
       # Protect branch in a project.
@@ -75,7 +75,7 @@ module Gitlab
       # client.branch(1, "master")
       # ```
       def protect_branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/repository/branches/#{branche}/protect").body
+        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/protect").body
       end
 
       # Unprotect branch in a project.
@@ -88,7 +88,7 @@ module Gitlab
       # client.branch(1, "master")
       # ```
       def protect_branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/repository/branches/#{branche}/unprotect").body
+        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/unprotect").body
       end
     end
   end
