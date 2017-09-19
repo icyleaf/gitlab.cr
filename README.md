@@ -270,6 +270,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] Search for group - `group_search`
   - [x] Group members
     - [x] List group members - `group_members`
+    - [x] Get member detail of group - `group_member`
     - [x] Add group member - `add_member_to_group`
     - [x] Edit group team member - `edit_member_to_group`
     - [x] Remove user team member - `remove_member_to_group`
