@@ -7,7 +7,11 @@ module Gitlab
   #
   # See the [Gitlab Offical API Document](http://docs.gitlab.com/ce/api/README.html) for more details.
   class Client
-    getter :endpoint, :token
+    # The endpoint of Gitlab
+    property endpoint
+
+    # The token(private-token or OAuth2 access token) of Gitlab
+    property token
 
     # :nodoc:
     enum ErrorType

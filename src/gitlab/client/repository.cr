@@ -95,7 +95,7 @@ module Gitlab
       # client.contributors(1)
       # client.contributors(1, {"per_page" => "10"})
       # ```
-      def contributors(project_id : Int32, params : Hash? = nil)
+      def contributors(project_id : Int32, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/repository/contributors", params: params)
       end
     end

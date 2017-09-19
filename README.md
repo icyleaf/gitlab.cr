@@ -132,9 +132,9 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - [x] Delete email for given user - `delete_email(user_id)`
 - [x] Session
   - [x] Login session - `session`
-- [ ] Projects (including setting Webhooks)
-  - [ ] Uploads - **TODO**: Waiting for Crystal API
-    - [ ] Upload a file
+- [x] Projects (including setting Webhooks)
+  - [x] Uploads
+    - [x] Upload a file - `upload_file`
   - [x] List projects - `projects`
     - [x] List owned projects - `owned_projects`
     - [x] List starred projects - `starred_projects`

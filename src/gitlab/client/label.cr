@@ -16,7 +16,7 @@ module Gitlab
       # client.labels(1)
       # client.labels(1, {"per_page" => "10"})
       # ```
-      def issues(project_id : Int32, params : Hash? = nil)
+      def issues(project_id : Int32, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/labels", params: params).body
       end
 
@@ -32,7 +32,7 @@ module Gitlab
       # client.create_label(1, "hotfix", "#E2C08D")
       # client.create_label(1, "feature", "#C678DD", "next release features")
       # ```
-      def create_label(project_id : Int32, name : String, color : String, description : String? = nil)
+      def create_label(project_id : Int32, name : String, color : String, description : String? = nil) : JSON::Any
         form = Hash(String, String).new.tap do |obj|
           obj["name"] = name
           obj["color"] = color
@@ -56,7 +56,7 @@ module Gitlab
       # client.edit_label(1, "hotfix", {"new_name" => "bugs"})
       # client.edit_label(1, "hotfix", {"color" => "#BE5046"})
       # ```
-      def edit_label(project_id : Int32, name : String, form : Hash = {} of String => String)
+      def edit_label(project_id : Int32, name : String, form : Hash = {} of String => String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/labels", form: {
           "name" => name,
         }.merge(params)).body
@@ -71,7 +71,7 @@ module Gitlab
       # ```
       # client.delete_issue(4, 3)
       # ```
-      def delete_label(project_id : Int32, name : String)
+      def delete_label(project_id : Int32, name : String) : JSON::Any
         JSON.parse delete("/projects/#{project_id}/labels", form: {"name" => name}).body
       end
 
@@ -84,7 +84,7 @@ module Gitlab
       # ```
       # client.subscribe_label(1, 38)
       # ```
-      def subscribe_label(project_id : Int32, label_id : Int32)
+      def subscribe_label(project_id : Int32, label_id : Int32) : JSON::Any
         JSON.parse post("/projects/#{project_id}/labels/#{label_id}/subscription").body
       end
 
@@ -97,7 +97,7 @@ module Gitlab
       # ```
       # client.unsubscribe_label(1, 38)
       # ```
-      def unsubscribe_label(project_id : Int32, label_id : Int32)
+      def unsubscribe_label(project_id : Int32, label_id : Int32) : JSON::Any
         JSON.parse delete("/projects/#{project_id}/labels/#{label_id}/subscription").body
       end
     end

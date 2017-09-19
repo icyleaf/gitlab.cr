@@ -16,7 +16,7 @@ module Gitlab
       # client.branches(1)
       # client.branches(1, {"per_page" => "10"})
       # ```
-      def branches(project_id : Int32, params : Hash? = nil)
+      def branches(project_id : Int32, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/repository/branches", params: params).body
       end
 
@@ -29,7 +29,7 @@ module Gitlab
       # ```
       # client.branch(1, "master")
       # ```
-      def branch(project_id : Int32, branch : String)
+      def branch(project_id : Int32, branch : String) : JSON::Any
         JSON.parse get("/projects/#{project_id}/repository/branches/#{branche}").body
       end
 
@@ -44,7 +44,7 @@ module Gitlab
       # client.create_branch(1, "develop", "master")
       # client.create_branch(1, "hotfix/xxx", "9dff773")
       # ```
-      def create_branch(project_id : Int32, branch : String, ref : String)
+      def create_branch(project_id : Int32, branch : String, ref : String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/repository/branches", form: {
           "branch_name" => branch,
           "ref"         => ref,
@@ -60,7 +60,7 @@ module Gitlab
       # ```
       # client.delete_branch(4, 2)
       # ```
-      def delete_branch(project_id : Int32, branch : String)
+      def delete_branch(project_id : Int32, branch : String) : JSON::Any
         JSON.parse delete("/projects/#{project_id}/repository/branches/#{branche}").body
       end
 
@@ -74,7 +74,7 @@ module Gitlab
       # ```
       # client.branch(1, "master")
       # ```
-      def protect_branch(project_id : Int32, branch : String)
+      def protect_branch(project_id : Int32, branch : String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/repository/branches/#{branche}/protect").body
       end
 
@@ -87,7 +87,7 @@ module Gitlab
       # ```
       # client.branch(1, "master")
       # ```
-      def protect_branch(project_id : Int32, branch : String)
+      def protect_branch(project_id : Int32, branch : String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/repository/branches/#{branche}/unprotect").body
       end
     end

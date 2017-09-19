@@ -16,7 +16,7 @@ module Gitlab
       # client.tags(1)
       # client.tags(1, {"per_page" => "10"})
       # ```
-      def tags(project_id : Int32, params : Hash? = nil)
+      def tags(project_id : Int32, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/repository/tags", params: params).body
       end
 
@@ -29,7 +29,7 @@ module Gitlab
       # ```
       # client.tag(1, "master")
       # ```
-      def tag(project_id : Int32, tag : String)
+      def tag(project_id : Int32, tag : String) : JSON::Any
         JSON.parse get("/projects/#{project_id}/repository/tags/#{tag}").body
       end
 
@@ -47,7 +47,7 @@ module Gitlab
       # client.create_tag(1, "1.0.0", "master")
       # client.create_tag(1, "1.0.1", "1.0.0", {"message" => "message in tag", "release_description" => "message in gitlab"})
       # ```
-      def create_tag(project_id : Int32, tag : String, ref : String, params : Hash = {} of String => String)
+      def create_tag(project_id : Int32, tag : String, ref : String, params : Hash = {} of String => String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/repository/tags", form: {
           "tag_name" => tag,
           "ref"      => ref,
@@ -63,7 +63,7 @@ module Gitlab
       # ```
       # client.delete_tag(42)
       # ```
-      def delete_tag(project_id : Int32, tag : String)
+      def delete_tag(project_id : Int32, tag : String) : JSON::Any
         JSON.parse delete("/projects/#{project_id}/repository/tag/#{tag}").body
       end
 
@@ -77,7 +77,7 @@ module Gitlab
       # ```
       # client.create_release_notes(1, "1.0.0", "Release v1.0.0")
       # ```
-      def create_release_notes(project_id : Int32, tag : String, description : String)
+      def create_release_notes(project_id : Int32, tag : String, description : String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/repository/tags/#{tag}/release", form: {
           "description" => description,
         }).body
@@ -93,7 +93,7 @@ module Gitlab
       # ```
       # client.update_release_notes(1, "1.0.0", "# Release v1.0.0\n## xxx\n## xxx")
       # ```
-      def update_release_notes(project_id : Int32, tag : String, description : String)
+      def update_release_notes(project_id : Int32, tag : String, description : String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/repository/tags/#{tag}/release", form: {
           "description" => description,
         }).body

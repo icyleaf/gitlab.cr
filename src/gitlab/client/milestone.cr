@@ -18,7 +18,7 @@ module Gitlab
       # client.milestones(1)
       # client.milestones(1, {"state" => "active", "per_page" => "10"})
       # ```
-      def milestones(project_id : Int32, params : Hash? = nil)
+      def milestones(project_id : Int32, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/milestones", params: params).body
       end
 
@@ -31,7 +31,7 @@ module Gitlab
       # ```
       # client.milestone(1, 10)
       # ```
-      def milestone(project_id : Int32, milestone_id : Int32)
+      def milestone(project_id : Int32, milestone_id : Int32) : JSON::Any
         JSON.parse get("/projects/#{project_id}/milestones/#{milestone_id}").body
       end
 
@@ -48,7 +48,7 @@ module Gitlab
       # client.create_milestone(1, "v2.0")
       # client.create_milestone(1, "v2.0.1", "fix some bugs")
       # ```
-      def create_milestone(project_id : Int32, title : String, params : Hash = {} of String => String)
+      def create_milestone(project_id : Int32, title : String, params : Hash = {} of String => String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/milestones", form: {
           "title" => title,
         }.merge(params)).body
@@ -68,7 +68,7 @@ module Gitlab
       # client.edit_milestone(1, "v2.0")
       # client.edit_milestone(1, "v2.0.1", "fix some bugs")
       # ```
-      def edit_milestone(project_id : Int32, milestone_id : Int32, title : String, form : Hash = {} of String => String)
+      def edit_milestone(project_id : Int32, milestone_id : Int32, title : String, form : Hash = {} of String => String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/milestones/#{milestone_id}", form: {
           "title" => title,
         }.merge(form)).body
@@ -87,7 +87,7 @@ module Gitlab
       # client.milestone_issues(1, 3)
       # client.milestone_issues(1, 4, {"per_page" => "5"})
       # ```
-      def milestone_issues(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String)
+      def milestone_issues(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String) : JSON::Any
         JSON.parse get("/projects/#{project_id}/milestones/#{milestone_id}/issues", params: params).body
       end
     end

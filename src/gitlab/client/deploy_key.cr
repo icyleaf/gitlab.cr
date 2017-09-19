@@ -29,7 +29,7 @@ module Gitlab
       # ```
       # client.deploy_key(1, 1)
       # ```
-      def deploy_key(project_id : Int32, key_id : Int32)
+      def deploy_key(project_id : Int32, key_id : Int32) : JSON::Any
         JSON.parse get("/projects/#{project_id}/keys/#{key_id}").body
       end
 
@@ -46,7 +46,7 @@ module Gitlab
       # ```
       # client.create_deploy_key(1, "deploy server", "ssh-rsa xxx")
       # ```
-      def create_deploy_key(project_id : Int32, title : String, key : String)
+      def create_deploy_key(project_id : Int32, title : String, key : String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/keys", form: {
           "title" => title,
           "key"   => key,
@@ -62,7 +62,7 @@ module Gitlab
       # ```
       # client.remove_deploy_key(4, 3)
       # ```
-      def remove_deploy_key(project_id : Int32, key_id : Int32)
+      def remove_deploy_key(project_id : Int32, key_id : Int32) : JSON::Any
         JSON.parse delete("/projects/#{project_id}/keys/#{key_id}").body
       end
     end

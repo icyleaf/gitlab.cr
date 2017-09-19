@@ -29,7 +29,7 @@ module Gitlab
       # client.issues
       # client.issues({"per_page" => "10"})
       # ```
-      def issues(params : Hash? = nil)
+      def issues(params : Hash? = nil) : JSON::Any
         JSON.parse get("/issues", params: params).body
       end
 
@@ -51,7 +51,7 @@ module Gitlab
       # client.issue(1)
       # client.issue(1, {"per_page" => "10"})
       # ```
-      def issues(project_id : Int32, params : Hash? = nil)
+      def issues(project_id : Int32, params : Hash? = nil) : JSON::Any
         JSON.parse get("/projects/#{project_id}/issues", params: params).body
       end
 
@@ -64,7 +64,7 @@ module Gitlab
       # ```
       # client.issue(1, 10)
       # ```
-      def issue(project_id : Int32, issue_id : Int32)
+      def issue(project_id : Int32, issue_id : Int32) : JSON::Any
         JSON.parse get("/projects/#{project_id}/issues/#{issue_id}").body
       end
 
@@ -84,7 +84,7 @@ module Gitlab
       # client.create_issue(1, "support cli command")
       # client.create_issue(1, "error in debug mode", {"description" => "xxx"})
       # ```
-      def create_issue(project_id : Int32, title : String, params : Hash = {} of String => String)
+      def create_issue(project_id : Int32, title : String, params : Hash = {} of String => String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/issues", form: {
           "title" => title,
         }).body
@@ -112,7 +112,7 @@ module Gitlab
       #   "labels"       => "bug,v1.0.0",
       # })
       # ```
-      def edit_issue(project_id : Int32, issue_id : Int32, form : Hash = {} of String => String)
+      def edit_issue(project_id : Int32, issue_id : Int32, form : Hash = {} of String => String) : JSON::Any
         JSON.parse put("/projects/#{project_id}/issues/#{issue_id}", form: form).body
       end
 
@@ -127,7 +127,7 @@ module Gitlab
       # ```
       # client.close_issue(1, 1)
       # ```
-      def close_issue(project_id : Int32, issue_id : Int32)
+      def close_issue(project_id : Int32, issue_id : Int32) : JSON::Any
         edit_issue(project_id, issue_id, {"state_event" => "close"})
       end
 
@@ -142,7 +142,7 @@ module Gitlab
       # ```
       # client.close_issue(1, 1)
       # ```
-      def reopen_issue(project, id)
+      def reopen_issue(project, id) : JSON::Any
         edit_issue(project_id, issue_id, {"state_event" => "reopen"})
       end
 
@@ -155,7 +155,7 @@ module Gitlab
       # ```
       # client.delete_issue(4, 3)
       # ```
-      def delete_issue(project_id : Int32, issue_id : Int32)
+      def delete_issue(project_id : Int32, issue_id : Int32) : JSON::Any
         JSON.parse delete("/projects/#{project_id}/issues/#{issue_id}").body
       end
 
@@ -169,7 +169,7 @@ module Gitlab
       # ```
       # client.move_issue(4, 3)
       # ```
-      def move_issue(project_id : Int32, issue_id : Int32, to_project_id : Int32)
+      def move_issue(project_id : Int32, issue_id : Int32, to_project_id : Int32) : JSON::Any
         JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/move", form: {
           "to_project_id" => to_project_id,
         }).body
@@ -184,7 +184,7 @@ module Gitlab
       # ```
       # client.subscribe_issue(1, 38)
       # ```
-      def subscribe_issue(project_id : Int32, issue_id : Int32)
+      def subscribe_issue(project_id : Int32, issue_id : Int32) : JSON::Any
         JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/subscription").body
       end
 
@@ -197,7 +197,7 @@ module Gitlab
       # ```
       # client.unsubscribe_issue(1, 38)
       # ```
-      def unsubscribe_issue(project_id : Int32, issue_id : Int32)
+      def unsubscribe_issue(project_id : Int32, issue_id : Int32) : JSON::Any
         JSON.parse delete("/projects/#{project_id}/issues/#{issue_id}/subscription").body
       end
     end
