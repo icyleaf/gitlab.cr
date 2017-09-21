@@ -152,6 +152,7 @@ module Gitlab
           obj["Authorization"] = "Bearer #{@token}"
         end
 
+        obj["Accept"] = "application/json"
         obj["User-Agent"] = "Gitlab.cr v#{VERSION}"
       end
     end

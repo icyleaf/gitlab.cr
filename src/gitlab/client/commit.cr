@@ -13,7 +13,7 @@ module Gitlab
       # - option params [String] :until Only commits before or in this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of commits.
+      # - return [JSON::Any] List of commits.
       #
       # ```
       # client.commits(1)
@@ -27,7 +27,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] commit The ID of a commit.
-      # - return [Hash] Information about the commit.
+      # - return [JSON::Any] Information about the commit.
       #
       # ```
       # client.commit(1, 10)
@@ -40,7 +40,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] sha The name of a repository branch or tag or if not given the default branch.
-      # - return [Hash] Information about the commit diff.
+      # - return [JSON::Any] Information about the commit diff.
       #
       # ```
       # client.commit_diff(1, "daff23c")
@@ -56,7 +56,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20.
-      # - return JSON::Any List of comments in a commit.
+      # - return [JSON::Any] List of comments in a commit.
       #
       # ```
       # client.commit_comments(1, "daff23c")
@@ -74,7 +74,7 @@ module Gitlab
       # - option params [String] :path The file path relative to the repository.
       # - option params [String] :line The line number where the comment should be placed.
       # - option params [String] :line_type The line type. Takes new or old as arguments.
-      # - return [Hash] Information about the created commet of commit in a project.
+      # - return [JSON::Any] Information about the created commet of commit in a project.
       #
       # ```
       # client.create_commit_comment(1, "daff23c", "awesome!")

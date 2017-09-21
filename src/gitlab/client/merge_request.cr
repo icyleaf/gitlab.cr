@@ -14,7 +14,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of merge requests under a project.
+      # - return [JSON::Any] List of merge requests under a project.
       #
       # ```
       # client.merge_requests(1)
@@ -28,7 +28,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of a merge request.
-      # - return [Hash] Information about the merge request.
+      # - return [JSON::Any] Information about the merge request.
       #
       # ```
       # client.merge_request(1, 10)
@@ -61,7 +61,7 @@ module Gitlab
       # - option params [String] :target_project_id The target project (numeric id).
       # - option params [String] :labels Labels for MR as a comma-separated list.
       # - option params [String] :milestone_id The ID of the milestone.
-      # - return [Hash] Information about the created merge_request in a project.
+      # - return [JSON::Any] Information about the created merge_request in a project.
       #
       # ```
       # client.create_merge_request(1, "feature/xxx", "develop", "feature: support xxx")
@@ -89,7 +89,7 @@ module Gitlab
       # - option params [String] :state_event New state (close|reopen|merge).
       # - option params [String] :labels Labels for MR as a comma-separated list.
       # - option form [String] :milestone_id The ID of the milestone.
-      # - return [Hash] Information about the created merge request in a project.
+      # - return [JSON::Any] Information about the created merge request in a project.
       #
       # ```
       # client.create_merge_request(1, 4, "feature/xxx", "develop", "feature: support xxx")
@@ -111,7 +111,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of an merge_request.
-      # - return [Hash] Information about the deleted merge requet.
+      # - return [JSON::Any] Information about the deleted merge requet.
       #
       # ```
       # client.delete_merge_request(1, 3, 6)
@@ -127,7 +127,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues of merge request under a project.
+      # - return [JSON::Any] List of issues of merge request under a project.
       #
       # ```
       # client.merge_request_changes(1, 3)
@@ -172,7 +172,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of an merge_request.
-      # - return [Hash] Information about the accepted merge requet.
+      # - return [JSON::Any] Information about the accepted merge requet.
       #
       # ```
       # client.accept_merge_request(1, 3)
@@ -193,7 +193,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of an merge_request.
-      # - return [Hash] Information about the accepted merge requet.
+      # - return [JSON::Any] Information about the accepted merge requet.
       #
       # ```
       # client.cancel_merge_request_when_build_succeed(1, 3)
@@ -209,7 +209,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues of merge request under a project.
+      # - return [JSON::Any] List of issues of merge request under a project.
       #
       # ```
       # client.merge_request_closes_issues(1, 3)
@@ -225,7 +225,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of an merge_request.
-      # - return [Hash] Information about the subscribed merge request in a project.
+      # - return [JSON::Any] Information about the subscribed merge request in a project.
       #
       # ```
       # client.subscribe_merge_request(1, 38)
@@ -240,7 +240,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of an merge_request.
-      # - return [Hash] Information about the subscribed merge request in a project.
+      # - return [JSON::Any] Information about the subscribed merge request in a project.
       #
       # ```
       # client.unsubscribe_merge_request(1, 38)

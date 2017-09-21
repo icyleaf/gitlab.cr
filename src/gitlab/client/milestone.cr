@@ -12,7 +12,7 @@ module Gitlab
       # - option params [String] :state Return only active or closed milestones.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of milestones under a project.
+      # - return [JSON::Any] List of milestones under a project.
       #
       # ```
       # client.milestones(1)
@@ -26,7 +26,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] milestone_id The ID of a milestone.
-      # - return [Hash] Information about the milestone.
+      # - return [JSON::Any] Information about the milestone.
       #
       # ```
       # client.milestone(1, 10)
@@ -42,7 +42,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :description The description of the milestone.
       # - option params [String] :due_date The due date of the milestone.
-      # - return [Hash] Information about the created milestone in a project.
+      # - return [JSON::Any] Information about the created milestone in a project.
       #
       # ```
       # client.create_milestone(1, "v2.0")
@@ -62,7 +62,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :description The description of the milestone.
       # - option params [String] :due_date The due date of the milestone.
-      # - return [Hash] Information about the created milestone in a project.
+      # - return [JSON::Any] Information about the created milestone in a project.
       #
       # ```
       # client.edit_milestone(1, "v2.0")
@@ -81,7 +81,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues of milestone under a project.
+      # - return [JSON::Any] List of issues of milestone under a project.
       #
       # ```
       # client.milestone_issues(1, 3)
@@ -98,7 +98,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues of milestone under a project.
+      # - return [JSON::Any] List of issues of milestone under a project.
       #
       # ```
       # client.milestone_merge_requests(5, 2)

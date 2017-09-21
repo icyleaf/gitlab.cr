@@ -9,7 +9,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of groups
+      # - return [JSON::Any] List of groups
       #
       # ```
       # client.groups
@@ -31,7 +31,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :search Return list of authorized projects according to a search criteria.
       # - option params [String] :ci_enabled_first Return projects ordered by ci_enabled flag. Projects with enabled GitLab CI go first.
-      # - return JSON::Any List of projects under a group
+      # - return [JSON::Any] List of projects under a group
       #
       # ```
       # client.group_projects(1)
@@ -45,7 +45,7 @@ module Gitlab
       # Gets details of a group.
       #
       # - param  [Int32|String] id The ID of a group.
-      # - return [Hash] Information about group.
+      # - return [JSON::Any] Information about group.
       #
       # ```
       # client.group(42)
@@ -61,7 +61,7 @@ module Gitlab
       # - param [String] path The path of a group.
       # - param [String] description The group"s description.
       # - param [String] visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.
-      # - return [Hash] Information about created group.
+      # - return [JSON::Any] Information about created group.
       #
       # ```
       # client.create_group("new-group", "group-path")
@@ -82,7 +82,7 @@ module Gitlab
       # - param [String] path The path of a group.
       # - param [String] description The group"s description.
       # - param [String] visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.
-      # - return [Hash] Information about created group.
+      # - return [JSON::Any] Information about created group.
       #
       # ```
       # client.create_group("new-group", "group-path")
@@ -97,7 +97,7 @@ module Gitlab
       # Delete a group.
       #
       # - param  [Int32] group_id The ID of a group
-      # - return [Hash] Information about the deleted group.
+      # - return [JSON::Any] Information about the deleted group.
       #
       # ```
       # client.delete_group(42)
@@ -112,7 +112,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :per_page Number of projects to return per page
       # - option params [String] :page The page to retrieve
-      # - return JSON::Any List of projects under search qyery
+      # - return [JSON::Any] List of projects under search qyery
       #
       # ```
       # client.group_search("gitlab")
@@ -140,7 +140,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return JSON::Any List of group members under a group
+      # - return [JSON::Any] List of group members under a group
       #
       # ```
       # client.group_members(1)
@@ -168,7 +168,7 @@ module Gitlab
       # - param  [Int32] group_id The group id to add a member to.
       # - param  [Int32] user_id The user id of the user to add to the team.
       # - param  [Int32] access_level Project access level.
-      # - return [Hash] Information about added group member.
+      # - return [JSON::Any] Information about added group member.
       #
       # ```
       # client.add_group_member(1, 2, 40)
@@ -185,7 +185,7 @@ module Gitlab
       # - param  [Int32] group_id The group id to add a member to.
       # - param  [Int32] user_id The user id of the user to add to the team.
       # - param  [Int32] access_level Project access level.
-      # - return [Hash] Information about added group member.
+      # - return [JSON::Any] Information about added group member.
       #
       # ```
       # client.edit_group_member(1, 2, 40)
@@ -201,7 +201,7 @@ module Gitlab
       #
       # - param  [Int32] group_id The group id to add a member to.
       # - param  [Int32] user_id The user id of the user to add to the team.
-      # - return [Hash] Information about added group member.
+      # - return [JSON::Any] Information about added group member.
       #
       # ```
       # client.remove_group_member(1, 2)

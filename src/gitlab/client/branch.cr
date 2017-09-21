@@ -10,7 +10,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of branches under a project.
+      # - return [JSON::Any] List of branches under a project.
       #
       # ```
       # client.branches(1)
@@ -24,7 +24,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
-      # - return [Hash] Information about the branch in a project.
+      # - return [JSON::Any] Information about the branch in a project.
       #
       # ```
       # client.branch(1, "master")
@@ -38,7 +38,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - param  [String] ref The branch name or commit SHA to create branch from.
-      # - return [Hash] Information about the created branch in a project.
+      # - return [JSON::Any] Information about the created branch in a project.
       #
       # ```
       # client.create_branch(1, "develop", "master")
@@ -55,7 +55,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project
       # - param  [String] branch The name of a branch.
-      # - return [Hash] Information about the deleted branch.
+      # - return [JSON::Any] Information about the deleted branch.
       #
       # ```
       # client.delete_branch(4, 2)
@@ -69,7 +69,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - param  [String] ref The branch name or commit SHA to create branch from.
-      # - return [Hash] Information about protected branch in a project
+      # - return [JSON::Any] Information about protected branch in a project
       #
       # ```
       # client.branch(1, "master")
@@ -83,7 +83,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
-      # - return [Hash] Information about unprotected branch in a project
+      # - return [JSON::Any] Information about unprotected branch in a project
       #
       # ```
       # client.branch(1, "master")

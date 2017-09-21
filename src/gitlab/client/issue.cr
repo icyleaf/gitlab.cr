@@ -23,7 +23,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues.
+      # - return [JSON::Any] List of issues.
       #
       # ```
       # client.issues
@@ -45,7 +45,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues under a project.
+      # - return [JSON::Any] List of issues under a project.
       #
       # ```
       # client.issue(1)
@@ -59,7 +59,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the issue.
+      # - return [JSON::Any] Information about the issue.
       #
       # ```
       # client.issue(1, 10)
@@ -78,7 +78,7 @@ module Gitlab
       # - option params [String] :milestone_id The ID of a milestone to assign issue.
       # - option params [String] :labels Comma-separated label names for an issue.
       # - option params [String] :created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.
-      # - return [Hash] Information about the created issue in a project.
+      # - return [JSON::Any] Information about the created issue in a project.
       #
       # ```
       # client.create_issue(1, "support cli command")
@@ -102,7 +102,7 @@ module Gitlab
       # - option params [String] :labels Comma-separated label names for an issue.
       # - option params [String] :state_event The state event of an issue. Set close to close the issue and reopen to reopen it.
       # - option params [String] :created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.
-      # - return [Hash] Information about the created issue in a project.
+      # - return [JSON::Any] Information about the created issue in a project.
       #
       # ```
       # client.create_issue(1, 1, "support cli command")
@@ -122,7 +122,7 @@ module Gitlab
       #
       # - param  [Integer] project The ID of a project.
       # - param  [Integer] id The ID of an issue.
-      # - return [Hash] Information about closed issue.
+      # - return [JSON::Any] Information about closed issue.
       #
       # ```
       # client.close_issue(1, 1)
@@ -137,7 +137,7 @@ module Gitlab
       #
       # - param  [Integer] project The ID of a project.
       # - param  [Integer] id The ID of an issue.
-      # - return [Hash] Information about closed issue.
+      # - return [JSON::Any] Information about closed issue.
       #
       # ```
       # client.close_issue(1, 1)
@@ -150,7 +150,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the deleted issue.
+      # - return [JSON::Any] Information about the deleted issue.
       #
       # ```
       # client.delete_issue(4, 3)
@@ -164,7 +164,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project
       # - param  [Int32] issue_id The ID of an issue.
       # - param  [Int32] to_project_id The ID of anthor to move project.
-      # - return [Hash] Information about the moved issue.
+      # - return [JSON::Any] Information about the moved issue.
       #
       # ```
       # client.move_issue(4, 3)
@@ -179,7 +179,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the subscribed issue in a project.
+      # - return [JSON::Any] Information about the subscribed issue in a project.
       #
       # ```
       # client.subscribe_issue(1, 38)
@@ -192,7 +192,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the subscribed issue in a project.
+      # - return [JSON::Any] Information about the subscribed issue in a project.
       #
       # ```
       # client.unsubscribe_issue(1, 38)

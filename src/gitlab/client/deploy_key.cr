@@ -10,7 +10,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues under a project.
+      # - return [JSON::Any] List of issues under a project.
       #
       # ```
       # client.deploy_keys(1)
@@ -24,7 +24,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] key_id The ID of a deploy key.
-      # - return [Hash] Information about the deploy key in a project.
+      # - return [JSON::Any] Information about the deploy key in a project.
       #
       # ```
       # client.deploy_key(1, 1)
@@ -41,7 +41,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] title The title of new deploy key.
       # - param  [String] key New deploy key.
-      # - return [Hash] Information about the created deploy key in a project.
+      # - return [JSON::Any] Information about the created deploy key in a project.
       #
       # ```
       # client.create_deploy_key(1, "deploy server", "ssh-rsa xxx")
@@ -57,7 +57,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] key_id The name of a deploy key.
-      # - return [Hash] Information about the deleted deploy key.
+      # - return [JSON::Any] Information about the deleted deploy key.
       #
       # ```
       # client.remove_deploy_key(4, 3)

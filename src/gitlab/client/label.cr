@@ -10,7 +10,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of issues under a project.
+      # - return [JSON::Any] List of issues under a project.
       #
       # ```
       # client.labels(1)
@@ -26,7 +26,7 @@ module Gitlab
       # - param  [String] name The name of a label.
       # - param  [String] color The color of the label in 6-digit hex notation with leading # sign.
       # - param [String] description The description of the label.
-      # - return [Hash] Information about the created label in a project.
+      # - return [JSON::Any] Information about the created label in a project.
       #
       # ```
       # client.create_label(1, "hotfix", "#E2C08D")
@@ -50,7 +50,7 @@ module Gitlab
       # - option params [String] :new_name The new name of the label.
       # - option params [String] :color The color of the label in 6-digit hex notation with leading # sign.
       # - option params [String] :description The description of the label.
-      # - return [Hash] Information about the updated label in a project.
+      # - return [JSON::Any] Information about the updated label in a project.
       #
       # ```
       # client.edit_label(1, "hotfix", {"new_name" => "bugs"})
@@ -66,7 +66,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] name The name of a label.
-      # - return [Hash] Information about the deleted label.
+      # - return [JSON::Any] Information about the deleted label.
       #
       # ```
       # client.delete_issue(4, 3)
@@ -79,7 +79,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] label_id The ID of a label.
-      # - return [Hash] Information about the subscribed label in a project.
+      # - return [JSON::Any] Information about the subscribed label in a project.
       #
       # ```
       # client.subscribe_label(1, 38)
@@ -92,7 +92,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] label_id The ID of a label.
-      # - return [Hash] Information about the subscribed label in a project.
+      # - return [JSON::Any] Information about the subscribed label in a project.
       #
       # ```
       # client.unsubscribe_label(1, 38)

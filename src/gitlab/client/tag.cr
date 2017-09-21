@@ -10,7 +10,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of tags under a project.
+      # - return [JSON::Any] List of tags under a project.
       #
       # ```
       # client.tags(1)
@@ -24,7 +24,7 @@ module Gitlab
       #
       # - param  [Int32] project The ID of a project.
       # - param  [String] tag The name of a tag.
-      # - return [Hash] Information about the tag in a project.
+      # - return [JSON::Any] Information about the tag in a project.
       #
       # ```
       # client.tag(1, "master")
@@ -41,7 +41,7 @@ module Gitlab
       # - param  [String] params A customizable set of the params.
       # - option params  [String] :message Creates annotated tag.
       # - param  params [String] :release_description Add release notes to the git tag and store it in the GitLab database.
-      # - return [Hash] Information about the created tag in a project.
+      # - return [JSON::Any] Information about the created tag in a project.
       #
       # ```
       # client.create_tag(1, "1.0.0", "master")
@@ -58,7 +58,7 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] tag The name of a tag.
-      # - return [Hash] Information about the deleted tag.
+      # - return [JSON::Any] Information about the deleted tag.
       #
       # ```
       # client.delete_tag(42)
@@ -72,7 +72,7 @@ module Gitlab
       # - param  [Int32] project The ID of a project.
       # - param  [String] tag The name of a tag.
       # - param  [String] description Release notes with markdown support.
-      # - return [Hash] Information about the created release notes in a project.
+      # - return [JSON::Any] Information about the created release notes in a project.
       #
       # ```
       # client.create_release_notes(1, "1.0.0", "Release v1.0.0")
@@ -88,7 +88,7 @@ module Gitlab
       # - param  [Int32] project The ID of a project.
       # - param  [String] tag The name of a tag.
       # - param  [String] description Release notes with markdown support.
-      # - return [Hash] Information about the updated release notes in a project.
+      # - return [JSON::Any] Information about the updated release notes in a project.
       #
       # ```
       # client.update_release_notes(1, "1.0.0", "# Release v1.0.0\n## xxx\n## xxx")

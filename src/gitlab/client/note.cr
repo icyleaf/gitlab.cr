@@ -13,7 +13,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of notes of issue under a project.
+      # - return [JSON::Any] List of notes of issue under a project.
       #
       # ```
       # client.issue_notes(1, 1)
@@ -28,7 +28,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
       # - param  [Int32] note_id The ID of a note.
-      # - return [Hash] Information about the note of issue.
+      # - return [JSON::Any] Information about the note of issue.
       #
       # ```
       # client.issue_note(1, 10)
@@ -43,7 +43,7 @@ module Gitlab
       # - param  [Int32] issue_id The ID of an issue.
       # - param  [String] body The body of a note.
       # - params [String] created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.
-      # - return [Hash] Information about the created note of issue in a project.
+      # - return [JSON::Any] Information about the created note of issue in a project.
       #
       # ```
       # client.create_issue_note(1, 10, "great work!")
@@ -64,7 +64,7 @@ module Gitlab
       # - param  [Int32] issue_id The ID of an issue.
       # - param  [Int32] note_id The ID of a note.
       # - param  [String] body The body of a note.
-      # - return [Hash] Information about the updated issue in a project.
+      # - return [JSON::Any] Information about the updated issue in a project.
       #
       # ```
       # client.edit_issue_note(1, 10, 22, "great work!")
@@ -80,7 +80,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
       # - param  [Int32] note_id The ID of a note.
-      # - return [Hash] Information about the deleted note of issue.
+      # - return [JSON::Any] Information about the deleted note of issue.
       #
       # ```
       # client.delete_issue_note(1, 3, 6)
@@ -96,7 +96,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of notes of snippet under a project.
+      # - return [JSON::Any] List of notes of snippet under a project.
       #
       # ```
       # client.snippet_notes(1, 1)
@@ -111,7 +111,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] snippet_id The ID of an snippet.
       # - param  [Int32] note_id The ID of a note.
-      # - return [Hash] Information about the note of snippet.
+      # - return [JSON::Any] Information about the note of snippet.
       #
       # ```
       # client.snippet_note(1, 10)
@@ -125,7 +125,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] snippet_id The ID of an snippet.
       # - param  [String] body The body of an snippet.
-      # - return [Hash] Information about the created note of snippet in a project.
+      # - return [JSON::Any] Information about the created note of snippet in a project.
       #
       # ```
       # client.create_snippet_note(1, 10, "great work!")
@@ -140,7 +140,7 @@ module Gitlab
       # - param  [Int32] snippet_id The ID of an snippet.
       # - param  [Int32] note_id The ID of a note.
       # - param  [String] body The body of an snippet.
-      # - return [Hash] Information about the updated snippet in a project.
+      # - return [JSON::Any] Information about the updated snippet in a project.
       #
       # ```
       # client.edit_snippet_note(1, 10, 22, "great work!")
@@ -156,7 +156,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] snippet_id The ID of an snippet.
       # - param  [Int32] note_id The ID of a note.
-      # - return [Hash] Information about the deleted note of snippet.
+      # - return [JSON::Any] Information about the deleted note of snippet.
       #
       # ```
       # client.delete_snippet_note(1, 3, 6)
@@ -172,7 +172,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return JSON::Any List of notes of merge request under a project.
+      # - return [JSON::Any] List of notes of merge request under a project.
       #
       # ```
       # client.merge_request_notes(1, 1)
@@ -187,7 +187,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of a merge request.
       # - param  [Int32] note_id The ID of a note.
-      # - return [Hash] Information about the note of merge request.
+      # - return [JSON::Any] Information about the note of merge request.
       #
       # ```
       # client.merge_request_note(1, 10)
@@ -201,7 +201,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of a merge request.
       # - param  [String] body The title of an merge_requests.
-      # - return [Hash] Information about the created note of merge request in a project.
+      # - return [JSON::Any] Information about the created note of merge request in a project.
       #
       # ```
       # client.create_merge_request_note(1, 10, "great work!")
@@ -216,7 +216,7 @@ module Gitlab
       # - param  [Int32] merge_request_id The ID of an merge request.
       # - param  [Int32] note_id The ID of a note.
       # - param  [String] body The title of a merge request.
-      # - return [Hash] Information about the updated merge request in a project.
+      # - return [JSON::Any] Information about the updated merge request in a project.
       #
       # ```
       # client.edit_merge_request_note(1, 10, 22, "great work!")
@@ -232,7 +232,7 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] merge_request_id The ID of a merge request.
       # - param  [Int32] note_id The ID of a note.
-      # - return [Hash] Information about the deleted note of merge request.
+      # - return [JSON::Any] Information about the deleted note of merge request.
       #
       # ```
       # client.delete_merge_request_note(1, 3, 6)

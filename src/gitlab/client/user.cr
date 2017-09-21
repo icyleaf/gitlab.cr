@@ -9,7 +9,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page.
-      # - return JSON::Any
+      # - return [JSON::Any]
       #
       # ```
       # client.users
@@ -21,7 +21,7 @@ module Gitlab
 
       # Gets information about current user.
       #
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.user
@@ -33,7 +33,7 @@ module Gitlab
       # Gets information about a user.
       #
       # - param  [Int32] user_id The ID of a user.
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.user(2)
@@ -54,7 +54,7 @@ module Gitlab
       # - option params [String] :linkedin The linkedin of a user.
       # - option params [String] :twitter The twitter of a user.
       # - option params [Int32] :projects_limit The limit of projects for a user.
-      # - return [Hash] Information about created user.
+      # - return [JSON::Any] Information about created user.
       #
       # ```
       # Gitlab.create_user("icy.leaf@kaifeng.cn", "secret", "icyleaf", {"name" => "三火"})
@@ -80,7 +80,7 @@ module Gitlab
       # - option params [String] :linkedin The linkedin of a user.
       # - option params [String] :twitter The twitter of a user.
       # - option params [String] :projects_limit The limit of projects for a user.
-      # - return [Hash] Information about edit user.
+      # - return [JSON::Any] Information about edit user.
       #
       # ```
       # client.edit_user(4, {"email" => "icy.leaf@kaifeng.cn", "projects_limit" => "100"})
@@ -92,7 +92,7 @@ module Gitlab
       # Deletes a user.
       #
       # - param [Int32] user_id The ID of a user.
-      # - return [Hash] Information about deleted user.
+      # - return [JSON::Any] Information about deleted user.
       #
       # ```
       # client.delete_user(1)
@@ -107,7 +107,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :per_page Number of projects to return per page
       # - option params [String] :page The page to retrieve
-      # - return JSON::Any List of projects under search qyery
+      # - return [JSON::Any] List of projects under search qyery
       #
       # ```
       # client.group_search("icyleaf")
@@ -122,7 +122,7 @@ module Gitlab
       # **Available only for admin**.
       #
       # - param [Int32] user_id The Id of user
-      # - return [Hash] success or not
+      # - return [JSON::Any] success or not
       #
       # ```
       # client.block_user(4)
@@ -136,7 +136,7 @@ module Gitlab
       # **Available only for admin**.
       #
       # - param [Int32] user_id The Id of user
-      # - return [Hash] success or not
+      # - return [JSON::Any] success or not
       #
       # ```
       # client.unblock_user(4)
@@ -147,7 +147,7 @@ module Gitlab
 
       # Gets a list of current user"s SSH keys.
       #
-      # - return JSON::Any
+      # - return [JSON::Any]
       #
       # ```
       # client.ssh_keys
@@ -159,7 +159,7 @@ module Gitlab
       # Gets a list of a user"s SSH keys.
       #
       # - param  [Int32] user_id The Id of user.
-      # - return JSON::Any
+      # - return [JSON::Any]
       #
       # ```
       # client.ssh_keys(4)
@@ -171,7 +171,7 @@ module Gitlab
       # Gets information about SSH key.
       #
       # - param  [Int32] ssh_key_id The ID of a user"s SSH key.
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.ssh_key(1)
@@ -184,7 +184,7 @@ module Gitlab
       #
       # - param  [String] title The title of an SSH key.
       # - param  [String] key The SSH key body.
-      # - return [Hash] Information about created SSH key.
+      # - return [JSON::Any] Information about created SSH key.
       #
       # ```
       # client.create_ssh_key("key title", "key body")
@@ -197,7 +197,7 @@ module Gitlab
       #
       # - param  [Int32] user_id The Id of user.
       # - param  [String] key The SSH key body.
-      # - return [Hash] Information about created SSH key.
+      # - return [JSON::Any] Information about created SSH key.
       #
       # ```
       # client.create_ssh_key(2, "key title", "key body")
@@ -209,7 +209,7 @@ module Gitlab
       # Deletes an SSH key for current user.
       #
       # - param  [Int32] ssh_key_id The ID of a user"s SSH key.
-      # - return [Hash] Information about deleted SSH key.
+      # - return [JSON::Any] Information about deleted SSH key.
       #
       # ```
       # client.delete_ssh_key(1)
@@ -222,7 +222,7 @@ module Gitlab
       #
       # - param  [Int32] user_id The Id of user.
       # - param  [Int32] ssh_key_id The ID of a user"s SSH key.
-      # - return [Hash] Information about deleted SSH key.
+      # - return [JSON::Any] Information about deleted SSH key.
       #
       # ```
       # client.delete_ssh_key(1, 1)
@@ -233,7 +233,7 @@ module Gitlab
 
       # Gets current user emails.
       #
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.emails
@@ -245,7 +245,7 @@ module Gitlab
       # Gets a user emails.
       #
       # - param  [Int32] user_id The ID of a user.
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.emails(2)
@@ -257,7 +257,7 @@ module Gitlab
       # Get a single email.
       #
       # - param  [Int32] email_id The ID of a email.
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.email(3)
@@ -269,7 +269,7 @@ module Gitlab
       # Creates a new email for current user.
       #
       # - params  [String] email Email address
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.add_email('email@example.com')
@@ -282,7 +282,7 @@ module Gitlab
       #
       # - params  [Int32] user_id The ID of a user.
       # - params  [String] email Email address
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.add_email('email@example.com', 2)
@@ -294,7 +294,7 @@ module Gitlab
       # Delete email for current user
       #
       # - params  [Int32] email_id Email address ID
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.delete_email(2)
@@ -307,7 +307,7 @@ module Gitlab
       #
       # - params  [Int32] user_id The ID of a user.
       # - params  [Int32] email_id Email address ID
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.delete_email(1, 2)

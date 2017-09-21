@@ -8,7 +8,7 @@ module Gitlab
       #
       # - param  [String] key_id The ID or ssh key.
       # - param  [String] password The password of a user.
-      # - return [Hash] Information about logged in user.
+      # - return [JSON::Any] Information about logged in user.
       #
       # ```
       # client.key(2)

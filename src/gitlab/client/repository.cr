@@ -10,7 +10,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :path The path inside repository. Used to get contend of subdirectories.
       # - option params [String] :ref_name The name of a repository branch or tag or if not given the default branch
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.tree(42)
@@ -89,7 +89,7 @@ module Gitlab
       # - params  [Hash] options A customizable set of options.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return JSON::Any List of projects of the authorized user.
+      # - return [JSON::Any] List of projects of the authorized user.
       #
       # ```
       # client.contributors(1)
