@@ -208,6 +208,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - Create new milestone - `create_milestone`
   - Edit milestone - `edit_milestone`
   - Get all issues assigned to a single milestone - `milestone_issues`
+  - Get all merge requests of a given milestone. - `milestone_merge_requests`
 - Notes (comments)
   - Issues
     - List project issue notes - `issue_notes`

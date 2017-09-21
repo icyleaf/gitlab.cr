@@ -12,7 +12,7 @@ module Gitlab
       # - option params [String] :state Return only active or closed milestones.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of milestones under a project.
+      # - return JSON::Any List of milestones under a project.
       #
       # ```
       # client.milestones(1)
@@ -81,7 +81,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of issues of milestone under a project.
+      # - return JSON::Any List of issues of milestone under a project.
       #
       # ```
       # client.milestone_issues(1, 3)
@@ -89,6 +89,22 @@ module Gitlab
       # ```
       def milestone_issues(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String) : JSON::Any
         JSON.parse get("/projects/#{project_id}/milestones/#{milestone_id}/issues", params: params).body
+      end
+
+      # Gets the merge_requests of a given milestone.
+      #
+      # - param  [Int32] project_id The ID of a project.
+      # - param  [Int32] milestone_id The ID of a milestone.
+      # - param  [Hash] params A customizable set of params.
+      # - option params [String] :page The page number.
+      # - option params [String] :per_page The number of results per page. default is 20
+      # - return JSON::Any List of issues of milestone under a project.
+      #
+      # ```
+      # client.milestone_merge_requests(5, 2)
+      # ```
+      def milestone_merge_requests(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String)
+        JSON.parse get("/projects/#{project_id}/milestones/#{milestone_id}/merge_requests", params: params).body
       end
     end
   end
