@@ -9,7 +9,8 @@ def client
   Gitlab.client(GITLAB_ENDPOINT, GITLAB_TOKEN)
 end
 
-def load_fixture(name)
+def load_fixture(name : String?)
+  return "" unless name
   File.read_lines(File.dirname(__FILE__) + "/fixtures/#{name}.json").join("\n")
 end
 
