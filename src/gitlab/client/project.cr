@@ -67,7 +67,7 @@ module Gitlab
       # - option params [String] :search Return list of authorized projects according to a search criteria.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of projects of the authorized user.
+      # - return JSON::Any List of projects of the authorized user.
       #
       # ```
       # client.projects
@@ -103,7 +103,7 @@ module Gitlab
       # - params  [Hash] options A customizable set of options.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of events under a project.
+      # - return JSON::Any List of events under a project.
       #
       # ```
       # client.project_events(42)
@@ -261,7 +261,7 @@ module Gitlab
       # - option params [String] :page The page to retrieve.
       # - option params [String] :order_by Return requests ordered by id, name, created_at or last_activity_at fields.
       # - option params [String] :sort Return requests sorted in asc or desc order.
-      # - return [Array<Hash>] List of projects under search qyery.
+      # - return JSON::Any List of projects under search qyery.
       #
       # ```
       # client.project_search("gitlab")
@@ -290,7 +290,7 @@ module Gitlab
       # - option options [String] :query The search query.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of team members under a project.
+      # - return JSON::Any List of team members under a project.
       #
       # ```
       # client.project_members(42)
@@ -336,7 +336,7 @@ module Gitlab
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a user.
       # - param  [Int32] access_level The access level to project.
-      # - return [Array<Hash>] Information about updated team member.
+      # - return JSON::Any Information about updated team member.
       #
       # ```
       # client.edit_project_member('gitlab', 3, 20)
@@ -366,7 +366,7 @@ module Gitlab
       # - param  [Hash] options A customizable set of options.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of web hooks under a project.
+      # - return JSON::Any List of web hooks under a project.
       #
       # ```
       # client.project_hooks(42)
@@ -451,7 +451,7 @@ module Gitlab
       # - param  [Hash] options A customizable set of options.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of branches under a project.
+      # - return JSON::Any List of branches under a project.
       #
       # ```
       # client.project_branchs(42)

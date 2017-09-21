@@ -13,7 +13,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of notes of issue under a project.
+      # - return JSON::Any List of notes of issue under a project.
       #
       # ```
       # client.issue_notes(1, 1)
@@ -96,7 +96,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of notes of snippet under a project.
+      # - return JSON::Any List of notes of snippet under a project.
       #
       # ```
       # client.snippet_notes(1, 1)
@@ -172,7 +172,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of notes of merge request under a project.
+      # - return JSON::Any List of notes of merge request under a project.
       #
       # ```
       # client.merge_request_notes(1, 1)

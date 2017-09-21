@@ -89,7 +89,7 @@ module Gitlab
       # - params  [Hash] options A customizable set of options.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of projects of the authorized user.
+      # - return JSON::Any List of projects of the authorized user.
       #
       # ```
       # client.contributors(1)

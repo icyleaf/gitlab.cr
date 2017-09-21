@@ -13,7 +13,7 @@ module Gitlab
       # - option params [String] :until Only commits before or in this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of commits.
+      # - return JSON::Any List of commits.
       #
       # ```
       # client.commits(1)
@@ -56,7 +56,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20.
-      # - return [Array<Hash>] List of comments in a commit.
+      # - return JSON::Any List of comments in a commit.
       #
       # ```
       # client.commit_comments(1, "daff23c")

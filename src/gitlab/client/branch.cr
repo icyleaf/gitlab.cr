@@ -10,7 +10,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of branches under a project.
+      # - return JSON::Any List of branches under a project.
       #
       # ```
       # client.branches(1)

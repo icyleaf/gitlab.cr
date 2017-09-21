@@ -14,7 +14,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of merge requests under a project.
+      # - return JSON::Any List of merge requests under a project.
       #
       # ```
       # client.merge_requests(1)
@@ -127,7 +127,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of issues of merge request under a project.
+      # - return JSON::Any List of issues of merge request under a project.
       #
       # ```
       # client.merge_request_changes(1, 3)
@@ -209,7 +209,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of issues of merge request under a project.
+      # - return JSON::Any List of issues of merge request under a project.
       #
       # ```
       # client.merge_request_closes_issues(1, 3)

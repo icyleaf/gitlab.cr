@@ -9,7 +9,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of groups
+      # - return JSON::Any List of groups
       #
       # ```
       # client.groups
@@ -31,7 +31,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :search Return list of authorized projects according to a search criteria.
       # - option params [String] :ci_enabled_first Return projects ordered by ci_enabled flag. Projects with enabled GitLab CI go first.
-      # - return [Array<Hash>] List of projects under a group
+      # - return JSON::Any List of projects under a group
       #
       # ```
       # client.group_projects(1)
@@ -112,7 +112,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :per_page Number of projects to return per page
       # - option params [String] :page The page to retrieve
-      # - return [Array<Hash>] List of projects under search qyery
+      # - return JSON::Any List of projects under search qyery
       #
       # ```
       # client.group_search("gitlab")
@@ -140,7 +140,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of group members under a group
+      # - return JSON::Any List of group members under a group
       #
       # ```
       # client.group_members(1)

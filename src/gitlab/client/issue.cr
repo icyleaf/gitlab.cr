@@ -23,7 +23,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of issues.
+      # - return JSON::Any List of issues.
       #
       # ```
       # client.issues
@@ -45,7 +45,7 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of issues under a project.
+      # - return JSON::Any List of issues under a project.
       #
       # ```
       # client.issue(1)

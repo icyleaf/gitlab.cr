@@ -9,7 +9,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page.
-      # - return [Array<Hash>]
+      # - return JSON::Any
       #
       # ```
       # client.users
@@ -107,7 +107,7 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :per_page Number of projects to return per page
       # - option params [String] :page The page to retrieve
-      # - return [Array<Hash>] List of projects under search qyery
+      # - return JSON::Any List of projects under search qyery
       #
       # ```
       # client.group_search("icyleaf")
@@ -147,7 +147,7 @@ module Gitlab
 
       # Gets a list of current user"s SSH keys.
       #
-      # - return [Array<Hash>]
+      # - return JSON::Any
       #
       # ```
       # client.ssh_keys
@@ -159,7 +159,7 @@ module Gitlab
       # Gets a list of a user"s SSH keys.
       #
       # - param  [Int32] user_id The Id of user.
-      # - return [Array<Hash>]
+      # - return JSON::Any
       #
       # ```
       # client.ssh_keys(4)
