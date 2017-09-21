@@ -238,7 +238,7 @@ module Gitlab
       # client.delete_merge_request_note(1, 3, 6)
       # ```
       def delete_merge_request_note(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/merge_requestss/#{merge_request_id}/notes/#{note_id}").body
+        JSON.parse delete("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes/#{note_id}").body
       end
     end
   end
