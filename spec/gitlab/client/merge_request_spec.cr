@@ -144,4 +144,8 @@ Spec2.describe Gitlab::Client::MergeRequest do
       expect(merge_request["project_id"].as_i).to eq 3
     end
   end
+
+  describe ".cancel_merge_request_when_build_succeed"
+    pending("TODO")
+  end
 end

@@ -85,21 +85,11 @@ Spec2.describe Gitlab::Client::Issue do
     end
   end
 
-  describe ".subscribe_issue" do
-    it "should return information about the subscribed issue" do
-      WebMock.reset
-      stub_post("/projects/3/issues/33/subscribe", "issue")
-      issue = client.subscribe_issue(3, 33)
-
-      expect(issue["project_id"].as_i).to eq 3
-      expect(issue["assignee"]["name"].as_s).to eq "Jack Smith"
-    end
-  end
-
-  describe ".unsubscribe_issue" do
-    it "should return information about the unsubscribed issue" do
-      stub_post("/projects/3/issues/33/unsubscribe", "issue")
-      issue = client.unsubscribe_issue(3, 33)
+  describe ".move_issue" do
+    it "should return information about the moved issue" do
+      form = {"to_project_id" => "4"}
+      stub_post("/projects/3/issues/33/move", "issue", form: form)
+      issue = client.move_issue(3, 33, 4)
 
       expect(issue["project_id"].as_i).to eq 3
       expect(issue["assignee"]["name"].as_s).to eq "Jack Smith"
@@ -116,11 +106,21 @@ Spec2.describe Gitlab::Client::Issue do
     end
   end
 
-  describe ".move_issue" do
-    it "should return information about the moved issue" do
-      form = {"to_project_id" => "4"}
-      stub_post("/projects/3/issues/33/move", "issue", form: form)
-      issue = client.move_issue(3, 33, 4)
+  describe ".subscribe_issue" do
+    it "should return information about the subscribed issue" do
+      WebMock.reset
+      stub_post("/projects/3/issues/33/subscribe", "issue")
+      issue = client.subscribe_issue(3, 33)
+
+      expect(issue["project_id"].as_i).to eq 3
+      expect(issue["assignee"]["name"].as_s).to eq "Jack Smith"
+    end
+  end
+
+  describe ".unsubscribe_issue" do
+    it "should return information about the unsubscribed issue" do
+      stub_post("/projects/3/issues/33/unsubscribe", "issue")
+      issue = client.unsubscribe_issue(3, 33)
 
       expect(issue["project_id"].as_i).to eq 3
       expect(issue["assignee"]["name"].as_s).to eq "Jack Smith"
