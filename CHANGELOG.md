@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Support return nil in `remove_project_hook`
 - Support pass extra params in `accept_merge_request`
 - Change query to body to pass data in PUT request
+- Change `edit_group` pass args way(from key to hash)
 - 100% pass rspec
 - Based on Crystal v0.23.1
 

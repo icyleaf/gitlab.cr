@@ -59,17 +59,20 @@ module Gitlab
       #
       # - param [String] name The name of a group.
       # - param [String] path The path of a group.
-      # - param [String] description The group"s description.
-      # - param [String] visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.
+      # - param [Hash] form A customizable set of form.
+      # - option form [String] :description The group"s description.
+      # - option form [String] : visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.
       # - return [JSON::Any] Information about created group.
       #
       # ```
       # client.create_group("new-group", "group-path")
-      # client.create_group("gitlab", "gitlab-path", "New Gitlab project")
-      # client.create_group("gitlab", "gitlab-path", visibility_level: 0)
+      # client.create_group("gitlab", "gitlab-path", {"description" => "New Gitlab project"})
+      # client.create_group("gitlab", "gitlab-path", {"visibility_level" => "0"})
       # ```
-      def create_group(name, path, description = nil, visibility_level : Int32? = nil) : JSON::Any
-        form = build_group_params(name, path, description, visibility_level)
+      def create_group(name : String, path : String, form : Hash? =  nil) : JSON::Any
+        default_form = {"name" => name, "path" => path}
+        form = form ? form.merge(default_form) : default_form
+
         JSON.parse post("/groups", form: form).body
       end
 
@@ -78,19 +81,17 @@ module Gitlab
       # Notes: Not all gitlab version has this api.
       #
       # - param [Int32] group_id The ID of a group.
-      # - param [String] name The name of a group.
-      # - param [String] path The path of a group.
-      # - param [String] description The group"s description.
-      # - param [String] visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.
+      # - param [Hash] form A customizable set of form.
+      # - option form [String] :description The group"s description.
+      # - option form [String] :visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.
       # - return [JSON::Any] Information about created group.
       #
       # ```
-      # client.create_group("new-group", "group-path")
-      # client.create_group("gitlab", "gitlab-path", "New Gitlab project")
-      # client.create_group("gitlab", "gitlab-path", visibility_level: 0})
+      # client.create_group(3, {"name" => "group-path"})
+      # client.create_group(3, {"description" => "New Gitlab project"})
+      # client.create_group(3, {"visibility_level" => "0"})
       # ```
-      def edit_group(group_id : Int32, name, path, description = nil, visibility_level : Int32? = nil) : JSON::Any
-        form = build_group_params(name, path, description, visibility_level)
+      def edit_group(group_id : Int32, form : Hash? =  nil) : JSON::Any
         JSON.parse put("/groups/#{group_id}", form: form).body
       end
 
@@ -207,15 +208,6 @@ module Gitlab
       # ```
       def remove_group_member(group_id : Int32, user_id : Int32) : JSON::Any
         JSON.parse delete("/groups/#{group_id}/members/#{user_id.to_s}").body
-      end
-
-      private def build_group_params(name, path, description = nil, visibility_level : Int32? = nil)
-        Hash(String, String).new.tap do |params|
-          params["name"] = name
-          params["path"] = path
-          params["description"] = description if description
-          params["visibility_level"] = visibility_level.to_s if visibility_level
-        end
       end
     end
   end

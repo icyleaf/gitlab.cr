@@ -36,12 +36,23 @@ Spec2.describe Gitlab::Client::Group do
       it "should return information about a created group" do
         WebMock.reset
         stub_post("/groups", "group_create_with_description")
-        group = client.create_group("GitLab-Group", "gitlab-path", "gitlab group description")
+        group = client.create_group("GitLab-Group", "gitlab-path", {"description" => "gitlab group description"})
 
         expect(group["name"].as_s).to eq "Gitlab-Group"
         expect(group["path"].as_s).to eq "gitlab-group"
         expect(group["description"].as_s).to eq "gitlab group description"
       end
+    end
+  end
+
+  describe ".edit_group" do
+    it "should return information about a edited group" do
+      form = {"name" => "Gitlab-Edited"}
+      stub_put("/groups/3", "group_edit", form: form)
+      group = client.edit_group(3, form)
+
+      expect(group["name"].as_s).to eq "Gitlab-Edited"
+      expect(group["path"].as_s).to eq "gitlab-group"
     end
   end
 

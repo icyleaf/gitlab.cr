@@ -48,25 +48,25 @@ module Gitlab
       # - param  [String] email The email of a user.
       # - param  [String] password The password of a user.
       # - param  [String] username The username of a user.
-      # - param  [Hash] params A customizable set of params.
-      # - option params [String] :name The name of a user. Defaults to email.
-      # - option params [String] :skype The skype of a user.
-      # - option params [String] :linkedin The linkedin of a user.
-      # - option params [String] :twitter The twitter of a user.
-      # - option params [Int32] :projects_limit The limit of projects for a user.
+      # - param  [Hash] form A customizable set of form.
+      # - option form [String] :name The name of a user. Defaults to email.
+      # - option form [String] :skype The skype of a user.
+      # - option form [String] :linkedin The linkedin of a user.
+      # - option form [String] :twitter The twitter of a user.
+      # - option form [Int32] :projects_limit The limit of projects for a user.
       # - return [JSON::Any] Information about created user.
       #
       # ```
       # Gitlab.create_user("icy.leaf@kaifeng.cn", "secret", "icyleaf", {"name" => "三火"})
       # Gitlab.create_user("icy.leaf@kaifeng.cn", "secret", "icyleaf")
       # ```
-      def create_user(email : String, password : String, username : String, params : Hash = {} of String => String) : JSON::Any
+      def create_user(email : String, password : String, username : String, form : Hash = {} of String => String) : JSON::Any
         JSON.parse post("/users", form: {
           "email"    => email,
           "password" => password,
           "username" => username,
           "name"     => username,
-        }.merge(params)).body
+        }.merge(form)).body
       end
 
       # Updates a user.
