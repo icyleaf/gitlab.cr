@@ -69,7 +69,7 @@ module Gitlab
       # client.create_group("gitlab", "gitlab-path", {"description" => "New Gitlab project"})
       # client.create_group("gitlab", "gitlab-path", {"visibility_level" => "0"})
       # ```
-      def create_group(name : String, path : String, form : Hash? =  nil) : JSON::Any
+      def create_group(name : String, path : String, form : Hash? = nil) : JSON::Any
         default_form = {"name" => name, "path" => path}
         form = form ? form.merge(default_form) : default_form
 
@@ -91,7 +91,7 @@ module Gitlab
       # client.create_group(3, {"description" => "New Gitlab project"})
       # client.create_group(3, {"visibility_level" => "0"})
       # ```
-      def edit_group(group_id : Int32, form : Hash? =  nil) : JSON::Any
+      def edit_group(group_id : Int32, form : Hash? = nil) : JSON::Any
         JSON.parse put("/groups/#{group_id}", form: form).body
       end
 

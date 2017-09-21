@@ -176,6 +176,7 @@ module Gitlab
     include Group
     include Project
     include Repository
+    include RepositoryFile
     include Branch
     include Tag
     include Commit

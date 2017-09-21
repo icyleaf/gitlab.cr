@@ -146,12 +146,17 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
     - Delete an existing forked from relationship - `remove_fork_from`
   - Search for projects by name - `project_search`
 - Repositories
-  - Get file archive
   - List repository tree - `tree`
-  - Raw file content - `file_contents`
-  - Raw blob content - `blow_content`
+  - Raw blob content - `blow`
+  - Get an archive of the repository - `archive_project`
   - Compare branches, tags or commits - `compare`
   - Contributors - `contributors`
+- Repository File
+  - Gets a repository file - `get_file`
+  - Get raw file content - `file_contents`
+  - Create a file
+  - Edit a file
+  - Remove a file
 - Commits
   - List repository commits - `commits`
   - Get a single commit - `commit`

@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Support pass extra params in `accept_merge_request`
 - Change query to body to pass data in PUT request
 - Change `edit_group` pass args way(from key to hash)
+- Rename `file_archive` to `repo_archive`
+- Rename `blob_contents` to `blob`
+- Get file content via two ways, one fail, try the other
 - 100% pass rspec
 - Based on Crystal v0.23.1
 
@@ -24,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Add `milestone_merge_requests` api
 - Add `update_merge_request` api
 - Add `group_member` api
+- Add `get_file`
 
 ### Fixed
 
