@@ -67,7 +67,7 @@ module Gitlab
       # - option params [String] :search Return list of authorized projects according to a search criteria.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return JSON::Any List of projects of the authorized user.
+      # - return [JSON::Any] List of projects of the authorized user.
       #
       # ```
       # client.projects
@@ -88,7 +88,7 @@ module Gitlab
       # Gets information about a project.
       #
       # - params  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash] Information about project.
+      # - return [JSON::Any] Information about project.
       #
       # ```
       # client.project("gitlab")
@@ -103,7 +103,7 @@ module Gitlab
       # - params  [Hash] options A customizable set of options.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return JSON::Any List of events under a project.
+      # - return [JSON::Any] List of events under a project.
       #
       # ```
       # client.project_events(42)
@@ -121,48 +121,48 @@ module Gitlab
       # client.create_project(1, "gitlab", { "description: => "Awesome project" })
       # ```
       def create_project(user_id : Int32, name : String, params : Hash = {} of String => String) : JSON::Any
-        create_project(name, {"user_id" => user_id.to_s}.merge(params)).body
+        create_project(name, {"user_id" => user_id.to_s}.merge(params))
       end
 
       # Creates a new project.
       #
       # - params [String] name The name of a project.
-      # - params [Hash] options A customizable set of options.
-      # - option params [String] :description The description of a project.
-      # - option params [String] :default_branch The default branch of a project.
-      # - option params [String] :namespace_id The namespace in which to create a project.
-      # - option params [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).
-      # - option params [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).
-      # - option params [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).
-      # - option params [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).
-      # - option params [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).
-      # - option params [String] :public The setting for making a project public (0 = false, 1 = true).
-      # - option params [String] :user_id The user/owner id of a project.
-      # - return [Hash] Information about created project.
+      # - params [Hash] form A customizable set of options.
+      # - option form [String] :description The description of a project.
+      # - option form [String] :default_branch The default branch of a project.
+      # - option form [String] :namespace_id The namespace in which to create a project.
+      # - option form [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).
+      # - option form [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).
+      # - option form [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).
+      # - option form [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).
+      # - option form [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).
+      # - option form [String] :public The setting for making a project public (0 = false, 1 = true).
+      # - option form [String] :user_id The user/owner id of a project.
+      # - return [JSON::Any] Information about created project.
       #
       # ```
       # client.create_project("gitlab")
       # client.create_project("viking", { "description: => "Awesome project" })
       # client.create_project("Red", { "wall_enabled" => "false" })
       # ```
-      def create_project(name, params : Hash = {} of String => String) : JSON::Any
-        uri = if params.has_key?("user_id") && params["user_id"]
-                "/projects/user/#{params[:user_id]}"
+      def create_project(name : String, form : Hash = {} of String => String) : JSON::Any
+        uri = if user_id = form["user_id"]?
+                "/projects/user/#{user_id}"
               else
                 "/projects"
               end
 
-        JSON.parse post(uri, form: {"name" => name}.merge(params)).body
+        JSON.parse post(uri, form: form.merge({"name" => name})).body
       end
 
       # Updates an existing project.
       #
       # - params [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - params [Hash] options A customizable set of options.
-      # - option params [String] :name The name of a project.
-      # - option params [String] :path The name of a project.
-      # - option params [String] :description The name of a project.
-      # - return [Hash] Information about the edited project.
+      # - params [Hash] form A customizable set of options.
+      # - option form [String] :name The name of a project.
+      # - option form [String] :path The name of a project.
+      # - option form [String] :description The name of a project.
+      # - return [JSON::Any] Information about the edited project.
       #
       # ```
       # client.edit_project(42)
@@ -175,22 +175,22 @@ module Gitlab
       # Forks a project into the user namespace.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - param  [Hash] options A customizable set of options.
-      # - option options [String] :sudo The username the project will be forked for.
-      # - return [Hash] Information about the forked project.
+      # - param  [Hash] form A customizable set of options.
+      # - option form [String] :sudo The username the project will be forked for.
+      # - return [JSON::Any] Information about the forked project.
       #
       # ```
       # client.create_fork(42)
       # client.create_fork(42, {"sudo" => "another_username"})
       # ```
-      def fork_project(project : Int32 | String, params : Hash = {} of String => String) : JSON::Any
-        JSON.parse post("/projects/fork/#{project}", form: params).body
+      def fork_project(project : Int32 | String, form : Hash = {} of String => String) : JSON::Any
+        JSON.parse post("/projects/#{project}/fork", form: form).body
       end
 
       # Star a project for the authentication user.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash] Information about the starred project.
+      # - return [JSON::Any] Information about the starred project.
       #
       # ```
       # client.star_project(42)
@@ -202,7 +202,7 @@ module Gitlab
       # Unstar a project.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash] Information about the unstar project.
+      # - return [JSON::Any] Information about the unstar project.
       #
       # ```
       # client.unstar_project(42)
@@ -214,7 +214,7 @@ module Gitlab
       # Archive a project.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash] Information about the archive project.
+      # - return [JSON::Any] Information about the archive project.
       #
       # ```
       # client.archive_project(42)
@@ -226,7 +226,7 @@ module Gitlab
       # Unarchive a project.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash] Information about the unarchive project.
+      # - return [JSON::Any] Information about the unarchive project.
       #
       # ```
       # client.unarchive_project(42)
@@ -240,7 +240,7 @@ module Gitlab
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] options A customizable set of options.
       # - option options [String] :sudo The username the project will be forked for.
-      # - return [Hash] Information about the share project.
+      # - return [JSON::Any] Information about the share project.
       #
       # ```
       # client.share_project(2, 1)
@@ -261,20 +261,20 @@ module Gitlab
       # - option params [String] :page The page to retrieve.
       # - option params [String] :order_by Return requests ordered by id, name, created_at or last_activity_at fields.
       # - option params [String] :sort Return requests sorted in asc or desc order.
-      # - return JSON::Any List of projects under search qyery.
+      # - return [JSON::Any] List of projects under search qyery.
       #
       # ```
       # client.project_search("gitlab")
       # client.project_search("gitlab", {"per_page" => 50})
       # ```
       def project_search(query, params : Hash = {} of String => String) : JSON::Any
-        JSON.parse get("/projects/search/#{query}", params: params).body
+        JSON.parse get("/projects", params: params.merge({"search" => query})).body
       end
 
       # Deletes a project.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash] Information about the deleted project.
+      # - return [JSON::Any] Information about the deleted project.
       #
       # ```
       # client.delete_project(42)
@@ -290,7 +290,7 @@ module Gitlab
       # - option options [String] :query The search query.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
-      # - return JSON::Any List of team members under a project.
+      # - return [JSON::Any] List of team members under a project.
       #
       # ```
       # client.project_members(42)
@@ -304,13 +304,13 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a project team member.
-      # - return [Hash] Information about member under a project.
+      # - return [JSON::Any] Information about member under a project.
       #
       # ```
       # client.project_member(1, 2)
       # ```
       def project_member(project : Int32 | String, user_id : Int32) : JSON::Any
-        JSON.parse get("/projects/#{project}/members#{user_id}").body
+        JSON.parse get("/projects/#{project}/members/#{user_id}").body
       end
 
       # Adds a user to project team.
@@ -318,16 +318,15 @@ module Gitlab
       # - param  [Int32, String] project_id The ID or name of a project.
       # - param  [Int32] user_id The ID of a user.
       # - param  [Int32] access_level The access level to project.
-      # - param  [Hash] options A customizable set of options.
-      # - return [Hash] Information about added team member.
+      # - return [JSON::Any] Information about added team member.
       #
       # ```
       # client.add_project_member('gitlab', 2, 40)
       # ```
-      def add_project_member(project : Int32 | String, user_id, access_level) : JSON::Any
+      def add_project_member(project : Int32 | String, user_id : Int32, access_level : Int32) : JSON::Any
         JSON.parse post("/projects/#{project}/members", form: {
-          "user_id"      => user_id,
-          "access_level" => access_level,
+          "user_id"      => user_id.to_s,
+          "access_level" => access_level.to_s,
         }).body
       end
 
@@ -336,7 +335,7 @@ module Gitlab
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a user.
       # - param  [Int32] access_level The access level to project.
-      # - return JSON::Any Information about updated team member.
+      # - return [JSON::Any] Information about updated team member.
       #
       # ```
       # client.edit_project_member('gitlab', 3, 20)
@@ -351,7 +350,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a user.
-      # - return [Hash] Information about removed team member.
+      # - return [JSON::Any] Information about removed team member.
       #
       # ```
       # client.remove_project_member('gitlab', 2)
@@ -363,10 +362,10 @@ module Gitlab
       # Get a list of a project's web hooks.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - param  [Hash] options A customizable set of options.
-      # - option options [Int32] :page The page number.
-      # - option options [Int32] :per_page The number of results per page.
-      # - return JSON::Any List of web hooks under a project.
+      # - param  [Hash] params A customizable set of options.
+      # - option params [Int32] :page The page number.
+      # - option params [Int32] :per_page The number of results per page.
+      # - return [JSON::Any] List of web hooks under a project.
       #
       # ```
       # client.project_hooks(42)
@@ -380,7 +379,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] hook_id The ID of a web hook.
-      # - return [Hash] Information about the web hook.
+      # - return [JSON::Any] Information about the web hook.
       #
       # ```
       # client.project_hook(42)
@@ -394,21 +393,21 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [String] url The url of a web hook.
-      # - param  [Hash] params A customizable set of options.
-      # - option params [String] :push_events Trigger hook on push events.
-      # - option params [String] :issues_events Trigger hook on issues events.
-      # - option params [String] :merge_requests_events Trigger hook on merge_requests events.
-      # - option params [String] :tag_push_events Trigger hook on push_tag events.
-      # - option params [String] :note_events Trigger hook on note events.
-      # - option params [String] :enable_ssl_verification Do SSL verification when triggering the hook.
-      # - return [Hash] Information about the created web hook.
+      # - param  [Hash] form A customizable set of options.
+      # - option form [String] :push_events Trigger hook on push events.
+      # - option form [String] :issues_events Trigger hook on issues events.
+      # - option form [String] :merge_requests_events Trigger hook on merge_requests events.
+      # - option form [String] :tag_push_events Trigger hook on push_tag events.
+      # - option form [String] :note_events Trigger hook on note events.
+      # - option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.
+      # - return [JSON::Any] Information about the created web hook.
       #
       # ```
       # client.add_project_hook(42, "https://hooks.slack.com/services/xxx")
       # client.add_project_hook('gitlab', "https://hooks.slack.com/services/xxx", { "issues_events" => "true" })
       # ```
-      def add_project_hook(project : Int32 | String, url : String, params : Hash = {} of String => String) : JSON::Any
-        JSON.parse post("/projects/#{project}/hooks", form: {"url" => url}.merge(params)).body
+      def add_project_hook(project : Int32 | String, url : String, form : Hash = {} of String => String) : JSON::Any
+        JSON.parse post("/projects/#{project}/hooks", form: form.merge({"url" => url})).body
       end
 
       # Updates a web hook of a project.
@@ -416,33 +415,35 @@ module Gitlab
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] hook_id The ID of a web hook.
       # - param  [Int32] url The url of a web hook.
-      # - param  [Hash] params A customizable set of options.
-      # - option params [String] :push_events Trigger hook on push events.
-      # - option params [String] :issues_events Trigger hook on issues events.
-      # - option params [String] :merge_requests_events Trigger hook on merge_requests events.
-      # - option params [String] :tag_push_events Trigger hook on push_tag events.
-      # - option params [String] :note_events Trigger hook on note events.
-      # - option params [String] :enable_ssl_verification Do SSL verification when triggering the hook.
-      # - return [Hash] Information about updated web hook.
+      # - param  [Hash] form A customizable set of options.
+      # - option form [String] :push_events Trigger hook on push events.
+      # - option form [String] :issues_events Trigger hook on issues events.
+      # - option form [String] :merge_requests_events Trigger hook on merge_requests events.
+      # - option form [String] :tag_push_events Trigger hook on push_tag events.
+      # - option form [String] :note_events Trigger hook on note events.
+      # - option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.
+      # - return [JSON::Any] Information about updated web hook.
       #
       # ```
       # client.edit_project_hook('gitlab', 3, "https://hooks.slack.com/services/xxx")
       # ```
       def edit_project_hook(project : Int32 | String, hook_id : Int32, url : String, form : Hash = {} of String => String) : JSON::Any
-        JSON.parse put("/projects/#{project}/hooks/#{hook_id}", form: {"url" => url}.merge(form)).body
+        JSON.parse put("/projects/#{project}/hooks/#{hook_id}", form: form.merge({"url" => url})).body
       end
 
       # Removes a user from project team.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] hook_id The ID of a web hook.
-      # - return [Hash] Information about removed web hook.
+      # - return [JSON::Any | Nil] Information about removed web hook.
       #
       # ```
-      # client.remove_project_member('gitlab', 2)
+      # client.remove_project_hook('gitlab', 2)
+      # client.remove_project_hook(1, 2)
       # ```
-      def remove_project_hook(project : Int32 | String, hook_id : Int32) : JSON::Any
-        JSON.parse delete("/projects/#{project}/hooks/#{hook_id}").body
+      def remove_project_hook(project : Int32 | String, hook_id : Int32) : JSON::Any?
+        body = delete("/projects/#{project}/hooks/#{hook_id}").body
+        JSON.parse(body) unless body.empty?
       end
 
       # Get a list of a project's branches.
@@ -451,7 +452,7 @@ module Gitlab
       # - param  [Hash] options A customizable set of options.
       # - option options [Int32] :page The page number.
       # - option options [Int32] :per_page The number of results per page.
-      # - return JSON::Any List of branches under a project.
+      # - return [JSON::Any] List of branches under a project.
       #
       # ```
       # client.project_branchs(42)
@@ -465,7 +466,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] branch The name of a branch.
-      # - return [Hash] Information about the branch under a project.
+      # - return [JSON::Any] Information about the branch under a project.
       #
       # ```
       # client.project_branch(42)
@@ -479,7 +480,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] branch The name of a branch.
-      # - return [Hash] Information about the protected branch.
+      # - return [JSON::Any] Information about the protected branch.
       #
       # ```
       # client.protect_project_branch(2, "master")
@@ -493,7 +494,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] branch The name of a branch.
-      # - return [Hash] Information about the unprotect branch.
+      # - return [JSON::Any] Information about the unprotect branch.
       #
       # ```
       # client.unprotect_project_branch(2, "master")
@@ -507,24 +508,24 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Hash] branch The name of a branch.
-      # - return [Hash] Information about the forked project.
+      # - return [JSON::Any] Information about the forked project.
       #
       # ```
       # client.create_fork_from(1, 21)
       # ```
       def create_fork_from(project : Int32 | String, forked_from_id : Int32) : JSON::Any
-        JSON.parse put("/projects/#{project}/fork/#{forked_from_id}").body
+        JSON.parse post("/projects/#{project}/fork/#{forked_from_id}").body
       end
 
       # Delete an existing forked from relationship. Available only for admins.
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
-      # - return [Hash] Information about the unforked project.
+      # - return [JSON::Any] Information about the unforked project.
       #
       # ```
-      # client.create_fork_from(1, 21)
+      # client.remove_fork(1)
       # ```
-      def remove_fork_from(project : Int32 | String) : JSON::Any
+      def remove_fork(project : Int32 | String) : JSON::Any
         JSON.parse delete("/projects/#{project}/fork").body
       end
 
@@ -536,7 +537,7 @@ module Gitlab
       #
       # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [String] file The path of a file.
-      # - return [Hash] Information about the uploaded file.
+      # - return [JSON::Any] Information about the uploaded file.
       #
       # ```
       # client.upload_file(1, "/Users/icyleaf/Desktop/snippets_ruby.rb")
