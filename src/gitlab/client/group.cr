@@ -150,7 +150,6 @@ module Gitlab
         JSON.parse get("/groups/#{group_id}/members", params: params).body
       end
 
-
       # Get details of a single group member.
       #
       # - param  [Integer] group_id The ID of the group to find a member in.

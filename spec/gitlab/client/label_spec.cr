@@ -22,7 +22,7 @@ Spec2.describe Gitlab::Client::Label do
 
   describe ".edit_label" do
     it "should return information about an edited label" do
-      form = { "name" => "TODO", "new_name" => "Backlog"}
+      form = {"name" => "TODO", "new_name" => "Backlog"}
       stub_put("/projects/3/labels", "label", form: form)
       label = client.edit_label(3, "TODO", form)
 
@@ -44,7 +44,6 @@ Spec2.describe Gitlab::Client::Label do
     it "should return information about the label subscribed to" do
       stub_post("/projects/3/labels/Backlog/subscribe", "label")
       label = client.subscribe_label(3, "Backlog")
-      pp label
 
       expect(label["name"].as_s).to eq "Backlog"
       expect(label["subscribed"].as_bool).to be_truthy

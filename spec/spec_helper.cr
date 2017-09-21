@@ -3,7 +3,7 @@ require "webmock"
 require "../src/gitlab"
 
 GITLAB_ENDPOINT = "https://gitlab.example.com/api/v3"
-GITLAB_TOKEN = "token"
+GITLAB_TOKEN    = "token"
 
 def client
   Gitlab.client(GITLAB_ENDPOINT, GITLAB_TOKEN)

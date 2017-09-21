@@ -65,7 +65,6 @@ Spec2.describe Gitlab::Client::Group do
       stub_post("/groups/#{group["id"]}/projects/#{project["id"]}", "group_create")
       group_transfer = client.transfer_project_to_group(group["id"], project["id"])
 
-
       expect(group_transfer["name"]).to eq group["name"]
       expect(group_transfer["path"]).to eq group["path"]
       expect(group_transfer["id"]).to eq group["id"]

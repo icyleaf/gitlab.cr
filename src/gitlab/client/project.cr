@@ -247,7 +247,7 @@ module Gitlab
       # client.share_project(2, 1, {"group_access" => "50"})
       # ```
       def share_project(project : Int32 | String, group_id : Int32, group_access = nil) : JSON::Any
-        form = { "group_id" => group_id }
+        form = {"group_id" => group_id}
         form["group_access"] = group_access if group_access
 
         JSON.parse post("/projects/#{project}/share", form: form).body

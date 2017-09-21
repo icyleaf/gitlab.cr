@@ -122,8 +122,8 @@ module Gitlab
       #
       # ```
       # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "success")
-      # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "failed", { "name" => "jenkins" })
-      # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "canceled", { "name" => "jenkins", "target_url": "http://example.com/builds/1" })
+      # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "failed", {"name" => "jenkins"})
+      # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "canceled", {"name" => "jenkins", "target_url": "http://example.com/builds/1"})
       # ```
       def update_commit_status(project_id : Int32, sha : String, state : String, params : Hash = {} of String => String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/statuses/#{sha}", form: {

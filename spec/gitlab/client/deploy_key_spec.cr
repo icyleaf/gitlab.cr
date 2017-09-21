@@ -26,7 +26,7 @@ Spec2.describe Gitlab::Client::DeployKey do
 
   describe ".create_deploy_key" do
     it "should return information about a created deploy key" do
-      form = { "title" => "Key Title", "key" => "ssh-rsa AAAABBBCCCDDDEEEFFF"}
+      form = {"title" => "Key Title", "key" => "ssh-rsa AAAABBBCCCDDDEEEFFF"}
       stub_post("/projects/42/deploy_keys", "project_key", form: form)
       deploy_key = client.create_deploy_key(42, form["title"], form["key"])
 

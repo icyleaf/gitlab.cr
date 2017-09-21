@@ -37,8 +37,8 @@ Spec2.describe Gitlab::Client::Tag do
         WebMock.reset
         form = {
           "tag_name" => "v1.10",
-          "ref" => "2695effb5807a22ff3d138d593fd856244e155e7",
-          "message" => "Release 1.1.0"
+          "ref"      => "2695effb5807a22ff3d138d593fd856244e155e7",
+          "message"  => "Release 1.1.0",
         }
         stub_post("/projects/3/repository/tags", "project_tag_annotated", form: form)
         tag = client.create_tag(3, "v1.1.0", "2695effb5807a22ff3d138d593fd856244e155e7", form)

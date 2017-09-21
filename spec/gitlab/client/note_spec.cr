@@ -68,7 +68,7 @@ Spec2.describe Gitlab::Client::Note do
   describe "create note" do
     context "when issue note" do
       it "should return information about a created note" do
-        form = { "body" => "The solution is rather tricky" }
+        form = {"body" => "The solution is rather tricky"}
         stub_post("/projects/3/issues/7/notes", "note", form: form)
         note = client.create_issue_note(3, 7, "The solution is rather tricky")
 
@@ -79,7 +79,7 @@ Spec2.describe Gitlab::Client::Note do
 
     context "when snippet note" do
       it "should return information about a created note" do
-        form = { "body" => "The solution is rather tricky" }
+        form = {"body" => "The solution is rather tricky"}
         stub_post("/projects/3/snippets/7/notes", "note", form: form)
         note = client.create_snippet_note(3, 7, "The solution is rather tricky")
 
@@ -90,7 +90,7 @@ Spec2.describe Gitlab::Client::Note do
 
     context "when merge_request note" do
       it "should return information about a created note" do
-        form = { "body" => "The solution is rather tricky" }
+        form = {"body" => "The solution is rather tricky"}
         stub_post("/projects/3/merge_requests/7/notes", "note", form: form)
         note = client.create_merge_request_note(3, 7, "The solution is rather tricky")
 
@@ -132,7 +132,7 @@ Spec2.describe Gitlab::Client::Note do
   describe "modify note" do
     context "when issue note" do
       it "should return information about a modified issue note" do
-        form = { "body" => "edited issue note content" }
+        form = {"body" => "edited issue note content"}
         stub_put("/projects/3/issues/7/notes/1201", "note", form: form)
         note = client.edit_issue_note(3, 7, 1201, "edited issue note content")
 
@@ -142,7 +142,7 @@ Spec2.describe Gitlab::Client::Note do
 
     context "when snippet note" do
       it "should return information about a modified snippet note" do
-        form = { "body" => "edited snippet note content" }
+        form = {"body" => "edited snippet note content"}
         stub_put("/projects/3/snippets/7/notes/1201", "note", form: form)
         note = client.edit_snippet_note(3, 7, 1201, "edited snippet note content")
 
@@ -152,7 +152,7 @@ Spec2.describe Gitlab::Client::Note do
 
     context "when merge request note" do
       it "should return information about a modified request note" do
-        form = { "body" => "edited merge request note content" }
+        form = {"body" => "edited merge request note content"}
         stub_put("/projects/3/merge_requests/7/notes/1201", "note", form: form)
         note = client.edit_merge_request_note(3, 7, 1201, "edited merge request note content")
 

@@ -1,7 +1,6 @@
-
 require "../../spec_helper"
 
-Spec2.describe Gitlab::Client::Repository do
+Spec2.describe Gitlab::Client::Session do
   describe ".session" do
     it "should return information about a created session" do
       stub_post("/session", "session", 200)

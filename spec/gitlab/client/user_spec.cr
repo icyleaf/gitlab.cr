@@ -57,7 +57,7 @@ Spec2.describe Gitlab::Client::User do
 
   describe ".edit_user" do
     it "should get the correct resource" do
-      params = { "name" => "Roberto" }
+      params = {"name" => "Roberto"}
       stub_put("/users/1", "user", params)
       user = client.edit_user(1, params)
 
@@ -153,7 +153,6 @@ Spec2.describe Gitlab::Client::User do
       end
     end
   end
-
 
   describe ".add_email" do
     describe "without user ID" do

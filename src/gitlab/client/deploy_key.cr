@@ -66,7 +66,6 @@ module Gitlab
         JSON.parse delete("/projects/#{project_id}/deploy_keys/#{key_id}").body
       end
 
-
       # Enables a deploy key at the project.
       #
       # - param  [Integer, String] project The ID or path of a project.

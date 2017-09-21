@@ -13,7 +13,7 @@ Spec2.describe Gitlab::Client::Repository do
 
   describe ".compare" do
     it "should get diffs of a merge request" do
-      params = { "from" => "master", "to" => "feature" }
+      params = {"from" => "master", "to" => "feature"}
       stub_get("/projects/3/repository/compare", "compare_merge_request_diff", params: params)
       diff = client.compare(3, "master", "feature")
       expect(diff["diffs"][-1]["new_path"].as_s).to eq "files/js/application.js"

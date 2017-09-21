@@ -137,7 +137,6 @@ module Gitlab
         JSON.parse get("/projects/#{project_id}/merge_requests/#{merge_request_id}/changes", params: params).body
       end
 
-
       # Updates a merge request.
       #
       # - param  [Integer] project The ID or name of a project.
@@ -152,7 +151,7 @@ module Gitlab
       # ```
       # client.update_merge_request(5, 42, { title: 'New title' })
       # ```
-      def update_merge_request(project_id : Int32, merge_request_id , form : Hash? = nil)
+      def update_merge_request(project_id : Int32, merge_request_id, form : Hash? = nil)
         JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}", form: form).body
       end
 

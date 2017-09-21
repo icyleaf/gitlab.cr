@@ -91,7 +91,7 @@ Spec2.describe Gitlab::Client::Project do
 
     context "with the sudo option" do
       it "should return information about the forked project" do
-        form = { "sudo" => "root" }
+        form = {"sudo" => "root"}
         stub_post("/projects/3/fork", "project_forked_for_user", form: form)
         project = client.fork_project(3, form)
 
@@ -123,7 +123,7 @@ Spec2.describe Gitlab::Client::Project do
 
   describe ".add_project_member" do
     it "should return information about an added team member" do
-      form = { "body" => "3", "access_level" => "40" }
+      form = {"body" => "3", "access_level" => "40"}
       stub_post("/projects/3/members", "team_member")
       team_member = client.add_project_member(3, 1, 40)
 
@@ -133,7 +133,7 @@ Spec2.describe Gitlab::Client::Project do
 
   describe ".edit_project_member" do
     it "should return information about an edited team member" do
-      form = { "access_level" => "40" }
+      form = {"access_level" => "40"}
       stub_put("/projects/3/members/1", "team_member", form: form)
       team_member = client.edit_project_member(3, 1, 40)
 
@@ -172,7 +172,7 @@ Spec2.describe Gitlab::Client::Project do
   describe ".add_project_hook" do
     context "without specified events" do
       it "should return information about an added hook" do
-        form = { "url" => "https://api.example.net/v1/webhooks/ci" }
+        form = {"url" => "https://api.example.net/v1/webhooks/ci"}
         stub_post("/projects/1/hooks", "project_hook", form: form)
         hook = client.add_project_hook(1, "https://api.example.net/v1/webhooks/ci")
 
@@ -183,9 +183,9 @@ Spec2.describe Gitlab::Client::Project do
     context "with specified events" do
       it "should return information about an added hook" do
         form = {
-          "url" => "https://api.example.net/v1/webhooks/ci" ,
-          "push_events" => "true",
-          "merge_requests_events" => "true"
+          "url"                   => "https://api.example.net/v1/webhooks/ci",
+          "push_events"           => "true",
+          "merge_requests_events" => "true",
         }
         stub_post("/projects/1/hooks", "project_hook_edit", form: form)
         hook = client.add_project_hook(1, "https://api.example.net/v1/webhooks/ci", form: form)
@@ -198,7 +198,7 @@ Spec2.describe Gitlab::Client::Project do
 
   describe ".edit_project_hook" do
     it "should return information about an edited hook" do
-      form = { "url" => "https://api.example.net/v1/webhooks/ci" }
+      form = {"url" => "https://api.example.net/v1/webhooks/ci"}
       stub_put("/projects/1/hooks/1", "project_hook", form: form)
       hook = client.edit_project_hook(1, 1, "https://api.example.net/v1/webhooks/ci")
 
@@ -209,7 +209,7 @@ Spec2.describe Gitlab::Client::Project do
   describe ".edit_project" do
     context "using project ID" do
       it "should return information about an edited project" do
-        form = { "name" => "Gitlab-edit" }
+        form = {"name" => "Gitlab-edit"}
         stub_put("/projects/3", "project_edit", form: form)
         project = client.edit_project(3, form)
 
@@ -220,7 +220,7 @@ Spec2.describe Gitlab::Client::Project do
     context "using namespaced project path" do
       it "encodes the path properly" do
         WebMock.reset
-        form = { "name" => "Gitlab-edit" }
+        form = {"name" => "Gitlab-edit"}
         stub = stub_put("/projects/namespace/path", "project_edit", form: form)
         project = client.edit_project("namespace/path", form)
 

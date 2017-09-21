@@ -42,7 +42,7 @@ Spec2.describe Gitlab::Client::Milestone do
 
   describe ".create_milestone" do
     it "should return information about a created milestone" do
-      form = { "title" => "title" }
+      form = {"title" => "title"}
       stub_post("/projects/3/milestones", "milestone", form: form)
       milestone = client.create_milestone(3, "title")
 
@@ -52,7 +52,7 @@ Spec2.describe Gitlab::Client::Milestone do
 
   describe ".edit_milestone" do
     it "should return information about an edited milestone" do
-      form = { "title" => "title" }
+      form = {"title" => "title"}
       stub_put("/projects/3/milestones/33", "milestone", form: form)
       milestone = client.edit_milestone(3, 33, title: "title")
 

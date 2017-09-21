@@ -26,7 +26,7 @@ Spec2.describe Gitlab::Client::MergeRequest do
       form = {
         "source_branch" => "api",
         "target_branch" => "master",
-        "title" => "New feature"
+        "title"         => "New feature",
       }
       stub_post("/projects/3/merge_requests", "merge_request", form: form)
       merge_request = client.create_merge_request(3, "api", "master", "New feature")
@@ -39,9 +39,9 @@ Spec2.describe Gitlab::Client::MergeRequest do
   describe ".update_merge_request" do
     it "should return information about a merge request" do
       form = {
-        "assignee_id" => "1",
+        "assignee_id"   => "1",
         "target_branch" => "master",
-        "title" => "A different new feature"
+        "title"         => "A different new feature",
       }
       stub_put("/projects/3/merge_requests/2", "merge_request", form: form)
       merge_request = client.update_merge_request(3, 2, form)
@@ -53,7 +53,7 @@ Spec2.describe Gitlab::Client::MergeRequest do
 
   describe ".accept_merge_request" do
     it "should return information about merged merge request" do
-      form = { "merge_commit_message" => "Nice!"}
+      form = {"merge_commit_message" => "Nice!"}
       stub_put("/projects/5/merge_requests/42/merge", "merge_request", form: form)
       merge_request = client.accept_merge_request(5, 42, form)
 

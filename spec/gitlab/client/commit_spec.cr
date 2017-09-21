@@ -3,7 +3,7 @@ require "../../spec_helper"
 Spec2.describe Gitlab::Client::Commit do
   describe ".commits" do
     it "should return a paginated response of repository commits" do
-      params = { "ref_name" => "api" }
+      params = {"ref_name" => "api"}
       stub_get("/projects/3/repository/commits", "project_commits", params)
       commits = client.commits(3, params)
 
@@ -46,7 +46,6 @@ Spec2.describe Gitlab::Client::Commit do
     end
   end
 
-
   describe ".create_commit_comment" do
     it "should return information about the newly created comment" do
       stub_post("/projects/3/repository/commits/6104942438c14ec7bd21c6cd5bd995272b3faff6/comments", "project_commit_comment")
@@ -60,7 +59,7 @@ Spec2.describe Gitlab::Client::Commit do
 
   describe ".commit_status" do
     it "should get statuses of a commit" do
-      query = { "all" => "true" }
+      query = {"all" => "true"}
       stub_get("/projects/6/repository/commits/7d938cb8ac15788d71f4b67c035515a160ea76d8/statuses", "project_commit_status", query)
       statuses = client.commit_status(6, "7d938cb8ac15788d71f4b67c035515a160ea76d8", query)
 
@@ -77,8 +76,8 @@ Spec2.describe Gitlab::Client::Commit do
     it "should information about the newly created status" do
       form = {
         "state" => "failed",
-        "name" => "test",
-        "ref" => "decreased-spec",
+        "name"  => "test",
+        "ref"   => "decreased-spec",
       }
       stub_post("/projects/6/statuses/7d938cb8ac15788d71f4b67c035515a160ea76d8", "project_update_commit_status", form: form)
       status = client.update_commit_status(6, "7d938cb8ac15788d71f4b67c035515a160ea76d8", "failed", form)
