@@ -38,20 +38,20 @@ module Gitlab
       # - param  [Int32] project The ID of a project.
       # - param  [String] tag The name of a tag.
       # - param  [String] ref Create tag using commit SHA, another tag name, or branch name.
-      # - param  [String] params A customizable set of the params.
-      # - option params  [String] :message Creates annotated tag.
-      # - param  params [String] :release_description Add release notes to the git tag and store it in the GitLab database.
+      # - param  [String] form A customizable set of the params.
+      # - option form  [String] :message Creates annotated tag.
+      # - option  form [String] :release_description Add release notes to the git tag and store it in the GitLab database.
       # - return [JSON::Any] Information about the created tag in a project.
       #
       # ```
       # client.create_tag(1, "1.0.0", "master")
       # client.create_tag(1, "1.0.1", "1.0.0", {"message" => "message in tag", "release_description" => "message in gitlab"})
       # ```
-      def create_tag(project_id : Int32, tag : String, ref : String, params : Hash = {} of String => String) : JSON::Any
+      def create_tag(project_id : Int32, tag : String, ref : String, form : Hash = {} of String => String) : JSON::Any
         JSON.parse post("/projects/#{project_id}/repository/tags", form: {
           "tag_name" => tag,
           "ref"      => ref,
-        }.merge(params)).body
+        }.merge(form)).body
       end
 
       # Delete a tag.
