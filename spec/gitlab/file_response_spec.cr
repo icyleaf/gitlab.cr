@@ -37,10 +37,10 @@ Spec2.describe Gitlab::FileResponse do
   end
 
   context ".to_hash" do
-    it "should have `filename` key and `file` key" do
+    it "should have `filename` key and `data` key" do
       h = file_response.to_h
       expect(h.has_key?(:filename)).to be_truthy
-      expect(h.has_key?(:file)).to be_truthy
+      expect(h.has_key?(:data)).to be_truthy
     end
   end
 end

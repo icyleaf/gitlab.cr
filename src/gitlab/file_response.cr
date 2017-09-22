@@ -1,9 +1,9 @@
 module Gitlab
   struct FileResponse
     getter filename : String
-    getter file : IO
+    getter data : IO
 
-    def initialize(@file : IO, headers : HTTP::Headers)
+    def initialize(@data : IO, headers : HTTP::Headers)
       @filename = parse_filename(headers)
     end
 
@@ -14,7 +14,7 @@ module Gitlab
     def to_h
       {
         filename: @filename,
-        file:     @file,
+        data:     @data,
       }
     end
 

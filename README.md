@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg)](https://travis-ci.org/icyleaf/gitlab.cr)
 
 Gitlab.cr is a [GitLab API](http://docs.gitlab.com/ce/api/README.html) wrapper writes with [Crystal](http://crystal-lang.org/) Language.
-Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version.
+Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version. **No support GraphQL API**
 
 Build in crystal version >= `v0.23.0`, Docs Generated in latest commit.
 
@@ -264,12 +264,17 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
 
 #### Todo
 
+- Award Emoji
 - Project Snippets
 - Services
-- Repository Files
 - System Hooks
-- Namespaces
 - Settings
+- Boards
+- Gitlab CI
+  - Builds
+  - Jobs
+  - Runners
+  - Pipelines
 
 ## Contributing
 

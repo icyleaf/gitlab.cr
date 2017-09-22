@@ -4,6 +4,8 @@ module Gitlab
 
     # # Client Errors
 
+    class NoSupportGraphQLAPIError < Exception; end
+
     class NotExistsFileError < Error; end
 
     class NotMatchTypeError < Error; end

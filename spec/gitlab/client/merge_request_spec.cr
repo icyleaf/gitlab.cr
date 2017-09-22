@@ -145,7 +145,7 @@ Spec2.describe Gitlab::Client::MergeRequest do
     end
   end
 
-  describe ".cancel_merge_request_when_build_succeed"
+  describe ".cancel_merge_request_when_build_succeed" do
     pending("TODO")
   end
 end

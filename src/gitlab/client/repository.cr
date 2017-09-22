@@ -41,8 +41,8 @@ module Gitlab
       # - return [Gitlab::FileResponse, JSON::Any] The archive file.
       #
       # ```
-      # client.repo_archive(1)
-      # client.repo_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
+      # file = client.repo_archive(1)
+      # file = client.repo_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
       # ```
       def repo_archive(project_id : Int32, sha = "HEAD") : Gitlab::FileResponse | JSON::Any
         mime_type = "application/octet-stream"

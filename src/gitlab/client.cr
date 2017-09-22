@@ -25,6 +25,7 @@ module Gitlab
     # Gitlab.Client.new("<endpoint>", "<token")
     # ```
     def initialize(@endpoint : String, @token : String)
+      raise Gitlab::Error::NoSupportGraphQLAPIError.new("Sorry, No support for GraphQL API(v4)") if @endpoint.includes?("api/v4")
     end
 
     {% for verb in %w(get head) %}
