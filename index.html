@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
@@ -90,6 +90,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/RepositoryFile" data-name="gitlab::client::repositoryfile">
+      <a href="Gitlab/Client/RepositoryFile.html">RepositoryFile</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Session" data-name="gitlab::client::session">
       <a href="Gitlab/Client/Session.html">Session</a>
       
@@ -102,21 +107,6 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="Gitlab/Client/User.html">User</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt" data-name="gitlab::coreext">
-      <a href="Gitlab/CoreExt.html">CoreExt</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt/StringParseJson" data-name="gitlab::coreext::stringparsejson">
-      <a href="Gitlab/CoreExt/StringParseJson.html">StringParseJson</a>
       
     </li>
   
@@ -180,6 +170,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NoSupportGraphQLAPIError" data-name="gitlab::error::nosupportgraphqlapierror">
+      <a href="Gitlab/Error/NoSupportGraphQLAPIError.html">NoSupportGraphQLAPIError</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
       <a href="Gitlab/Error/NotAllowRequestMethodError.html">NotAllowRequestMethodError</a>
       
@@ -220,58 +215,13 @@
       
     </li>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
-      <a href="Gitlab/HTTP.html">HTTP</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Chainable" data-name="gitlab::http::chainable">
-      <a href="Gitlab/HTTP/Chainable.html">Chainable</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Multipart" data-name="gitlab::http::multipart">
-      <a href="Gitlab/HTTP/Multipart.html">Multipart</a>
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
-      <a href="Gitlab/HTTP/Options.html">Options</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options/Params" data-name="gitlab::http::options::params">
-      <a href="Gitlab/HTTP/Options/Params.html">Params</a>
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/FileResponse" data-name="gitlab::fileresponse">
+      <a href="Gitlab/FileResponse.html">FileResponse</a>
       
     </li>
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Request" data-name="gitlab::http::request">
-      <a href="Gitlab/HTTP/Request.html">Request</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
-      <a href="Gitlab/HTTP/Response.html">Response</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
-      <a href="String.html">String</a>
       
     </li>
   
@@ -283,46 +233,21 @@
 <h1>💎 Gitlab.cr</h1>
 
 <p><a href="https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"/></a>
-<a href="https://github.com/icyleaf/gitlab.cr" target="_blank"><img src="https://img.shields.io/badge/version-0.2.1-green.svg" alt="Version"/></a>
+<a href="https://github.com/icyleaf/gitlab.cr" target="_blank"><img src="https://img.shields.io/badge/version-0.3.0-green.svg" alt="Version"/></a>
 <a href="https://shards.rocks/github/icyleaf/gitlab.cr" target="_blank"><img src="https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg" alt="Dependency Status"/></a>
 <a href="https://shards.rocks/github/icyleaf/gitlab.cr" target="_blank"><img src="https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg" alt="devDependency Status"/></a>
-<a href="https://travis-ci.org/icyleaf/gitlab.cr" target="_blank"><img src="https://travis-ci.org/icyleaf/gitlab.cr.svg" alt="Build Status"/></a></p>
+<a href="https://circleci.com/gh/icyleaf/gitlab.cr" target="_blank"><img src="https://circleci.com/gh/icyleaf/gitlab.cr" alt="Build Status"/></a></p>
 
 <p>Gitlab.cr is a <a href="http://docs.gitlab.com/ce/api/README.html" target="_blank">GitLab API</a> wrapper writes with <a href="http://crystal-lang.org/" target="_blank">Crystal</a> Language.
-Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab</a> gem for ruby version.</p>
+Inspired from <a href="https://github.com/NARKOZ/gitlab" target="_blank">gitlab</a> gem for ruby version. <strong>No support GraphQL API</strong></p>
 
-<p>Build in crystal version >= <code>v0.20.0</code>, Docs Generated in <a href="https://github.com/icyleaf/gitlab.cr/commit/9947476" target="_blank">9947476</a> (2016-12-05 17:37:25 +0800).</p>
+<p>Build in crystal version >= <code>v0.23.0</code>, Docs Generated in <a href="https:///commit/b7f5d04" target="_blank">b7f5d04</a> (2017-09-22 14:55:13 +0800).</p>
 
 <h2>Installation</h2>
 
-<h3>Stable version</h3>
-
-<p>Add this to your application's <code>shard.yml</code>:</p>
-
 <pre><code class='language-yaml'>dependencies:
   gitlab:
-    github: icyleaf/gitlab.cr
-    branch: master</code></pre>
-
-<p><code>master</code> branch is always the latest stable release version.</p>
-
-<h3>Develop(Unstable) version</h3>
-
-<p>Add this to your application's <code>shard.yml</code>:</p>
-
-<pre><code class='language-yaml'>dependencies:
-  gitlab:
-    github: icyleaf/gitlab.cr
-    branch: develop</code></pre>
-
-<h3>Explicit version</h3>
-
-<p>Add this to your application's <code>shard.yml</code>, and change the <a href="https://github.com/icyleaf/gitlab.cr/releases" target="_blank">version(release)</a> what you want:</p>
-
-<pre><code class='language-yaml'>dependencies:
-  gitlab:
-    github: icyleaf/gitlab.cr
-    version: 0.2.3</code></pre>
+    github: icyleaf/gitlab.cr</code></pre>
 
 <h2>Usage</h2>
 
@@ -355,7 +280,7 @@ projects <span class="o">=</span> g.projects({ <span class="s">&quot;per_page&qu
   <span class="c"># Here has one variable &quot;response&quot; instance of Gitlab::HTTP::Response</span>
   <span class="c"># Friendly for developer to debug and control expressions.</span>
   pp ex.response.code
-  pp ex.response.body.parse_json
+  pp ex.response.body
 <span class="k">end</span>
 
 <span class="c"># request not handled APIs</span>
@@ -373,11 +298,17 @@ g.put(<span class="s">&quot;/application/settings&quot;</span>, { <span class="s
 
 <h3>Built-in</h3>
 
-<ul><li>[x] Http Client</li><li>[x] Exceptions</li><li>[x] Gitlab wrapper</li><li>[x] Authentication</li><li>[ ] 100% Rspec Coveraged</li></ul>
+<ul><li>Http Client - <a href="https://github.com/icyleaf/halite" target="_blank">Halite</a></li><li>Exceptions</li><li>Gitlab wrapper</li><li>Authentication</li><li>100% Rspec Coveraged - <code>WIP</code></li></ul>
 
 <h3>Gitlab</h3>
 
-<ul><li>[x] Users</li><ul><li>[x] List Users - <code>users</code></li><li>[x] Single user - <code>user(user_id)</code></li><li>[x] User creation - <code>create_user</code></li><li>[x] User modification - <code>edit_user</code></li><li>[x] User deletion - <code>delete_user</code></li><li>[x] Current user - <code>user</code></li><li>[x] Block user - <code>block_user(user_id)</code></li><li>[x] Unblock user - <code>unblock_user(user_id)</code></li><li>[x] List SSH keys - <code>ssh_keys</code></li><li>[x] List SSH keys for user - <code>ssh_keys(user_id)</code></li><li>[x] Single SSH key <code>ssh_key(ssh_key_id)</code></li><li>[x] Add SSH key - <code>create_ssh_key</code></li><li>[x] Add SSH key for user - <code>create_ssh_key(user_id)</code></li><li>[x] Delete SSH key for current user - <code>delete_ssh_key</code></li><li>[x] Delete SSH key for given user - <code>delete_ssh_key(user_id)</code></li><li>[x] List emails - <code>emails</code></li><li>[x] List emails for user - <code>emails(user_id)</code></li><li>[x] Single email - <code>email</code></li><li>[x] Add email - <code>add_email</code></li><li>[x] Add email for user - <code>add_email(user_id)</code></li><li>[x] Delete email for current user - <code>delete_email</code></li><li>[x] Delete email for given user - <code>delete_email(user_id)</code></li></ul><li>[x] Session</li><ul><li>[x] Login session - <code>session</code></li></ul><li>[ ] Projects (including setting Webhooks)</li><ul><li>[ ] Uploads - <strong>TODO</strong>: Waiting for Crystal API</li><li>[ ] Upload a file</li><li>[x] List projects - <code>projects</code></li><li>[x] List owned projects - <code>owned_projects</code></li><li>[x] List starred projects - <code>starred_projects</code></li><li>[x] List ALL projects - <code>all_projects</code></li><li>[x] Get single project - <code>project</code></li><li>[x] Get project events - <code>project_events</code></li><li>[x] Create project - <code>create_project</code></li><li>[x] Create project for user - <code>create_project(user_id)</code></li><li>[x] Edit project - <code>edit_project</code></li><li>[x] Fork project - <code>fork_project</code></li><li>[x] Star a project - <code>star_project</code></li><li>[x] Unstar a project - <code>unstar_project</code></li><li>[x] Archive a project - <code>archive_project</code></li><li>[x] Unarchive a project - <code>unarchive_project</code></li><li>[x] Remove project - <code>delete_project</code></li><li>[x] Team members</li><li>[x] List project team members - <code>project_members</code></li><li>[x] Get project team member - <code>project_member</code></li><li>[x] Add project team member - <code>add_project_member</code></li><li>[x] Edit project team member - <code>edit_project_member</code></li><li>[x] Remove project team member - <code>remove_project_member</code></li><li>[x] Share project with group - <code>share_project</code></li><li>[x] Hooks</li><li>[x] List project hooks - <code>project_hooks</code></li><li>[x] Get project hook - <code>project_hook</code></li><li>[x] Add project hook - <code>add_project_hook</code></li><li>[x] Edit project hook - <code>edit_project_hook</code></li><li>[x] Delete project hook - <code>remove_project_hook</code></li><li>[x] Branches</li><li>[x] List branches - <code>project_branchs</code></li><li>[x] List single branch - <code>project_branch</code></li><li>[x] Protect single branch - <code>protect_project_branch</code></li><li>[x] Unprotect single branch - <code>unprotect_project_branch</code></li><li>[x] Admin fork relation</li><li>[x] Create a forked from/to relation between existing projects. - <code>create_fork_from</code></li><li>[x] Delete an existing forked from relationship - <code>remove_fork_from</code></li><li>[x] Search for projects by name - <code>project_search</code></li></ul><li>[x] Repositories</li><ul><li>[x] Get file archive</li><li>[x] List repository tree - <code>tree</code></li><li>[x] Raw file content - <code>file_contents</code></li><li>[x] Raw blob content - <code>blow_content</code></li><li>[x] Compare branches, tags or commits - <code>compare</code></li><li>[x] Contributors - <code>contributors</code></li></ul><li>[x] Commits</li><ul><li>[x] List repository commits - <code>commits</code></li><li>[x] Get a single commit - <code>commit</code></li><li>[x] Get the diff of a commit - <code>commit_diff</code></li><li>[x] Get the comments of a commit - <code>commit_coments</code></li><li>[x] Post comment to commit - <code>create_commit_comment</code></li><li>[x] Commit status</li><li>[x] Get the status of a commit - <code>commit_status</code></li><li>[x] Post the build status to a commit - <code>update_commit_status</code></li></ul><li>[x] Branches</li><ul><li>[x] List repository branches - <code>branches</code></li><li>[x] Get single repository branch - <code>branch</code></li><li>[x] Protect repository branch - <code>protect_branch</code></li><li>[x] Unprotect repository branch - <code>unprotect_branch</code></li><li>[x] Create repository branch - <code>create_branch</code></li><li>[x] Delete repository branch - <code>delete_branch</code></li></ul><li>[x] Merge Requests</li><ul><li>[x] List merge requests - <code>merge_requests</code></li><li>[x] Get single MR - <code>merge_request</code></li><li>[x] Get single MR commits - <code>merge_request_commit</code></li><li>[x] Get single MR changes - <code>merge_request_changes</code></li><li>[x] Create MR - <code>create_merge_request</code></li><li>[x] Update MR - <code>edit_merge_request</code></li><li>[x] Delete a merge request - <code>delete_merge_request</code></li><li>[x] Accept MR - <code>accept_merge_request</code></li><li>[x] Cancel Merge When Build Succeeds - <code>cancel_merge_request_when_build_succeed</code></li><li>[x] Comments on merge requests - <code>merge_request_comments</code></li><li>[x] List issues that will close on merge -  <code>merge_request_closed_issues</code></li><li>[x] Subscribe to a merge request - <code>subscribe_merge_request</code></li><li>[x] Unsubscribe from a merge request - <code>unsubscribe_merge_request</code></li></ul><li>[x] Issues</li><ul><li>[x] List issues - <code>issues</code></li><li>[x] List project issues - <code>issues(project_id)</code></li><li>[x] Single issue - <code>issue</code></li><li>[x] New issue - <code>create_issue</code></li><li>[x] Edit issue - <code>edit_issue</code> / <code>close_issue</code> / <code>reopen_issue</code></li><li>[x] Delete an issue - <code>delete_issue</code></li><li>[x] Move an issue - <code>move_issue</code></li><li>[x] Subscribe to an issue - <code>subscribe_issue</code></li><li>[x] Unsubscribe from an issue - <code>unsubscribe_issue</code></li><li>[x] Comments on issues - Comments are done via the <strong>notes</strong> resource</li></ul><li>[x] Keys</li><ul><li>[x] Get SSH key with user by ID of an SSH key - <code>key</code></li></ul><li>[x] Labels</li><ul><li>[x] List labels - <code>labels</code></li><li>[x] Create a new label - <code>create_label</code></li><li>[x] Delete a label - <code>delete_label</code></li><li>[x] Edit an existing label - <code>edit_labe</code></li><li>[x] Subscribe to a label - <code>subscribe_label</code></li><li>[x] Unsubscribe from a label - <code>unsubscribe_label</code></li></ul><li>[x] Milestones</li><ul><li>[x] List project milestones - <code>milestones</code></li><li>[x] Get single milestone - <code>milestone</code></li><li>[x] Create new milestone - <code>create_milestone</code></li><li>[x] Edit milestone - <code>edit_milestone</code></li><li>[x] Get all issues assigned to a single milestone - <code>milestone_issues</code></li></ul><li>[x] Notes (comments)</li><ul><li>[x] Issues</li><li>[x] List project issue notes - <code>issue_notes</code></li><li>[x] Get single issue note - <code>issue_note</code></li><li>[x] Create new issue note - <code>create_issue_note</code></li><li>[x] Modify existing issue note - <code>edit_issue_note</code></li><li>[x] Delete an issue note - <code>delete_issue_note</code></li><li>[x] Snippets</li><li>[x] List all snippet notes - <code>snippet_notes</code></li><li>[x] Get single snippet note - <code>snippet_note</code></li><li>[x] Create new snippet note - <code>create_snippet_note</code></li><li>[x] Modify existing snippet note - <code>edit_snippet_note</code></li><li>[x] Delete a snippet note - <code>delete_snippet_note</code></li><li>[x] Merge Requests</li><li>[x] List all merge request notes - <code>merge_request_notes</code></li><li>[x] Get single merge request note - <code>merge_request_note</code></li><li>[x] Create new merge request note - <code>create_merge_request_note</code></li><li>[x] Modify existing merge request note - <code>edit_merge_request_note</code></li><li>[x] Delete a merge request note - <code>delete_merge_request_note</code></li></ul><li>[x] Deploy Keys</li><ul><li>[x] List deploy keys - <code>deploy_keys</code></li><li>[x] Single deploy key - <code>deploy_key</code></li><li>[x] Add deploy key - <code>create_deploy_key</code></li><li>[x] Delete deploy key - <code>remove_deploy_key</code></li></ul><li>[x] Groups</li><ul><li>[x] List groups - <code>groups</code></li><li>[x] List a group's projects - <code>group_projects</code></li><li>[x] Details of a group - <code>group</code></li><li>[x] New group - <code>create_group</code></li><li>[x] Transfer project to group - <code>transfer_project_to_group</code></li><li>[x] Update group - <code>edit_group</code></li><li>[x] Remove group - <code>delete_group</code></li><li>[x] Search for group - <code>group_search</code></li><li>[x] Group members</li><li>[x] List group members - <code>group_members</code></li><li>[x] Add group member - <code>add_member_to_group</code></li><li>[x] Edit group team member - <code>edit_member_to_group</code></li><li>[x] Remove user team member - <code>remove_member_to_group</code></li><li>[x] Namespaces in groups - same as <strong>List group</strong></li></ul><li>[x] Tags</li><ul><li>[x] List project repository tags - <code>tags</code></li><li>[x] Get a single repository tag - <code>tag</code></li><li>[x] Create a new tag - <code>create_tag</code></li><li>[x] Delete a tag - <code>delete_tag</code></li><li>[x] Create a new release - <code>create_release_notes</code></li><li>[x] Update a release - <code>update_release_notes</code></li></ul><li>[ ] Project Snippets</li><li>[ ] Services</li><li>[ ] Repository Files</li><li>[ ] System Hooks</li><li>[ ] Namespaces</li><li>[ ] Settings</li></ul>
+<h4>Completed</h4>
+
+<ul><li>Users</li><ul><li>List Users - <code>users</code></li><li>Single user - <code>user(user_id)</code></li><li>User creation - <code>create_user</code></li><li>User modification - <code>edit_user</code></li><li>User deletion - <code>delete_user</code></li><li>Current user - <code>user</code></li><li>Block user - <code>block_user(user_id)</code></li><li>Unblock user - <code>unblock_user(user_id)</code></li><li>List SSH keys - <code>ssh_keys</code></li><li>List SSH keys for user - <code>ssh_keys(user_id)</code></li><li>Single SSH key <code>ssh_key(ssh_key_id)</code></li><li>Add SSH key - <code>create_ssh_key</code></li><li>Add SSH key for user - <code>create_ssh_key(user_id)</code></li><li>Delete SSH key for current user - <code>delete_ssh_key</code></li><li>Delete SSH key for given user - <code>delete_ssh_key(user_id)</code></li><li>List emails - <code>emails</code></li><li>List emails for user - <code>emails(user_id)</code></li><li>Single email - <code>email</code></li><li>Add email - <code>add_email</code></li><li>Add email for user - <code>add_email(user_id)</code></li><li>Delete email for current user - <code>delete_email</code></li><li>Delete email for given user - <code>delete_email(user_id)</code></li></ul><li>Session</li><ul><li>Login session - <code>session</code></li></ul><li>Projects (including setting Webhooks)</li><ul><li>Uploads</li><li>Upload a file - <code>upload_file</code></li><li>List projects - <code>projects</code></li><li>List owned projects - <code>owned_projects</code></li><li>List starred projects - <code>starred_projects</code></li><li>List ALL projects - <code>all_projects</code></li><li>Get single project - <code>project</code></li><li>Get project events - <code>project_events</code></li><li>Create project - <code>create_project</code></li><li>Create project for user - <code>create_project(user_id)</code></li><li>Edit project - <code>edit_project</code></li><li>Fork project - <code>fork_project</code></li><li>Star a project - <code>star_project</code></li><li>Unstar a project - <code>unstar_project</code></li><li>Archive a project - <code>archive_project</code></li><li>Unarchive a project - <code>unarchive_project</code></li><li>Remove project - <code>delete_project</code></li><li>Team members</li><li>List project team members - <code>project_members</code></li><li>Get project team member - <code>project_member</code></li><li>Add project team member - <code>add_project_member</code></li><li>Edit project team member - <code>edit_project_member</code></li><li>Remove project team member - <code>remove_project_member</code></li><li>Share project with group - <code>share_project</code></li><li>Hooks</li><li>List project hooks - <code>project_hooks</code></li><li>Get project hook - <code>project_hook</code></li><li>Add project hook - <code>add_project_hook</code></li><li>Edit project hook - <code>edit_project_hook</code></li><li>Delete project hook - <code>remove_project_hook</code></li><li>Branches</li><li>List branches - <code>project_branchs</code></li><li>List single branch - <code>project_branch</code></li><li>Protect single branch - <code>protect_project_branch</code></li><li>Unprotect single branch - <code>unprotect_project_branch</code></li><li>Admin fork relation</li><li>Create a forked from/to relation between existing projects. - <code>create_fork_from</code></li><li>Delete an existing forked from relationship - <code>remove_fork_from</code></li><li>Search for projects by name - <code>project_search</code></li></ul><li>Repositories</li><ul><li>List repository tree - <code>tree</code></li><li>Raw blob content - <code>blow</code></li><li>Get an archive of the repository - <code>archive_project</code></li><li>Compare branches, tags or commits - <code>compare</code></li><li>Contributors - <code>contributors</code></li></ul><li>Repository File</li><ul><li>Gets a repository file - <code>get_file</code></li><li>Get raw file content - <code>file_contents</code></li><li>Create a file</li><li>Edit a file</li><li>Remove a file</li></ul><li>Commits</li><ul><li>List repository commits - <code>commits</code></li><li>Get a single commit - <code>commit</code></li><li>Get the diff of a commit - <code>commit_diff</code></li><li>Get the comments of a commit - <code>commit_coments</code></li><li>Post comment to commit - <code>create_commit_comment</code></li><li>Commit status</li><li>Get the status of a commit - <code>commit_status</code></li><li>Post the build status to a commit - <code>update_commit_status</code></li></ul><li>Branches</li><ul><li>List repository branches - <code>branches</code></li><li>Get single repository branch - <code>branch</code></li><li>Protect repository branch - <code>protect_branch</code></li><li>Unprotect repository branch - <code>unprotect_branch</code></li><li>Create repository branch - <code>create_branch</code></li><li>Delete repository branch - <code>delete_branch</code></li></ul><li>Merge Requests</li><ul><li>List merge requests - <code>merge_requests</code></li><li>Get single MR - <code>merge_request</code></li><li>Get single MR commits - <code>merge_request_commit</code></li><li>Get single MR changes - <code>merge_request_changes</code></li><li>Create MR - <code>create_merge_request</code></li><li>Update MR - <code>edit_merge_request</code></li><li>Delete a merge request - <code>delete_merge_request</code></li><li>Accept MR - <code>accept_merge_request</code></li><li>Cancel Merge When Build Succeeds - <code>cancel_merge_request_when_build_succeed</code></li><li>Comments on merge requests - <code>merge_request_comments</code></li><li>List issues that will close on merge -  <code>merge_request_closed_issues</code></li><li>Subscribe to a merge request - <code>subscribe_merge_request</code></li><li>Unsubscribe from a merge request - <code>unsubscribe_merge_request</code></li></ul><li>Issues</li><ul><li>List issues - <code>issues</code></li><li>List project issues - <code>issues(project_id)</code></li><li>Single issue - <code>issue</code></li><li>New issue - <code>create_issue</code></li><li>Edit issue - <code>edit_issue</code> / <code>close_issue</code> / <code>reopen_issue</code></li><li>Delete an issue - <code>delete_issue</code></li><li>Move an issue - <code>move_issue</code></li><li>Subscribe to an issue - <code>subscribe_issue</code></li><li>Unsubscribe from an issue - <code>unsubscribe_issue</code></li><li>Comments on issues - Comments are done via the <strong>notes</strong> resource</li></ul><li>Keys</li><ul><li>Get SSH key with user by ID of an SSH key - <code>key</code></li></ul><li>Labels</li><ul><li>List labels - <code>labels</code></li><li>Create a new label - <code>create_label</code></li><li>Delete a label - <code>delete_label</code></li><li>Edit an existing label - <code>edit_labe</code></li><li>Subscribe to a label - <code>subscribe_label</code></li><li>Unsubscribe from a label - <code>unsubscribe_label</code></li></ul><li>Milestones</li><ul><li>List project milestones - <code>milestones</code></li><li>Get single milestone - <code>milestone</code></li><li>Create new milestone - <code>create_milestone</code></li><li>Edit milestone - <code>edit_milestone</code></li><li>Get all issues assigned to a single milestone - <code>milestone_issues</code></li><li>Get all merge requests of a given milestone. - <code>milestone_merge_requests</code></li></ul><li>Notes (comments)</li><ul><li>Issues</li><li>List project issue notes - <code>issue_notes</code></li><li>Get single issue note - <code>issue_note</code></li><li>Create new issue note - <code>create_issue_note</code></li><li>Modify existing issue note - <code>edit_issue_note</code></li><li>Delete an issue note - <code>delete_issue_note</code></li><li>Snippets</li><li>List all snippet notes - <code>snippet_notes</code></li><li>Get single snippet note - <code>snippet_note</code></li><li>Create new snippet note - <code>create_snippet_note</code></li><li>Modify existing snippet note - <code>edit_snippet_note</code></li><li>Delete a snippet note - <code>delete_snippet_note</code></li><li>Merge Requests</li><li>List all merge request notes - <code>merge_request_notes</code></li><li>Get single merge request note - <code>merge_request_note</code></li><li>Create new merge request note - <code>create_merge_request_note</code></li><li>Modify existing merge request note - <code>edit_merge_request_note</code></li><li>Delete a merge request note - <code>delete_merge_request_note</code></li></ul><li>Deploy Keys</li><ul><li>List deploy keys - <code>deploy_keys</code></li><li>Single deploy key - <code>deploy_key</code></li><li>Add deploy key - <code>create_deploy_key</code></li><li>Delete deploy key - <code>remove_deploy_key</code></li></ul><li>Groups</li><ul><li>List groups - <code>groups</code></li><li>List a group's projects - <code>group_projects</code></li><li>Details of a group - <code>group</code></li><li>New group - <code>create_group</code></li><li>Transfer project to group - <code>transfer_project_to_group</code></li><li>Update group - <code>edit_group</code></li><li>Remove group - <code>delete_group</code></li><li>Search for group - <code>group_search</code></li><li>Group members</li><li>List group members - <code>group_members</code></li><li>Get member detail of group - <code>group_member</code></li><li>Add group member - <code>add_member_to_group</code></li><li>Edit group team member - <code>edit_member_to_group</code></li><li>Remove user team member - <code>remove_member_to_group</code></li><li>Namespaces in groups - same as <strong>List group</strong></li></ul><li>Tags</li><ul><li>List project repository tags - <code>tags</code></li><li>Get a single repository tag - <code>tag</code></li><li>Create a new tag - <code>create_tag</code></li><li>Delete a tag - <code>delete_tag</code></li><li>Create a new release - <code>create_release_notes</code></li><li>Update a release - <code>update_release_notes</code></li></ul></ul>
+
+<h4>Todo</h4>
+
+<ul><li>Award Emoji</li><li>Project Snippets</li><li>Services</li><li>System Hooks</li><li>Settings</li><li>Boards</li><li>Gitlab CI</li><ul><li>Builds</li><li>Jobs</li><li>Runners</li><li>Pipelines</li></ul></ul>
 
 <h2>Contributing</h2>
 
@@ -385,7 +316,7 @@ g.put(<span class="s">&quot;/application/settings&quot;</span>, { <span class="s
 
 <h2>Contributors</h2>
 
-<ul><li><a href="https://github.com/icyleaf" target="_blank">icyleaf</a> aka 三火 - creator, maintainer</li></ul>
+<ul><li><a href="https://github.com/icyleaf" target="_blank">icyleaf</a> - creator, maintainer</li></ul>
 </div>
 </body>
 </html>

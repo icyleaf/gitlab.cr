@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
@@ -90,6 +90,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/RepositoryFile" data-name="gitlab::client::repositoryfile">
+      <a href="../../Gitlab/Client/RepositoryFile.html">RepositoryFile</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Session" data-name="gitlab::client::session">
       <a href="../../Gitlab/Client/Session.html">Session</a>
       
@@ -102,21 +107,6 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="../../Gitlab/Client/User.html">User</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt" data-name="gitlab::coreext">
-      <a href="../../Gitlab/CoreExt.html">CoreExt</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt/StringParseJson" data-name="gitlab::coreext::stringparsejson">
-      <a href="../../Gitlab/CoreExt/StringParseJson.html">StringParseJson</a>
       
     </li>
   
@@ -180,6 +170,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NoSupportGraphQLAPIError" data-name="gitlab::error::nosupportgraphqlapierror">
+      <a href="../../Gitlab/Error/NoSupportGraphQLAPIError.html">NoSupportGraphQLAPIError</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
       <a href="../../Gitlab/Error/NotAllowRequestMethodError.html">NotAllowRequestMethodError</a>
       
@@ -220,58 +215,13 @@
       
     </li>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
-      <a href="../../Gitlab/HTTP.html">HTTP</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Chainable" data-name="gitlab::http::chainable">
-      <a href="../../Gitlab/HTTP/Chainable.html">Chainable</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Multipart" data-name="gitlab::http::multipart">
-      <a href="../../Gitlab/HTTP/Multipart.html">Multipart</a>
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
-      <a href="../../Gitlab/HTTP/Options.html">Options</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options/Params" data-name="gitlab::http::options::params">
-      <a href="../../Gitlab/HTTP/Options/Params.html">Params</a>
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/FileResponse" data-name="gitlab::fileresponse">
+      <a href="../../Gitlab/FileResponse.html">FileResponse</a>
       
     </li>
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Request" data-name="gitlab::http::request">
-      <a href="../../Gitlab/HTTP/Request.html">Request</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
-      <a href="../../Gitlab/HTTP/Response.html">Response</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
-      <a href="../../String.html">String</a>
       
     </li>
   
@@ -321,10 +271,12 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L8" target="_blank">gitlab/client/note.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L8" target="_blank">gitlab/client/note.cr</a>
     
     <br/>
   
+
+
 
 
 
@@ -336,105 +288,105 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#create_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#create_issue_note</strong>(project_id : Int32, issue_id : Int32, body : String, created_at : String | Nil = <span class="n">nil</span>)</a>
+        <a href="#create_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_issue_note</strong>(project_id : Int32, issue_id : Int32, body : String, created_at : String? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create note of issue in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#create_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, body : String, created_at : String | Nil = <span class="n">nil</span>)</a>
+        <a href="#create_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, body : String, created_at : String? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create note of merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cbody%3AString%29-instance-method" class="signature"><strong>#create_snippet_note</strong>(project_id : Int32, snippet_id : Int32, body : String)</a>
+        <a href="#create_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_snippet_note</strong>(project_id : Int32, snippet_id : Int32, body : String) : JSON::Any</a>
         
           <div class="summary"><p>Create note of snippet in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29-instance-method" class="signature"><strong>#delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32)</a>
+        <a href="#delete_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Deiete a note of issue in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29-instance-method" class="signature"><strong>#delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32)</a>
+        <a href="#delete_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Deiete a note of merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29-instance-method" class="signature"><strong>#delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32)</a>
+        <a href="#delete_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Deiete a note of snippet in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29-instance-method" class="signature"><strong>#edit_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32, body : String)</a>
+        <a href="#edit_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32, body : String) : JSON::Any</a>
         
           <div class="summary"><p>Edit a note of issue in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_merge_request_note%28project_id%3AInt32%2Cmerge_requests_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29-instance-method" class="signature"><strong>#edit_merge_request_note</strong>(project_id : Int32, merge_requests_id : Int32, note_id : Int32, body : String)</a>
+        <a href="#edit_merge_request_note%28project_id%3AInt32%2Cmerge_requests_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_merge_request_note</strong>(project_id : Int32, merge_requests_id : Int32, note_id : Int32, body : String) : JSON::Any</a>
         
           <div class="summary"><p>Edit a note of merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29-instance-method" class="signature"><strong>#edit_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32, body : String)</a>
+        <a href="#edit_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32, body : String) : JSON::Any</a>
         
           <div class="summary"><p>Edit a note of snippet in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29-instance-method" class="signature"><strong>#issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32)</a>
+        <a href="#issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Get single note of issue in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#issue_notes%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#issue_notes</strong>(project_id : Int32, issue_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#issue_notes%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#issue_notes</strong>(project_id : Int32, issue_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list notes of issue in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29-instance-method" class="signature"><strong>#merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32)</a>
+        <a href="#merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Get single note of merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#merge_request_notes%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#merge_request_notes</strong>(project_id : Int32, merge_request_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#merge_request_notes%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#merge_request_notes</strong>(project_id : Int32, merge_request_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list notes of merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29-instance-method" class="signature"><strong>#snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32)</a>
+        <a href="#snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Get single note of snippet in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#snippet_notes%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#snippet_notes</strong>(project_id : Int32, snippet_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#snippet_notes%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#snippet_notes</strong>(project_id : Int32, snippet_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list notes of snippet in a project.</p></div>
         
@@ -453,19 +405,21 @@
 
 
 
+
+
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="create_issue_note&#40;project_id:Int32,issue_id:Int32,body:String,created_at:String|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="create_issue_note&#40;project_id:Int32,issue_id:Int32,body:String,created_at:String?&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>create_issue_note</strong>(project_id : Int32, issue_id : Int32, body : <a href="../../String.html">String</a>, created_at : <a href="../../String.html">String</a> | Nil = <span class="n">nil</span>)
+        def <strong>create_issue_note</strong>(project_id : Int32, issue_id : Int32, body : String, created_at : String? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create note of issue in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [String] body The body of a note.</li><li>params [String] created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.</li><li>return [Hash] Information about the created note of issue in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [String] body The body of a note.</li><li>params [String] created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.</li><li>return [JSON::Any] Information about the created note of issue in a project.</li></ul>
 
 <pre><code>client.create_issue_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work&#33;&quot;</span>)
 client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <span class="s">&quot;great work&#33;&quot;</span>, <span class="s">&quot;2016-03-11T03:45:40Z&quot;</span>)</code></pre></div>
@@ -473,318 +427,318 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_merge_request_note&#40;project_id:Int32,merge_request_id:Int32,body:String,created_at:String|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="create_merge_request_note&#40;project_id:Int32,merge_request_id:Int32,body:String,created_at:String?&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>create_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, body : <a href="../../String.html">String</a>, created_at : <a href="../../String.html">String</a> | Nil = <span class="n">nil</span>)
+        def <strong>create_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, body : String, created_at : String? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cbody%3AString%2Ccreated_at%3AString%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create note of merge request in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [String] body The title of an merge_requests.</li><li>return [Hash] Information about the created note of merge request in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [String] body The title of an merge_requests.</li><li>return [JSON::Any] Information about the created note of merge request in a project.</li></ul>
 
 <pre><code>client.create_merge_request_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work&#33;&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L207" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L209" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_snippet_note&#40;project_id:Int32,snippet_id:Int32,body:String&#41;-instance-method">
+    <div class="entry-detail" id="create_snippet_note&#40;project_id:Int32,snippet_id:Int32,body:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>create_snippet_note</strong>(project_id : Int32, snippet_id : Int32, body : <a href="../../String.html">String</a>)
+        def <strong>create_snippet_note</strong>(project_id : Int32, snippet_id : Int32, body : String) : JSON::Any
 
-        <a class="method-permalink" href="#create_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cbody%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create note of snippet in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [String] body The body of an snippet.</li><li>return [Hash] Information about the created note of snippet in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [String] body The body of an snippet.</li><li>return [JSON::Any] Information about the created note of snippet in a project.</li></ul>
 
 <pre><code>client.create_snippet_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work&#33;&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L131" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_issue_note&#40;project_id:Int32,issue_id:Int32,note_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="delete_issue_note&#40;project_id:Int32,issue_id:Int32,note_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32)
+        def <strong>delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#delete_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Deiete a note of issue in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [Hash] Information about the deleted note of issue.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the deleted note of issue.</li></ul>
 
 <pre><code>client.delete_issue_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_merge_request_note&#40;project_id:Int32,merge_request_id:Int32,note_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="delete_merge_request_note&#40;project_id:Int32,merge_request_id:Int32,note_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32)
+        def <strong>delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#delete_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete_merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Deiete a note of merge request in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [Hash] Information about the deleted note of merge request.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the deleted note of merge request.</li></ul>
 
 <pre><code>client.delete_merge_request_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L238" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L240" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_snippet_note&#40;project_id:Int32,snippet_id:Int32,note_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="delete_snippet_note&#40;project_id:Int32,snippet_id:Int32,note_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32)
+        def <strong>delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#delete_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Deiete a note of snippet in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [Hash] Information about the deleted note of snippet.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the deleted note of snippet.</li></ul>
 
 <pre><code>client.delete_snippet_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L164" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_issue_note&#40;project_id:Int32,issue_id:Int32,note_id:Int32,body:String&#41;-instance-method">
+    <div class="entry-detail" id="edit_issue_note&#40;project_id:Int32,issue_id:Int32,note_id:Int32,body:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>edit_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32, body : <a href="../../String.html">String</a>)
+        def <strong>edit_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32, body : String) : JSON::Any
 
-        <a class="method-permalink" href="#edit_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Edit a note of issue in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The body of a note.</li><li>return [Hash] Information about the updated issue in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The body of a note.</li><li>return [JSON::Any] Information about the updated issue in a project.</li></ul>
 
 <pre><code>client.edit_issue_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work&#33;&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_merge_request_note&#40;project_id:Int32,merge_requests_id:Int32,note_id:Int32,body:String&#41;-instance-method">
+    <div class="entry-detail" id="edit_merge_request_note&#40;project_id:Int32,merge_requests_id:Int32,note_id:Int32,body:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>edit_merge_request_note</strong>(project_id : Int32, merge_requests_id : Int32, note_id : Int32, body : <a href="../../String.html">String</a>)
+        def <strong>edit_merge_request_note</strong>(project_id : Int32, merge_requests_id : Int32, note_id : Int32, body : String) : JSON::Any
 
-        <a class="method-permalink" href="#edit_merge_request_note%28project_id%3AInt32%2Cmerge_requests_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_merge_request_note%28project_id%3AInt32%2Cmerge_requests_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Edit a note of merge request in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The title of a merge request.</li><li>return [Hash] Information about the updated merge request in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The title of a merge request.</li><li>return [JSON::Any] Information about the updated merge request in a project.</li></ul>
 
 <pre><code>client.edit_merge_request_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work&#33;&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L224" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_snippet_note&#40;project_id:Int32,snippet_id:Int32,note_id:Int32,body:String&#41;-instance-method">
+    <div class="entry-detail" id="edit_snippet_note&#40;project_id:Int32,snippet_id:Int32,note_id:Int32,body:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>edit_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32, body : <a href="../../String.html">String</a>)
+        def <strong>edit_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32, body : String) : JSON::Any
 
-        <a class="method-permalink" href="#edit_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%2Cbody%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Edit a note of snippet in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The body of an snippet.</li><li>return [Hash] Information about the updated snippet in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The body of an snippet.</li><li>return [JSON::Any] Information about the updated snippet in a project.</li></ul>
 
 <pre><code>client.edit_snippet_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work&#33;&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L146" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="issue_note&#40;project_id:Int32,issue_id:Int32,note_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="issue_note&#40;project_id:Int32,issue_id:Int32,note_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32)
+        def <strong>issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#issue_note%28project_id%3AInt32%2Cissue_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get single note of issue in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [Hash] Information about the note of issue.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the note of issue.</li></ul>
 
 <pre><code>client.issue_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="issue_notes&#40;project_id:Int32,issue_id:Int32,params:Hash|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="issue_notes&#40;project_id:Int32,issue_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>issue_notes</strong>(project_id : Int32, issue_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>issue_notes</strong>(project_id : Int32, issue_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#issue_notes%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#issue_notes%28project_id%3AInt32%2Cissue_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list notes of issue in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of notes of issue under a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of notes of issue under a project.</li></ul>
 
 <pre><code>client.issue_notes(<span class="n">1</span>, <span class="n">1</span>)
-client.issue_notes(<span class="n">1</span>, <span class="n">5</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
+client.issue_notes(<span class="n">1</span>, <span class="n">5</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="merge_request_note&#40;project_id:Int32,merge_request_id:Int32,note_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="merge_request_note&#40;project_id:Int32,merge_request_id:Int32,note_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32)
+        def <strong>merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#merge_request_note%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get single note of merge request in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [Hash] Information about the note of merge request.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the note of merge request.</li></ul>
 
 <pre><code>client.merge_request_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L193" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L195" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="merge_request_notes&#40;project_id:Int32,merge_request_id:Int32,params:Hash|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="merge_request_notes&#40;project_id:Int32,merge_request_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>merge_request_notes</strong>(project_id : Int32, merge_request_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>merge_request_notes</strong>(project_id : Int32, merge_request_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#merge_request_notes%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#merge_request_notes%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list notes of merge request in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of notes of merge request under a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of notes of merge request under a project.</li></ul>
 
 <pre><code>client.merge_request_notes(<span class="n">1</span>, <span class="n">1</span>)
-client.merge_request_notes(<span class="n">1</span>, <span class="n">5</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
+client.merge_request_notes(<span class="n">1</span>, <span class="n">5</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L179" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L181" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="snippet_note&#40;project_id:Int32,snippet_id:Int32,note_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="snippet_note&#40;project_id:Int32,snippet_id:Int32,note_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32)
+        def <strong>snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#snippet_note%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cnote_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get single note of snippet in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [Hash] Information about the note of snippet.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the note of snippet.</li></ul>
 
 <pre><code>client.snippet_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="snippet_notes&#40;project_id:Int32,snippet_id:Int32,params:Hash|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="snippet_notes&#40;project_id:Int32,snippet_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>snippet_notes</strong>(project_id : Int32, snippet_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>snippet_notes</strong>(project_id : Int32, snippet_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#snippet_notes%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#snippet_notes%28project_id%3AInt32%2Csnippet_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list notes of snippet in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of notes of snippet under a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of notes of snippet under a project.</li></ul>
 
 <pre><code>client.snippet_notes(<span class="n">1</span>, <span class="n">1</span>)
-client.snippet_notes(<span class="n">1</span>, <span class="n">5</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
+client.snippet_notes(<span class="n">1</span>, <span class="n">5</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/note.cr#L103" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/note.cr#L105" target="_blank">View source</a>]
         
       </div>
     </div>

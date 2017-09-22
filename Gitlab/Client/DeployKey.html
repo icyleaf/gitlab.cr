@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
@@ -90,6 +90,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/RepositoryFile" data-name="gitlab::client::repositoryfile">
+      <a href="../../Gitlab/Client/RepositoryFile.html">RepositoryFile</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Session" data-name="gitlab::client::session">
       <a href="../../Gitlab/Client/Session.html">Session</a>
       
@@ -102,21 +107,6 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="../../Gitlab/Client/User.html">User</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt" data-name="gitlab::coreext">
-      <a href="../../Gitlab/CoreExt.html">CoreExt</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt/StringParseJson" data-name="gitlab::coreext::stringparsejson">
-      <a href="../../Gitlab/CoreExt/StringParseJson.html">StringParseJson</a>
       
     </li>
   
@@ -180,6 +170,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NoSupportGraphQLAPIError" data-name="gitlab::error::nosupportgraphqlapierror">
+      <a href="../../Gitlab/Error/NoSupportGraphQLAPIError.html">NoSupportGraphQLAPIError</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
       <a href="../../Gitlab/Error/NotAllowRequestMethodError.html">NotAllowRequestMethodError</a>
       
@@ -220,58 +215,13 @@
       
     </li>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
-      <a href="../../Gitlab/HTTP.html">HTTP</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Chainable" data-name="gitlab::http::chainable">
-      <a href="../../Gitlab/HTTP/Chainable.html">Chainable</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Multipart" data-name="gitlab::http::multipart">
-      <a href="../../Gitlab/HTTP/Multipart.html">Multipart</a>
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
-      <a href="../../Gitlab/HTTP/Options.html">Options</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options/Params" data-name="gitlab::http::options::params">
-      <a href="../../Gitlab/HTTP/Options/Params.html">Params</a>
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/FileResponse" data-name="gitlab::fileresponse">
+      <a href="../../Gitlab/FileResponse.html">FileResponse</a>
       
     </li>
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Request" data-name="gitlab::http::request">
-      <a href="../../Gitlab/HTTP/Request.html">Request</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
-      <a href="../../Gitlab/HTTP/Response.html">Response</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
-      <a href="../../String.html">String</a>
       
     </li>
   
@@ -319,10 +269,12 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/deploy_key.cr#L6" target="_blank">gitlab/client/deploy_key.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/deploy_key.cr#L6" target="_blank">gitlab/client/deploy_key.cr</a>
     
     <br/>
   
+
+
 
 
 
@@ -334,28 +286,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#create_deploy_key%28project_id%3AInt32%2Ctitle%3AString%2Ckey%3AString%29-instance-method" class="signature"><strong>#create_deploy_key</strong>(project_id : Int32, title : String, key : String)</a>
+        <a href="#create_deploy_key%28project_id%3AInt32%2Ctitle%3AString%2Ckey%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_deploy_key</strong>(project_id : Int32, title : String, key : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create a deploy key in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29-instance-method" class="signature"><strong>#deploy_key</strong>(project_id : Int32, key_id : Int32)</a>
+        <a href="#deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Get a deploy key in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#deploy_keys%28project_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#deploy_keys</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#deploy_keys%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29-instance-method" class="signature"><strong>#deploy_keys</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Gets a list deploy keys in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29-instance-method" class="signature"><strong>#remove_deploy_key</strong>(project_id : Int32, key_id : Int32)</a>
+        <a href="#disable_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#disable_deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any</a>
+        
+          <div class="summary"><p>Disables a deploy key at the project.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enable_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#enable_deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any</a>
+        
+          <div class="summary"><p>Enables a deploy key at the project.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#remove_deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Delete a deploy key in a project.</p></div>
         
@@ -374,14 +340,16 @@
 
 
 
+
+
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="create_deploy_key&#40;project_id:Int32,title:String,key:String&#41;-instance-method">
+    <div class="entry-detail" id="create_deploy_key&#40;project_id:Int32,title:String,key:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>create_deploy_key</strong>(project_id : Int32, title : <a href="../../String.html">String</a>, key : <a href="../../String.html">String</a>)
+        def <strong>create_deploy_key</strong>(project_id : Int32, title : String, key : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_deploy_key%28project_id%3AInt32%2Ctitle%3AString%2Ckey%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_deploy_key%28project_id%3AInt32%2Ctitle%3AString%2Ckey%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create a deploy key in a project.</p>
@@ -389,81 +357,125 @@
 <p>If the deploy key already exists in another project, it will be joined
 to current project only if original one was is accessible by the same user.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] title The title of new deploy key.</li><li>param  [String] key New deploy key.</li><li>return [Hash] Information about the created deploy key in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] title The title of new deploy key.</li><li>param  [String] key New deploy key.</li><li>return [JSON::Any] Information about the created deploy key in a project.</li></ul>
 
 <pre><code>client.create_deploy_key(<span class="n">1</span>, <span class="s">&quot;deploy server&quot;</span>, <span class="s">&quot;ssh-rsa xxx&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/deploy_key.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/deploy_key.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="deploy_key&#40;project_id:Int32,key_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="deploy_key&#40;project_id:Int32,key_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>deploy_key</strong>(project_id : Int32, key_id : Int32)
+        def <strong>deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get a deploy key in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] key_id The ID of a deploy key.</li><li>return [Hash] Information about the deploy key in a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] key_id The ID of a deploy key.</li><li>return [JSON::Any] Information about the deploy key in a project.</li></ul>
 
 <pre><code>client.deploy_key(<span class="n">1</span>, <span class="n">1</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/deploy_key.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/deploy_key.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="deploy_keys&#40;project_id:Int32,params:Hash|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="deploy_keys&#40;project_id:Int32,params:Hash?&#61;nil&#41;-instance-method">
       <div class="signature">
         
-        def <strong>deploy_keys</strong>(project_id : Int32, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>deploy_keys</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#deploy_keys%28project_id%3AInt32%2Cparams%3AHash%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#deploy_keys%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list deploy keys in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [Array&lt;Hash>] List of issues under a project.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of issues under a project.</li></ul>
 
 <pre><code>client.deploy_keys(<span class="n">1</span>)
-client.deploy_keys(<span class="n">1</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span> })</code></pre></div>
+client.deploy_keys(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/deploy_key.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/deploy_key.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_deploy_key&#40;project_id:Int32,key_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="disable_deploy_key&#40;project_id:Int32,key_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>remove_deploy_key</strong>(project_id : Int32, key_id : Int32)
+        def <strong>disable_deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#remove_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#disable_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Disables a deploy key at the project.</p>
+
+<ul><li>param  [Integer, String] project The ID or path of a project.</li><li>param  [Integer] key The ID of a deploy key.</li><li>return [JSON::Any] Information about the enabled deploy key.</li></ul>
+
+<pre><code>client.disable_deploy_key(<span class="n">42</span>, <span class="n">66</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/deploy_key.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enable_deploy_key&#40;project_id:Int32,key_id:Int32&#41;:JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>enable_deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any
+
+        <a class="method-permalink" href="#enable_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Enables a deploy key at the project.</p>
+
+<ul><li>param  [Integer, String] project The ID or path of a project.</li><li>param  [Integer] key The ID of a deploy key.</li><li>return [JSON::Any] Information about the enabled deploy key.</li></ul>
+
+<pre><code>client.enable_deploy_key(<span class="n">42</span>, <span class="n">66</span>)</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/deploy_key.cr#L78" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_deploy_key&#40;project_id:Int32,key_id:Int32&#41;:JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_deploy_key</strong>(project_id : Int32, key_id : Int32) : JSON::Any
+
+        <a class="method-permalink" href="#remove_deploy_key%28project_id%3AInt32%2Ckey_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Delete a deploy key in a project.</p>
 
-<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] key_id The name of a deploy key.</li><li>return [Hash] Information about the deleted deploy key.</li></ul>
+<ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] key_id The name of a deploy key.</li><li>return [JSON::Any] Information about the deleted deploy key.</li></ul>
 
 <pre><code>client.remove_deploy_key(<span class="n">4</span>, <span class="n">3</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/deploy_key.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/deploy_key.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>

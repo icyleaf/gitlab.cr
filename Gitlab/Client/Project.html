@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
@@ -90,6 +90,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/RepositoryFile" data-name="gitlab::client::repositoryfile">
+      <a href="../../Gitlab/Client/RepositoryFile.html">RepositoryFile</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Session" data-name="gitlab::client::session">
       <a href="../../Gitlab/Client/Session.html">Session</a>
       
@@ -102,21 +107,6 @@
   
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/User" data-name="gitlab::client::user">
       <a href="../../Gitlab/Client/User.html">User</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt" data-name="gitlab::coreext">
-      <a href="../../Gitlab/CoreExt.html">CoreExt</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/CoreExt/StringParseJson" data-name="gitlab::coreext::stringparsejson">
-      <a href="../../Gitlab/CoreExt/StringParseJson.html">StringParseJson</a>
       
     </li>
   
@@ -180,6 +170,11 @@
       
     </li>
   
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NoSupportGraphQLAPIError" data-name="gitlab::error::nosupportgraphqlapierror">
+      <a href="../../Gitlab/Error/NoSupportGraphQLAPIError.html">NoSupportGraphQLAPIError</a>
+      
+    </li>
+  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/NotAllowRequestMethodError" data-name="gitlab::error::notallowrequestmethoderror">
       <a href="../../Gitlab/Error/NotAllowRequestMethodError.html">NotAllowRequestMethodError</a>
       
@@ -220,58 +215,13 @@
       
     </li>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP" data-name="gitlab::http">
-      <a href="../../Gitlab/HTTP.html">HTTP</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Chainable" data-name="gitlab::http::chainable">
-      <a href="../../Gitlab/HTTP/Chainable.html">Chainable</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Multipart" data-name="gitlab::http::multipart">
-      <a href="../../Gitlab/HTTP/Multipart.html">Multipart</a>
-      
-    </li>
-  
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options" data-name="gitlab::http::options">
-      <a href="../../Gitlab/HTTP/Options.html">Options</a>
-      
-        <ul>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Options/Params" data-name="gitlab::http::options::params">
-      <a href="../../Gitlab/HTTP/Options/Params.html">Params</a>
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/FileResponse" data-name="gitlab::fileresponse">
+      <a href="../../Gitlab/FileResponse.html">FileResponse</a>
       
     </li>
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Request" data-name="gitlab::http::request">
-      <a href="../../Gitlab/HTTP/Request.html">Request</a>
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/HTTP/Response" data-name="gitlab::http::response">
-      <a href="../../Gitlab/HTTP/Response.html">Response</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/String" data-name="string">
-      <a href="../../String.html">String</a>
       
     </li>
   
@@ -300,7 +250,11 @@
 
 <p>Constants for project visibility levels are next:</p>
 
-<ul><li>Private. visibility_level is 0. Project access must be granted explicitly for each user.</li><li>Internal. visibility_level is 10. The project can be cloned by any logged in user.</li><li>Public. visibility_level is 20. The project can be cloned without any authentication.</li></ul>
+<ul><li>Private. visibility_level is 0. Project access must be granted explicitly for each user.</li></ul>
+
+<ul><li>Internal. visibility_level is 10. The project can be cloned by any logged in user.</li></ul>
+
+<ul><li>Public. visibility_level is 20. The project can be cloned without any authentication.</li></ul>
 
 <p>See <a href="http://docs.gitlab.com/ce/api/projects.html" target="_blank">http://docs.gitlab.com/ce/api/projects.html</a></p>
 
@@ -327,10 +281,12 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
     
     <br/>
   
+
+
 
 
 
@@ -342,240 +298,247 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#add_project_hook%28project%3AInt32%7CString%2Curl%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#add_project_hook</strong>(project : Int32 | String, url : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#add_project_hook%28project%3AInt32%7CString%2Curl%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#add_project_hook</strong>(project : Int32 | String, url : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create a web hook of a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#add_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method" class="signature"><strong>#add_project_member</strong>(project : Int32 | String, user_id, access_level)</a>
+        <a href="#add_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%2Caccess_level%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#add_project_member</strong>(project : Int32 | String, user_id : Int32, access_level : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Adds a user to project team.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#all_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#all_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list of projects by the authenticated user (admin only).</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#archive_project%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#archive_project</strong>(project : Int32 | String)</a>
+        <a href="#archive_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#archive_project</strong>(project : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Archive a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_fork_from%28project%3AInt32%7CString%2Cforked_from_id%3AInt32%29-instance-method" class="signature"><strong>#create_fork_from</strong>(project : Int32 | String, forked_from_id : Int32)</a>
+        <a href="#create_fork_from%28project%3AInt32%7CString%2Cforked_from_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_fork_from</strong>(project : Int32 | String, forked_from_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Create a forked from/to relation between existing projects.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#create_project</strong>(user_id : Int32, name : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_project</strong>(user_id : Int32, name : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Creates a new project for a user.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_project%28name%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#create_project</strong>(name, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#create_project%28name%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_project</strong>(name : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Creates a new project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_project%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#delete_project</strong>(project : Int32 | String)</a>
+        <a href="#delete_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#delete_project</strong>(project : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Deletes a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_project%28project%3AInt32%7CString%2Cprams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#edit_project</strong>(project : Int32 | String, prams : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#edit_project%28project%3AInt32%7CString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_project</strong>(project : Int32 | String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Updates an existing project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%2Curl%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#edit_project_hook</strong>(project : Int32 | String, hook_id : Int32, url : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#edit_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%2Curl%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_project_hook</strong>(project : Int32 | String, hook_id : Int32, url : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Updates a web hook of a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method" class="signature"><strong>#edit_project_member</strong>(project : Int32 | String, user_id, access_level)</a>
+        <a href="#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_project_member</strong>(project : Int32 | String, user_id, access_level) : JSON::Any</a>
         
           <div class="summary"><p>Updates a team member's project access level.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#fork_project%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#fork_project</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#fork_project%28project%3AInt32%7CString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#fork_project</strong>(project : Int32 | String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Forks a project into the user namespace.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#owned_projects%28params%3AHash%7CNil%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#owned_projects</strong>(params : Hash | Nil = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#owned_projects%28params%3AHash%3F%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#owned_projects</strong>(params : Hash? = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list of projects owned by the authenticated user.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#project</strong>(project : Int32 | String)</a>
+        <a href="#project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project</strong>(project : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Gets information about a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method" class="signature"><strong>#project_branch</strong>(project : Int32 | String, branch : String)</a>
+        <a href="#project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any</a>
         
           <div class="summary"><p>Get a branch of a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_branchs%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#project_branchs</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#project_branchs%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_branchs</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Get a list of a project's branches.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_events%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#project_events</strong>(project : Int32 | String, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#project_events%28project%3AInt32%7CString%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_events</strong>(project : Int32 | String, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list of project events.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method" class="signature"><strong>#project_hook</strong>(project : Int32 | String, hook_id : Int32)</a>
+        <a href="#project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_hook</strong>(project : Int32 | String, hook_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Get a web hook of a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_hooks%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3Dnil%29-instance-method" class="signature"><strong>#project_hooks</strong>(project : Int32 | String, params : Hash | Nil = <span class="n">nil</span>)</a>
+        <a href="#project_hooks%28project%3AInt32%7CString%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_hooks</strong>(project : Int32 | String, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Get a list of a project's web hooks.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method" class="signature"><strong>#project_member</strong>(project : Int32 | String, user_id : Int32)</a>
+        <a href="#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Gets a project team member.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_members%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#project_members</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#project_members%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_members</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Get a list of a project's team members.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#project_search%28query%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#project_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#project_search%28query%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#project_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Search for project by name</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets single issue in the project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#protect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method" class="signature"><strong>#protect_project_branch</strong>(project : Int32 | String, branch : String)</a>
+        <a href="#protect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#protect_project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any</a>
         
           <div class="summary"><p>Protect a branch of a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove_fork_from%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#remove_fork_from</strong>(project : Int32 | String)</a>
+        <a href="#remove_fork%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#remove_fork</strong>(project : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Delete an existing forked from relationship.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method" class="signature"><strong>#remove_project_hook</strong>(project : Int32 | String, hook_id : Int32)</a>
+        <a href="#remove_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29%3AJSON%3A%3AAny%3F-instance-method" class="signature"><strong>#remove_project_hook</strong>(project : Int32 | String, hook_id : Int32) : JSON::Any?</a>
         
           <div class="summary"><p>Removes a user from project team.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method" class="signature"><strong>#remove_project_member</strong>(project : Int32 | String, user_id : Int32)</a>
+        <a href="#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Removes a user from project team.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#share_project%28project%3AInt32%7CString%2Cgroup_id%3AInt32%2Cgroup_access%3Dnil%29-instance-method" class="signature"><strong>#share_project</strong>(project : Int32 | String, group_id : Int32, group_access = <span class="n">nil</span>)</a>
+        <a href="#share_project%28project%3AInt32%7CString%2Cgroup_id%3AInt32%2Cgroup_access%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#share_project</strong>(project : Int32 | String, group_id : Int32, group_access = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Share a project with a group.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#star_project%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#star_project</strong>(project : Int32 | String)</a>
+        <a href="#star_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#star_project</strong>(project : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Star a project for the authentication user.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#starred_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method" class="signature"><strong>#starred_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</a>
+        <a href="#starred_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#starred_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list of projects starred by the authenticated user.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unarchive_project%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#unarchive_project</strong>(project : Int32 | String)</a>
+        <a href="#unarchive_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#unarchive_project</strong>(project : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Unarchive a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unprotect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method" class="signature"><strong>#unprotect_project_branch</strong>(project : Int32 | String, branch : String)</a>
+        <a href="#unprotect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#unprotect_project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any</a>
         
           <div class="summary"><p>Unprotect a branch of a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unstar_project%28project%3AInt32%7CString%29-instance-method" class="signature"><strong>#unstar_project</strong>(project : Int32 | String)</a>
+        <a href="#unstar_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#unstar_project</strong>(project : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Unstar a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#upload_file%28project%3AInt32%7CString%2Cfile%3AString%29-instance-method" class="signature"><strong>#upload_file</strong>(project : Int32 | String, file : String)</a>
+        <a href="#upload_file%28project%3AInt32%7CString%2Cfile%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#upload_file</strong>(project : Int32 | String, file : String) : JSON::Any</a>
         
           <div class="summary"><p>Upload a file in a project</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#upload_file%28project%3AInt32%7CString%2Cfile%3AFile%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#upload_file</strong>(project : Int32 | String, file : File) : JSON::Any</a>
+        
+          <div class="summary"><p>Same as <code><a href="../../Gitlab/Client/Project.html#upload_file%28project%3AInt32%7CString%2Cfile%3AString%29%3AJSON%3A%3AAny-instance-method">#upload_file</a></code></p></div>
         
       </li>
     
@@ -592,19 +555,21 @@
 
 
 
+
+
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="add_project_hook&#40;project:Int32|String,url:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="add_project_hook&#40;project:Int32|String,url:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>add_project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, url : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>add_project_hook</strong>(project : Int32 | String, url : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#add_project_hook%28project%3AInt32%7CString%2Curl%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#add_project_hook%28project%3AInt32%7CString%2Curl%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create a web hook of a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] url The url of a web hook.</li><li>param  [Hash] params A customizable set of options.</li><li>option params [String] :push_events Trigger hook on push events.</li><li>option params [String] :issues_events Trigger hook on issues events.</li><li>option params [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option params [String] :tag_push_events Trigger hook on push_tag events.</li><li>option params [String] :note_events Trigger hook on note events.</li><li>option params [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [Hash] Information about the created web hook.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] url The url of a web hook.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :push_events Trigger hook on push events.</li><li>option form [String] :issues_events Trigger hook on issues events.</li><li>option form [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option form [String] :tag_push_events Trigger hook on push_tag events.</li><li>option form [String] :note_events Trigger hook on note events.</li><li>option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [JSON::Any] Information about the created web hook.</li></ul>
 
 <pre><code>client.add_project_hook(<span class="n">42</span>, <span class="s">&quot;https://hooks.slack.com/services/xxx&quot;</span>)
 client.add_project_hook(</code></pre></div>
@@ -612,112 +577,112 @@ client.add_project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L410" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L409" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="add_project_member&#40;project:Int32|String,user_id,access_level&#41;-instance-method">
+    <div class="entry-detail" id="add_project_member&#40;project:Int32|String,user_id:Int32,access_level:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>add_project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id, access_level)
+        def <strong>add_project_member</strong>(project : Int32 | String, user_id : Int32, access_level : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#add_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method">#</a>
+        <a class="method-permalink" href="#add_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%2Caccess_level%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Adds a user to project team.</p>
 
-<ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>param  [Hash] options A customizable set of options.</li><li>return [Hash] Information about added team member.</li></ul>
+<ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about added team member.</li></ul>
 
 <pre><code>client.add_project_member(</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L327" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L326" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="all_projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="all_projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#all_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#all_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of projects by the authenticated user (admin only).</p>
 
-<p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#projects</a></code>({ "scope" => "all" })</p>
+<p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#projects</a></code>({ "scope" => "all" })</p>
 
 <pre><code>client.all_projects
-client.all_projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span> })
-client.all_projects({ <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+client.all_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="archive_project&#40;project:Int32|String&#41;-instance-method">
+    <div class="entry-detail" id="archive_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>archive_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
+        def <strong>archive_project</strong>(project : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#archive_project%28project%3AInt32%7CString%29-instance-method">#</a>
+        <a class="method-permalink" href="#archive_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Archive a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash] Information about the archive project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the archive project.</li></ul>
 
 <pre><code>client.archive_project(<span class="n">42</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_fork_from&#40;project:Int32|String,forked_from_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="create_fork_from&#40;project:Int32|String,forked_from_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>create_fork_from</strong>(project : Int32 | <a href="../../String.html">String</a>, forked_from_id : Int32)
+        def <strong>create_fork_from</strong>(project : Int32 | String, forked_from_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#create_fork_from%28project%3AInt32%7CString%2Cforked_from_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_fork_from%28project%3AInt32%7CString%2Cforked_from_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create a forked from/to relation between existing projects. Available only for admins.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [Hash] Information about the forked project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the forked project.</li></ul>
 
 <pre><code>client.create_fork_from(<span class="n">1</span>, <span class="n">21</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L515" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L516" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_project&#40;user_id:Int32,name:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="create_project&#40;user_id:Int32,name:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>create_project</strong>(user_id : Int32, name : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>create_project</strong>(user_id : Int32, name : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Creates a new project for a user.</p>
 
-<p>Alias to <code><a href="../../Gitlab/Client/Project.html#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#create_project</a></code>(params : Hash = {} of String => String)</p>
+<p>Alias to <code><a href="../../Gitlab/Client/Project.html#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#create_project</a></code>(params : Hash = {} of String => String)</p>
 
 <pre><code>client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>)
 client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;description: &#61;&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; &#125;&#41;</code></pre></div>
@@ -725,22 +690,22 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_project&#40;name,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="create_project&#40;name:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>create_project</strong>(name, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>create_project</strong>(name : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_project%28name%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#create_project%28name%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Creates a new project.</p>
 
-<ul><li>params [String] name The name of a project.</li><li>params [Hash] options A customizable set of options.</li><li>option params [String] :description The description of a project.</li><li>option params [String] :default_branch The default branch of a project.</li><li>option params [String] :namespace_id The namespace in which to create a project.</li><li>option params [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).</li><li>option params [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).</li><li>option params [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).</li><li>option params [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).</li><li>option params [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).</li><li>option params [String] :public The setting for making a project public (0 = false, 1 = true).</li><li>option params [String] :user_id The user/owner id of a project.</li><li>return [Hash] Information about created project.</li></ul>
+<ul><li>params [String] name The name of a project.</li><li>params [Hash] form A customizable set of options.</li><li>option form [String] :description The description of a project.</li><li>option form [String] :default_branch The default branch of a project.</li><li>option form [String] :namespace_id The namespace in which to create a project.</li><li>option form [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).</li><li>option form [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).</li><li>option form [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).</li><li>option form [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).</li><li>option form [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).</li><li>option form [String] :public The setting for making a project public (0 = false, 1 = true).</li><li>option form [String] :user_id The user/owner id of a project.</li><li>return [JSON::Any] Information about created project.</li></ul>
 
 <pre><code>client.create_project(<span class="s">&quot;gitlab&quot;</span>)
 client.create_project(<span class="s">&quot;viking&quot;</span>, { <span class="s">&quot;description: &#61;&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; &#125;&#41;
@@ -749,180 +714,180 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_project&#40;project:Int32|String&#41;-instance-method">
+    <div class="entry-detail" id="delete_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>delete_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
+        def <strong>delete_project</strong>(project : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#delete_project%28project%3AInt32%7CString%29-instance-method">#</a>
+        <a class="method-permalink" href="#delete_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Deletes a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash] Information about the deleted project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the deleted project.</li></ul>
 
 <pre><code>client.delete_project(<span class="n">42</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_project&#40;project:Int32|String,prams:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="edit_project&#40;project:Int32|String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>edit_project</strong>(project : Int32 | <a href="../../String.html">String</a>, prams : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>edit_project</strong>(project : Int32 | String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#edit_project%28project%3AInt32%7CString%2Cprams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_project%28project%3AInt32%7CString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Updates an existing project.</p>
 
-<ul><li>params [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params [Hash] options A customizable set of options.</li><li>option params [String] :name The name of a project.</li><li>option params [String] :path The name of a project.</li><li>option params [String] :description The name of a project.</li><li>return [Hash] Information about the edited project.</li></ul>
+<ul><li>params [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params [Hash] form A customizable set of options.</li><li>option form [String] :name The name of a project.</li><li>option form [String] :path The name of a project.</li><li>option form [String] :description The name of a project.</li><li>return [JSON::Any] Information about the edited project.</li></ul>
 
 <pre><code>client.edit_project(<span class="n">42</span>)
-client.edit_project(<span class="n">42</span>, { <span class="s">&quot;name&quot;</span> => <span class="s">&quot;project_name&quot;</span> })</code></pre></div>
+client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;project_name&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_project_hook&#40;project:Int32|String,hook_id:Int32,url:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="edit_project_hook&#40;project:Int32|String,hook_id:Int32,url:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>edit_project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, hook_id : Int32, url : <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>edit_project_hook</strong>(project : Int32 | String, hook_id : Int32, url : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#edit_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%2Curl%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%2Curl%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Updates a web hook of a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>param  [Int32] url The url of a web hook.</li><li>param  [Hash] params A customizable set of options.</li><li>option params [String] :push_events Trigger hook on push events.</li><li>option params [String] :issues_events Trigger hook on issues events.</li><li>option params [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option params [String] :tag_push_events Trigger hook on push_tag events.</li><li>option params [String] :note_events Trigger hook on note events.</li><li>option params [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [Hash] Information about updated web hook.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>param  [Int32] url The url of a web hook.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :push_events Trigger hook on push events.</li><li>option form [String] :issues_events Trigger hook on issues events.</li><li>option form [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option form [String] :tag_push_events Trigger hook on push_tag events.</li><li>option form [String] :note_events Trigger hook on note events.</li><li>option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [JSON::Any] Information about updated web hook.</li></ul>
 
 <pre><code>client.edit_project_hook(</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L431" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L430" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_project_member&#40;project:Int32|String,user_id,access_level&#41;-instance-method">
+    <div class="entry-detail" id="edit_project_member&#40;project:Int32|String,user_id,access_level&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>edit_project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id, access_level)
+        def <strong>edit_project_member</strong>(project : Int32 | String, user_id, access_level) : JSON::Any
 
-        <a class="method-permalink" href="#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29-instance-method">#</a>
+        <a class="method-permalink" href="#edit_project_member%28project%3AInt32%7CString%2Cuser_id%2Caccess_level%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Updates a team member's project access level.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [Array&lt;Hash>] Information about updated team member.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about updated team member.</li></ul>
 
 <pre><code>client.edit_project_member(</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L344" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L343" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="fork_project&#40;project:Int32|String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="fork_project&#40;project:Int32|String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>fork_project</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>fork_project</strong>(project : Int32 | String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#fork_project%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#fork_project%28project%3AInt32%7CString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Forks a project into the user namespace.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :sudo The username the project will be forked for.</li><li>return [Hash] Information about the forked project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :sudo The username the project will be forked for.</li><li>return [JSON::Any] Information about the forked project.</li></ul>
 
 <pre><code>client.create_fork(<span class="n">42</span>)
-client.create_fork(<span class="n">42</span>, { <span class="s">&quot;sudo&quot;</span> => <span class="s">&quot;another_username&quot;</span> })</code></pre></div>
+client.create_fork(<span class="n">42</span>, {<span class="s">&quot;sudo&quot;</span> => <span class="s">&quot;another_username&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="owned_projects&#40;params:Hash|Nil&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="owned_projects&#40;params:Hash?&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>owned_projects</strong>(params : Hash | Nil = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>owned_projects</strong>(params : Hash? = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#owned_projects%28params%3AHash%7CNil%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#owned_projects%28params%3AHash%3F%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of projects owned by the authenticated user.</p>
 
-<p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#projects</a></code>({ "scope" => "owned" })</p>
+<p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#projects</a></code>({ "scope" => "owned" })</p>
 
 <pre><code>client.owned_projects
-client.owned_projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span> })
-client.owned_projects({ <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+client.owned_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project&#40;project:Int32|String&#41;-instance-method">
+    <div class="entry-detail" id="project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project</strong>(project : Int32 | <a href="../../String.html">String</a>)
+        def <strong>project</strong>(project : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#project%28project%3AInt32%7CString%29-instance-method">#</a>
+        <a class="method-permalink" href="#project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets information about a project.</p>
 
-<ul><li>params  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash] Information about project.</li></ul>
+<ul><li>params  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about project.</li></ul>
 
 <pre><code>client.project(<span class="s">&quot;gitlab&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_branch&#40;project:Int32|String,branch:String&#41;-instance-method">
+    <div class="entry-detail" id="project_branch&#40;project:Int32|String,branch:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_branch</strong>(project : Int32 | <a href="../../String.html">String</a>, branch : <a href="../../String.html">String</a>)
+        def <strong>project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any
 
-        <a class="method-permalink" href="#project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get a branch of a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] branch The name of a branch.</li><li>return [Hash] Information about the branch under a project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] branch The name of a branch.</li><li>return [JSON::Any] Information about the branch under a project.</li></ul>
 
 <pre><code>client.project_branch(<span class="n">42</span>)
 client.project_branch(</code></pre></div>
@@ -930,22 +895,22 @@ client.project_branch(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L474" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L475" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_branchs&#40;project:Int32|String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="project_branchs&#40;project:Int32|String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_branchs</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>project_branchs</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#project_branchs%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_branchs%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get a list of a project's branches.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>] List of branches under a project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of branches under a project.</li></ul>
 
 <pre><code>client.project_branchs(<span class="n">42</span>)
 client.project_branchs(</code></pre></div>
@@ -953,44 +918,44 @@ client.project_branchs(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L460" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L461" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_events&#40;project:Int32|String,params:Hash|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="project_events&#40;project:Int32|String,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_events</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>project_events</strong>(project : Int32 | String, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#project_events%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_events%28project%3AInt32%7CString%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of project events.</p>
 
-<ul><li>params  [Int32, String] project The ID of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>] List of events under a project.</li></ul>
+<ul><li>params  [Int32, String] project The ID of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of events under a project.</li></ul>
 
 <pre><code>client.project_events(<span class="n">42</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_hook&#40;project:Int32|String,hook_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="project_hook&#40;project:Int32|String,hook_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, hook_id : Int32)
+        def <strong>project_hook</strong>(project : Int32 | String, hook_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get a web hook of a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [Hash] Information about the web hook.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [JSON::Any] Information about the web hook.</li></ul>
 
 <pre><code>client.project_hook(<span class="n">42</span>)
 client.project_hook(</code></pre></div>
@@ -998,22 +963,22 @@ client.project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L389" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L388" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_hooks&#40;project:Int32|String,params:Hash|Nil&#61;nil&#41;-instance-method">
+    <div class="entry-detail" id="project_hooks&#40;project:Int32|String,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_hooks</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash | Nil = <span class="n">nil</span>)
+        def <strong>project_hooks</strong>(project : Int32 | String, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#project_hooks%28project%3AInt32%7CString%2Cparams%3AHash%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_hooks%28project%3AInt32%7CString%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get a list of a project's web hooks.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>] List of web hooks under a project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] params A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of web hooks under a project.</li></ul>
 
 <pre><code>client.project_hooks(<span class="n">42</span>)
 client.project_hooks(</code></pre></div>
@@ -1021,44 +986,44 @@ client.project_hooks(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L375" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L374" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_member&#40;project:Int32|String,user_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="project_member&#40;project:Int32|String,user_id:Int32&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id : Int32)
+        def <strong>project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a project team member.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a project team member.</li><li>return [Hash] Information about member under a project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a project team member.</li><li>return [JSON::Any] Information about member under a project.</li></ul>
 
 <pre><code>client.project_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_members&#40;project:Int32|String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="project_members&#40;project:Int32|String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_members</strong>(project : Int32 | <a href="../../String.html">String</a>, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>project_members</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#project_members%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_members%28project%3AInt32%7CString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get a list of a project's team members.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :query The search query.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>] List of team members under a project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :query The search query.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of team members under a project.</li></ul>
 
 <pre><code>client.project_members(<span class="n">42</span>)
 client.project_members(</code></pre></div>
@@ -1066,69 +1031,69 @@ client.project_members(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_search&#40;query,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="project_search&#40;query,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>project_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>project_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#project_search%28query%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#project_search%28query%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Search for project by name</p>
 
-<ul><li>param  [String] query A string to search for in group names and paths.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :per_page Number of projects to return per page.</li><li>option params [String] :page The page to retrieve.</li><li>option params [String] :order_by Return requests ordered by id, name, created_at or last_activity_at fields.</li><li>option params [String] :sort Return requests sorted in asc or desc order.</li><li>return [Array&lt;Hash>] List of projects under search qyery.</li></ul>
+<ul><li>param  [String] query A string to search for in group names and paths.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :per_page Number of projects to return per page.</li><li>option params [String] :page The page to retrieve.</li><li>option params [String] :order_by Return requests ordered by id, name, created_at or last_activity_at fields.</li><li>option params [String] :sort Return requests sorted in asc or desc order.</li><li>return [JSON::Any] List of projects under search qyery.</li></ul>
 
 <pre><code>client.project_search(<span class="s">&quot;gitlab&quot;</span>)
-client.project_search(<span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;per_page&quot;</span> => <span class="n">50</span> })</code></pre></div>
+client.project_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="n">50</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets single issue in the project.</p>
 
-<ul><li>params  [Hash] params A customizable set of params.</li><li>option params [String] :scope Scope of projects. "owned" for list of projects owned by the authenticated user, "starred" for list of projects starred by the authenticated user, "all" to get all projects (admin only)</li><li>option params [String] :archived if passed, limit by archived status.</li><li>option params [String] :visibility if passed, limit by visibility public, internal, private.</li><li>option params [String] :order_by Return requests ordered by id, name, path, created_at, updated_at or last_activity_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :search Return list of authorized projects according to a search criteria.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [Array&lt;Hash>] List of projects of the authorized user.</li></ul>
+<ul><li>params  [Hash] params A customizable set of params.</li><li>option params [String] :scope Scope of projects. "owned" for list of projects owned by the authenticated user, "starred" for list of projects starred by the authenticated user, "all" to get all projects (admin only)</li><li>option params [String] :archived if passed, limit by archived status.</li><li>option params [String] :visibility if passed, limit by visibility public, internal, private.</li><li>option params [String] :order_by Return requests ordered by id, name, path, created_at, updated_at or last_activity_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :search Return list of authorized projects according to a search criteria.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of projects of the authorized user.</li></ul>
 
 <pre><code>client.projects
-client.projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span> })
-client.projects({ <span class="s">&quot;scope&quot;</span> => <span class="s">&quot;starred&quot;</span>, <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+client.projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.projects({<span class="s">&quot;scope&quot;</span> => <span class="s">&quot;starred&quot;</span>, <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="protect_project_branch&#40;project:Int32|String,branch:String&#41;-instance-method">
+    <div class="entry-detail" id="protect_project_branch&#40;project:Int32|String,branch:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>protect_project_branch</strong>(project : Int32 | <a href="../../String.html">String</a>, branch : <a href="../../String.html">String</a>)
+        def <strong>protect_project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any
 
-        <a class="method-permalink" href="#protect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#protect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Protect a branch of a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [Hash] Information about the protected branch.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the protected branch.</li></ul>
 
 <pre><code>client.protect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
 client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
@@ -1136,179 +1101,179 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L488" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L489" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_fork_from&#40;project:Int32|String&#41;-instance-method">
+    <div class="entry-detail" id="remove_fork&#40;project:Int32|String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>remove_fork_from</strong>(project : Int32 | <a href="../../String.html">String</a>)
+        def <strong>remove_fork</strong>(project : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#remove_fork_from%28project%3AInt32%7CString%29-instance-method">#</a>
+        <a class="method-permalink" href="#remove_fork%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Delete an existing forked from relationship. Available only for admins.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash] Information about the unforked project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unforked project.</li></ul>
 
-<pre><code>client.create_fork_from(<span class="n">1</span>, <span class="n">21</span>)</code></pre></div>
+<pre><code>client.remove_fork(<span class="n">1</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L527" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L528" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_project_hook&#40;project:Int32|String,hook_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="remove_project_hook&#40;project:Int32|String,hook_id:Int32&#41;:JSON::Any?-instance-method">
       <div class="signature">
         
-        def <strong>remove_project_hook</strong>(project : Int32 | <a href="../../String.html">String</a>, hook_id : Int32)
+        def <strong>remove_project_hook</strong>(project : Int32 | String, hook_id : Int32) : JSON::Any?
 
-        <a class="method-permalink" href="#remove_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#remove_project_hook%28project%3AInt32%7CString%2Chook_id%3AInt32%29%3AJSON%3A%3AAny%3F-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Removes a user from project team.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [Hash] Information about removed web hook.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [JSON::Any | Nil] Information about removed web hook.</li></ul>
+
+<pre><code>client.remove_project_hook(</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_project_member&#40;project:Int32|String,user_id:Int32&#41;:JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any
+
+        <a class="method-permalink" href="#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Removes a user from project team.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>return [JSON::Any] Information about removed team member.</li></ul>
 
 <pre><code>client.remove_project_member(</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L358" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_project_member&#40;project:Int32|String,user_id:Int32&#41;-instance-method">
+    <div class="entry-detail" id="share_project&#40;project:Int32|String,group_id:Int32,group_access&#61;nil&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>remove_project_member</strong>(project : Int32 | <a href="../../String.html">String</a>, user_id : Int32)
+        def <strong>share_project</strong>(project : Int32 | String, group_id : Int32, group_access = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#remove_project_member%28project%3AInt32%7CString%2Cuser_id%3AInt32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>Removes a user from project team.</p>
-
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>return [Hash] Information about removed team member.</li></ul>
-
-<pre><code>client.remove_project_member(</code></pre></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L359" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="share_project&#40;project:Int32|String,group_id:Int32,group_access&#61;nil&#41;-instance-method">
-      <div class="signature">
-        
-        def <strong>share_project</strong>(project : Int32 | <a href="../../String.html">String</a>, group_id : Int32, group_access = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#share_project%28project%3AInt32%7CString%2Cgroup_id%3AInt32%2Cgroup_access%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#share_project%28project%3AInt32%7CString%2Cgroup_id%3AInt32%2Cgroup_access%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Share a project with a group.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :sudo The username the project will be forked for.</li><li>return [Hash] Information about the share project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :sudo The username the project will be forked for.</li><li>return [JSON::Any] Information about the share project.</li></ul>
 
 <pre><code>client.share_project(<span class="n">2</span>, <span class="n">1</span>)
-client.share_project(<span class="n">2</span>, <span class="n">1</span>, { <span class="s">&quot;group_access&quot;</span> => <span class="s">&quot;50&quot;</span> })</code></pre></div>
+client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span class="s">&quot;group_access&quot;</span> => <span class="s">&quot;50&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="star_project&#40;project:Int32|String&#41;-instance-method">
+    <div class="entry-detail" id="star_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>star_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
+        def <strong>star_project</strong>(project : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#star_project%28project%3AInt32%7CString%29-instance-method">#</a>
+        <a class="method-permalink" href="#star_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Star a project for the authentication user.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash] Information about the starred project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the starred project.</li></ul>
 
 <pre><code>client.star_project(<span class="n">42</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="starred_projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="starred_projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>starred_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
+        def <strong>starred_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#starred_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#</a>
+        <a class="method-permalink" href="#starred_projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of projects starred by the authenticated user.</p>
 
-<p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29-instance-method">#projects</a></code>({ "scope" => "starred" })</p>
+<p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects%28params%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#projects</a></code>({ "scope" => "starred" })</p>
 
 <pre><code>client.starred_projects
-client.starred_projects({ <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span> })
-client.starred_projects({ <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span> })</code></pre></div>
+client.starred_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
+client.starred_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unarchive_project&#40;project:Int32|String&#41;-instance-method">
+    <div class="entry-detail" id="unarchive_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>unarchive_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
+        def <strong>unarchive_project</strong>(project : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#unarchive_project%28project%3AInt32%7CString%29-instance-method">#</a>
+        <a class="method-permalink" href="#unarchive_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Unarchive a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash] Information about the unarchive project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unarchive project.</li></ul>
 
 <pre><code>client.unarchive_project(<span class="n">42</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unprotect_project_branch&#40;project:Int32|String,branch:String&#41;-instance-method">
+    <div class="entry-detail" id="unprotect_project_branch&#40;project:Int32|String,branch:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>unprotect_project_branch</strong>(project : Int32 | <a href="../../String.html">String</a>, branch : <a href="../../String.html">String</a>)
+        def <strong>unprotect_project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any
 
-        <a class="method-permalink" href="#unprotect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#unprotect_project_branch%28project%3AInt32%7CString%2Cbranch%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Unprotect a branch of a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [Hash] Information about the unprotect branch.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the unprotect branch.</li></ul>
 
 <pre><code>client.unprotect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
 client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
@@ -1316,39 +1281,39 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L502" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L503" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unstar_project&#40;project:Int32|String&#41;-instance-method">
+    <div class="entry-detail" id="unstar_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>unstar_project</strong>(project : Int32 | <a href="../../String.html">String</a>)
+        def <strong>unstar_project</strong>(project : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#unstar_project%28project%3AInt32%7CString%29-instance-method">#</a>
+        <a class="method-permalink" href="#unstar_project%28project%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Unstar a project.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [Hash] Information about the unstar project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unstar project.</li></ul>
 
 <pre><code>client.unstar_project(<span class="n">42</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="upload_file&#40;project:Int32|String,file:String&#41;-instance-method">
+    <div class="entry-detail" id="upload_file&#40;project:Int32|String,file:String&#41;:JSON::Any-instance-method">
       <div class="signature">
         
-        def <strong>upload_file</strong>(project : Int32 | <a href="../../String.html">String</a>, file : <a href="../../String.html">String</a>)
+        def <strong>upload_file</strong>(project : Int32 | String, file : String) : JSON::Any
 
-        <a class="method-permalink" href="#upload_file%28project%3AInt32%7CString%2Cfile%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#upload_file%28project%3AInt32%7CString%2Cfile%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Upload a file in a project</p>
@@ -1357,7 +1322,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
 
 <p><strong>Note</strong>: The returned url is relative to the project path. In Markdown contexts, the link is automatically expanded when the format in markdown is used.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] file The path of a file.</li><li>return [Hash] Information about the uploaded file.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] file The path of a file.</li><li>return [JSON::Any] Information about the uploaded file.</li></ul>
 
 <pre><code>client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/snippets_ruby.rb&quot;</span>)
 client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/screenshot.png&quot;</span>)
@@ -1366,7 +1331,25 @@ client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icylea
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/9947476660cb2e1de3673dce7fdfea45ac2d59bc/src/gitlab/client/project.cr#L546" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L547" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="upload_file&#40;project:Int32|String,file:File&#41;:JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>upload_file</strong>(project : Int32 | String, file : File) : JSON::Any
+
+        <a class="method-permalink" href="#upload_file%28project%3AInt32%7CString%2Cfile%3AFile%29%3AJSON%3A%3AAny-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Same as <code><a href="../../Gitlab/Client/Project.html#upload_file%28project%3AInt32%7CString%2Cfile%3AString%29%3AJSON%3A%3AAny-instance-method">#upload_file</a></code></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b7f5d048b60ef741b3ead61af3736d628613c259/src/gitlab/client/project.cr#L552" target="_blank">View source</a>]
         
       </div>
     </div>
