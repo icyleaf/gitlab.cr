@@ -44,7 +44,7 @@ module Gitlab
       # client.repo_archive(1)
       # client.repo_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
       # ```
-      def repo_archive(project_id : Int32, sha = "HEAD") : FileResponse | JSON::Any
+      def repo_archive(project_id : Int32, sha = "HEAD") : Gitlab::FileResponse | JSON::Any
         mime_type = "application/octet-stream"
         response = get("/projects/#{project_id}/repository/archive", params: {
           "sha" => sha,
@@ -53,7 +53,7 @@ module Gitlab
         })
 
         if response.headers["Content-Type"] == mime_type
-          FileResponse.new(IO::Memory.new(response.body), response.headers)
+          Gitlab::FileResponse.new(IO::Memory.new(response.body), response.headers)
         else
           # Error with json response
           JSON.parse(response.body)
