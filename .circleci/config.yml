@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: crystallang/crystal
+    environment:
+      DOCS_PATH: "doc"
+      GIT_USER: "icyleaf"
+      GIT_EMAIL: "icyleaf.cn@gmail.com"
+      GIT_REPO: "git@github.com:icyleaf/gitlab.cr.git"
+    branches:
+      ignore:
+        - gh-pages
+    working_directory: ~/gitlab_cr
+    steps:
+      - checkout
+      - run:
+          name: "Install dependencies"
+          command: crystal deps
+      - run:
+          name: "Spec"
+          command: crystal spec
+      - run:
+          name: "Build API documents"
+          command: |
+            COMMIT_HASH=$(git rev-parse --short HEAD)
+            COMMIT_DATE=$(git log -1 --format=%ci)
+            COMMIT_STATUS="[${COMMIT_HASH}](https://${GH_REF}/commit/${COMMIT_HASH})"
+            sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" README.md
+            crystal doc
+      - deploy:
+          name: "Upload to gh-page"
+          command: |
+            git config --global user.name "$GIT_USER"
+            git config --global user.email "$GIT_EMAIL"
+            cd ${DOCS_PATH}
+            git init
+            git remote add origin $GIT_REPO
+            git fetch origin
+            git reset origin/gh-pages
+            git add -A .
+            git commit --allow-empty -m "Updating documents via ${COMMIT_HASH}"
+            git push origin HEAD:gh-pages
