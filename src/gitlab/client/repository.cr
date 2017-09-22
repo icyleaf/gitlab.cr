@@ -10,14 +10,14 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :path The path inside repository. Used to get contend of subdirectories.
       # - option params [String] :ref_name The name of a repository branch or tag or if not given the default branch
-      # - return [Hash]
+      # - return [JSON::Any]
       #
       # ```
       # client.tree(42)
       # client.tree(42, { path: 'Gemfile' })
       # ```
-      def tree(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/repository/tree", params).body.parse_json
+      def tree(project_id : Int32, params : Hash? = nil) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/repository/tree", params: params).body
       end
 
       # Get the raw file contents for a blob by blob SHA.
@@ -30,39 +30,42 @@ module Gitlab
       # client.blow_contents(1, "74bbc1b7")
       # client.blow_contents(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
       # ```
-      def blob_contents(project_id : Int32, sha : String)
-        get("/projects/#{project_id}/repository/raw_blobs/#{sha}").body
-      end
-
-      # Get the raw file contents for a file by commit SHA and path.
-      #
-      # - param  [Int32] project The ID of a project.
-      # - param  [String] sha The id of a commit sha.
-      # - param  [String] filepath The path and name of a file.
-      # - return [String] The raw file contents
-      #
-      # ```
-      # client.file_contents(1, "74bbc1b7", "README.md")
-      # client.file_contents(1, "a5c805f456f46b44e270f342330b06e06c53cbcc", "src/gitlab.cr")
-      # ```
-      def file_contents(project_id : Int32, sha : String, filepath : String)
-        get("/projects/#{project_id}/repository/blobs/#{sha}", {"filepath" => filepath}).body
+      def blob(project_id : Int32, sha = "HEAD", params : Hash? = nil) : String
+        get("/projects/#{project_id}/repository/blobs/#{sha}", params: params).body
       end
 
       # Get an archive of the repository.
       #
-      # FIXME: response content type is "application/octet-stream"
-      #
       # - param  [Int32] project The ID of a project.
       # - param  [String] sha The commit SHA to download defaults to the tip of the default branch.
-      # - return [String] The archive file.
+      # - return [Gitlab::FileResponse, JSON::Any] The archive file.
       #
       # ```
-      # client.file_archive(1)
-      # client.file_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
+      # file = client.repo_archive(1)
+      # file = client.repo_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
+      # if file.is_a?(Gitlab::FileResponse)
+      #   puts file.filename # => "test-HEAD-a5c805f456f46b44e270f342330b06e06c53cbcc.tar.gz"
+      #   File.open(file.filename, "w") do |f|
+      #     while byte = r.data.read_byte
+      #       f.write_byte byte
+      #     end
+      #   end
+      # end
       # ```
-      def file_archive(project_id : Int32, sha : String? = nil)
-        get("/projects/#{project_id}/repository/archive").body
+      def repo_archive(project_id : Int32, sha = "HEAD") : Gitlab::FileResponse | JSON::Any
+        mime_type = "application/octet-stream"
+        response = get("/projects/#{project_id}/repository/archive", params: {
+          "sha" => sha,
+        }, headers: {
+          "Accept" => mime_type,
+        })
+
+        if response.headers["Content-Type"] == mime_type
+          Gitlab::FileResponse.new(IO::Memory.new(response.body), response.headers)
+        else
+          # Error with json response
+          JSON.parse(response.body)
+        end
       end
 
       # Compare branches, tags or commits.
@@ -70,17 +73,17 @@ module Gitlab
       # - param  [Int32] project The ID of a project.
       # - param  [String] from the commit SHA or branch name.
       # - param  [String] to the commit SHA or branch name.
-      # - return [String] List a compare between from and to.
+      # - return [JSON::Any] List a compare between from and to.
       #
       # ```
       # client.compare(1, "master", "develop")
       # client.compare(1, "a5c805f4", "v1.0.0")
       # ```
-      def compare(project_id : Int32, from : String, to : String)
-        get("/projects/#{project_id}/repository/compare", {
+      def compare(project_id : Int32, from : String, to : String) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/repository/compare", params: {
           "from" => from,
           "to"   => to,
-        }).body.parse_json
+        }).body
       end
 
       # Get repository contributors list
@@ -89,14 +92,14 @@ module Gitlab
       # - params  [Hash] options A customizable set of options.
       # - option params [Int32] :page The page number.
       # - option params [Int32] :per_page The number of results per page.
-      # - return [Array<Hash>] List of projects of the authorized user.
+      # - return [JSON::Any] List of projects of the authorized user.
       #
       # ```
       # client.contributors(1)
       # client.contributors(1, {"per_page" => "10"})
       # ```
-      def contributors(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/repository/contributors", params)
+      def contributors(project_id : Int32, params : Hash? = nil) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/repository/contributors", params: params)
       end
     end
   end

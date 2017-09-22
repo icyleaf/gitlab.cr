@@ -1,10 +1,10 @@
-require "json"
-
 module Gitlab
   module Error
     class Error < Exception; end
 
     # # Client Errors
+
+    class NoSupportGraphQLAPIError < Exception; end
 
     class NotExistsFileError < Error; end
 
@@ -15,7 +15,7 @@ module Gitlab
     # # Gitlab API Errors
 
     class APIError < Error
-      def initialize(@message : String? = nil, @response : HTTP::Response? = nil)
+      def initialize(@message : String? = nil, @response : Halite::Response? = nil)
         super(@message)
       end
     end

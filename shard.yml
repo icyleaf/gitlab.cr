@@ -1,10 +1,15 @@
 name: gitlab
 version: 0.2.0
 
+dependencies:
+  halite:
+    github: icyleaf/halite
+
 development_dependencies:
   webmock:
     github: manastech/webmock.cr
-    version: ~> 0.9.1
+  spec2:
+    github: waterlink/spec2.cr
 
 authors:
   - icyleaf <icyleaf.cn@gmail.com>

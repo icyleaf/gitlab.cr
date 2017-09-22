@@ -23,14 +23,14 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of issues.
+      # - return [JSON::Any] List of issues.
       #
       # ```
       # client.issues
       # client.issues({"per_page" => "10"})
       # ```
-      def issues(params : Hash? = nil)
-        get("/issues", params).body.parse_json
+      def issues(params : Hash? = nil) : JSON::Any
+        JSON.parse get("/issues", params: params).body
       end
 
       # Gets a list isssues in a project.
@@ -45,27 +45,27 @@ module Gitlab
       # - option params [String] :sort Return requests sorted in asc or desc order. Default is desc.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of issues under a project.
+      # - return [JSON::Any] List of issues under a project.
       #
       # ```
       # client.issue(1)
       # client.issue(1, {"per_page" => "10"})
       # ```
-      def issues(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/issues", params).body.parse_json
+      def issues(project_id : Int32 | String, params : Hash? = nil) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/issues", params: params).body
       end
 
       # Get single issue in a project.
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the issue.
+      # - return [JSON::Any] Information about the issue.
       #
       # ```
       # client.issue(1, 10)
       # ```
-      def issue(project_id : Int32, issue_id : Int32)
-        get("/projects/#{project_id}/issues/#{issue_id}").body.parse_json
+      def issue(project_id : Int32, issue_id : Int32) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/issues/#{issue_id}").body
       end
 
       # Create issue in a project.
@@ -78,16 +78,16 @@ module Gitlab
       # - option params [String] :milestone_id The ID of a milestone to assign issue.
       # - option params [String] :labels Comma-separated label names for an issue.
       # - option params [String] :created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.
-      # - return [Hash] Information about the created issue in a project.
+      # - return [JSON::Any] Information about the created issue in a project.
       #
       # ```
       # client.create_issue(1, "support cli command")
       # client.create_issue(1, "error in debug mode", {"description" => "xxx"})
       # ```
-      def create_issue(project_id : Int32, title : String, params : Hash = {} of String => String)
-        post("/projects/#{project_id}/issues", {
+      def create_issue(project_id : Int32, title : String, params : Hash = {} of String => String) : JSON::Any
+        JSON.parse post("/projects/#{project_id}/issues", form: {
           "title" => title,
-        }).body.parse_json
+        }).body
       end
 
       # Edit an issue in a project.
@@ -102,7 +102,7 @@ module Gitlab
       # - option params [String] :labels Comma-separated label names for an issue.
       # - option params [String] :state_event The state event of an issue. Set close to close the issue and reopen to reopen it.
       # - option params [String] :created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.
-      # - return [Hash] Information about the created issue in a project.
+      # - return [JSON::Any] Information about the created issue in a project.
       #
       # ```
       # client.create_issue(1, 1, "support cli command")
@@ -112,8 +112,8 @@ module Gitlab
       #   "labels"       => "bug,v1.0.0",
       # })
       # ```
-      def edit_issue(project_id : Int32, issue_id : Int32, params : Hash = {} of String => String)
-        put("/projects/#{project_id}/issues/#{issue_id}", params).body.parse_json
+      def edit_issue(project_id : Int32, issue_id : Int32, form : Hash = {} of String => String) : JSON::Any
+        JSON.parse put("/projects/#{project_id}/issues/#{issue_id}", form: form).body
       end
 
       # Closes an issue.
@@ -122,12 +122,12 @@ module Gitlab
       #
       # - param  [Integer] project The ID of a project.
       # - param  [Integer] id The ID of an issue.
-      # - return [Hash] Information about closed issue.
+      # - return [JSON::Any] Information about closed issue.
       #
       # ```
       # client.close_issue(1, 1)
       # ```
-      def close_issue(project_id : Int32, issue_id : Int32)
+      def close_issue(project_id : Int32, issue_id : Int32) : JSON::Any
         edit_issue(project_id, issue_id, {"state_event" => "close"})
       end
 
@@ -137,12 +137,12 @@ module Gitlab
       #
       # - param  [Integer] project The ID of a project.
       # - param  [Integer] id The ID of an issue.
-      # - return [Hash] Information about closed issue.
+      # - return [JSON::Any] Information about closed issue.
       #
       # ```
       # client.close_issue(1, 1)
       # ```
-      def reopen_issue(project, id)
+      def reopen_issue(project_id : Int32, issue_id : Int32) : JSON::Any
         edit_issue(project_id, issue_id, {"state_event" => "reopen"})
       end
 
@@ -150,13 +150,13 @@ module Gitlab
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the deleted issue.
+      # - return [JSON::Any] Information about the deleted issue.
       #
       # ```
       # client.delete_issue(4, 3)
       # ```
-      def delete_issue(project_id : Int32, issue_id : Int32)
-        delete("/projects/#{project_id}/issues/#{issue_id}").body.parse_json
+      def delete_issue(project_id : Int32, issue_id : Int32) : JSON::Any
+        JSON.parse delete("/projects/#{project_id}/issues/#{issue_id}").body
       end
 
       # Move an issue to another project.
@@ -164,41 +164,41 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project
       # - param  [Int32] issue_id The ID of an issue.
       # - param  [Int32] to_project_id The ID of anthor to move project.
-      # - return [Hash] Information about the moved issue.
+      # - return [JSON::Any] Information about the moved issue.
       #
       # ```
       # client.move_issue(4, 3)
       # ```
-      def move_issue(project_id : Int32, issue_id : Int32, to_project_id : Int32)
-        post("/projects/#{project_id}/issues/#{issue_id}/move", {
+      def move_issue(project_id : Int32, issue_id : Int32, to_project_id : Int32) : JSON::Any
+        JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/move", form: {
           "to_project_id" => to_project_id,
-        }).body.parse_json
+        }).body
       end
 
       # Subscribe an issue in a project.
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the subscribed issue in a project.
+      # - return [JSON::Any] Information about the subscribed issue in a project.
       #
       # ```
       # client.subscribe_issue(1, 38)
       # ```
-      def subscribe_issue(project_id : Int32, issue_id : Int32)
-        post("/projects/#{project_id}/issues/#{issue_id}/subscription").body.parse_json
+      def subscribe_issue(project_id : Int32, issue_id : Int32) : JSON::Any
+        JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/subscribe").body
       end
 
       # Unsubscribe an issue in a project.
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [Int32] issue_id The ID of an issue.
-      # - return [Hash] Information about the subscribed issue in a project.
+      # - return [JSON::Any] Information about the subscribed issue in a project.
       #
       # ```
       # client.unsubscribe_issue(1, 38)
       # ```
-      def unsubscribe_issue(project_id : Int32, issue_id : Int32)
-        delete("/projects/#{project_id}/issues/#{issue_id}/subscription").body.parse_json
+      def unsubscribe_issue(project_id : Int32, issue_id : Int32) : JSON::Any
+        JSON.parse post("/projects/#{project_id}/issues/#{issue_id}/unsubscribe").body
       end
     end
   end

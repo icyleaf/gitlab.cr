@@ -10,27 +10,27 @@ module Gitlab
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :page The page number.
       # - option params [String] :per_page The number of results per page. default is 20
-      # - return [Array<Hash>] List of branches under a project.
+      # - return [JSON::Any] List of branches under a project.
       #
       # ```
       # client.branches(1)
       # client.branches(1, {"per_page" => "10"})
       # ```
-      def branches(project_id : Int32, params : Hash? = nil)
-        get("/projects/#{project_id}/repository/branches", params).body.parse_json
+      def branches(project_id : Int32, params : Hash? = nil) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/repository/branches", params: params).body
       end
 
       # Get single branch in a project.
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
-      # - return [Hash] Information about the branch in a project.
+      # - return [JSON::Any] Information about the branch in a project.
       #
       # ```
       # client.branch(1, "master")
       # ```
-      def branch(project_id : Int32, branch : String)
-        get("/projects/#{project_id}/repository/branches/#{branche}").body.parse_json
+      def branch(project_id : Int32, branch : String) : JSON::Any
+        JSON.parse get("/projects/#{project_id}/repository/branches/#{branch}").body
       end
 
       # Create branch in a project.
@@ -38,30 +38,30 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - param  [String] ref The branch name or commit SHA to create branch from.
-      # - return [Hash] Information about the created branch in a project.
+      # - return [JSON::Any] Information about the created branch in a project.
       #
       # ```
       # client.create_branch(1, "develop", "master")
       # client.create_branch(1, "hotfix/xxx", "9dff773")
       # ```
-      def create_branch(project_id : Int32, branch : String, ref : String)
-        post("/projects/#{project_id}/repository/branches", {
+      def create_branch(project_id : Int32, branch : String, ref : String) : JSON::Any
+        JSON.parse post("/projects/#{project_id}/repository/branches", form: {
           "branch_name" => branch,
           "ref"         => ref,
-        }).body.parse_json
+        }).body
       end
 
       # Delete a branch.
       #
       # - param  [Int32] project_id The ID of a project
       # - param  [String] branch The name of a branch.
-      # - return [Hash] Information about the deleted branch.
+      # - return [JSON::Any] Information about the deleted branch.
       #
       # ```
       # client.delete_branch(4, 2)
       # ```
-      def delete_branch(project_id : Int32, branch : String)
-        delete("/projects/#{project_id}/repository/branches/#{branche}").body.parse_json
+      def delete_branch(project_id : Int32, branch : String) : JSON::Any
+        JSON.parse delete("/projects/#{project_id}/repository/branches/#{branch}").body
       end
 
       # Protect branch in a project.
@@ -69,26 +69,27 @@ module Gitlab
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
       # - param  [String] ref The branch name or commit SHA to create branch from.
-      # - return [Hash] Information about protected branch in a project
+      # - return [JSON::Any] Information about protected branch in a project
       #
       # ```
       # client.branch(1, "master")
+      # client.protect_branch(5, 'api', { "developers_can_push" => "true" })
       # ```
-      def protect_branch(project_id : Int32, branch : String)
-        put("/projects/#{project_id}/repository/branches/#{branche}/protect").body.parse_json
+      def protect_branch(project_id : Int32, branch : String, form : Hash? = nil) : JSON::Any
+        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/protect", form: form).body
       end
 
       # Unprotect branch in a project.
       #
       # - param  [Int32] project_id The ID of a project.
       # - param  [String] branch The name of a branch.
-      # - return [Hash] Information about unprotected branch in a project
+      # - return [JSON::Any] Information about unprotected branch in a project
       #
       # ```
       # client.branch(1, "master")
       # ```
-      def protect_branch(project_id : Int32, branch : String)
-        put("/projects/#{project_id}/repository/branches/#{branche}/unprotect").body.parse_json
+      def unprotect_branch(project_id : Int32, branch : String) : JSON::Any
+        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/unprotect").body
       end
     end
   end
