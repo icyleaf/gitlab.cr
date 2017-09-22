@@ -43,6 +43,14 @@ module Gitlab
       # ```
       # file = client.repo_archive(1)
       # file = client.repo_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
+      # if file.is_a?(Gitlab::FileResponse)
+      #   puts file.filename # => "test-HEAD-996e42cd2afc8f4edfacb31f7ec6da0c83c09993.tar.gz"
+      #   File.open(file.filename, "w") do |f|
+      #     while byte = r.data.read_byte
+      #       f.write_byte byte
+      #     end
+      #   end
+      # end
       # ```
       def repo_archive(project_id : Int32, sha = "HEAD") : Gitlab::FileResponse | JSON::Any
         mime_type = "application/octet-stream"
