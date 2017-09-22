@@ -1,7 +1,7 @@
 # 💎 Gitlab.cr
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.1-green.svg)](https://github.com/icyleaf/gitlab.cr)
+[![Version](https://img.shields.io/badge/version-0.3.0-green.svg)](https://github.com/icyleaf/gitlab.cr)
 [![Dependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg)](https://travis-ci.org/icyleaf/gitlab.cr)
