@@ -44,7 +44,7 @@ module Gitlab
       # file = client.repo_archive(1)
       # file = client.repo_archive(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
       # if file.is_a?(Gitlab::FileResponse)
-      #   puts file.filename # => "test-HEAD-996e42cd2afc8f4edfacb31f7ec6da0c83c09993.tar.gz"
+      #   puts file.filename # => "test-HEAD-a5c805f456f46b44e270f342330b06e06c53cbcc.tar.gz"
       #   File.open(file.filename, "w") do |f|
       #     while byte = r.data.read_byte
       #       f.write_byte byte
@@ -73,7 +73,7 @@ module Gitlab
       # - param  [Int32] project The ID of a project.
       # - param  [String] from the commit SHA or branch name.
       # - param  [String] to the commit SHA or branch name.
-      # - return [String] List a compare between from and to.
+      # - return [JSON::Any] List a compare between from and to.
       #
       # ```
       # client.compare(1, "master", "develop")
