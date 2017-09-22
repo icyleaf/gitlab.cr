@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/version-0.3.0-green.svg)](https://github.com/icyleaf/gitlab.cr)
 [![Dependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
-[![Build Status](https://travis-ci.org/icyleaf/gitlab.cr.svg)](https://travis-ci.org/icyleaf/gitlab.cr)
+[![Build Status](https://circleci.com/gh/icyleaf/gitlab.cr)](https://circleci.com/gh/icyleaf/gitlab.cr)
 
 Gitlab.cr is a [GitLab API](http://docs.gitlab.com/ce/api/README.html) wrapper writes with [Crystal](http://crystal-lang.org/) Language.
 Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version. **No support GraphQL API**
