@@ -74,7 +74,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
 - Exceptions
 - Gitlab wrapper
 - Authentication
-- 100% Rspec Coveraged - `WIP`
+- 100% Rspec Coveraged
 
 ### Gitlab
 
@@ -262,7 +262,7 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - Create a new release - `create_release_notes`
   - Update a release - `update_release_notes`
 
-#### Todo
+#### Todo (optional)
 
 - Award Emoji
 - Project Snippets

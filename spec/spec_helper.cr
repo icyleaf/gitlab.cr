@@ -15,38 +15,42 @@ def load_fixture(name : String?)
 end
 
 # GET
-def stub_get(path, fixture, params = nil)
+def stub_get(path, fixture, params = nil, response_headers = {} of String => String)
   query = "?#{HTTP::Params.escape(params)}" if params
 
+  response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:get, "#{client.endpoint}#{path}#{query}")
          .with(headers: {"Private-Token" => client.token})
-         .to_return(body: load_fixture(fixture))
+         .to_return(body: load_fixture(fixture), headers: response_headers)
 end
 
 # POST
-def stub_post(path, fixture, status_code = 200, params = nil, form = nil)
+def stub_post(path, fixture, status_code = 200, params = nil, form = nil, response_headers = {} of String => String)
   query = "?#{HTTP::Params.escape(params)}" if params
   body = HTTP::Params.escape(form) if form
 
+  response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:post, "#{client.endpoint}#{path}#{query}")
          .with(body: body, headers: {"Private-Token" => client.token})
-         .to_return(body: load_fixture(fixture), status: status_code)
+         .to_return(body: load_fixture(fixture), headers: response_headers, status: status_code)
 end
 
 # PUT
-def stub_put(path, fixture, form = nil)
+def stub_put(path, fixture, form = nil, response_headers = {} of String => String)
   body = HTTP::Params.escape(form) if form
 
+  response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:put, "#{client.endpoint}#{path}")
          .with(body: body, headers: {"Private-Token" => client.token})
-         .to_return(body: load_fixture(fixture))
+         .to_return(body: load_fixture(fixture), headers: response_headers)
 end
 
 # DELETE
-def stub_delete(path, fixture, form = nil)
+def stub_delete(path, fixture, form = nil, response_headers = {} of String => String)
   body = HTTP::Params.escape(form) if form
 
+  response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:delete, "#{client.endpoint}#{path}")
          .with(body: body, headers: {"Private-Token" => client.token})
-         .to_return(body: load_fixture(fixture))
+         .to_return(body: load_fixture(fixture), headers: response_headers)
 end

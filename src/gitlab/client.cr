@@ -73,23 +73,6 @@ module Gitlab
     #   end
     # {% end %}
 
-    # # Return a `Gitlab::Response` by sending the target http request
-    # #
-    # # ```
-    # # client.request("get", "/path", { params: {"key" => "value"})
-    # # ```
-    # def request(method, uri, options : (Hash | NamedTuple)? = nil) : Halite::Response
-    #   conn = Halite::Client.new(default_options(uri))
-    #   response = conn.request(method, build_url(uri), options)
-    #   validate(response)
-    #   response
-    # end
-
-    # Return a full url string from built with base domain and url path
-    private def build_url(uri)
-      File.join(@endpoint, uri)
-    end
-
     # Validate http response status code and content type
     #
     # Raise an exception if status code >= 400
@@ -106,39 +89,18 @@ module Gitlab
     # - **503**: `Error::ServiceUnavailable`
     private def validate(response : Halite::Response)
       case response.status_code
-      when 400 then raise Error::BadRequest.new(error_message(response), response)
-      when 401 then raise Error::Unauthorized.new(error_message(response), response)
-      when 403 then raise Error::Forbidden.new(error_message(response), response)
-      when 404 then raise Error::NotFound.new(error_message(response), response)
-      when 405 then raise Error::MethodNotAllowed.new(error_message(response), response)
-      when 409 then raise Error::Conflict.new(error_message(response), response)
-      when 422 then raise Error::Unprocessable.new(error_message(response), response)
-      when 500 then raise Error::InternalServerError.new(error_message(response), response)
-      when 502 then raise Error::BadGateway.new(error_message(response), response)
-      when 503 then raise Error::ServiceUnavailable.new(error_message(response), response)
+      when 400 then raise Error::BadRequest.new(response)
+      when 401 then raise Error::Unauthorized.new(response)
+      when 403 then raise Error::Forbidden.new(response)
+      when 404 then raise Error::NotFound.new(response)
+      when 405 then raise Error::MethodNotAllowed.new(response)
+      when 409 then raise Error::Conflict.new(response)
+      when 422 then raise Error::Unprocessable.new(response)
+      when 500 then raise Error::InternalServerError.new(response)
+      when 502 then raise Error::BadGateway.new(response)
+      when 503 then raise Error::ServiceUnavailable.new(response)
       end
     end
-
-    private def handle_error(message)
-      case message
-      when Hash
-        message.to_h.sort.map do |key, val|
-          "'#{key}' #{(val.is_a?(Hash) ? val.sort.map { |k, v| "(#{k}: #{v.join(' ')})" } : val).join(' ')}"
-        end.join(", ")
-      when Array
-        message.join(" ")
-      else
-        message
-      end
-    end
-
-    # # Sets headers and query params for requests
-    # private def default_options(url, params : Hash? = nil)
-    #   Hash(String, Hash(String, String)).new.tap do |hash|
-    #     hash["headers"] = default_headers unless url.includes?("/session")
-    #     hash["params"] = params if params
-    #   end
-    # end
 
     # Set a default Auth(PRIVATE-TOKEN or Authorization) header
     #
@@ -158,18 +120,9 @@ module Gitlab
       end
     end
 
-    # Output error message
-    private def error_message(response, type : ErrorType = ErrorType::JsonError)
-      message = if type == ErrorType::JsonError
-                  response_body = JSON.parse(response.body)
-                  handle_error(response_body["message"] || response_body["error"])
-                else
-                  "unknown body format"
-                end
-
-      "Server responded with code #{response.status_code}, " \
-      "message: #{message}. " \
-      "Request URI: #{response.uri.to_s}"
+    # Return a full url string from built with base domain and url path
+    private def build_url(uri)
+      File.join(@endpoint, uri)
     end
 
     include User

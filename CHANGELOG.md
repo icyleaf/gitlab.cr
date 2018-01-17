@@ -9,6 +9,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > TODO
 
+## [0.3.1] (01/17/2018)
+
+### Changed
+
+- All errors based on APIError now only accepts Response class.
+  - `BadRequest`
+  - `Unauthorized`
+  - `Forbidden`
+  - `NotFound`
+  - `MethodNotAllowed`
+  - `Conflict`
+  - `Unprocessable`
+  - `InternalServerError`
+  - `BadGateway`
+  - `ServiceUnavailable`
+
+### Fixed
+
+- Fix throws unmatched exception with 502 and non-json body of response.
+
 ## [0.3.0] (09/22/2017)
 
 ### Changed
@@ -66,7 +86,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - [initial implementation](https://github.com/icyleaf/gitlab.cr/issues?q=milestone%3A0.2.0+is%3Aclosed)
 
-[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.1...v0.3.0
 [0.3.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.0...v0.2.4
 [0.2.4]: https://github.com/icyleaf/gitlab.cr/compare/v0.2.4...v0.2.1
 [0.2.1]: https://github.com/icyleaf/gitlab.cr/compare/v0.2.1...v0.2.0
