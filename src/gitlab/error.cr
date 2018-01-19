@@ -29,7 +29,7 @@ module Gitlab
           "#{response.body[0..50]}..."
         when .includes?("json")
           response_body = JSON.parse(response.body)
-          handle_error(response_body["message"] || response_body["error"])
+          handle_error(response_body["message"]? || response_body["error"]?)
         when .includes?("text")
           response.body
         else
