@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > TODO
 
+## [0.3.2] (01/19/2018)
+
+### Fixed
+
+- Fix throws an exception with use v4 api, changed to v5. ([Read more](https://docs.gitlab.com/ce/api/README.html#road-to-graphql))
+
 ## [0.3.1] (01/17/2018)
 
 ### Changed
@@ -86,7 +92,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - [initial implementation](https://github.com/icyleaf/gitlab.cr/issues?q=milestone%3A0.2.0+is%3Aclosed)
 
-[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.2...HEAD
+[0.3.2]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.2...v0.3.1
 [0.3.1]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.1...v0.3.0
 [0.3.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.0...v0.2.4
 [0.2.4]: https://github.com/icyleaf/gitlab.cr/compare/v0.2.4...v0.2.1
