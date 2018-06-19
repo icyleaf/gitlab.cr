@@ -1,8 +1,6 @@
 # 💎 Gitlab.cr
 
 [![Tag](https://img.shields.io/github/tag/icyleaf/gitlab.cr.svg)](https://github.com/icyleaf/gitlab.cr/blob/master/CHANGELOG.md)
-[![Dependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
-[![devDependency Status](https://shards.rocks/badge/github/icyleaf/gitlab.cr/dev_status.svg)](https://shards.rocks/github/icyleaf/gitlab.cr)
 [![Build Status](https://img.shields.io/circleci/project/github/icyleaf/gitlab.cr/master.svg?style=flat)](https://circleci.com/gh/icyleaf/gitlab.cr)
 [![License](https://img.shields.io/github/license/icyleaf/gitlabr.cr.svg)](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE)
 

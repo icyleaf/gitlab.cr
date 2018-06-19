@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.3.4] (2018-06-19)
 
-### Changed
+### Fixed
 
 - Compatibility with Crystal 0.25
 
