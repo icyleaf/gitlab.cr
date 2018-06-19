@@ -9,7 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > TODO
 
-## [0.3.3] (01/19/2018)
+## [0.3.4] (2018-06-19)
+
+### Changed
+
+- Compatibility with Crystal 0.25
+
+## [0.3.3] (2018-01-19)
 
 ### Changed
 
@@ -31,7 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fix throws unmatched exception with 502 and non-json body of response.
 - Fix throws an exception with use v4 api, changed to v5. ([Read more](https://docs.gitlab.com/ce/api/README.html#road-to-graphql))
 
-## [0.3.0] (09/22/2017)
+## [0.3.0] (2017-09-22)
 
 ### Changed
 
@@ -63,7 +69,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Correct all branch methods uri
 - Duplicate `lables` methods, and rename to `issues`
 
-## [0.2.4] (08/25/2017)
+## [0.2.4] (2017-08-25)
 
 ### Changed
 
@@ -78,17 +84,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Fix group_search and user_search with ghost variable.
 
-## [0.2.1] (06/22/2016)
+## [0.2.1] (2016-06-22)
 
 ### Fiexed
 
 - [Fix typo in project url](https://github.com/icyleaf/gitlab.cr/commit/fcd957e18e1ec03fb0c2fc1c422c56b3e826ff14)
 
-## v0.2.0 (06/21/2016)
+## v0.2.0 (2016-06-21)
 
 - [initial implementation](https://github.com/icyleaf/gitlab.cr/issues?q=milestone%3A0.2.0+is%3Aclosed)
 
-[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.3...HEAD
+[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/HEAD...v0.3.4
+[0.3.4]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.4...v0.3.3
 [0.3.3]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.3...v0.3.0
 [0.3.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.0...v0.2.4
 [0.2.4]: https://github.com/icyleaf/gitlab.cr/compare/v0.2.4...v0.2.1
