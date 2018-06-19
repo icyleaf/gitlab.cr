@@ -1,13 +1,13 @@
 require "../../spec_helper"
 
-Spec2.describe Gitlab::Client::Tag do
+describe Gitlab::Client::Tag do
   describe ".tags" do
     it "should return a paginated response of repository tags" do
       stub_get("/projects/3/repository/tags", "project_tags")
       tags = client.tags(3)
 
-      expect(tags).to be_a JSON::Any
-      expect(tags[0]["name"].as_s).to eq "v2.8.2"
+      tags.should be_a JSON::Any
+      tags[0]["name"].as_s.should eq "v2.8.2"
     end
   end
 
@@ -16,8 +16,8 @@ Spec2.describe Gitlab::Client::Tag do
       stub_get("/projects/3/repository/tags/v1.0.0", "project_tag_lightweight")
       tags = client.tag(3, "v1.0.0")
 
-      expect(tags).to be_a JSON::Any
-      expect(tags["name"].as_s).to eq "v1.0.0"
+      tags.should be_a JSON::Any
+      tags["name"].as_s.should eq "v1.0.0"
     end
   end
 
@@ -27,8 +27,8 @@ Spec2.describe Gitlab::Client::Tag do
         stub_post("/projects/3/repository/tags", "project_tag_lightweight")
         tag = client.create_tag(3, "v1.0.0", "2695effb5807a22ff3d138d593fd856244e155e7")
 
-        expect(tag["name"].as_s).to eq "v1.0.0"
-        expect(tag["message"].as_nil).to eq nil
+        tag["name"].as_s.should eq "v1.0.0"
+        tag["message"].as_nil.should eq nil
       end
     end
 
@@ -43,8 +43,8 @@ Spec2.describe Gitlab::Client::Tag do
         stub_post("/projects/3/repository/tags", "project_tag_annotated", form: form)
         tag = client.create_tag(3, "v1.1.0", "2695effb5807a22ff3d138d593fd856244e155e7", form)
 
-        expect(tag["name"].as_s).to eq "v1.1.0"
-        expect(tag["message"].as_s).to eq "Release 1.1.0"
+        tag["name"].as_s.should eq "v1.1.0"
+        tag["message"].as_s.should eq "Release 1.1.0"
       end
     end
   end
@@ -54,15 +54,15 @@ Spec2.describe Gitlab::Client::Tag do
       stub_delete("/projects/3/repository/tag/v1.0.0", "project_tag_lightweight")
       tag = client.delete_tag(3, "v1.0.0")
 
-      expect(tag["name"].as_s).to eq "v1.0.0"
+      tag["name"].as_s.should eq "v1.0.0"
     end
   end
 
   describe ".create_release_notes" do
-    pending("TODO")
+    pending { "TODO" }
   end
 
   describe ".update_release_notes" do
-    pending("TODO")
+    pending { "TODO" }
   end
 end

@@ -1,14 +1,14 @@
 require "../../spec_helper"
 
-Spec2.describe Gitlab::Client::Project do
+describe Gitlab::Client::Project do
   describe ".projects" do
     it "should return a paginated response of projects" do
       stub_get("/projects", "projects")
       projects = client.projects
 
-      expect(projects).to be_a JSON::Any
-      expect(projects[0]["name"].as_s).to eq "Brute"
-      expect(projects[0]["owner"]["name"].as_s).to eq "John Smith"
+      projects.should be_a JSON::Any
+      projects[0]["name"].as_s.should eq "Brute"
+      projects[0]["owner"]["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -17,9 +17,9 @@ Spec2.describe Gitlab::Client::Project do
       stub_get("/projects?search=Gitlab", "project_search")
       project_search = client.project_search("Gitlab")
 
-      expect(project_search).to be_a JSON::Any
-      expect(project_search[0]["name"].as_s).to eq "Gitlab"
-      expect(project_search[0]["owner"]["name"].as_s).to eq "John Smith"
+      project_search.should be_a JSON::Any
+      project_search[0]["name"].as_s.should eq "Gitlab"
+      project_search[0]["owner"]["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -28,21 +28,23 @@ Spec2.describe Gitlab::Client::Project do
       stub_get("/projects/3", "project")
       project = client.project(3)
 
-      expect(project["name"].as_s).to eq "Gitlab"
-      expect(project["owner"]["name"].as_s).to eq "John Smith"
+      project["name"].as_s.should eq "Gitlab"
+      project["owner"]["name"].as_s.should eq "John Smith"
     end
   end
 
   describe ".project_events" do
-    before { stub_get("/projects/2/events", "project_events") }
-    let(events) { client.project_events(2) }
     it "should return a paginated response of events" do
-      expect(events).to be_a JSON::Any
-      expect(events.size).to eq 2
+      stub_get("/projects/2/events", "project_events")
+      events = client.project_events(2)
+      events.should be_a JSON::Any
+      events.size.should eq 2
     end
 
     it "should return the action name of the event" do
-      expect(events[0]["action_name"].as_s).to eq "opened"
+      stub_get("/projects/2/events", "project_events")
+      events = client.project_events(2)
+      events[0]["action_name"].as_s.should eq "opened"
     end
   end
 
@@ -51,20 +53,22 @@ Spec2.describe Gitlab::Client::Project do
       stub_post("/projects", "project")
       project = client.create_project("Gitlab")
 
-      expect(project["name"].as_s).to eq "Gitlab"
-      expect(project["owner"]["name"].as_s).to eq "John Smith"
+      project["name"].as_s.should eq "Gitlab"
+      project["owner"]["name"].as_s.should eq "John Smith"
     end
   end
 
   describe ".create_project for user" do
     it "should return information about a created project" do
+      WebMock.reset
       stub_post("/users", "user")
       owner = client.create_user("johnexample.com", "pass", "John owner")
+
       stub_post("/projects/user/#{owner["id"]}", "project_for_user")
       project = client.create_project(owner["id"].as_i, "Brute")
 
-      expect(project["name"].as_s).to eq "Brute"
-      expect(project["owner"]["name"].as_s).to eq "John Owner"
+      project["name"].as_s.should eq "Brute"
+      project["owner"]["name"].as_s.should eq "John Owner"
     end
   end
 
@@ -73,8 +77,8 @@ Spec2.describe Gitlab::Client::Project do
       stub_delete("/projects/Gitlab", "project")
       project = client.delete_project("Gitlab")
 
-      expect(project["name"].as_s).to eq "Gitlab"
-      expect(project["owner"]["name"].as_s).to eq "John Smith"
+      project["name"].as_s.should eq "Gitlab"
+      project["owner"]["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -84,8 +88,8 @@ Spec2.describe Gitlab::Client::Project do
         stub_post("/projects/3/fork", "project_fork")
         project = client.fork_project(3)
 
-        expect(project["forked_from_project"]["id"].as_i).to eq 3
-        expect(project["id"].as_i).to eq 20
+        project["forked_from_project"]["id"].as_i.should eq 3
+        project["id"].as_i.should eq 20
       end
     end
 
@@ -95,9 +99,9 @@ Spec2.describe Gitlab::Client::Project do
         stub_post("/projects/3/fork", "project_forked_for_user", form: form)
         project = client.fork_project(3, form)
 
-        expect(project["forked_from_project"]["id"].as_i).to eq 3
-        expect(project["id"].as_i).to eq 20
-        expect(project["owner"]["username"].as_s).to eq "root"
+        project["forked_from_project"]["id"].as_i.should eq 3
+        project["id"].as_i.should eq 20
+        project["owner"]["username"].as_s.should eq "root"
       end
     end
   end
@@ -107,8 +111,8 @@ Spec2.describe Gitlab::Client::Project do
       stub_get("/projects/3/members", "team_members")
       team_members = client.project_members(3)
 
-      expect(team_members).to be_a JSON::Any
-      expect(team_members[0]["name"].as_s).to eq "John Smith"
+      team_members.should be_a JSON::Any
+      team_members[0]["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -117,7 +121,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_get("/projects/3/members/1", "team_member")
       team_member = client.project_member(3, 1)
 
-      expect(team_member["name"].as_s).to eq "John Smith"
+      team_member["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -127,7 +131,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_post("/projects/3/members", "team_member")
       team_member = client.add_project_member(3, 1, 40)
 
-      expect(team_member["name"].as_s).to eq "John Smith"
+      team_member["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -137,7 +141,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_put("/projects/3/members/1", "team_member", form: form)
       team_member = client.edit_project_member(3, 1, 40)
 
-      expect(team_member["name"].as_s).to eq "John Smith"
+      team_member["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -146,7 +150,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_delete("/projects/3/members/1", "team_member")
       team_member = client.remove_project_member(3, 1)
 
-      expect(team_member["name"].as_s).to eq "John Smith"
+      team_member["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -155,8 +159,8 @@ Spec2.describe Gitlab::Client::Project do
       stub_get("/projects/1/hooks", "project_hooks")
       hooks = client.project_hooks(1)
 
-      expect(hooks).to be_a JSON::Any
-      expect(hooks[0]["url"].as_s).to eq "https://api.example.net/v1/webhooks/ci"
+      hooks.should be_a JSON::Any
+      hooks[0]["url"].as_s.should eq "https://api.example.net/v1/webhooks/ci"
     end
   end
 
@@ -165,7 +169,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_get("/projects/1/hooks/1", "project_hook")
       hook = client.project_hook(1, 1)
 
-      expect(hook["url"].as_s).to eq "https://api.example.net/v1/webhooks/ci"
+      hook["url"].as_s.should eq "https://api.example.net/v1/webhooks/ci"
     end
   end
 
@@ -176,7 +180,7 @@ Spec2.describe Gitlab::Client::Project do
         stub_post("/projects/1/hooks", "project_hook", form: form)
         hook = client.add_project_hook(1, "https://api.example.net/v1/webhooks/ci")
 
-        expect(hook["url"].as_s).to eq "https://api.example.net/v1/webhooks/ci"
+        hook["url"].as_s.should eq "https://api.example.net/v1/webhooks/ci"
       end
     end
 
@@ -190,8 +194,8 @@ Spec2.describe Gitlab::Client::Project do
         stub_post("/projects/1/hooks", "project_hook_edit", form: form)
         hook = client.add_project_hook(1, "https://api.example.net/v1/webhooks/ci", form: form)
 
-        expect(hook["url"].as_s).to eq "https://api.example.net/v1/webhooks/ci"
-        expect(hook["merge_requests_events"].as_bool).to be_truthy
+        hook["url"].as_s.should eq "https://api.example.net/v1/webhooks/ci"
+        hook["merge_requests_events"].as_bool.should be_truthy
       end
     end
   end
@@ -202,7 +206,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_put("/projects/1/hooks/1", "project_hook", form: form)
       hook = client.edit_project_hook(1, 1, "https://api.example.net/v1/webhooks/ci")
 
-      expect(hook["url"].as_s).to eq "https://api.example.net/v1/webhooks/ci"
+      hook["url"].as_s.should eq "https://api.example.net/v1/webhooks/ci"
     end
   end
 
@@ -213,7 +217,7 @@ Spec2.describe Gitlab::Client::Project do
         stub_put("/projects/3", "project_edit", form: form)
         project = client.edit_project(3, form)
 
-        expect(project["name"].as_s).to eq "Gitlab-edit"
+        project["name"].as_s.should eq "Gitlab-edit"
       end
     end
 
@@ -224,7 +228,7 @@ Spec2.describe Gitlab::Client::Project do
         stub = stub_put("/projects/namespace/path", "project_edit", form: form)
         project = client.edit_project("namespace/path", form)
 
-        expect(project["name"].as_s).to eq "Gitlab-edit"
+        project["name"].as_s.should eq "Gitlab-edit"
       end
     end
   end
@@ -235,7 +239,7 @@ Spec2.describe Gitlab::Client::Project do
         stub_delete("/projects/1/hooks/1", nil)
 
         hook = client.remove_project_hook(1, 1)
-        expect(hook).to be_nil
+        hook.should be_nil
       end
     end
 
@@ -244,11 +248,12 @@ Spec2.describe Gitlab::Client::Project do
         WebMock.reset
         stub_delete("/projects/1/hooks/1", "project_hook")
         hook = client.remove_project_hook(1, 1)
-        expect(hook.not_nil!["url"].as_s).to eq "https://api.example.net/v1/webhooks/ci"
+        hook.not_nil!["url"].as_s.should eq "https://api.example.net/v1/webhooks/ci"
       end
     end
   end
 
+  # =======
   # describe ".push_rule" do
   #   before do
   #     stub_get("/projects/1/push_rule", "push_rule")
@@ -256,11 +261,11 @@ Spec2.describe Gitlab::Client::Project do
   #   end
 
   #   it "should get the correct resource" do
-  #     expect(a_get("/projects/1/push_rule")).to have_been_made
+  #     a_get("/projects/1/push_rule").should have_been_made
   #   end
 
   #   it "should return information about a push rule" do
-  #     expect(push_rule.commit_message_regex).to eq "\\b[A-Z]{3}-[0-9]+\\b"
+  #     push_rule.commit_message_regex.should eq "\\b[A-Z]{3}-[0-9]+\\b"
   #   end
   # end
 
@@ -271,11 +276,11 @@ Spec2.describe Gitlab::Client::Project do
   #   end
 
   #   it "should get the correct resource" do
-  #     expect(a_post("/projects/1/push_rule")).to have_been_made
+  #     a_post("/projects/1/push_rule").should have_been_made
   #   end
 
   #   it "should return information about an added push rule" do
-  #     expect(push_rule.commit_message_regex).to eq "\\b[A-Z]{3}-[0-9]+\\b"
+  #     push_rule.commit_message_regex.should eq "\\b[A-Z]{3}-[0-9]+\\b"
   #   end
   # end
 
@@ -286,11 +291,11 @@ Spec2.describe Gitlab::Client::Project do
   #   end
 
   #   it "should get the correct resource" do
-  #     expect(a_put("/projects/1/push_rule")).to have_been_made
+  #     a_put("/projects/1/push_rule").should have_been_made
   #   end
 
   #   it "should return information about an edited push rule" do
-  #     expect(push_rule.commit_message_regex).to eq "\\b[A-Z]{3}-[0-9]+\\b"
+  #     push_rule.commit_message_regex.should eq "\\b[A-Z]{3}-[0-9]+\\b"
   #   end
   # end
 
@@ -304,11 +309,11 @@ Spec2.describe Gitlab::Client::Project do
   #     end
 
   #     it "should get the correct resource" do
-  #       expect(a_delete("/projects/1/push_rule")).to have_been_made
+  #       a_delete("/projects/1/push_rule").should have_been_made
   #     end
 
   #     it "should return false" do
-  #       expect(push_rule).to be(false)
+  #       push_rule.should be(false)
   #     end
   #   end
 
@@ -319,21 +324,22 @@ Spec2.describe Gitlab::Client::Project do
   #     end
 
   #     it "should get the correct resource" do
-  #       expect(a_delete("/projects/1/push_rule")).to have_been_made
+  #       a_delete("/projects/1/push_rule").should have_been_made
   #     end
 
   #     it "should return information about a deleted push rule" do
-  #       expect(push_rule.commit_message_regex).to eq "\\b[A-Z]{3}-[0-9]+\\b"
+  #       push_rule.commit_message_regex.should eq "\\b[A-Z]{3}-[0-9]+\\b"
   #     end
   #   end
   # end
+  # =======
 
   describe ".create_fork_from" do
     it "should return information about a forked project" do
       stub_post("/projects/42/fork/24", "project_fork_link")
       forked_project_link = client.create_fork_from(42, 24)
-      expect(forked_project_link["forked_from_project_id"].as_i).to eq 24
-      expect(forked_project_link["forked_to_project_id"].as_i).to eq 42
+      forked_project_link["forked_from_project_id"].as_i.should eq 24
+      forked_project_link["forked_to_project_id"].as_i.should eq 42
     end
   end
 
@@ -342,7 +348,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_delete("/projects/42/fork", "project_fork_link")
       forked_project_link = client.remove_fork(42)
 
-      expect(forked_project_link["forked_to_project_id"].as_i).to eq 42
+      forked_project_link["forked_to_project_id"].as_i.should eq 42
     end
   end
 
@@ -352,7 +358,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_post("/projects/3/share", "group", form: form)
       group = client.share_project(3, 10, 40)
 
-      expect(group["id"].as_i).to eq 10
+      group["id"].as_i.should eq 10
     end
   end
 
@@ -361,7 +367,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_post("/projects/3/star", "project_star")
       starred_project = client.star_project(3)
 
-      expect(starred_project["id"].as_i).to eq 3
+      starred_project["id"].as_i.should eq 3
     end
   end
 
@@ -370,7 +376,7 @@ Spec2.describe Gitlab::Client::Project do
       stub_delete("/projects/3/star", "project_unstar")
       unstarred_project = client.unstar_project(3)
 
-      expect(unstarred_project["id"].as_i).to eq 3
+      unstarred_project["id"].as_i.should eq 3
     end
   end
 end

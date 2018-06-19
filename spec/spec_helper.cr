@@ -1,4 +1,4 @@
-require "spec2"
+require "spec"
 require "webmock"
 require "../src/gitlab"
 

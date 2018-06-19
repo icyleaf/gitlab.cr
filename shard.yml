@@ -1,5 +1,5 @@
 name: gitlab
-version: 0.3.3
+version: 0.3.4
 
 dependencies:
   halite:
@@ -9,13 +9,10 @@ development_dependencies:
   webmock:
     github: manastech/webmock.cr
     branch: master
-  spec2:
-    github: waterlink/spec2.cr
-    branch: master
 
 authors:
   - icyleaf <icyleaf.cn@gmail.com>
 
-crystal: 0.24.1
+crystal: 0.25.0
 
 license: MIT

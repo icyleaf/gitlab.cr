@@ -1,13 +1,13 @@
 require "../../spec_helper"
 
-Spec2.describe Gitlab::Client::Branch do
+describe Gitlab::Client::Branch do
   describe ".branches" do
     it "should return a json data of users" do
       stub_get("/projects/3/repository/branches", "branches")
       branches = client.branches(3)
 
-      expect(branches).to be_a JSON::Any
-      expect(branches[0]["name"].as_s).to eq "api"
+      branches.should be_a JSON::Any
+      branches[0]["name"].as_s.should eq "api"
     end
   end
 
@@ -16,8 +16,8 @@ Spec2.describe Gitlab::Client::Branch do
       stub_get("/projects/3/repository/branches/api", "branch")
       branch = client.branch(3, "api")
 
-      expect(branch).to be_a JSON::Any
-      expect(branch["name"].as_s).to eq "api"
+      branch.should be_a JSON::Any
+      branch["name"].as_s.should eq "api"
     end
   end
 
@@ -26,8 +26,8 @@ Spec2.describe Gitlab::Client::Branch do
       stub_put("/projects/3/repository/branches/api/protect", "branch")
       branch = client.protect_branch(3, "api")
 
-      expect(branch).to be_a JSON::Any
-      expect(branch["name"].as_s).to eq "api"
+      branch.should be_a JSON::Any
+      branch["name"].as_s.should eq "api"
     end
   end
 
@@ -36,8 +36,8 @@ Spec2.describe Gitlab::Client::Branch do
       stub_put("/projects/3/repository/branches/api/unprotect", "branch")
       branch = client.unprotect_branch(3, "api")
 
-      expect(branch).to be_a JSON::Any
-      expect(branch["name"].as_s).to eq "api"
+      branch.should be_a JSON::Any
+      branch["name"].as_s.should eq "api"
     end
   end
 
@@ -46,8 +46,8 @@ Spec2.describe Gitlab::Client::Branch do
       stub_post("/projects/3/repository/branches", "branch")
       branch = client.create_branch(3, "api", "master")
 
-      expect(branch).to be_a JSON::Any
-      expect(branch["name"].as_s).to eq "api"
+      branch.should be_a JSON::Any
+      branch["name"].as_s.should eq "api"
     end
   end
 
@@ -56,8 +56,8 @@ Spec2.describe Gitlab::Client::Branch do
       stub_delete("/projects/3/repository/branches/api", "branch_delete")
       branch = client.delete_branch(3, "api")
 
-      expect(branch).to be_a JSON::Any
-      expect(branch["branch_name"].as_s).to eq "api"
+      branch.should be_a JSON::Any
+      branch["branch_name"].as_s.should eq "api"
     end
   end
 end

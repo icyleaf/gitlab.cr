@@ -1,13 +1,13 @@
 require "../../spec_helper"
 
-Spec2.describe Gitlab::Client::Label do
+describe Gitlab::Client::Label do
   describe ".labels" do
     it "should return a paginated response of project's labels" do
       stub_get("/projects/3/labels", "labels")
       labels = client.labels(3)
 
-      expect(labels).to be_a JSON::Any
-      expect(labels[0]["name"].as_s).to eq "Backlog"
+      labels.should be_a JSON::Any
+      labels[0]["name"].as_s.should eq "Backlog"
     end
   end
 
@@ -16,7 +16,7 @@ Spec2.describe Gitlab::Client::Label do
       stub_delete("/projects/3/labels", "label")
       label = client.delete_label(3, "Backlog")
 
-      expect(label["name"].as_s).to eq "Backlog"
+      label["name"].as_s.should eq "Backlog"
     end
   end
 
@@ -26,7 +26,7 @@ Spec2.describe Gitlab::Client::Label do
       stub_put("/projects/3/labels", "label", form: form)
       label = client.edit_label(3, "TODO", form)
 
-      expect(label["name"].as_s).to eq "Backlog"
+      label["name"].as_s.should eq "Backlog"
     end
   end
 
@@ -35,8 +35,8 @@ Spec2.describe Gitlab::Client::Label do
       stub_post("/projects/3/labels", "label")
       label = client.create_label(3, "Backlog", "#DD10AA")
 
-      expect(label["name"].as_s).to eq "Backlog"
-      expect(label["color"].as_s).to eq "#DD10AA"
+      label["name"].as_s.should eq "Backlog"
+      label["color"].as_s.should eq "#DD10AA"
     end
   end
 
@@ -45,8 +45,8 @@ Spec2.describe Gitlab::Client::Label do
       stub_post("/projects/3/labels/Backlog/subscribe", "label")
       label = client.subscribe_label(3, "Backlog")
 
-      expect(label["name"].as_s).to eq "Backlog"
-      expect(label["subscribed"].as_bool).to be_truthy
+      label["name"].as_s.should eq "Backlog"
+      label["subscribed"].as_bool.should be_truthy
     end
   end
 
@@ -55,8 +55,8 @@ Spec2.describe Gitlab::Client::Label do
       stub_post("/projects/3/labels/Backlog/unsubscribe", "label_unsubscribe")
       label = client.unsubscribe_label(3, "Backlog")
 
-      expect(label["name"].as_s).to eq "Backlog"
-      expect(label["subscribed"].as_bool).to be_falsey
+      label["name"].as_s.should eq "Backlog"
+      label["subscribed"].as_bool.should be_falsey
     end
   end
 end

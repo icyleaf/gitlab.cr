@@ -1,13 +1,13 @@
 require "../../spec_helper"
 
-Spec2.describe Gitlab::Client::Group do
+describe Gitlab::Client::Group do
   describe ".groups" do
     it "should return a paginated response of groups" do
       stub_get("/groups", "groups")
       groups = client.groups
 
-      expect(groups).to be_a JSON::Any
-      expect(groups[0]["path"].as_s).to eq "threegroup"
+      groups.should be_a JSON::Any
+      groups[0]["path"].as_s.should eq "threegroup"
     end
   end
 
@@ -16,8 +16,8 @@ Spec2.describe Gitlab::Client::Group do
       stub_get("/groups/3", "group")
       group = client.group(3)
 
-      expect(group).to be_a JSON::Any
-      expect(group["path"].as_s).to eq "gitlab-group"
+      group.should be_a JSON::Any
+      group["path"].as_s.should eq "gitlab-group"
     end
   end
 
@@ -27,8 +27,8 @@ Spec2.describe Gitlab::Client::Group do
         stub_post("/groups", "group_create")
         group = client.create_group("GitLab-Group", "gitlab-path")
 
-        expect(group["name"].as_s).to eq "Gitlab-Group"
-        expect(group["path"].as_s).to eq "gitlab-group"
+        group["name"].as_s.should eq "Gitlab-Group"
+        group["path"].as_s.should eq "gitlab-group"
       end
     end
 
@@ -38,9 +38,9 @@ Spec2.describe Gitlab::Client::Group do
         stub_post("/groups", "group_create_with_description")
         group = client.create_group("GitLab-Group", "gitlab-path", {"description" => "gitlab group description"})
 
-        expect(group["name"].as_s).to eq "Gitlab-Group"
-        expect(group["path"].as_s).to eq "gitlab-group"
-        expect(group["description"].as_s).to eq "gitlab group description"
+        group["name"].as_s.should eq "Gitlab-Group"
+        group["path"].as_s.should eq "gitlab-group"
+        group["description"].as_s.should eq "gitlab group description"
       end
     end
   end
@@ -51,8 +51,8 @@ Spec2.describe Gitlab::Client::Group do
       stub_put("/groups/3", "group_edit", form: form)
       group = client.edit_group(3, form)
 
-      expect(group["name"].as_s).to eq "Gitlab-Edited"
-      expect(group["path"].as_s).to eq "gitlab-group"
+      group["name"].as_s.should eq "Gitlab-Edited"
+      group["path"].as_s.should eq "gitlab-group"
     end
   end
 
@@ -61,8 +61,8 @@ Spec2.describe Gitlab::Client::Group do
       stub_delete("/groups/42", "group_delete")
       group = client.delete_group(42)
 
-      expect(group["name"].as_s).to eq "Gitlab-Group"
-      expect(group["path"].as_s).to eq "gitlab-group"
+      group["name"].as_s.should eq "Gitlab-Group"
+      group["path"].as_s.should eq "gitlab-group"
     end
   end
 
@@ -76,9 +76,9 @@ Spec2.describe Gitlab::Client::Group do
       stub_post("/groups/#{group["id"]}/projects/#{project["id"]}", "group_create")
       group_transfer = client.transfer_project_to_group(group["id"], project["id"])
 
-      expect(group_transfer["name"]).to eq group["name"]
-      expect(group_transfer["path"]).to eq group["path"]
-      expect(group_transfer["id"]).to eq group["id"]
+      group_transfer["name"].should eq group["name"]
+      group_transfer["path"].should eq group["path"]
+      group_transfer["id"].should eq group["id"]
     end
   end
 
@@ -87,9 +87,9 @@ Spec2.describe Gitlab::Client::Group do
       stub_get("/groups/3/members", "group_members")
       members = client.group_members(3)
 
-      expect(members).to be_a JSON::Any
-      expect(members.size).to eq 2
-      expect(members[1]["name"].as_s).to eq "John Smith"
+      members.should be_a JSON::Any
+      members.size.should eq 2
+      members[1]["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -98,9 +98,9 @@ Spec2.describe Gitlab::Client::Group do
       stub_get("/groups/3/members/2", "group_member")
       member = client.group_member(3, 2)
 
-      expect(member).to be_a JSON::Any
-      expect(member["access_level"].as_i).to eq 10
-      expect(member["name"].as_s).to eq "John Smith"
+      member.should be_a JSON::Any
+      member["access_level"].as_i.should eq 10
+      member["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -108,7 +108,7 @@ Spec2.describe Gitlab::Client::Group do
     it "should return information about the added member" do
       stub_post("/groups/3/members", "group_member")
       member = client.add_group_member(3, 1, 40)
-      expect(member["name"].as_s).to eq "John Smith"
+      member["name"].as_s.should eq "John Smith"
     end
   end
 
@@ -117,7 +117,7 @@ Spec2.describe Gitlab::Client::Group do
       stub_put("/groups/3/members/1", "group_member_edit")
       member = client.edit_group_member(3, 1, 50)
 
-      expect(member["access_level"].as_i).to eq 50
+      member["access_level"].as_i.should eq 50
     end
   end
 
@@ -126,7 +126,7 @@ Spec2.describe Gitlab::Client::Group do
       stub_delete("/groups/3/members/1", "group_member_delete")
       group = client.remove_group_member(3, 1)
 
-      expect(group["group_id"].as_i).to eq 3
+      group["group_id"].as_i.should eq 3
     end
   end
 
@@ -135,9 +135,9 @@ Spec2.describe Gitlab::Client::Group do
       stub_get("/groups/4/projects", "group_projects")
       projects = client.group_projects(4)
 
-      expect(projects).to be_a JSON::Any
-      expect(projects.size).to eq 1
-      expect(projects[0]["name"].as_s).to eq "Diaspora Client"
+      projects.should be_a JSON::Any
+      projects.size.should eq 1
+      projects[0]["name"].as_s.should eq "Diaspora Client"
     end
   end
 
@@ -146,8 +146,8 @@ Spec2.describe Gitlab::Client::Group do
       stub_get("/groups?search=Group", "group_search")
       groups = client.group_search("Group")
 
-      expect(groups[0]["id"].as_i).to eq 5
-      expect(groups[-1]["id"].as_i).to eq 8
+      groups[0]["id"].as_i.should eq 5
+      groups[-1]["id"].as_i.should eq 8
     end
   end
 end
