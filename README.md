@@ -1,8 +1,8 @@
 # 💎 Gitlab.cr
 
+[![Language](https://img.shields.io/badge/language-crystal-776791.svg)](https://github.com/crystal-lang/crystal)
 [![Tag](https://img.shields.io/github/tag/icyleaf/gitlab.cr.svg)](https://github.com/icyleaf/gitlab.cr/blob/master/CHANGELOG.md)
 [![Build Status](https://img.shields.io/circleci/project/github/icyleaf/gitlab.cr/master.svg?style=flat)](https://circleci.com/gh/icyleaf/gitlab.cr)
-[![License](https://img.shields.io/github/license/icyleaf/gitlabr.cr.svg)](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE)
 
 Gitlab.cr is a [GitLab API](http://docs.gitlab.com/ce/api/README.html) wrapper writes with [Crystal](http://crystal-lang.org/) Language.
 Inspired from [gitlab](https://github.com/NARKOZ/gitlab) gem for ruby version. **No support GraphQL API**
@@ -274,14 +274,35 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - Runners
   - Pipelines
 
-## Contributing
 
-1. [Fork it](https://github.com/icyleaf/gitlab.cr/fork)
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
+## Help and Discussion
 
-## Contributors
+You can browse the API documents:
 
-- [icyleaf](https://github.com/icyleaf) - creator, maintainer
+http://icyleaf.github.io/gitlab.cr/
+
+You can browse the Changelog:
+
+https://github.com/icyleaf/gitlab.cr/blob/master/CHANGELOG.md
+
+If you have found a bug, please create a issue here:
+
+https://github.com/icyleaf/gitlab.cr/issues/new
+
+## How to Contribute
+
+Your contributions are always welcome! Please submit a pull request or create an issue to add a new question, bug or feature to the list.
+
+All [Contributors](https://github.com/icyleaf/gitlab.cr/graphs/contributors) are on the wall.
+
+## You may also like
+
+- [halite](https://github.com/icyleaf/halite) - HTTP Requests Client with a chainable REST API, built-in sessions and loggers.
+- [markd](https://github.com/icyleaf/markd) - Yet another markdown parser built for speed, Compliant to CommonMark specification.
+- [poncho](https://github.com/icyleaf/poncho) - A .env parser/loader improved for performance.
+- [popcorn](https://github.com/icyleaf/popcorn) - Easy and Safe casting from one type to another.
+- [fast-crystal](https://github.com/icyleaf/fast-crystal) - 💨 Writing Fast Crystal 😍 -- Collect Common Crystal idioms.
+
+## License
+
+[MIT License](https://github.com/icyleaf/gitlab.cr/blob/master/LICENSE) © icyleaf
