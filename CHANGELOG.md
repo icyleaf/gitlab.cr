@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Use [Halite] instead of legcy built-in HTTP client
+- Use [Halite](https://github.com/icyleaf/halite) instead of legcy built-in HTTP client
 - Rename `keys` to `deploy_keys` in deploy_keys uri
 - Change project search uri
 - Support return nil in `remove_project_hook`
