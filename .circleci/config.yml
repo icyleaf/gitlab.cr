@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Install dependencies"
-          command: crystal deps
+          command: shards install
       - run:
           name: "Spec"
           command: crystal spec
