@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Client::User - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Gitlab::Client::User
@@ -269,7 +282,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L6" target="_blank">gitlab/client/user.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L6" target="_blank">gitlab/client/user.cr</a>
     
     <br/>
   
@@ -463,7 +476,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="add_email&#40;email&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="add_email(email):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>add_email</strong>(email) : JSON::Any
@@ -480,12 +493,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L277" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L277" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="add_email&#40;user_id:Int32,email&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="add_email(user_id:Int32,email):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>add_email</strong>(user_id : Int32, email) : JSON::Any
@@ -502,12 +515,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L290" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L290" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="block_user&#40;user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="block_user(user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>block_user</strong>(user_id : Int32) : JSON::Any
@@ -526,12 +539,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_ssh_key&#40;user_id,title,key&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_ssh_key(user_id,title,key):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_ssh_key</strong>(user_id, title, key) : JSON::Any
@@ -548,12 +561,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L205" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L205" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_ssh_key&#40;title,key&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_ssh_key(title,key):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_ssh_key</strong>(title, key) : JSON::Any
@@ -570,12 +583,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L192" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L192" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_user&#40;email:String,password:String,username:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_user(email:String,password:String,username:String,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_user</strong>(email : String, password : String, username : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -588,18 +601,18 @@ Requires authentication from an admin account.</p>
 
 <ul><li>param  [String] email The email of a user.</li><li>param  [String] password The password of a user.</li><li>param  [String] username The username of a user.</li><li>param  [Hash] form A customizable set of form.</li><li>option form [String] :name The name of a user. Defaults to email.</li><li>option form [String] :skype The skype of a user.</li><li>option form [String] :linkedin The linkedin of a user.</li><li>option form [String] :twitter The twitter of a user.</li><li>option form [Int32] :projects_limit The limit of projects for a user.</li><li>return [JSON::Any] Information about created user.</li></ul>
 
-<pre><code><span class="t">Gitlab</span>.create_user(<span class="s">&quot;icy.leaf&#64;kaifeng.cn&quot;</span>, <span class="s">&quot;secret&quot;</span>, <span class="s">&quot;icyleaf&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;三火&quot;</span>})
-<span class="t">Gitlab</span>.create_user(<span class="s">&quot;icy.leaf&#64;kaifeng.cn&quot;</span>, <span class="s">&quot;secret&quot;</span>, <span class="s">&quot;icyleaf&quot;</span>)</code></pre></div>
+<pre><code><span class="t">Gitlab</span>.create_user(<span class="s">&quot;icy.leaf@kaifeng.cn&quot;</span>, <span class="s">&quot;secret&quot;</span>, <span class="s">&quot;icyleaf&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;三火&quot;</span>})
+<span class="t">Gitlab</span>.create_user(<span class="s">&quot;icy.leaf@kaifeng.cn&quot;</span>, <span class="s">&quot;secret&quot;</span>, <span class="s">&quot;icyleaf&quot;</span>)</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_email&#40;email_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_email(email_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_email</strong>(email_id : Int32) : JSON::Any
@@ -616,12 +629,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L302" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L302" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_email&#40;email_id:Int32,user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_email(email_id:Int32,user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_email</strong>(email_id : Int32, user_id : Int32) : JSON::Any
@@ -638,12 +651,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L315" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L315" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_ssh_key&#40;ssh_key_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_ssh_key(ssh_key_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_ssh_key</strong>(ssh_key_id : Int32) : JSON::Any
@@ -660,12 +673,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L217" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_ssh_key&#40;user_id:Int32,ssh_key_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_ssh_key(user_id:Int32,ssh_key_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_ssh_key</strong>(user_id : Int32, ssh_key_id : Int32) : JSON::Any
@@ -682,12 +695,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L230" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L230" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_user&#40;user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_user(user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_user</strong>(user_id : Int32) : JSON::Any
@@ -704,12 +717,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L100" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_user&#40;user_id:Int32,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_user(user_id:Int32,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_user</strong>(user_id : Int32, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -721,17 +734,17 @@ Requires authentication from an admin account.</p>
 
 <ul><li>param  [Int32] id The ID of a user.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :email The email of a user.</li><li>option params [String] :password The password of a user.</li><li>option params [String] :name The name of a user. Defaults to email.</li><li>option params [String] :skype The skype of a user.</li><li>option params [String] :linkedin The linkedin of a user.</li><li>option params [String] :twitter The twitter of a user.</li><li>option params [String] :projects_limit The limit of projects for a user.</li><li>return [JSON::Any] Information about edit user.</li></ul>
 
-<pre><code>client.edit_user(<span class="n">4</span>, {<span class="s">&quot;email&quot;</span> => <span class="s">&quot;icy.leaf&#64;kaifeng.cn&quot;</span>, <span class="s">&quot;projects_limit&quot;</span> => <span class="s">&quot;100&quot;</span>})</code></pre></div>
+<pre><code>client.edit_user(<span class="n">4</span>, {<span class="s">&quot;email&quot;</span> => <span class="s">&quot;icy.leaf@kaifeng.cn&quot;</span>, <span class="s">&quot;projects_limit&quot;</span> => <span class="s">&quot;100&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="email&#40;email_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="email(email_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>email</strong>(email_id : Int32) : JSON::Any
@@ -748,7 +761,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L265" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -770,12 +783,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L241" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L241" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="emails&#40;user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="emails(user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>emails</strong>(user_id : Int32) : JSON::Any
@@ -792,12 +805,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L253" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L253" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="ssh_key&#40;ssh_key_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="ssh_key(ssh_key_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>ssh_key</strong>(ssh_key_id : Int32) : JSON::Any
@@ -814,7 +827,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L179" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L179" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -836,12 +849,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L155" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L155" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="ssh_keys&#40;user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="ssh_keys(user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>ssh_keys</strong>(user_id : Int32) : JSON::Any
@@ -858,12 +871,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L167" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L167" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unblock_user&#40;user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="unblock_user(user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>unblock_user</strong>(user_id : Int32) : JSON::Any
@@ -882,7 +895,7 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L144" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L144" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -904,12 +917,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="user&#40;user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="user(user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>user</strong>(user_id : Int32) : JSON::Any
@@ -926,12 +939,12 @@ Requires authentication from an admin account.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="user_search&#40;query,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="user_search(query,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>user_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -949,12 +962,12 @@ client.group_search(<span class="s">&quot;icyleaf&quot;</span>, {<span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L116" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="users&#40;params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="users(params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>users</strong>(params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -972,7 +985,7 @@ client.users({<span class="s">&quot;per_page&quot;</span> => <span class="s">&qu
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/user.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/user.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>

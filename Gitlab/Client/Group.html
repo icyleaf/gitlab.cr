@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Client::Group - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Gitlab::Client::Group
@@ -269,7 +282,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L6" target="_blank">gitlab/client/group.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L6" target="_blank">gitlab/client/group.cr</a>
     
     <br/>
   
@@ -393,7 +406,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="add_group_member&#40;group_id:Int32,user_id:Int32,access_level&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="add_group_member(group_id:Int32,user_id:Int32,access_level):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>add_group_member</strong>(group_id : Int32, user_id : Int32, access_level) : JSON::Any
@@ -410,12 +423,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L176" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_group&#40;name:String,path:String,form:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_group(name:String,path:String,form:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_group</strong>(name : String, path : String, form : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -434,12 +447,12 @@ client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_group&#40;group_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_group(group_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_group</strong>(group_id : Int32) : JSON::Any
@@ -456,12 +469,12 @@ client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_group&#40;group_id:Int32,form:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_group(group_id:Int32,form:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_group</strong>(group_id : Int32, form : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -482,12 +495,12 @@ client.create_group(<span class="n">3</span>, {<span class="s">&quot;visibility_
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L94" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_group_member&#40;group_id:Int32,user_id:Int32,access_level&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_group_member(group_id:Int32,user_id:Int32,access_level):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_group_member</strong>(group_id : Int32, user_id : Int32, access_level) : JSON::Any
@@ -504,12 +517,12 @@ client.create_group(<span class="n">3</span>, {<span class="s">&quot;visibility_
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L193" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="group&#40;group:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="group(group:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>group</strong>(group : Int32 | String) : JSON::Any
@@ -527,12 +540,12 @@ client.group(<span class="s">&quot;orgination&quot;</span>)</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="group_member&#40;group_id:Int32,user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="group_member(group_id:Int32,user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>group_member</strong>(group_id : Int32, user_id : Int32) : JSON::Any
@@ -549,12 +562,12 @@ client.group(<span class="s">&quot;orgination&quot;</span>)</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="group_members&#40;group_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="group_members(group_id:Int32,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>group_members</strong>(group_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -572,12 +585,12 @@ client.group_members(<span class="n">1</span>, {<span class="s">&quot;per_page&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L150" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="group_projects&#40;group_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="group_projects(group_id:Int32,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>group_projects</strong>(group_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -598,12 +611,12 @@ client.group_projects(<span class="n">1</span>, { <span class="s">&quot;order_by
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="group_search&#40;query,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="group_search(query,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>group_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -621,12 +634,12 @@ client.group_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L122" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L122" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="groups&#40;params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="groups(params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>groups</strong>(params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -644,12 +657,12 @@ client.groups({<span class="s">&quot;per_page&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_group_member&#40;group_id:Int32,user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="remove_group_member(group_id:Int32,user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>remove_group_member</strong>(group_id : Int32, user_id : Int32) : JSON::Any
@@ -666,12 +679,12 @@ client.groups({<span class="s">&quot;per_page&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L209" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L209" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="transfer_project_to_group&#40;group_id,project_id&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="transfer_project_to_group(group_id,project_id):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>transfer_project_to_group</strong>(group_id, project_id) : JSON::Any
@@ -688,7 +701,7 @@ client.groups({<span class="s">&quot;per_page&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/group.cr#L134" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/group.cr#L134" target="_blank">View source</a>]
         
       </div>
     </div>

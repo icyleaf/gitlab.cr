@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Client::Repository - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Gitlab::Client::Repository
@@ -269,7 +282,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/repository.cr#L6" target="_blank">gitlab/client/repository.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/repository.cr#L6" target="_blank">gitlab/client/repository.cr</a>
     
     <br/>
   
@@ -337,7 +350,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="blob&#40;project_id:Int32,sha&#61;&amp;quot;HEAD&amp;quot;,params:Hash?&#61;nil&#41;:String-instance-method">
+    <div class="entry-detail" id="blob(project_id:Int32,sha=&amp;quot;HEAD&amp;quot;,params:Hash?=nil):String-instance-method">
       <div class="signature">
         
         def <strong>blob</strong>(project_id : Int32, sha = <span class="s">&quot;HEAD&quot;</span>, params : Hash? = <span class="n">nil</span>) : String
@@ -355,12 +368,12 @@ client.blow_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/repository.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/repository.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="compare&#40;project_id:Int32,from:String,to:String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="compare(project_id:Int32,from:String,to:String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>compare</strong>(project_id : Int32, from : String, to : String) : JSON::Any
@@ -378,12 +391,12 @@ client.compare(<span class="n">1</span>, <span class="s">&quot;a5c805f4&quot;</s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/repository.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/repository.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="contributors&#40;project_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="contributors(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>contributors</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -401,12 +414,12 @@ client.contributors(<span class="n">1</span>, {<span class="s">&quot;per_page&qu
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/repository.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/repository.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="repo_archive&#40;project_id:Int32,sha&#61;&amp;quot;HEAD&amp;quot;&#41;:Gitlab::FileResponse|JSON::Any-instance-method">
+    <div class="entry-detail" id="repo_archive(project_id:Int32,sha=&amp;quot;HEAD&amp;quot;):Gitlab::FileResponse|JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>repo_archive</strong>(project_id : Int32, sha = <span class="s">&quot;HEAD&quot;</span>) : <a href="../../Gitlab/FileResponse.html">Gitlab::FileResponse</a> | JSON::Any
@@ -421,7 +434,7 @@ client.contributors(<span class="n">1</span>, {<span class="s">&quot;per_page&qu
 <pre><code>file <span class="o">=</span> client.repo_archive(<span class="n">1</span>)
 file <span class="o">=</span> client.repo_archive(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)
 <span class="k">if</span> file.<span class="k">is_a?</span>(<span class="t">Gitlab</span><span class="t">::</span><span class="t">FileResponse</span>)
-  puts file.filename <span class="c"># &#61;&gt; &quot;test-HEAD-a5c805f456f46b44e270f342330b06e06c53cbcc.tar.gz&quot;</span>
+  puts file.filename <span class="c"># =&gt; &quot;test-HEAD-a5c805f456f46b44e270f342330b06e06c53cbcc.tar.gz&quot;</span>
   <span class="t">File</span>.open(file.filename, <span class="s">&quot;w&quot;</span>) <span class="k">do</span> <span class="o">|</span>f<span class="o">|</span>
     <span class="k">while</span> byte <span class="o">=</span> r.data.read_byte
       f.write_byte byte
@@ -432,12 +445,12 @@ file <span class="o">=</span> client.repo_archive(<span class="n">1</span>, <spa
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/repository.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/repository.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="tree&#40;project_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="tree(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>tree</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -455,7 +468,7 @@ client.tree(<span class="n">42</span>, { path: </code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/repository.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/repository.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>

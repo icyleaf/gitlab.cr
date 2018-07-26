@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Client::Commit - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Gitlab::Client::Commit
@@ -269,7 +282,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L6" target="_blank">gitlab/client/commit.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L6" target="_blank">gitlab/client/commit.cr</a>
     
     <br/>
   
@@ -351,7 +364,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="commit&#40;project_id:Int32,commit:String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="commit(project_id:Int32,commit:String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>commit</strong>(project_id : Int32, commit : String) : JSON::Any
@@ -368,12 +381,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="commit_comments&#40;project_id:Int32,sha:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="commit_comments(project_id:Int32,sha:String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>commit_comments</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -390,12 +403,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="commit_diff&#40;project_id:Int32,sha:String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="commit_diff(project_id:Int32,sha:String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>commit_diff</strong>(project_id : Int32, sha : String) : JSON::Any
@@ -412,12 +425,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="commit_status&#40;project_id:Int32,sha:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="commit_status(project_id:Int32,sha:String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>commit_status</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -438,12 +451,12 @@ client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="commits&#40;project_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="commits(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>commits</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -461,12 +474,12 @@ client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_commit_comment&#40;project_id:Int32,sha:String,note:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_commit_comment(project_id:Int32,sha:String,note:String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_commit_comment</strong>(project_id : Int32, sha : String, note : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -478,18 +491,18 @@ client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The commit SHA or name of a repository branch or tag.</li><li>param  [String] note The text of the comment.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :path The file path relative to the repository.</li><li>option params [String] :line The line number where the comment should be placed.</li><li>option params [String] :line_type The line type. Takes new or old as arguments.</li><li>return [JSON::Any] Information about the created commet of commit in a project.</li></ul>
 
-<pre><code>client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;awesome&#33;&quot;</span>)
-client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;&#43;1&quot;</span>, {<span class="s">&quot;line&quot;</span> => <span class="s">&quot;29&quot;</span>})</code></pre></div>
+<pre><code>client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;awesome!&quot;</span>)
+client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;+1&quot;</span>, {<span class="s">&quot;line&quot;</span> => <span class="s">&quot;29&quot;</span>})</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L83" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="update_commit_status&#40;project_id:Int32,sha:String,state:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="update_commit_status(project_id:Int32,sha:String,state:String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>update_commit_status</strong>(project_id : Int32, sha : String, state : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -510,7 +523,7 @@ client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;610
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/commit.cr#L128" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/commit.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>

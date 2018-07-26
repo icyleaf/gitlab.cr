@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Client::Milestone - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Gitlab::Client::Milestone
@@ -269,7 +282,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/milestone.cr#L6" target="_blank">gitlab/client/milestone.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/milestone.cr#L6" target="_blank">gitlab/client/milestone.cr</a>
     
     <br/>
   
@@ -344,7 +357,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="create_milestone&#40;project_id:Int32,title:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_milestone(project_id:Int32,title:String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_milestone</strong>(project_id : Int32, title : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -362,12 +375,12 @@ client.create_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/milestone.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/milestone.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_milestone&#40;project_id:Int32,milestone_id:Int32,title:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_milestone(project_id:Int32,milestone_id:Int32,title:String,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_milestone</strong>(project_id : Int32, milestone_id : Int32, title : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -385,12 +398,12 @@ client.edit_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/milestone.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/milestone.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="milestone&#40;project_id:Int32,milestone_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="milestone(project_id:Int32,milestone_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>milestone</strong>(project_id : Int32, milestone_id : Int32) : JSON::Any
@@ -407,12 +420,12 @@ client.edit_milestone(<span class="n">1</span>, <span class="s">&quot;v2.0.1&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/milestone.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/milestone.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="milestone_issues&#40;project_id:Int32,milestone_id:Int32,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="milestone_issues(project_id:Int32,milestone_id:Int32,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>milestone_issues</strong>(project_id : Int32, milestone_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -430,12 +443,12 @@ client.milestone_issues(<span class="n">1</span>, <span class="n">4</span>, {<sp
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/milestone.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/milestone.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="milestone_merge_requests&#40;project_id:Int32,milestone_id:Int32,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;-instance-method">
+    <div class="entry-detail" id="milestone_merge_requests(project_id:Int32,milestone_id:Int32,params:Hash={}ofString=&gt;String)-instance-method">
       <div class="signature">
         
         def <strong>milestone_merge_requests</strong>(project_id : Int32, milestone_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)
@@ -452,12 +465,12 @@ client.milestone_issues(<span class="n">1</span>, <span class="n">4</span>, {<sp
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/milestone.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/milestone.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="milestones&#40;project_id:Int32,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="milestones(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>milestones</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -475,7 +488,7 @@ client.milestones(<span class="n">1</span>, {<span class="s">&quot;state&quot;</
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/milestone.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/milestone.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>

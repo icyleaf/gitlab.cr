@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Client::Issue - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Gitlab::Client::Issue
@@ -279,7 +292,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L16" target="_blank">gitlab/client/issue.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L16" target="_blank">gitlab/client/issue.cr</a>
     
     <br/>
   
@@ -389,7 +402,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="close_issue&#40;project_id:Int32,issue_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="close_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>close_issue</strong>(project_id : Int32, issue_id : Int32) : JSON::Any
@@ -408,12 +421,12 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_issue&#40;project_id:Int32,title:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_issue(project_id:Int32,title:String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_issue</strong>(project_id : Int32, title : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -431,12 +444,12 @@ client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in deb
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L87" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_issue&#40;project_id:Int32,issue_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_issue</strong>(project_id : Int32, issue_id : Int32) : JSON::Any
@@ -453,12 +466,12 @@ client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in deb
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L158" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L158" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_issue&#40;project_id:Int32,issue_id:Int32,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_issue(project_id:Int32,issue_id:Int32,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_issue</strong>(project_id : Int32, issue_id : Int32, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -480,12 +493,12 @@ client.create_issue(<span class="n">1</span>, <span class="n">2</span>, <span cl
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L115" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="issue&#40;project_id:Int32,issue_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>issue</strong>(project_id : Int32, issue_id : Int32) : JSON::Any
@@ -502,12 +515,12 @@ client.create_issue(<span class="n">1</span>, <span class="n">2</span>, <span cl
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="issues&#40;params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="issues(params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>issues</strong>(params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -525,12 +538,12 @@ client.issues({<span class="s">&quot;per_page&quot;</span> => <span class="s">&q
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="issues&#40;project_id:Int32|String,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="issues(project_id:Int32|String,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>issues</strong>(project_id : Int32 | String, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -548,12 +561,12 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="move_issue&#40;project_id:Int32,issue_id:Int32,to_project_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="move_issue(project_id:Int32,issue_id:Int32,to_project_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>move_issue</strong>(project_id : Int32, issue_id : Int32, to_project_id : Int32) : JSON::Any
@@ -570,12 +583,12 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L172" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L172" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="reopen_issue&#40;project_id:Int32,issue_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="reopen_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>reopen_issue</strong>(project_id : Int32, issue_id : Int32) : JSON::Any
@@ -594,12 +607,12 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L145" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="subscribe_issue&#40;project_id:Int32,issue_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="subscribe_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>subscribe_issue</strong>(project_id : Int32, issue_id : Int32) : JSON::Any
@@ -616,12 +629,12 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L187" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L187" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unsubscribe_issue&#40;project_id:Int32,issue_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="unsubscribe_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>unsubscribe_issue</strong>(project_id : Int32, issue_id : Int32) : JSON::Any
@@ -638,7 +651,7 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/issue.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/issue.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>

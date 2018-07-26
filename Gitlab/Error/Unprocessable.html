@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Error::Unprocessable - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">class</span> Gitlab::Error::Unprocessable
@@ -258,7 +271,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/error.cr#L39" target="_blank">gitlab/error.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/error.cr#L70" target="_blank">gitlab/error.cr</a>
     
     <br/>
   
@@ -279,14 +292,23 @@
   
     
 
+  <h3>Instance methods inherited from class <code><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></code></h3>
+  
+  
+    <a href="../../Gitlab/Error/APIError.html#response%3AHalite%3A%3AResponse-instance-method" class="tooltip">
+      <span>response : Halite::Response</span>
+    response</a>
+    
+  
+
 
     
 
   <h3>Constructor methods inherited from class <code><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></code></h3>
   
   
-    <a href="../../Gitlab/Error/APIError.html#new%28message%3AString%3F%3Dnil%2Cresponse%3AHalite%3A%3AResponse%3F%3Dnil%29-class-method" class="tooltip">
-      <span>new(message : String? = <span class="n">nil</span>, response : Halite::Response? = <span class="n">nil</span>)</span>
+    <a href="../../Gitlab/Error/APIError.html#new%28response%3AHalite%3A%3AResponse%29-class-method" class="tooltip">
+      <span>new(response : Halite::Response)</span>
     new</a>
     
   

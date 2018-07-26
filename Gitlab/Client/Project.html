@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.1">
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../../";
+</script>
+
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <link href="../../css/style.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="../../js/doc.js"></script>
   <title>Gitlab::Client::Project - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
-<div id="types-list">
-  <div id="search-box">
-    <input type="search" id="search-input" placeholder="Search...">
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="../../index.html">README</a>
+    </div>
   </div>
 
-  <ul>
-    <li><a href="../../index.html">README</a></li>
-  </ul>
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
 
-  <ul>
+  <div class="types-list">
+    <ul>
   
   <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab" data-name="gitlab">
       <a href="../../Gitlab.html">Gitlab</a>
@@ -155,11 +171,6 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/JSONParseError" data-name="gitlab::error::jsonparseerror">
-      <a href="../../Gitlab/Error/JSONParseError.html">JSONParseError</a>
-      
-    </li>
-  
   <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/MethodNotAllowed" data-name="gitlab::error::methodnotallowed">
       <a href="../../Gitlab/Error/MethodNotAllowed.html">MethodNotAllowed</a>
       
@@ -227,9 +238,11 @@
   
 </ul>
 
+  </div>
 </div>
 
-<div id="main-content">
+
+<div class="main-content">
 <h1 class="type-name">
 
   <span class="kind">module</span> Gitlab::Client::Project
@@ -281,7 +294,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L19" target="_blank">gitlab/client/project.cr</a>
     
     <br/>
   
@@ -559,7 +572,7 @@
 
   <h2>Instance Method Detail</h2>
   
-    <div class="entry-detail" id="add_project_hook&#40;project:Int32|String,url:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="add_project_hook(project:Int32|String,url:String,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>add_project_hook</strong>(project : Int32 | String, url : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -577,12 +590,12 @@ client.add_project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L409" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L409" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="add_project_member&#40;project:Int32|String,user_id:Int32,access_level:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="add_project_member(project:Int32|String,user_id:Int32,access_level:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>add_project_member</strong>(project : Int32 | String, user_id : Int32, access_level : Int32) : JSON::Any
@@ -599,12 +612,12 @@ client.add_project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L326" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L326" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="all_projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="all_projects(params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -623,12 +636,12 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="archive_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="archive_project(project:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>archive_project</strong>(project : Int32 | String) : JSON::Any
@@ -645,12 +658,12 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_fork_from&#40;project:Int32|String,forked_from_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_fork_from(project:Int32|String,forked_from_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_fork_from</strong>(project : Int32 | String, forked_from_id : Int32) : JSON::Any
@@ -667,12 +680,12 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L516" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L516" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_project&#40;user_id:Int32,name:String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_project(user_id:Int32,name:String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_project</strong>(user_id : Int32, name : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -685,17 +698,17 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#create_project%28user_id%3AInt32%2Cname%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#create_project</a></code>(params : Hash = {} of String => String)</p>
 
 <pre><code>client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>)
-client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;description: &#61;&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; &#125;&#41;</code></pre></div>
+client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;description: =&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; })</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_project&#40;name:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="create_project(name:String,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>create_project</strong>(name : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -708,18 +721,18 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
 <ul><li>params [String] name The name of a project.</li><li>params [Hash] form A customizable set of options.</li><li>option form [String] :description The description of a project.</li><li>option form [String] :default_branch The default branch of a project.</li><li>option form [String] :namespace_id The namespace in which to create a project.</li><li>option form [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).</li><li>option form [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).</li><li>option form [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).</li><li>option form [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).</li><li>option form [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).</li><li>option form [String] :public The setting for making a project public (0 = false, 1 = true).</li><li>option form [String] :user_id The user/owner id of a project.</li><li>return [JSON::Any] Information about created project.</li></ul>
 
 <pre><code>client.create_project(<span class="s">&quot;gitlab&quot;</span>)
-client.create_project(<span class="s">&quot;viking&quot;</span>, { <span class="s">&quot;description: &#61;&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; &#125;&#41;
-client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s">&quot;, &#123; &quot;</span>wall_enabled<span class="s">&quot; &#61;&gt; &quot;</span><span class="n">false</span><span class="s">&quot; &#125;&#41;</code></pre></div>
+client.create_project(<span class="s">&quot;viking&quot;</span>, { <span class="s">&quot;description: =&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; })
+client.create_project(&quot;</span><span class="t">Red</span><span class="s">&quot;, { &quot;</span>wall_enabled<span class="s">&quot; =&gt; &quot;</span><span class="n">false</span><span class="s">&quot; })</code></pre></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_project(project:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>delete_project</strong>(project : Int32 | String) : JSON::Any
@@ -736,12 +749,12 @@ client.create_project&#40;&quot;</span><span class="t">Red</span><span class="s"
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_project&#40;project:Int32|String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_project(project:Int32|String,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_project</strong>(project : Int32 | String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -759,12 +772,12 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_project_hook&#40;project:Int32|String,hook_id:Int32,url:String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_project_hook(project:Int32|String,hook_id:Int32,url:String,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_project_hook</strong>(project : Int32 | String, hook_id : Int32, url : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -781,12 +794,12 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L430" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L430" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="edit_project_member&#40;project:Int32|String,user_id,access_level&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="edit_project_member(project:Int32|String,user_id,access_level):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>edit_project_member</strong>(project : Int32 | String, user_id, access_level) : JSON::Any
@@ -803,12 +816,12 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L343" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L343" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="fork_project&#40;project:Int32|String,form:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="fork_project(project:Int32|String,form:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>fork_project</strong>(project : Int32 | String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -826,12 +839,12 @@ client.create_fork(<span class="n">42</span>, {<span class="s">&quot;sudo&quot;<
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="owned_projects&#40;params:Hash?&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="owned_projects(params:Hash?={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>owned_projects</strong>(params : Hash? = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -850,12 +863,12 @@ client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class=
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project(project:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project</strong>(project : Int32 | String) : JSON::Any
@@ -872,12 +885,12 @@ client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class=
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_branch&#40;project:Int32|String,branch:String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_branch(project:Int32|String,branch:String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any
@@ -895,12 +908,12 @@ client.project_branch(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L475" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L475" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_branchs&#40;project:Int32|String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_branchs(project:Int32|String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_branchs</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -918,12 +931,12 @@ client.project_branchs(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L461" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L461" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_events&#40;project:Int32|String,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_events(project:Int32|String,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_events</strong>(project : Int32 | String, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -940,12 +953,12 @@ client.project_branchs(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_hook&#40;project:Int32|String,hook_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_hook(project:Int32|String,hook_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_hook</strong>(project : Int32 | String, hook_id : Int32) : JSON::Any
@@ -963,12 +976,12 @@ client.project_hook(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L388" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L388" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_hooks&#40;project:Int32|String,params:Hash?&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_hooks(project:Int32|String,params:Hash?=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_hooks</strong>(project : Int32 | String, params : Hash? = <span class="n">nil</span>) : JSON::Any
@@ -986,12 +999,12 @@ client.project_hooks(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L374" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L374" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_member&#40;project:Int32|String,user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_member(project:Int32|String,user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any
@@ -1008,12 +1021,12 @@ client.project_hooks(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_members&#40;project:Int32|String,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_members(project:Int32|String,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_members</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -1031,12 +1044,12 @@ client.project_members(</code></pre></div>
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="project_search&#40;query,params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="project_search(query,params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>project_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -1054,12 +1067,12 @@ client.project_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="projects(params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -1078,12 +1091,12 @@ client.projects({<span class="s">&quot;scope&quot;</span> => <span class="s">&qu
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="protect_project_branch&#40;project:Int32|String,branch:String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="protect_project_branch(project:Int32|String,branch:String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>protect_project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any
@@ -1101,12 +1114,12 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L489" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L489" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_fork&#40;project:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="remove_fork(project:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>remove_fork</strong>(project : Int32 | String) : JSON::Any
@@ -1123,12 +1136,12 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L528" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L528" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_project_hook&#40;project:Int32|String,hook_id:Int32&#41;:JSON::Any?-instance-method">
+    <div class="entry-detail" id="remove_project_hook(project:Int32|String,hook_id:Int32):JSON::Any?-instance-method">
       <div class="signature">
         
         def <strong>remove_project_hook</strong>(project : Int32 | String, hook_id : Int32) : JSON::Any?
@@ -1145,12 +1158,12 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_project_member&#40;project:Int32|String,user_id:Int32&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="remove_project_member(project:Int32|String,user_id:Int32):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any
@@ -1167,12 +1180,12 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L358" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L358" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="share_project&#40;project:Int32|String,group_id:Int32,group_access&#61;nil&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="share_project(project:Int32|String,group_id:Int32,group_access=nil):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>share_project</strong>(project : Int32 | String, group_id : Int32, group_access = <span class="n">nil</span>) : JSON::Any
@@ -1190,12 +1203,12 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span 
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="star_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="star_project(project:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>star_project</strong>(project : Int32 | String) : JSON::Any
@@ -1212,12 +1225,12 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span 
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="starred_projects&#40;params:Hash&#61;&#123;&#125;ofString&#61;&gt;String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="starred_projects(params:Hash={}ofString=&gt;String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>starred_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
@@ -1236,12 +1249,12 @@ client.starred_projects({<span class="s">&quot;search&quot;</span> => <span clas
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unarchive_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="unarchive_project(project:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>unarchive_project</strong>(project : Int32 | String) : JSON::Any
@@ -1258,12 +1271,12 @@ client.starred_projects({<span class="s">&quot;search&quot;</span> => <span clas
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unprotect_project_branch&#40;project:Int32|String,branch:String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="unprotect_project_branch(project:Int32|String,branch:String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>unprotect_project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any
@@ -1281,12 +1294,12 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L503" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L503" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="unstar_project&#40;project:Int32|String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="unstar_project(project:Int32|String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>unstar_project</strong>(project : Int32 | String) : JSON::Any
@@ -1303,12 +1316,12 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="upload_file&#40;project:Int32|String,file:String&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="upload_file(project:Int32|String,file:String):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>upload_file</strong>(project : Int32 | String, file : String) : JSON::Any
@@ -1331,12 +1344,12 @@ client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icylea
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L547" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L547" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="upload_file&#40;project:Int32|String,file:File&#41;:JSON::Any-instance-method">
+    <div class="entry-detail" id="upload_file(project:Int32|String,file:File):JSON::Any-instance-method">
       <div class="signature">
         
         def <strong>upload_file</strong>(project : Int32 | String, file : File) : JSON::Any
@@ -1349,7 +1362,7 @@ client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icylea
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/b44cc95d4e7f0b79ab04ec1144cc289eeb6dbcf9/src/gitlab/client/project.cr#L552" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/5ccd4155501acf707d529d95ec7289b75467fc34/src/gitlab/client/project.cr#L552" target="_blank">View source</a>]
         
       </div>
     </div>
