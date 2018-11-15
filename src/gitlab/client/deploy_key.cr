@@ -17,7 +17,7 @@ module Gitlab
       # client.deploy_keys(1, {"per_page" => "10"})
       # ```
       def deploy_keys(project_id : Int32, params : Hash? = nil)
-        JSON.parse get("/projects/#{project_id}/deploy_keys", params: params).body
+        get("/projects/#{project_id}/deploy_keys", params: params).parse
       end
 
       # Get a deploy key in a project.
@@ -30,7 +30,7 @@ module Gitlab
       # client.deploy_key(1, 1)
       # ```
       def deploy_key(project_id : Int32, key_id : Int32) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/deploy_keys/#{key_id}").body
+        get("/projects/#{project_id}/deploy_keys/#{key_id}").parse
       end
 
       # Create a deploy key in a project.
@@ -47,10 +47,10 @@ module Gitlab
       # client.create_deploy_key(1, "deploy server", "ssh-rsa xxx")
       # ```
       def create_deploy_key(project_id : Int32, title : String, key : String, form : Hash = {} of String => String) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/deploy_keys", form: {
+        post("/projects/#{project_id}/deploy_keys", form: {
           "title" => title,
           "key"   => key,
-        }.merge(form)).body
+        }.merge(form)).parse
       end
 
       # Delete a deploy key in a project.
@@ -63,7 +63,7 @@ module Gitlab
       # client.remove_deploy_key(4, 3)
       # ```
       def remove_deploy_key(project_id : Int32, key_id : Int32) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/deploy_keys/#{key_id}").body
+        delete("/projects/#{project_id}/deploy_keys/#{key_id}").parse
       end
 
       # Enables a deploy key at the project.
@@ -76,7 +76,7 @@ module Gitlab
       # client.enable_deploy_key(42, 66)
       # ```
       def enable_deploy_key(project_id : Int32, key_id : Int32) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/deploy_keys/#{key_id}/enable").body
+        post("/projects/#{project_id}/deploy_keys/#{key_id}/enable").parse
       end
 
       # Disables a deploy key at the project.
@@ -89,7 +89,7 @@ module Gitlab
       # client.disable_deploy_key(42, 66)
       # ```
       def disable_deploy_key(project_id : Int32, key_id : Int32) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/deploy_keys/#{key_id}/disable").body
+        post("/projects/#{project_id}/deploy_keys/#{key_id}/disable").parse
       end
     end
   end

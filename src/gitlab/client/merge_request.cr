@@ -21,7 +21,7 @@ module Gitlab
       # client.merge_requests(1, {"state" => "opened", "per_page" => "10"})
       # ```
       def merge_requests(project_id : Int32, params : Hash? = nil) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/merge_requests", params: params).body
+        get("/projects/#{project_id}/merge_requests", params: params).parse
       end
 
       # Get a single merge request in a project.
@@ -34,7 +34,7 @@ module Gitlab
       # client.merge_request(1, 10)
       # ```
       def merge_request(project_id : Int32, merge_request_id : Int32) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/merge_requests/#{merge_request_id}").body
+        get("/projects/#{project_id}/merge_requests/#{merge_request_id}").parse
       end
 
       # List commits of merge requests in a project.
@@ -46,7 +46,7 @@ module Gitlab
       # client.merge_request_commits(1, 2)
       # ```
       def merge_request_commits(project_id : Int32, merge_request_id : Int32) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/merge_requests/#{merge_request_id}/commits").body
+        get("/projects/#{project_id}/merge_requests/#{merge_request_id}/commits").parse
       end
 
       # Create a merge request in a project.
@@ -68,11 +68,11 @@ module Gitlab
       # client.create_merge_request(1, "hotfix/xxx", "master", "fix some bugs", {"milestone_id" => "2"})
       # ```
       def create_merge_request(project_id : Int32, source_branch : String, target_branch : String, title : String, params : Hash = {} of String => String) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/merge_requests", form: {
+        post("/projects/#{project_id}/merge_requests", form: {
           "source_branch" => source_branch,
           "target_branch" => target_branch,
           "title"         => title,
-        }.merge(params)).body
+        }.merge(params)).parse
       end
 
       # Edit a merge request in a project.
@@ -96,11 +96,11 @@ module Gitlab
       # client.create_merge_request(1, 6, "hotfix/xxx", "master", "fix some bugs", {"state" => "close"})
       # ```
       def edit_merge_request(project_id : Int32, merge_request_id : Int32, source_branch : String, target_branch : String, title : String, form : Hash = {} of String => String) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}", form: {
+        put("/projects/#{project_id}/merge_requests/#{merge_request_id}", form: {
           "source_branch" => source_branch,
           "target_branch" => target_branch,
           "title"         => title,
-        }.merge(form)).body
+        }.merge(form)).parse
       end
 
       # Deiete a merge request in a project.
@@ -117,7 +117,7 @@ module Gitlab
       # client.delete_merge_request(1, 3, 6)
       # ```
       def delete_merge_request(project_id : Int32, merge_request_id : Int32) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/merge_requests/#{merge_request_id}").body
+        delete("/projects/#{project_id}/merge_requests/#{merge_request_id}").parse
       end
 
       # List changes of a merge request in a project.
@@ -134,7 +134,7 @@ module Gitlab
       # client.merge_request_changes(1, 4, {"per_page" => "5"})
       # ```
       def merge_request_changes(project_id : Int32, merge_request_id : Int32, params : Hash = {} of String => String) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/merge_requests/#{merge_request_id}/changes", params: params).body
+        get("/projects/#{project_id}/merge_requests/#{merge_request_id}/changes", params: params).parse
       end
 
       # Updates a merge request.
@@ -152,7 +152,7 @@ module Gitlab
       # client.update_merge_request(5, 42, { title: 'New title' })
       # ```
       def update_merge_request(project_id : Int32, merge_request_id, form : Hash? = nil)
-        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}", form: form).body
+        put("/projects/#{project_id}/merge_requests/#{merge_request_id}", form: form).parse
       end
 
       # Accept a merge request in a project.
@@ -177,7 +177,7 @@ module Gitlab
       # client.accept_merge_request(1, 3)
       # ```
       def accept_merge_request(project_id : Int32, merge_request_id : Int32, form : Hash? = nil) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}/merge", form: form).body
+        put("/projects/#{project_id}/merge_requests/#{merge_request_id}/merge", form: form).parse
       end
 
       # Cancel merge request when build succeeds in a project.
@@ -198,7 +198,7 @@ module Gitlab
       # client.cancel_merge_request_when_build_succeed(1, 3)
       # ```
       def cancel_merge_request_when_build_succeed(project_id : Int32, merge_request_id : Int32) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/merge_requests/#{merge_request_id}/cancel_merge_when_build_succeeds").body
+        put("/projects/#{project_id}/merge_requests/#{merge_request_id}/cancel_merge_when_build_succeeds").parse
       end
 
       # List issues that will close on merge in a project.
@@ -215,7 +215,7 @@ module Gitlab
       # client.merge_request_closes_issues(1, 4, {"per_page" => "5"})
       # ```
       def merge_request_closes_issues(project_id : Int32, merge_request_id : Int32, params : Hash = {} of String => String) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/merge_requests/#{merge_request_id}/closes_issues", params: params).body
+        get("/projects/#{project_id}/merge_requests/#{merge_request_id}/closes_issues", params: params).parse
       end
 
       # Subscribe a merge request in a project.
@@ -230,7 +230,7 @@ module Gitlab
       # client.subscribe_merge_request(1, 38)
       # ```
       def subscribe_merge_request(project_id : Int32, merge_request_id : Int32) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/merge_requests/#{merge_request_id}/subscribe").body
+        post("/projects/#{project_id}/merge_requests/#{merge_request_id}/subscribe").parse
       end
 
       # Unsubscribe a merge request in a project.
@@ -245,7 +245,7 @@ module Gitlab
       # client.unsubscribe_merge_request(1, 38)
       # ```
       def unsubscribe_merge_request(project_id : Int32, merge_request_id : Int32) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/merge_requests/#{merge_request_id}/unsubscribe").body
+        post("/projects/#{project_id}/merge_requests/#{merge_request_id}/unsubscribe").parse
       end
     end
   end

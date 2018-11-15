@@ -16,7 +16,7 @@ module Gitlab
       # client.groups({"per_page" => "100", "page" => "5"})
       # ```
       def groups(params : Hash? = nil) : JSON::Any
-        JSON.parse get("/groups", params: params).body
+        get("/groups", params: params).parse
       end
 
       # Get a list of projects under a group
@@ -39,7 +39,7 @@ module Gitlab
       # client.group_projects(1, { "order_by" => "last_activity_at", "sort" => "desc"})
       # ```
       def group_projects(group_id : Int32, params : Hash? = nil) : JSON::Any
-        JSON.parse get("/groups/#{group_id}/projects", params: params).body
+        get("/groups/#{group_id}/projects", params: params).parse
       end
 
       # Gets details of a group.
@@ -52,7 +52,7 @@ module Gitlab
       # client.group("orgination")
       # ```
       def group(group : Int32 | String) : JSON::Any
-        JSON.parse get("/groups/#{group}").body
+        get("/groups/#{group}").parse
       end
 
       # Creates a new group.
@@ -73,7 +73,7 @@ module Gitlab
         default_form = {"name" => name, "path" => path}
         form = form ? form.merge(default_form) : default_form
 
-        JSON.parse post("/groups", form: form).body
+        post("/groups", form: form).parse
       end
 
       # Creates a new group.
@@ -92,7 +92,7 @@ module Gitlab
       # client.create_group(3, {"visibility_level" => "0"})
       # ```
       def edit_group(group_id : Int32, form : Hash? = nil) : JSON::Any
-        JSON.parse put("/groups/#{group_id}", form: form).body
+        put("/groups/#{group_id}", form: form).parse
       end
 
       # Delete a group.
@@ -104,7 +104,7 @@ module Gitlab
       # client.delete_group(42)
       # ```
       def delete_group(group_id : Int32) : JSON::Any
-        JSON.parse delete("/groups/#{group_id}").body
+        delete("/groups/#{group_id}").parse
       end
 
       # Search for groups by name
@@ -120,7 +120,7 @@ module Gitlab
       # client.group_search("gitlab", {"per_page" => 50})
       # ```
       def group_search(query, params : Hash = {} of String => String) : JSON::Any
-        JSON.parse get("/groups", params: {"search" => query}.merge(params)).body
+        get("/groups", params: {"search" => query}.merge(params)).parse
       end
 
       # Transfers a project to a group
@@ -132,7 +132,7 @@ module Gitlab
       # Gitlab.transfer_project_to_group(3, 50)
       # ```
       def transfer_project_to_group(group_id, project_id) : JSON::Any
-        JSON.parse post("/groups/#{group_id}/projects/#{project_id.to_s}").body
+        post("/groups/#{group_id}/projects/#{project_id.to_s}").parse
       end
 
       # Get a list of group members.
@@ -148,7 +148,7 @@ module Gitlab
       # client.group_members(1, {"per_page" => "50"})
       # ```
       def group_members(group_id : Int32, params : Hash? = nil) : JSON::Any
-        JSON.parse get("/groups/#{group_id}/members", params: params).body
+        get("/groups/#{group_id}/members", params: params).parse
       end
 
       # Get details of a single group member.
@@ -160,7 +160,7 @@ module Gitlab
       # client.group_member(1, 10)
       # ```
       def group_member(group_id : Int32, user_id : Int32) : JSON::Any
-        JSON.parse get("/groups/#{group_id}/members/#{user_id}").body
+        get("/groups/#{group_id}/members/#{user_id}").parse
       end
 
       # Adds a user to group.
@@ -174,10 +174,10 @@ module Gitlab
       # client.add_group_member(1, 2, 40)
       # ```
       def add_group_member(group_id : Int32, user_id : Int32, access_level) : JSON::Any
-        JSON.parse post("/groups/#{group_id}/members", form: {
+        post("/groups/#{group_id}/members", form: {
           "user_id"      => user_id.to_s,
           "access_level" => access_level,
-        }).body
+        }).parse
       end
 
       # Edit a user of a group.
@@ -191,10 +191,10 @@ module Gitlab
       # client.edit_group_member(1, 2, 40)
       # ```
       def edit_group_member(group_id : Int32, user_id : Int32, access_level) : JSON::Any
-        JSON.parse put("/groups/#{group_id}/members/#{user_id}", form: {
+        put("/groups/#{group_id}/members/#{user_id}", form: {
           "user_id"      => user_id.to_s,
           "access_level" => access_level,
-        }).body
+        }).parse
       end
 
       # Removes user from user group.
@@ -207,7 +207,7 @@ module Gitlab
       # client.remove_group_member(1, 2)
       # ```
       def remove_group_member(group_id : Int32, user_id : Int32) : JSON::Any
-        JSON.parse delete("/groups/#{group_id}/members/#{user_id.to_s}").body
+        delete("/groups/#{group_id}/members/#{user_id.to_s}").parse
       end
     end
   end

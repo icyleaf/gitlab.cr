@@ -28,7 +28,7 @@ module Gitlab
         when Nil
           "#{response.body[0..50]}..."
         when .includes?("json")
-          response_body = JSON.parse(response.body)
+          response_body = response.parse
           handle_error(response_body["message"]? || response_body["error"]?)
         when .includes?("text")
           response.body

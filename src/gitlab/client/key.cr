@@ -14,7 +14,7 @@ module Gitlab
       # client.key(2)
       # ```
       def key(key_id : Int32) : JSON::Any
-        JSON.parse get("/keys/#{key_id}").body
+        get("/keys/#{key_id}").parse
       end
     end
   end

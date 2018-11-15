@@ -17,7 +17,7 @@ module Gitlab
       # client.tree(42, { path: 'Gemfile' })
       # ```
       def tree(project_id : Int32, params : Hash? = nil) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/repository/tree", params: params).body
+        get("/projects/#{project_id}/repository/tree", params: params).parse
       end
 
       # Get the raw file contents for a blob by blob SHA.
@@ -31,7 +31,7 @@ module Gitlab
       # client.blow_contents(1, "a5c805f456f46b44e270f342330b06e06c53cbcc")
       # ```
       def blob(project_id : Int32, sha = "HEAD", params : Hash? = nil) : String
-        get("/projects/#{project_id}/repository/blobs/#{sha}", params: params).body
+        get("/projects/#{project_id}/repository/blobs/#{sha}", params: params).parse
       end
 
       # Get an archive of the repository.
@@ -61,10 +61,10 @@ module Gitlab
         })
 
         if response.headers["Content-Type"] == mime_type
-          Gitlab::FileResponse.new(IO::Memory.new(response.body), response.headers)
+          Gitlab::FileResponse.new(IO::Memory.new(response.parse), response.headers)
         else
           # Error with json response
-          JSON.parse(response.body)
+          JSON.parse(response.parse)
         end
       end
 
@@ -80,10 +80,10 @@ module Gitlab
       # client.compare(1, "a5c805f4", "v1.0.0")
       # ```
       def compare(project_id : Int32, from : String, to : String) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/repository/compare", params: {
+        get("/projects/#{project_id}/repository/compare", params: {
           "from" => from,
           "to"   => to,
-        }).body
+        }).parse
       end
 
       # Get repository contributors list
@@ -99,7 +99,7 @@ module Gitlab
       # client.contributors(1, {"per_page" => "10"})
       # ```
       def contributors(project_id : Int32, params : Hash? = nil) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/repository/contributors", params: params)
+        get("/projects/#{project_id}/repository/contributors", params: params)
       end
     end
   end

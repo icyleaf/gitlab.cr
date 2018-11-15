@@ -17,7 +17,7 @@ module Gitlab
       # client.branches(1, {"per_page" => "10"})
       # ```
       def branches(project_id : Int32, params : Hash? = nil) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/repository/branches", params: params).body
+        get("/projects/#{project_id}/repository/branches", params: params).parse
       end
 
       # Get single branch in a project.
@@ -30,7 +30,7 @@ module Gitlab
       # client.branch(1, "master")
       # ```
       def branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/repository/branches/#{branch}").body
+        get("/projects/#{project_id}/repository/branches/#{branch}").parse
       end
 
       # Create branch in a project.
@@ -45,10 +45,10 @@ module Gitlab
       # client.create_branch(1, "hotfix/xxx", "9dff773")
       # ```
       def create_branch(project_id : Int32, branch : String, ref : String) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/repository/branches", form: {
+        post("/projects/#{project_id}/repository/branches", form: {
           "branch_name" => branch,
           "ref"         => ref,
-        }).body
+        }).parse
       end
 
       # Delete a branch.
@@ -61,7 +61,7 @@ module Gitlab
       # client.delete_branch(4, 2)
       # ```
       def delete_branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/repository/branches/#{branch}").body
+        delete("/projects/#{project_id}/repository/branches/#{branch}").parse
       end
 
       # Protect branch in a project.
@@ -76,7 +76,7 @@ module Gitlab
       # client.protect_branch(5, 'api', { "developers_can_push" => "true" })
       # ```
       def protect_branch(project_id : Int32, branch : String, form : Hash? = nil) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/protect", form: form).body
+        put("/projects/#{project_id}/repository/branches/#{branch}/protect", form: form).parse
       end
 
       # Unprotect branch in a project.
@@ -89,7 +89,7 @@ module Gitlab
       # client.branch(1, "master")
       # ```
       def unprotect_branch(project_id : Int32, branch : String) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/repository/branches/#{branch}/unprotect").body
+        put("/projects/#{project_id}/repository/branches/#{branch}/unprotect").parse
       end
     end
   end

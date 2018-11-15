@@ -17,7 +17,7 @@ module Gitlab
       # client.labels(1, {"per_page" => "10"})
       # ```
       def labels(project_id : Int32, params : Hash? = nil) : JSON::Any
-        JSON.parse get("/projects/#{project_id}/labels", params: params).body
+        get("/projects/#{project_id}/labels", params: params).parse
       end
 
       # Create label in a project.
@@ -39,7 +39,7 @@ module Gitlab
           obj["description"] = description if description
         end
 
-        JSON.parse post("/projects/#{project_id}/labels", form: form).body
+        post("/projects/#{project_id}/labels", form: form).parse
       end
 
       # Edit a label in a project.
@@ -57,9 +57,9 @@ module Gitlab
       # client.edit_label(1, "hotfix", {"color" => "#BE5046"})
       # ```
       def edit_label(project_id : Int32, name : String, form : Hash = {} of String => String) : JSON::Any
-        JSON.parse put("/projects/#{project_id}/labels", form: {
+        put("/projects/#{project_id}/labels", form: {
           "name" => name,
-        }.merge(form)).body
+        }.merge(form)).parse
       end
 
       # Delete a label in a project.
@@ -72,7 +72,7 @@ module Gitlab
       # client.delete_issue(4, 3)
       # ```
       def delete_label(project_id : Int32, name : String) : JSON::Any
-        JSON.parse delete("/projects/#{project_id}/labels", form: {"name" => name}).body
+        delete("/projects/#{project_id}/labels", form: {"name" => name}).parse
       end
 
       # Subscribe a label in a project.
@@ -85,7 +85,7 @@ module Gitlab
       # client.subscribe_label(1, 38)
       # ```
       def subscribe_label(project_id : Int32, label_id : Int32 | String) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/labels/#{label_id}/subscribe").body
+        post("/projects/#{project_id}/labels/#{label_id}/subscribe").parse
       end
 
       # Unsubscribe a label in a project.
@@ -98,7 +98,7 @@ module Gitlab
       # client.unsubscribe_label(1, 38)
       # ```
       def unsubscribe_label(project_id : Int32, label_id : Int32 | String) : JSON::Any
-        JSON.parse post("/projects/#{project_id}/labels/#{label_id}/unsubscribe").body
+        post("/projects/#{project_id}/labels/#{label_id}/unsubscribe").parse
       end
     end
   end

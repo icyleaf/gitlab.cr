@@ -16,9 +16,9 @@ module Gitlab
       # client.get_file(42, "README.md", "develop")
       # ```
       def get_file(project_id : Int32, filepath : String, ref = "HEAD")
-        JSON.parse get("/projects/#{project_id}/repository/files/#{filepath}", params: {
+        get("/projects/#{project_id}/repository/files/#{filepath}", params: {
           ref: ref,
-        }).body
+        }).parse
       end
 
       # Get the raw file contents for a file by commit SHA and path.
@@ -52,7 +52,7 @@ module Gitlab
           "filepath" => filepath,
         }, headers: {
           "Accept" => "text/plain",
-        }).body
+        }).parse
       end
 
       private def file_contents_from_files(project_id : Int32, filepath : String, ref : String) : String
@@ -60,7 +60,7 @@ module Gitlab
           "ref" => ref,
         }, headers: {
           "Accept" => "text/plain",
-        }).body
+        }).parse
       end
     end
   end
