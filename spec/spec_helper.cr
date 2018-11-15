@@ -16,7 +16,7 @@ end
 
 # GET
 def stub_get(path, fixture, params = nil, response_headers = {} of String => String)
-  query = "?#{HTTP::Params.escape(params)}" if params
+  query = "?#{HTTP::Params.encode(params)}" if params
 
   response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:get, "#{client.endpoint}#{path}#{query}")
@@ -27,7 +27,7 @@ end
 # POST
 def stub_post(path, fixture, status_code = 200, params = nil, form = nil, response_headers = {} of String => String)
   query = "?#{HTTP::Params.escape(params)}" if params
-  body = HTTP::Params.escape(form) if form
+  body = HTTP::Params.encode(form) if form
 
   response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:post, "#{client.endpoint}#{path}#{query}")
@@ -37,7 +37,7 @@ end
 
 # PUT
 def stub_put(path, fixture, form = nil, response_headers = {} of String => String)
-  body = HTTP::Params.escape(form) if form
+  body = HTTP::Params.encode(form) if form
 
   response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:put, "#{client.endpoint}#{path}")
@@ -47,7 +47,7 @@ end
 
 # DELETE
 def stub_delete(path, fixture, form = nil, response_headers = {} of String => String)
-  body = HTTP::Params.escape(form) if form
+  body = HTTP::Params.encode(form) if form
 
   response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:delete, "#{client.endpoint}#{path}")
