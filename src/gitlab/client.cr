@@ -145,5 +145,6 @@ module Gitlab
     include Milestone
     include DeployKey
     include Key
+    include Version
   end
 end

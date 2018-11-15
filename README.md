@@ -259,6 +259,8 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - Delete a tag - `delete_tag`
   - Create a new release - `create_release_notes`
   - Update a release - `update_release_notes`
+- Version
+  - Get Gitlab version - `version`
 
 #### Todo (optional)
 
