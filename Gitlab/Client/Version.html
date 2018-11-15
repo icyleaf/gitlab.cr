@@ -14,7 +14,7 @@
 </script>
 
   <meta id="repository-name" content="github.com/icyleaf/gitlab.cr">
-  <title>Gitlab::Error::Unauthorized - github.com/icyleaf/gitlab.cr</title>
+  <title>Gitlab::Client::Version - github.com/icyleaf/gitlab.cr</title>
 </head>
 <body>
 
@@ -41,7 +41,7 @@
       
         <ul>
   
-  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
+  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client" data-name="gitlab::client">
       <a href="../../Gitlab/Client.html">Client</a>
       
         <ul>
@@ -126,7 +126,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Version" data-name="gitlab::client::version">
+  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Client/Version" data-name="gitlab::client::version">
       <a href="../../Gitlab/Client/Version.html">Version</a>
       
     </li>
@@ -136,7 +136,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
+  <li class="parent " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error" data-name="gitlab::error">
       <a href="../../Gitlab/Error.html">Error</a>
       
         <ul>
@@ -216,7 +216,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Unauthorized" data-name="gitlab::error::unauthorized">
+  <li class=" " data-id="github.com/icyleaf/gitlab.cr/Gitlab/Error/Unauthorized" data-name="gitlab::error::unauthorized">
       <a href="../../Gitlab/Error/Unauthorized.html">Unauthorized</a>
       
     </li>
@@ -250,12 +250,19 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Gitlab::Error::Unauthorized
+  <span class="kind">module</span> Gitlab::Client::Version
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Gitlab/Error/Unauthorized.html">Gitlab::Error::Unauthorized</a></li><li class="superclass"><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></li><li class="superclass"><a href="../../Gitlab/Error/Error.html">Gitlab::Error::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+  <h2>Overview</h2>
+
+  <p>Defines methods related to version</p>
+
+<p>See <a href="https://docs.gitlab.com/ce/api/version.html" target="_blank">https://docs.gitlab.com/ce/api/version.html</a></p>
 
 
 
@@ -267,8 +274,12 @@
 
 
 
-
-
+  <h2>Direct including types</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../../Gitlab/Client.html">Gitlab::Client</a></li>
+  
+  </ul>
 
 
 
@@ -276,8 +287,8 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/c4d63d00857726172eb24bbd258c2c2187c77ee5/src/gitlab/error.cr#L60" target="_blank">
-        gitlab/error.cr
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/c4d63d00857726172eb24bbd258c2c2187c77ee5/src/gitlab/client/version.cr#L6" target="_blank">
+        gitlab/client/version.cr
       </a>
     
     <br/>
@@ -291,79 +302,23 @@
 
 
 
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#version-instance-method" class="signature"><strong>#version</strong></a>
+        
+          <div class="summary"><p>Returns server version.</p></div>
+        
+      </li>
+    
+  </ul>
+
 
 
 
 
 <div class="methods-inherited">
-  
-    
-
-  <h3>Instance methods inherited from class <code><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></code></h3>
-  
-  
-    <a href="../../Gitlab/Error/APIError.html#response%3AHalite%3A%3AResponse-instance-method" class="tooltip">
-      <span>response : Halite::Response</span>
-    response</a>
-    
-  
-
-
-    
-
-  <h3>Constructor methods inherited from class <code><a href="../../Gitlab/Error/APIError.html">Gitlab::Error::APIError</a></code></h3>
-  
-  
-    <a href="../../Gitlab/Error/APIError.html#new%28response%3AHalite%3A%3AResponse%29-class-method" class="tooltip">
-      <span>new(response : Halite::Response)</span>
-    new</a>
-    
-  
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
   
 </div>
 
@@ -371,6 +326,31 @@
 
 
 
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="version-instance-method">
+      <div class="signature">
+        
+        def <strong>version</strong>
+
+        <a class="method-permalink" href="#version-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns server version.</p>
+
+<ul><li>return [JSON::Any]</li></ul>
+
+<pre><code>client.version</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4d63d00857726172eb24bbd258c2c2187c77ee5/src/gitlab/client/version.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
