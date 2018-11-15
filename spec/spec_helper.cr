@@ -15,13 +15,13 @@ def load_fixture(name : String?)
 end
 
 # GET
-def stub_get(path, fixture, params = nil, response_headers = {} of String => String)
+def stub_get(path, fixture, params = nil, response_headers = {} of String => String, status = 200)
   query = "?#{HTTP::Params.encode(params)}" if params
 
   response_headers.merge!({"Content-Type" => "application/json"})
   WebMock.stub(:get, "#{client.endpoint}#{path}#{query}")
          .with(headers: {"Private-Token" => client.token})
-         .to_return(body: load_fixture(fixture), headers: response_headers)
+         .to_return(status: status, body: load_fixture(fixture), headers: response_headers)
 end
 
 # POST

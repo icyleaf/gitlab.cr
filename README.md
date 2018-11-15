@@ -78,6 +78,8 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
 
 #### Completed
 
+- Service Status (**Not Gitlab API**)
+  - Check service available - `available?`
 - Users
   - List Users - `users`
   - Single user - `user(user_id)`
@@ -275,7 +277,6 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - Jobs
   - Runners
   - Pipelines
-
 
 ## Help and Discussion
 

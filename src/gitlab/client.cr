@@ -22,7 +22,7 @@ module Gitlab
     # Create a new client
     #
     # ```
-    # Gitlab.Client.new("<endpoint>", "<token")
+    # Gitlab::Client.new("<endpoint>", "<token")
     # ```
     def initialize(@endpoint : String, @token : String)
       if @endpoint.includes?("api/v5")
@@ -33,7 +33,7 @@ module Gitlab
     end
 
     {% for verb in %w(get head) %}
-      # Return a Gitlab::Response by sending a {{verb.id.upcase}} method http request
+      # Return a Halite::Response by sending a {{verb.id.upcase}} method http request
       #
       # ```
       # client.{{ verb.id }}("/path", params: {
@@ -50,7 +50,7 @@ module Gitlab
     {% end %}
 
     {% for verb in %w(post put patch delete) %}
-      # Return a `Gitlab::Response` by sending a {{verb.id.upcase}} http request
+      # Return a `Halite::Response` by sending a {{verb.id.upcase}} http request
       #
       # ```
       # client.{{ verb.id }}("/path", form: {
@@ -66,8 +66,22 @@ module Gitlab
       end
     {% end %}
 
+    # Return a `Bool` status by gitlab api service
+    #
+    # - Return `Bool`
+    #
+    # ```
+    # client.available?  # => true
+    # ```
+    def available?
+      get("/user")
+      true
+    rescue Halite::Exception::ConnectionError
+      false
+    end
+
     # {% for method in [:get, :post, :put, :delete] %}
-    #   # Return a Gitlab::Response by sending a {{method.id.upcase}} method http request
+    #   # Return a Halite::Response by sending a {{method.id.upcase}} method http request
     #   #
     #   # ```
     #   # client.{{method.id}}("/path", { "key" => "value"})

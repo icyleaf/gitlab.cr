@@ -12,4 +12,11 @@ describe Gitlab::Client do
       end
     end
   end
+
+  describe ".available?" do
+    it "should return true if service works" do
+      stub_get("/user", "user")
+      client.available?.should be_true
+    end
+  end
 end
