@@ -17,7 +17,7 @@ module Gitlab
       # client.labels(1, {"per_page" => "10"})
       # ```
       def labels(project_id : Int32, params : Hash? = nil) : JSON::Any
-        get("/projects/#{project_id}/labels", params: params).parse
+        get("projects/#{project_id}/labels", params: params).parse
       end
 
       # Create label in a project.
@@ -39,7 +39,7 @@ module Gitlab
           obj["description"] = description if description
         end
 
-        post("/projects/#{project_id}/labels", form: form).parse
+        post("projects/#{project_id}/labels", form: form).parse
       end
 
       # Edit a label in a project.
@@ -57,7 +57,7 @@ module Gitlab
       # client.edit_label(1, "hotfix", {"color" => "#BE5046"})
       # ```
       def edit_label(project_id : Int32, name : String, form : Hash = {} of String => String) : JSON::Any
-        put("/projects/#{project_id}/labels", form: {
+        put("projects/#{project_id}/labels", form: {
           "name" => name,
         }.merge(form)).parse
       end
@@ -72,7 +72,7 @@ module Gitlab
       # client.delete_issue(4, 3)
       # ```
       def delete_label(project_id : Int32, name : String) : JSON::Any
-        delete("/projects/#{project_id}/labels", form: {"name" => name}).parse
+        delete("projects/#{project_id}/labels", form: {"name" => name}).parse
       end
 
       # Subscribe a label in a project.
@@ -85,7 +85,7 @@ module Gitlab
       # client.subscribe_label(1, 38)
       # ```
       def subscribe_label(project_id : Int32, label_id : Int32 | String) : JSON::Any
-        post("/projects/#{project_id}/labels/#{label_id}/subscribe").parse
+        post("projects/#{project_id}/labels/#{label_id}/subscribe").parse
       end
 
       # Unsubscribe a label in a project.
@@ -98,7 +98,7 @@ module Gitlab
       # client.unsubscribe_label(1, 38)
       # ```
       def unsubscribe_label(project_id : Int32, label_id : Int32 | String) : JSON::Any
-        post("/projects/#{project_id}/labels/#{label_id}/unsubscribe").parse
+        post("projects/#{project_id}/labels/#{label_id}/unsubscribe").parse
       end
     end
   end

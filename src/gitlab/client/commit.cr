@@ -20,7 +20,7 @@ module Gitlab
       # client.commits(1, {"per_page" => "10"})
       # ```
       def commits(project_id : Int32, params : Hash? = nil) : JSON::Any
-        get("/projects/#{project_id}/repository/commits", params: params).parse
+        get("projects/#{project_id}/repository/commits", params: params).parse
       end
 
       # Get single commit in a project.
@@ -33,7 +33,7 @@ module Gitlab
       # client.commit(1, 10)
       # ```
       def commit(project_id : Int32, commit : String) : JSON::Any
-        get("/projects/#{project_id}/repository/commits/#{commit}").parse
+        get("projects/#{project_id}/repository/commits/#{commit}").parse
       end
 
       # Get the diff of a commit in a project.
@@ -46,7 +46,7 @@ module Gitlab
       # client.commit_diff(1, "daff23c")
       # ```
       def commit_diff(project_id : Int32, sha : String) : JSON::Any
-        get("/projects/#{project_id}/repository/commits/#{sha}/diff").parse
+        get("projects/#{project_id}/repository/commits/#{sha}/diff").parse
       end
 
       # Get the comments of a commit in a project.
@@ -62,7 +62,7 @@ module Gitlab
       # client.commit_comments(1, "daff23c")
       # ```
       def commit_comments(project_id : Int32, sha : String, params : Hash = {} of String => String) : JSON::Any
-        get("/projects/#{project_id}/repository/commits/#{sha}/comments", params: params).parse
+        get("projects/#{project_id}/repository/commits/#{sha}/comments", params: params).parse
       end
 
       # Create comment of commit in a project.
@@ -81,7 +81,7 @@ module Gitlab
       # client.create_commit_comment(1, "daff23c", "+1", {"line" => "29"})
       # ```
       def create_commit_comment(project_id : Int32, sha : String, note : String, params : Hash = {} of String => String) : JSON::Any
-        post("/projects/#{project_id}/repository/commits/#{sha}/comments", form: {
+        post("projects/#{project_id}/repository/commits/#{sha}/comments", form: {
           "note" => note,
         }.merge(params)).parse
       end
@@ -104,7 +104,7 @@ module Gitlab
       # client.commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", {"name" => "jenkins", "all" => "true"})
       # ```
       def commit_status(project_id : Int32, sha : String, params : Hash = {} of String => String) : JSON::Any
-        get("/projects/#{project_id}/repository/commits/#{sha}/statuses", params: params).parse
+        get("projects/#{project_id}/repository/commits/#{sha}/statuses", params: params).parse
       end
 
       # Adds or updates a status of a commit.
@@ -126,7 +126,7 @@ module Gitlab
       # client.update_commit_status(42, "6104942438c14ec7bd21c6cd5bd995272b3faff6", "canceled", {"name" => "jenkins", "target_url": "http://example.com/builds/1"})
       # ```
       def update_commit_status(project_id : Int32, sha : String, state : String, params : Hash = {} of String => String) : JSON::Any
-        post("/projects/#{project_id}/statuses/#{sha}", form: {
+        post("projects/#{project_id}/statuses/#{sha}", form: {
           "state" => state,
         }.merge(params)).parse
       end

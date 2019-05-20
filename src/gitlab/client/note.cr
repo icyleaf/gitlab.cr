@@ -20,7 +20,7 @@ module Gitlab
       # client.issue_notes(1, 5, {"per_page" => "10"})
       # ```
       def issue_notes(project_id : Int32, issue_id : Int32, params : Hash? = nil) : JSON::Any
-        get("/projects/#{project_id}/issues/#{issue_id}/notes", params: params).parse
+        get("projects/#{project_id}/issues/#{issue_id}/notes", params: params).parse
       end
 
       # Get single note of issue in a project.
@@ -34,7 +34,7 @@ module Gitlab
       # client.issue_note(1, 10)
       # ```
       def issue_note(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any
-        get("/projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}").parse
+        get("projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}").parse
       end
 
       # Create note of issue in a project.
@@ -55,7 +55,7 @@ module Gitlab
           obj["created_at"] = created_at if created_at
         end
 
-        post("/projects/#{project_id}/issues/#{issue_id}/notes", form: form).parse
+        post("projects/#{project_id}/issues/#{issue_id}/notes", form: form).parse
       end
 
       # Edit a note of issue in a project.
@@ -70,7 +70,7 @@ module Gitlab
       # client.edit_issue_note(1, 10, 22, "great work!")
       # ```
       def edit_issue_note(project_id : Int32, issue_id : Int32, note_id : Int32, body : String) : JSON::Any
-        put("/projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}", form: {
+        put("projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}", form: {
           "body" => body,
         }).parse
       end
@@ -86,7 +86,7 @@ module Gitlab
       # client.delete_issue_note(1, 3, 6)
       # ```
       def delete_issue_note(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any
-        delete("/projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}").parse
+        delete("projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}").parse
       end
 
       # Gets a list notes of snippet in a project.
@@ -103,7 +103,7 @@ module Gitlab
       # client.snippet_notes(1, 5, {"per_page" => "10"})
       # ```
       def snippet_notes(project_id : Int32, snippet_id : Int32, params : Hash? = nil) : JSON::Any
-        get("/projects/#{project_id}/snippets/#{snippet_id}/notes", params: params).parse
+        get("projects/#{project_id}/snippets/#{snippet_id}/notes", params: params).parse
       end
 
       # Get single note of snippet in a project.
@@ -117,7 +117,7 @@ module Gitlab
       # client.snippet_note(1, 10)
       # ```
       def snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any
-        get("/projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}").parse
+        get("projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}").parse
       end
 
       # Create note of snippet in a project.
@@ -131,7 +131,7 @@ module Gitlab
       # client.create_snippet_note(1, 10, "great work!")
       # ```
       def create_snippet_note(project_id : Int32, snippet_id : Int32, body : String) : JSON::Any
-        post("/projects/#{project_id}/snippets/#{snippet_id}/notes", form: {"body" => body}).parse
+        post("projects/#{project_id}/snippets/#{snippet_id}/notes", form: {"body" => body}).parse
       end
 
       # Edit a note of snippet in a project.
@@ -146,7 +146,7 @@ module Gitlab
       # client.edit_snippet_note(1, 10, 22, "great work!")
       # ```
       def edit_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32, body : String) : JSON::Any
-        put("/projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}", form: {
+        put("projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}", form: {
           "body" => body,
         }).parse
       end
@@ -162,7 +162,7 @@ module Gitlab
       # client.delete_snippet_note(1, 3, 6)
       # ```
       def delete_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any
-        delete("/projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}").parse
+        delete("projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}").parse
       end
 
       # Gets a list notes of merge request in a project.
@@ -179,7 +179,7 @@ module Gitlab
       # client.merge_request_notes(1, 5, {"per_page" => "10"})
       # ```
       def merge_request_notes(project_id : Int32, merge_request_id : Int32, params : Hash? = nil) : JSON::Any
-        get("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes", params: params).parse
+        get("projects/#{project_id}/merge_requests/#{merge_request_id}/notes", params: params).parse
       end
 
       # Get single note of merge request in a project.
@@ -193,7 +193,7 @@ module Gitlab
       # client.merge_request_note(1, 10)
       # ```
       def merge_request_note(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any
-        get("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes/#{note_id}").parse
+        get("projects/#{project_id}/merge_requests/#{merge_request_id}/notes/#{note_id}").parse
       end
 
       # Create note of merge request in a project.
@@ -207,7 +207,7 @@ module Gitlab
       # client.create_merge_request_note(1, 10, "great work!")
       # ```
       def create_merge_request_note(project_id : Int32, merge_request_id : Int32, body : String, created_at : String? = nil) : JSON::Any
-        post("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes", form: {"body" => body}).parse
+        post("projects/#{project_id}/merge_requests/#{merge_request_id}/notes", form: {"body" => body}).parse
       end
 
       # Edit a note of merge request in a project.
@@ -222,7 +222,7 @@ module Gitlab
       # client.edit_merge_request_note(1, 10, 22, "great work!")
       # ```
       def edit_merge_request_note(project_id : Int32, merge_requests_id : Int32, note_id : Int32, body : String) : JSON::Any
-        put("/projects/#{project_id}/merge_requests/#{merge_requests_id}/notes/#{note_id}", form: {
+        put("projects/#{project_id}/merge_requests/#{merge_requests_id}/notes/#{note_id}", form: {
           "body" => body,
         }).parse
       end
@@ -238,7 +238,7 @@ module Gitlab
       # client.delete_merge_request_note(1, 3, 6)
       # ```
       def delete_merge_request_note(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any
-        delete("/projects/#{project_id}/merge_requests/#{merge_request_id}/notes/#{note_id}").parse
+        delete("projects/#{project_id}/merge_requests/#{merge_request_id}/notes/#{note_id}").parse
       end
     end
   end

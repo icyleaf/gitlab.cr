@@ -16,7 +16,7 @@ module Gitlab
       # client.get_file(42, "README.md", "develop")
       # ```
       def get_file(project_id : Int32, filepath : String, ref = "HEAD")
-        get("/projects/#{project_id}/repository/files/#{filepath}", params: {
+        get("projects/#{project_id}/repository/files/#{filepath}", params: {
           ref: ref,
         }).parse
       end
@@ -48,7 +48,7 @@ module Gitlab
       # end
 
       private def file_contents_from_blobs(project_id : Int32, filepath : String, sha : String) : String
-        get("/projects/#{project_id}/repository/blobs/#{sha}", params: {
+        get("projects/#{project_id}/repository/blobs/#{sha}", params: {
           "filepath" => filepath,
         }, headers: {
           "Accept" => "text/plain",
@@ -56,7 +56,7 @@ module Gitlab
       end
 
       private def file_contents_from_files(project_id : Int32, filepath : String, ref : String) : String
-        get("/projects/#{project_id}/repository/files/#{filepath}/raw", params: {
+        get("projects/#{project_id}/repository/files/#{filepath}/raw", params: {
           "ref" => ref,
         }, headers: {
           "Accept" => "text/plain",

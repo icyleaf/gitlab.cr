@@ -8,16 +8,18 @@ module Gitlab
   # See the [Gitlab Offical API Document](http://docs.gitlab.com/ce/api/README.html) for more details.
   class Client
     # The endpoint of Gitlab
-    property endpoint
+    getter endpoint : String
 
     # The token(private-token or OAuth2 access token) of Gitlab
-    property token
+    property token : String
 
     # :nodoc:
     enum ErrorType
       JsonError
       NonJsonError
     end
+
+    @connection : Halite::Client
 
     # Create a new client
     #
@@ -30,20 +32,27 @@ module Gitlab
                   "https://docs.gitlab.com/ce/api/README.html#road-to-graphql"
         raise Gitlab::Error::NoSupportGraphQLAPIError.new(message)
       end
+
+      @connection = Halite::Client.new(endpoint: @endpoint, headers: default_headers)
+    end
+
+    # Setter for endpoint
+    def endpoint=(endpoint : String)
+      @endpoint = endpoint
+      @connection.endpoint = @endpoint
     end
 
     {% for verb in %w(get head) %}
       # Return a Halite::Response by sending a {{verb.id.upcase}} method http request
       #
       # ```
-      # client.{{ verb.id }}("/path", params: {
+      # client.{{ verb.id }}("path", params: {
       #   first_name: "foo",
       #   last_name:  "bar"
       # })
       # ```
-      def {{ verb.id }}(uri : String, headers : (Hash(String, _) | NamedTuple)? = nil, params : (Hash(String, _) | NamedTuple)? = nil) : Halite::Response
-        headers = headers ? default_headers.merge(headers) : default_headers
-        response = Halite.{{verb.id}}(build_url(uri), headers: headers, params: params)
+      def {{ verb.id }}(path : String, headers : (Hash(String, _) | NamedTuple)? = nil, params : (Hash(String, _) | NamedTuple)? = nil) : Halite::Response
+        response = @connection.{{verb.id}}(path, headers: headers, params: params)
         validate(response)
         response
       end
@@ -53,14 +62,13 @@ module Gitlab
       # Return a `Halite::Response` by sending a {{verb.id.upcase}} http request
       #
       # ```
-      # client.{{ verb.id }}("/path", form: {
+      # client.{{ verb.id }}("path", form: {
       #   first_name: "foo",
       #   last_name:  "bar"
       # })
       # ```
-      def {{ verb.id }}(uri : String, headers : (Hash(String, _) | NamedTuple)? = nil, params : (Hash(String, _) | NamedTuple)? = nil, form : (Hash(String, _) | NamedTuple)? = nil, json : (Hash(String, _) | NamedTuple)? = nil) : Halite::Response
-        headers = headers ? default_headers.merge(headers) : default_headers
-        response = Halite.{{verb.id}}(build_url(uri), headers: headers, params: params, form: form, json: nil)
+      def {{ verb.id }}(path : String, headers : (Hash(String, _) | NamedTuple)? = nil, params : (Hash(String, _) | NamedTuple)? = nil, form : (Hash(String, _) | NamedTuple)? = nil, json : (Hash(String, _) | NamedTuple)? = nil) : Halite::Response
+        response = @connection.{{verb.id}}(path, headers: headers, params: params, form: form, json: nil)
         validate(response)
         response
       end
@@ -74,22 +82,11 @@ module Gitlab
     # client.available?  # => true
     # ```
     def available?
-      get("/user")
+      get("user")
       true
     rescue Halite::Exception::ConnectionError
       false
     end
-
-    # {% for method in [:get, :post, :put, :delete] %}
-    #   # Return a Halite::Response by sending a {{method.id.upcase}} method http request
-    #   #
-    #   # ```
-    #   # client.{{method.id}}("/path", { "key" => "value"})
-    #   # ```
-    #   def {{method.id}}(uri : String, options : (Hash | NamedTuple)? = nil) : Halite::Response
-    #     request({{method.id.stringify}}, uri, options)
-    #   end
-    # {% end %}
 
     # Validate http response status code and content type
     #
@@ -136,11 +133,6 @@ module Gitlab
         obj["Accept"] = "application/json"
         obj["User-Agent"] = "Gitlab.cr v#{VERSION}"
       end
-    end
-
-    # Return a full url string from built with base domain and url path
-    private def build_url(uri)
-      File.join(@endpoint, uri)
     end
 
     include User

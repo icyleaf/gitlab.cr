@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > TODO
 
+## [0.5.0] (2019-05-20)
+
+### Fixed
+
+- Compatibility with Crystal 0.28
+
 ## [0.4.0] (2018-11-15)
 
 ### Added
@@ -107,7 +113,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - [initial implementation](https://github.com/icyleaf/gitlab.cr/issues?q=milestone%3A0.2.0+is%3Aclosed)
 
-[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.5...v0.4.0
 [0.3.5]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.4...v0.3.5
 [0.3.4]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.3...v0.3.4

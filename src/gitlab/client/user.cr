@@ -16,7 +16,7 @@ module Gitlab
       # client.users({"per_page" => "10", "page" => "2"})
       # ```
       def users(params : Hash? = nil) : JSON::Any
-        get("/users", params: params).parse
+        get("users", params: params).parse
       end
 
       # Gets information about current user.
@@ -27,7 +27,7 @@ module Gitlab
       # client.user
       # ```
       def user : JSON::Any
-        get("/user").parse
+        get("user").parse
       end
 
       # Gets information about a user.
@@ -39,7 +39,7 @@ module Gitlab
       # client.user(2)
       # ```
       def user(user_id : Int32) : JSON::Any
-        get("/users/#{user_id.to_s}").parse
+        get("users/#{user_id.to_s}").parse
       end
 
       # Creates a new user.
@@ -61,7 +61,7 @@ module Gitlab
       # Gitlab.create_user("icy.leaf@kaifeng.cn", "secret", "icyleaf")
       # ```
       def create_user(email : String, password : String, username : String, form : Hash = {} of String => String) : JSON::Any
-        post("/users", form: {
+        post("users", form: {
           "email"    => email,
           "password" => password,
           "username" => username,
@@ -86,7 +86,7 @@ module Gitlab
       # client.edit_user(4, {"email" => "icy.leaf@kaifeng.cn", "projects_limit" => "100"})
       # ```
       def edit_user(user_id : Int32, form : Hash = {} of String => String) : JSON::Any
-        put("/users/#{user_id.to_s}", form: form).parse
+        put("users/#{user_id.to_s}", form: form).parse
       end
 
       # Deletes a user.
@@ -98,7 +98,7 @@ module Gitlab
       # client.delete_user(1)
       # ```
       def delete_user(user_id : Int32) : JSON::Any
-        delete("/users/#{user_id.to_s}").parse
+        delete("users/#{user_id.to_s}").parse
       end
 
       # Search for user by name
@@ -114,7 +114,7 @@ module Gitlab
       # client.group_search("icyleaf", {"per_page" => 50})
       # ```
       def user_search(query, params : Hash = {} of String => String) : JSON::Any
-        get("/users", params: {"search" => query}.merge(params)).parse
+        get("users", params: {"search" => query}.merge(params)).parse
       end
 
       # Blocks the specified user.
@@ -128,7 +128,7 @@ module Gitlab
       # client.block_user(4)
       # ```
       def block_user(user_id : Int32) : JSON::Any
-        put("/users/#{user_id.to_s}/block").parse
+        put("users/#{user_id.to_s}/block").parse
       end
 
       # Unblocks the specified user.
@@ -142,7 +142,7 @@ module Gitlab
       # client.unblock_user(4)
       # ```
       def unblock_user(user_id : Int32) : JSON::Any
-        put("/users/#{user_id.to_s}/unblock").parse
+        put("users/#{user_id.to_s}/unblock").parse
       end
 
       # Gets a list of current user"s SSH keys.
@@ -153,7 +153,7 @@ module Gitlab
       # client.ssh_keys
       # ```
       def ssh_keys : JSON::Any
-        get("/user/keys").parse
+        get("user/keys").parse
       end
 
       # Gets a list of a user"s SSH keys.
@@ -165,7 +165,7 @@ module Gitlab
       # client.ssh_keys(4)
       # ```
       def ssh_keys(user_id : Int32) : JSON::Any
-        get("/users/#{user_id.to_s}/keys").parse
+        get("users/#{user_id.to_s}/keys").parse
       end
 
       # Gets information about SSH key.
@@ -177,7 +177,7 @@ module Gitlab
       # client.ssh_key(1)
       # ```
       def ssh_key(ssh_key_id : Int32) : JSON::Any
-        get("/user/keys/#{ssh_key_id.to_s}").parse
+        get("user/keys/#{ssh_key_id.to_s}").parse
       end
 
       # Creates a new SSH key for current user.
@@ -190,7 +190,7 @@ module Gitlab
       # client.create_ssh_key("key title", "key body")
       # ```
       def create_ssh_key(title, key) : JSON::Any
-        post("/user/keys", form: {"title" => title, "key" => key}).parse
+        post("user/keys", form: {"title" => title, "key" => key}).parse
       end
 
       # Creates a new SSH key for a user.
@@ -203,7 +203,7 @@ module Gitlab
       # client.create_ssh_key(2, "key title", "key body")
       # ```
       def create_ssh_key(user_id, title, key) : JSON::Any
-        post("/users/#{user_id.to_s}/keys", form: {"title" => title, "key" => key}).parse
+        post("users/#{user_id.to_s}/keys", form: {"title" => title, "key" => key}).parse
       end
 
       # Deletes an SSH key for current user.
@@ -215,7 +215,7 @@ module Gitlab
       # client.delete_ssh_key(1)
       # ```
       def delete_ssh_key(ssh_key_id : Int32) : JSON::Any
-        delete("/user/keys/#{ssh_key_id.to_s}").parse
+        delete("user/keys/#{ssh_key_id.to_s}").parse
       end
 
       # Deletes an SSH key for a user.
@@ -228,7 +228,7 @@ module Gitlab
       # client.delete_ssh_key(1, 1)
       # ```
       def delete_ssh_key(user_id : Int32, ssh_key_id : Int32) : JSON::Any
-        delete("/users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}").parse
+        delete("users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}").parse
       end
 
       # Gets current user emails.
@@ -239,7 +239,7 @@ module Gitlab
       # client.emails
       # ```
       def emails : JSON::Any
-        get("/user/emails").parse
+        get("user/emails").parse
       end
 
       # Gets a user emails.
@@ -251,7 +251,7 @@ module Gitlab
       # client.emails(2)
       # ```
       def emails(user_id : Int32) : JSON::Any
-        get("/users/#{user_id.to_s}/emails").parse
+        get("users/#{user_id.to_s}/emails").parse
       end
 
       # Get a single email.
@@ -263,7 +263,7 @@ module Gitlab
       # client.email(3)
       # ```
       def email(email_id : Int32) : JSON::Any
-        get("/user/emails/#{email_id.to_s}").parse
+        get("user/emails/#{email_id.to_s}").parse
       end
 
       # Creates a new email for current user.
@@ -275,7 +275,7 @@ module Gitlab
       # client.add_email('email@example.com')
       # ```
       def add_email(email) : JSON::Any
-        post("/user/emails", form: {"email" => email}).parse
+        post("user/emails", form: {"email" => email}).parse
       end
 
       # Creates a new email for a user.
@@ -288,7 +288,7 @@ module Gitlab
       # client.add_email('email@example.com', 2)
       # ```
       def add_email(user_id : Int32, email) : JSON::Any
-        post("/users/#{user_id.to_s}/emails", form: {"email" => email}).parse
+        post("users/#{user_id.to_s}/emails", form: {"email" => email}).parse
       end
 
       # Delete email for current user
@@ -300,7 +300,7 @@ module Gitlab
       # client.delete_email(2)
       # ```
       def delete_email(email_id : Int32) : JSON::Any
-        delete("/user/emails/#{email_id.to_s}").parse
+        delete("user/emails/#{email_id.to_s}").parse
       end
 
       # Delete email for current user
@@ -313,7 +313,7 @@ module Gitlab
       # client.delete_email(1, 2)
       # ```
       def delete_email(email_id : Int32, user_id : Int32) : JSON::Any
-        delete("/users/#{user_id.to_s}/emails/#{email_id.to_s}").parse
+        delete("users/#{user_id.to_s}/emails/#{email_id.to_s}").parse
       end
     end
   end

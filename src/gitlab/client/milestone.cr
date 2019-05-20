@@ -19,7 +19,7 @@ module Gitlab
       # client.milestones(1, {"state" => "active", "per_page" => "10"})
       # ```
       def milestones(project_id : Int32, params : Hash? = nil) : JSON::Any
-        get("/projects/#{project_id}/milestones", params: params).parse
+        get("projects/#{project_id}/milestones", params: params).parse
       end
 
       # Get a single milestone in a project.
@@ -32,7 +32,7 @@ module Gitlab
       # client.milestone(1, 10)
       # ```
       def milestone(project_id : Int32, milestone_id : Int32) : JSON::Any
-        get("/projects/#{project_id}/milestones/#{milestone_id}").parse
+        get("projects/#{project_id}/milestones/#{milestone_id}").parse
       end
 
       # Create a milestone in a project.
@@ -49,7 +49,7 @@ module Gitlab
       # client.create_milestone(1, "v2.0.1", "fix some bugs")
       # ```
       def create_milestone(project_id : Int32, title : String, params : Hash = {} of String => String) : JSON::Any
-        post("/projects/#{project_id}/milestones", form: {
+        post("projects/#{project_id}/milestones", form: {
           "title" => title,
         }.merge(params)).parse
       end
@@ -69,7 +69,7 @@ module Gitlab
       # client.edit_milestone(1, "v2.0.1", "fix some bugs")
       # ```
       def edit_milestone(project_id : Int32, milestone_id : Int32, title : String, form : Hash = {} of String => String) : JSON::Any
-        put("/projects/#{project_id}/milestones/#{milestone_id}", form: {
+        put("projects/#{project_id}/milestones/#{milestone_id}", form: {
           "title" => title,
         }.merge(form)).parse
       end
@@ -88,7 +88,7 @@ module Gitlab
       # client.milestone_issues(1, 4, {"per_page" => "5"})
       # ```
       def milestone_issues(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String) : JSON::Any
-        get("/projects/#{project_id}/milestones/#{milestone_id}/issues", params: params).parse
+        get("projects/#{project_id}/milestones/#{milestone_id}/issues", params: params).parse
       end
 
       # Gets the merge_requests of a given milestone.
@@ -104,7 +104,7 @@ module Gitlab
       # client.milestone_merge_requests(5, 2)
       # ```
       def milestone_merge_requests(project_id : Int32, milestone_id : Int32, params : Hash = {} of String => String)
-        get("/projects/#{project_id}/milestones/#{milestone_id}/merge_requests", params: params).parse
+        get("projects/#{project_id}/milestones/#{milestone_id}/merge_requests", params: params).parse
       end
     end
   end

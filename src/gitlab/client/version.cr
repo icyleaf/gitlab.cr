@@ -12,7 +12,7 @@ module Gitlab
       # client.version
       # ```
       def version
-        get("/version").parse
+        get("version").parse
       end
     end
   end
