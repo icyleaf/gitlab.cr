@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.28.0">
+<meta name="generator" content="Crystal Docs 0.30.0">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/tag.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/tag.cr#L6" target="_blank">
         gitlab/client/tag.cr
       </a>
     
@@ -306,42 +306,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#create_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_release_notes</strong>(project_id : Int32, tag : String, description : String) : JSON::Any</a>
+        <a href="#create_release_notes(project_id:Int32,tag:String,description:String):JSON::Any-instance-method" class="signature"><strong>#create_release_notes</strong>(project_id : Int32, tag : String, description : String) : JSON::Any</a>
         
           <div class="summary"><p>Create release notes in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_tag%28project_id%3AInt32%2Ctag%3AString%2Cref%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_tag</strong>(project_id : Int32, tag : String, ref : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#create_tag(project_id:Int32,tag:String,ref:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#create_tag</strong>(project_id : Int32, tag : String, ref : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create a tag in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_tag%28project_id%3AInt32%2Ctag%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#delete_tag</strong>(project_id : Int32, tag : String) : JSON::Any</a>
+        <a href="#delete_tag(project_id:Int32,tag:String):JSON::Any-instance-method" class="signature"><strong>#delete_tag</strong>(project_id : Int32, tag : String) : JSON::Any</a>
         
           <div class="summary"><p>Delete a tag.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tag%28project_id%3AInt32%2Ctag%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#tag</strong>(project_id : Int32, tag : String) : JSON::Any</a>
+        <a href="#tag(project_id:Int32,tag:String):JSON::Any-instance-method" class="signature"><strong>#tag</strong>(project_id : Int32, tag : String) : JSON::Any</a>
         
           <div class="summary"><p>Get single tag in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#tags%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#tags</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
+        <a href="#tags(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method" class="signature"><strong>#tags</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list of tags in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#update_release_notes</strong>(project_id : Int32, tag : String, description : String) : JSON::Any</a>
+        <a href="#update_release_notes(project_id:Int32,tag:String,description:String):JSON::Any-instance-method" class="signature"><strong>#update_release_notes</strong>(project_id : Int32, tag : String, description : String) : JSON::Any</a>
         
           <div class="summary"><p>Update release notes in a project.</p></div>
         
@@ -369,7 +369,7 @@
         
         def <strong>create_release_notes</strong>(project_id : Int32, tag : String, description : String) : JSON::Any
 
-        <a class="method-permalink" href="#create_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#create_release_notes(project_id:Int32,tag:String,description:String):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create release notes in a project.</p>
@@ -381,7 +381,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/tag.cr#L80" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/tag.cr#L80" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -391,7 +391,7 @@
         
         def <strong>create_tag</strong>(project_id : Int32, tag : String, ref : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_tag%28project_id%3AInt32%2Ctag%3AString%2Cref%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#create_tag(project_id:Int32,tag:String,ref:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create a tag in a project.</p>
@@ -404,7 +404,7 @@ client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.1&quot;</s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/tag.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/tag.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -414,7 +414,7 @@ client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.1&quot;</s
         
         def <strong>delete_tag</strong>(project_id : Int32, tag : String) : JSON::Any
 
-        <a class="method-permalink" href="#delete_tag%28project_id%3AInt32%2Ctag%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#delete_tag(project_id:Int32,tag:String):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Delete a tag.</p>
@@ -426,7 +426,7 @@ client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.1&quot;</s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/tag.cr#L66" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/tag.cr#L66" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -436,7 +436,7 @@ client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.1&quot;</s
         
         def <strong>tag</strong>(project_id : Int32, tag : String) : JSON::Any
 
-        <a class="method-permalink" href="#tag%28project_id%3AInt32%2Ctag%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#tag(project_id:Int32,tag:String):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get single tag in a project.</p>
@@ -448,7 +448,7 @@ client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.1&quot;</s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/tag.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/tag.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -458,7 +458,7 @@ client.create_tag(<span class="n">1</span>, <span class="s">&quot;1.0.1&quot;</s
         
         def <strong>tags</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#tags%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#tags(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of tags in a project.</p>
@@ -471,7 +471,7 @@ client.tags(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/tag.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/tag.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -481,7 +481,7 @@ client.tags(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</spa
         
         def <strong>update_release_notes</strong>(project_id : Int32, tag : String, description : String) : JSON::Any
 
-        <a class="method-permalink" href="#update_release_notes%28project_id%3AInt32%2Ctag%3AString%2Cdescription%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#update_release_notes(project_id:Int32,tag:String,description:String):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Update release notes in a project.</p>
@@ -493,7 +493,7 @@ client.tags(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</spa
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/tag.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/tag.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>

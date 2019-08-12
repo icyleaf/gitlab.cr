@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.28.0">
+<meta name="generator" content="Crystal Docs 0.30.0">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/label.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/label.cr#L6" target="_blank">
         gitlab/client/label.cr
       </a>
     
@@ -306,42 +306,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#create_label%28project_id%3AInt32%2Cname%3AString%2Ccolor%3AString%2Cdescription%3AString%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_label</strong>(project_id : Int32, name : String, color : String, description : String? = <span class="n">nil</span>) : JSON::Any</a>
+        <a href="#create_label(project_id:Int32,name:String,color:String,description:String?=nil):JSON::Any-instance-method" class="signature"><strong>#create_label</strong>(project_id : Int32, name : String, color : String, description : String? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create label in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_label%28project_id%3AInt32%2Cname%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#delete_label</strong>(project_id : Int32, name : String) : JSON::Any</a>
+        <a href="#delete_label(project_id:Int32,name:String):JSON::Any-instance-method" class="signature"><strong>#delete_label</strong>(project_id : Int32, name : String) : JSON::Any</a>
         
           <div class="summary"><p>Delete a label in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_label%28project_id%3AInt32%2Cname%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_label</strong>(project_id : Int32, name : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#edit_label(project_id:Int32,name:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#edit_label</strong>(project_id : Int32, name : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Edit a label in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#labels%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#labels</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
+        <a href="#labels(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method" class="signature"><strong>#labels</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list labels in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#subscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#subscribe_label</strong>(project_id : Int32, label_id : Int32 | String) : JSON::Any</a>
+        <a href="#subscribe_label(project_id:Int32,label_id:Int32%7CString):JSON::Any-instance-method" class="signature"><strong>#subscribe_label</strong>(project_id : Int32, label_id : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Subscribe a label in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsubscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#unsubscribe_label</strong>(project_id : Int32, label_id : Int32 | String) : JSON::Any</a>
+        <a href="#unsubscribe_label(project_id:Int32,label_id:Int32%7CString):JSON::Any-instance-method" class="signature"><strong>#unsubscribe_label</strong>(project_id : Int32, label_id : Int32 | String) : JSON::Any</a>
         
           <div class="summary"><p>Unsubscribe a label in a project.</p></div>
         
@@ -369,7 +369,7 @@
         
         def <strong>create_label</strong>(project_id : Int32, name : String, color : String, description : String? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_label%28project_id%3AInt32%2Cname%3AString%2Ccolor%3AString%2Cdescription%3AString%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#create_label(project_id:Int32,name:String,color:String,description:String?=nil):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create label in a project.</p>
@@ -382,7 +382,7 @@ client.create_label(<span class="n">1</span>, <span class="s">&quot;feature&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/label.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/label.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -392,7 +392,7 @@ client.create_label(<span class="n">1</span>, <span class="s">&quot;feature&quot
         
         def <strong>delete_label</strong>(project_id : Int32, name : String) : JSON::Any
 
-        <a class="method-permalink" href="#delete_label%28project_id%3AInt32%2Cname%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#delete_label(project_id:Int32,name:String):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Delete a label in a project.</p>
@@ -404,7 +404,7 @@ client.create_label(<span class="n">1</span>, <span class="s">&quot;feature&quot
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/label.cr#L74" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/label.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -414,7 +414,7 @@ client.create_label(<span class="n">1</span>, <span class="s">&quot;feature&quot
         
         def <strong>edit_label</strong>(project_id : Int32, name : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#edit_label%28project_id%3AInt32%2Cname%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#edit_label(project_id:Int32,name:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Edit a label in a project.</p>
@@ -427,7 +427,7 @@ client.edit_label(<span class="n">1</span>, <span class="s">&quot;hotfix&quot;</
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/label.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/label.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -437,7 +437,7 @@ client.edit_label(<span class="n">1</span>, <span class="s">&quot;hotfix&quot;</
         
         def <strong>labels</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#labels%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#labels(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list labels in a project.</p>
@@ -450,7 +450,7 @@ client.labels(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/label.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/label.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -460,7 +460,7 @@ client.labels(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</s
         
         def <strong>subscribe_label</strong>(project_id : Int32, label_id : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#subscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#subscribe_label(project_id:Int32,label_id:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Subscribe a label in a project.</p>
@@ -472,7 +472,7 @@ client.labels(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/label.cr#L87" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/label.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -482,7 +482,7 @@ client.labels(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</s
         
         def <strong>unsubscribe_label</strong>(project_id : Int32, label_id : Int32 | String) : JSON::Any
 
-        <a class="method-permalink" href="#unsubscribe_label%28project_id%3AInt32%2Clabel_id%3AInt32%7CString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#unsubscribe_label(project_id:Int32,label_id:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Unsubscribe a label in a project.</p>
@@ -494,7 +494,7 @@ client.labels(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</s
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/label.cr#L100" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/label.cr#L100" target="_blank">View source</a>]
         
       </div>
     </div>

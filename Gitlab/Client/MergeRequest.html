@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.28.0">
+<meta name="generator" content="Crystal Docs 0.30.0">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L6" target="_blank">
         gitlab/client/merge_request.cr
       </a>
     
@@ -306,91 +306,91 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#accept_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cform%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#accept_merge_request</strong>(project_id : Int32, merge_request_id : Int32, form : Hash? = <span class="n">nil</span>) : JSON::Any</a>
+        <a href="#accept_merge_request(project_id:Int32,merge_request_id:Int32,form:Hash?=nil):JSON::Any-instance-method" class="signature"><strong>#accept_merge_request</strong>(project_id : Int32, merge_request_id : Int32, form : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Accept a merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#cancel_merge_request_when_build_succeed%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#cancel_merge_request_when_build_succeed</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
+        <a href="#cancel_merge_request_when_build_succeed(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="signature"><strong>#cancel_merge_request_when_build_succeed</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Cancel merge request when build succeeds in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_merge_request%28project_id%3AInt32%2Csource_branch%3AString%2Ctarget_branch%3AString%2Ctitle%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_merge_request</strong>(project_id : Int32, source_branch : String, target_branch : String, title : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#create_merge_request(project_id:Int32,source_branch:String,target_branch:String,title:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#create_merge_request</strong>(project_id : Int32, source_branch : String, target_branch : String, title : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create a merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#delete_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
+        <a href="#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="signature"><strong>#delete_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Deiete a merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#edit_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Csource_branch%3AString%2Ctarget_branch%3AString%2Ctitle%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#edit_merge_request</strong>(project_id : Int32, merge_request_id : Int32, source_branch : String, target_branch : String, title : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#edit_merge_request(project_id:Int32,merge_request_id:Int32,source_branch:String,target_branch:String,title:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#edit_merge_request</strong>(project_id : Int32, merge_request_id : Int32, source_branch : String, target_branch : String, title : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Edit a merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
+        <a href="#merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="signature"><strong>#merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Get a single merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#merge_request_changes%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#merge_request_changes</strong>(project_id : Int32, merge_request_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#merge_request_changes(project_id:Int32,merge_request_id:Int32,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#merge_request_changes</strong>(project_id : Int32, merge_request_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>List changes of a merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#merge_request_closes_issues%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#merge_request_closes_issues</strong>(project_id : Int32, merge_request_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#merge_request_closes_issues(project_id:Int32,merge_request_id:Int32,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#merge_request_closes_issues</strong>(project_id : Int32, merge_request_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>List issues that will close on merge in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#merge_request_commits%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#merge_request_commits</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
+        <a href="#merge_request_commits(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="signature"><strong>#merge_request_commits</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>List commits of merge requests in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#merge_requests%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#merge_requests</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
+        <a href="#merge_requests(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method" class="signature"><strong>#merge_requests</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>List merge requests in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#subscribe_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#subscribe_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
+        <a href="#subscribe_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="signature"><strong>#subscribe_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Subscribe a merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#unsubscribe_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#unsubscribe_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
+        <a href="#unsubscribe_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="signature"><strong>#unsubscribe_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Unsubscribe a merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update_merge_request%28project_id%3AInt32%2Cmerge_request_id%2Cform%3AHash%3F%3Dnil%29-instance-method" class="signature"><strong>#update_merge_request</strong>(project_id : Int32, merge_request_id, form : Hash? = <span class="n">nil</span>)</a>
+        <a href="#update_merge_request(project_id:Int32,merge_request_id,form:Hash?=nil)-instance-method" class="signature"><strong>#update_merge_request</strong>(project_id : Int32, merge_request_id, form : Hash? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Updates a merge request.</p></div>
         
@@ -418,7 +418,7 @@
         
         def <strong>accept_merge_request</strong>(project_id : Int32, merge_request_id : Int32, form : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#accept_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cform%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#accept_merge_request(project_id:Int32,merge_request_id:Int32,form:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Accept a merge request in a project.</p>
@@ -442,7 +442,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L179" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L179" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -452,7 +452,7 @@
         
         def <strong>cancel_merge_request_when_build_succeed</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#cancel_merge_request_when_build_succeed%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#cancel_merge_request_when_build_succeed(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Cancel merge request when build succeeds in a project.</p>
@@ -472,7 +472,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -482,7 +482,7 @@
         
         def <strong>create_merge_request</strong>(project_id : Int32, source_branch : String, target_branch : String, title : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_merge_request%28project_id%3AInt32%2Csource_branch%3AString%2Ctarget_branch%3AString%2Ctitle%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#create_merge_request(project_id:Int32,source_branch:String,target_branch:String,title:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create a merge request in a project.</p>
@@ -495,7 +495,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="s">&quot;hotf
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -505,7 +505,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="s">&quot;hotf
         
         def <strong>delete_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#delete_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Deiete a merge request in a project.</p>
@@ -521,7 +521,7 @@ In case you cannot destroy this merge request, or it is not present, code 404 is
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -531,7 +531,7 @@ In case you cannot destroy this merge request, or it is not present, code 404 is
         
         def <strong>edit_merge_request</strong>(project_id : Int32, merge_request_id : Int32, source_branch : String, target_branch : String, title : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#edit_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Csource_branch%3AString%2Ctarget_branch%3AString%2Ctitle%3AString%2Cform%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#edit_merge_request(project_id:Int32,merge_request_id:Int32,source_branch:String,target_branch:String,title:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Edit a merge request in a project.</p>
@@ -544,7 +544,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="n">6</span>, 
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L98" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L98" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -554,7 +554,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="n">6</span>, 
         
         def <strong>merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get a single merge request in a project.</p>
@@ -566,7 +566,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="n">6</span>, 
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -576,7 +576,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="n">6</span>, 
         
         def <strong>merge_request_changes</strong>(project_id : Int32, merge_request_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#merge_request_changes%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#merge_request_changes(project_id:Int32,merge_request_id:Int32,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>List changes of a merge request in a project.</p>
@@ -589,7 +589,7 @@ client.merge_request_changes(<span class="n">1</span>, <span class="n">4</span>,
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L136" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L136" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -599,7 +599,7 @@ client.merge_request_changes(<span class="n">1</span>, <span class="n">4</span>,
         
         def <strong>merge_request_closes_issues</strong>(project_id : Int32, merge_request_id : Int32, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#merge_request_closes_issues%28project_id%3AInt32%2Cmerge_request_id%3AInt32%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#merge_request_closes_issues(project_id:Int32,merge_request_id:Int32,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>List issues that will close on merge in a project.</p>
@@ -612,7 +612,7 @@ client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">4</
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L217" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -622,7 +622,7 @@ client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">4</
         
         def <strong>merge_request_commits</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#merge_request_commits%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#merge_request_commits(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>List commits of merge requests in a project.</p>
@@ -634,7 +634,7 @@ client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">4</
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -644,7 +644,7 @@ client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">4</
         
         def <strong>merge_requests</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#merge_requests%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#merge_requests(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>List merge requests in a project.</p>
@@ -657,7 +657,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -667,7 +667,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
         
         def <strong>subscribe_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#subscribe_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#subscribe_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Subscribe a merge request in a project.</p>
@@ -681,7 +681,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L232" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L232" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -691,7 +691,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
         
         def <strong>unsubscribe_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any
 
-        <a class="method-permalink" href="#unsubscribe_merge_request%28project_id%3AInt32%2Cmerge_request_id%3AInt32%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#unsubscribe_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Unsubscribe a merge request in a project.</p>
@@ -705,7 +705,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L247" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L247" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -715,7 +715,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
         
         def <strong>update_merge_request</strong>(project_id : Int32, merge_request_id, form : Hash? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#update_merge_request%28project_id%3AInt32%2Cmerge_request_id%2Cform%3AHash%3F%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#update_merge_request(project_id:Int32,merge_request_id,form:Hash?=nil)-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Updates a merge request.</p>
@@ -727,7 +727,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/merge_request.cr#L154" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/merge_request.cr#L154" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.28.0">
+<meta name="generator" content="Crystal Docs 0.30.0">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L6" target="_blank">
         gitlab/client/commit.cr
       </a>
     
@@ -306,49 +306,49 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#commit%28project_id%3AInt32%2Ccommit%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#commit</strong>(project_id : Int32, commit : String) : JSON::Any</a>
+        <a href="#commit(project_id:Int32,commit:String):JSON::Any-instance-method" class="signature"><strong>#commit</strong>(project_id : Int32, commit : String) : JSON::Any</a>
         
           <div class="summary"><p>Get single commit in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#commit_comments%28project_id%3AInt32%2Csha%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#commit_comments</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#commit_comments(project_id:Int32,sha:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#commit_comments</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Get the comments of a commit in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#commit_diff%28project_id%3AInt32%2Csha%3AString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#commit_diff</strong>(project_id : Int32, sha : String) : JSON::Any</a>
+        <a href="#commit_diff(project_id:Int32,sha:String):JSON::Any-instance-method" class="signature"><strong>#commit_diff</strong>(project_id : Int32, sha : String) : JSON::Any</a>
         
           <div class="summary"><p>Get the diff of a commit in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#commit_status%28project_id%3AInt32%2Csha%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#commit_status</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#commit_status(project_id:Int32,sha:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#commit_status</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Get the statuses of a commit in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#commits%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#commits</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
+        <a href="#commits(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method" class="signature"><strong>#commits</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list of commits in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_commit_comment%28project_id%3AInt32%2Csha%3AString%2Cnote%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#create_commit_comment</strong>(project_id : Int32, sha : String, note : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#create_commit_comment(project_id:Int32,sha:String,note:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#create_commit_comment</strong>(project_id : Int32, sha : String, note : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Create comment of commit in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#update_commit_status%28project_id%3AInt32%2Csha%3AString%2Cstate%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method" class="signature"><strong>#update_commit_status</strong>(project_id : Int32, sha : String, state : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        <a href="#update_commit_status(project_id:Int32,sha:String,state:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#update_commit_status</strong>(project_id : Int32, sha : String, state : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Adds or updates a status of a commit.</p></div>
         
@@ -376,7 +376,7 @@
         
         def <strong>commit</strong>(project_id : Int32, commit : String) : JSON::Any
 
-        <a class="method-permalink" href="#commit%28project_id%3AInt32%2Ccommit%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#commit(project_id:Int32,commit:String):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get single commit in a project.</p>
@@ -388,7 +388,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -398,7 +398,7 @@
         
         def <strong>commit_comments</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#commit_comments%28project_id%3AInt32%2Csha%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#commit_comments(project_id:Int32,sha:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get the comments of a commit in a project.</p>
@@ -410,7 +410,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -420,7 +420,7 @@
         
         def <strong>commit_diff</strong>(project_id : Int32, sha : String) : JSON::Any
 
-        <a class="method-permalink" href="#commit_diff%28project_id%3AInt32%2Csha%3AString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#commit_diff(project_id:Int32,sha:String):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get the diff of a commit in a project.</p>
@@ -432,7 +432,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -442,7 +442,7 @@
         
         def <strong>commit_status</strong>(project_id : Int32, sha : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#commit_status%28project_id%3AInt32%2Csha%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#commit_status(project_id:Int32,sha:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Get the statuses of a commit in a project.</p>
@@ -458,7 +458,7 @@ client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -468,7 +468,7 @@ client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438
         
         def <strong>commits</strong>(project_id : Int32, params : Hash? = <span class="n">nil</span>) : JSON::Any
 
-        <a class="method-permalink" href="#commits%28project_id%3AInt32%2Cparams%3AHash%3F%3Dnil%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#commits(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Gets a list of commits in a project.</p>
@@ -481,7 +481,7 @@ client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -491,7 +491,7 @@ client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</
         
         def <strong>create_commit_comment</strong>(project_id : Int32, sha : String, note : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#create_commit_comment%28project_id%3AInt32%2Csha%3AString%2Cnote%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#create_commit_comment(project_id:Int32,sha:String,note:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Create comment of commit in a project.</p>
@@ -504,7 +504,7 @@ client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daf
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L83" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -514,7 +514,7 @@ client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daf
         
         def <strong>update_commit_status</strong>(project_id : Int32, sha : String, state : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
 
-        <a class="method-permalink" href="#update_commit_status%28project_id%3AInt32%2Csha%3AString%2Cstate%3AString%2Cparams%3AHash%3D%7B%7DofString%3D%3EString%29%3AJSON%3A%3AAny-instance-method">#</a>
+        <a class="method-permalink" href="#update_commit_status(project_id:Int32,sha:String,state:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Adds or updates a status of a commit.</p>
@@ -530,7 +530,7 @@ client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;610
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/c4f336f37f34c934f6cd17c7b74167031dffe973/src/gitlab/client/commit.cr#L128" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
