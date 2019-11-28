@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.30.0">
+<meta name="generator" content="Crystal Docs 0.30.1">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L6" target="_blank">
         gitlab/client/group.cr
       </a>
     
@@ -421,16 +421,19 @@
         <a class="method-permalink" href="#add_group_member(group_id:Int32,user_id:Int32,access_level):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Adds a user to group.</p>
+        <div class="doc">
+          
+          <p>Adds a user to group.</p>
 
 <ul><li>param  [Int32] group_id The group id to add a member to.</li><li>param  [Int32] user_id The user id of the user to add to the team.</li><li>param  [Int32] access_level Project access level.</li><li>return [JSON::Any] Information about added group member.</li></ul>
 
-<pre><code>client.add_group_member(<span class="n">1</span>, <span class="n">2</span>, <span class="n">40</span>)</code></pre></div>
+<pre><code>client.add_group_member(<span class="n">1</span>, <span class="n">2</span>, <span class="n">40</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L176" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -443,18 +446,21 @@
         <a class="method-permalink" href="#create_group(name:String,path:String,form:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Creates a new group.</p>
+        <div class="doc">
+          
+          <p>Creates a new group.</p>
 
 <ul><li>param [String] name The name of a group.</li><li>param [String] path The path of a group.</li><li>param [Hash] form A customizable set of form.</li><li>option form [String] :description The group"s description.</li><li>option form [String] : visibility_level The group"s visibility. 0 for private, 10 for internal, 20 for public.</li><li>return [JSON::Any] Information about created group.</li></ul>
 
 <pre><code>client.create_group(<span class="s">&quot;new-group&quot;</span>, <span class="s">&quot;group-path&quot;</span>)
 client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;gitlab-path&quot;</span>, {<span class="s">&quot;description&quot;</span> => <span class="s">&quot;New Gitlab project&quot;</span>})
-client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;gitlab-path&quot;</span>, {<span class="s">&quot;visibility_level&quot;</span> => <span class="s">&quot;0&quot;</span>})</code></pre></div>
+client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;gitlab-path&quot;</span>, {<span class="s">&quot;visibility_level&quot;</span> => <span class="s">&quot;0&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -467,16 +473,19 @@ client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&
         <a class="method-permalink" href="#delete_group(group_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Delete a group.</p>
+        <div class="doc">
+          
+          <p>Delete a group.</p>
 
 <ul><li>param  [Int32] group_id The ID of a group</li><li>return [JSON::Any] Information about the deleted group.</li></ul>
 
-<pre><code>client.delete_group(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.delete_group(<span class="n">42</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -489,7 +498,9 @@ client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&
         <a class="method-permalink" href="#edit_group(group_id:Int32,form:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Creates a new group.</p>
+        <div class="doc">
+          
+          <p>Creates a new group.</p>
 
 <p>Notes: Not all gitlab version has this api.</p>
 
@@ -497,12 +508,13 @@ client.create_group(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&
 
 <pre><code>client.create_group(<span class="n">3</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;group-path&quot;</span>})
 client.create_group(<span class="n">3</span>, {<span class="s">&quot;description&quot;</span> => <span class="s">&quot;New Gitlab project&quot;</span>})
-client.create_group(<span class="n">3</span>, {<span class="s">&quot;visibility_level&quot;</span> => <span class="s">&quot;0&quot;</span>})</code></pre></div>
+client.create_group(<span class="n">3</span>, {<span class="s">&quot;visibility_level&quot;</span> => <span class="s">&quot;0&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L94" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -515,16 +527,19 @@ client.create_group(<span class="n">3</span>, {<span class="s">&quot;visibility_
         <a class="method-permalink" href="#edit_group_member(group_id:Int32,user_id:Int32,access_level):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Edit a user of a group.</p>
+        <div class="doc">
+          
+          <p>Edit a user of a group.</p>
 
 <ul><li>param  [Int32] group_id The group id to add a member to.</li><li>param  [Int32] user_id The user id of the user to add to the team.</li><li>param  [Int32] access_level Project access level.</li><li>return [JSON::Any] Information about added group member.</li></ul>
 
-<pre><code>client.edit_group_member(<span class="n">1</span>, <span class="n">2</span>, <span class="n">40</span>)</code></pre></div>
+<pre><code>client.edit_group_member(<span class="n">1</span>, <span class="n">2</span>, <span class="n">40</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L193" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -537,17 +552,20 @@ client.create_group(<span class="n">3</span>, {<span class="s">&quot;visibility_
         <a class="method-permalink" href="#group(group:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets details of a group.</p>
+        <div class="doc">
+          
+          <p>Gets details of a group.</p>
 
 <ul><li>param  [Int32|String] id The ID of a group.</li><li>return [JSON::Any] Information about group.</li></ul>
 
 <pre><code>client.group(<span class="n">42</span>)
-client.group(<span class="s">&quot;orgination&quot;</span>)</code></pre></div>
+client.group(<span class="s">&quot;orgination&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -560,16 +578,19 @@ client.group(<span class="s">&quot;orgination&quot;</span>)</code></pre></div>
         <a class="method-permalink" href="#group_member(group_id:Int32,user_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get details of a single group member.</p>
+        <div class="doc">
+          
+          <p>Get details of a single group member.</p>
 
 <ul><li>param  [Integer] group_id The ID of the group to find a member in.</li><li>param  [Integer] user_id The user id of the member to find.</li></ul>
 
-<pre><code>client.group_member(<span class="n">1</span>, <span class="n">10</span>)</code></pre></div>
+<pre><code>client.group_member(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L162" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -582,17 +603,20 @@ client.group(<span class="s">&quot;orgination&quot;</span>)</code></pre></div>
         <a class="method-permalink" href="#group_members(group_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a list of group members.</p>
+        <div class="doc">
+          
+          <p>Get a list of group members.</p>
 
 <ul><li>param  [Int32] group_id The ID of a group.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of group members under a group</li></ul>
 
 <pre><code>client.group_members(<span class="n">1</span>)
-client.group_members(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;50&quot;</span>})</code></pre></div>
+client.group_members(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;50&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L150" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L150" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -605,7 +629,9 @@ client.group_members(<span class="n">1</span>, {<span class="s">&quot;per_page&q
         <a class="method-permalink" href="#group_projects(group_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a list of projects under a group</p>
+        <div class="doc">
+          
+          <p>Get a list of projects under a group</p>
 
 <p>Notes: Not all gitlab version has this api.</p>
 
@@ -613,12 +639,13 @@ client.group_members(<span class="n">1</span>, {<span class="s">&quot;per_page&q
 
 <pre><code>client.group_projects(<span class="n">1</span>)
 client.group_projects(<span class="n">1</span>, { <span class="s">&quot;archived&quot;</span> => <span class="s">&quot;true&quot;</span>)
-client.group_projects(<span class="n">1</span>, { <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})</code></pre></div>
+client.group_projects(<span class="n">1</span>, { <span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -631,17 +658,20 @@ client.group_projects(<span class="n">1</span>, { <span class="s">&quot;order_by
         <a class="method-permalink" href="#group_search(query,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Search for groups by name</p>
+        <div class="doc">
+          
+          <p>Search for groups by name</p>
 
 <ul><li>param  [String] query A string to search for in group names and paths.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :per_page Number of projects to return per page</li><li>option params [String] :page The page to retrieve</li><li>return [JSON::Any] List of projects under search qyery</li></ul>
 
 <pre><code>client.group_search(<span class="s">&quot;gitlab&quot;</span>)
-client.group_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="n">50</span>})</code></pre></div>
+client.group_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="n">50</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L122" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L122" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -654,17 +684,20 @@ client.group_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">
         <a class="method-permalink" href="#groups(params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of groups.</p>
+        <div class="doc">
+          
+          <p>Gets a list of groups.</p>
 
 <ul><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of groups</li></ul>
 
 <pre><code>client.groups
-client.groups({<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;100&quot;</span>, <span class="s">&quot;page&quot;</span> => <span class="s">&quot;5&quot;</span>})</code></pre></div>
+client.groups({<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;100&quot;</span>, <span class="s">&quot;page&quot;</span> => <span class="s">&quot;5&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -677,16 +710,19 @@ client.groups({<span class="s">&quot;per_page&quot;</span> => <span class="s">&q
         <a class="method-permalink" href="#remove_group_member(group_id:Int32,user_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Removes user from user group.</p>
+        <div class="doc">
+          
+          <p>Removes user from user group.</p>
 
 <ul><li>param  [Int32] group_id The group id to add a member to.</li><li>param  [Int32] user_id The user id of the user to add to the team.</li><li>return [JSON::Any] Information about added group member.</li></ul>
 
-<pre><code>client.remove_group_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre></div>
+<pre><code>client.remove_group_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L209" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L209" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -699,16 +735,19 @@ client.groups({<span class="s">&quot;per_page&quot;</span> => <span class="s">&q
         <a class="method-permalink" href="#transfer_project_to_group(group_id,project_id):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Transfers a project to a group</p>
+        <div class="doc">
+          
+          <p>Transfers a project to a group</p>
 
 <ul><li>params [Int32] group_id The ID of a group.</li><li>params [Int32] project_id The ID of a project.</li></ul>
 
-<pre><code><span class="t">Gitlab</span>.transfer_project_to_group(<span class="n">3</span>, <span class="n">50</span>)</code></pre></div>
+<pre><code><span class="t">Gitlab</span>.transfer_project_to_group(<span class="n">3</span>, <span class="n">50</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/group.cr#L134" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/group.cr#L134" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.30.0">
+<meta name="generator" content="Crystal Docs 0.30.1">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -297,7 +297,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L16" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L16" target="_blank">
         gitlab/client/issue.cr
       </a>
     
@@ -417,18 +417,21 @@
         <a class="method-permalink" href="#close_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Closes an issue.</p>
+        <div class="doc">
+          
+          <p>Closes an issue.</p>
 
 <p>Alias to <code><a href="../../Gitlab/Client/Issue.html#edit_issue(project_id:Int32,issue_id:Int32,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#edit_issue</a></code>(project_id, issue_id, { "state_event" => "close" })</p>
 
 <ul><li>param  [Integer] project The ID of a project.</li><li>param  [Integer] id The ID of an issue.</li><li>return [JSON::Any] Information about closed issue.</li></ul>
 
-<pre><code>client.close_issue(<span class="n">1</span>, <span class="n">1</span>)</code></pre></div>
+<pre><code>client.close_issue(<span class="n">1</span>, <span class="n">1</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -441,17 +444,20 @@
         <a class="method-permalink" href="#create_issue(project_id:Int32,title:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Create issue in a project.</p>
+        <div class="doc">
+          
+          <p>Create issue in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] title The title of an issue.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :description The description of an issue.</li><li>option params [String] :assignee_id The ID of a user to assign issue.</li><li>option params [String] :milestone_id The ID of a milestone to assign issue.</li><li>option params [String] :labels Comma-separated label names for an issue.</li><li>option params [String] :created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.</li><li>return [JSON::Any] Information about the created issue in a project.</li></ul>
 
 <pre><code>client.create_issue(<span class="n">1</span>, <span class="s">&quot;support cli command&quot;</span>)
-client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in debug mode&quot;</span>, {<span class="s">&quot;description&quot;</span> => <span class="s">&quot;xxx&quot;</span>})</code></pre></div>
+client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in debug mode&quot;</span>, {<span class="s">&quot;description&quot;</span> => <span class="s">&quot;xxx&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L87" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -464,16 +470,19 @@ client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in deb
         <a class="method-permalink" href="#delete_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Delete an issue in a project.</p>
+        <div class="doc">
+          
+          <p>Delete an issue in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>return [JSON::Any] Information about the deleted issue.</li></ul>
 
-<pre><code>client.delete_issue(<span class="n">4</span>, <span class="n">3</span>)</code></pre></div>
+<pre><code>client.delete_issue(<span class="n">4</span>, <span class="n">3</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L158" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L158" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -486,7 +495,9 @@ client.create_issue(<span class="n">1</span>, <span class="s">&quot;error in deb
         <a class="method-permalink" href="#edit_issue(project_id:Int32,issue_id:Int32,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Edit an issue in a project.</p>
+        <div class="doc">
+          
+          <p>Edit an issue in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :title The title of an issue.</li><li>option params [String] :description The description of an issue.</li><li>option params [String] :assignee_id The ID of a user to assign issue.</li><li>option params [String] :milestone_id The ID of a milestone to assign issue.</li><li>option params [String] :labels Comma-separated label names for an issue.</li><li>option params [String] :state_event The state event of an issue. Set close to close the issue and reopen to reopen it.</li><li>option params [String] :created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.</li><li>return [JSON::Any] Information about the created issue in a project.</li></ul>
 
@@ -495,12 +506,13 @@ client.create_issue(<span class="n">1</span>, <span class="n">2</span>, <span cl
   <span class="s">&quot;assignee_id&quot;</span>  => <span class="s">&quot;3&quot;</span>,
   <span class="s">&quot;milestone_id&quot;</span> => <span class="n">4</span>,
   <span class="s">&quot;labels&quot;</span>       => <span class="s">&quot;bug,v1.0.0&quot;</span>,
-})</code></pre></div>
+})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L115" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -513,16 +525,19 @@ client.create_issue(<span class="n">1</span>, <span class="n">2</span>, <span cl
         <a class="method-permalink" href="#issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get single issue in a project.</p>
+        <div class="doc">
+          
+          <p>Get single issue in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>return [JSON::Any] Information about the issue.</li></ul>
 
-<pre><code>client.issue(<span class="n">1</span>, <span class="n">10</span>)</code></pre></div>
+<pre><code>client.issue(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L67" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -535,17 +550,20 @@ client.create_issue(<span class="n">1</span>, <span class="n">2</span>, <span cl
         <a class="method-permalink" href="#issues(params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of issues.</p>
+        <div class="doc">
+          
+          <p>Gets a list of issues.</p>
 
 <ul><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :state Return all issues or just those that are opened or closed.</li><li>option params [String] :labels Return all issues or just those that are opened or closed.</li><li>option params [String] :order_by Return requests ordered by created_at or updated_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of issues.</li></ul>
 
 <pre><code>client.issues
-client.issues({<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
+client.issues({<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -558,17 +576,20 @@ client.issues({<span class="s">&quot;per_page&quot;</span> => <span class="s">&q
         <a class="method-permalink" href="#issues(project_id:Int32%7CString,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list isssues in a project.</p>
+        <div class="doc">
+          
+          <p>Gets a list isssues in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :iid Return the issue having the given iid.</li><li>option params [String] :state Return all issues or just those that are opened or closed.</li><li>option params [String] :labels Return all issues or just those that are opened or closed.</li><li>option params [String] :milestone The milestone title.</li><li>option params [String] :order_by Return requests ordered by created_at or updated_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of issues under a project.</li></ul>
 
 <pre><code>client.issue(<span class="n">1</span>)
-client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
+client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -581,16 +602,19 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
         <a class="method-permalink" href="#move_issue(project_id:Int32,issue_id:Int32,to_project_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Move an issue to another project.</p>
+        <div class="doc">
+          
+          <p>Move an issue to another project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] to_project_id The ID of anthor to move project.</li><li>return [JSON::Any] Information about the moved issue.</li></ul>
 
-<pre><code>client.move_issue(<span class="n">4</span>, <span class="n">3</span>)</code></pre></div>
+<pre><code>client.move_issue(<span class="n">4</span>, <span class="n">3</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L172" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L172" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -603,18 +627,21 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
         <a class="method-permalink" href="#reopen_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Reopens an issue.</p>
+        <div class="doc">
+          
+          <p>Reopens an issue.</p>
 
 <p>Alias to <code><a href="../../Gitlab/Client/Issue.html#edit_issue(project_id:Int32,issue_id:Int32,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#edit_issue</a></code>(project_id, issue_id, { "state_event" => "reopen" })</p>
 
 <ul><li>param  [Integer] project The ID of a project.</li><li>param  [Integer] id The ID of an issue.</li><li>return [JSON::Any] Information about closed issue.</li></ul>
 
-<pre><code>client.close_issue(<span class="n">1</span>, <span class="n">1</span>)</code></pre></div>
+<pre><code>client.close_issue(<span class="n">1</span>, <span class="n">1</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L145" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -627,16 +654,19 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
         <a class="method-permalink" href="#subscribe_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Subscribe an issue in a project.</p>
+        <div class="doc">
+          
+          <p>Subscribe an issue in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>return [JSON::Any] Information about the subscribed issue in a project.</li></ul>
 
-<pre><code>client.subscribe_issue(<span class="n">1</span>, <span class="n">38</span>)</code></pre></div>
+<pre><code>client.subscribe_issue(<span class="n">1</span>, <span class="n">38</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L187" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L187" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -649,16 +679,19 @@ client.issue(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</sp
         <a class="method-permalink" href="#unsubscribe_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Unsubscribe an issue in a project.</p>
+        <div class="doc">
+          
+          <p>Unsubscribe an issue in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>return [JSON::Any] Information about the subscribed issue in a project.</li></ul>
 
-<pre><code>client.unsubscribe_issue(<span class="n">1</span>, <span class="n">38</span>)</code></pre></div>
+<pre><code>client.unsubscribe_issue(<span class="n">1</span>, <span class="n">38</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/issue.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/issue.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>

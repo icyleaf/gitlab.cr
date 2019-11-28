@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.30.0">
+<meta name="generator" content="Crystal Docs 0.30.1">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository_file.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository_file.cr#L6" target="_blank">
         gitlab/client/repository_file.cr
       </a>
     
@@ -344,17 +344,20 @@
         <a class="method-permalink" href="#file_contents(project_id:Int32,filepath:String,sha=&quot;HEAD&quot;):String-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get the raw file contents for a file by commit SHA and path.</p>
+        <div class="doc">
+          
+          <p>Get the raw file contents for a file by commit SHA and path.</p>
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] filepath The path and name of a file.</li><li>param  [String] sha The id of a commit sha.</li><li>return [String] The raw file contents</li></ul>
 
 <pre><code>client.file_contents(<span class="n">1</span>, <span class="s">&quot;README.md&quot;</span>)
-client.file_contents(<span class="n">1</span>, <span class="s">&quot;src/gitlab.cr&quot;</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre></div>
+client.file_contents(<span class="n">1</span>, <span class="s">&quot;src/gitlab.cr&quot;</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository_file.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository_file.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -367,17 +370,20 @@ client.file_contents(<span class="n">1</span>, <span class="s">&quot;src/gitlab.
         <a class="method-permalink" href="#get_file(project_id:Int32,filepath:String,ref=&quot;HEAD&quot;)-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a repository file.</p>
+        <div class="doc">
+          
+          <p>Gets a repository file.</p>
 
 <ul><li>param  [Int32] project The ID or name of a project.</li><li>param  [String] file_path The full path of the file.</li><li>param  [String] ref The name of branch, tag or commit.</li><li>return [JSON::Any]</li></ul>
 
 <pre><code>client.get_file(<span class="n">42</span>, <span class="s">&quot;README.md&quot;</span>)
-client.get_file(<span class="n">42</span>, <span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;develop&quot;</span>)</code></pre></div>
+client.get_file(<span class="n">42</span>, <span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;develop&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository_file.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository_file.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>

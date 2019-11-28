@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.30.0">
+<meta name="generator" content="Crystal Docs 0.30.1">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -299,7 +299,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L19" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L19" target="_blank">
         gitlab/client/project.cr
       </a>
     
@@ -587,17 +587,20 @@
         <a class="method-permalink" href="#add_project_hook(project:Int32%7CString,url:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Create a web hook of a project.</p>
+        <div class="doc">
+          
+          <p>Create a web hook of a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] url The url of a web hook.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :push_events Trigger hook on push events.</li><li>option form [String] :issues_events Trigger hook on issues events.</li><li>option form [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option form [String] :tag_push_events Trigger hook on push_tag events.</li><li>option form [String] :note_events Trigger hook on note events.</li><li>option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [JSON::Any] Information about the created web hook.</li></ul>
 
 <pre><code>client.add_project_hook(<span class="n">42</span>, <span class="s">&quot;https://hooks.slack.com/services/xxx&quot;</span>)
-client.add_project_hook(</code></pre></div>
+client.add_project_hook(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L409" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L409" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -610,16 +613,19 @@ client.add_project_hook(</code></pre></div>
         <a class="method-permalink" href="#add_project_member(project:Int32%7CString,user_id:Int32,access_level:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Adds a user to project team.</p>
+        <div class="doc">
+          
+          <p>Adds a user to project team.</p>
 
 <ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about added team member.</li></ul>
 
-<pre><code>client.add_project_member(</code></pre></div>
+<pre><code>client.add_project_member(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L326" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L326" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -632,18 +638,21 @@ client.add_project_hook(</code></pre></div>
         <a class="method-permalink" href="#all_projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of projects by the authenticated user (admin only).</p>
+        <div class="doc">
+          
+          <p>Gets a list of projects by the authenticated user (admin only).</p>
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#projects</a></code>({ "scope" => "all" })</p>
 
 <pre><code>client.all_projects
 client.all_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
-client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
+client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -656,16 +665,19 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
         <a class="method-permalink" href="#archive_project(project:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Archive a project.</p>
+        <div class="doc">
+          
+          <p>Archive a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the archive project.</li></ul>
 
-<pre><code>client.archive_project(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.archive_project(<span class="n">42</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L222" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -678,16 +690,19 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
         <a class="method-permalink" href="#create_fork_from(project:Int32%7CString,forked_from_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Create a forked from/to relation between existing projects. Available only for admins.</p>
+        <div class="doc">
+          
+          <p>Create a forked from/to relation between existing projects. Available only for admins.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the forked project.</li></ul>
 
-<pre><code>client.create_fork_from(<span class="n">1</span>, <span class="n">21</span>)</code></pre></div>
+<pre><code>client.create_fork_from(<span class="n">1</span>, <span class="n">21</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L516" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L516" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -700,17 +715,20 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
         <a class="method-permalink" href="#create_project(user_id:Int32,name:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Creates a new project for a user.</p>
+        <div class="doc">
+          
+          <p>Creates a new project for a user.</p>
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#create_project(user_id:Int32,name:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#create_project</a></code>(params : Hash = {} of String => String)</p>
 
 <pre><code>client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>)
-client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;description: =&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; })</code></pre></div>
+client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;description: =&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; })</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L123" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -723,18 +741,21 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
         <a class="method-permalink" href="#create_project(name:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Creates a new project.</p>
+        <div class="doc">
+          
+          <p>Creates a new project.</p>
 
 <ul><li>params [String] name The name of a project.</li><li>params [Hash] form A customizable set of options.</li><li>option form [String] :description The description of a project.</li><li>option form [String] :default_branch The default branch of a project.</li><li>option form [String] :namespace_id The namespace in which to create a project.</li><li>option form [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).</li><li>option form [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).</li><li>option form [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).</li><li>option form [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).</li><li>option form [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).</li><li>option form [String] :public The setting for making a project public (0 = false, 1 = true).</li><li>option form [String] :user_id The user/owner id of a project.</li><li>return [JSON::Any] Information about created project.</li></ul>
 
 <pre><code>client.create_project(<span class="s">&quot;gitlab&quot;</span>)
 client.create_project(<span class="s">&quot;viking&quot;</span>, { <span class="s">&quot;description: =&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; })
-client.create_project(&quot;</span><span class="t">Red</span><span class="s">&quot;, { &quot;</span>wall_enabled<span class="s">&quot; =&gt; &quot;</span><span class="n">false</span><span class="s">&quot; })</code></pre></div>
+client.create_project(&quot;</span><span class="t">Red</span><span class="s">&quot;, { &quot;</span>wall_enabled<span class="s">&quot; =&gt; &quot;</span><span class="n">false</span><span class="s">&quot; })</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -747,16 +768,19 @@ client.create_project(&quot;</span><span class="t">Red</span><span class="s">&qu
         <a class="method-permalink" href="#delete_project(project:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Deletes a project.</p>
+        <div class="doc">
+          
+          <p>Deletes a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the deleted project.</li></ul>
 
-<pre><code>client.delete_project(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.delete_project(<span class="n">42</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L282" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -769,17 +793,20 @@ client.create_project(&quot;</span><span class="t">Red</span><span class="s">&qu
         <a class="method-permalink" href="#edit_project(project:Int32%7CString,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Updates an existing project.</p>
+        <div class="doc">
+          
+          <p>Updates an existing project.</p>
 
 <ul><li>params [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params [Hash] form A customizable set of options.</li><li>option form [String] :name The name of a project.</li><li>option form [String] :path The name of a project.</li><li>option form [String] :description The name of a project.</li><li>return [JSON::Any] Information about the edited project.</li></ul>
 
 <pre><code>client.edit_project(<span class="n">42</span>)
-client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;project_name&quot;</span>})</code></pre></div>
+client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;project_name&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L171" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -792,16 +819,19 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
         <a class="method-permalink" href="#edit_project_hook(project:Int32%7CString,hook_id:Int32,url:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Updates a web hook of a project.</p>
+        <div class="doc">
+          
+          <p>Updates a web hook of a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>param  [Int32] url The url of a web hook.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :push_events Trigger hook on push events.</li><li>option form [String] :issues_events Trigger hook on issues events.</li><li>option form [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option form [String] :tag_push_events Trigger hook on push_tag events.</li><li>option form [String] :note_events Trigger hook on note events.</li><li>option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [JSON::Any] Information about updated web hook.</li></ul>
 
-<pre><code>client.edit_project_hook(</code></pre></div>
+<pre><code>client.edit_project_hook(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L430" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L430" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -814,16 +844,19 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
         <a class="method-permalink" href="#edit_project_member(project:Int32%7CString,user_id,access_level):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Updates a team member's project access level.</p>
+        <div class="doc">
+          
+          <p>Updates a team member's project access level.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about updated team member.</li></ul>
 
-<pre><code>client.edit_project_member(</code></pre></div>
+<pre><code>client.edit_project_member(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L343" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L343" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -836,17 +869,20 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
         <a class="method-permalink" href="#fork_project(project:Int32%7CString,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Forks a project into the user namespace.</p>
+        <div class="doc">
+          
+          <p>Forks a project into the user namespace.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :sudo The username the project will be forked for.</li><li>return [JSON::Any] Information about the forked project.</li></ul>
 
 <pre><code>client.create_fork(<span class="n">42</span>)
-client.create_fork(<span class="n">42</span>, {<span class="s">&quot;sudo&quot;</span> => <span class="s">&quot;another_username&quot;</span>})</code></pre></div>
+client.create_fork(<span class="n">42</span>, {<span class="s">&quot;sudo&quot;</span> => <span class="s">&quot;another_username&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L186" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -859,18 +895,21 @@ client.create_fork(<span class="n">42</span>, {<span class="s">&quot;sudo&quot;<
         <a class="method-permalink" href="#owned_projects(params:Hash?=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of projects owned by the authenticated user.</p>
+        <div class="doc">
+          
+          <p>Gets a list of projects owned by the authenticated user.</p>
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#projects</a></code>({ "scope" => "owned" })</p>
 
 <pre><code>client.owned_projects
 client.owned_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
-client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
+client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -883,16 +922,19 @@ client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class=
         <a class="method-permalink" href="#project(project:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets information about a project.</p>
+        <div class="doc">
+          
+          <p>Gets information about a project.</p>
 
 <ul><li>params  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about project.</li></ul>
 
-<pre><code>client.project(<span class="s">&quot;gitlab&quot;</span>)</code></pre></div>
+<pre><code>client.project(<span class="s">&quot;gitlab&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -905,17 +947,20 @@ client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class=
         <a class="method-permalink" href="#project_branch(project:Int32%7CString,branch:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a branch of a project.</p>
+        <div class="doc">
+          
+          <p>Get a branch of a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] branch The name of a branch.</li><li>return [JSON::Any] Information about the branch under a project.</li></ul>
 
 <pre><code>client.project_branch(<span class="n">42</span>)
-client.project_branch(</code></pre></div>
+client.project_branch(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L475" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L475" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -928,17 +973,20 @@ client.project_branch(</code></pre></div>
         <a class="method-permalink" href="#project_branchs(project:Int32%7CString,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a list of a project's branches.</p>
+        <div class="doc">
+          
+          <p>Get a list of a project's branches.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of branches under a project.</li></ul>
 
 <pre><code>client.project_branchs(<span class="n">42</span>)
-client.project_branchs(</code></pre></div>
+client.project_branchs(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L461" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L461" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -951,16 +999,19 @@ client.project_branchs(</code></pre></div>
         <a class="method-permalink" href="#project_events(project:Int32%7CString,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of project events.</p>
+        <div class="doc">
+          
+          <p>Gets a list of project events.</p>
 
 <ul><li>params  [Int32, String] project The ID of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of events under a project.</li></ul>
 
-<pre><code>client.project_events(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.project_events(<span class="n">42</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L111" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -973,17 +1024,20 @@ client.project_branchs(</code></pre></div>
         <a class="method-permalink" href="#project_hook(project:Int32%7CString,hook_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a web hook of a project.</p>
+        <div class="doc">
+          
+          <p>Get a web hook of a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [JSON::Any] Information about the web hook.</li></ul>
 
 <pre><code>client.project_hook(<span class="n">42</span>)
-client.project_hook(</code></pre></div>
+client.project_hook(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L388" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L388" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -996,17 +1050,20 @@ client.project_hook(</code></pre></div>
         <a class="method-permalink" href="#project_hooks(project:Int32%7CString,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a list of a project's web hooks.</p>
+        <div class="doc">
+          
+          <p>Get a list of a project's web hooks.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] params A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of web hooks under a project.</li></ul>
 
 <pre><code>client.project_hooks(<span class="n">42</span>)
-client.project_hooks(</code></pre></div>
+client.project_hooks(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L374" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L374" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1019,16 +1076,19 @@ client.project_hooks(</code></pre></div>
         <a class="method-permalink" href="#project_member(project:Int32%7CString,user_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a project team member.</p>
+        <div class="doc">
+          
+          <p>Gets a project team member.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a project team member.</li><li>return [JSON::Any] Information about member under a project.</li></ul>
 
-<pre><code>client.project_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre></div>
+<pre><code>client.project_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L312" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1041,17 +1101,20 @@ client.project_hooks(</code></pre></div>
         <a class="method-permalink" href="#project_members(project:Int32%7CString,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a list of a project's team members.</p>
+        <div class="doc">
+          
+          <p>Get a list of a project's team members.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :query The search query.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of team members under a project.</li></ul>
 
 <pre><code>client.project_members(<span class="n">42</span>)
-client.project_members(</code></pre></div>
+client.project_members(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L299" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1064,17 +1127,20 @@ client.project_members(</code></pre></div>
         <a class="method-permalink" href="#project_search(query,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Search for project by name</p>
+        <div class="doc">
+          
+          <p>Search for project by name</p>
 
 <ul><li>param  [String] query A string to search for in group names and paths.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :per_page Number of projects to return per page.</li><li>option params [String] :page The page to retrieve.</li><li>option params [String] :order_by Return requests ordered by id, name, created_at or last_activity_at fields.</li><li>option params [String] :sort Return requests sorted in asc or desc order.</li><li>return [JSON::Any] List of projects under search qyery.</li></ul>
 
 <pre><code>client.project_search(<span class="s">&quot;gitlab&quot;</span>)
-client.project_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="n">50</span>})</code></pre></div>
+client.project_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="n">50</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L270" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1087,18 +1153,21 @@ client.project_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s
         <a class="method-permalink" href="#projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets single issue in the project.</p>
+        <div class="doc">
+          
+          <p>Gets single issue in the project.</p>
 
 <ul><li>params  [Hash] params A customizable set of params.</li><li>option params [String] :scope Scope of projects. "owned" for list of projects owned by the authenticated user, "starred" for list of projects starred by the authenticated user, "all" to get all projects (admin only)</li><li>option params [String] :archived if passed, limit by archived status.</li><li>option params [String] :visibility if passed, limit by visibility public, internal, private.</li><li>option params [String] :order_by Return requests ordered by id, name, path, created_at, updated_at or last_activity_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :search Return list of authorized projects according to a search criteria.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of projects of the authorized user.</li></ul>
 
 <pre><code>client.projects
 client.projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
-client.projects({<span class="s">&quot;scope&quot;</span> => <span class="s">&quot;starred&quot;</span>, <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
+client.projects({<span class="s">&quot;scope&quot;</span> => <span class="s">&quot;starred&quot;</span>, <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1111,17 +1180,20 @@ client.projects({<span class="s">&quot;scope&quot;</span> => <span class="s">&qu
         <a class="method-permalink" href="#protect_project_branch(project:Int32%7CString,branch:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Protect a branch of a project.</p>
+        <div class="doc">
+          
+          <p>Protect a branch of a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the protected branch.</li></ul>
 
 <pre><code>client.protect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
-client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
+client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L489" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L489" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1134,16 +1206,19 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
         <a class="method-permalink" href="#remove_fork(project:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Delete an existing forked from relationship. Available only for admins.</p>
+        <div class="doc">
+          
+          <p>Delete an existing forked from relationship. Available only for admins.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unforked project.</li></ul>
 
-<pre><code>client.remove_fork(<span class="n">1</span>)</code></pre></div>
+<pre><code>client.remove_fork(<span class="n">1</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L528" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L528" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1156,16 +1231,19 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
         <a class="method-permalink" href="#remove_project_hook(project:Int32%7CString,hook_id:Int32):JSON::Any?-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Removes a user from project team.</p>
+        <div class="doc">
+          
+          <p>Removes a user from project team.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [JSON::Any | Nil] Information about removed web hook.</li></ul>
 
-<pre><code>client.remove_project_hook(</code></pre></div>
+<pre><code>client.remove_project_hook(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L444" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1178,16 +1256,19 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
         <a class="method-permalink" href="#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Removes a user from project team.</p>
+        <div class="doc">
+          
+          <p>Removes a user from project team.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>return [JSON::Any] Information about removed team member.</li></ul>
 
-<pre><code>client.remove_project_member(</code></pre></div>
+<pre><code>client.remove_project_member(</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L358" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L358" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1200,17 +1281,20 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
         <a class="method-permalink" href="#share_project(project:Int32%7CString,group_id:Int32,group_access=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Share a project with a group.</p>
+        <div class="doc">
+          
+          <p>Share a project with a group.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :sudo The username the project will be forked for.</li><li>return [JSON::Any] Information about the share project.</li></ul>
 
 <pre><code>client.share_project(<span class="n">2</span>, <span class="n">1</span>)
-client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span class="s">&quot;group_access&quot;</span> => <span class="s">&quot;50&quot;</span>})</code></pre></div>
+client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span class="s">&quot;group_access&quot;</span> => <span class="s">&quot;50&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L249" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1223,16 +1307,19 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span 
         <a class="method-permalink" href="#star_project(project:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Star a project for the authentication user.</p>
+        <div class="doc">
+          
+          <p>Star a project for the authentication user.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the starred project.</li></ul>
 
-<pre><code>client.star_project(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.star_project(<span class="n">42</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L198" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1245,18 +1332,21 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span 
         <a class="method-permalink" href="#starred_projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of projects starred by the authenticated user.</p>
+        <div class="doc">
+          
+          <p>Gets a list of projects starred by the authenticated user.</p>
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#projects</a></code>({ "scope" => "starred" })</p>
 
 <pre><code>client.starred_projects
 client.starred_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
-client.starred_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre></div>
+client.starred_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1269,16 +1359,19 @@ client.starred_projects({<span class="s">&quot;search&quot;</span> => <span clas
         <a class="method-permalink" href="#unarchive_project(project:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Unarchive a project.</p>
+        <div class="doc">
+          
+          <p>Unarchive a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unarchive project.</li></ul>
 
-<pre><code>client.unarchive_project(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.unarchive_project(<span class="n">42</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L234" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1291,17 +1384,20 @@ client.starred_projects({<span class="s">&quot;search&quot;</span> => <span clas
         <a class="method-permalink" href="#unprotect_project_branch(project:Int32%7CString,branch:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Unprotect a branch of a project.</p>
+        <div class="doc">
+          
+          <p>Unprotect a branch of a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the unprotect branch.</li></ul>
 
 <pre><code>client.unprotect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
-client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
+client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L503" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L503" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1314,16 +1410,19 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
         <a class="method-permalink" href="#unstar_project(project:Int32%7CString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Unstar a project.</p>
+        <div class="doc">
+          
+          <p>Unstar a project.</p>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unstar project.</li></ul>
 
-<pre><code>client.unstar_project(<span class="n">42</span>)</code></pre></div>
+<pre><code>client.unstar_project(<span class="n">42</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L210" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1336,7 +1435,9 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
         <a class="method-permalink" href="#upload_file(project:Int32%7CString,file:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Upload a file in a project</p>
+        <div class="doc">
+          
+          <p>Upload a file in a project</p>
 
 <p>Uploads a file to the specified project to be used in an issue or merge request description, or a comment.</p>
 
@@ -1346,12 +1447,13 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
 
 <pre><code>client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/snippets_ruby.rb&quot;</span>)
 client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/screenshot.png&quot;</span>)
-client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/archive.zip&quot;</span>)</code></pre></div>
+client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/archive.zip&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L547" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L547" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1364,12 +1466,15 @@ client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icylea
         <a class="method-permalink" href="#upload_file(project:Int32%7CString,file:File):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Same as <code><a href="../../Gitlab/Client/Project.html#upload_file(project:Int32%7CString,file:String):JSON::Any-instance-method">#upload_file</a></code></p></div>
+        <div class="doc">
+          
+          <p>Same as <code><a href="../../Gitlab/Client/Project.html#upload_file(project:Int32%7CString,file:String):JSON::Any-instance-method">#upload_file</a></code></p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/project.cr#L552" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/project.cr#L552" target="_blank">View source</a>]
         
       </div>
     </div>

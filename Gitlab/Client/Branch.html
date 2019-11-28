@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.30.0">
+<meta name="generator" content="Crystal Docs 0.30.1">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/branch.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/branch.cr#L6" target="_blank">
         gitlab/client/branch.cr
       </a>
     
@@ -372,16 +372,19 @@
         <a class="method-permalink" href="#branch(project_id:Int32,branch:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get single branch in a project.</p>
+        <div class="doc">
+          
+          <p>Get single branch in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] branch The name of a branch.</li><li>return [JSON::Any] Information about the branch in a project.</li></ul>
 
-<pre><code>client.branch(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
+<pre><code>client.branch(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/branch.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/branch.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -394,17 +397,20 @@
         <a class="method-permalink" href="#branches(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of branches in a project.</p>
+        <div class="doc">
+          
+          <p>Gets a list of branches in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of branches under a project.</li></ul>
 
 <pre><code>client.branches(<span class="n">1</span>)
-client.branches(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
+client.branches(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/branch.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/branch.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -417,17 +423,20 @@ client.branches(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;<
         <a class="method-permalink" href="#create_branch(project_id:Int32,branch:String,ref:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Create branch in a project.</p>
+        <div class="doc">
+          
+          <p>Create branch in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] branch The name of a branch.</li><li>param  [String] ref The branch name or commit SHA to create branch from.</li><li>return [JSON::Any] Information about the created branch in a project.</li></ul>
 
 <pre><code>client.create_branch(<span class="n">1</span>, <span class="s">&quot;develop&quot;</span>, <span class="s">&quot;master&quot;</span>)
-client.create_branch(<span class="n">1</span>, <span class="s">&quot;hotfix/xxx&quot;</span>, <span class="s">&quot;9dff773&quot;</span>)</code></pre></div>
+client.create_branch(<span class="n">1</span>, <span class="s">&quot;hotfix/xxx&quot;</span>, <span class="s">&quot;9dff773&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/branch.cr#L47" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/branch.cr#L47" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -440,16 +449,19 @@ client.create_branch(<span class="n">1</span>, <span class="s">&quot;hotfix/xxx&
         <a class="method-permalink" href="#delete_branch(project_id:Int32,branch:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Delete a branch.</p>
+        <div class="doc">
+          
+          <p>Delete a branch.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project</li><li>param  [String] branch The name of a branch.</li><li>return [JSON::Any] Information about the deleted branch.</li></ul>
 
-<pre><code>client.delete_branch(<span class="n">4</span>, <span class="n">2</span>)</code></pre></div>
+<pre><code>client.delete_branch(<span class="n">4</span>, <span class="n">2</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/branch.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/branch.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -462,17 +474,20 @@ client.create_branch(<span class="n">1</span>, <span class="s">&quot;hotfix/xxx&
         <a class="method-permalink" href="#protect_branch(project_id:Int32,branch:String,form:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Protect branch in a project.</p>
+        <div class="doc">
+          
+          <p>Protect branch in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] branch The name of a branch.</li><li>param  [String] ref The branch name or commit SHA to create branch from.</li><li>return [JSON::Any] Information about protected branch in a project</li></ul>
 
 <pre><code>client.branch(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)
-client.protect_branch(<span class="n">5</span>, </code></pre></div>
+client.protect_branch(<span class="n">5</span>, </code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/branch.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/branch.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -485,16 +500,19 @@ client.protect_branch(<span class="n">5</span>, </code></pre></div>
         <a class="method-permalink" href="#unprotect_branch(project_id:Int32,branch:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Unprotect branch in a project.</p>
+        <div class="doc">
+          
+          <p>Unprotect branch in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] branch The name of a branch.</li><li>return [JSON::Any] Information about unprotected branch in a project</li></ul>
 
-<pre><code>client.branch(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)</code></pre></div>
+<pre><code>client.branch(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/branch.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/branch.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>

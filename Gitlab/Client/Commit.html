@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.30.0">
+<meta name="generator" content="Crystal Docs 0.30.1">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L6" target="_blank">
         gitlab/client/commit.cr
       </a>
     
@@ -379,16 +379,19 @@
         <a class="method-permalink" href="#commit(project_id:Int32,commit:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get single commit in a project.</p>
+        <div class="doc">
+          
+          <p>Get single commit in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] commit The ID of a commit.</li><li>return [JSON::Any] Information about the commit.</li></ul>
 
-<pre><code>client.commit(<span class="n">1</span>, <span class="n">10</span>)</code></pre></div>
+<pre><code>client.commit(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -401,16 +404,19 @@
         <a class="method-permalink" href="#commit_comments(project_id:Int32,sha:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get the comments of a commit in a project.</p>
+        <div class="doc">
+          
+          <p>Get the comments of a commit in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The name of a repository branch or tag or if not given the default branch.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20.</li><li>return [JSON::Any] List of comments in a commit.</li></ul>
 
-<pre><code>client.commit_comments(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre></div>
+<pre><code>client.commit_comments(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -423,16 +429,19 @@
         <a class="method-permalink" href="#commit_diff(project_id:Int32,sha:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get the diff of a commit in a project.</p>
+        <div class="doc">
+          
+          <p>Get the diff of a commit in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The name of a repository branch or tag or if not given the default branch.</li><li>return [JSON::Any] Information about the commit diff.</li></ul>
 
-<pre><code>client.commit_diff(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre></div>
+<pre><code>client.commit_diff(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L48" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -445,7 +454,9 @@
         <a class="method-permalink" href="#commit_status(project_id:Int32,sha:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get the statuses of a commit in a project.</p>
+        <div class="doc">
+          
+          <p>Get the statuses of a commit in a project.</p>
 
 <p>Since GitLab 8.1, this is the new commit status API.</p>
 
@@ -453,12 +464,13 @@
 
 <pre><code>client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>)
 client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>})
-client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>, <span class="s">&quot;all&quot;</span> => <span class="s">&quot;true&quot;</span>})</code></pre></div>
+client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>, <span class="s">&quot;all&quot;</span> => <span class="s">&quot;true&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L106" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L106" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -471,17 +483,20 @@ client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438
         <a class="method-permalink" href="#commits(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Gets a list of commits in a project.</p>
+        <div class="doc">
+          
+          <p>Gets a list of commits in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :ref_name The name of a repository branch or tag or if not given the default branch.</li><li>option params [String] :since Only commits after or in this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.</li><li>option params [String] :until Only commits before or in this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of commits.</li></ul>
 
 <pre><code>client.commits(<span class="n">1</span>)
-client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
+client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -494,17 +509,20 @@ client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</
         <a class="method-permalink" href="#create_commit_comment(project_id:Int32,sha:String,note:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Create comment of commit in a project.</p>
+        <div class="doc">
+          
+          <p>Create comment of commit in a project.</p>
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The commit SHA or name of a repository branch or tag.</li><li>param  [String] note The text of the comment.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :path The file path relative to the repository.</li><li>option params [String] :line The line number where the comment should be placed.</li><li>option params [String] :line_type The line type. Takes new or old as arguments.</li><li>return [JSON::Any] Information about the created commet of commit in a project.</li></ul>
 
 <pre><code>client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;awesome!&quot;</span>)
-client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;+1&quot;</span>, {<span class="s">&quot;line&quot;</span> => <span class="s">&quot;29&quot;</span>})</code></pre></div>
+client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;+1&quot;</span>, {<span class="s">&quot;line&quot;</span> => <span class="s">&quot;29&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L83" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -517,7 +535,9 @@ client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daf
         <a class="method-permalink" href="#update_commit_status(project_id:Int32,sha:String,state:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Adds or updates a status of a commit.</p>
+        <div class="doc">
+          
+          <p>Adds or updates a status of a commit.</p>
 
 <p>Since GitLab 8.1, this is the new commit status API.</p>
 
@@ -525,12 +545,13 @@ client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daf
 
 <pre><code>client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;success&quot;</span>)
 client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;failed&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>})
-client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;canceled&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>, <span class="s">&quot;target_url&quot;</span>: <span class="s">&quot;http://example.com/builds/1&quot;</span>})</code></pre></div>
+client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;canceled&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>, <span class="s">&quot;target_url&quot;</span>: <span class="s">&quot;http://example.com/builds/1&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/commit.cr#L128" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/commit.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>

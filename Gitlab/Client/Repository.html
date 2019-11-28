@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.30.0">
+<meta name="generator" content="Crystal Docs 0.30.1">
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css">
@@ -287,7 +287,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository.cr#L6" target="_blank">
+      <a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository.cr#L6" target="_blank">
         gitlab/client/repository.cr
       </a>
     
@@ -365,17 +365,20 @@
         <a class="method-permalink" href="#blob(project_id:Int32,sha=&quot;HEAD&quot;,params:Hash?=nil):String-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get the raw file contents for a blob by blob SHA.</p>
+        <div class="doc">
+          
+          <p>Get the raw file contents for a blob by blob SHA.</p>
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] sha The id of a commit sha.</li><li>return [String] The raw file contents</li></ul>
 
 <pre><code>client.blow_contents(<span class="n">1</span>, <span class="s">&quot;74bbc1b7&quot;</span>)
-client.blow_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre></div>
+client.blow_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -388,17 +391,20 @@ client.blow_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f
         <a class="method-permalink" href="#compare(project_id:Int32,from:String,to:String):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Compare branches, tags or commits.</p>
+        <div class="doc">
+          
+          <p>Compare branches, tags or commits.</p>
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] from the commit SHA or branch name.</li><li>param  [String] to the commit SHA or branch name.</li><li>return [JSON::Any] List a compare between from and to.</li></ul>
 
 <pre><code>client.compare(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>, <span class="s">&quot;develop&quot;</span>)
-client.compare(<span class="n">1</span>, <span class="s">&quot;a5c805f4&quot;</span>, <span class="s">&quot;v1.0.0&quot;</span>)</code></pre></div>
+client.compare(<span class="n">1</span>, <span class="s">&quot;a5c805f4&quot;</span>, <span class="s">&quot;v1.0.0&quot;</span>)</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -411,17 +417,20 @@ client.compare(<span class="n">1</span>, <span class="s">&quot;a5c805f4&quot;</s
         <a class="method-permalink" href="#contributors(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get repository contributors list</p>
+        <div class="doc">
+          
+          <p>Get repository contributors list</p>
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of projects of the authorized user.</li></ul>
 
 <pre><code>client.contributors(<span class="n">1</span>)
-client.contributors(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre></div>
+client.contributors(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository.cr#L101" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -434,7 +443,9 @@ client.contributors(<span class="n">1</span>, {<span class="s">&quot;per_page&qu
         <a class="method-permalink" href="#repo_archive(project_id:Int32,sha=&quot;HEAD&quot;):Gitlab::FileResponse%7CJSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get an archive of the repository.</p>
+        <div class="doc">
+          
+          <p>Get an archive of the repository.</p>
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] sha The commit SHA to download defaults to the tip of the default branch.</li><li>return [Gitlab::FileResponse, JSON::Any] The archive file.</li></ul>
 
@@ -447,12 +458,13 @@ file <span class="o">=</span> client.repo_archive(<span class="n">1</span>, <spa
       f.write_byte byte
     <span class="k">end</span>
   <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
+<span class="k">end</span></code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -465,17 +477,20 @@ file <span class="o">=</span> client.repo_archive(<span class="n">1</span>, <spa
         <a class="method-permalink" href="#tree(project_id:Int32,params:Hash?=nil):JSON::Any-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Get a list of repository files and directories in a project.</p>
+        <div class="doc">
+          
+          <p>Get a list of repository files and directories in a project.</p>
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :path The path inside repository. Used to get contend of subdirectories.</li><li>option params [String] :ref_name The name of a repository branch or tag or if not given the default branch</li><li>return [JSON::Any]</li></ul>
 
 <pre><code>client.tree(<span class="n">42</span>)
-client.tree(<span class="n">42</span>, { path: </code></pre></div>
+client.tree(<span class="n">42</span>, { path: </code></pre>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/icyleaf/gitlab.cr/blob/37427d3c4e69867f8648363d3598b529841baa32/src/gitlab/client/repository.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/icyleaf/gitlab.cr/blob/171bfa9807c18f8ce847b7f843707dd104e3b6d8/src/gitlab/client/repository.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
