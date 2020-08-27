@@ -9,12 +9,12 @@ module Gitlab
       # - param  [Int32] project The ID of a project.
       # - param  [Hash] params A customizable set of params.
       # - option params [String] :path The path inside repository. Used to get contend of subdirectories.
-      # - option params [String] :ref_name The name of a repository branch or tag or if not given the default branch
+      # - option params [String] :ref The name of a repository branch or tag or if not given the default branch
       # - return [JSON::Any]
       #
       # ```
       # client.tree(42)
-      # client.tree(42, { path: 'Gemfile' })
+      # client.tree(42, { "path" => "shard.yml" })
       # ```
       def tree(project_id : Int32, params : Hash? = nil) : JSON::Any
         get("projects/#{project_id}/repository/tree", params: params).parse
