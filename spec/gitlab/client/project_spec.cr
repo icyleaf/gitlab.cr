@@ -183,19 +183,15 @@ describe Gitlab::Client::Project do
    end
 
   describe ".edit_pages_domain" do
-    pending { "TODO" }
-    next
-
     it "should return information about an edited pages domain" do
       form = {
         "domain" => "example-pages-domain.com",
         "auto_ssl_enabled" => true
       }
       stub_put("/projects/58/pages/domains", "pages_domain", form: form)
-      # DON'T UNDERSTAND WHY THIS FAILS
-      pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", {"auto_ssl_enabled"=>true})
-      # AND THIS NOT
       pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", form)
+      # I DON'T UNDERSTAND WHY THIS FAILS
+      #pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", {"auto_ssl_enabled"=>true})
 
       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
     end
