@@ -83,6 +83,26 @@ describe Gitlab::Client::User do
     end
   end
 
+  describe ".add_custom_attribute" do
+    it "should return boolean" do
+      params = {"value" => "custom_value"}
+      stub_put("/users/1/custom_attributes/custom_key", "user_add_custom_attribute", params)
+
+      result = client.user_add_custom_attribute(1, "custom_key", params )
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
+#  describe ".delete_custom_attribute" do
+#    it "should return boolean" do
+#      stub_delete("/users/1/custom_attribute", "user_custom_attribute_add")
+#
+#      result = client.user_delete_custom_attribute(1, "custom_key")
+#      result.as_bool.should be_true
+#    end
+#  end
+
   describe ".unblock_user" do
     it "should return boolean" do
       stub_put("/users/1/unblock", "user_block_unblock")
