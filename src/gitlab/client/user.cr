@@ -117,6 +117,20 @@ module Gitlab
         get("users", params: {"search" => query}.merge(params)).parse
       end
 
+      # List user custom attributes
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] user_id The Id of user
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.user_custom_attributes(4)
+      # ```
+      def user_custom_attributes(user_id : Int32 ) : JSON::Any
+        get("users/#{user_id.to_s}/custom_attributes").parse
+      end
+
       # Add's a user custom attribute
       #
       # **Available only for admin**.

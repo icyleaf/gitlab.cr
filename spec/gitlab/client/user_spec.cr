@@ -83,6 +83,16 @@ describe Gitlab::Client::User do
     end
   end
 
+  describe ".custom_attributes" do
+    it "should return a json data of user's custom attributes" do
+      stub_get("/users/1/custom_attributes", "user_add_custom_attribute")
+      result = client.user_custom_attributes(1)
+
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
   describe ".add_custom_attribute" do
     it "should return boolean" do
       params = {"value" => "custom_value"}
