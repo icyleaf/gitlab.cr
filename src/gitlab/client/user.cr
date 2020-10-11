@@ -117,6 +117,38 @@ module Gitlab
         get("users", params: {"search" => query}.merge(params)).parse
       end
 
+      # Add's a user custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] user_id The Id of user
+      # - param [String] the key of the custom attribute
+      # - param  [Hash] params A single param with the value of the custom attribute
+      # - params [String] :value The value of the custom attribute.
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.user_add_custom_attribute(4, custom_key, {"value"=> "custom_value"})
+      # ```
+      def user_add_custom_attribute(user_id : Int32, key : String, params : Hash = {} of String => String ) : JSON::Any
+        put("users/#{user_id.to_s}/custom_attributes/#{key}", form: params).parse
+      end
+
+      # Deletes a user custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] user_id The Id of user
+      # - param [String] the key of the custom attribute
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.user_delete_custom_attribute(4, custom_key)
+      # ```
+      def user_delete_custom_attribute(user_id : Int32, key : String) : JSON::Any
+        delete("users/#{user_id.to_s}/custom_attributes/#{key}").parse
+      end
+
       # Blocks the specified user.
       #
       # **Available only for admin**.
