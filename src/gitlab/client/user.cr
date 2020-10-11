@@ -117,7 +117,6 @@ module Gitlab
         get("users", params: {"search" => query}.merge(params)).parse
       end
 
-
       # Add's a user custom attribute
       #
       # **Available only for admin**.
