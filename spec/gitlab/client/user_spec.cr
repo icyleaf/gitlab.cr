@@ -94,14 +94,14 @@ describe Gitlab::Client::User do
     end
   end
 
-#  describe ".delete_custom_attribute" do
-#    it "should return boolean" do
-#      stub_delete("/users/1/custom_attribute", "user_custom_attribute_add")
-#
-#      result = client.user_delete_custom_attribute(1, "custom_key")
-#      result.as_bool.should be_true
-#    end
-#  end
+  describe ".delete_custom_attribute" do
+    it "should return boolean" do
+      stub_delete("/users/1/custom_attributes/custom_key","user_delete_custom_attribute")
+
+      result = client.user_delete_custom_attribute(1, "custom_key")
+      result.size.should eq 0
+    end
+  end
 
   describe ".unblock_user" do
     it "should return boolean" do
