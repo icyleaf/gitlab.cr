@@ -87,6 +87,10 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
   - User modification - `edit_user`
   - User deletion - `delete_user`
   - Current user - `user`
+  - User deletion - `delete_user`
+  - List custom attributes for given user - `user_custom_attributes(user_id)`
+  - Add custom attribute for given user - `user_add_custom_attribute(user_id, key)`
+  - Delete custom attribute for given user - `user_delete_custom_attribute(user_id, key)`
   - Block user - `block_user(user_id)`
   - Unblock user - `unblock_user(user_id)`
   - List SSH keys - `ssh_keys`
