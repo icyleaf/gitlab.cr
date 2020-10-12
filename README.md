@@ -130,6 +130,12 @@ For more information, refer to [API Documentation](http://icyleaf.github.io/gitl
     - Edit project team member - `edit_project_member`
     - Remove project team member - `remove_project_member`
     - Share project with group - `share_project`
+  - Pages Domains
+    - List project pages domains - `project_pages_domains`
+    - Get project pages domain - `project_pages_domain`
+    - Add project pages domain - `add_project_pages_domain`
+    - Edit project pages domain `edit_project_pages_domain`
+    - Remove project pages domain - `remove_project_pages_domain`
   - Hooks
     - List project hooks - `project_hooks`
     - Get project hook - `project_hook`
