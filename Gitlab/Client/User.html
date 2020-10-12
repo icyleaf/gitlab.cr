@@ -363,16 +363,16 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#create_ssh_key(user_id,title,key):JSON::Any-instance-method" class="signature"><strong>#create_ssh_key</strong>(user_id, title, key) : JSON::Any</a>
+        <a href="#create_ssh_key(title,key):JSON::Any-instance-method" class="signature"><strong>#create_ssh_key</strong>(title, key) : JSON::Any</a>
         
-          <div class="summary"><p>Creates a new SSH key for a user.</p></div>
+          <div class="summary"><p>Creates a new SSH key for current user.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_ssh_key(title,key):JSON::Any-instance-method" class="signature"><strong>#create_ssh_key</strong>(title, key) : JSON::Any</a>
+        <a href="#create_ssh_key(user_id,title,key):JSON::Any-instance-method" class="signature"><strong>#create_ssh_key</strong>(user_id, title, key) : JSON::Any</a>
         
-          <div class="summary"><p>Creates a new SSH key for current user.</p></div>
+          <div class="summary"><p>Creates a new SSH key for a user.</p></div>
         
       </li>
     
@@ -489,6 +489,27 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#user_add_custom_attribute(user_id:Int32,key:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#user_add_custom_attribute</strong>(user_id : Int32, key : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        
+          <div class="summary"><p>Add's a user custom attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_custom_attributes(user_id:Int32):JSON::Any-instance-method" class="signature"><strong>#user_custom_attributes</strong>(user_id : Int32) : JSON::Any</a>
+        
+          <div class="summary"><p>List user custom attributes</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#user_delete_custom_attribute(user_id:Int32,key:String):JSON::Any-instance-method" class="signature"><strong>#user_delete_custom_attribute</strong>(user_id : Int32, key : String) : JSON::Any</a>
+        
+          <div class="summary"><p>Deletes a user custom attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#user_search(query,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#user_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Search for user by name</p></div>
@@ -597,29 +618,6 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="create_ssh_key(user_id,title,key):JSON::Any-instance-method">
-      <div class="signature">
-        
-        def <strong>create_ssh_key</strong>(user_id, title, key) : JSON::Any
-
-        <a class="method-permalink" href="#create_ssh_key(user_id,title,key):JSON::Any-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Creates a new SSH key for a user.</p>
-
-<ul><li>param  [Int32] user_id The Id of user.</li><li>param  [String] key The SSH key body.</li><li>return [JSON::Any] Information about created SSH key.</li></ul>
-
-<pre><code>client.create_ssh_key(<span class="n">2</span>, <span class="s">&quot;key title&quot;</span>, <span class="s">&quot;key body&quot;</span>)</code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="create_ssh_key(title,key):JSON::Any-instance-method">
       <div class="signature">
         
@@ -635,6 +633,29 @@
 <ul><li>param  [String] title The title of an SSH key.</li><li>param  [String] key The SSH key body.</li><li>return [JSON::Any] Information about created SSH key.</li></ul>
 
 <pre><code>client.create_ssh_key(<span class="s">&quot;key title&quot;</span>, <span class="s">&quot;key body&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_ssh_key(user_id,title,key):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>create_ssh_key</strong>(user_id, title, key) : JSON::Any
+
+        <a class="method-permalink" href="#create_ssh_key(user_id,title,key):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new SSH key for a user.</p>
+
+<ul><li>param  [Int32] user_id The Id of user.</li><li>param  [String] key The SSH key body.</li><li>return [JSON::Any] Information about created SSH key.</li></ul>
+
+<pre><code>client.create_ssh_key(<span class="n">2</span>, <span class="s">&quot;key title&quot;</span>, <span class="s">&quot;key body&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -1007,6 +1028,81 @@ Requires authentication from an admin account.</p>
 <ul><li>param  [Int32] user_id The ID of a user.</li><li>return [JSON::Any]</li></ul>
 
 <pre><code>client.user(<span class="n">2</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_add_custom_attribute(user_id:Int32,key:String,params:Hash={}ofString=>String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>user_add_custom_attribute</strong>(user_id : Int32, key : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
+
+        <a class="method-permalink" href="#user_add_custom_attribute(user_id:Int32,key:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Add's a user custom attribute</p>
+
+<p><strong>Available only for admin</strong>.</p>
+
+<ul><li>param [Int32] user_id The Id of user</li><li>param [String] the key of the custom attribute</li><li>param  [Hash] params A single param with the value of the custom attribute</li><li>params [String] :value The value of the custom attribute.</li><li>return [JSON::Any] information about the custom_attribute</li></ul>
+
+<pre><code>client.user_add_custom_attribute(<span class="n">4</span>, custom_key, {<span class="s">&quot;value&quot;</span>=> <span class="s">&quot;custom_value&quot;</span>})</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_custom_attributes(user_id:Int32):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>user_custom_attributes</strong>(user_id : Int32) : JSON::Any
+
+        <a class="method-permalink" href="#user_custom_attributes(user_id:Int32):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List user custom attributes</p>
+
+<p><strong>Available only for admin</strong>.</p>
+
+<ul><li>param [Int32] user_id The Id of user</li><li>return [JSON::Any] information about the custom_attribute</li></ul>
+
+<pre><code>client.user_custom_attributes(<span class="n">4</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="user_delete_custom_attribute(user_id:Int32,key:String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>user_delete_custom_attribute</strong>(user_id : Int32, key : String) : JSON::Any
+
+        <a class="method-permalink" href="#user_delete_custom_attribute(user_id:Int32,key:String):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes a user custom attribute</p>
+
+<p><strong>Available only for admin</strong>.</p>
+
+<ul><li>param [Int32] user_id The Id of user</li><li>param [String] the key of the custom attribute</li><li>return [JSON::Any] information about the custom_attribute</li></ul>
+
+<pre><code>client.user_delete_custom_attribute(<span class="n">4</span>, custom_key)</code></pre>
         </div>
       
       <br/>

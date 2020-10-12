@@ -372,6 +372,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#add_project_pages_domain(project:Int32%7CString,domain:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#add_project_pages_domain</strong>(project : Int32 | String, domain : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        
+          <div class="summary"><p>Adds a pages domain to project.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#all_projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#all_projects</strong>(params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Gets a list of projects by the authenticated user (admin only).</p></div>
@@ -431,6 +438,13 @@
         <a href="#edit_project_member(project:Int32%7CString,user_id,access_level):JSON::Any-instance-method" class="signature"><strong>#edit_project_member</strong>(project : Int32 | String, user_id, access_level) : JSON::Any</a>
         
           <div class="summary"><p>Updates a team member's project access level.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#edit_project_pages_domain(project:Int32%7CString,domain:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#edit_project_pages_domain</strong>(project : Int32 | String, domain : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        
+          <div class="summary"><p>Updates a pages domain project.</p></div>
         
       </li>
     
@@ -505,6 +519,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#project_pages_domain(project:Int32%7CString,domain:String):JSON::Any-instance-method" class="signature"><strong>#project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any</a>
+        
+          <div class="summary"><p>Gets a project pages domain.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#project_pages_domains(project:Int32%7CString):JSON::Any-instance-method" class="signature"><strong>#project_pages_domains</strong>(project : Int32 | String) : JSON::Any</a>
+        
+          <div class="summary"><p>Get a list of a project's pages domains.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#project_search(query,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#project_search</strong>(query, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Search for project by name</p></div>
@@ -543,6 +571,13 @@
         <a href="#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any-instance-method" class="signature"><strong>#remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any</a>
         
           <div class="summary"><p>Removes a user from project team.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any-instance-method" class="signature"><strong>#remove_project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any</a>
+        
+          <div class="summary"><p>Removes a pages domain from project.</p></div>
         
       </li>
     
@@ -665,6 +700,29 @@ client.add_project_hook(</code></pre>
 <ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about added team member.</li></ul>
 
 <pre><code>client.add_project_member(</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_project_pages_domain(project:Int32|String,domain:String,form:Hash={}ofString=>String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>add_project_pages_domain</strong>(project : Int32 | String, domain : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
+
+        <a class="method-permalink" href="#add_project_pages_domain(project:Int32%7CString,domain:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds a pages domain to project.</p>
+
+<ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [String] domain The custom domain.</li><li>params [Hash] form A customizable set of options.</li><li>option form [Bool] :auto_ssl_enabled Enables automatic generation of SSL certificates issued by Let’s Encrypt for custom domains.</li><li>option form [String] :certificate The certificate in PEM format with intermediates following in most specific to least specific order.</li><li>option form [String] :key The certificate key in PEM format.</li><li>return [JSON::Any] Information about added pages domain.</li></ul>
+
+<pre><code>client.add_project_pages_domain(</code></pre>
         </div>
       
       <br/>
@@ -878,6 +936,29 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about updated team member.</li></ul>
 
 <pre><code>client.edit_project_member(</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edit_project_pages_domain(project:Int32|String,domain:String,form:Hash={}ofString=>String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>edit_project_pages_domain</strong>(project : Int32 | String, domain : String, form : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
+
+        <a class="method-permalink" href="#edit_project_pages_domain(project:Int32%7CString,domain:String,form:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Updates a pages domain project.</p>
+
+<ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [String] domain The custom domain.</li><li>params [Hash] form A customizable set of options.</li><li>option form [Bool] :auto_ssl_enabled Enables automatic generation of SSL certificates issued by Let’s Encrypt for custom domains.</li><li>option form [String] :certificate The certificate in PEM format with intermediates following in most specific to least specific order.</li><li>option form [String] :key The certificate key in PEM format.</li><li>return [JSON::Any] Information about added pages domain.</li></ul>
+
+<pre><code>client.edit_project_pages_domain(</code></pre>
         </div>
       
       <br/>
@@ -1124,6 +1205,53 @@ client.project_members(</code></pre>
       </div>
     </div>
   
+    <div class="entry-detail" id="project_pages_domain(project:Int32|String,domain:String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any
+
+        <a class="method-permalink" href="#project_pages_domain(project:Int32%7CString,domain:String):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets a project pages domain.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] The custom domain.</li><li>return [JSON::Any] Information about pages domain under a project.</li></ul>
+
+<pre><code>client.project_pages_domain(<span class="n">1</span>, <span class="s">&quot;pages-domain.com&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="project_pages_domains(project:Int32|String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>project_pages_domains</strong>(project : Int32 | String) : JSON::Any
+
+        <a class="method-permalink" href="#project_pages_domains(project:Int32%7CString):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get a list of a project's pages domains.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] List of pages domains under a project.</li></ul>
+
+<pre><code>client.project_pages_domains(<span class="n">42</span>)
+client.project_pages_domains(</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="project_search(query,params:Hash={}ofString=>String):JSON::Any-instance-method">
       <div class="signature">
         
@@ -1258,6 +1386,29 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>return [JSON::Any] Information about removed team member.</li></ul>
 
 <pre><code>client.remove_project_member(</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove_project_pages_domain(project:Int32|String,domain:String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>remove_project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any
+
+        <a class="method-permalink" href="#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Removes a pages domain from project.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] domain The custom domain.</li><li>return [JSON::Any] Information about removed team member.</li></ul>
+
+<pre><code>client.remove_project_pages_domain(<span class="n">1</span>, <span class="s">&quot;pages-domain.com&quot;</span>)</code></pre>
         </div>
       
       <br/>
