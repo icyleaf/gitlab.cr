@@ -97,8 +97,11 @@ module Gitlab
       # ```
       # client.delete_user(1)
       # ```
-      def delete_user(user_id : Int32) : JSON::Any
-        delete("users/#{user_id.to_s}").parse
+      def delete_user(user_id : Int32) : JSON::Any | Bool
+        response = delete("users/#{user_id.to_s}")
+        return true if response.status_code == 204
+
+        response.parse
       end
 
       # Search for user by name

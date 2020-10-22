@@ -70,7 +70,15 @@ describe Gitlab::Client::User do
       stub_delete("/users/1", "user")
 
       user = client.delete_user(1)
-      user["email"].as_s.should eq "john@example.com"
+      user.should be_a JSON::Any
+      user.as(JSON::Any)["email"].as_s.should eq "john@example.com"
+    end
+
+    it "should return true about a deleted user since Gitlab 9.0" do
+      stub_delete("/users/2")
+
+      r = client.delete_user(2)
+      r.should be_true
     end
   end
 
