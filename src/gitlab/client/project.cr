@@ -625,6 +625,53 @@ module Gitlab
       def upload_file(project : Int32 | String, file : File) : JSON::Any
         post("projects/#{project}/uploads", form: {"file" => file}).parse
       end
+
+      # List project custom attributes
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] project_id The Id of project
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.project_custom_attributes(4)
+      # ```
+      def project_custom_attributes(project_id : Int32 ) : JSON::Any
+        get("projects/#{project_id.to_s}/custom_attributes").parse
+      end
+
+      # Add's a project custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] project_id The Id of project
+      # - param [String] the key of the custom attribute
+      # - param  [Hash] params A single param with the value of the custom attribute
+      # - params [String] :value The value of the custom attribute.
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.project_add_custom_attribute(4, custom_key, {"value"=> "custom_value"})
+      # ```
+      def project_add_custom_attribute(project_id : Int32, key : String, params : Hash = {} of String => String ) : JSON::Any
+        put("projects/#{project_id.to_s}/custom_attributes/#{key}", form: params).parse
+      end
+
+      # Deletes a project custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] project_id The Id of project
+      # - param [String] the key of the custom attribute
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.project_delete_custom_attribute(4, custom_key)
+      # ```
+      def project_delete_custom_attribute(project_id : Int32, key : String) : JSON::Any
+        delete("projects/#{project_id.to_s}/custom_attributes/#{key}").parse
+      end
+
     end
   end
 end
