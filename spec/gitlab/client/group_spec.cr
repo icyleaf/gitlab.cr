@@ -150,4 +150,35 @@ describe Gitlab::Client::Group do
       groups[-1]["id"].as_i.should eq 8
     end
   end
+
+  describe ".custom_attributes" do
+    it "should return a json data of group's custom attributes" do
+      stub_get("/groups/1/custom_attributes", "group_add_custom_attribute")
+      result = client.group_custom_attributes(1)
+
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
+  describe ".add_custom_attribute" do
+    it "should return boolean" do
+      params = {"value" => "custom_value"}
+      stub_put("/groups/1/custom_attributes/custom_key", "group_add_custom_attribute", params)
+
+      result = client.group_add_custom_attribute(1, "custom_key", params )
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
+  describe ".delete_custom_attribute" do
+    it "should return boolean" do
+      stub_delete("/groups/1/custom_attributes/custom_key","group_delete_custom_attribute")
+
+      result = client.group_delete_custom_attribute(1, "custom_key")
+      result.size.should eq 0
+    end
+  end
+
 end

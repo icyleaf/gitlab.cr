@@ -209,6 +209,54 @@ module Gitlab
       def remove_group_member(group_id : Int32, user_id : Int32) : JSON::Any
         delete("groups/#{group_id}/members/#{user_id.to_s}").parse
       end
+
+      # List group custom attributes
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] group_id The Id of group
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.group_custom_attributes(4)
+      # ```
+      def group_custom_attributes(group_id : Int32 ) : JSON::Any
+        get("groups/#{group_id.to_s}/custom_attributes").parse
+      end
+
+      # Add's a group custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] group_id The Id of group
+      # - param [String] the key of the custom attribute
+      # - param  [Hash] params A single param with the value of the custom attribute
+      # - params [String] :value The value of the custom attribute.
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.group_add_custom_attribute(4, custom_key, {"value"=> "custom_value"})
+      # ```
+      def group_add_custom_attribute(group_id : Int32, key : String, params : Hash = {} of String => String ) : JSON::Any
+        put("groups/#{group_id.to_s}/custom_attributes/#{key}", form: params).parse
+      end
+
+      # Deletes a group custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] group_id The Id of group
+      # - param [String] the key of the custom attribute
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.group_delete_custom_attribute(4, custom_key)
+      # ```
+      def group_delete_custom_attribute(group_id : Int32, key : String) : JSON::Any
+        delete("groups/#{group_id.to_s}/custom_attributes/#{key}").parse
+      end
+
+
     end
   end
 end
