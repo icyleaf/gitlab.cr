@@ -279,8 +279,10 @@ module Gitlab
       # ```
       # client.delete_project(42)
       # ```
-      def delete_project(project : Int32 | String) : JSON::Any
-        delete("projects/#{project}").parse
+      def delete_project(project : Int32 | String) : JSON::Any | Bool
+        response = delete("projects/#{project}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Get a list of a project's team members.
@@ -355,8 +357,10 @@ module Gitlab
       # ```
       # client.remove_project_member('gitlab', 2)
       # ```
-      def remove_project_member(project : Int32 | String, user_id : Int32) : JSON::Any
-        delete("projects/#{project}/members/#{user_id}").parse
+      def remove_project_member(project : Int32 | String, user_id : Int32) : JSON::Any | Bool
+        response = delete("projects/#{project}/members/#{user_id}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Get a list of a project's pages domains.
@@ -428,8 +432,10 @@ module Gitlab
       # ```
       # client.remove_project_pages_domain(1, "pages-domain.com")
       # ```
-      def remove_project_pages_domain(project : Int32 | String, domain : String) : JSON::Any
-        delete("projects/#{project}/pages/domains/#{domain}").parse
+      def remove_project_pages_domain(project : Int32 | String, domain : String) : JSON::Any | Bool
+        response = delete("projects/#{project}/pages/domains/#{domain}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Get a list of a project's web hooks.
