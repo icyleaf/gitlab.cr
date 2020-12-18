@@ -22,7 +22,7 @@ describe Gitlab::Client::User do
       end
     end
 
-    context "withount user ID passed" do
+    context "without user ID passed" do
       it "should return a json data of user" do
         stub_get("/user", "user")
         user = client.user
