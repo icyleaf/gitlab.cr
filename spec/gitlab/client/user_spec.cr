@@ -114,10 +114,10 @@ describe Gitlab::Client::User do
 
   describe ".delete_custom_attribute" do
     it "should return boolean" do
-      stub_delete("/users/1/custom_attributes/custom_key","user_delete_custom_attribute")
+      stub_delete("/users/1/custom_attributes/custom_key")
 
       result = client.user_delete_custom_attribute(1, "custom_key")
-      result.size.should eq 0
+      result.should be_true
     end
   end
 
@@ -166,7 +166,30 @@ describe Gitlab::Client::User do
       stub_delete("/user/keys/1", "key")
       key = client.delete_ssh_key(1)
 
-      key["title"].as_s.should eq "narkoz@helium"
+      key.should be_a JSON::Any
+      key.as(JSON::Any)["title"].as_s.should eq "narkoz@helium"
+
+    end
+
+    it "should return boolean since 9.0" do
+      stub_delete("/user/keys/2")
+      key = client.delete_ssh_key(2)
+      key.should be_true
+    end
+
+    it "should return information about a deleted SSH key" do
+      stub_delete("/users/1/keys/1", "key")
+      key = client.delete_ssh_key(1,1)
+
+      key.should be_a JSON::Any
+      key.as(JSON::Any)["title"].as_s.should eq "narkoz@helium"
+
+    end
+
+    it "should return boolean since 9.0" do
+      stub_delete("/users/2/keys/2")
+      key = client.delete_ssh_key(2,2)
+      key.should be_true
     end
   end
 
@@ -232,6 +255,23 @@ describe Gitlab::Client::User do
         email.should be_truthy
       end
     end
+
+    describe "without user ID" do
+      it "should return boolean since 9.0" do
+        stub_delete("/user/emails/3")
+        email = client.delete_email(3)
+        email.should be_true
+      end
+    end
+
+    describe "with user ID" do
+      it "should return boolean since 9.0" do
+        stub_delete("/users/4/emails/5")
+        email = client.delete_email(5, 4)
+        email.should be_true
+      end
+    end
+
   end
 
   describe ".user_search" do

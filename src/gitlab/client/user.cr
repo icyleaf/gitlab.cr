@@ -162,8 +162,12 @@ module Gitlab
       # ```
       # client.user_delete_custom_attribute(4, custom_key)
       # ```
-      def user_delete_custom_attribute(user_id : Int32, key : String) : JSON::Any
-        delete("users/#{user_id.to_s}/custom_attributes/#{key}").parse
+      def user_delete_custom_attribute(user_id : Int32, key : String) : JSON::Any | Bool
+        response = delete("users/#{user_id.to_s}/custom_attributes/#{key}")
+
+        return true if response.status_code == 204
+
+        response.parse
       end
 
       # Blocks the specified user.
@@ -263,8 +267,10 @@ module Gitlab
       # ```
       # client.delete_ssh_key(1)
       # ```
-      def delete_ssh_key(ssh_key_id : Int32) : JSON::Any
-        delete("user/keys/#{ssh_key_id.to_s}").parse
+      def delete_ssh_key(ssh_key_id : Int32) : JSON::Any | Bool
+        response = delete("user/keys/#{ssh_key_id.to_s}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Deletes an SSH key for a user.
@@ -276,8 +282,10 @@ module Gitlab
       # ```
       # client.delete_ssh_key(1, 1)
       # ```
-      def delete_ssh_key(user_id : Int32, ssh_key_id : Int32) : JSON::Any
-        delete("users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}").parse
+      def delete_ssh_key(user_id : Int32, ssh_key_id : Int32) : JSON::Any | Bool
+        response = delete("users/#{user_id.to_s}/keys/#{ssh_key_id.to_s}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Gets current user emails.
@@ -348,8 +356,10 @@ module Gitlab
       # ```
       # client.delete_email(2)
       # ```
-      def delete_email(email_id : Int32) : JSON::Any
-        delete("user/emails/#{email_id.to_s}").parse
+      def delete_email(email_id : Int32) : JSON::Any | Bool
+        response = delete("user/emails/#{email_id.to_s}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Delete email for current user
@@ -361,8 +371,10 @@ module Gitlab
       # ```
       # client.delete_email(1, 2)
       # ```
-      def delete_email(email_id : Int32, user_id : Int32) : JSON::Any
-        delete("users/#{user_id.to_s}/emails/#{email_id.to_s}").parse
+      def delete_email(email_id : Int32, user_id : Int32) : JSON::Any | Bool
+        response = delete("users/#{user_id.to_s}/emails/#{email_id.to_s}")
+        return true if response.status_code == 204
+        response.parse
       end
     end
   end
