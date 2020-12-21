@@ -496,6 +496,16 @@ describe Gitlab::Client::Project do
     end
   end
 
+  describe ".custom_attribute" do
+    it "should return a json data of a single project's custom attribute" do
+      stub_get("/projects/1/custom_attribute/custom_key", "project_add_custom_attribute")
+      result = client.project_custom_attribute(1, "custom_key")
+
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
   describe ".add_custom_attribute" do
     it "should return boolean" do
       params = {"value" => "custom_value"}

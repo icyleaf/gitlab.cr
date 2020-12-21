@@ -224,6 +224,21 @@ module Gitlab
         get("groups/#{group_id.to_s}/custom_attributes").parse
       end
 
+      # Gets a single group custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] group_id The Id of group
+      # - param [String] the key of the custom attribute
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.group_custom_attribute(4, "some_key")
+      # ```
+      def group_custom_attribute(group_id : Int32, key : String ) : JSON::Any
+        get("groups/#{group_id.to_s}/custom_attribute/#{key}").parse
+      end
+
       # Add's a group custom attribute
       #
       # **Available only for admin**.
