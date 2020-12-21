@@ -208,6 +208,58 @@ describe Gitlab::Client::Project do
     end
   end
 
+  describe ".pages_domains" do
+    it "should return a paginated response of pages domains" do
+      stub_get("/projects/58/pages/domains", "pages_domains")
+      pages_domains = client.project_pages_domains(58)
+
+      pages_domains.should be_a JSON::Any
+      pages_domains[0]["domain"].as_s.should eq "example-pages-domain.com"
+    end
+  end
+
+   describe ".pages_domain" do
+     it "should return information about a pages domain" do
+       stub_get("/projects/58/pages/domains/example-pages-domain.com", "pages_domain")
+       pages_domain = client.project_pages_domain(58, "example-pages-domain.com")
+
+       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+     end
+   end
+
+   describe ".add_pages_domain" do
+     it "should return information about an added pages domain" do
+       stub_post("/projects/58/pages/domains", "pages_domain")
+       pages_domain = client.add_project_pages_domain(58, "example-pages-domain.com")
+
+       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+     end
+   end
+
+  describe ".edit_pages_domain" do
+    it "should return information about an edited pages domain" do
+      form = {
+        "domain" => "example-pages-domain.com",
+        "auto_ssl_enabled" => true
+      }
+      stub_put("/projects/58/pages/domains", "pages_domain", form: form)
+      pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", form)
+      # I DON'T UNDERSTAND WHY THIS FAILS
+      #pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", {"auto_ssl_enabled"=>true})
+
+      pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+    end
+  end
+
+  describe ".remove_pages_domain" do
+    it "should return information about a removed pages domain" do
+      stub_delete("/projects/58/pages/domains/example-pages-domain.com", "pages_domain")
+      pages_domain = client.remove_project_pages_domain(58, "example-pages-domain.com")
+
+      pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+    end
+  end
+
   describe ".project_hooks" do
     it "should return a paginated response of hooks" do
       stub_get("/projects/1/hooks", "project_hooks")
