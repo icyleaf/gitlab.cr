@@ -747,8 +747,10 @@ module Gitlab
       # ```
       # client.project_delete_custom_attribute(4, custom_key)
       # ```
-      def project_delete_custom_attribute(project_id : Int32, key : String) : JSON::Any
-        delete("projects/#{project_id.to_s}/custom_attributes/#{key}").parse
+      def project_delete_custom_attribute(project_id : Int32, key : String) : JSON::Any | Bool
+        response = delete("projects/#{project_id.to_s}/custom_attributes/#{key}")
+        return true if response.status_code == 204
+        response.parse
       end
 
     end

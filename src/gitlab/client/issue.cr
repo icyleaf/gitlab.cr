@@ -155,8 +155,10 @@ module Gitlab
       # ```
       # client.delete_issue(4, 3)
       # ```
-      def delete_issue(project_id : Int32, issue_id : Int32) : JSON::Any
-        delete("projects/#{project_id}/issues/#{issue_id}").parse
+      def delete_issue(project_id : Int32, issue_id : Int32) : JSON::Any | Bool
+        response = delete("projects/#{project_id}/issues/#{issue_id}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Move an issue to another project.

@@ -15,8 +15,15 @@ describe Gitlab::Client::Label do
     it "should return information about a deleted snippet" do
       stub_delete("/projects/3/labels", "label")
       label = client.delete_label(3, "Backlog")
+      label.should be_a(JSON::Any)
 
-      label["name"].as_s.should eq "Backlog"
+      label.as(JSON::Any)["name"].as_s.should eq "Backlog"
+    end
+
+    it "should return true since 9.0" do
+      result = stub_delete("/projects/4/labels")
+      result = client.delete_label(4, "Backlog")
+      result.should be_true
     end
   end
 

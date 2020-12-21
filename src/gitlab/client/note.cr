@@ -85,8 +85,10 @@ module Gitlab
       # ```
       # client.delete_issue_note(1, 3, 6)
       # ```
-      def delete_issue_note(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any
-        delete("projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}").parse
+      def delete_issue_note(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any | Bool
+        response = delete("projects/#{project_id}/issues/#{issue_id}/notes/#{note_id}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Gets a list notes of snippet in a project.
@@ -161,8 +163,10 @@ module Gitlab
       # ```
       # client.delete_snippet_note(1, 3, 6)
       # ```
-      def delete_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any
-        delete("projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}").parse
+      def delete_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any | Bool
+        response = delete("projects/#{project_id}/snippets/#{snippet_id}/notes/#{note_id}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Gets a list notes of merge request in a project.
@@ -237,8 +241,10 @@ module Gitlab
       # ```
       # client.delete_merge_request_note(1, 3, 6)
       # ```
-      def delete_merge_request_note(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any
-        delete("projects/#{project_id}/merge_requests/#{merge_request_id}/notes/#{note_id}").parse
+      def delete_merge_request_note(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any | Bool
+        response = delete("projects/#{project_id}/merge_requests/#{merge_request_id}/notes/#{note_id}")
+        return true if response.status_code == 204
+        response.parse
       end
     end
   end
