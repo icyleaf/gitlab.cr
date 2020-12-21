@@ -105,8 +105,14 @@ describe Gitlab::Client::Note do
       it "should return information about a deleted issue note" do
         stub_delete("/projects/3/issues/7/notes/1201", "note")
         note = client.delete_issue_note(3, 7, 1201)
+        note.should be_a(JSON::Any)
+        note.as(JSON::Any)["id"].as_i.should eq 1201
+      end
 
-        note["id"].as_i.should eq 1201
+      it "should return true since 9.0" do
+        stub_delete("/projects/4/issues/8/notes/1203")
+        result = client.delete_issue_note(4, 8, 1203)
+        result.should be_true
       end
     end
 
@@ -114,8 +120,14 @@ describe Gitlab::Client::Note do
       it "should return information about a deleted snippet note" do
         stub_delete("/projects/3/snippets/7/notes/1201", "note")
         note = client.delete_snippet_note(3, 7, 1201)
+        note.should be_a(JSON::Any)
+        note.as(JSON::Any)["id"].as_i.should eq 1201
+      end
 
-        note["id"].as_i.should eq 1201
+      it "should return true since 9.0" do
+        stub_delete("/projects/9/snippets/7/notes/1201")
+        result = client.delete_snippet_note(9, 7, 1201)
+        result.should be_true
       end
     end
 
@@ -124,7 +136,14 @@ describe Gitlab::Client::Note do
         stub_delete("/projects/3/merge_requests/7/notes/1201", "note")
         note = client.delete_merge_request_note(3, 7, 1201)
 
-        note["id"].as_i.should eq 1201
+        note.should be_a(JSON::Any)
+        note.as(JSON::Any)["id"].as_i.should eq 1201
+      end
+
+      it "should return true since 9.0" do
+        stub_delete("/projects/13/merge_requests/7/notes/1201")
+        result = client.delete_merge_request_note(13, 7, 1201)
+        result.should be_true
       end
     end
   end

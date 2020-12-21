@@ -519,10 +519,10 @@ describe Gitlab::Client::Project do
 
   describe ".delete_custom_attribute" do
     it "should return boolean" do
-      stub_delete("/projects/1/custom_attributes/custom_key","project_delete_custom_attribute")
+      stub_delete("/projects/1/custom_attributes/custom_key")
 
       result = client.project_delete_custom_attribute(1, "custom_key")
-      result.size.should eq 0
+      result.should be_true
     end
   end
 

@@ -60,8 +60,10 @@ module Gitlab
       # ```
       # client.delete_branch(4, 2)
       # ```
-      def delete_branch(project_id : Int32, branch : String) : JSON::Any
-        delete("projects/#{project_id}/repository/branches/#{branch}").parse
+      def delete_branch(project_id : Int32, branch : String) : JSON::Any | Bool
+        response = delete("projects/#{project_id}/repository/branches/#{branch}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Protect branch in a project.

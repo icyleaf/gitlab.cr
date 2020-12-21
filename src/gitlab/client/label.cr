@@ -71,8 +71,10 @@ module Gitlab
       # ```
       # client.delete_issue(4, 3)
       # ```
-      def delete_label(project_id : Int32, name : String) : JSON::Any
-        delete("projects/#{project_id}/labels", form: {"name" => name}).parse
+      def delete_label(project_id : Int32, name : String) : JSON::Any | Bool
+        response = delete("projects/#{project_id}/labels", form: {"name" => name})
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Subscribe a label in a project.

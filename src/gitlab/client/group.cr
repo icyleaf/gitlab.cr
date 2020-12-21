@@ -103,8 +103,10 @@ module Gitlab
       # ```
       # client.delete_group(42)
       # ```
-      def delete_group(group_id : Int32) : JSON::Any
-        delete("groups/#{group_id}").parse
+      def delete_group(group_id : Int32) : JSON::Any | Bool
+        response = delete("groups/#{group_id}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Search for groups by name
@@ -267,8 +269,10 @@ module Gitlab
       # ```
       # client.group_delete_custom_attribute(4, custom_key)
       # ```
-      def group_delete_custom_attribute(group_id : Int32, key : String) : JSON::Any
-        delete("groups/#{group_id.to_s}/custom_attributes/#{key}").parse
+      def group_delete_custom_attribute(group_id : Int32, key : String) : JSON::Any | Bool
+        response = delete("groups/#{group_id.to_s}/custom_attributes/#{key}")
+        return true if response.status_code == 204
+        response.parse
       end
 
 

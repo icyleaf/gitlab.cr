@@ -100,7 +100,6 @@ module Gitlab
       def delete_user(user_id : Int32) : JSON::Any | Bool
         response = delete("users/#{user_id.to_s}")
         return true if response.status_code == 204
-
         response.parse
       end
 
@@ -179,9 +178,7 @@ module Gitlab
       # ```
       def user_delete_custom_attribute(user_id : Int32, key : String) : JSON::Any | Bool
         response = delete("users/#{user_id.to_s}/custom_attributes/#{key}")
-
         return true if response.status_code == 204
-
         response.parse
       end
 
