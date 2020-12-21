@@ -485,4 +485,37 @@ describe Gitlab::Client::Project do
       unstarred_project["id"].as_i.should eq 3
     end
   end
+
+  describe ".custom_attributes" do
+    it "should return a json data of project's custom attributes" do
+      stub_get("/projects/1/custom_attributes", "project_add_custom_attribute")
+      result = client.project_custom_attributes(1)
+
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
+  describe ".add_custom_attribute" do
+    it "should return boolean" do
+      params = {"value" => "custom_value"}
+      stub_put("/projects/1/custom_attributes/custom_key", "project_add_custom_attribute", params)
+
+      result = client.project_add_custom_attribute(1, "custom_key", params )
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
+  describe ".delete_custom_attribute" do
+    it "should return boolean" do
+      stub_delete("/projects/1/custom_attributes/custom_key","project_delete_custom_attribute")
+
+      result = client.project_delete_custom_attribute(1, "custom_key")
+      result.size.should eq 0
+    end
+  end
+
+
+
 end
