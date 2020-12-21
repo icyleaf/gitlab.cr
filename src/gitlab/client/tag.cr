@@ -63,8 +63,10 @@ module Gitlab
       # ```
       # client.delete_tag(42)
       # ```
-      def delete_tag(project_id : Int32, tag : String) : JSON::Any
-        delete("projects/#{project_id}/repository/tag/#{tag}").parse
+      def delete_tag(project_id : Int32, tag : String) : JSON::Any | Bool
+        response = delete("projects/#{project_id}/repository/tag/#{tag}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Create release notes in a project.
