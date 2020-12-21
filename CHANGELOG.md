@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 > TODO
 
+## [0.6.0] (2020-12-21)
+
+### Added
+
+- Add custom attributes for users, projects and groups [#32](https://github.com/icyleaf/gitlab.cr/issues/32) [#37](https://github.com/icyleaf/gitlab.cr/issues/37) (thanks @[mipmip](https://github.com/mipmip))
+- Add authenticating with a key by figerprint [#36](https://github.com/icyleaf/gitlab.cr/issues/36) (thanks @[mipmip](https://github.com/mipmip))
+- Add poroject pages domain [#31](https://github.com/icyleaf/gitlab.cr/issues/31) (thanks @[mipmip](https://github.com/mipmip))
+
+### Changed
+
+- Change delete behaviour since Gitlab 9.0 [#33](https://github.com/icyleaf/gitlab.cr/issues/33) (thanks @[mipmip](https://github.com/mipmip))
+
+### Fixed
+
+- Compatibility with Crystal 0.30, Test passed 0.31
+
 ## [0.5.0] (2019-05-20)
 
 ### Fixed
@@ -113,7 +129,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - [initial implementation](https://github.com/icyleaf/gitlab.cr/issues?q=milestone%3A0.2.0+is%3Aclosed)
 
-[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/icyleaf/gitlab.cr/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.5...v0.4.0
 [0.3.5]: https://github.com/icyleaf/gitlab.cr/compare/v0.3.4...v0.3.5
