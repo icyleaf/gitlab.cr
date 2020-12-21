@@ -161,6 +161,16 @@ describe Gitlab::Client::Group do
     end
   end
 
+  describe ".custom_attribute" do
+    it "should return a json data of single group's custom attribute" do
+      stub_get("/groups/2/custom_attribute/custom_key", "group_add_custom_attribute")
+      result = client.group_custom_attribute(2,"custom_key")
+
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
   describe ".add_custom_attribute" do
     it "should return boolean" do
       params = {"value" => "custom_value"}

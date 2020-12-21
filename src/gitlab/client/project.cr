@@ -719,6 +719,21 @@ module Gitlab
         get("projects/#{project_id.to_s}/custom_attributes").parse
       end
 
+      # Gets a single project custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] project_id The Id of project
+      # - param [String] the key of the custom attribute
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.project_custom_attribute(4, "custom_key")
+      # ```
+      def project_custom_attribute(project_id : Int32, key : String ) : JSON::Any
+        get("projects/#{project_id.to_s}/custom_attribute/#{key}").parse
+      end
+
       # Add's a project custom attribute
       #
       # **Available only for admin**.

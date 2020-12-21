@@ -134,6 +134,21 @@ module Gitlab
         get("users/#{user_id.to_s}/custom_attributes").parse
       end
 
+      # Gets a single user custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] user_id The Id of user
+      # - param [String] the key of the custom attribute
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.user_custom_attribute(4, "custom_key")
+      # ```
+      def user_custom_attribute(user_id : Int32, key : String ) : JSON::Any
+        get("users/#{user_id.to_s}/custom_attribute/#{key}").parse
+      end
+
       # Add's a user custom attribute
       #
       # **Available only for admin**.
