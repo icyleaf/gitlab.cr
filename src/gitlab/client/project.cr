@@ -279,8 +279,10 @@ module Gitlab
       # ```
       # client.delete_project(42)
       # ```
-      def delete_project(project : Int32 | String) : JSON::Any
-        delete("projects/#{project}").parse
+      def delete_project(project : Int32 | String) : JSON::Any | Bool
+        response = delete("projects/#{project}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Get a list of a project's team members.
@@ -355,8 +357,85 @@ module Gitlab
       # ```
       # client.remove_project_member('gitlab', 2)
       # ```
-      def remove_project_member(project : Int32 | String, user_id : Int32) : JSON::Any
-        delete("projects/#{project}/members/#{user_id}").parse
+      def remove_project_member(project : Int32 | String, user_id : Int32) : JSON::Any | Bool
+        response = delete("projects/#{project}/members/#{user_id}")
+        return true if response.status_code == 204
+        response.parse
+      end
+
+      # Get a list of a project's pages domains.
+      #
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - return [JSON::Any] List of pages domains under a project.
+      #
+      # ```
+      # client.project_pages_domains(42)
+      # client.project_pages_domains('gitlab')
+      # ```
+      def project_pages_domains(project : Int32 | String) : JSON::Any
+        get("projects/#{project}/pages/domains").parse
+      end
+
+      # Gets a project pages domain.
+      #
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [String] The custom domain.
+      # - return [JSON::Any] Information about pages domain under a project.
+      #
+      # ```
+      # client.project_pages_domain(1, "pages-domain.com")
+      # ```
+      def project_pages_domain(project : Int32 | String, domain : String) : JSON::Any
+        get("projects/#{project}/pages/domains/#{domain}").parse
+      end
+
+      # Adds a pages domain to project.
+      #
+      # - param  [Int32, String] project_id The ID or name of a project.
+      # - param  [String] domain The custom domain.
+      # - params [Hash] form A customizable set of options.
+      # - option form [Bool] :auto_ssl_enabled Enables automatic generation of SSL certificates issued by Let’s Encrypt for custom domains.
+      # - option form [String] :certificate The certificate in PEM format with intermediates following in most specific to least specific order.
+      # - option form [String] :key The certificate key in PEM format.
+      # - return [JSON::Any] Information about added pages domain.
+      #
+      # ```
+      # client.add_project_pages_domain('gitlab', "pages-domain.com", {"auto_ssl_enabled" => true})
+      # ```
+      def add_project_pages_domain(project : Int32 | String, domain : String, form : Hash = {} of String => String) : JSON::Any
+        post("projects/#{project}/pages/domains", form: form.merge({ "domain" => domain })).parse
+      end
+
+      # Updates a pages domain project.
+      #
+      # - param  [Int32, String] project_id The ID or name of a project.
+      # - param  [String] domain The custom domain.
+      # - params [Hash] form A customizable set of options.
+      # - option form [Bool] :auto_ssl_enabled Enables automatic generation of SSL certificates issued by Let’s Encrypt for custom domains.
+      # - option form [String] :certificate The certificate in PEM format with intermediates following in most specific to least specific order.
+      # - option form [String] :key The certificate key in PEM format.
+      # - return [JSON::Any] Information about added pages domain.
+      #
+      # ```
+      # client.edit_project_pages_domain('gitlab', "pages-domain.com", {"auto_ssl_enabled" => true})
+      # ```
+      def edit_project_pages_domain(project : Int32 | String, domain : String, form : Hash = {} of String => String) : JSON::Any
+        put("projects/#{project}/pages/domains", form: form.merge({ "domain" => domain })).parse
+      end
+
+      # Removes a pages domain from project.
+      #
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [String] domain The custom domain.
+      # - return [JSON::Any] Information about removed team member.
+      #
+      # ```
+      # client.remove_project_pages_domain(1, "pages-domain.com")
+      # ```
+      def remove_project_pages_domain(project : Int32 | String, domain : String) : JSON::Any | Bool
+        response = delete("projects/#{project}/pages/domains/#{domain}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Get a list of a project's pages domains.

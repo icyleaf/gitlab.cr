@@ -54,7 +54,14 @@ describe Gitlab::Client::Tag do
       stub_delete("/projects/3/repository/tag/v1.0.0", "project_tag_lightweight")
       tag = client.delete_tag(3, "v1.0.0")
 
-      tag["name"].as_s.should eq "v1.0.0"
+      tag.should be_a JSON::Any
+      tag.as(JSON::Any)["name"].as_s.should eq "v1.0.0"
+    end
+
+    it "should return boolean since 9.0" do
+      stub_delete("/projects/4/repository/tag/v1.0.0")
+      result = client.delete_tag(4, "v1.0.0")
+      result.should be_true
     end
   end
 
