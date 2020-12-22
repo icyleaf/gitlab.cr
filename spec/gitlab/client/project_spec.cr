@@ -256,7 +256,7 @@ describe Gitlab::Client::Project do
       stub_delete("/projects/58/pages/domains/example-pages-domain.com", "pages_domain")
       pages_domain = client.remove_project_pages_domain(58, "example-pages-domain.com")
 
-      pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+      pages_domain.as(JSON::Any)["domain"].as_s.should eq "example-pages-domain.com"
     end
   end
 

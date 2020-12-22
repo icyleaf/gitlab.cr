@@ -2,7 +2,7 @@ require "spec"
 require "webmock"
 require "../src/gitlab"
 
-GITLAB_ENDPOINT = "https://gitlab.example.com/api/v3"
+GITLAB_ENDPOINT = "https://gitlab.example.com/api/v4"
 GITLAB_TOKEN    = "token"
 
 def client
