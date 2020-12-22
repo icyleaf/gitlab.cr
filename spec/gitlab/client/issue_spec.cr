@@ -110,7 +110,6 @@ describe Gitlab::Client::Issue do
       stub_delete("/projects/3/issues/34")
       result = client.delete_issue(3, 34)
       result.should be_true
-
     end
   end
 

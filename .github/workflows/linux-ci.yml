@@ -19,7 +19,7 @@ jobs:
       with:
         crystal: ${{ matrix.crystal }}
     - name: Install dependencies
-      run: shards install
+      run: shards install --ignore-crystal-version
     - name: Run tests
       run: crystal spec --error-on-warnings --error-trace
     - name: Run code format check

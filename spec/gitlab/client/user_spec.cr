@@ -116,7 +116,7 @@ describe Gitlab::Client::User do
       params = {"value" => "custom_value"}
       stub_put("/users/1/custom_attributes/custom_key", "user_add_custom_attribute", params)
 
-      result = client.user_add_custom_attribute(1, "custom_key", params )
+      result = client.user_add_custom_attribute(1, "custom_key", params)
       result["key"].as_s.should eq "custom_key"
       result["value"].as_s.should eq "custom_value"
     end
@@ -178,7 +178,6 @@ describe Gitlab::Client::User do
 
       key.should be_a JSON::Any
       key.as(JSON::Any)["title"].as_s.should eq "narkoz@helium"
-
     end
 
     it "should return boolean since 9.0" do
@@ -189,16 +188,15 @@ describe Gitlab::Client::User do
 
     it "should return information about a deleted SSH key" do
       stub_delete("/users/1/keys/1", "key")
-      key = client.delete_ssh_key(1,1)
+      key = client.delete_ssh_key(1, 1)
 
       key.should be_a JSON::Any
       key.as(JSON::Any)["title"].as_s.should eq "narkoz@helium"
-
     end
 
     it "should return boolean since 9.0" do
       stub_delete("/users/2/keys/2")
-      key = client.delete_ssh_key(2,2)
+      key = client.delete_ssh_key(2, 2)
       key.should be_true
     end
   end
@@ -281,7 +279,6 @@ describe Gitlab::Client::User do
         email.should be_true
       end
     end
-
   end
 
   describe ".user_search" do

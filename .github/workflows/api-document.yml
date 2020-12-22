@@ -19,7 +19,7 @@ jobs:
         fetch-depth: 0
     - uses: oprypin/install-crystal@v1
     - name: Install dependencies
-      run: shards install
+      run: shards install --ignore-crystal-version
     - name: Generate
       id: generate
       run: |

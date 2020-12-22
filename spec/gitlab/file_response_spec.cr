@@ -1,10 +1,20 @@
 require "../spec_helper"
 
-private def file; IO::Memory.new("hello world"); end
-private def empty_file; IO::Memory.new(""); end
+private def file
+  IO::Memory.new("hello world")
+end
 
-private def headers; HTTP::Headers{"Content-Disposition" => "attachment; filename=\"test-master.tar.gz\""}; end
-private def file_response; Gitlab::FileResponse.new(file, headers); end
+private def empty_file
+  IO::Memory.new("")
+end
+
+private def headers
+  HTTP::Headers{"Content-Disposition" => "attachment; filename=\"test-master.tar.gz\""}
+end
+
+private def file_response
+  Gitlab::FileResponse.new(file, headers)
+end
 
 describe Gitlab::FileResponse do
   describe ".initialize" do
