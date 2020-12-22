@@ -60,9 +60,16 @@ describe Gitlab::Client::Group do
     it "should return information about a deleted group" do
       stub_delete("/groups/42", "group_delete")
       group = client.delete_group(42)
+      group.should be_a JSON::Any
+      group.as(JSON::Any)["name"].as_s.should eq "Gitlab-Group"
+      group.as(JSON::Any)["path"].as_s.should eq "gitlab-group"
+    end
 
-      group["name"].as_s.should eq "Gitlab-Group"
-      group["path"].as_s.should eq "gitlab-group"
+    it "should return true since 9.0" do
+      stub_delete("/groups/44")
+      result = client.delete_group(44)
+      result.should be_true
+
     end
   end
 
@@ -161,6 +168,16 @@ describe Gitlab::Client::Group do
     end
   end
 
+  describe ".custom_attribute" do
+    it "should return a json data of single group's custom attribute" do
+      stub_get("/groups/2/custom_attribute/custom_key", "group_add_custom_attribute")
+      result = client.group_custom_attribute(2,"custom_key")
+
+      result["key"].as_s.should eq "custom_key"
+      result["value"].as_s.should eq "custom_value"
+    end
+  end
+
   describe ".add_custom_attribute" do
     it "should return boolean" do
       params = {"value" => "custom_value"}
@@ -174,10 +191,10 @@ describe Gitlab::Client::Group do
 
   describe ".delete_custom_attribute" do
     it "should return boolean" do
-      stub_delete("/groups/1/custom_attributes/custom_key","group_delete_custom_attribute")
+      stub_delete("/groups/1/custom_attributes/custom_key")
 
       result = client.group_delete_custom_attribute(1, "custom_key")
-      result.size.should eq 0
+      result.should be_true
     end
   end
 

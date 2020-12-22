@@ -57,7 +57,13 @@ describe Gitlab::Client::Branch do
       branch = client.delete_branch(3, "api")
 
       branch.should be_a JSON::Any
-      branch["branch_name"].as_s.should eq "api"
+      branch.as(JSON::Any)["branch_name"].as_s.should eq "api"
+    end
+
+    it "should return true since 9.0" do
+      stub_delete("/projects/4/repository/branches/api")
+      result = client.delete_branch(4, "api")
+      result.should be_true
     end
   end
 end

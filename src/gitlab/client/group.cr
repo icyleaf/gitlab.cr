@@ -103,8 +103,10 @@ module Gitlab
       # ```
       # client.delete_group(42)
       # ```
-      def delete_group(group_id : Int32) : JSON::Any
-        delete("groups/#{group_id}").parse
+      def delete_group(group_id : Int32) : JSON::Any | Bool
+        response = delete("groups/#{group_id}")
+        return true if response.status_code == 204
+        response.parse
       end
 
       # Search for groups by name
@@ -224,6 +226,21 @@ module Gitlab
         get("groups/#{group_id.to_s}/custom_attributes").parse
       end
 
+      # Gets a single group custom attribute
+      #
+      # **Available only for admin**.
+      #
+      # - param [Int32] group_id The Id of group
+      # - param [String] the key of the custom attribute
+      # - return [JSON::Any] information about the custom_attribute
+      #
+      # ```
+      # client.group_custom_attribute(4, "some_key")
+      # ```
+      def group_custom_attribute(group_id : Int32, key : String ) : JSON::Any
+        get("groups/#{group_id.to_s}/custom_attribute/#{key}").parse
+      end
+
       # Add's a group custom attribute
       #
       # **Available only for admin**.
@@ -252,8 +269,10 @@ module Gitlab
       # ```
       # client.group_delete_custom_attribute(4, custom_key)
       # ```
-      def group_delete_custom_attribute(group_id : Int32, key : String) : JSON::Any
-        delete("groups/#{group_id.to_s}/custom_attributes/#{key}").parse
+      def group_delete_custom_attribute(group_id : Int32, key : String) : JSON::Any | Bool
+        response = delete("groups/#{group_id.to_s}/custom_attributes/#{key}")
+        return true if response.status_code == 204
+        response.parse
       end
 
 

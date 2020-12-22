@@ -101,8 +101,16 @@ describe Gitlab::Client::Issue do
       stub_delete("/projects/3/issues/33", "issue")
       issue = client.delete_issue(3, 33)
 
-      issue["project_id"].as_i.should eq 3
-      issue["id"].as_i.should eq 33
+      issue.should be_a JSON::Any
+
+      issue.as(JSON::Any)["project_id"].as_i.should eq 3
+      issue.as(JSON::Any)["id"].as_i.should eq 33
+    end
+    it "should return true since 9.0" do
+      stub_delete("/projects/3/issues/34")
+      result = client.delete_issue(3, 34)
+      result.should be_true
+
     end
   end
 
