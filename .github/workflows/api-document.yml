@@ -27,7 +27,7 @@ jobs:
         COMMIT_DATE=$(git log -1 --format=%ci)
         COMMIT_STATUS="[${COMMIT_HASH}](https://${GH_REF}/commit/${COMMIT_HASH})"
         sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" README.md
-        crystal docs --out-path="${{ env.DOCS_PATH }}" --project-version="${{ github.ref }}"
+        crystal docs --output="${{ env.DOCS_PATH }}" --project-version="${{ github.ref }}"
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
