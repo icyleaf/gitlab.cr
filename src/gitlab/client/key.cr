@@ -27,7 +27,6 @@ module Gitlab
       def key_by_fingerprint(fingerprint : String) : JSON::Any
         get("keys", params: {"fingerprint" => fingerprint}).parse
       end
-
     end
   end
 end

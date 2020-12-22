@@ -69,7 +69,6 @@ describe Gitlab::Client::Group do
       stub_delete("/groups/44")
       result = client.delete_group(44)
       result.should be_true
-
     end
   end
 
@@ -171,7 +170,7 @@ describe Gitlab::Client::Group do
   describe ".custom_attribute" do
     it "should return a json data of single group's custom attribute" do
       stub_get("/groups/2/custom_attribute/custom_key", "group_add_custom_attribute")
-      result = client.group_custom_attribute(2,"custom_key")
+      result = client.group_custom_attribute(2, "custom_key")
 
       result["key"].as_s.should eq "custom_key"
       result["value"].as_s.should eq "custom_value"
@@ -183,7 +182,7 @@ describe Gitlab::Client::Group do
       params = {"value" => "custom_value"}
       stub_put("/groups/1/custom_attributes/custom_key", "group_add_custom_attribute", params)
 
-      result = client.group_add_custom_attribute(1, "custom_key", params )
+      result = client.group_add_custom_attribute(1, "custom_key", params)
       result["key"].as_s.should eq "custom_key"
       result["value"].as_s.should eq "custom_value"
     end
@@ -197,5 +196,4 @@ describe Gitlab::Client::Group do
       result.should be_true
     end
   end
-
 end

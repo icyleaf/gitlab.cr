@@ -166,34 +166,34 @@ describe Gitlab::Client::Project do
     end
   end
 
-   describe ".pages_domain" do
-     it "should return information about a pages domain" do
-       stub_get("/projects/58/pages/domains/example-pages-domain.com", "pages_domain")
-       pages_domain = client.project_pages_domain(58, "example-pages-domain.com")
+  describe ".pages_domain" do
+    it "should return information about a pages domain" do
+      stub_get("/projects/58/pages/domains/example-pages-domain.com", "pages_domain")
+      pages_domain = client.project_pages_domain(58, "example-pages-domain.com")
 
-       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
-     end
-   end
+      pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+    end
+  end
 
-   describe ".add_pages_domain" do
-     it "should return information about an added pages domain" do
-       stub_post("/projects/58/pages/domains", "pages_domain")
-       pages_domain = client.add_project_pages_domain(58, "example-pages-domain.com")
+  describe ".add_pages_domain" do
+    it "should return information about an added pages domain" do
+      stub_post("/projects/58/pages/domains", "pages_domain")
+      pages_domain = client.add_project_pages_domain(58, "example-pages-domain.com")
 
-       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
-     end
-   end
+      pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+    end
+  end
 
   describe ".edit_pages_domain" do
     it "should return information about an edited pages domain" do
       form = {
-        "domain" => "example-pages-domain.com",
-        "auto_ssl_enabled" => true
+        "domain"           => "example-pages-domain.com",
+        "auto_ssl_enabled" => true,
       }
       stub_put("/projects/58/pages/domains", "pages_domain", form: form)
       pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", form)
       # I DON'T UNDERSTAND WHY THIS FAILS
-      #pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", {"auto_ssl_enabled"=>true})
+      # pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", {"auto_ssl_enabled"=>true})
 
       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
     end
@@ -218,34 +218,34 @@ describe Gitlab::Client::Project do
     end
   end
 
-   describe ".pages_domain" do
-     it "should return information about a pages domain" do
-       stub_get("/projects/58/pages/domains/example-pages-domain.com", "pages_domain")
-       pages_domain = client.project_pages_domain(58, "example-pages-domain.com")
+  describe ".pages_domain" do
+    it "should return information about a pages domain" do
+      stub_get("/projects/58/pages/domains/example-pages-domain.com", "pages_domain")
+      pages_domain = client.project_pages_domain(58, "example-pages-domain.com")
 
-       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
-     end
-   end
+      pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+    end
+  end
 
-   describe ".add_pages_domain" do
-     it "should return information about an added pages domain" do
-       stub_post("/projects/58/pages/domains", "pages_domain")
-       pages_domain = client.add_project_pages_domain(58, "example-pages-domain.com")
+  describe ".add_pages_domain" do
+    it "should return information about an added pages domain" do
+      stub_post("/projects/58/pages/domains", "pages_domain")
+      pages_domain = client.add_project_pages_domain(58, "example-pages-domain.com")
 
-       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
-     end
-   end
+      pages_domain["domain"].as_s.should eq "example-pages-domain.com"
+    end
+  end
 
   describe ".edit_pages_domain" do
     it "should return information about an edited pages domain" do
       form = {
-        "domain" => "example-pages-domain.com",
-        "auto_ssl_enabled" => true
+        "domain"           => "example-pages-domain.com",
+        "auto_ssl_enabled" => true,
       }
       stub_put("/projects/58/pages/domains", "pages_domain", form: form)
       pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", form)
       # I DON'T UNDERSTAND WHY THIS FAILS
-      #pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", {"auto_ssl_enabled"=>true})
+      # pages_domain = client.edit_project_pages_domain(58, "example-pages-domain.com", {"auto_ssl_enabled"=>true})
 
       pages_domain["domain"].as_s.should eq "example-pages-domain.com"
     end
@@ -511,7 +511,7 @@ describe Gitlab::Client::Project do
       params = {"value" => "custom_value"}
       stub_put("/projects/1/custom_attributes/custom_key", "project_add_custom_attribute", params)
 
-      result = client.project_add_custom_attribute(1, "custom_key", params )
+      result = client.project_add_custom_attribute(1, "custom_key", params)
       result["key"].as_s.should eq "custom_key"
       result["value"].as_s.should eq "custom_value"
     end
@@ -525,7 +525,4 @@ describe Gitlab::Client::Project do
       result.should be_true
     end
   end
-
-
-
 end

@@ -222,7 +222,7 @@ module Gitlab
       # ```
       # client.group_custom_attributes(4)
       # ```
-      def group_custom_attributes(group_id : Int32 ) : JSON::Any
+      def group_custom_attributes(group_id : Int32) : JSON::Any
         get("groups/#{group_id.to_s}/custom_attributes").parse
       end
 
@@ -237,7 +237,7 @@ module Gitlab
       # ```
       # client.group_custom_attribute(4, "some_key")
       # ```
-      def group_custom_attribute(group_id : Int32, key : String ) : JSON::Any
+      def group_custom_attribute(group_id : Int32, key : String) : JSON::Any
         get("groups/#{group_id.to_s}/custom_attribute/#{key}").parse
       end
 
@@ -252,9 +252,9 @@ module Gitlab
       # - return [JSON::Any] information about the custom_attribute
       #
       # ```
-      # client.group_add_custom_attribute(4, custom_key, {"value"=> "custom_value"})
+      # client.group_add_custom_attribute(4, custom_key, {"value" => "custom_value"})
       # ```
-      def group_add_custom_attribute(group_id : Int32, key : String, params : Hash = {} of String => String ) : JSON::Any
+      def group_add_custom_attribute(group_id : Int32, key : String, params : Hash = {} of String => String) : JSON::Any
         put("groups/#{group_id.to_s}/custom_attributes/#{key}", form: params).parse
       end
 
@@ -274,8 +274,6 @@ module Gitlab
         return true if response.status_code == 204
         response.parse
       end
-
-
     end
   end
 end
