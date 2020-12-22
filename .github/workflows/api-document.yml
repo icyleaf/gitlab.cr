@@ -1,0 +1,37 @@
+name: Deploy API documents
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  DOCS_PATH: docs
+  GH_REF: https://github.com/icyleaf/gitlab.cr
+  GH_URL: https://icyleaf.github.io/gitlab.cr
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        # fetch all tags and branches
+        fetch-depth: 0
+    - uses: oprypin/install-crystal@v1
+    - name: Install dependencies
+      run: shards install
+    - name: Generate
+      id: generate
+      run: |
+        COMMIT_HASH=$(git rev-parse --short HEAD)
+        COMMIT_DATE=$(git log -1 --format=%ci)
+        COMMIT_STATUS="[${COMMIT_HASH}](https://${GH_REF}/commit/${COMMIT_HASH})"
+        sed -i -e "s/latest commit/$(echo ${COMMIT_STATUS} | sed -e "s/\//\\\\\//g") (${COMMIT_DATE})/" README.md
+        crystal docs --out-path="${{ env.DOCS_PATH }}" --project-version="${{ github.ref }}"
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ${{ env.DOCS_PATH }}
+
+

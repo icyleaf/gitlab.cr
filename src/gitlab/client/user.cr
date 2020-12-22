@@ -129,7 +129,7 @@ module Gitlab
       # ```
       # client.user_custom_attributes(4)
       # ```
-      def user_custom_attributes(user_id : Int32 ) : JSON::Any
+      def user_custom_attributes(user_id : Int32) : JSON::Any
         get("users/#{user_id.to_s}/custom_attributes").parse
       end
 
@@ -144,7 +144,7 @@ module Gitlab
       # ```
       # client.user_custom_attribute(4, "custom_key")
       # ```
-      def user_custom_attribute(user_id : Int32, key : String ) : JSON::Any
+      def user_custom_attribute(user_id : Int32, key : String) : JSON::Any
         get("users/#{user_id.to_s}/custom_attribute/#{key}").parse
       end
 
@@ -159,9 +159,9 @@ module Gitlab
       # - return [JSON::Any] information about the custom_attribute
       #
       # ```
-      # client.user_add_custom_attribute(4, custom_key, {"value"=> "custom_value"})
+      # client.user_add_custom_attribute(4, custom_key, {"value" => "custom_value"})
       # ```
-      def user_add_custom_attribute(user_id : Int32, key : String, params : Hash = {} of String => String ) : JSON::Any
+      def user_add_custom_attribute(user_id : Int32, key : String, params : Hash = {} of String => String) : JSON::Any
         put("users/#{user_id.to_s}/custom_attributes/#{key}", form: params).parse
       end
 

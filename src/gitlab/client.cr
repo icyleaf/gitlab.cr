@@ -79,7 +79,7 @@ module Gitlab
     # - Return `Bool`
     #
     # ```
-    # client.available?  # => true
+    # client.available? # => true
     # ```
     def available?
       get("user")
