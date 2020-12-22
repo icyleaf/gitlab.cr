@@ -403,7 +403,7 @@ module Gitlab
       # client.add_project_pages_domain('gitlab', "pages-domain.com", {"auto_ssl_enabled" => true})
       # ```
       def add_project_pages_domain(project : Int32 | String, domain : String, form : Hash = {} of String => String) : JSON::Any
-        post("projects/#{project}/pages/domains", form: form.merge({ "domain" => domain })).parse
+        post("projects/#{project}/pages/domains", form: form.merge({"domain" => domain})).parse
       end
 
       # Updates a pages domain project.
@@ -420,7 +420,7 @@ module Gitlab
       # client.edit_project_pages_domain('gitlab', "pages-domain.com", {"auto_ssl_enabled" => true})
       # ```
       def edit_project_pages_domain(project : Int32 | String, domain : String, form : Hash = {} of String => String) : JSON::Any
-        put("projects/#{project}/pages/domains", form: form.merge({ "domain" => domain })).parse
+        put("projects/#{project}/pages/domains", form: form.merge({"domain" => domain})).parse
       end
 
       # Removes a pages domain from project.
@@ -642,7 +642,7 @@ module Gitlab
       # ```
       # client.project_custom_attributes(4)
       # ```
-      def project_custom_attributes(project_id : Int32 ) : JSON::Any
+      def project_custom_attributes(project_id : Int32) : JSON::Any
         get("projects/#{project_id.to_s}/custom_attributes").parse
       end
 
@@ -657,7 +657,7 @@ module Gitlab
       # ```
       # client.project_custom_attribute(4, "custom_key")
       # ```
-      def project_custom_attribute(project_id : Int32, key : String ) : JSON::Any
+      def project_custom_attribute(project_id : Int32, key : String) : JSON::Any
         get("projects/#{project_id.to_s}/custom_attribute/#{key}").parse
       end
 
@@ -672,9 +672,9 @@ module Gitlab
       # - return [JSON::Any] information about the custom_attribute
       #
       # ```
-      # client.project_add_custom_attribute(4, custom_key, {"value"=> "custom_value"})
+      # client.project_add_custom_attribute(4, custom_key, {"value" => "custom_value"})
       # ```
-      def project_add_custom_attribute(project_id : Int32, key : String, params : Hash = {} of String => String ) : JSON::Any
+      def project_add_custom_attribute(project_id : Int32, key : String, params : Hash = {} of String => String) : JSON::Any
         put("projects/#{project_id.to_s}/custom_attributes/#{key}", form: params).parse
       end
 
@@ -694,7 +694,6 @@ module Gitlab
         return true if response.status_code == 204
         response.parse
       end
-
     end
   end
 end

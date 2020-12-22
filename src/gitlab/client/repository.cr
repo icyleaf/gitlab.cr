@@ -14,7 +14,7 @@ module Gitlab
       #
       # ```
       # client.tree(42)
-      # client.tree(42, { "path" => "shard.yml" })
+      # client.tree(42, {"path" => "shard.yml"})
       # ```
       def tree(project_id : Int32, params : Hash? = nil) : JSON::Any
         get("projects/#{project_id}/repository/tree", params: params).parse
