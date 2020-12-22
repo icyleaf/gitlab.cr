@@ -1,5 +1,5 @@
 name: gitlab
-version: 0.6.0
+version: 0.6.1
 
 dependencies:
   halite:
@@ -12,6 +12,6 @@ development_dependencies:
 authors:
   - icyleaf <icyleaf.cn@gmail.com>
 
-crystal: 0.31.0
+crystal: 0.35.1
 
 license: MIT
