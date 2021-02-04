@@ -1,6 +1,9 @@
 name: gitlab
 version: 0.6.1
 
+authors:
+  - icyleaf <icyleaf.cn@gmail.com>
+
 dependencies:
   halite:
     github: icyleaf/halite
@@ -9,9 +12,6 @@ development_dependencies:
   webmock:
     github: manastech/webmock.cr
 
-authors:
-  - icyleaf <icyleaf.cn@gmail.com>
-
-crystal: 0.35.1
+crystal: 0.36.1
 
 license: MIT
