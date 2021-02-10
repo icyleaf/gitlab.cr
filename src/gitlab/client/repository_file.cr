@@ -38,8 +38,24 @@ module Gitlab
         file_contents_from_blobs(project_id, filepath, sha)
       end
 
-      # def create_file
-      # end
+      # Creates a new repository file.
+      #
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [String] filepath The path and name of a file. Do not URL-encode
+      # - param  [String] branch  The branch to create the file in
+      # - param  [String] content The raw file contents
+      # - param  [String] commit_message The commit message
+      # - param  [Hash] options A customizable set of options.
+      # - option form [String] :author_name Commit author's name
+      # - option form [String] :author_email Commit author's email
+      #
+      # ```
+      # client.create_file("my-stuff/example-repo".gsub("/", "%2F"), "some/dir/file.txt", "master", "Hello World\ncreated by gitlab.cr", "Just did it", {} of String => String)
+      # ```
+      def create_file(project : String | Int32, path : String, branch : String, content : String, commit_message : String, options : Hash = {} of String => String) : JSON::Any
+        uri = "projects/#{project}/repository/files/#{path.gsub("/", "%2F")}"
+        post(uri, form: options.merge({"branch" => branch, "commit_message" => commit_message, "content" => content})).parse
+      end
 
       # def edit_file
       # end
