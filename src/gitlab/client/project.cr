@@ -304,7 +304,7 @@ module Gitlab
 
       # Gets a project team member.
       #
-      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [Int32] user_id The ID of a project team member.
       # - return [JSON::Any] Information about member under a project.
       #
@@ -378,7 +378,7 @@ module Gitlab
 
       # Gets a project pages domain.
       #
-      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
+      # - param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.
       # - param  [String] The custom domain.
       # - return [JSON::Any] Information about pages domain under a project.
       #
