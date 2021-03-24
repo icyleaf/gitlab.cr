@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="fix/gitlab-change-delete-behaviour-since-9.0-dev">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v0.7.0">
 <meta name="crystal_docs.project_name" content="gitlab">
+
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="gitlab">
-  <title>Gitlab::Client::RepositoryFile - gitlab fix/gitlab-change-delete-behaviour-since-9.0-dev</title>
+  <meta name="repository-name" content="gitlab">
+  <title>Gitlab::Client::RepositoryFile - gitlab refs/tags/v0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        fix/gitlab-change-delete-behaviour-since-9.0-dev
+        refs/tags/v0.7.0
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -284,7 +284,7 @@
 
   <p>Defines methods related to repository.</p>
 
-<p>See <a href="https://docs.gitlab.com/ce/api/repository_files.html" target="_blank">https://docs.gitlab.com/ce/api/repository_files.html</a></p>
+<p>See <a href="https://docs.gitlab.com/ce/api/repository_files.html">https://docs.gitlab.com/ce/api/repository_files.html</a></p>
 
 
 
@@ -322,6 +322,11 @@
     Defined in:
   </h2>
   
+    
+      gitlab/client/repository_file.cr
+    
+    <br/>
+  
 
 
 
@@ -340,6 +345,13 @@
     Instance Method Summary
   </h2>
   <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#create_file(project:String%7CInt32,path:String,branch:String,content:String,commit_message:String,options:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#create_file</strong>(project : String | Int32, path : String, branch : String, content : String, commit_message : String, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        
+          <div class="summary"><p>Creates a new repository file.</p></div>
+        
+      </li>
     
       <li class="entry-summary">
         <a href="#file_contents(project_id:Int32,filepath:String,sha=&quot;HEAD&quot;):String-instance-method" class="signature"><strong>#file_contents</strong>(project_id : Int32, filepath : String, sha = <span class="s">&quot;HEAD&quot;</span>) : String</a>
@@ -379,6 +391,29 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="create_file(project:String|Int32,path:String,branch:String,content:String,commit_message:String,options:Hash={}ofString=>String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>create_file</strong>(project : String | Int32, path : String, branch : String, content : String, commit_message : String, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
+
+        <a class="method-permalink" href="#create_file(project:String%7CInt32,path:String,branch:String,content:String,commit_message:String,options:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new repository file.</p>
+
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] filepath The path and name of a file. Do not URL-encode</li><li>param  [String] branch  The branch to create the file in</li><li>param  [String] content The raw file contents</li><li>param  [String] commit_message The commit message</li><li>param  [Hash] options A customizable set of options.</li><li>option form [String] :author_name Commit author's name</li><li>option form [String] :author_email Commit author's email</li></ul>
+
+<pre><code class="language-crystal">client.create_file(<span class="s">&quot;my-stuff/example-repo&quot;</span>.gsub(<span class="s">&quot;/&quot;</span>, <span class="s">&quot;%2F&quot;</span>), <span class="s">&quot;some/dir/file.txt&quot;</span>, <span class="s">&quot;master&quot;</span>, <span class="s">&quot;Hello World\ncreated by gitlab.cr&quot;</span>, <span class="s">&quot;Just did it&quot;</span>, {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="file_contents(project_id:Int32,filepath:String,sha=&quot;HEAD&quot;):String-instance-method">
       <div class="signature">
         
@@ -393,7 +428,7 @@
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] filepath The path and name of a file.</li><li>param  [String] sha The id of a commit sha.</li><li>return [String] The raw file contents</li></ul>
 
-<pre><code>client.file_contents(<span class="n">1</span>, <span class="s">&quot;README.md&quot;</span>)
+<pre><code class="language-crystal">client.file_contents(<span class="n">1</span>, <span class="s">&quot;README.md&quot;</span>)
 client.file_contents(<span class="n">1</span>, <span class="s">&quot;src/gitlab.cr&quot;</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre>
         </div>
       
@@ -417,7 +452,7 @@ client.file_contents(<span class="n">1</span>, <span class="s">&quot;src/gitlab.
 
 <ul><li>param  [Int32] project The ID or name of a project.</li><li>param  [String] file_path The full path of the file.</li><li>param  [String] ref The name of branch, tag or commit.</li><li>return [JSON::Any]</li></ul>
 
-<pre><code>client.get_file(<span class="n">42</span>, <span class="s">&quot;README.md&quot;</span>)
+<pre><code class="language-crystal">client.get_file(<span class="n">42</span>, <span class="s">&quot;README.md&quot;</span>)
 client.get_file(<span class="n">42</span>, <span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;develop&quot;</span>)</code></pre>
         </div>
       

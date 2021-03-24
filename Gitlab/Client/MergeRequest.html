@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="fix/gitlab-change-delete-behaviour-since-9.0-dev">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v0.7.0">
 <meta name="crystal_docs.project_name" content="gitlab">
+
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="gitlab">
-  <title>Gitlab::Client::MergeRequest - gitlab fix/gitlab-change-delete-behaviour-since-9.0-dev</title>
+  <meta name="repository-name" content="gitlab">
+  <title>Gitlab::Client::MergeRequest - gitlab refs/tags/v0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        fix/gitlab-change-delete-behaviour-since-9.0-dev
+        refs/tags/v0.7.0
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -284,7 +284,7 @@
 
   <p>Defines methods related to merge request.</p>
 
-<p>See <a href="http://docs.gitlab.com/ce/api/merge_requests.html" target="_blank">http://docs.gitlab.com/ce/api/merge_requests.html</a></p>
+<p>See <a href="http://docs.gitlab.com/ce/api/merge_requests.html">http://docs.gitlab.com/ce/api/merge_requests.html</a></p>
 
 
 
@@ -321,6 +321,11 @@
 </a>
     Defined in:
   </h2>
+  
+    
+      gitlab/client/merge_request.cr
+    
+    <br/>
   
 
 
@@ -363,7 +368,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="signature"><strong>#delete_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any</a>
+        <a href="#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any%7CBool-instance-method" class="signature"><strong>#delete_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any | Bool</a>
         
           <div class="summary"><p>Deiete a merge request in a project.</p></div>
         
@@ -482,7 +487,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge_request.</li><li>return [JSON::Any] Information about the accepted merge requet.</li></ul>
 
-<pre><code>client.accept_merge_request(<span class="n">1</span>, <span class="n">3</span>)</code></pre>
+<pre><code class="language-crystal">client.accept_merge_request(<span class="n">1</span>, <span class="n">3</span>)</code></pre>
         </div>
       
       <br/>
@@ -513,7 +518,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge_request.</li><li>return [JSON::Any] Information about the accepted merge requet.</li></ul>
 
-<pre><code>client.cancel_merge_request_when_build_succeed(<span class="n">1</span>, <span class="n">3</span>)</code></pre>
+<pre><code class="language-crystal">client.cancel_merge_request_when_build_succeed(<span class="n">1</span>, <span class="n">3</span>)</code></pre>
         </div>
       
       <br/>
@@ -536,7 +541,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] source_branch The name of a source branch.</li><li>param  [String] target_branch The name of a target branch.</li><li>param  [String] title The title of a merge request.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :assignee_id The ID pf assignee user.</li><li>option params [String] :description The description of the merge request.</li><li>option params [String] :target_project_id The target project (numeric id).</li><li>option params [String] :labels Labels for MR as a comma-separated list.</li><li>option params [String] :milestone_id The ID of the milestone.</li><li>return [JSON::Any] Information about the created merge_request in a project.</li></ul>
 
-<pre><code>client.create_merge_request(<span class="n">1</span>, <span class="s">&quot;feature/xxx&quot;</span>, <span class="s">&quot;develop&quot;</span>, <span class="s">&quot;feature: support xxx&quot;</span>)
+<pre><code class="language-crystal">client.create_merge_request(<span class="n">1</span>, <span class="s">&quot;feature/xxx&quot;</span>, <span class="s">&quot;develop&quot;</span>, <span class="s">&quot;feature: support xxx&quot;</span>)
 client.create_merge_request(<span class="n">1</span>, <span class="s">&quot;hotfix/xxx&quot;</span>, <span class="s">&quot;master&quot;</span>, <span class="s">&quot;fix some bugs&quot;</span>, {<span class="s">&quot;milestone_id&quot;</span> => <span class="s">&quot;2&quot;</span>})</code></pre>
         </div>
       
@@ -546,12 +551,12 @@ client.create_merge_request(<span class="n">1</span>, <span class="s">&quot;hotf
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any|Bool-instance-method">
       <div class="signature">
         
-        def <strong>delete_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any
+        def <strong>delete_merge_request</strong>(project_id : Int32, merge_request_id : Int32) : JSON::Any | Bool
 
-        <a class="method-permalink" href="#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method">#</a>
+        <a class="method-permalink" href="#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any%7CBool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -564,7 +569,7 @@ In case you cannot destroy this merge request, or it is not present, code 404 is
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge_request.</li><li>return [JSON::Any] Information about the deleted merge requet.</li></ul>
 
-<pre><code>client.delete_merge_request(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
+<pre><code class="language-crystal">client.delete_merge_request(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
         </div>
       
       <br/>
@@ -587,7 +592,7 @@ In case you cannot destroy this merge request, or it is not present, code 404 is
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [String] source_branch The name of a source branch.</li><li>param  [String] target_branch The name of a target branch.</li><li>param  [String] title The title of a merge request.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :assignee_id The ID pf assignee user.</li><li>option params [String] :description The description of the merge request.</li><li>option params [String] :target_project_id The target project (numeric id).</li><li>option params [String] :state_event New state (close|reopen|merge).</li><li>option params [String] :labels Labels for MR as a comma-separated list.</li><li>option form [String] :milestone_id The ID of the milestone.</li><li>return [JSON::Any] Information about the created merge request in a project.</li></ul>
 
-<pre><code>client.create_merge_request(<span class="n">1</span>, <span class="n">4</span>, <span class="s">&quot;feature/xxx&quot;</span>, <span class="s">&quot;develop&quot;</span>, <span class="s">&quot;feature: support xxx&quot;</span>)
+<pre><code class="language-crystal">client.create_merge_request(<span class="n">1</span>, <span class="n">4</span>, <span class="s">&quot;feature/xxx&quot;</span>, <span class="s">&quot;develop&quot;</span>, <span class="s">&quot;feature: support xxx&quot;</span>)
 client.create_merge_request(<span class="n">1</span>, <span class="n">6</span>, <span class="s">&quot;hotfix/xxx&quot;</span>, <span class="s">&quot;master&quot;</span>, <span class="s">&quot;fix some bugs&quot;</span>, {<span class="s">&quot;state&quot;</span> => <span class="s">&quot;close&quot;</span>})</code></pre>
         </div>
       
@@ -611,7 +616,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="n">6</span>, 
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>return [JSON::Any] Information about the merge request.</li></ul>
 
-<pre><code>client.merge_request(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+<pre><code class="language-crystal">client.merge_request(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
         </div>
       
       <br/>
@@ -634,7 +639,7 @@ client.create_merge_request(<span class="n">1</span>, <span class="n">6</span>, 
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge_request.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of issues of merge request under a project.</li></ul>
 
-<pre><code>client.merge_request_changes(<span class="n">1</span>, <span class="n">3</span>)
+<pre><code class="language-crystal">client.merge_request_changes(<span class="n">1</span>, <span class="n">3</span>)
 client.merge_request_changes(<span class="n">1</span>, <span class="n">4</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;5&quot;</span>})</code></pre>
         </div>
       
@@ -658,7 +663,7 @@ client.merge_request_changes(<span class="n">1</span>, <span class="n">4</span>,
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge_request.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of issues of merge request under a project.</li></ul>
 
-<pre><code>client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">3</span>)
+<pre><code class="language-crystal">client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">3</span>)
 client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">4</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;5&quot;</span>})</code></pre>
         </div>
       
@@ -682,7 +687,7 @@ client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">4</
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Integer] id The ID of a merge request.</li></ul>
 
-<pre><code>client.merge_request_commits(<span class="n">1</span>, <span class="n">2</span>)</code></pre>
+<pre><code class="language-crystal">client.merge_request_commits(<span class="n">1</span>, <span class="n">2</span>)</code></pre>
         </div>
       
       <br/>
@@ -705,7 +710,7 @@ client.merge_request_closes_issues(<span class="n">1</span>, <span class="n">4</
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [Int32] :iid Return the request having the given iid.</li><li>option params [String] :state Return all requests or just those that are merged, opened or closed.</li><li>option params [String] :order_by Return requests ordered by created_at or updated_at fields. Default is created_at</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of merge requests under a project.</li></ul>
 
-<pre><code>client.merge_requests(<span class="n">1</span>)
+<pre><code class="language-crystal">client.merge_requests(<span class="n">1</span>)
 client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quot;</span> => <span class="s">&quot;opened&quot;</span>, <span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
         </div>
       
@@ -731,7 +736,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge_request.</li><li>return [JSON::Any] Information about the subscribed merge request in a project.</li></ul>
 
-<pre><code>client.subscribe_merge_request(<span class="n">1</span>, <span class="n">38</span>)</code></pre>
+<pre><code class="language-crystal">client.subscribe_merge_request(<span class="n">1</span>, <span class="n">38</span>)</code></pre>
         </div>
       
       <br/>
@@ -756,7 +761,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge_request.</li><li>return [JSON::Any] Information about the subscribed merge request in a project.</li></ul>
 
-<pre><code>client.unsubscribe_merge_request(<span class="n">1</span>, <span class="n">38</span>)</code></pre>
+<pre><code class="language-crystal">client.unsubscribe_merge_request(<span class="n">1</span>, <span class="n">38</span>)</code></pre>
         </div>
       
       <br/>
@@ -779,7 +784,7 @@ client.merge_requests(<span class="n">1</span>, {<span class="s">&quot;state&quo
 
 <ul><li>param  [Integer] project The ID or name of a project.</li><li>param  [Integer] id The ID of a merge request.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :title The title of a merge request.</li><li>option form [String] :source_branch The source branch name.</li><li>option form [String] :target_branch The target branch name.</li><li>option form [Integer] :assignee_id The ID of a user to assign merge request.</li><li>option form [String] :state_event New state (close|reopen|merge).</li></ul>
 
-<pre><code>client.update_merge_request(<span class="n">5</span>, <span class="n">42</span>, { title: </code></pre>
+<pre><code class="language-crystal">client.update_merge_request(5, 42, { title: 'New title' })</code></pre>
         </div>
       
       <br/>

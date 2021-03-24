@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="fix/gitlab-change-delete-behaviour-since-9.0-dev">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v0.7.0">
 <meta name="crystal_docs.project_name" content="gitlab">
+
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="gitlab">
-  <title>Gitlab::Client::Repository - gitlab fix/gitlab-change-delete-behaviour-since-9.0-dev</title>
+  <meta name="repository-name" content="gitlab">
+  <title>Gitlab::Client::Repository - gitlab refs/tags/v0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        fix/gitlab-change-delete-behaviour-since-9.0-dev
+        refs/tags/v0.7.0
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -284,7 +284,7 @@
 
   <p>Defines methods related to repository.</p>
 
-<p>See <a href="http://docs.gitlab.com/ce/api/repositories.html" target="_blank">http://docs.gitlab.com/ce/api/repositories.html</a></p>
+<p>See <a href="http://docs.gitlab.com/ce/api/repositories.html">http://docs.gitlab.com/ce/api/repositories.html</a></p>
 
 
 
@@ -321,6 +321,11 @@
 </a>
     Defined in:
   </h2>
+  
+    
+      gitlab/client/repository.cr
+    
+    <br/>
   
 
 
@@ -414,7 +419,7 @@
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] sha The id of a commit sha.</li><li>return [String] The raw file contents</li></ul>
 
-<pre><code>client.blow_contents(<span class="n">1</span>, <span class="s">&quot;74bbc1b7&quot;</span>)
+<pre><code class="language-crystal">client.blow_contents(<span class="n">1</span>, <span class="s">&quot;74bbc1b7&quot;</span>)
 client.blow_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)</code></pre>
         </div>
       
@@ -438,7 +443,7 @@ client.blow_contents(<span class="n">1</span>, <span class="s">&quot;a5c805f456f
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] from the commit SHA or branch name.</li><li>param  [String] to the commit SHA or branch name.</li><li>return [JSON::Any] List a compare between from and to.</li></ul>
 
-<pre><code>client.compare(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>, <span class="s">&quot;develop&quot;</span>)
+<pre><code class="language-crystal">client.compare(<span class="n">1</span>, <span class="s">&quot;master&quot;</span>, <span class="s">&quot;develop&quot;</span>)
 client.compare(<span class="n">1</span>, <span class="s">&quot;a5c805f4&quot;</span>, <span class="s">&quot;v1.0.0&quot;</span>)</code></pre>
         </div>
       
@@ -462,7 +467,7 @@ client.compare(<span class="n">1</span>, <span class="s">&quot;a5c805f4&quot;</s
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of projects of the authorized user.</li></ul>
 
-<pre><code>client.contributors(<span class="n">1</span>)
+<pre><code class="language-crystal">client.contributors(<span class="n">1</span>)
 client.contributors(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
         </div>
       
@@ -486,7 +491,7 @@ client.contributors(<span class="n">1</span>, {<span class="s">&quot;per_page&qu
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [String] sha The commit SHA to download defaults to the tip of the default branch.</li><li>return [Gitlab::FileResponse, JSON::Any] The archive file.</li></ul>
 
-<pre><code>file <span class="o">=</span> client.repo_archive(<span class="n">1</span>)
+<pre><code class="language-crystal">file <span class="o">=</span> client.repo_archive(<span class="n">1</span>)
 file <span class="o">=</span> client.repo_archive(<span class="n">1</span>, <span class="s">&quot;a5c805f456f46b44e270f342330b06e06c53cbcc&quot;</span>)
 <span class="k">if</span> file.<span class="k">is_a?</span>(<span class="t">Gitlab</span><span class="t">::</span><span class="t">FileResponse</span>)
   puts file.filename <span class="c"># =&gt; &quot;test-HEAD-a5c805f456f46b44e270f342330b06e06c53cbcc.tar.gz&quot;</span>
@@ -518,8 +523,8 @@ file <span class="o">=</span> client.repo_archive(<span class="n">1</span>, <spa
 
 <ul><li>param  [Int32] project The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :path The path inside repository. Used to get contend of subdirectories.</li><li>option params [String] :ref The name of a repository branch or tag or if not given the default branch</li><li>return [JSON::Any]</li></ul>
 
-<pre><code>client.tree(<span class="n">42</span>)
-client.tree(<span class="n">42</span>, { <span class="s">&quot;path&quot;</span> => <span class="s">&quot;shard.yml&quot;</span> })</code></pre>
+<pre><code class="language-crystal">client.tree(<span class="n">42</span>)
+client.tree(<span class="n">42</span>, {<span class="s">&quot;path&quot;</span> => <span class="s">&quot;shard.yml&quot;</span>})</code></pre>
         </div>
       
       <br/>

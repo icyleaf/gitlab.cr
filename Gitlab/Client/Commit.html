@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="fix/gitlab-change-delete-behaviour-since-9.0-dev">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v0.7.0">
 <meta name="crystal_docs.project_name" content="gitlab">
+
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="gitlab">
-  <title>Gitlab::Client::Commit - gitlab fix/gitlab-change-delete-behaviour-since-9.0-dev</title>
+  <meta name="repository-name" content="gitlab">
+  <title>Gitlab::Client::Commit - gitlab refs/tags/v0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        fix/gitlab-change-delete-behaviour-since-9.0-dev
+        refs/tags/v0.7.0
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -284,7 +284,7 @@
 
   <p>Defines methods related to branch.</p>
 
-<p>See <a href="http://docs.gitlab.com/ce/api/commits.html" target="_blank">http://docs.gitlab.com/ce/api/commits.html</a></p>
+<p>See <a href="http://docs.gitlab.com/ce/api/commits.html">http://docs.gitlab.com/ce/api/commits.html</a></p>
 
 
 
@@ -321,6 +321,11 @@
 </a>
     Defined in:
   </h2>
+  
+    
+      gitlab/client/commit.cr
+    
+    <br/>
   
 
 
@@ -428,7 +433,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] commit The ID of a commit.</li><li>return [JSON::Any] Information about the commit.</li></ul>
 
-<pre><code>client.commit(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+<pre><code class="language-crystal">client.commit(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
         </div>
       
       <br/>
@@ -451,7 +456,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The name of a repository branch or tag or if not given the default branch.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20.</li><li>return [JSON::Any] List of comments in a commit.</li></ul>
 
-<pre><code>client.commit_comments(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.commit_comments(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -474,7 +479,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The name of a repository branch or tag or if not given the default branch.</li><li>return [JSON::Any] Information about the commit diff.</li></ul>
 
-<pre><code>client.commit_diff(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.commit_diff(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -499,7 +504,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The commit hash.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :ref Filter by ref name, it can be branch or tag.</li><li>option params [String] :stage Filter by stage.</li><li>option params [String] :name Filer by status name, eg. jenkins.</li><li>option params [String] :all The flag to return all statuses, not only latest ones.</li></ul>
 
-<pre><code>client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>)
+<pre><code class="language-crystal">client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>)
 client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>})
 client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>, <span class="s">&quot;all&quot;</span> => <span class="s">&quot;true&quot;</span>})</code></pre>
         </div>
@@ -524,7 +529,7 @@ client.commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :ref_name The name of a repository branch or tag or if not given the default branch.</li><li>option params [String] :since Only commits after or in this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.</li><li>option params [String] :until Only commits before or in this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of commits.</li></ul>
 
-<pre><code>client.commits(<span class="n">1</span>)
+<pre><code class="language-crystal">client.commits(<span class="n">1</span>)
 client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
         </div>
       
@@ -548,7 +553,7 @@ client.commits(<span class="n">1</span>, {<span class="s">&quot;per_page&quot;</
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [String] sha The commit SHA or name of a repository branch or tag.</li><li>param  [String] note The text of the comment.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :path The file path relative to the repository.</li><li>option params [String] :line The line number where the comment should be placed.</li><li>option params [String] :line_type The line type. Takes new or old as arguments.</li><li>return [JSON::Any] Information about the created commet of commit in a project.</li></ul>
 
-<pre><code>client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;awesome!&quot;</span>)
+<pre><code class="language-crystal">client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;awesome!&quot;</span>)
 client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daff23c&quot;</span>, <span class="s">&quot;+1&quot;</span>, {<span class="s">&quot;line&quot;</span> => <span class="s">&quot;29&quot;</span>})</code></pre>
         </div>
       
@@ -574,7 +579,7 @@ client.create_commit_comment(<span class="n">1</span>, <span class="s">&quot;daf
 
 <ul><li>param  [Integer] project_id The ID of a project.</li><li>param  [String] sha The commit hash.</li><li>param  [String] state of the status. Can be: pending, running, success, failed, canceled.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :ref The ref (branch or tag) to which the status refers.</li><li>option params [String] :name Filer by status name, eg. jenkins.</li><li>option params [String] :target_url The target URL to associate with this status.</li><li>option params [String] :description The short description of the status.</li></ul>
 
-<pre><code>client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;success&quot;</span>)
+<pre><code class="language-crystal">client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;success&quot;</span>)
 client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;failed&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>})
 client.update_commit_status(<span class="n">42</span>, <span class="s">&quot;6104942438c14ec7bd21c6cd5bd995272b3faff6&quot;</span>, <span class="s">&quot;canceled&quot;</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;jenkins&quot;</span>, <span class="s">&quot;target_url&quot;</span>: <span class="s">&quot;http://example.com/builds/1&quot;</span>})</code></pre>
         </div>

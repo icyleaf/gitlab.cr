@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="fix/gitlab-change-delete-behaviour-since-9.0-dev">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v0.7.0">
 <meta name="crystal_docs.project_name" content="gitlab">
+
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="gitlab">
-  <title>Gitlab::Client::Project - gitlab fix/gitlab-change-delete-behaviour-since-9.0-dev</title>
+  <meta name="repository-name" content="gitlab">
+  <title>Gitlab::Client::Project - gitlab refs/tags/v0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        fix/gitlab-change-delete-behaviour-since-9.0-dev
+        refs/tags/v0.7.0
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -300,7 +300,7 @@
 
 <ul><li>Public. visibility_level is 20. The project can be cloned without any authentication.</li></ul>
 
-<p>See <a href="http://docs.gitlab.com/ce/api/projects.html" target="_blank">http://docs.gitlab.com/ce/api/projects.html</a></p>
+<p>See <a href="http://docs.gitlab.com/ce/api/projects.html">http://docs.gitlab.com/ce/api/projects.html</a></p>
 
 
 
@@ -337,6 +337,11 @@
 </a>
     Defined in:
   </h2>
+  
+    
+      gitlab/client/project.cr
+    
+    <br/>
   
 
 
@@ -414,7 +419,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_project(project:Int32%7CString):JSON::Any-instance-method" class="signature"><strong>#delete_project</strong>(project : Int32 | String) : JSON::Any</a>
+        <a href="#delete_project(project:Int32%7CString):JSON::Any%7CBool-instance-method" class="signature"><strong>#delete_project</strong>(project : Int32 | String) : JSON::Any | Bool</a>
         
           <div class="summary"><p>Deletes a project.</p></div>
         
@@ -470,6 +475,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#project_add_custom_attribute(project_id:Int32,key:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#project_add_custom_attribute</strong>(project_id : Int32, key : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
+        
+          <div class="summary"><p>Add's a project custom attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#project_branch(project:Int32%7CString,branch:String):JSON::Any-instance-method" class="signature"><strong>#project_branch</strong>(project : Int32 | String, branch : String) : JSON::Any</a>
         
           <div class="summary"><p>Get a branch of a project.</p></div>
@@ -480,6 +492,27 @@
         <a href="#project_branchs(project:Int32%7CString,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="signature"><strong>#project_branchs</strong>(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</a>
         
           <div class="summary"><p>Get a list of a project's branches.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#project_custom_attribute(project_id:Int32,key:String):JSON::Any-instance-method" class="signature"><strong>#project_custom_attribute</strong>(project_id : Int32, key : String) : JSON::Any</a>
+        
+          <div class="summary"><p>Gets a single project custom attribute</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#project_custom_attributes(project_id:Int32):JSON::Any-instance-method" class="signature"><strong>#project_custom_attributes</strong>(project_id : Int32) : JSON::Any</a>
+        
+          <div class="summary"><p>List project custom attributes</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#project_delete_custom_attribute(project_id:Int32,key:String):JSON::Any%7CBool-instance-method" class="signature"><strong>#project_delete_custom_attribute</strong>(project_id : Int32, key : String) : JSON::Any | Bool</a>
+        
+          <div class="summary"><p>Deletes a project custom attribute</p></div>
         
       </li>
     
@@ -568,14 +601,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any-instance-method" class="signature"><strong>#remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any</a>
+        <a href="#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any%7CBool-instance-method" class="signature"><strong>#remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any | Bool</a>
         
           <div class="summary"><p>Removes a user from project team.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any-instance-method" class="signature"><strong>#remove_project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any</a>
+        <a href="#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any%7CBool-instance-method" class="signature"><strong>#remove_project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any | Bool</a>
         
           <div class="summary"><p>Removes a pages domain from project.</p></div>
         
@@ -675,8 +708,8 @@
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] url The url of a web hook.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :push_events Trigger hook on push events.</li><li>option form [String] :issues_events Trigger hook on issues events.</li><li>option form [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option form [String] :tag_push_events Trigger hook on push_tag events.</li><li>option form [String] :note_events Trigger hook on note events.</li><li>option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [JSON::Any] Information about the created web hook.</li></ul>
 
-<pre><code>client.add_project_hook(<span class="n">42</span>, <span class="s">&quot;https://hooks.slack.com/services/xxx&quot;</span>)
-client.add_project_hook(</code></pre>
+<pre><code class="language-crystal">client.add_project_hook(42, "https://hooks.slack.com/services/xxx")
+client.add_project_hook('gitlab', "https://hooks.slack.com/services/xxx", { "issues_events" => "true" })</code></pre>
         </div>
       
       <br/>
@@ -699,7 +732,7 @@ client.add_project_hook(</code></pre>
 
 <ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about added team member.</li></ul>
 
-<pre><code>client.add_project_member(</code></pre>
+<pre><code class="language-crystal">client.add_project_member('gitlab', 2, 40)</code></pre>
         </div>
       
       <br/>
@@ -722,7 +755,7 @@ client.add_project_hook(</code></pre>
 
 <ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [String] domain The custom domain.</li><li>params [Hash] form A customizable set of options.</li><li>option form [Bool] :auto_ssl_enabled Enables automatic generation of SSL certificates issued by Let’s Encrypt for custom domains.</li><li>option form [String] :certificate The certificate in PEM format with intermediates following in most specific to least specific order.</li><li>option form [String] :key The certificate key in PEM format.</li><li>return [JSON::Any] Information about added pages domain.</li></ul>
 
-<pre><code>client.add_project_pages_domain(</code></pre>
+<pre><code class="language-crystal">client.add_project_pages_domain('gitlab', "pages-domain.com", {"auto_ssl_enabled" => true})</code></pre>
         </div>
       
       <br/>
@@ -745,7 +778,7 @@ client.add_project_hook(</code></pre>
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#projects</a></code>({ "scope" => "all" })</p>
 
-<pre><code>client.all_projects
+<pre><code class="language-crystal">client.all_projects
 client.all_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
 client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
         </div>
@@ -770,7 +803,7 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the archive project.</li></ul>
 
-<pre><code>client.archive_project(<span class="n">42</span>)</code></pre>
+<pre><code class="language-crystal">client.archive_project(<span class="n">42</span>)</code></pre>
         </div>
       
       <br/>
@@ -793,7 +826,7 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the forked project.</li></ul>
 
-<pre><code>client.create_fork_from(<span class="n">1</span>, <span class="n">21</span>)</code></pre>
+<pre><code class="language-crystal">client.create_fork_from(<span class="n">1</span>, <span class="n">21</span>)</code></pre>
         </div>
       
       <br/>
@@ -816,8 +849,8 @@ client.all_projects({<span class="s">&quot;search&quot;</span> => <span class="s
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#create_project(user_id:Int32,name:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#create_project</a></code>(params : Hash = {} of String => String)</p>
 
-<pre><code>client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>)
-client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quot;</span>, { <span class="s">&quot;description: =&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; })</span></code></pre>
+<pre><code class="language-crystal">client.create_project(1, "gitlab")
+client.create_project(1, "gitlab", { "description: => "Awesome project" })</code></pre>
         </div>
       
       <br/>
@@ -840,9 +873,9 @@ client.create_project(<span class="n">1</span>, <span class="s">&quot;gitlab&quo
 
 <ul><li>params [String] name The name of a project.</li><li>params [Hash] form A customizable set of options.</li><li>option form [String] :description The description of a project.</li><li>option form [String] :default_branch The default branch of a project.</li><li>option form [String] :namespace_id The namespace in which to create a project.</li><li>option form [String] :wiki_enabled The wiki integration for a project (0 = false, 1 = true).</li><li>option form [String] :wall_enabled The wall functionality for a project (0 = false, 1 = true).</li><li>option form [String] :issues_enabled The issues integration for a project (0 = false, 1 = true).</li><li>option form [String] :snippets_enabled The snippets integration for a project (0 = false, 1 = true).</li><li>option form [String] :merge_requests_enabled The merge requests functionality for a project (0 = false, 1 = true).</li><li>option form [String] :public The setting for making a project public (0 = false, 1 = true).</li><li>option form [String] :user_id The user/owner id of a project.</li><li>return [JSON::Any] Information about created project.</li></ul>
 
-<pre><code>client.create_project(<span class="s">&quot;gitlab&quot;</span>)
-client.create_project(<span class="s">&quot;viking&quot;</span>, { <span class="s">&quot;description: =&gt; &quot;</span><span class="t">Awesome</span> project<span class="s">&quot; })
-client.create_project(&quot;</span><span class="t">Red</span><span class="s">&quot;, { &quot;</span>wall_enabled<span class="s">&quot; =&gt; &quot;</span><span class="n">false</span><span class="s">&quot; })</span></code></pre>
+<pre><code class="language-crystal">client.create_project("gitlab")
+client.create_project("viking", { "description: => "Awesome project" })
+client.create_project("Red", { "wall_enabled" => "false" })</code></pre>
         </div>
       
       <br/>
@@ -851,12 +884,12 @@ client.create_project(&quot;</span><span class="t">Red</span><span class="s">&qu
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_project(project:Int32|String):JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_project(project:Int32|String):JSON::Any|Bool-instance-method">
       <div class="signature">
         
-        def <strong>delete_project</strong>(project : Int32 | String) : JSON::Any
+        def <strong>delete_project</strong>(project : Int32 | String) : JSON::Any | Bool
 
-        <a class="method-permalink" href="#delete_project(project:Int32%7CString):JSON::Any-instance-method">#</a>
+        <a class="method-permalink" href="#delete_project(project:Int32%7CString):JSON::Any%7CBool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -865,7 +898,7 @@ client.create_project(&quot;</span><span class="t">Red</span><span class="s">&qu
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the deleted project.</li></ul>
 
-<pre><code>client.delete_project(<span class="n">42</span>)</code></pre>
+<pre><code class="language-crystal">client.delete_project(<span class="n">42</span>)</code></pre>
         </div>
       
       <br/>
@@ -888,7 +921,7 @@ client.create_project(&quot;</span><span class="t">Red</span><span class="s">&qu
 
 <ul><li>params [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params [Hash] form A customizable set of options.</li><li>option form [String] :name The name of a project.</li><li>option form [String] :path The name of a project.</li><li>option form [String] :description The name of a project.</li><li>return [JSON::Any] Information about the edited project.</li></ul>
 
-<pre><code>client.edit_project(<span class="n">42</span>)
+<pre><code class="language-crystal">client.edit_project(<span class="n">42</span>)
 client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;</span> => <span class="s">&quot;project_name&quot;</span>})</code></pre>
         </div>
       
@@ -912,7 +945,7 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>param  [Int32] url The url of a web hook.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :push_events Trigger hook on push events.</li><li>option form [String] :issues_events Trigger hook on issues events.</li><li>option form [String] :merge_requests_events Trigger hook on merge_requests events.</li><li>option form [String] :tag_push_events Trigger hook on push_tag events.</li><li>option form [String] :note_events Trigger hook on note events.</li><li>option form [String] :enable_ssl_verification Do SSL verification when triggering the hook.</li><li>return [JSON::Any] Information about updated web hook.</li></ul>
 
-<pre><code>client.edit_project_hook(</code></pre>
+<pre><code class="language-crystal">client.edit_project_hook('gitlab', 3, "https://hooks.slack.com/services/xxx")</code></pre>
         </div>
       
       <br/>
@@ -935,7 +968,7 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>param  [Int32] access_level The access level to project.</li><li>return [JSON::Any] Information about updated team member.</li></ul>
 
-<pre><code>client.edit_project_member(</code></pre>
+<pre><code class="language-crystal">client.edit_project_member('gitlab', 3, 20)</code></pre>
         </div>
       
       <br/>
@@ -958,7 +991,7 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
 
 <ul><li>param  [Int32, String] project_id The ID or name of a project.</li><li>param  [String] domain The custom domain.</li><li>params [Hash] form A customizable set of options.</li><li>option form [Bool] :auto_ssl_enabled Enables automatic generation of SSL certificates issued by Let’s Encrypt for custom domains.</li><li>option form [String] :certificate The certificate in PEM format with intermediates following in most specific to least specific order.</li><li>option form [String] :key The certificate key in PEM format.</li><li>return [JSON::Any] Information about added pages domain.</li></ul>
 
-<pre><code>client.edit_project_pages_domain(</code></pre>
+<pre><code class="language-crystal">client.edit_project_pages_domain('gitlab', "pages-domain.com", {"auto_ssl_enabled" => true})</code></pre>
         </div>
       
       <br/>
@@ -981,7 +1014,7 @@ client.edit_project(<span class="n">42</span>, {<span class="s">&quot;name&quot;
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] form A customizable set of options.</li><li>option form [String] :sudo The username the project will be forked for.</li><li>return [JSON::Any] Information about the forked project.</li></ul>
 
-<pre><code>client.create_fork(<span class="n">42</span>)
+<pre><code class="language-crystal">client.create_fork(<span class="n">42</span>)
 client.create_fork(<span class="n">42</span>, {<span class="s">&quot;sudo&quot;</span> => <span class="s">&quot;another_username&quot;</span>})</code></pre>
         </div>
       
@@ -1005,7 +1038,7 @@ client.create_fork(<span class="n">42</span>, {<span class="s">&quot;sudo&quot;<
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#projects</a></code>({ "scope" => "owned" })</p>
 
-<pre><code>client.owned_projects
+<pre><code class="language-crystal">client.owned_projects
 client.owned_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
 client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
         </div>
@@ -1030,7 +1063,32 @@ client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class=
 
 <ul><li>params  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about project.</li></ul>
 
-<pre><code>client.project(<span class="s">&quot;gitlab&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.project(<span class="s">&quot;gitlab&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="project_add_custom_attribute(project_id:Int32,key:String,params:Hash={}ofString=>String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>project_add_custom_attribute</strong>(project_id : Int32, key : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any
+
+        <a class="method-permalink" href="#project_add_custom_attribute(project_id:Int32,key:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Add's a project custom attribute</p>
+
+<p><strong>Available only for admin</strong>.</p>
+
+<ul><li>param [Int32] project_id The Id of project</li><li>param [String] the key of the custom attribute</li><li>param  [Hash] params A single param with the value of the custom attribute</li><li>params [String] :value The value of the custom attribute.</li><li>return [JSON::Any] information about the custom_attribute</li></ul>
+
+<pre><code class="language-crystal">client.project_add_custom_attribute(<span class="n">4</span>, custom_key, {<span class="s">&quot;value&quot;</span> => <span class="s">&quot;custom_value&quot;</span>})</code></pre>
         </div>
       
       <br/>
@@ -1053,8 +1111,8 @@ client.owned_projects({<span class="s">&quot;search&quot;</span> => <span class=
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] branch The name of a branch.</li><li>return [JSON::Any] Information about the branch under a project.</li></ul>
 
-<pre><code>client.project_branch(<span class="n">42</span>)
-client.project_branch(</code></pre>
+<pre><code class="language-crystal">client.project_branch(42)
+client.project_branch('gitlab', "develop")</code></pre>
         </div>
       
       <br/>
@@ -1077,8 +1135,83 @@ client.project_branch(</code></pre>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of branches under a project.</li></ul>
 
-<pre><code>client.project_branchs(<span class="n">42</span>)
-client.project_branchs(</code></pre>
+<pre><code class="language-crystal">client.project_branchs(42)
+client.project_branchs('gitlab', { "per_page" => "4" })</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="project_custom_attribute(project_id:Int32,key:String):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>project_custom_attribute</strong>(project_id : Int32, key : String) : JSON::Any
+
+        <a class="method-permalink" href="#project_custom_attribute(project_id:Int32,key:String):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets a single project custom attribute</p>
+
+<p><strong>Available only for admin</strong>.</p>
+
+<ul><li>param [Int32] project_id The Id of project</li><li>param [String] the key of the custom attribute</li><li>return [JSON::Any] information about the custom_attribute</li></ul>
+
+<pre><code class="language-crystal">client.project_custom_attribute(<span class="n">4</span>, <span class="s">&quot;custom_key&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="project_custom_attributes(project_id:Int32):JSON::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>project_custom_attributes</strong>(project_id : Int32) : JSON::Any
+
+        <a class="method-permalink" href="#project_custom_attributes(project_id:Int32):JSON::Any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List project custom attributes</p>
+
+<p><strong>Available only for admin</strong>.</p>
+
+<ul><li>param [Int32] project_id The Id of project</li><li>return [JSON::Any] information about the custom_attribute</li></ul>
+
+<pre><code class="language-crystal">client.project_custom_attributes(<span class="n">4</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="project_delete_custom_attribute(project_id:Int32,key:String):JSON::Any|Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>project_delete_custom_attribute</strong>(project_id : Int32, key : String) : JSON::Any | Bool
+
+        <a class="method-permalink" href="#project_delete_custom_attribute(project_id:Int32,key:String):JSON::Any%7CBool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes a project custom attribute</p>
+
+<p><strong>Available only for admin</strong>.</p>
+
+<ul><li>param [Int32] project_id The Id of project</li><li>param [String] the key of the custom attribute</li><li>return [JSON::Any] information about the custom_attribute</li></ul>
+
+<pre><code class="language-crystal">client.project_delete_custom_attribute(<span class="n">4</span>, custom_key)</code></pre>
         </div>
       
       <br/>
@@ -1101,7 +1234,7 @@ client.project_branchs(</code></pre>
 
 <ul><li>params  [Int32, String] project The ID of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>params  [Hash] options A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of events under a project.</li></ul>
 
-<pre><code>client.project_events(<span class="n">42</span>)</code></pre>
+<pre><code class="language-crystal">client.project_events(<span class="n">42</span>)</code></pre>
         </div>
       
       <br/>
@@ -1124,8 +1257,8 @@ client.project_branchs(</code></pre>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [JSON::Any] Information about the web hook.</li></ul>
 
-<pre><code>client.project_hook(<span class="n">42</span>)
-client.project_hook(</code></pre>
+<pre><code class="language-crystal">client.project_hook(42)
+client.project_hook('gitlab', 1)</code></pre>
         </div>
       
       <br/>
@@ -1148,8 +1281,8 @@ client.project_hook(</code></pre>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] params A customizable set of options.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of web hooks under a project.</li></ul>
 
-<pre><code>client.project_hooks(<span class="n">42</span>)
-client.project_hooks(</code></pre>
+<pre><code class="language-crystal">client.project_hooks(42)
+client.project_hooks('gitlab', { "per_page" => "4" })</code></pre>
         </div>
       
       <br/>
@@ -1170,9 +1303,9 @@ client.project_hooks(</code></pre>
           
           <p>Gets a project team member.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a project team member.</li><li>return [JSON::Any] Information about member under a project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a project team member.</li><li>return [JSON::Any] Information about member under a project.</li></ul>
 
-<pre><code>client.project_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre>
+<pre><code class="language-crystal">client.project_member(<span class="n">1</span>, <span class="n">2</span>)</code></pre>
         </div>
       
       <br/>
@@ -1195,8 +1328,8 @@ client.project_hooks(</code></pre>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :query The search query.</li><li>option options [Int32] :page The page number.</li><li>option options [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of team members under a project.</li></ul>
 
-<pre><code>client.project_members(<span class="n">42</span>)
-client.project_members(</code></pre>
+<pre><code class="language-crystal">client.project_members(42)
+client.project_members('gitlab')</code></pre>
         </div>
       
       <br/>
@@ -1217,9 +1350,9 @@ client.project_members(</code></pre>
           
           <p>Gets a project pages domain.</p>
 
-<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] The custom domain.</li><li>return [JSON::Any] Information about pages domain under a project.</li></ul>
+<ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] The custom domain.</li><li>return [JSON::Any] Information about pages domain under a project.</li></ul>
 
-<pre><code>client.project_pages_domain(<span class="n">1</span>, <span class="s">&quot;pages-domain.com&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.project_pages_domain(<span class="n">1</span>, <span class="s">&quot;pages-domain.com&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -1242,8 +1375,8 @@ client.project_members(</code></pre>
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] List of pages domains under a project.</li></ul>
 
-<pre><code>client.project_pages_domains(<span class="n">42</span>)
-client.project_pages_domains(</code></pre>
+<pre><code class="language-crystal">client.project_pages_domains(42)
+client.project_pages_domains('gitlab')</code></pre>
         </div>
       
       <br/>
@@ -1266,7 +1399,7 @@ client.project_pages_domains(</code></pre>
 
 <ul><li>param  [String] query A string to search for in group names and paths.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :per_page Number of projects to return per page.</li><li>option params [String] :page The page to retrieve.</li><li>option params [String] :order_by Return requests ordered by id, name, created_at or last_activity_at fields.</li><li>option params [String] :sort Return requests sorted in asc or desc order.</li><li>return [JSON::Any] List of projects under search qyery.</li></ul>
 
-<pre><code>client.project_search(<span class="s">&quot;gitlab&quot;</span>)
+<pre><code class="language-crystal">client.project_search(<span class="s">&quot;gitlab&quot;</span>)
 client.project_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="n">50</span>})</code></pre>
         </div>
       
@@ -1290,7 +1423,7 @@ client.project_search(<span class="s">&quot;gitlab&quot;</span>, {<span class="s
 
 <ul><li>params  [Hash] params A customizable set of params.</li><li>option params [String] :scope Scope of projects. "owned" for list of projects owned by the authenticated user, "starred" for list of projects starred by the authenticated user, "all" to get all projects (admin only)</li><li>option params [String] :archived if passed, limit by archived status.</li><li>option params [String] :visibility if passed, limit by visibility public, internal, private.</li><li>option params [String] :order_by Return requests ordered by id, name, path, created_at, updated_at or last_activity_at fields. Default is created_at.</li><li>option params [String] :sort Return requests sorted in asc or desc order. Default is desc.</li><li>option params [String] :search Return list of authorized projects according to a search criteria.</li><li>option params [Int32] :page The page number.</li><li>option params [Int32] :per_page The number of results per page.</li><li>return [JSON::Any] List of projects of the authorized user.</li></ul>
 
-<pre><code>client.projects
+<pre><code class="language-crystal">client.projects
 client.projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
 client.projects({<span class="s">&quot;scope&quot;</span> => <span class="s">&quot;starred&quot;</span>, <span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
         </div>
@@ -1315,7 +1448,7 @@ client.projects({<span class="s">&quot;scope&quot;</span> => <span class="s">&qu
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the protected branch.</li></ul>
 
-<pre><code>client.protect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
+<pre><code class="language-crystal">client.protect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
 client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre>
         </div>
       
@@ -1339,7 +1472,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unforked project.</li></ul>
 
-<pre><code>client.remove_fork(<span class="n">1</span>)</code></pre>
+<pre><code class="language-crystal">client.remove_fork(<span class="n">1</span>)</code></pre>
         </div>
       
       <br/>
@@ -1362,7 +1495,8 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] hook_id The ID of a web hook.</li><li>return [JSON::Any | Nil] Information about removed web hook.</li></ul>
 
-<pre><code>client.remove_project_hook(</code></pre>
+<pre><code class="language-crystal">client.remove_project_hook('gitlab', 2)
+client.remove_project_hook(1, 2)</code></pre>
         </div>
       
       <br/>
@@ -1371,12 +1505,12 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_project_member(project:Int32|String,user_id:Int32):JSON::Any-instance-method">
+    <div class="entry-detail" id="remove_project_member(project:Int32|String,user_id:Int32):JSON::Any|Bool-instance-method">
       <div class="signature">
         
-        def <strong>remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any
+        def <strong>remove_project_member</strong>(project : Int32 | String, user_id : Int32) : JSON::Any | Bool
 
-        <a class="method-permalink" href="#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any-instance-method">#</a>
+        <a class="method-permalink" href="#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any%7CBool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1385,7 +1519,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Int32] user_id The ID of a user.</li><li>return [JSON::Any] Information about removed team member.</li></ul>
 
-<pre><code>client.remove_project_member(</code></pre>
+<pre><code class="language-crystal">client.remove_project_member('gitlab', 2)</code></pre>
         </div>
       
       <br/>
@@ -1394,12 +1528,12 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
       </div>
     </div>
   
-    <div class="entry-detail" id="remove_project_pages_domain(project:Int32|String,domain:String):JSON::Any-instance-method">
+    <div class="entry-detail" id="remove_project_pages_domain(project:Int32|String,domain:String):JSON::Any|Bool-instance-method">
       <div class="signature">
         
-        def <strong>remove_project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any
+        def <strong>remove_project_pages_domain</strong>(project : Int32 | String, domain : String) : JSON::Any | Bool
 
-        <a class="method-permalink" href="#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any-instance-method">#</a>
+        <a class="method-permalink" href="#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any%7CBool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1408,7 +1542,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] domain The custom domain.</li><li>return [JSON::Any] Information about removed team member.</li></ul>
 
-<pre><code>client.remove_project_pages_domain(<span class="n">1</span>, <span class="s">&quot;pages-domain.com&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.remove_project_pages_domain(<span class="n">1</span>, <span class="s">&quot;pages-domain.com&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -1431,7 +1565,7 @@ client.protect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span c
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] options A customizable set of options.</li><li>option options [String] :sudo The username the project will be forked for.</li><li>return [JSON::Any] Information about the share project.</li></ul>
 
-<pre><code>client.share_project(<span class="n">2</span>, <span class="n">1</span>)
+<pre><code class="language-crystal">client.share_project(<span class="n">2</span>, <span class="n">1</span>)
 client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span class="s">&quot;group_access&quot;</span> => <span class="s">&quot;50&quot;</span>})</code></pre>
         </div>
       
@@ -1455,7 +1589,7 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span 
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the starred project.</li></ul>
 
-<pre><code>client.star_project(<span class="n">42</span>)</code></pre>
+<pre><code class="language-crystal">client.star_project(<span class="n">42</span>)</code></pre>
         </div>
       
       <br/>
@@ -1478,7 +1612,7 @@ client.share_project(<span class="n">2</span>, <span class="n">1</span>, {<span 
 
 <p>Alias to <code><a href="../../Gitlab/Client/Project.html#projects(params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method">#projects</a></code>({ "scope" => "starred" })</p>
 
-<pre><code>client.starred_projects
+<pre><code class="language-crystal">client.starred_projects
 client.starred_projects({<span class="s">&quot;order_by&quot;</span> => <span class="s">&quot;last_activity_at&quot;</span>, <span class="s">&quot;sort&quot;</span> => <span class="s">&quot;desc&quot;</span>})
 client.starred_projects({<span class="s">&quot;search&quot;</span> => <span class="s">&quot;keyword&quot;</span>})</code></pre>
         </div>
@@ -1503,7 +1637,7 @@ client.starred_projects({<span class="s">&quot;search&quot;</span> => <span clas
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unarchive project.</li></ul>
 
-<pre><code>client.unarchive_project(<span class="n">42</span>)</code></pre>
+<pre><code class="language-crystal">client.unarchive_project(<span class="n">42</span>)</code></pre>
         </div>
       
       <br/>
@@ -1526,7 +1660,7 @@ client.starred_projects({<span class="s">&quot;search&quot;</span> => <span clas
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [Hash] branch The name of a branch.</li><li>return [JSON::Any] Information about the unprotect branch.</li></ul>
 
-<pre><code>client.unprotect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
+<pre><code class="language-crystal">client.unprotect_project_branch(<span class="n">2</span>, <span class="s">&quot;master&quot;</span>)
 client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span class="s">&quot;master&quot;</span>)</code></pre>
         </div>
       
@@ -1550,7 +1684,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>return [JSON::Any] Information about the unstar project.</li></ul>
 
-<pre><code>client.unstar_project(<span class="n">42</span>)</code></pre>
+<pre><code class="language-crystal">client.unstar_project(<span class="n">42</span>)</code></pre>
         </div>
       
       <br/>
@@ -1577,7 +1711,7 @@ client.unprotect_project_branch(<span class="s">&quot;gitlab&quot;</span>, <span
 
 <ul><li>param  [Int32, String] project The ID or name of a project. If using namespaced projects call make sure that the NAMESPACE/PROJECT_NAME is URL-encoded.</li><li>param  [String] file The path of a file.</li><li>return [JSON::Any] Information about the uploaded file.</li></ul>
 
-<pre><code>client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/snippets_ruby.rb&quot;</span>)
+<pre><code class="language-crystal">client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/snippets_ruby.rb&quot;</span>)
 client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/screenshot.png&quot;</span>)
 client.upload_file(<span class="n">1</span>, <span class="s">&quot;/Users/icyleaf/Desktop/archive.zip&quot;</span>)</code></pre>
         </div>

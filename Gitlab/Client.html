@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="fix/gitlab-change-delete-behaviour-since-9.0-dev">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v0.7.0">
 <meta name="crystal_docs.project_name" content="gitlab">
+
 
 
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="gitlab">
-  <title>Gitlab::Client - gitlab fix/gitlab-change-delete-behaviour-since-9.0-dev</title>
+  <meta name="repository-name" content="gitlab">
+  <title>Gitlab::Client - gitlab refs/tags/v0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        fix/gitlab-change-delete-behaviour-since-9.0-dev
+        refs/tags/v0.7.0
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -286,7 +286,7 @@
 
   <p>Gitlab API Client wrapper</p>
 
-<p>See the <a href="http://docs.gitlab.com/ce/api/README.html" target="_blank">Gitlab Offical API Document</a> for more details.</p>
+<p>See the <a href="http://docs.gitlab.com/ce/api/README.html">Gitlab Offical API Document</a> for more details.</p>
 
 
 
@@ -355,6 +355,96 @@
 </a>
     Defined in:
   </h2>
+  
+    
+      gitlab/client.cr
+    
+    <br/>
+  
+    
+      gitlab/client/branch.cr
+    
+    <br/>
+  
+    
+      gitlab/client/commit.cr
+    
+    <br/>
+  
+    
+      gitlab/client/deploy_key.cr
+    
+    <br/>
+  
+    
+      gitlab/client/group.cr
+    
+    <br/>
+  
+    
+      gitlab/client/issue.cr
+    
+    <br/>
+  
+    
+      gitlab/client/key.cr
+    
+    <br/>
+  
+    
+      gitlab/client/label.cr
+    
+    <br/>
+  
+    
+      gitlab/client/merge_request.cr
+    
+    <br/>
+  
+    
+      gitlab/client/milestone.cr
+    
+    <br/>
+  
+    
+      gitlab/client/note.cr
+    
+    <br/>
+  
+    
+      gitlab/client/project.cr
+    
+    <br/>
+  
+    
+      gitlab/client/repository.cr
+    
+    <br/>
+  
+    
+      gitlab/client/repository_file.cr
+    
+    <br/>
+  
+    
+      gitlab/client/session.cr
+    
+    <br/>
+  
+    
+      gitlab/client/tag.cr
+    
+    <br/>
+  
+    
+      gitlab/client/user.cr
+    
+    <br/>
+  
+    
+      gitlab/client/version.cr
+    
+    <br/>
   
 
 
@@ -505,7 +595,12 @@
   
     <a href="../Gitlab/Client/Key.html#key(key_id:Int32):JSON::Any-instance-method" class="tooltip">
       <span>key(key_id : Int32) : JSON::Any</span>
-    key</a>
+    key</a>, 
+    
+  
+    <a href="../Gitlab/Client/Key.html#key_by_fingerprint(fingerprint:String):JSON::Any-instance-method" class="tooltip">
+      <span>key_by_fingerprint(fingerprint : String) : JSON::Any</span>
+    key_by_fingerprint</a>
     
   
 
@@ -625,8 +720,8 @@
     create_merge_request</a>, 
     
   
-    <a href="../Gitlab/Client/MergeRequest.html#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_merge_request(project_id : Int32, merge_request_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/MergeRequest.html#delete_merge_request(project_id:Int32,merge_request_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_merge_request(project_id : Int32, merge_request_id : Int32) : JSON::Any | Bool</span>
     delete_merge_request</a>, 
     
   
@@ -694,8 +789,8 @@
     create_label</a>, 
     
   
-    <a href="../Gitlab/Client/Label.html#delete_label(project_id:Int32,name:String):JSON::Any-instance-method" class="tooltip">
-      <span>delete_label(project_id : Int32, name : String) : JSON::Any</span>
+    <a href="../Gitlab/Client/Label.html#delete_label(project_id:Int32,name:String):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_label(project_id : Int32, name : String) : JSON::Any | Bool</span>
     delete_label</a>, 
     
   
@@ -743,8 +838,8 @@
     create_issue</a>, 
     
   
-    <a href="../Gitlab/Client/Issue.html#delete_issue(project_id:Int32,issue_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_issue(project_id : Int32, issue_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/Issue.html#delete_issue(project_id:Int32,issue_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_issue(project_id : Int32, issue_id : Int32) : JSON::Any | Bool</span>
     delete_issue</a>, 
     
   
@@ -812,18 +907,18 @@
     create_snippet_note</a>, 
     
   
-    <a href="../Gitlab/Client/Note.html#delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_issue_note(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/Note.html#delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_issue_note(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any | Bool</span>
     delete_issue_note</a>, 
     
   
-    <a href="../Gitlab/Client/Note.html#delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_merge_request_note(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/Note.html#delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_merge_request_note(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any | Bool</span>
     delete_merge_request_note</a>, 
     
   
-    <a href="../Gitlab/Client/Note.html#delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/Note.html#delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_snippet_note(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any | Bool</span>
     delete_snippet_note</a>, 
     
   
@@ -945,8 +1040,8 @@
     create_tag</a>, 
     
   
-    <a href="../Gitlab/Client/Tag.html#delete_tag(project_id:Int32,tag:String):JSON::Any-instance-method" class="tooltip">
-      <span>delete_tag(project_id : Int32, tag : String) : JSON::Any</span>
+    <a href="../Gitlab/Client/Tag.html#delete_tag(project_id:Int32,tag:String):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_tag(project_id : Int32, tag : String) : JSON::Any | Bool</span>
     delete_tag</a>, 
     
   
@@ -994,8 +1089,8 @@
     create_branch</a>, 
     
   
-    <a href="../Gitlab/Client/Branch.html#delete_branch(project_id:Int32,branch:String):JSON::Any-instance-method" class="tooltip">
-      <span>delete_branch(project_id : Int32, branch : String) : JSON::Any</span>
+    <a href="../Gitlab/Client/Branch.html#delete_branch(project_id:Int32,branch:String):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_branch(project_id : Int32, branch : String) : JSON::Any | Bool</span>
     delete_branch</a>, 
     
   
@@ -1022,6 +1117,11 @@
 
   <h3>Instance methods inherited from module <code><a href="../Gitlab/Client/RepositoryFile.html">Gitlab::Client::RepositoryFile</a></code></h3>
   
+  
+    <a href="../Gitlab/Client/RepositoryFile.html#create_file(project:String%7CInt32,path:String,branch:String,content:String,commit_message:String,options:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="tooltip">
+      <span>create_file(project : String | Int32, path : String, branch : String, content : String, commit_message : String, options : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</span>
+    create_file</a>, 
+    
   
     <a href="../Gitlab/Client/RepositoryFile.html#file_contents(project_id:Int32,filepath:String,sha=&quot;HEAD&quot;):String-instance-method" class="tooltip">
       <span>file_contents(project_id : Int32, filepath : String, sha = <span class="s">&quot;HEAD&quot;</span>) : String</span>
@@ -1121,8 +1221,8 @@
     create_project</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#delete_project(project:Int32%7CString):JSON::Any-instance-method" class="tooltip">
-      <span>delete_project(project : Int32 | String) : JSON::Any</span>
+    <a href="../Gitlab/Client/Project.html#delete_project(project:Int32%7CString):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_project(project : Int32 | String) : JSON::Any | Bool</span>
     delete_project</a>, 
     
   
@@ -1161,6 +1261,11 @@
     project</a>, 
     
   
+    <a href="../Gitlab/Client/Project.html#project_add_custom_attribute(project_id:Int32,key:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="tooltip">
+      <span>project_add_custom_attribute(project_id : Int32, key : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</span>
+    project_add_custom_attribute</a>, 
+    
+  
     <a href="../Gitlab/Client/Project.html#project_branch(project:Int32%7CString,branch:String):JSON::Any-instance-method" class="tooltip">
       <span>project_branch(project : Int32 | String, branch : String) : JSON::Any</span>
     project_branch</a>, 
@@ -1169,6 +1274,21 @@
     <a href="../Gitlab/Client/Project.html#project_branchs(project:Int32%7CString,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="tooltip">
       <span>project_branchs(project : Int32 | String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</span>
     project_branchs</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_custom_attribute(project_id:Int32,key:String):JSON::Any-instance-method" class="tooltip">
+      <span>project_custom_attribute(project_id : Int32, key : String) : JSON::Any</span>
+    project_custom_attribute</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_custom_attributes(project_id:Int32):JSON::Any-instance-method" class="tooltip">
+      <span>project_custom_attributes(project_id : Int32) : JSON::Any</span>
+    project_custom_attributes</a>, 
+    
+  
+    <a href="../Gitlab/Client/Project.html#project_delete_custom_attribute(project_id:Int32,key:String):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>project_delete_custom_attribute(project_id : Int32, key : String) : JSON::Any | Bool</span>
+    project_delete_custom_attribute</a>, 
     
   
     <a href="../Gitlab/Client/Project.html#project_events(project:Int32%7CString,params:Hash?=nil):JSON::Any-instance-method" class="tooltip">
@@ -1231,13 +1351,13 @@
     remove_project_hook</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>remove_project_member(project : Int32 | String, user_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/Project.html#remove_project_member(project:Int32%7CString,user_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>remove_project_member(project : Int32 | String, user_id : Int32) : JSON::Any | Bool</span>
     remove_project_member</a>, 
     
   
-    <a href="../Gitlab/Client/Project.html#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any-instance-method" class="tooltip">
-      <span>remove_project_pages_domain(project : Int32 | String, domain : String) : JSON::Any</span>
+    <a href="../Gitlab/Client/Project.html#remove_project_pages_domain(project:Int32%7CString,domain:String):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>remove_project_pages_domain(project : Int32 | String, domain : String) : JSON::Any | Bool</span>
     remove_project_pages_domain</a>, 
     
   
@@ -1300,8 +1420,8 @@
     create_group</a>, 
     
   
-    <a href="../Gitlab/Client/Group.html#delete_group(group_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_group(group_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/Group.html#delete_group(group_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_group(group_id : Int32) : JSON::Any | Bool</span>
     delete_group</a>, 
     
   
@@ -1318,6 +1438,26 @@
     <a href="../Gitlab/Client/Group.html#group(group:Int32%7CString):JSON::Any-instance-method" class="tooltip">
       <span>group(group : Int32 | String) : JSON::Any</span>
     group</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group_add_custom_attribute(group_id:Int32,key:String,params:Hash=%7B%7DofString=%3EString):JSON::Any-instance-method" class="tooltip">
+      <span>group_add_custom_attribute(group_id : Int32, key : String, params : Hash = {} <span class="k">of</span> <span class="t">String</span> => <span class="t">String</span>) : JSON::Any</span>
+    group_add_custom_attribute</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group_custom_attribute(group_id:Int32,key:String):JSON::Any-instance-method" class="tooltip">
+      <span>group_custom_attribute(group_id : Int32, key : String) : JSON::Any</span>
+    group_custom_attribute</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group_custom_attributes(group_id:Int32):JSON::Any-instance-method" class="tooltip">
+      <span>group_custom_attributes(group_id : Int32) : JSON::Any</span>
+    group_custom_attributes</a>, 
+    
+  
+    <a href="../Gitlab/Client/Group.html#group_delete_custom_attribute(group_id:Int32,key:String):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>group_delete_custom_attribute(group_id : Int32, key : String) : JSON::Any | Bool</span>
+    group_delete_custom_attribute</a>, 
     
   
     <a href="../Gitlab/Client/Group.html#group_member(group_id:Int32,user_id:Int32):JSON::Any-instance-method" class="tooltip">
@@ -1408,13 +1548,13 @@
     create_user</a>, 
     
   
-    <a href="../Gitlab/Client/User.html#delete_email(email_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_email(email_id : Int32) : JSON::Any<br/>delete_email(email_id : Int32, user_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/User.html#delete_email(email_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_email(email_id : Int32) : JSON::Any | Bool<br/>delete_email(email_id : Int32, user_id : Int32) : JSON::Any | Bool</span>
     delete_email</a>, 
     
   
-    <a href="../Gitlab/Client/User.html#delete_ssh_key(ssh_key_id:Int32):JSON::Any-instance-method" class="tooltip">
-      <span>delete_ssh_key(ssh_key_id : Int32) : JSON::Any<br/>delete_ssh_key(user_id : Int32, ssh_key_id : Int32) : JSON::Any</span>
+    <a href="../Gitlab/Client/User.html#delete_ssh_key(ssh_key_id:Int32):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>delete_ssh_key(ssh_key_id : Int32) : JSON::Any | Bool<br/>delete_ssh_key(user_id : Int32, ssh_key_id : Int32) : JSON::Any | Bool</span>
     delete_ssh_key</a>, 
     
   
@@ -1463,13 +1603,18 @@
     user_add_custom_attribute</a>, 
     
   
+    <a href="../Gitlab/Client/User.html#user_custom_attribute(user_id:Int32,key:String):JSON::Any-instance-method" class="tooltip">
+      <span>user_custom_attribute(user_id : Int32, key : String) : JSON::Any</span>
+    user_custom_attribute</a>, 
+    
+  
     <a href="../Gitlab/Client/User.html#user_custom_attributes(user_id:Int32):JSON::Any-instance-method" class="tooltip">
       <span>user_custom_attributes(user_id : Int32) : JSON::Any</span>
     user_custom_attributes</a>, 
     
   
-    <a href="../Gitlab/Client/User.html#user_delete_custom_attribute(user_id:Int32,key:String):JSON::Any-instance-method" class="tooltip">
-      <span>user_delete_custom_attribute(user_id : Int32, key : String) : JSON::Any</span>
+    <a href="../Gitlab/Client/User.html#user_delete_custom_attribute(user_id:Int32,key:String):JSON::Any%7CBool-instance-method" class="tooltip">
+      <span>user_delete_custom_attribute(user_id : Int32, key : String) : JSON::Any | Bool</span>
     user_delete_custom_attribute</a>, 
     
   
@@ -1536,7 +1681,7 @@
           
           <p>Create a new client</p>
 
-<pre><code><span class="t">Gitlab</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span>(<span class="s">&quot;&lt;endpoint&gt;&quot;</span>, <span class="s">&quot;&lt;token&quot;</span>)</code></pre>
+<pre><code class="language-crystal"><span class="t">Gitlab</span><span class="t">::</span><span class="t">Client</span>.<span class="k">new</span>(<span class="s">&quot;&lt;endpoint&gt;&quot;</span>, <span class="s">&quot;&lt;token&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -1573,7 +1718,7 @@
 
 <ul><li>Return <code>Bool</code></li></ul>
 
-<pre><code>client.available?  <span class="c"># =&gt; true</span></code></pre>
+<pre><code class="language-crystal">client.available? <span class="c"># =&gt; true</span></code></pre>
         </div>
       
       <br/>
@@ -1594,7 +1739,7 @@
           
           <p>Return a <code>Halite::Response</code> by sending a DELETE http request</p>
 
-<pre><code>client.delete(<span class="s">&quot;path&quot;</span>, form: {
+<pre><code class="language-crystal">client.delete(<span class="s">&quot;path&quot;</span>, form: {
   first_name: <span class="s">&quot;foo&quot;</span>,
   last_name:  <span class="s">&quot;bar&quot;</span>
 })</code></pre>
@@ -1656,7 +1801,7 @@
           
           <p>Return a Halite::Response by sending a GET method http request</p>
 
-<pre><code>client.get(<span class="s">&quot;path&quot;</span>, params: {
+<pre><code class="language-crystal">client.get(<span class="s">&quot;path&quot;</span>, params: {
   first_name: <span class="s">&quot;foo&quot;</span>,
   last_name:  <span class="s">&quot;bar&quot;</span>
 })</code></pre>
@@ -1680,7 +1825,7 @@
           
           <p>Return a Halite::Response by sending a HEAD method http request</p>
 
-<pre><code>client.head(<span class="s">&quot;path&quot;</span>, params: {
+<pre><code class="language-crystal">client.head(<span class="s">&quot;path&quot;</span>, params: {
   first_name: <span class="s">&quot;foo&quot;</span>,
   last_name:  <span class="s">&quot;bar&quot;</span>
 })</code></pre>
@@ -1704,7 +1849,7 @@
           
           <p>Return a <code>Halite::Response</code> by sending a PATCH http request</p>
 
-<pre><code>client.patch(<span class="s">&quot;path&quot;</span>, form: {
+<pre><code class="language-crystal">client.patch(<span class="s">&quot;path&quot;</span>, form: {
   first_name: <span class="s">&quot;foo&quot;</span>,
   last_name:  <span class="s">&quot;bar&quot;</span>
 })</code></pre>
@@ -1728,7 +1873,7 @@
           
           <p>Return a <code>Halite::Response</code> by sending a POST http request</p>
 
-<pre><code>client.post(<span class="s">&quot;path&quot;</span>, form: {
+<pre><code class="language-crystal">client.post(<span class="s">&quot;path&quot;</span>, form: {
   first_name: <span class="s">&quot;foo&quot;</span>,
   last_name:  <span class="s">&quot;bar&quot;</span>
 })</code></pre>
@@ -1752,7 +1897,7 @@
           
           <p>Return a <code>Halite::Response</code> by sending a PUT http request</p>
 
-<pre><code>client.put(<span class="s">&quot;path&quot;</span>, form: {
+<pre><code class="language-crystal">client.put(<span class="s">&quot;path&quot;</span>, form: {
   first_name: <span class="s">&quot;foo&quot;</span>,
   last_name:  <span class="s">&quot;bar&quot;</span>
 })</code></pre>

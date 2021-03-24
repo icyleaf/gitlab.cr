@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="fix/gitlab-change-delete-behaviour-since-9.0-dev">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v0.7.0">
 <meta name="crystal_docs.project_name" content="gitlab">
+
 
 
 <link href="../../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="gitlab">
-  <title>Gitlab::Client::Note - gitlab fix/gitlab-change-delete-behaviour-since-9.0-dev</title>
+  <meta name="repository-name" content="gitlab">
+  <title>Gitlab::Client::Note - gitlab refs/tags/v0.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        fix/gitlab-change-delete-behaviour-since-9.0-dev
+        refs/tags/v0.7.0
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -286,7 +286,7 @@
 
 <p>Notes are comments on snippets, issues or merge requests..</p>
 
-<p>See <a href="http://docs.gitlab.com/ce/api/notes.html" target="_blank">http://docs.gitlab.com/ce/api/notes.html</a></p>
+<p>See <a href="http://docs.gitlab.com/ce/api/notes.html">http://docs.gitlab.com/ce/api/notes.html</a></p>
 
 
 
@@ -323,6 +323,11 @@
 </a>
     Defined in:
   </h2>
+  
+    
+      gitlab/client/note.cr
+    
+    <br/>
   
 
 
@@ -365,21 +370,21 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any-instance-method" class="signature"><strong>#delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any</a>
+        <a href="#delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method" class="signature"><strong>#delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any | Bool</a>
         
           <div class="summary"><p>Deiete a note of issue in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any-instance-method" class="signature"><strong>#delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any</a>
+        <a href="#delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method" class="signature"><strong>#delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any | Bool</a>
         
           <div class="summary"><p>Deiete a note of merge request in a project.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any-instance-method" class="signature"><strong>#delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any</a>
+        <a href="#delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method" class="signature"><strong>#delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any | Bool</a>
         
           <div class="summary"><p>Deiete a note of snippet in a project.</p></div>
         
@@ -486,7 +491,7 @@
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [String] body The body of a note.</li><li>params [String] created_at Date time string, ISO 8601 formatted, e.g. 2016-03-11T03:45:40Z.</li><li>return [JSON::Any] Information about the created note of issue in a project.</li></ul>
 
-<pre><code>client.create_issue_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work!&quot;</span>)
+<pre><code class="language-crystal">client.create_issue_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work!&quot;</span>)
 client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <span class="s">&quot;great work!&quot;</span>, <span class="s">&quot;2016-03-11T03:45:40Z&quot;</span>)</code></pre>
         </div>
       
@@ -510,7 +515,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [String] body The title of an merge_requests.</li><li>return [JSON::Any] Information about the created note of merge request in a project.</li></ul>
 
-<pre><code>client.create_merge_request_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.create_merge_request_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -533,7 +538,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [String] body The body of an snippet.</li><li>return [JSON::Any] Information about the created note of snippet in a project.</li></ul>
 
-<pre><code>client.create_snippet_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.create_snippet_note(<span class="n">1</span>, <span class="n">10</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -542,12 +547,12 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any|Bool-instance-method">
       <div class="signature">
         
-        def <strong>delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any
+        def <strong>delete_issue_note</strong>(project_id : Int32, issue_id : Int32, note_id : Int32) : JSON::Any | Bool
 
-        <a class="method-permalink" href="#delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any-instance-method">#</a>
+        <a class="method-permalink" href="#delete_issue_note(project_id:Int32,issue_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -556,7 +561,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the deleted note of issue.</li></ul>
 
-<pre><code>client.delete_issue_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
+<pre><code class="language-crystal">client.delete_issue_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
         </div>
       
       <br/>
@@ -565,12 +570,12 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any|Bool-instance-method">
       <div class="signature">
         
-        def <strong>delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any
+        def <strong>delete_merge_request_note</strong>(project_id : Int32, merge_request_id : Int32, note_id : Int32) : JSON::Any | Bool
 
-        <a class="method-permalink" href="#delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any-instance-method">#</a>
+        <a class="method-permalink" href="#delete_merge_request_note(project_id:Int32,merge_request_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -579,7 +584,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the deleted note of merge request.</li></ul>
 
-<pre><code>client.delete_merge_request_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
+<pre><code class="language-crystal">client.delete_merge_request_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
         </div>
       
       <br/>
@@ -588,12 +593,12 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
       </div>
     </div>
   
-    <div class="entry-detail" id="delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any-instance-method">
+    <div class="entry-detail" id="delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any|Bool-instance-method">
       <div class="signature">
         
-        def <strong>delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any
+        def <strong>delete_snippet_note</strong>(project_id : Int32, snippet_id : Int32, note_id : Int32) : JSON::Any | Bool
 
-        <a class="method-permalink" href="#delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any-instance-method">#</a>
+        <a class="method-permalink" href="#delete_snippet_note(project_id:Int32,snippet_id:Int32,note_id:Int32):JSON::Any%7CBool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -602,7 +607,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the deleted note of snippet.</li></ul>
 
-<pre><code>client.delete_snippet_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
+<pre><code class="language-crystal">client.delete_snippet_note(<span class="n">1</span>, <span class="n">3</span>, <span class="n">6</span>)</code></pre>
         </div>
       
       <br/>
@@ -625,7 +630,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The body of a note.</li><li>return [JSON::Any] Information about the updated issue in a project.</li></ul>
 
-<pre><code>client.edit_issue_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.edit_issue_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -648,7 +653,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of an merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The title of a merge request.</li><li>return [JSON::Any] Information about the updated merge request in a project.</li></ul>
 
-<pre><code>client.edit_merge_request_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.edit_merge_request_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -671,7 +676,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>param  [String] body The body of an snippet.</li><li>return [JSON::Any] Information about the updated snippet in a project.</li></ul>
 
-<pre><code>client.edit_snippet_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
+<pre><code class="language-crystal">client.edit_snippet_note(<span class="n">1</span>, <span class="n">10</span>, <span class="n">22</span>, <span class="s">&quot;great work!&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -694,7 +699,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the note of issue.</li></ul>
 
-<pre><code>client.issue_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+<pre><code class="language-crystal">client.issue_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
         </div>
       
       <br/>
@@ -717,7 +722,7 @@ client.create_issue_note(<span class="n">1</span>, <span class="n">12</span>, <s
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] issue_id The ID of an issue.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of notes of issue under a project.</li></ul>
 
-<pre><code>client.issue_notes(<span class="n">1</span>, <span class="n">1</span>)
+<pre><code class="language-crystal">client.issue_notes(<span class="n">1</span>, <span class="n">1</span>)
 client.issue_notes(<span class="n">1</span>, <span class="n">5</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
         </div>
       
@@ -741,7 +746,7 @@ client.issue_notes(<span class="n">1</span>, <span class="n">5</span>, {<span cl
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the note of merge request.</li></ul>
 
-<pre><code>client.merge_request_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+<pre><code class="language-crystal">client.merge_request_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
         </div>
       
       <br/>
@@ -764,7 +769,7 @@ client.issue_notes(<span class="n">1</span>, <span class="n">5</span>, {<span cl
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] merge_request_id The ID of a merge request.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of notes of merge request under a project.</li></ul>
 
-<pre><code>client.merge_request_notes(<span class="n">1</span>, <span class="n">1</span>)
+<pre><code class="language-crystal">client.merge_request_notes(<span class="n">1</span>, <span class="n">1</span>)
 client.merge_request_notes(<span class="n">1</span>, <span class="n">5</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
         </div>
       
@@ -788,7 +793,7 @@ client.merge_request_notes(<span class="n">1</span>, <span class="n">5</span>, {
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Int32] note_id The ID of a note.</li><li>return [JSON::Any] Information about the note of snippet.</li></ul>
 
-<pre><code>client.snippet_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
+<pre><code class="language-crystal">client.snippet_note(<span class="n">1</span>, <span class="n">10</span>)</code></pre>
         </div>
       
       <br/>
@@ -811,7 +816,7 @@ client.merge_request_notes(<span class="n">1</span>, <span class="n">5</span>, {
 
 <ul><li>param  [Int32] project_id The ID of a project.</li><li>param  [Int32] snippet_id The ID of an snippet.</li><li>param  [Hash] params A customizable set of params.</li><li>option params [String] :page The page number.</li><li>option params [String] :per_page The number of results per page. default is 20</li><li>return [JSON::Any] List of notes of snippet under a project.</li></ul>
 
-<pre><code>client.snippet_notes(<span class="n">1</span>, <span class="n">1</span>)
+<pre><code class="language-crystal">client.snippet_notes(<span class="n">1</span>, <span class="n">1</span>)
 client.snippet_notes(<span class="n">1</span>, <span class="n">5</span>, {<span class="s">&quot;per_page&quot;</span> => <span class="s">&quot;10&quot;</span>})</code></pre>
         </div>
       
