@@ -1,5 +1,5 @@
 name: gitlab
-version: 0.6.1
+version: 0.7.0
 
 authors:
   - icyleaf <icyleaf.cn@gmail.com>
@@ -12,6 +12,6 @@ development_dependencies:
   webmock:
     github: manastech/webmock.cr
 
-crystal: 0.36.1
+crystal: ">= 0.36.1, < 2.0.0"
 
 license: MIT

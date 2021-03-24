@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        crystal: [ 'latest', 'nightly' ]
+        crystal: [ '1.0.0', 'latest', 'nightly' ]
     name: Crystal ${{ matrix.crystal }} tests
     steps:
     - uses: actions/checkout@master
